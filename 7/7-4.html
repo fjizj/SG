@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービスの運用 - 3語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>サービスの運用 - 3語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">系統運用與服務支援</div>
+        
+        <!-- Term 1: システム運用管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システム運用管理</div>
+                <div class="term-reading">しすてむうんようかんり</div>
+                <div class="term-zh">系統運用管理</div>
+                <div class="term-en">System Operation Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムが日常的に正しく稼働するように監視や保守、トラブルシューティングを行い業務の継続性を確保する。</div>
+                <div class="summary-zh">進行系統監控、維護與故障排除等必要作業，確保資訊系統日常正確運作以維持業務連續性。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>システム運用管理の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 新しいソフトウェアをゼロから設計・開発すること。</div>
+                        <div class="option">イ. 情報システムが日常的に正しく稼働するよう監視や保守を行い、業務の継続性を確保すること。</div>
+                        <div class="option">ウ. 企業の年間予算を策定し、すべてのIT投資を承認すること。</div>
+                        <div class="option">エ. ハードウェアの原材料を調達し、コストを最小化すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】システム運用管理は、情報システムが日常的に正しく稼働するよう監視、保守、トラブルシューティングを行い、業務の継続性を確保することを目的とします。</div></td>
+                    <td>                        <strong>【問】</strong>關於系統運用管理的主要目的，下列何者最為適當？
+<br>
+                        <div class="option">A. 從零開始設計與開發新軟體。</div>
+                        <div class="option">B. 進行監控與維護以確保資訊系統日常正確運作，並維持業務的連續性。</div>
+                        <div class="option">C. 擬定企業年度預算並核准所有IT投資。</div>
+                        <div class="option">D. 採購硬體原材料並將成本降到最低。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】系統運用管理是為了確保資訊系統日常正確運作而進行監控、維護與故障排除，以維護業務連續性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: 運用オペレーション -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">運用オペレーション</div>
+                <div class="term-reading">うんようおぺれーしょん</div>
+                <div class="term-zh">運用操作</div>
+                <div class="term-en">Operational Operations</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムやサービスが正常に機能するための日常的な管理や運営であり、監視やバックアップが含まれる。</div>
+                <div class="summary-zh">為確保資訊系統或服務正常運作的日常管理與營運，包含狀態監控、障礙應對與定期備份等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>運用オペレーションの活動に含まれるものとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サーバの状態チェック、障害時の迅速な対応、定期的なバックアップ</div>
+                        <div class="option">イ. 新しい経営戦略の立案と市場調査の実施</div>
+                        <div class="option">ウ. 従業員の採用面接と人事評価の決定</div>
+                        <div class="option">エ. 新製品の特許出願と法務文書の作成</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】運用オペレーションには、サーバやネットワークの状態チェック、障害発生時の迅速な対応、定期的なバックアップなどの日常的な管理が含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>關於運用操作活動所包含的內容，下列何者最為適當？
+<br>
+                        <div class="option">A. 伺服器狀態檢查、障礙時的迅速應對、定期備份</div>
+                        <div class="option">B. 擬定新經營戰略與執行市場調查</div>
+                        <div class="option">C. 員工招募面試與人事考核決定</div>
+                        <div class="option">D. 新製品專利申請與法務文件製作</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】運用操作包含伺服器與網路狀態檢查、障礙發生時的迅速應對、定期備份及軟體更新等日常管理。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: サービスデスク -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスデスク</div>
+                <div class="term-reading">さーびすですく</div>
+                <div class="term-zh">服務台</div>
+                <div class="term-en">Service Desk</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITサービスの利用者からの問い合わせや問題を受け付け、解決を支援する部門や機能である。</div>
+                <div class="summary-zh">受理IT服務使用者之查詢或問題並支援解決的部門或功能，作為支援與溝通的窗口。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ITサービスマネジメントにおける「サービスデスク」の役割として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 製品の製造ラインにおける不良品を自動選別すること。</div>
+                        <div class="option">イ. 利用者からの問い合わせや問題を受け付け、解決を支援する窓口となること。</div>
+                        <div class="option">ウ. 企業の財務諸表を作成し、税務申告を行うこと。</div>
+                        <div class="option">エ. 物理的なサーバーの組み立てや配線作業のみを行うこと。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】サービスデスクは、ITサービスの利用者からの問い合わせや問題を受け付け、解決を支援する部門や機能（窓口）です。</div></td>
+                    <td>                        <strong>【問】</strong>關於IT服務管理中「服務台」的角色，下列何者最為適當？
+<br>
+                        <div class="option">A. 自動篩選產品製造線上的不良品。</div>
+                        <div class="option">B. 作為受理使用者查詢或問題並支援解決的窗口。</div>
+                        <div class="option">C. 製作企業財務報表並進行稅務申報。</div>
+                        <div class="option">D. 僅進行實體伺服器的組裝與配線作業。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】服務台是受理IT服務使用者查詢或問題，並提供支援以協助解決的部門或功能窗口。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

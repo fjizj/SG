@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トランザクション処理 - 6語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>トランザクション処理 - 6語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組 1: トランザクション管理與控制 -->
+    <div class="group-container">
+        <div class="group-header">交易管理與復原控制</div>
+
+        <!-- Term 1: 同時実行制御 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">同時実行制御</div>
+                <div class="term-reading">どうじじっこうせいぎょ</div>
+                <div class="term-zh">同時執行控制</div>
+                <div class="term-en">Concurrency Control</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">複数のトランザクションが同時に実行される際に、データの整合性を保ち競合を防ぐ技術。</div>
+                <div class="summary-zh">在多個交易同時執行時，防止資料衝突並維持資料完整性與一致性的控制技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データベースにおいて、複数のトランザクションが同時に同じデータを更新しようとした際に、矛盾が生じないように制御する仕組みはどれか。
+<br>
+                        <div class="option">ア. 障害回復</div>
+                        <div class="option">イ. 同時実行制御</div>
+                        <div class="option">ウ. 世代管理</div>
+                        <div class="option">エ. バックアップ</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：同時実行制御（コンカレンシー制御）は、複数のトランザクションの同時実行によるデータの不整合（データ競合）を防ぐための仕組みです。</div></td>
+                    <td>                        在資料庫中，當多個交易同時嘗試更新相同資料時，為防止產生矛盾而進行控制的機制是哪一個？
+<br>
+                        <div class="option">A. 故障復原</div>
+                        <div class="option">B. 同時執行控制</div>
+                        <div class="option">C. 世代管理</div>
+                        <div class="option">D. 備份</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：同時執行控制（Concurrency Control）是用於防止多個交易同時執行導致資料不一致（資料競合）的控制機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: 障害回復 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">障害回復</div>
+                <div class="term-reading">しょうがいかいふく</div>
+                <div class="term-zh">故障復原</div>
+                <div class="term-en">Disaster Recovery</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム障害が発生した際に、ログやバックアップを用いてデータの一貫性と可用性を復旧するプロセス。</div>
+                <div class="summary-zh">當系統發生故障或異常時，利用日誌或備份資料迅速恢復資料一致性與可用性的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        トランザクション処理中にシステム障害が発生した場合、データベースの一貫性を保ちながら障害前の正常な状態に戻す処理を何と呼ぶか。
+<br>
+                        <div class="option">ア. 同時実行制御</div>
+                        <div class="option">イ. 障害回復</div>
+                        <div class="option">ウ. 排他制御</div>
+                        <div class="option">エ. データマート</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：障害回復（リカバリ）は、システム障害時にログファイルやバックアップデータを利用してデータベースを正常な状態に復元するプロセスです。</div></td>
+                    <td>                        在交易處理過程中發生系統故障時，在保持資料庫一致性的同時將其恢復到故障前正常狀態的處理稱為什麼？
+<br>
+                        <div class="option">A. 同時執行控制</div>
+                        <div class="option">B. 故障復原</div>
+                        <div class="option">C. 互斥控制</div>
+                        <div class="option">D. 資料市集</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：故障復原（Recovery）是指在系統故障時利用日誌檔或備份資料將資料庫還原至正常狀態的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: 世代管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">世代管理</div>
+                <div class="term-reading">せだいかんり</div>
+                <div class="term-zh">世代管理</div>
+                <div class="term-en">Generation Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データの更新時に異なるバージョン（世代）を保持・管理し、過去と現在の状態を区別する手法。</div>
+                <div class="summary-zh">在更新資料時保存並管理不同的版本（世代），藉此明確區分過去與當前狀態的管理方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ファイルやデータベースの更新時に、過去のデータを別世代として保存・管理し、データのバックアップや履歴管理に役立てる手法はどれか。
+<br>
+                        <div class="option">ア. 世代管理</div>
+                        <div class="option">イ. 差分バックアップ</div>
+                        <div class="option">ウ. 同時実行制御</div>
+                        <div class="option">エ. 排他制御</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：世代管理は、作成時期や更新時期の異なるデータを世代（バージョン）として保持し、過去の状態への復元や履歴追跡を可能にする管理手法です。</div></td>
+                    <td>                        在更新檔案或資料庫時，將過去的資料作為不同世代加以保存與管理，有助於資料備份與履歷管理的方法是哪一個？
+<br>
+                        <div class="option">A. 世代管理</div>
+                        <div class="option">B. 差分備份</div>
+                        <div class="option">C. 同時執行控制</div>
+                        <div class="option">D. 互斥控制</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：世代管理（Generation Management）是將不同建立或更新時間的資料作為世代（版本）保留，從而能夠復原至過去狀態或進行履歷追蹤的管理方法。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 2: 資料備份機制 -->
+    <div class="group-container">
+        <div class="group-header">資料備份機制</div>
+
+        <!-- Term 4: フルバックアップ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">フルバックアップ</div>
+                <div class="term-reading">ふるばっくあっぷ</div>
+                <div class="term-zh">完全備份</div>
+                <div class="term-en">Full Backup</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">対象となるすべてのデータを完全にコピーして保存する、最も基本的で確実なバックアップ手法。</div>
+                <div class="summary-zh">將目標對象的所有資料完整複製並保存，是最基本且最可靠的備份方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        毎回すべてのデータを対象としてバックアップを行う方式であり、復元作業が最も簡単だが保存に時間と容量を要するものはどれか。
+<br>
+                        <div class="option">ア. フルバックアップ</div>
+                        <div class="option">イ. 差分バックアップ</div>
+                        <div class="option">ウ. 増分バックアップ</div>
+                        <div class="option">エ. リモートバックアップ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：フルバックアップは対象のデータ全体を複製するため、単体で完全復旧が可能ですが、時間と容量の消費が大きくなります。</div></td>
+                    <td>                        每次皆以全部資料為對象進行備份的方式，雖然復原作業最為簡單，但保存需要較長時間與容量的是哪一個？
+<br>
+                        <div class="option">A. 完全備份</div>
+                        <div class="option">B. 差分備份</div>
+                        <div class="option">C. 增量備份</div>
+                        <div class="option">D. 遠端備份</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：完全備份（Full Backup）複製整個目標資料，因此單靠此備份即可完成完全復原，但會耗費較多的時間與儲存空間。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5: 差分バックアップ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">差分バックアップ</div>
+                <div class="term-reading">さぶんばっくあっぷ</div>
+                <div class="term-zh">差分備份</div>
+                <div class="term-en">Differential Backup</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">最後に実施したフルバックアップから、その時点までに変更されたすべてのデータを保存する手法。</div>
+                <div class="summary-zh">僅保存自最後一次「完全備份」以來所變更的所有資料之備份方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        フルバックアップを実行した後、それ以降に変更されたすべてのデータを毎回バックアップする方式はどれか。
+<br>
+                        <div class="option">ア. 増分バックアップ</div>
+                        <div class="option">イ. 差分バックアップ</div>
+                        <div class="option">ウ. フルバックアップ</div>
+                        <div class="option">エ. 世代管理</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：差分バックアップは、常に「直前のフルバックアップ」からの変更分すべてを保存します。復旧時はフルバックアップ1点と最新の差分バックアップ1点で復元可能です。</div></td>
+                    <td>                        在執行完全備份後，每次皆備份自該完全備份以來變更的所有資料的方式是哪一個？
+<br>
+                        <div class="option">A. 增量備份</div>
+                        <div class="option">B. 差分備份</div>
+                        <div class="option">C. 完全備份</div>
+                        <div class="option">D. 世代管理</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：差分備份（Differential Backup）會保存自「上次完全備份」以來變更的所有資料。復原時只需完全備份與最新的那份差分備份即可。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6: 増分バックアップ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">増分バックアップ</div>
+                <div class="term-reading">ぞうぶんばっくあっぷ</div>
+                <div class="term-zh">增量備份</div>
+                <div class="term-en">Incremental Backup</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">直前のバックアップ（フルまたは増分）から新たに変更・追加されたデータのみを保存する手法。</div>
+                <div class="summary-zh">僅保存自「前一次備份」（無論是完全備份或增量備份）以來新變更或新增之資料的方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        前回のバックアップ（フルまたは増分）から変更があったデータのみを保存する方式で、バックアップ時間が最も短いが復元に全媒体が必要となるものはどれか。
+<br>
+                        <div class="option">ア. フルバックアップ</div>
+                        <div class="option">イ. 差分バックアップ</div>
+                        <div class="option">ウ. 増分バックアップ</div>
+                        <div class="option">エ. リアルタイムバックアップ</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：増分バックアップは前回のバックアップからの変更点のみを保存するため、処理時間と容量を最小限に抑えられますが、復旧にはフル＋全ての増分データが必要です。</div></td>
+                    <td>                        僅保存自前一次備份（完全或增量）以來有變更之資料的方式，備份所需時間最短但復原時需要所有媒體的是哪一個？
+<br>
+                        <div class="option">A. 完全備份</div>
+                        <div class="option">B. 差分備份</div>
+                        <div class="option">C. 增量備份</div>
+                        <div class="option">D. 即時備份</div>
+                        <div class="answer">答案：C</div>
+<br>
+                        <div class="analysis">解析：增量備份（Incremental Backup）僅保存自上次備份以來的變更，因此處理時間與空間最小，但復原時需要完全備份以及後續所有的增量備份。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

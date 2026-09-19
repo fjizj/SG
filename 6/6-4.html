@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトのスコープ - 4語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトのスコープ - 4語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案範圍與活動管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">スコープの定義</div>
+                <div class="term-reading">すこーぷのていぎ</div>
+                <div class="term-zh">定義範圍</div>
+                <div class="term-en">Scope Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの境界、成果物、および作業の範囲を詳細に記述し、含むべき作業と含まない作業を明確にするプロセス。</div>
+                <div class="summary-zh">詳細描述專案的邊界、交付標的與工作範圍，明確界定哪些工作屬於專案內部或排除在外。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトのスコープ定義で作成される「プロジェクトスコープ記述書」に含めるべき内容として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 個々のプロジェクトメンバーの毎月の給料支給額</div>
+                        <div class="option">イ. プロジェクトの成果物、目標、およびプロジェクトの対象外とする事項</div>
+                        <div class="option">ウ. プログラミングコードの具体的な関数名の一覧</div>
+                        <div class="option">エ. サーバーのハードウェア設置場所の住所</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：スコープ記述書には、プロジェクトで達成すべき目標、成果物、作業の範囲（スコープ）および除外事項（スコープ外）を明確に定義します。</div></td>
+                    <td>                        【題目】關於在專案範圍定義中所撰寫的「專案範圍說明書」，下列何者最適合納入其中？
+<br>
+                        <div class="option">A. 個別專案成員的每月薪資發放金額</div>
+                        <div class="option">B. 專案的交付標的、目標以及不屬於專案範圍的事項</div>
+                        <div class="option">C. 程式碼的具體函數名稱清單</div>
+                        <div class="option">D. 伺服器硬體擺放地點的地址</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案範圍說明書用於明確定義專案需達成的目標、交付標的、包含的工作範圍以及明確排除在外的事項（Scope Out）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">WBSの作成</div>
+                <div class="term-reading">だぶるびーえすのさくせい</div>
+                <div class="term-zh">建立工作分解結構</div>
+                <div class="term-en">Work Breakdown Structure Creation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの全体作業を、管理可能な小さな構成要素（ワークパッケージ）へ階層的に分解・構造化する手法。</div>
+                <div class="summary-zh">將專案整體工作以階層化方式拆解並結構化為易於管理的小型單元（工作包）的方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】WBS（Work Breakdown Structure）を作成することの主な効果として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトの全体作業が階層的に分解され、作業範囲の抜け漏れ防止や進捗管理が容易になる。</div>
+                        <div class="option">イ. システムのアルゴリズムを自動的にプログラミングコードへ変換できる。</div>
+                        <div class="option">ウ. チームメンバー全員の勤務時間を自動で打刻・管理できる。</div>
+                        <div class="option">エ. プロジェクト完了後の製品マーケティング計画が自動作成される。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：WBSはプロジェクトのスコープ全体を階層的に分解したものであり、作業の漏れや重複を防ぎ、スケジュールやコスト管理のベースとなります。最下層の作業単位をワークパッケージと呼びます。</div></td>
+                    <td>                        【題目】關於建立 WBS（工作分解結構）的主要效益，下列何者最恰當？
+<br>
+                        <div class="option">A. 將專案整體工作進行階層式拆解，有助於防止工作遺漏並簡化進度管理。</div>
+                        <div class="option">B. 可將系統演算法自動轉換為程式碼。</div>
+                        <div class="option">C. 可自動打卡並管理全體團隊成員的出勤時間。</div>
+                        <div class="option">D. 可自動產生專案結束後的產品行銷計畫。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：WBS（Work Breakdown Structure）透過將專案範疇逐層拆解為更小的組件，能確保工作不遺漏、不重複，並以此作為估算時程與成本的基礎。其最底層組件稱為工作包（Work Package）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">活動の定義</div>
+                <div class="term-reading">かつどうのていぎ</div>
+                <div class="term-zh">定義活動</div>
+                <div class="term-en">Definition of Activities</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">WBSのワークパッケージを達成するために実施すべき具体的で詳細なアクティビティ（作業）を特定し識別するプロセス。</div>
+                <div class="summary-zh">辨識並確認為完成 WBS 工作包所必須執行的具體且詳細之活動（作業項目）的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおける「アクティビティの定義（活動の定義）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. WBSの最下層であるワークパッケージを完成させるために必要な具体的な作業（アクティビティ）を洗い出す。</div>
+                        <div class="option">イ. プロジェクトの総予算と資金調達計画を確定させる。</div>
+                        <div class="option">ウ. 納品後の製品の品質保証期間を設定する。</div>
+                        <div class="option">エ. 外部ベンダーとの契約書を作成し調印する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：アクティビティの定義（活動の定義）は、WBSで定義されたワークパッケージをさらに具体的なスケジュール作成のための作業（アクティビティ）に分解するプロセスです。</div></td>
+                    <td>                        【題目】關於專案管理中的「定義活動（Definition of Activities）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 梳理出為完成 WBS 最底層工作包所需的具體作業（活動）。</div>
+                        <div class="option">B. 確定專案總預算與資金籌措計畫。</div>
+                        <div class="option">C. 設定交付後產品的品質保證期限。</div>
+                        <div class="option">D. 擬定並簽署與外部供應商的合約。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：定義活動（Definition of Activities）是指識別與記錄為產生專案交付標的，所必須執行的具體行動與作業項目，通常由 WBS 的工作包進一步拆解而來。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">スコープの管理</div>
+                <div class="term-reading">すこーぷのかんり</div>
+                <div class="term-zh">範圍管理</div>
+                <div class="term-en">Scope Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトに必要なすべての作業を漏れなく確実に実行し、承認されていない不要な作業の追加（スコープクリープ）を防ぐ管理活動。</div>
+                <div class="summary-zh">確保專案包含且僅包含完成專案所需之全部工作，防止未經核准之變更與工作擴張（範圍蔓延）的管理活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおける「スコープクリープ」を防ぐための対策として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 仕様変更要求が発生した際、口頭の依頼であっても直ちに作業を追加する。</div>
+                        <div class="option">イ. 正式な変更管理プロセスを通して、変更の影響（コスト・納期等）を評価・承認した上でスコープを管理する。</div>
+                        <div class="option">ウ. プロジェクト初期のスコープ定義を省略し、作業を進めながら随時変更する。</div>
+                        <div class="option">エ. 開発作業完了後にのみスコープの確認を行う。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：スコープ管理では、プロジェクトに必要な作業のみが行われるように制御します。計画にない要求が歯止めなく追加される「スコープクリープ」を防ぐため、厳格な変更管理手続きが必要です。</div></td>
+                    <td>                        【題目】為防止專案管理中的「範圍蔓延（Scope Creep）」，下列何者為最適當的因應對策？
+<br>
+                        <div class="option">A. 當收到規格變更需求時，即使僅為口頭要求也立即追加作業。</div>
+                        <div class="option">B. 透過正式的變更控制流程，評估變更對成本與時程等的影響並獲得核准後，再行管理與調整範圍。</div>
+                        <div class="option">C. 省略初期專案範圍定義，一邊執行作業一邊隨時變更。</div>
+                        <div class="option">D. 僅於開發作業完全結束後才進行範圍確認。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：範圍蔓延（Scope Creep）是指在未評估對時間、成本或資源影響的情況下，未經控制地擴充專案範圍。有效的範圍管理必須透過正式的變更控制程序來處理任何變更要求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,791 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム監査 - 16語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>システム監査 - 16語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- Group 1: 系統監査の基本とプロセス (System Audit Basics and Process) -->
+    <div class="group-container">
+        <div class="group-header">系統審查基本與流程</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システムの利活用に係る検証・評価</div>
+                <div class="term-reading">じょうほうしすてむのりかつようにかかるけんしょう・ひょうか</div>
+                <div class="term-zh">資訊系統利用之驗證與評估</div>
+                <div class="term-en">Verification and Evaluation of Information System Utilization</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業が導入した情報システムが目的に対して効果的に機能しているかを確認し、投資の効果を高めるプロセス。</div>
+                <div class="summary-zh">確認企業導入的資訊系統是否針對目標發揮成效，以提升投資效益的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>情報システムの利活用に係る検証・評価の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 導入した情報システムが目的に対して効果的に機能しているかを確認し、投資効果を高めること。</div>
+                        <div class="option">イ. システムの運用や管理が適切であるかを確認するための組織的な仕組みを整えること。</div>
+                        <div class="option">ウ. 監査人が遵守すべき価値観や行動基準を定め、公正かつ誠実に行うこと。</div>
+                        <div class="option">エ. 監査証拠を収集し、その信頼性や妥当性を評価すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報システムの利活用に係る検証・評価は、システムが目的に対して効果的に機能しているかを確認し、使用効率や業務改善への貢献度を評価して投資の効果を高めるプロセスです。</div></td>
+                    <td>                        <strong>【問】</strong>關於「資訊系統利用之驗證與評估」的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 確認導入的資訊系統是否針對目標發揮成效，以提升投資效益。</div>
+                        <div class="option">B. 建立組織化機制以確認系統的運用與管理是否適當。</div>
+                        <div class="option">C. 制定審查人員應遵守的價值觀與行為準則，並公正誠實地執行。</div>
+                        <div class="option">D. 蒐集審查證據並評估其可靠性與妥當性。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】資訊系統利用之驗證與評估，是指確認系統是否針對目標發揮成效，並評估其使用效率與對業務改善的貢獻度，以提高投資效益的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システム監査計画</div>
+                <div class="term-reading">しすてむかんさけいかく</div>
+                <div class="term-zh">系統審查計畫</div>
+                <div class="term-en">System Audit Plan</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム監査の目的、範囲、方法、スケジュールなどを明示し、監査の透明性と効率性を高める計画。</div>
+                <div class="summary-zh">明確列出系統審查的目的、範圍、方法與時程等，以提升審查透明度與效率的計畫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>システム監査計画に含まれる事項として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 監査の目的、範囲、方法、スケジュール、および必要なリソース</div>
+                        <div class="option">イ. システムのプログラムコードのバグを修正するための詳細な手順</div>
+                        <div class="option">ウ. 従業員の労働環境における問題点を解決するための給与規定</div>
+                        <div class="option">エ. 企業が保有するすべての機密情報の暗号化キー</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】システム監査計画には、監査の目的、範囲、方法、スケジュール、および必要なリソースが明示され、監査の透明性と効率性を高める役割を果たします。</div></td>
+                    <td>                        <strong>【問】</strong>關於系統審查計畫所包含的事項，下列何者適當？
+<br>
+                        <div class="option">A. 審查的目的、範圍、方法、時程以及必要的資源</div>
+                        <div class="option">B. 修正系統程式碼錯誤的詳細步驟</div>
+                        <div class="option">C. 解決員工勞動環境問題的薪資規定</div>
+                        <div class="option">D. 企業所持有的所有機密資訊加密金鑰</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】系統審查計畫明確記載審查的目的、範圍、方法、時程與所需資源，發揮提升審查透明度與效率的作用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監査証拠の入手と評価</div>
+                <div class="term-reading">かんさしょうこのにゅうしゅとひょうか</div>
+                <div class="term-zh">審查證據的取得與評估</div>
+                <div class="term-en">Acquisition and Evaluation of Audit Evidence</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム監査に必要な情報やデータを収集し、その信頼性や妥当性を評価して監査結果の根拠とする過程。</div>
+                <div class="summary-zh">蒐集系統審查所需的資訊與資料，並評估其可靠性與妥當性以作為審查結果依據的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>監査証拠の入手と評価に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システム監査を行うために必要な情報やデータを収集し、その信頼性や妥当性を評価すること。</div>
+                        <div class="option">イ. システム監査の結果に基づいて行われた改善提案の実施状況を追跡すること。</div>
+                        <div class="option">ウ. 監査人が公正かつ誠実に行うための行動基準や守秘義務を定めること。</div>
+                        <div class="option">エ. 組織のコンプライアンス遵守のために不正行為を直接告発すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】監査証拠の入手と評価は、監査に必要な情報やデータ（ログファイルや取引記録など）を収集し、その信頼性や妥当性を評価して監査結果を支える根拠とする過程です。</div></td>
+                    <td>                        <<strong>【問】</strong>關於審查證據的取得與評估之敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 蒐集系統審查所需的資訊與資料，並評估其可靠性與妥當性。</div>
+                        <div class="option">B. 追蹤根據系統審查結果所提出的改善建議之執行狀況。</div>
+                        <div class="option">C. 訂定審查人員公正誠實執行的行為準則與保密義務。</div>
+                        <div class="option">D. 為了組織的合規遵守而直接告發違法行為。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】審查證據的取得與評估是指蒐集審查所需的資訊與資料（如日誌檔或交易紀錄），並評估其可靠性與妥當性，作為支撐審查結果依據的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システム監査報告書の作成と報告</div>
+                <div class="term-reading">しすてむかんさほうこくしょのさくせいとほうこく</div>
+                <div class="term-zh">系統審查報告書的製作與報告</div>
+                <div class="term-en">Creation and Reporting of System Audit Reports</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">監査の目的、方法、結果、改善提案を文書化し、関係者に伝えて業務効率化やセキュリティ向上に役立てるプロセス。</div>
+                <div class="summary-zh">將審查目的、方法、結果與改善建議文件化並傳達給相關人員，以助於業務效率化與資安提升的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>システム監査報告書の作成と報告の目的に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 監査の目的や結果、改善の提案を文書化して関係者に伝え、業務効率化やセキュリティ向上に役立てること。</div>
+                        <div class="option">イ. 監査人が自らの判断に影響を及ぼす利害関係から完全に独立していることを証明すること。</div>
+                        <div class="option">ウ. 情報資産を保護するための国際的な標準ルールを新たに策定すること。</div>
+                        <div class="option">エ. 組織内のすべての従業員に対して行動指針や倫理観を強制すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】システム監査報告書の作成と報告は、監査の目的、方法、結果、改善提案を文書化して関係者に伝えることで、企業が業務効率化やセキュリティ向上に向けた施策を検討できるようにするプロセスです。</div></td>
+                    <td>                        <strong>【問】</strong>關於系統審查報告書製作與報告目的之敘述，下列何者適當？
+<br>
+                        <div class="option">A. 將審查目的、結果與改善建議文件化並傳達給相關人員，以助於業務效率化與資安提升。</div>
+                        <div class="option">B. 證明審查人員完全獨立於可能影響自身判斷的利害關係之外。</div>
+                        <div class="option">C. 重新制定保護資訊資產的國際標準規則。</div>
+                        <div class="option">D. 對組織內所有員工強制實施行為準則與倫理觀。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】系統審查報告書的製作與報告是將審查目的、方法、結果及改善建議文件化並呈報相關人員，使企業能夠研擬業務效率化與資安提升對策的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">改善提案のフォローアップ</div>
+                <div class="term-reading">かいぜんていあんのふぉろーあっぷ</div>
+                <div class="term-zh">改善建議的後續追蹤</div>
+                <div class="term-en">Improvement Proposal Follow-Up</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">監査結果に基づく改善提案の実施状況や効果を追跡・検証し、課題の解消と継続的改善に寄与するプロセス。</div>
+                <div class="summary-zh">追蹤與驗證根據審查結果所提改善建議的執行狀況與成效，以助於解決問題並持續改善的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「改善提案のフォローアップ」の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 監査の指摘に基づく改善提案が実際に実行され、期待どおりの効果が得られているかを検証すること。</div>
+                        <div class="option">イ. 監査対象となる情報システムの初期要件定義やプログラミングを行うこと。</div>
+                        <div class="option">ウ. 監査人が組織から完全に独立した立場で新しい監査計画を策定すること。</div>
+                        <div class="option">エ. 情報セキュリティに関する国際基準に適合しているかを外部に公開すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】改善提案のフォローアップは、監査結果に基づく改善提案が実際に実行され、期待どおりの効果が得られているかを検証し、課題の解消や継続的改善に寄与するプロセスです。</div></td>
+                    <td>                        <strong>【問】</strong>關於「改善建議的後續追蹤」之主要目的，下列何者最為適當？
+<br>
+                        <div class="option">A. 驗證根據審查指正所提的改善建議是否切實執行並獲得如期成效。</div>
+                        <div class="option">B. 進行作為審查對象的資訊系統之初期需求定義或程式設計。</div>
+                        <div class="option">C. 由審查人員以完全獨立於組織的立場擬定新的審查計畫。</div>
+                        <div class="option">D. 向外部公開是否符合資訊安全相關的國際標準。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】改善建議的後續追蹤是用以驗證基於審查結果提出的改善建議是否確實被執行並達到預期成效，進而促成問題解決與持續改善的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 監査の体制と監査人の要件 (Audit Framework and Auditor Requirements) -->
+    <div class="group-container">
+        <div class="group-header">審查體制與審查人員要求</div>
+        
+        <!-- Term 6 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システム監査の体制整備</div>
+                <div class="term-reading">しすてむかんさのたいせいせいび</div>
+                <div class="term-zh">系統審查體制的整備</div>
+                <div class="term-en">Establishment of System Audit Framework</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの運用管理が適切か確認するため、専門チームの編成や監査基準・計画の確立など組織的な仕組みを整えること。</div>
+                <div class="summary-zh">為確認系統運用與管理是否適當，而建立專業團隊編組、審查基準與計畫等組織化機制的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>システム監査の体制整備に含まれる内容として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 専門チームの編成、監査基準の確立、監査計画の策定などの組織的な仕組みを整えること。</div>
+                        <div class="option">イ. 情報システムのプログラムを自らコーディングし、サーバーを構築すること。</div>
+                        <div class="option">ウ. すべての監査データを第三者に公開して透明性を完全に確保すること。</div>
+                        <div class="option">エ. 企業内のすべての従業員に対して厳格な懲戒処分を下すこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】システム監査の体制整備とは、システムの運用管理が適切か確認するための組織的な仕組みを整えることであり、専門チームの編成、監査基準の確立、監査計画の策定が含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>關於系統審查體制整備所包含的內容，下列何者最為適當？
+<br>
+                        <div class="option">A. 建立專業團隊編組、確立審查基準、擬定審查計畫等組織化機制。</div>
+                        <div class="option">B. 親自編寫資訊系統程式碼並建構伺服器。</div>
+                        <div class="option">C. 向第三方公開所有審查資料以完全確保透明度。</div>
+                        <div class="option">D. 對企業內部所有員工做出嚴格的懲戒處分。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】系統審查體制的整備是指為了確認系統運用與管理是否適當而建構組織化機制，包含編組專業團隊、確立審查標準及擬定審查計畫等。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 7 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監査人の倫理</div>
+                <div class="term-reading">かんさにんのりんり</div>
+                <div class="term-zh">審查人員的倫理</div>
+                <div class="term-en">Ethics of Auditors</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">監査人が公正かつ誠実に行うために遵守すべき価値観であり、守秘義務や利益相反の回避が含まれる。</div>
+                <div class="summary-zh">審查人員為求公正誠實執行業務應遵守的價值觀，包含保密義務與利益迴避等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>監査人の倫理に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 公正かつ誠実に行うための守秘義務や利益相反の回避などの価値観や行動基準を指す。</div>
+                        <div class="option">イ. 企業の業績を向上させるために営業活動を積極的に行うことを義務付ける。</div>
+                        <div class="option">ウ. 監査報告書の数値を自社の利益のために書き換えることを許可する。</div>
+                        <div class="option">エ. 特定の利害関係者に対してのみ監査結果を非公開にすることを認める。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】監査人の倫理は、監査人が業務を公正かつ誠実に行うために遵守すべき価値観や行動基準であり、守秘義務や利益相反の回避が含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>關於審查人員倫理的敘述，下列何者適當？
+<br>
+                        <div class="option">A. 指為了公正且誠實執行業務而應遵守的保密義務、利益迴避等價值觀與行為準則。</div>
+                        <div class="option">B. 強制要求積極進行營業活動以提升企業業績。</div>
+                        <div class="option">C. 允許為了自身利益而竄改審查報告書的數字。</div>
+                        <div class="option">D. 允許僅對特定的利害關係人不公開審查結果。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】審查人員的倫理是指審查人員為了公正、誠實地執行業務而必須遵守的價值觀與行為準則，其中包含保密義務與迴避利益衝突。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 8 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監査の独立性と客観性の保持</div>
+                <div class="term-reading">かんさのどくりつせいときゃっかんせいのほじ</div>
+                <div class="term-zh">保持審查的獨立性與客觀性</div>
+                <div class="term-en">Maintaining Auditor Independence and Objectivity</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">監査人が利害関係や偏見から完全に独立し、透明性のある客観的な評価を行うことで信頼性を保つ原則。</div>
+                <div class="summary-zh">審查人員完全獨立於利害關係或偏見之外，以透明且客觀的評估來維持可靠性的原則。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>監査の独立性と客観性の保持に関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 監査人が判断に影響を及ぼす利害関係や偏見から独立し、客観的な視点で透明性のある評価を行うこと。</div>
+                        <div class="option">イ. 監査対象企業の経営陣と緊密に協力し、共同で経営方針を決定すること。</div>
+                        <div class="option">ウ. 監査業務の効率化を優先し、専門知識の習得を省略すること。</div>
+                        <div class="option">エ. 監査結果を非公開にし、企業内部の機密保持のみを最優先にすること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】監査の独立性と客観性の保持は、監査人が自らの判断に影響を及ぼす可能性のある利害関係や偏見から完全に独立し、客観的な視点で透明性のある評価を行う原則です。</div></td>
+                    <td>                        <strong>【問】</strong>關於保持審查獨立性與客觀性的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 審查人員獨立於可能影響判斷的利害關係或偏見之外，以客觀視角進行透明的評估。</div>
+                        <div class="option">B. 與受審查企業經營團隊緊密合作，共同決定經營方針。</div>
+                        <div class="option">C. 優先考量審查業務效率並省略專業知識的學習。</div>
+                        <div class="option">D. 將審查結果不公開，僅將企業內部保密放在最優先位置。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】保持審查的獨立性與客觀性，是指審查人員必須完全獨立於可能影響自身判斷的利害關係或偏見之外，並維持客觀視角進行具透明度的評估。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 9 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監査の能力及び正当な注意と秘密の保持</div>
+                <div class="term-reading">かんさののうりょくおよびせいとうなちゅういとひみつのほじ</div>
+                <div class="term-zh">審查能力、正當注意與保密</div>
+                <div class="term-en">Audit Capability and Due Care and Confidentiality</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスク評価の専門知識、慎重かつ適切な行動、および監査過程で取得した機密情報を守る責任を指す概念。</div>
+                <div class="summary-zh">指風險評估的專業知識、謹慎適當的行動，以及守護審查過程中取得之機密資訊責任的概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「監査の能力及び正当な注意と秘密の保持」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 専門知識によるリスク評価、慎重かつ適切な行動、および取得した機密情報を守る責任を指す。</div>
+                        <div class="option">イ. 監査対象企業の機密情報を競合他社に公開して市場の透明性を高めること。</div>
+                        <div class="option">ウ. 専門的な技術や知識がなくても、個人の直感のみに基づいて監査を完了すること。</div>
+                        <div class="option">エ. 監査業務中に発生したすべてのインシデントを無視して隠蔽すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】監査の能力は専門知識によるリスク評価、正当な注意は慎重かつ適切な行動、秘密の保持は機密情報を守る責任であり、これらは監査が効果的に機能するための基盤です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「審查能力、正當注意與保密」的敘述，下列何者適當？
+<br>
+                        <div class="option">A. 指透過專業知識進行風險評估、採取謹慎適當的行動，以及負起守護所取得機密資訊的責任。</div>
+                        <div class="option">B. 將受審查企業的機密資訊公開給競爭對手以提升市場透明度。</div>
+                        <div class="option">C. 即使沒有專業技術或知識，也僅憑個人直覺完成審查。</div>
+                        <div class="option">D. 無視並隱匿在審查業務中發生的所有資安事件。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】審查能力指憑藉專業知識評估風險，正當注意指慎重且適當的行動，保密則指保護審查中獲取之機密資訊的責任，三者皆為審查有效運作不可或缺的基石。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: セキュリティ監査とコンプライアンス関連基準 (Security Audit and Compliance Related Standards) -->
+    <div class="group-container">
+        <div class="group-header">資安審查與合規相關標準</div>
+        
+        <!-- Term 10 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報セキュリティ監査基準</div>
+                <div class="term-reading">じょうほうせきゅりてぃかんさきじゅん</div>
+                <div class="term-zh">資訊安全審查基準</div>
+                <div class="term-en">Information Security Audit Standards</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報資産を保護するためのセキュリティ対策が適切に実施されているかを客観的に評価するための基準。</div>
+                <div class="summary-zh">為客觀評估保護資訊資產的安全對策是否妥善落實所制定的標準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>情報セキュリティ監査基準の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 情報資産を保護するためのセキュリティ対策が適切に実施されているかを客観的に評価すること。</div>
+                        <div class="option">イ. 企業の財務状況を監査し、株主配当金の正確な額を決定すること。</div>
+                        <div class="option">ウ. コンピュータシステムのプログラム開発スピードを倍増させること。</div>
+                        <div class="option">エ. 従業員の労働時間を厳しく管理し、残業代を削減すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報セキュリティ監査基準は、情報資産を保護するためのセキュリティ対策が適切に実施されているかを客観的に評価し、脆弱性を発見してリスクを軽減するための基準です。</div></td>
+                    <td>                        <strong>【問】</strong>關於資訊安全審查基準的主要目的，下列何者最為適當？
+<br>
+                        <div class="option">A. 客觀評估保護資訊資產的安全對策是否妥善落實。</div>
+                        <div class="option">B. 審查企業財務狀況並決定股東股利的正確金額。</div>
+                        <div class="option">C. 將電腦系統的程式開發速度提升一倍。</div>
+                        <div class="option">D. 嚴格管理員工勞動時間以削減加班費。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】資訊安全審查基準是用以客觀評估保護資訊資產的安全防護對策是否妥善實施，藉此發現脆弱性並降低風險的標準。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 11 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報セキュリティ管理基準</div>
+                <div class="term-reading">じょうほうせきゅりてぃかんりきじゅん</div>
+                <div class="term-zh">資訊安全管理基準</div>
+                <div class="term-en">Information Security Management Standards</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織が情報を安全に管理するためのルールやガイドラインであり、ISO 27001などの枠組みが含まれる。</div>
+                <div class="summary-zh">組織用以安全管理資訊的規則與指導方針，包含ISO 27001等框架。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>情報セキュリティ管理基準に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 組織が情報を安全に管理するためのルールやガイドラインであり、ISO 27001などのフレームワークが含まれる。</div>
+                        <div class="option">イ. システム監査人が遵守すべき行動基準や利害関係回避のための倫理規範を定めたもの。</div>
+                        <div class="option">ウ. 労働環境における長時間労働やハラスメントなどの問題点を指摘するための法律。</div>
+                        <div class="option">エ. 著作権や商標権などの権利侵害行為を外部に対して告発するためのガイドライン。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報セキュリティ管理基準は、組織が情報を安全に管理するためのルールやガイドラインであり、ISO 27001のような国際的な枠組みが含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>關於資訊安全管理基準的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 組織安全管理資訊的規則與指導方針，包含ISO 27001等框架。</div>
+                        <div class="option">B. 規定系統審查人員應遵守的行為準則與迴避利益衝突的倫理規範。</div>
+                        <div class="option">C. 用以指出勞動環境中長時間工作或職場霸凌等問題點的法律。</div>
+                        <div class="option">D. 向外部告發著作權或商標權等權利侵害行為的指導方針。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】資訊安全管理基準是組織用以安全管理資訊的規則與指導方針，其中包含如ISO 27001等國際性的管理框架。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 12 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">行動指針</div>
+                <div class="term-reading">こうどうししん</div>
+                <div class="term-zh">行動準則</div>
+                <div class="term-en">Code of Conduct</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従業員が倫理的かつ法令を遵守した行動を取るための指導原則であり、コンプライアンス監査で重要視される。</div>
+                <div class="summary-zh">員工採取符合倫理與法令規範之行動的指導原則，在合規審查中備受重視。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「行動指針」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 従業員が倫理的かつ法令を遵守した行動を取るための指導原則であり、コンプライアンス監査において重要である。</div>
+                        <div class="option">イ. 情報システムが発するエラーログを自動的に収集し、解析するためのプログラム。</div>
+                        <div class="option">ウ. 企業が保有するハードウェアやソフトウェアの資産価値を算定するための基準。</div>
+                        <div class="option">エ. 監査計画において監査人のスケジュールを管理するための工程表。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】行動指針は、全ての従業員が倫理的かつ法令を遵守した行動を取るための指導原則であり、コンプライアンス監査においては特に重要な要素となります。</div></td>
+                    <td>                        <strong>【問】</strong>關於「行動準則」的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 員工採取符合倫理與法令規範之行動的指導原則，在合規審查中相當重要。</div>
+                        <div class="option">B. 自動蒐集並解析資訊系統所發出錯誤日誌的程式。</div>
+                        <div class="option">C. 計算企業所持有硬體與軟體資產價值的標準。</div>
+                        <div class="option">D. 在審查計畫中用以管理審查人員時程的工程表。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】行動準則是指所有員工為了採取符合倫理與遵守法令之行動而依循的指導原則，在合規審查中是特別重要的要素。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 13 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">倫理</div>
+                <div class="term-reading">りんり</div>
+                <div class="term-zh">倫理</div>
+                <div class="term-en">Ethics</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人や集団が正しい行動と間違った行動を判断するための基準を示す理念であり、信頼関係の構築に寄与する。</div>
+                <div class="summary-zh">個人或群體用以判斷正確與錯誤行為之標準的理念，有助於建立信任關係。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>コンプライアンス監査における「倫理」の役割に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 法律や規則を守るだけでなく、正しい行動と間違った行動を判断する基準として組織の透明性や信頼性を保つこと。</div>
+                        <div class="option">イ. 情報システムの処理速度を向上させるための技術的なアルゴリズムを設計すること。</div>
+                        <div class="option">ウ. 監査証拠の信頼性を高めるためにサーバーのハードウェアを物理的に交換すること。</div>
+                        <div class="option">エ. 企業内のすべての売上データと利益率を一般に公開すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】倫理は、個人や集団が正しい行動と間違った行動を判断するための基準であり、コンプライアンス監査では法令だけでなく倫理的な行動の実践が評価され、信頼関係の構築に寄与します。</div></td>
+                    <td>                        <strong>【問】</strong>關於合規審查中「倫理」角色的敘述，下列何者適當？
+<br>
+                        <div class="option">A. 不僅遵守法律與規則，更作為判斷對錯行為的標準以維持組織的透明性與信任關係。</div>
+                        <div class="option">B. 設計用以提升資訊系統處理速度的技術性演算法。</div>
+                        <div class="option">C. 為了提高審查證據的可靠性而實體更換伺服器硬體。</div>
+                        <div class="option">D. 將企業內的所有銷售資料與利潤率公開給大眾。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】倫理是個人或集體判斷正確與錯誤行為的標準理念，在合規審查中，除了守法外，是否實踐倫理行為也是評估重點，有助於建立信任關係。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 14 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">透明性</div>
+                <div class="term-reading">とうめいせい</div>
+                <div class="term-zh">透明度</div>
+                <div class="term-en">Transparency</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報やプロセスが明確で関係者が容易に理解できる状態であり、不正行為の予防や信頼性向上に寄与する。</div>
+                <div class="summary-zh">資訊與流程明確且相關人員能輕易理解的狀態，有助於預防違法行為與提升可靠性。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>コンプライアンス監査において「透明性」が重要とされる理由として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 情報やプロセスを明確にして不正行為を予防し、ステークホルダーからの信頼を得るため。</div>
+                        <div class="option">イ. システムのソースコードを誰でも書き換え可能にして開発効率を上げるため。</div>
+                        <div class="option">ウ. すべての機密情報を外部に完全公開してネットワークの負荷を減らすため。</div>
+                        <div class="option">エ. 監査人の個人的な主観を排除して監査時間をゼロにするため。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】透明性は情報やプロセスが明確で関係者が容易に理解できる状態であり、コンプライアンス監査においては不正行為の予防やステークホルダーからの信頼獲得（信頼性のある経営）に寄与します。</div></td>
+                    <td>                        <strong>【問】</strong>在合規審查中「透明度」被視為重要的理由，下列何者最為適當？
+<br>
+                        <div class="option">A. 使資訊與流程明確以預防違法行為，並獲取利害關係人的信任。</div>
+                        <div class="option">B. 讓任何人都能修改系統原始碼以提升開發效率。</div>
+                        <div class="option">C. 將所有機密資訊完全對外公開以減輕網路負載。</div>
+                        <div class="option">D. 排除審查人員的主觀偏見以將審查時間歸零。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】透明度是指資訊與流程明確且利害關係人能輕易理解的狀態，在合規審查中，重視透明度有助於預防不正當行為及取得利害關係人的信任。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 15 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">権利侵害行為への指摘</div>
+                <div class="term-reading">けんりしんがいこういへのしてき</div>
+                <div class="term-zh">權利侵害行為的指出</div>
+                <div class="term-en">Pointer to Rights Infringement</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">著作権や商標権などの他者の権利が不正に使用されている状況を明らかにし、法的トラブルを未然に防ぐ行為。</div>
+                <div class="summary-zh">釐清著作權或商標權等他人權利遭到不正當使用的狀況，並預防法律糾紛的行為。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>コンプライアンス監査における「権利侵害行為への指摘」の役割として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 著作権や商標権などの他者の権利が侵害されている状況を明らかにし、法的トラブルを未然に防ぐこと。</div>
+                        <div class="option">イ. 情報システムの処理速度の低下やハードウェアの物理的な故障を修理すること。</div>
+                        <div class="option">ウ. 従業員の給与体系の不備を指摘して賃金を一律に引き下げること。</div>
+                        <div class="option">エ. 監査チームのスケジュール遅延を解消し、計画を再立案すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】権利侵害行為への指摘は、著作権や商標権などが不正に使用されている状況を明らかにすることで、コンプライアンス監査において法的トラブルを未然に防ぎ信頼性のあるビジネス環境を維持する役割を果たします。</div></td>
+                    <td>                        <strong>【問】</strong>關於合規審查中「權利侵害行為指出」的角色，下列何者適當？
+<br>
+                        <div class="option">A. 釐清著作權或商標權等他人權利受侵害的狀況，以預防法律糾紛。</div>
+                        <div class="option">B. 修理資訊系統處理速度下降或硬體的實體故障。</div>
+                        <div class="option">C. 指出員工薪資體系的缺失並一律調降薪資。</div>
+                        <div class="option">D. 解決審查團隊的时程延遲並重新擬定計畫。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】指出權利侵害行為是指明著作權或商標權等遭不正當使用的狀況，在合規審查中具有預防法律糾紛並維持可靠商業環境的重要作用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 16 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">労働環境における問題点への指摘</div>
+                <div class="term-reading">ろうどうかんきょうにおけるもんだいてんへのしてき</div>
+                <div class="term-zh">勞動環境問題點的指出</div>
+                <div class="term-en">Identifying Issues in Labor Environment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">長時間労働や不当な賃金などの職場環境の問題を明らかにし、法令遵守と健全な職場作りのきっかけを得る行為。</div>
+                <div class="summary-zh">釐清長時間勞動或不當薪資等職場環境問題，以作為實現合規與打造健全職場契機的行為。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>コンプライアンス監査において「労働環境における問題点への指摘」を行う目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 長時間労働や劣悪な作業環境などの問題を明らかにし、法令遵守と健全な職場環境の実現を促すこと。</div>
+                        <div class="option">イ. 企業の利益を最大化するために従業員の労働時間を無限に延長すること。</div>
+                        <div class="option">ウ. 情報システムの脆弱性をスキャンし、サイバー攻撃をシミュレーションすること。</div>
+                        <div class="option">エ. 監査人の秘密保持義務を解除し、全ての内部資料をインターネットに公開すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】労働環境における問題点への指摘は、長時間労働、不当な賃金、劣悪な作業環境などの問題を明らかにすることで、企業が法令遵守を実現し健全な職場環境を整えるきっかけを得るために行われます。</div></td>
+                    <td>                        <strong>【問】</strong>在合規審查中進行「勞動環境問題點指出」的目的，下列何者最為適當？
+<br>
+                        <div class="option">A. 釐清長時間勞動或劣惡作業環境等問題，以促成合規遵守與健全職場環境的實現。</div>
+                        <div class="option">B. 為了將企業利潤最大化而無限延長員工的勞動時間。</div>
+                        <div class="option">C. 掃描資訊系統的脆弱性並模擬網路攻擊。</div>
+                        <div class="option">D. 解除審查人員的保密義務並將所有內部資料公開至網際網路。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】指出勞動環境中的問題點，是為了釐清長時間勞動、不當薪資與劣惡作業環境等問題，讓企業獲得實現合規並整頓健全職場環境的契機。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

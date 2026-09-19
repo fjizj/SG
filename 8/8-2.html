@@ -1,0 +1,694 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内部統制 - 13語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>内部統制 - 13語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- Group 1: 内部統制の基本概念と限界 (Basic Concepts and Limitations of Internal Control) -->
+    <div class="group-container">
+        <div class="group-header">内部統制的基本概念與極限</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">内部統制の整備</div>
+                <div class="term-reading">ないぶとうせいのせいび</div>
+                <div class="term-zh">內部控制的整備</div>
+                <div class="term-en">Internal Control Development</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織が効率的かつ適法に業務を行うため、リスク管理、役割分担の明確化や監査実施の手続きを確立すること。</div>
+                <div class="summary-zh">組織為有效且合法執行業務，確立風險管理、明確化職責分工與實施審查程序的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>内部統制の整備に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 組織が業務運営を効率的かつ効果的に行い、法令や規則に従うための手続きを確立すること。</div>
+                        <div class="option">イ. 情報システムのプログラムを自動生成し、人的エラーを完全にゼロにすること。</div>
+                        <div class="option">ウ. すべての財務データを外部に公開し、ステークホルダーの監視を無制限に受けること。</div>
+                        <div class="option">エ. 企業内のすべての従業員に対して一律の給与体系を強制すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】内部統制の整備とは、組織が業務運営を効率的かつ効果的に行い、法令や規則に従うための手続きを確立することであり、プロセスの見直しや役割分担の明確化を含みます。</div></td>
+                    <td>                        <strong>【問】</strong>關於內部控制整備的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 組織為有效且有效率地進行業務營運並遵循法令規則而建立程序。</div>
+                        <div class="option">B. 自動生成資訊系統程式碼以完全歸零人為錯誤。</div>
+                        <div class="option">C. 將所有財務資料對外公開以無限制接受利害關係人監督。</div>
+                        <div class="option">D. 強制企業內部所有員工適用一致的薪資體系。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】內部控制的整備是指組織為了有效率且有成效地營運業務並遵守法令規則而建立相應程序，包含檢視業務流程及明確化職責分工。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">内部統制の限界</div>
+                <div class="term-reading">ないぶとうせいのげんかい</div>
+                <div class="term-zh">內部控制的極限</div>
+                <div class="term-en">Limitations of Internal Control</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人的要因、環境の変化、リソースの制約などにより、内部統制制度の有効性が必ずしも完璧ではないことを示す概念。</div>
+                <div class="summary-zh">因人為因素、環境變化、資源限制等，顯示內部控制制度的有效性並非完美無缺的概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「内部統制の限界」に関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 人的要因によるミスや不正、環境の変化などにより、内部統制の有効性が必ずしも完璧ではないこと。</div>
+                        <div class="option">イ. 内部統制を導入すればすべての企業リスクが完全に消滅し、不正が絶対に発生しないこと。</div>
+                        <div class="option">ウ. システム投資コストが一切かからず、無制限に業務効率が向上すること。</div>
+                        <div class="option">エ. すべての従業員が法律や社内規則を100%遵守するよう強制できる仕組みのこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】内部統制の限界は、人的要因によるミスや不正、環境の変化、新たなリスクの出現などにより、内部統制が必ずしも完璧ではないことを示す概念です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「內部控制的極限」的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 由於人為因素造成的失誤或違法、環境變化等，內部控制的有效性並非完美無缺。</div>
+                        <div class="option">B. 導入內部控制即可完全消滅所有企業風險，絕不發生任何違法情事。</div>
+                        <div class="option">C. 完全不需花費系統投資成本，業務效率即可無限制提升。</div>
+                        <div class="option">D. 能夠強制作業人員100%遵守法律與內部規則的機制。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】內部控制的極限是指受人為因素造成的失誤或舞弊、環境變遷、新風險出現等影響，內部控制制度的有效性並非絕對完美的觀念。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 内部統制の構成要素とプロセス (Components and Processes of Internal Control) -->
+    <div class="group-container">
+        <div class="group-header">內部控制的構成要素與流程</div>
+        
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">職務分掌</div>
+                <div class="term-reading">しょくむぶんしょう</div>
+                <div class="term-zh">職務分工</div>
+                <div class="term-en">Job Responsibilities</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業や組織において各社員や部門の役割や責任を明確にし、不正やミスを防ぐためのプロセス。</div>
+                <div class="summary-zh">企業或組織中明確劃分各員工與部門的角色與責任，以防範違法與失誤的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>職務分掌の目的に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 各社員や部門の役割や責任を明確にし、内部統制の観点から不正やミスを防ぎやすくすること。</div>
+                        <div class="option">イ. すべての従業員に同一の業務を分担させず、個人の裁量だけで自由に処理させること。</div>
+                        <div class="option">ウ. 情報システムのプログラム開発や保守をすべて一人の担当者に集中させること。</div>
+                        <div class="option">エ. 企業の財務データを外部に一切非公開にして、組織の独立性を高めること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】職務分掌は、各社員や部門の役割や責任を明確にするプロセスであり、内部統制の観点から業務が適切に運営され、不正やミスを防ぐために重要です。</div></td>
+                    <td>                        <strong>【問】</strong>關於職務分工目的的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 明確化各員工與部門的角色與責任，從內部控制觀點更容易防範違法與失誤。</div>
+                        <div class="option">B. 不讓所有員工分擔相同業務，完全交由個人裁量自由處理。</div>
+                        <div class="option">C. 將資訊系統的程式開發與維護全部集中由單一負責人處理。</div>
+                        <div class="option">D. 將企業的財務資料完全不對外公開，以提升組織的獨立性。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】職務分工是用以明確各員工或部門角色與責任的過程，從內部控制的角度來看，對於妥善營運業務及防範違法與失誤至關重要。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスクの評価と対応</div>
+                <div class="term-reading">りすくのひょうかとたいおう</div>
+                <div class="term-zh">風險評估與因應</div>
+                <div class="term-en">Risk Assessment and Response</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">直面する可能性のあるリスクを特定して影響度や発生可能性を分析し、適切な対策を講じるプロセス。</div>
+                <div class="summary-zh">辨識可能面臨的風險、分析影響程度與發生可能性並採取適當對策的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>リスクの評価と対応に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 組織が直面するリスクを特定し、その影響度や発生可能性を分析して適切な対策を講じること。</div>
+                        <div class="option">イ. 情報システムの運用中に発生したすべてのエラーログを意図的に無視すること。</div>
+                        <div class="option">ウ. 企業が保有するすべての資産を売却し、キャッシュポジションを最大化すること。</div>
+                        <div class="option">エ. 業務プロセスのチェック体制を一切排除し、従業員の自己責任に任せること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】リスクの評価と対応は、組織が直面する可能性のあるリスクを特定し、影響度や発生可能性を分析して適切な対策を講じ、潜在的な損失を最小限に抑えるプロセスです。</div></td>
+                    <td>                        <strong>【問】</strong>關於風險評估與因應的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 辨識組織所面臨的風險，分析其影響度與發生可能性並採取適當對策。</div>
+                        <div class="option">B. 刻意忽略資訊系統營運過程中產生的所有錯誤日誌。</div>
+                        <div class="option">C. 出售企業所持有的所有資產以最大化現金部位。</div>
+                        <div class="option">D. 完全排除業務流程的檢查機制，交由員工自負全責。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】風險評估與因應是指辨識組織可能面臨的風險，分析其影響程度與發生機率，並採取合適對策以將潛在損失降至最低的過程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">統制活動</div>
+                <div class="term-reading">とうせいかつどう</div>
+                <div class="term-zh">控制活動</div>
+                <div class="term-en">Control Activities</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">不正や誤りを防止し、業務効率や法令遵守を確保するために企業が実施する承認や資産管理の手続き。</div>
+                <div class="summary-zh">企業為防止舞弊與失誤、確保業務效率與法令遵循所實施的核准與資產管理程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>統制活動の具体例として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 大きな支出が発生する際に複数の担当者の承認を必要とする仕組みの導入。</div>
+                        <div class="option">イ. 新しい情報システムのプログラムコードを単独で完全に書き換えること。</div>
+                        <div class="option">ウ. 従業員の労働時間を申告なしで自由に設定できるようにすること。</div>
+                        <div class="option">エ. 企業の経営戦略や財務情報を競合他社に無条件で開示すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】統制活動は不正や誤りを防止する手続きであり、取引の承認プロセス、職務分掌の明確化、資産の管理などが含まれ、例えば複数担当者の承認による支出管理が挙げられます。</div></td>
+                    <td>                        <strong>【問】</strong>作為控制活動具體範例，下列何者最為適當？
+<br>
+                        <div class="option">A. 在發生大筆支出時導入需要多位負責人共同審核批准的機制。</div>
+                        <div class="option">B. 由個人單獨完全重寫新資訊系統的程式碼。</div>
+                        <div class="option">C. 讓員工無需申報即可自由設定勞動時間。</div>
+                        <div class="option">D. 無條件向競爭對手揭露企業的經營戰略與財務資訊。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】控制活動是防止舞弊與錯誤的程序，包含交易核准流程、明確化職責分工與資產管理等，例如發生大額支出時需要多位經辦人審核的機制即為其例。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報と伝達</div>
+                <div class="term-reading">じょうほうとでんたつ</div>
+                <div class="term-zh">資訊與溝通</div>
+                <div class="term-en">Information and Communication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">正確かつ適時なデータを収集・整理し他者に伝えることで、組織内の意思決定やリスク管理を支援するプロセス。</div>
+                <div class="summary-zh">透過收集、整理正確且及時的資料並傳達給他人，以支援組織內決策與風險管理的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>内部統制における「情報と伝達」の役割に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 正確性と適時性を持ったデータを収集・整理して伝達し、意思決定やリスク管理、不正防止に寄与すること。</div>
+                        <div class="option">イ. 社内のすべての機密情報を外部に広く公開し、社会的透明性を最大化すること。</div>
+                        <div class="option">ウ. 情報システムの通信速度を向上させるためにハードウェアを最新のものに交換すること。</div>
+                        <div class="option">エ. 従業員同士のコミュニケーションを一切禁止し、個人作業のみを徹底すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報と伝達は、データやメッセージを収集・整理して他者に伝えるプロセスであり、情報の正確性や適時性が重要視され、リスク管理や不正防止にも寄与します。</div></td>
+                    <td>                        <strong>【問】</strong>關於內部控制中「資訊與溝通」角色的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 收集、整理並傳達具備正確性與及時性的資料，助益於決策、風險管理與防範舞弊。</div>
+                        <div class="option">B. 將社內所有機密資訊對外廣泛公開以最大化社會透明度。</div>
+                        <div class="option">C. 為了提升資訊系統通訊速度而將硬體更換為最新設備。</div>
+                        <div class="option">D. 全面禁止員工之間的溝通，徹底落實個人單獨作業。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】資訊與溝通是指收集、整理資料與訊息並傳達給他人的過程，強調資訊的正確性與及時性，有助於決策制定、風險管理及防範弊端。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 7 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">モニタリング</div>
+                <div class="term-reading">モニタリング</div>
+                <div class="term-zh">監督（監控）</div>
+                <div class="term-en">Monitoring</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務の運営やコンプライアンスの遵守状況を継続的に確認・評価し、問題に迅速に対応するための仕組み。</div>
+                <div class="summary-zh">持續確認與評估業務營運及合規遵守狀況，以便對問題迅速採取因應措施的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>内部統制における「モニタリング」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムやプロセスの状態を継続的に確認・評価し、問題発生時に迅速に対応するためのデータを集めること。</div>
+                        <div class="option">イ. 業務マニュアルを一度作成したら、その後の変更や見直しを一切行わないこと。</div>
+                        <div class="option">ウ. 外部の監査法人にすべての業務プロセスを丸投げし、自社での確認を完全に放棄すること。</div>
+                        <div class="option">エ. 情報システムの稼働を停止させ、オフラインでの手作業のみに切り替えること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】モニタリングは、システムやプロセスの状態を継続的に確認・評価し、業務の運営やコンプライアンスの遵守状況を監視して、問題発生時に迅速に対応するためのデータを集める重要な手段です。</div></td>
+                    <td>                        <strong>【問】</strong>關於內部控制中「監督（監控）」的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 持續確認與評估系統或流程狀態，並收集資料以便在發生問題時能迅速因應。</div>
+                        <div class="option">B. 業務手冊一旦製作完成後，後續便不再進行任何變更或檢視。</div>
+                        <div class="option">C. 將所有業務流程全部外包給外部審查法人，完全放棄企業自身的確認。</div>
+                        <div class="option">D. 停止資訊系統運作，全面改為離線人工手動處理。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】監督（監控）是指持續確認與評估系統或流程狀態，監視業務營運與合規狀況，並收集數據以便在問題發生時能夠迅速對應的重要手段。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 内部統制におけるITの活用と運用ルール (IT Utilization and Operation Rules in Internal Control) -->
+    <div class="group-container">
+        <div class="group-header">內部控制中的IT應用與營運規則</div>
+        
+        <!-- Term 8 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">実施ルールの設定</div>
+                <div class="term-reading">じっしるーるのせってい</div>
+                <div class="term-zh">實施規則的設定</div>
+                <div class="term-en">Establishment of Implementation Rules</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務やプロセスを円滑に進め、財務データの誤りを防ぐため、具体的な行動や手順を定めること。</div>
+                <div class="summary-zh">為順利推進業務與流程並防範財務資料失誤，而訂定具體行動或步驟的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「実施ルールの設定」の目的に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務やプロセスを円滑に進め、データ収集や検証の手順を明確にして誤りを防ぎ信頼性を向上させること。</div>
+                        <div class="option">イ. 組織内のすべてのルールを廃止し、従業員の直感のみで業務を行わせること。</div>
+                        <div class="option">ウ. 情報システムのアクセス権限を全社員に無制限に解放すること。</div>
+                        <div class="option">エ. 監査証拠の収集を一切行わず、報告書の作成を省略すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】実施ルールの設定は、組織内での業務やプロセスを円滑に進め、例えば財務報告プロセスにおけるデータ収集や検証の手順を明確にして誤りを防ぎ、信頼性を向上させるために行われます。</div></td>
+                    <td>                        <strong>【問】</strong>關於「實施規則設定」目的的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 順利推動業務與流程，明確化資料收集與驗證步驟以防範失誤並提升可靠性。</div>
+                        <div class="option">B. 廢除組織內所有規則，完全讓員工憑直覺執行業務。</div>
+                        <div class="option">C. 將資訊系統的存取權限無條件開放給全體員工。</div>
+                        <div class="option">D. 完全不蒐集審查證據並省略報告書的製作。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】實施規則的設定是為了讓業務與流程順利進行，明確資料收集與驗證步驟以防止錯誤並提升可靠性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 9 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">チェック体制の確立</div>
+                <div class="term-reading">ちぇっくたいせいのかくりつ</div>
+                <div class="term-zh">檢查體制的確立</div>
+                <div class="term-en">Establishment of Check System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務やプロセスが正しく行われているか定期的な監査やレビューで確認し、不正や誤りを早期発見する仕組み。</div>
+                <div class="summary-zh">透過定期審查或評閱來確認業務與流程是否正確執行，以早期發現違法與失誤的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>チェック体制の確立に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務やプロセスが正しく行われているかを確認する仕組みを整え、不正や誤りを早期に発見・修正すること。</div>
+                        <div class="option">イ. 金銭取引のチェックを完全に廃止し、担当者個人の裁量にすべて委ねること。</div>
+                        <div class="option">ウ. システムのバグやエラーが発生しても、報告や修正を行わずに放置すること。</div>
+                        <div class="option">エ. すべての業務マニュアルを破棄し、記録を残さないようにすること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】チェック体制の確立は、業務やプロセスが正しく行われているかを確認する仕組みを整えることであり、定期的な監査やレビュー、マニュアル化により不正や誤りを早期に発見・修正することができます。</div></td>
+                    <td>                        <strong>【問】</strong>關於建立檢查體制的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 完備用以確認業務或流程是否正確執行的機制，早期發現並修正違法與失誤。</div>
+                        <div class="option">B. 完全廢除金錢交易的檢查，全面交由經辦人員個人裁量。</div>
+                        <div class="option">C. 即使發生系統臭蟲或錯誤，也不進行回報或修正而逕行放置。</div>
+                        <div class="option">D. 銷毀所有業務手冊並不留下任何紀錄。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】檢查體制的確立是指完備用以確認業務或流程是否正確執行的機制，透過定期審查、評閱及手冊化，得以早期發現並修正違法與錯誤。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 10 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ITが内部統制に果たす役割</div>
+                <div class="term-reading">あいてぃーがないぶとうせいにはたすやくわり</div>
+                <div class="term-zh">IT在內部控制中扮演的角色</div>
+                <div class="term-en">Role of IT in Internal Control</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務プロセスの自動化によるヒューマンエラー低減や、アクセス管理・監査トレイルによる不正防止の仕組み。</div>
+                <div class="summary-zh">透過業務流程自動化減少人為失誤，以及藉由存取管理與審查軌跡來防範弊端的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ITが内部統制に果たす役割に関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務プロセスの自動化によるヒューマンエラーの低減や、アクセス管理・監査トレイルによる不正防止を行うこと。</div>
+                        <div class="option">イ. すべての業務から人間を完全に排除し、システムによる独裁的な経営を行うこと。</div>
+                        <div class="option">ウ. データの一貫性を無視し、意図的な改ざんが容易に行える環境を提供すること。</div>
+                        <div class="option">エ. 情報セキュリティの管理水準を意図的に低下させ、業務スピードのみを追うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ITが内部統制に果たす役割は、データの正確性や一貫性を保証し、業務プロセスの自動化によるヒューマンエラーの低減、アクセス管理や監査トレイルによる不正行為の防止などを行うことです。</div></td>
+                    <td>                        <strong>【問】</strong>關於IT在內部控制中所扮演角色的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過業務流程自動化減少人為失誤，並藉由存取管理與審查軌跡來防範違法行為。</div>
+                        <div class="option">B. 將人類完全從所有業務中排除，改由系統進行獨裁式經營。</div>
+                        <div class="option">C. 忽視資料的一致性，提供能夠輕易進行蓄意竄改的環境。</div>
+                        <div class="option">D. 刻意降低資訊安全管理水準，僅追求業務處理速度。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】IT在內部控制中扮演的角色包含：透過業務流程自動化降低人為錯誤、利用存取權限管理與審查軌跡（Audit Trail）來防範不法行為，以確保資料的正確性與一致性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 11 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ITへの対応</div>
+                <div class="term-reading">あいてぃーへのたいおう</div>
+                <div class="term-zh">IT治理（對IT的應對）</div>
+                <div class="term-en">IT Governance</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業がITを効果的に活用しリスクを低減するため、全般統制や業務処理統制などの管理枠組みを構築すること。</div>
+                <div class="summary-zh">企業為有效活用IT並降低風險，建構全般控制與業務處理控制等管理框架的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>内部統制における「ITへの対応」に含まれる内容として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. IT環境への対応、ITの利用、ITに係る全般統制、およびITに係る業務処理統制の構築。</div>
+                        <div class="option">イ. 企業内のすべてのパソコンやサーバーを廃棄し、紙ベースの台帳のみに戻すこと。</div>
+                        <div class="option">ウ. 情報技術の専門知識を持たない一般社員にシステム開発の全責任を負わせること。</div>
+                        <div class="option">エ. ITに関するセキュリティポリシーや監査基準を一切策定しないこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ITへの対応は、企業がITを効果的に活用・管理するための枠組みであり、IT環境への対応、ITの利用、ITに係る全般統制、ITに係る業務処理統制などが含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>內部控制中「IT治理（對IT的應對）」所包含的內容，下列何者最為適當？
+<br>
+                        <div class="option">A. 建構IT環境應對、IT利用、IT相關全般控制及IT相關業務處理控制。</div>
+                        <div class="option">B. 銷毀企業內的所有個人電腦與伺服器，全面恢復紙本帳冊作業。</div>
+                        <div class="option">C. 讓不具備資訊技術專業知識的一般員工承擔系統開發的全責。</div>
+                        <div class="option">D. 完全不擬定任何關於IT的資安政策或審查標準。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】IT治理（對IT的應對）是指企業為了有效管理與活用IT所建立的框架，包含IT環境的因應、IT的使用、IT相關全般控制以及IT相關業務處理控制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: コンプライアンス評価と統制自己評価 (Compliance Evaluation and Control Self-Assessment) -->
+    <div class="group-container">
+        <div class="group-header">合規評估與控制自我評估</div>
+        
+        <!-- Term 12 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">基準・自社内外の行動規範の順守状況の継続的な評価</div>
+                <div class="term-reading">きじゅん・じしゃないがいのこうどうきはんのじゅんしゅじょうきょうのけいぞくてきなひょうか</div>
+                <div class="term-zh">持續評估內部與外部行為規範的遵循狀況</div>
+                <div class="term-en">Compliance Evaluation of Internal and External Codes of Conduct</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">法律や倫理基準、環境規制などのルールを企業が定期的に確認し、リスク軽減と透明性のある運営を図るプロセス。</div>
+                <div class="summary-zh">企業定期確認法律、倫理標準、環境規範等規則，以降低風險並實現透明化營運的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>行動規範の順守状況の継続的な評価に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 企業が設定したルールや行動規範、法令や倫理基準を守っているかを定期的に確認し、リスクを軽減すること。</div>
+                        <div class="option">イ. 法律や社内規則の遵守状況を一度もチェックせず、完全に無視して経営を行うこと。</div>
+                        <div class="option">ウ. 環境規制や労働基準に違反している部門を意図的に隠蔽し、対外的な評価を上げること。</div>
+                        <div class="option">エ. 監査業務のスケジュールを短縮するために、すべての順守評価項目を削除すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】基準・自社内外の行動規範の順守状況の継続的な評価は、設定したルールや行動規範を守っているかを定期的に確認し、リスクを軽減して透明性のある運営を維持するプロセスです。</div></td>
+                    <td>                        <strong>【問】</strong>關於持續評估行為規範遵循狀況的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 定期確認企業是否遵守所設定的規則、行為規範、法令及倫理標準，以降低風險。</div>
+                        <div class="option">B. 完全不檢查法律與內部規則的遵循狀況，全然無視並進行經營。</div>
+                        <div class="option">C. 刻意隱瞞違反環境規範或勞動基準的部門，以提升對外評價。</div>
+                        <div class="option">D. 為了縮短審查業務時程而刪除所有的遵循評估項目。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】持續評估內部與外部行為規範的遵循狀況，是指定期確認企業是否遵守所建立的規則、行為規範、法令及倫理標準，藉此降低風險並維持透明化營運。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 13 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CSA</div>
+                <div class="term-reading">しーえすえー</div>
+                <div class="term-zh">控制自我評估</div>
+                <div class="term-en">Control Self Assessment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従業員自身が業務プロセスや法令遵守の状況を評価し、問題点を洗い出して持続的な改善を促進する手法。</div>
+                <div class="summary-zh">由員工自身評估業務流程與法令遵循狀況、檢討問題點並促進持續改善的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>CSA（統制自己評価）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 従業員が自分たちの業務プロセスや遵守状況を具体的に評価し、問題点を洗い出して改善を促進する手法。</div>
+                        <div class="option">イ. 外部のシステム監査人が一切のヒアリングを行わず、独自の数値だけで企業を罰すること。</div>
+                        <div class="option">ウ. 経営陣だけで非公開の会議を行い、現場の意見を一切無視してルールを強制すること。</div>
+                        <div class="option">エ. コンピュータウイルスを故意に侵入させ、システムの脆弱性を強制的にテストすること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】CSA（Control Self Assessment：統制自己評価）は、従業員が自分たちの業務プロセスや遵守状況を具体的に評価し、問題点を洗い出して改善を促進し、組織の透明性を向上させる手法です。</div></td>
+                    <td>                        <strong>【問】</strong>關於CSA（控制自我評估）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 由員工具體評估自身的業務流程與遵循狀況、檢討問題點並促進改善的手法。</div>
+                        <div class="option">B. 由外部系統審查人員在不進行任何訪談的情況下，僅憑獨家數字處罰企業。</div>
+                        <div class="option">C. 僅由經營團隊召開不公開會議，完全無視現場意見並強制推行規則。</div>
+                        <div class="option">D. 故意植入電腦病毒以強制測試系統脆弱性的手法。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】CSA（Control Self Assessment，控制自我評估）是由員工自行評估其業務流程與遵循狀況、找出問題點並促進持續改善，以提升組織透明度的方法。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

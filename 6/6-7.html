@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトのコスト - 2語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトのコスト - 2語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案成本與預算管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コストの管理</div>
+                <div class="term-reading">こすとのかんり</div>
+                <div class="term-zh">成本管理</div>
+                <div class="term-en">Cost Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの費用を見積もり、予算を設定して実際の支出を追跡・制御し、承認された予算内での完了を目指すプロセス。</div>
+                <div class="summary-zh">估算專案費用、設定預算並追蹤與控制實際支出，以確保在核准預算範圍內完成專案的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトのコスト・マネジメントにおいて、予算の策定や支出のコントロールを行う主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトを承認された予算内で完了させること。</div>
+                        <div class="option">イ. システムのソースコードの行数を最小化すること。</div>
+                        <div class="option">ウ. チームメンバーの個別の労働時間をゼロにすること。</div>
+                        <div class="option">エ. 外部ベンダーへの支払いを一切行わないこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：コスト・マネジメントの主な目的は、見積もり、予算設定、コストコントロールを通じて、承認された予算内でプロジェクトを完了させることです。</div></td>
+                    <td>                        【題目】在專案成本管理中，制定預算與控制支出的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 確保專案在經核准的預算範圍內順利完成。</div>
+                        <div class="option">B. 使系統原始碼的程式碼行數最小化。</div>
+                        <div class="option">C. 使團隊成員的個別工作時間降為零。</div>
+                        <div class="option">D. 完全不支付任何款項給外部廠商。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：專案成本管理的主要目的在於透過估算、編列預算及控制成本，確保專案能於核准的預算額度內順利完成。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コストベースライン</div>
+                <div class="term-reading">こすとべーすらいん</div>
+                <div class="term-zh">成本基準線</div>
+                <div class="term-en">Cost Baseline</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの各期間における承認済みの時系列予算であり、実際のコストパフォーマンスを測定・監視するための基準。</div>
+                <div class="summary-zh">專案各階段經核准的時序列時段預算，用於測量與監控實際成本績效的基準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】コストベースラインに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトの各期間における承認済みの時系列予算であり、実際の支出と比較・監視するための基準である。</div>
+                        <div class="option">イ. 開発者の日々のプログラミング作業を記録した日報のことである。</div>
+                        <div class="option">ウ. 納品後に発生する製品の無償保証期間のスケジュールである。</div>
+                        <div class="option">エ. プロジェクトマネージャーの個人口座残高のことである。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：コストベースラインは、時間軸に沿って割り振られた承認済みのプロジェクト予算（Sカーブなどで表現）であり、実際のコストパフォーマンスと比較・監視するための基準となります。</div></td>
+                    <td>                        【題目】關於成本基準線（Cost Baseline）的說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 依時間序列指派且經核准的專案預算，做為與實際支出進行比較與監控的基準。</div>
+                        <div class="option">B. 記錄開發人員每日程式撰寫工作日報。</div>
+                        <div class="option">C. 交付後所發生的產品免費保固期時程表。</div>
+                        <div class="option">D. 專案經理的個人銀行帳戶餘額。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：成本基準線（Cost Baseline）是按時間分配且經核准的專案預算（通常呈 S 曲線展現），作為衡量、追蹤與控制專案整體成本績效的基準。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

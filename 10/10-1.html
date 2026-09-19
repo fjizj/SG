@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム化計画 - 9語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>システム化計画 - 9語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+<div class="container">
+
+    <!-- Group 1: 風險分析、測量與評估基準 (リスク分析の対象・リスクの発生頻度・影響・範囲・リスクの種類に応じた損害内容と損害額・リスク測定) -->
+    <div class="group-container">
+        <div class="group-header">風險分析、測量與評估基準 (リスク分析の対象・リスクの発生頻度・影響・範囲・リスクの種類に応じた損害内容と損害額・リスク測定)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスク分析の対象</div>
+                <div class="term-reading">りすくぶんせきのたいしょう</div>
+                <div class="term-zh">風險分析對象</div>
+                <div class="term-en">Risk Analysis Target</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムの導入に際して特定される、プロジェクト遅延やコスト超過などの危険要因や不安定要素。</div>
+                <div class="summary-zh">在導入資訊系統時所特定的專案延遲、成本超支等危險因素與不穩定要素。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システムの導入に際して特定される、プロジェクトの遅延やコスト超過、セキュリティ上の脆弱性などの危険要因や不安定要素を指すものはどれか？</div>
+                        <div class="option">ア. リスク分析の対象</div>
+<div class="option">イ. リスク対応</div>
+<div class="option">ウ. 財産損失</div>
+<div class="option">エ. 人的損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：リスク分析を行うことで、これらの問題を予測し対策を講じることでプロジェクトの成功率を高めることができる。</div>
+                    </td>
+                    <td>
+                        <div>問：在導入資訊系統時所特定的專案延遲、成本超支或資安漏洞等危險與不穩定要素為何？</div>
+                        <div class="option">A. 風險分析對象（Risk Analysis Target）</div>
+<div class="option">B. 風險應對</div>
+<div class="option">C. 財產損失</div>
+<div class="option">D. 人的損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過進行風險分析，預測這些問題並採取對策，能提高專案成功率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスクの発生頻度・影響・範囲</div>
+                <div class="term-reading">りすくのはっせいひんど・えいきょう・はんい</div>
+                <div class="term-zh">風險發生頻率、影響與範圍</div>
+                <div class="term-en">Risk Occurrence Frequency, Impact, and Scope</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスク要因の分析において、発生確率、現実化した際の損害の大きさ、影響が及ぶ領域の広さを評価する概念。</div>
+                <div class="summary-zh">在風險因素分析中，評估發生機率、實現時損害大小以及影響範圍廣度的概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システム化計画におけるリスク要因分析で、リスクが起こる確率、損害の大きさ、および影響が及ぶ領域の広さを示す三つの要素の組み合わせはどれか？</div>
+                        <div class="option">ア. 発生頻度・影響・範囲</div>
+<div class="option">イ. 損害内容と損害額</div>
+<div class="option">ウ. 財産・責任・純収益損失</div>
+<div class="option">エ. 人的資源の喪失とスキル不足</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：発生頻度、影響、範囲を総合的に評価することで、適切なリスク管理の方策を立てることができる。</div>
+                    </td>
+                    <td>
+                        <div>問：在系統化計畫的風險因素分析中，表示風險發生機率、損害大小以及影響領域廣度的三個要素組合為何？</div>
+                        <div class="option">A. 發生頻率、影響與範圍（Risk Occurrence Frequency, Impact, and Scope）</div>
+<div class="option">B. 損害內容與損害額</div>
+<div class="option">C. 財產、責任與純收益損失</div>
+<div class="option">D. 人力資源喪失與技能不足</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：綜合評估發生頻率、影響與範圍，有助於擬定適當的風險管理對策。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスクの種類に応じた損害内容と損害額</div>
+                <div class="term-reading">りすくのしゅるいにおうじたそんがいないようとそんがいがく</div>
+                <div class="term-zh">依風險種類而定的損害內容與金額</div>
+                <div class="term-en">Risk Types and Corresponding Damage and Cost</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスクが引き起こす業務中断やデータ損失などの損害内容と、それに伴う金銭的影響（コスト）を分析すること。</div>
+                <div class="summary-zh">分析風險所引起的業務中斷、資料損失等損害內容，以及伴隨而來的金錢影響（成本）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システム導入時のリスクが引き起こす業務の中断やデータ損失などの損害内容およびそれに伴う金銭的影響を分析することは何か？</div>
+                        <div class="option">ア. リスクの種類に応じた損害内容と損害額</div>
+<div class="option">イ. リスクの発生頻度・影響・範囲</div>
+<div class="option">ウ. リスク分析の対象</div>
+<div class="option">エ. 人的損失の評価</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：この分析により、リスク管理対策を効果的に立案し、企業資源の最適な配分が可能となる。</div>
+                    </td>
+                    <td>
+                        <div>問：分析系統導入時風險所引發的業務中斷、資料損失等損害內容及伴隨之金錢影響為何？</div>
+                        <div class="option">A. 依風險種類而定的損害內容與金額（Risk Types and Corresponding Damage and Cost）</div>
+<div class="option">B. 風險發生頻率、影響與範圍</div>
+<div class="option">C. 風險分析對象</div>
+<div class="option">D. 人的損失評估</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：藉由這項分析，可有效擬定風險管理對策，並實現企業資源的最佳分配。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスク測定</div>
+                <div class="term-reading">りすくそくてい</div>
+                <div class="term-zh">風險測量</div>
+                <div class="term-en">Risk Assessment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">潜在的なリスクを特定し、その影響や発生確率を定量的または定性的に評価するプロセス。</div>
+                <div class="summary-zh">特定潛在風險，並以定量或定性方式評估其影響與發生機率的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：プロジェクトやシステムの導入に際して、潜在的リスクを特定し、その影響や発生確率を定量的・定性的に評価するプロセスはどれか？</div>
+                        <div class="option">ア. リスク測定</div>
+<div class="option">イ. リスク対応</div>
+<div class="option">ウ. 普及啓発</div>
+<div class="option">エ. システムライフサイクル</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：リスク測定を行うことで、優先順位を付けたり対策を講じたりすることが可能になり、スムーズなシステム導入が実現する。</div>
+                    </td>
+                    <td>
+                        <div>問：在導入專案或系統時，特定潛在風險並以定量或定性方式評估其影響與發生機率的過程為何？</div>
+                        <div class="option">A. 風險測量（Risk Assessment）</div>
+<div class="option">B. 風險應對</div>
+<div class="option">C. 普及啟發</div>
+<div class="option">D. 系統生命週期</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過進行風險測量，能夠設定優先順序並採取對策，從而實現順暢的系統導入。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 損失類型與風險應對 (財産損失・責任損失・純収益損失・人的損失・リスク対応) -->
+    <div class="group-container">
+        <div class="group-header">損失類型與風險應對 (財産損失・責任損失・純収益損失・人的損失・リスク対応)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">財産損失</div>
+                <div class="term-reading">ざいさんそんしつ</div>
+                <div class="term-zh">財產損失</div>
+                <div class="term-en">Asset Loss</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">物理的な資産の破損、デジタルデータの消失、顧客情報や機密情報の流出など、保有財産が損なわれること。</div>
+                <div class="summary-zh">實體資產損壞、數位資料消失、客戶或機密資訊外洩等所導致持有財產受損的情況。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：物理的資産の破損やデジタルデータの消失、機密情報の流出など、企業や個人が保有する資産が損なわれることを何と呼ぶか？</div>
+                        <div class="option">ア. 財産損失</div>
+<div class="option">イ. 責任損失</div>
+<div class="option">ウ. 純収益損失</div>
+<div class="option">エ. 人的損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：サイバー攻撃やシステム障害なども財産損失に含まれ、セキュリティ対策の強化によりリスクを軽減することが求められる。</div>
+                    </td>
+                    <td>
+                        <div>問：實體資產破損、數位資料消失或機密資訊外洩等，企業或個人所持有的資產受損稱為何？</div>
+                        <div class="option">A. 財產損失（Asset Loss）</div>
+<div class="option">B. 責任損失</div>
+<div class="option">C. 純收益損失</div>
+<div class="option">D. 人的損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：網路攻擊或系統故障等也包含在財產損失中，需透過強化資安對策來降低風險。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">責任損失</div>
+                <div class="term-reading">せきにんそんしつ</div>
+                <div class="term-zh">責任損失</div>
+                <div class="term-en">Liability Loss</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム不具合などでサービス提供ができず、ユーザーや顧客に対する法的・社會的な責任を遂行できなくなること。</div>
+                <div class="summary-zh">因系統故障等導致無法提供服務，致使無法對使用者或客戶履行法律與社會責任的情況。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システム不具合により適切なサービスを提供できず、ユーザーや顧客に対する責任を遂行できなくなり、企業の評判をも損なう損失はどれか？</div>
+                        <div class="option">ア. 責任損失</div>
+<div class="option">イ. 財産損失</div>
+<div class="option">ウ. 純収益損失</div>
+<div class="option">エ. 人的損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：責任損失を防ぐためには、システムの品質確保や適切な運用体制の整備が重要となる。</div>
+                    </td>
+                    <td>
+                        <div>問：因系統故障而無法提供適當服務，導致無法對使用者或客戶履行責任，並損及企業聲譽的損失為何？</div>
+                        <div class="option">A. 責任損失（Liability Loss）</div>
+<div class="option">B. 財產損失</div>
+<div class="option">C. 純收益損失</div>
+<div class="option">D. 人的損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：為防止責任損失，確保系統品質與整備適當的營運體制至關重要。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">純収益損失</div>
+                <div class="term-reading">じゅんしゅうえきそんしつ</div>
+                <div class="term-zh">純收益損失</div>
+                <div class="term-en">Net Revenue Loss</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">不具合や導入遅延によって売上が減少し、企業が予定していた利益を達成できなくなる損失。</div>
+                <div class="summary-zh">因系統故障或導入延遲導致銷售額減少，使企業無法達成預期利潤的損失。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムの不具合や導入遅延による売上減少などにより、予定していた利益を達成できなくなる損失を何と呼ぶか？</div>
+                        <div class="option">ア. 純収益損失</div>
+<div class="option">イ. 財産損失</div>
+<div class="option">ウ. 責任損失</div>
+<div class="option">エ. 人的損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：初期トラブルや操作習熟の遅れなどでサービス提供が遅れる場合に発生しやすく、適切なリスク管理で保護する必要がある。</div>
+                    </td>
+                    <td>
+                        <div>問：因系統故障或導入延遲導致銷售額下降，使企業無法達成預期利潤的損失稱為何？</div>
+                        <div class="option">A. 純收益損失（Net Revenue Loss）</div>
+<div class="option">B. 財產損失</div>
+<div class="option">C. 責任損失</div>
+<div class="option">D. 人的損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：在初期故障或操作熟練度延遲導致服務提供延誤時容易發生，必須透過適當的風險管理加以保護。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">人的損失</div>
+                <div class="term-reading">じんてきそんしつ</div>
+                <div class="term-zh">人的損失</div>
+                <div class="term-en">Human Loss</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従業員の退職、欠勤、スキル不足などにより、プロジェクトや業務で必要な人的資源が喪失・減少すること。</div>
+                <div class="summary-zh">因員工離職、缺勤或技能不足等，導致專案或業務所需的純人力資源喪失或減少的情況。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：従業員の退職やスキル不足などにより、プロジェクトの運用に必要な知識や経験を持つ人材が失われるリスクを指すものはどれか？</div>
+                        <div class="option">ア. 人的損失</div>
+<div class="option">イ. 財産損失</div>
+<div class="option">ウ. 責任損失</div>
+<div class="option">エ. 純収益損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：人的損失が発生すると、システムの運用や維持管理が困難になり、業務効率や生産性の低下を招く。</div>
+                    </td>
+                    <td>
+                        <div>問：因員工離職或技能不足等原因，導致失去具備專案營運所需知識與經驗之人才的風險為何？</div>
+                        <div class="option">A. 人的損失（Human Loss）</div>
+<div class="option">B. 財產損失</div>
+<div class="option">C. 責任損失</div>
+<div class="option">D. 純收益損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：若發生人的損失，將使系統的營運與維護管理變得困難，進而導致業務效率與生產力下降。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスク対応</div>
+                <div class="term-reading">りすくたいおう</div>
+                <div class="term-zh">風險應對</div>
+                <div class="term-en">Risk Response</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスクに対して回避、損失予防・軽減、移転、保有などの手段を講じて行動すること。</div>
+                <div class="summary-zh">對風險採取規避、損失預防與減輕、移轉或保留等手段來採取行動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システム導入時のリスクに対して、回避、損失予防・軽減、移転、保有などの手法を適切に用いて対処する行動を何と呼ぶか？</div>
+                        <div class="option">ア. リスク対応</div>
+<div class="option">イ. リスク測定</div>
+<div class="option">ウ. 財産損失</div>
+<div class="option">エ. 純収益損失</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：リスク対応を適切に行うことで、プロジェクトの成功確率を高めることができる。</div>
+                    </td>
+                    <td>
+                        <div>問：針對資訊系統導入時的風險，妥善運用規避、損失預防與減輕、移轉或保留等手法來處理的行動稱為何？</div>
+                        <div class="option">A. 風險應對（Risk Response）</div>
+<div class="option">B. 風險測量</div>
+<div class="option">C. 財產損失</div>
+<div class="option">D. 純收益損失</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：適當執行風險應對，能提高專案的成功機率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+

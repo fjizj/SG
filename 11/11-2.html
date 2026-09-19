@@ -1,0 +1,799 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業務分析・データ利活用 - 16語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>業務分析・データ利活用 - 16語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+    <!-- Group 1: 數據收集與提取技術 (サンプリング、Webクローリング、スクレイピング) -->
+    <div class="group-container">
+        <div class="group-header">數據收集與提取技術 (サンプリング・Webクローリング・スクレイピング)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サンプリング</div>
+                <div class="term-reading">さんぷりんぐ</div>
+                <div class="term-zh">抽樣</div>
+                <div class="term-en">Sampling</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">全体のデータから一部を選び出し、そのサンプルを元に分析や推測を行う手法。</div>
+                <div class="summary-zh">從整體資料中選出部分樣本，並根據該樣本進行分析或推測的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：全体のデータから一部を選び出し、そのサンプルを元に全体の傾向を推測する手法はどれか？</div>
+                        <div class="option">ア. サンプリング</div>
+<div class="option">イ. シミュレーション</div>
+<div class="option">ウ. クラスタリング</div>
+<div class="option">エ. モデリング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：サンプリングは、すべてのデータを調べることが難しい場合に、代表的なサンプルを調査することでコストや時間を節約し有効な情報を得る手法である。</div>
+                    </td>
+                    <td>
+                        <div>問：從整體資料中挑選出一部分，並根據該樣本推測整體傾向的手法為何？</div>
+                        <div class="option">A. 抽樣（Sampling）</div>
+<div class="option">B. 模擬（Simulation）</div>
+<div class="option">C. 分群（Clustering）</div>
+<div class="option">D. 建模（Modeling）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：當調查所有資料有困難時，抽樣透過調查代表性樣本來節省成本與時間並獲取有效資訊。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">Webクローリング</div>
+                <div class="term-reading">うぇぶくろーりんぐ</div>
+                <div class="term-zh">網頁爬取</div>
+                <div class="term-en">Web Crawling</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネット上の情報を自動的に収集するため、プログラムがWebサイトを巡回しデータを取得する技術。</div>
+                <div class="summary-zh">為了自動收集網際網路上的資訊，透過程式巡訪網站並獲取資料的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：インターネット上の情報を自動的に収集するため、特定のアルゴリズムを用いてWebサイトを巡回しデータを取得する技術はどれか？</div>
+                        <div class="option">ア. Webクローリング</div>
+<div class="option">イ. Webスクレイピング</div>
+<div class="option">ウ. データマイニング</div>
+<div class="option">エ. テキストマイニング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：Webクローリングは検索エンジンなどがリンクをたどって新しいページを見つけ出し、内容を解析してインデックス化するために使用される。</div>
+                    </td>
+                    <td>
+                        <div>問：為自動收集網際網路上的資訊，使用特定演算法巡訪網站並取得資料的技術為何？</div>
+                        <div class="option">A. 網頁爬取（Web Crawling）</div>
+<div class="option">B. 網頁抓取（Web Scraping）</div>
+<div class="option">C. 資料探勘（Data Mining）</div>
+<div class="option">D. 文字探勘（Text Mining）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：網頁爬取是搜尋引擎等追蹤連結尋找新頁面，並解析內容以進行索引所使用的技術。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">スクレイピング</div>
+                <div class="term-reading">すくれいぴんぐ</div>
+                <div class="term-zh">網頁抓取</div>
+                <div class="term-en">Web Scraping</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">Webサイトから特定の情報を自動で抽出・収集し、解析や再利用に役立てる技術。</div>
+                <div class="summary-zh">從網站中自動提取與收集特定資訊，並有助於分析或再利用的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：Webサイトから特定の情報を自動で抽出し、価格比較やビジネス分析などのために大量のデータを収集する技術はどれか？</div>
+                        <div class="option">ア. スクレイピング</div>
+<div class="option">イ. クローリング</div>
+<div class="option">ウ. キャッシング</div>
+<div class="option">エ. ロギング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：スクレイピングはWebサイトからデータを直接抽出する技術であり、利用規約や法律に従って行う必要がある。</div>
+                    </td>
+                    <td>
+                        <div>問：從網站中自動提取特定資訊，為價格比較或商業分析等目的收集大量資料的技術為何？</div>
+                        <div class="option">A. 網頁抓取（Web Scraping）</div>
+<div class="option">B. 爬取（Crawling）</div>
+<div class="option">C. 快取（Caching）</div>
+<div class="option">D. 記錄（Logging）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：網頁抓取是直接從網站擷取資料的技術，執行時必須遵守相關使用條款與法律規範。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 品質管理與業務分析工具 (QC七つ道具、新QC七つ道具) -->
+    <div class="group-container">
+        <div class="group-header">品質管理與業務分析工具 (QC七つ道具・新QC七つ道具)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">QC七つ道具</div>
+                <div class="term-reading">きゅーしーななつどうぐ</div>
+                <div class="term-zh">QC七大手法 / 品質管制七大工具</div>
+                <div class="term-en">Quality Control Seven Tools</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">品質管理や業務改善に役立つ基本的な手法の総称で、パレート図や特性要因図などが含まれる。</div>
+                <div class="summary-zh">有助於品質管理與業務改善的基本手法總稱，包含柏拉圖、特性要因圖等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：品質管理や業務改善において、パレート図や特性要因図、ヒストグラムなどを含み、問題の特定や解決に用いられる手法の総称はどれか？</div>
+                        <div class="option">ア. QC七つ道具</div>
+<div class="option">イ. 新QC七つ道具</div>
+<div class="option">ウ. IE手法</div>
+<div class="option">エ. OR手法</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：QC七つ道具は層別、パレート図、特性要因図、散布図、ヒストグラム、チェックシート、管理図の7つの基本的な手法を指す。</div>
+                    </td>
+                    <td>
+                        <div>問：在品質管理與業務改善中，包含柏拉圖、特性要因圖、直方圖等，用於問題識別與解決的手法總稱為何？</div>
+                        <div class="option">A. QC七大手法（QC七つ道具）</div>
+<div class="option">B. 新QC七大手法</div>
+<div class="option">C. IE手法（工業工程）</div>
+<div class="option">D. OR手法（作業研究）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：QC七大手法指層別法、柏拉圖、特性要因圖、散布圖、直方圖、查檢表、管制圖等七種基本手法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">新QC七つ道具</div>
+                <div class="term-reading">しんきゅーしちつどうぐ</div>
+                <div class="term-zh">新QC七大手法 / 新品質管制七大工具</div>
+                <div class="term-en">New Seven Tools for QC</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">複雑な問題や言語データを視覚的に整理し解決するための手法で、親和図法や連関図法などが含まれる。</div>
+                <div class="summary-zh">將複雜問題或文字資料以視覺化方式整理並解決的手法，包含親和圖法、關聯圖法等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：親和図法、連関図法、系統図法、PDPC法など、言語データを視覚的に整理して問題解決を図る手法の総称はどれか？</div>
+                        <div class="option">ア. 新QC七つ道具</div>
+<div class="option">イ. QC七つ道具</div>
+<div class="option">ウ. ブレインストーミング</div>
+<div class="option">エ. デシジョンツリー</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：新QC七つ道具は、数値化しにくい定性的な言語データを図解して整理し、複雑な問題の解決やプロセス改善を効率的に行うための手法である。</div>
+                    </td>
+                    <td>
+                        <div>問：親和圖法、關聯圖法、系統圖法、PDPC法等，將文字資料視覺化整理以解決問題的手法總稱為何？</div>
+                        <div class="option">A. 新QC七大手法（新QC七つ道具）</div>
+<div class="option">B. QC七大手法</div>
+<div class="option">C. 頭腦風暴</div>
+<div class="option">D. 決策樹</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：新QC七大手法是將難以量化的質性文字資料透過圖解整理，有效解決複雜問題與改善流程的手法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 意見集思與預測決策 (ブレーンストーミング、デルファイ法、シミュレーション、デシジョンツリー) -->
+    <div class="group-container">
+        <div class="group-header">意見集思與預測決策 (ブレーンストーミング・デルファイ法・シミュレーション・デシジョンツリー)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ブレーンストーミング</div>
+                <div class="term-reading">ぶれーんすとーみんぐ</div>
+                <div class="term-zh">腦力激盪 / 頭腦風暴</div>
+                <div class="term-en">Brainstorming</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">批判を避け、質より量を重視して参加者が自由にアイデアを出し合い創造性を引き出す手法。</div>
+                <div class="summary-zh">避免批判、重量不重質，由參與者自由提出點子以激發創造力的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：参加者が批判を避け、質よりも量を重視して自由に意見やアイデアを出し合い、新しい発想を生み出す手法はどれか？</div>
+                        <div class="option">ア. ブレインストーミング</div>
+<div class="option">イ. デルファイ法</div>
+<div class="option">ウ. ケーススタディ</div>
+<div class="option">エ. ベンチマーク</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ブレーンストーミングは他の人のアイデアに便乗することも推奨され、業務計画や問題解決において創造性を引き出すために用いられる。</div>
+                    </td>
+                    <td>
+                        <div>問：參與者避免批判、重量不重質地自由提出意見與點子，以產生新想法的手法為何？</div>
+                        <div class="option">A. 腦力激盪（Brainstorming）</div>
+<div class="option">B. 德爾菲法</div>
+<div class="option">C. 案例研究</div>
+<div class="option">D. 基準對標</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：腦力激盪鼓勵搭乘別人的點子便車，常用於業務計畫或問題解決中以引發創造力。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">デルファイ法</div>
+                <div class="term-reading">でるふぁいほう</div>
+                <div class="term-zh">德爾菲法</div>
+                <div class="term-en">Delphi Method</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">複数の専門家が匿名で意見を出し合い、統計的なフィードバックを繰り返して合意形成を図る調査手法。</div>
+                <div class="summary-zh">多位專家以匿名方式提出意見，透過反覆的統計回饋來達成共識的調查手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：専門家が匿名で意見を提出し、その統計的結果を基に再度意見を求めて合意形成を図る調査手法はどれか？</div>
+                        <div class="option">ア. デルファイ法</div>
+<div class="option">イ. ブレインストーミング</div>
+<div class="option">ウ. モニタリング</div>
+<div class="option">エ. センサス</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：デルファイ法は参加者間の心理的影響を排除し、市場性や技術の将来予測などを客観的に分析するために用いられる。</div>
+                    </td>
+                    <td>
+                        <div>問：專家以匿名方式提出意見，並根據其統計結果再次徵詢意見以達成共識的調查手法為何？</div>
+                        <div class="option">A. 德爾菲法（Delphi Method）</div>
+<div class="option">B. 腦力激盪</div>
+<div class="option">C. 監測</div>
+<div class="option">D. 普查</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：德爾菲法能排除參與者之間的心理影響，適用於對市場性或技術未來預測進行客觀分析。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">シミュレーション</div>
+                <div class="term-reading">しむれーしょん</div>
+                <div class="term-zh">模擬</div>
+                <div class="term-en">Simulation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">コンピュータ等を用いて現実の状況やシステムを模倣し、様々な条件下での結果を予測する手法。</div>
+                <div class="summary-zh">利用電腦等工具模倣現實狀況或系統，並預測各種條件下結果的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：コンピュータを使って実際の動作やシステムを再現し、様々な条件下での結果を予測することでリスクを減らす手法はどれか？</div>
+                        <div class="option">ア. シミュレーション</div>
+<div class="option">イ. サンプリング</div>
+<div class="option">ウ. スコアリング</div>
+<div class="option">エ. プロトタイピング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：シミュレーションは実際に試すことが難しい状況や高コストな場合に、実験や計画の段階で意思決定を支援するのに有効である。</div>
+                    </td>
+                    <td>
+                        <div>問：利用電腦重現實際動作或系統，並透過預測不同條件下的結果來降低風險的手法為何？</div>
+                        <div class="option">A. 模擬（Simulation）</div>
+<div class="option">B. 抽樣</div>
+<div class="option">C. 評分</div>
+<div class="option">D. 原型製作</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：模擬在實際嘗試困難或成本高昂的情況下，於實驗或計畫階段對支援決策非常有效。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">デシジョンツリー</div>
+                <div class="term-reading">でしじょんつりー</div>
+                <div class="term-zh">決策樹</div>
+                <div class="term-en">Decision Tree</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ノードや枝を用いて選択肢や結果を木の形に視覚的に表現し、複雑な意思決定や予測を行う手法。</div>
+                <div class="summary-zh">使用節點與分支將選項或結果以樹狀圖視覺化表現，進行複雜決策或預測的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：選択肢や結果を木の形をしたグラフで構成し、複雑な決定過程や機械学習における未来の結果予測を行う手法はどれか？</div>
+                        <div class="option">ア. デシジョンツリー</div>
+<div class="option">イ. アローダイアグラム</div>
+<div class="option">ウ. マトリックス図</div>
+<div class="option">エ. 特性要因図</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：デシジョンツリーはノードや枝を用いて最適な選択を導き出す手助けをし、ビジネスの意思決定やデータ分析で広く用いられる。</div>
+                    </td>
+                    <td>
+                        <div>問：將選項與結果組成樹狀圖形，用以進行複雜決策過程或機器學習中未來結果預測的手法為何？</div>
+                        <div class="option">A. 決策樹（Decision Tree）</div>
+<div class="option">B. 要徑圖 / 箭線圖</div>
+<div class="option">C. 矩陣圖</div>
+<div class="option">D. 特性要因圖</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：決策樹利用節點與分支協助導出最佳選擇，廣泛應用於商業決策與資料分析中。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: 數據處理與可視化 (データの加工・分析、データの可視化、ビッグデータ、データサイエンス) -->
+    <div class="group-container">
+        <div class="group-header">數據處理與可視化 (データの加工・分析・データの可視化・ビッグデータ・データサイエンス)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データの加工・分析</div>
+                <div class="term-reading">でーたのかこう・ぶんせき</div>
+                <div class="term-zh">資料加工與分析</div>
+                <div class="term-en">Data Processing and Analysis</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">収集した生データを整理し、統計的手法等を用いて傾向やパターンを見つけ出す一連の作業。</div>
+                <div class="summary-zh">整理收集到的原始資料，並運用統計手法等找出趨勢或模式的一系列作業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：収集した生データのフォーマットを整えたり不要な情報を削除したりした上で、統計的手法を用いて傾向を見つけ出すプロセスはどれか？</div>
+                        <div class="option">ア. データの加工・分析</div>
+<div class="option">イ. データの可視化</div>
+<div class="option">ウ. Webスクレイピング</div>
+<div class="option">エ. サンプリング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データの加工・分析は、企業の意思決定を支援し競争力を向上させるための重要なプロセスである。</div>
+                    </td>
+                    <td>
+                        <div>問：整理所收集的原始資料格式、刪除不必要資訊後，運用統計手法找出趨勢的過程為何？</div>
+                        <div class="option">A. 資料加工與分析（Data Processing and Analysis）</div>
+<div class="option">B. 資料視覺化</div>
+<div class="option">C. 網頁抓取</div>
+<div class="option">D. 抽樣</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：資料加工與分析是支援企業決策並提升競爭力的重要過程。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データの可視化</div>
+                <div class="term-reading">でーたのかしか</div>
+                <div class="term-zh">資料視覺化</div>
+                <div class="term-en">Data Visualization</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">数値や複雑なデータをグラフやチャート等の形式で表現し、視覚的・直感的に把握できるようにする技術。</div>
+                <div class="summary-zh">將數值或複雜資料以圖表等形式表現，使其能被視覺化且直覺掌握的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：複雑なデータをグラフやチャートなどの形式で表現し、情報を迅速かつ直感的に把握できるようにする技術はどれか？</div>
+                        <div class="option">ア. データの可視化</div>
+<div class="option">イ. データの加工・分析</div>
+<div class="option">ウ. データサイエンス</div>
+<div class="option">エ. シミュレーション</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データの可視化によって、売上データの変動や重要なトレンドを一目で確認でき、意思決定をサポートする。</div>
+                    </td>
+                    <td>
+                        <div>問：將複雜資料以圖表等形式表現，使人能迅速且直覺掌握資訊的技術為何？</div>
+                        <div class="option">A. 資料視覺化（Data Visualization）</div>
+<div class="option">B. 資料加工與分析</div>
+<div class="option">C. 資料科學</div>
+<div class="option">D. 模擬</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過資料視覺化，能一眼看出銷售資料的變動與重要趨勢，進而支援決策。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ビッグデータ</div>
+                <div class="term-reading">びっぐでーた</div>
+                <div class="term-zh">大數據</div>
+                <div class="term-en">Big Data</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">通常のソフトウェアでは処理が困難なほど、多様かつリアルタイムに生成される大量のデータの集合。</div>
+                <div class="summary-zh">用一般軟體難以處理、具有多樣性且即時產生的龐大資料集合。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：テキスト、画像、動画などの形式を含み、通常のデータ処理ソフトウェアでは処理が難しいほど大量かつ多様なデータの集合を何と呼ぶか？</div>
+                        <div class="option">ア. ビッグデータ</div>
+<div class="option">イ. オープンデータ</div>
+<div class="option">ウ. メタデータ</div>
+<div class="option">エ. マスターデータ</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ビッグデータはSNSの投稿や購買履歴などが含まれ、分析することで人々の行動やトレンドを理解するリソースとなる。</div>
+                    </td>
+                    <td>
+                        <div>問：包含文字、圖片、影片等形式，且用一般資料處理軟體難以處理的龐大與多樣化資料集合稱為何？</div>
+                        <div class="option">A. 大數據（Big Data）</div>
+<div class="option">B. 開放資料（Open Data）</div>
+<div class="option">C. 中繼資料（Metadata）</div>
+<div class="option">D. 主檔資料（Master Data）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：大數據包含社群貼文或購買歷史等，透過分析能成為理解人們行為與趨勢的資源。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データサイエンス</div>
+                <div class="term-reading">でーたさいえんす</div>
+                <div class="term-zh">資料科學</div>
+                <div class="term-en">Data Science</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">数学や統計学、コンピュータサイエンス手法を駆使し、大量のデータから有用な知見や価値を引き出す学問。</div>
+                <div class="summary-zh">運用數學、統計學及電腦科學手法，從大量資料中萃取出有用見解與價值的學問。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：数学や統計学、コンピュータサイエンスの手法を駆使して大量のデータから価値ある情報を引き出し、意思決定をサポートする学問や技術はどれか？</div>
+                        <div class="option">ア. データサイエンス</div>
+<div class="option">イ. データマイニング</div>
+<div class="option">ウ. 人工知能</div>
+<div class="option">エ. オペレーションズリサーチ</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データサイエンスは顧客の購買傾向を把握し新製品開発やマーケティング改善に役立てるなど、経済や社会の様々な分野で活用されている。</div>
+                    </td>
+                    <td>
+                        <div>問：運用數學、統計學與電腦科學手法從大量資料中提取有價值資訊並支援決策的學問或技術為何？</div>
+                        <div class="option">A. 資料科學（Data Science）</div>
+<div class="option">B. 資料探勘</div>
+<div class="option">C. 人工智慧</div>
+<div class="option">D. 作業研究</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：資料科學被應用於掌握顧客購買傾向、有助於新產品開發或行銷改善等經濟與社會的各個領域。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 5: 數據品質與認知偏差 (精度と偏り、統計的バイアス、認知バイアス) -->
+    <div class="group-container">
+        <div class="group-header">數據品質與認知偏差 (精度と偏り・統計的バイアス・認知バイアス)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">精度と偏り</div>
+                <div class="term-reading">せいどとかたより</div>
+                <div class="term-zh">精度與偏誤</div>
+                <div class="term-en">Precision and Bias</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">測定のばらつきの少なさ（精度）と真の値からのずれ（偏り）を表し、品質評価に重要な概念。</div>
+                <div class="summary-zh">代表測定值的離散程度（精度）與偏離真實值的程度（偏誤），是品質評估的重要概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：測定のばらつきの少なさを示す「精度」と、真の値からのずれを示す「偏り」に関して、正しい説明はどれか？</div>
+                        <div class="option">ア. 高い精度を持った測定器が偏ったデータを出力することもある。</div>
+<div class="option">イ. 精度が高ければ偏りは必ずゼロになる。</div>
+<div class="option">ウ. 偏りが小さければ精度は必ず高くなる。</div>
+<div class="option">エ. 精度と偏りは全く同じ概念である。</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：精度は測定のばらつきの少なさ、偏りは真の値からのずれを示し、精度が高くても偏りが存在する場合があるため両方の管理が欠かせない。</div>
+                    </td>
+                    <td>
+                        <div>問：關於表示測定離散程度的「精度」與表示偏離真實值程度的「偏誤」，下列何者正確？</div>
+                        <div class="option">A. 具有高精度的測量儀器有時也會輸出具偏誤的資料。</div>
+<div class="option">B. 只要精度高，偏誤必定為零。</div>
+<div class="option">C. 只要偏誤小，精度必定高。</div>
+<div class="option">D. 精度與偏誤是完全相同的概念。</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：精度表示離散少，偏誤表示偏離真值；即使精度很高也可能存在偏誤，因此兩者的管理都不可或缺。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">統計的バイアス</div>
+                <div class="term-reading">とうけいてきばいあす</div>
+                <div class="term-zh">統計偏差</div>
+                <div class="term-en">Statistical Bias</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データの収集方法や分析手法に起因し、分析結果が実際の値からずれてしまう傾向。</div>
+                <div class="summary-zh">起因於資料收集方法或分析手法，導致分析結果偏離實際數值的傾向。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：データの収集方法や分析手法に起因し、結果が実際の値からずれて不正確な結論を導く原因となる現象はどれか？</div>
+                        <div class="option">ア. 統計的バイアス</div>
+<div class="option">イ. 認知バイアス</div>
+<div class="option">ウ. サンプリング誤差</div>
+<div class="option">エ. 標準偏差</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：統計的バイアスを避けるためには、データ不均一性を考慮し、特定のグループ偏りを防ぐ適切な分析手法を選択することが重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：起因於資料收集方法或分析手法，導致結果偏離實際數值並導出不正確結論的原因為何？</div>
+                        <div class="option">A. 統計偏差（Statistical Bias）</div>
+<div class="option">B. 認知偏差</div>
+<div class="option">C. 抽樣誤差</div>
+<div class="option">D. 標準差</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：為避免統計偏差，必須考慮資料不均質性，並選擇適當的分析手法以防止特定群體偏誤。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">認知バイアス</div>
+                <div class="term-reading">にんちばいあす</div>
+                <div class="term-zh">認知偏誤</div>
+                <div class="term-en">Cognitive Bias</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人間の思考や判断において、確証バイアスやアンカリング効果など無意識に生じる偏りのこと。</div>
+                <div class="summary-zh">在人類思考與判斷中，如確証偏誤或定錨效應等無意識產生的偏差。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：自分の信じたい情報だけを重視する確証バイアスなど、人間の思考や判断に影響を及ぼす無意識的な偏りを何と呼ぶか？</div>
+                        <div class="option">ア. 認知バイアス</div>
+<div class="option">イ. 統計的バイアス</div>
+<div class="option">ウ. 選択バイアス</div>
+<div class="option">エ. 授かり効果</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データ利活用においては認知バイアスが結果に影響を与えるため、データに基づいた客観的な視点を持つことが重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：如只重視自己想相信之資訊的確証偏誤等，影響人類思考與判斷的無意識偏差稱為何？</div>
+                        <div class="option">A. 認知偏誤（Cognitive Bias）</div>
+<div class="option">B. 統計偏差</div>
+<div class="option">C. 選擇偏誤</div>
+<div class="option">D. 稟賦效應</div>
+                        <div class="answer">正確答案：A</div>
+                        /廠
+                        <div class="analysis">解析：在資料利活用中，認知偏誤可能會影響結果，因此保持基於資料的客觀視角非常重要。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

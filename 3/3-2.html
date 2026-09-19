@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システムの評価指標 - 7語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>システムの評価指標 - 7語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組 1: 系統效能與處理能力指標 -->
+    <div class="group-container">
+        <div class="group-header">系統效能與處理能力指標</div>
+
+        <!-- Term 1: レスポンスタイム -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">レスポンスタイム</div>
+                <div class="term-reading">れすぽんすたいむ</div>
+                <div class="term-zh">響應時間</div>
+                <div class="term-en">Response Time</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムが入力に対して応答を返すまでの時間。ユーザーの体感速度や離脱率に大きく影響する。</div>
+                <div class="summary-zh">系統從接收輸入到傳回回應所需的時間。會大幅影響使用者的體感速度與流失率。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        オンライン処理システムで、端末から要求を送出してから、応答が戻り始めるまでの時間を何と呼ぶか。
+<br>
+                        <div class="option">ア. スループット</div>
+                        <div class="option">イ. ターンアラウンドタイム</div>
+                        <div class="option">ウ. レスポンスタイム</div>
+                        <div class="option">エ. 処理時間</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：レスポンスタイム（応答時間）は、ユーザーが処理を要求してから最初の応答が返ってくるまでの時間を指します。</div></td>
+                    <td>                        在線上處理系統中，從終端發送請求到開始收到回應的時間稱爲什麼？
+<br>
+                        <div class="option">A. 吞吐量</div>
+                        <div class="option">B. 週轉時間</div>
+                        <div class="option">C. 響應時間</div>
+                        <div class="option">D. 處理時間</div>
+                        <div class="answer">答案：C</div>
+<br>
+                        <div class="analysis">解析：響應時間（Response Time）是指使用者發出發送請求到系統傳回第一筆回應結果之間的時間段。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: スループット -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">スループット</div>
+                <div class="term-reading">するーぷっと</div>
+                <div class="term-zh">吞吐量</div>
+                <div class="term-en">Throughput</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムが単位時間あたりに処理できるデータ量や作業量。TPSなどで表され処理能力を示す。</div>
+                <div class="summary-zh">系統在單位時間內能處理的資料量或作業量。常以TPS等單位表示，用來衡量處理能力。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システムが単位時間あたりに処理できるデータ量や処理件数を表す指標はどれか。
+<br>
+                        <div class="option">ア. レスポンスタイム</div>
+                        <div class="option">イ. スループット</div>
+                        <div class="option">ウ. ベンチマーク</div>
+                        <div class="option">エ. 稼働率</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：スループットは、単位時間あたりに処理できる仕事量（データ量やトランザクション数など）を示す指標です。</div></td>
+                    <td>                        表示系統在單位時間內能處理的資料量或處理件數的指標是哪一個？
+<br>
+                        <div class="option">A. 響應時間</div>
+                        <div class="option">B. 吞吐量</div>
+                        <div class="option">C. 基準測試</div>
+                        <div class="option">D. 可用率</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：吞吐量（Throughput）是指系統在單位時間內所能完成的工作總量或處理的交易次數（如TPS）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 2: 系統可靠性與可用性指標 -->
+    <div class="group-container">
+        <div class="group-header">系統可靠性與可用性指標</div>
+
+        <!-- Term 3: MTBF -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">MTBF</div>
+                <div class="term-reading">えむてぃーびーえふ</div>
+                <div class="term-zh">平均故障間隔</div>
+                <div class="term-en">Mean Time Between Failures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">故障と故障の間の平均稼働時間。数値が高いほどシステムが安定しており信頼性が高い。</div>
+                <div class="summary-zh">兩次故障之間的平均正常運作時間。數值越高代表系統越穩定、可靠性越高。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システムの信頼性を表す指標で、連続して稼働している平均時間を示すものはどれか。
+<br>
+                        <div class="option">ア. MTTR</div>
+                        <div class="option">イ. MTBF</div>
+                        <div class="option">ウ. 稼働率</div>
+                        <div class="option">エ. スループット</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：MTBF（平均故障間隔）は修理から次の故障までの平均稼働時間であり、信頼性の高さを示します。</div></td>
+                    <td>                        用於表示系統可靠性、代表連續正常運作之平均時間的指標是哪一個？
+<br>
+                        <div class="option">A. MTTR</div>
+                        <div class="option">B. MTBF</div>
+                        <div class="option">C. 可用率</div>
+                        <div class="option">D. 吞吐量</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：MTBF（平均故障間隔）是指兩次故障之間的平均連續正常運作時間，數值越高表示可靠度越高。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4: MTTR -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">MTTR</div>
+                <div class="term-reading">えむてぃーてぃーあーる</div>
+                <div class="term-zh">平均修復時間</div>
+                <div class="term-en">Mean Time to Repair</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">故障が発生してから修理・復旧までに要する平均時間。数値が短いほど復旧速度が早い。</div>
+                <div class="summary-zh">發生故障後進行維修與復原所需的平均時間。數值越短代表復原速度越快。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システムが故障したときの、修理に要する平均時間を示す指標はどれか。
+<br>
+                        <div class="option">ア. MTTR</div>
+                        <div class="option">イ. MTBF</div>
+                        <div class="option">ウ. 応答時間</div>
+                        <div class="option">エ. スループット</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：MTTR（平均修理時間）は、故障発生から復旧完了までにかかる平均時間であり、保守性を評価します。</div></td>
+                    <td>                        表示系統發生故障時，修理所需之平均時間的指標是哪一個？
+<br>
+                        <div class="option">A. MTTR</div>
+                        <div class="option">B. MTBF</div>
+                        <div class="option">C. 響應時間</div>
+                        <div class="option">D. 吞吐量</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：MTTR（平均修復時間）代表從故障發生到修復完成所需的平均時間，數值越短說明維護性越佳。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5: 稼働率 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">稼働率</div>
+                <div class="term-reading">かどうりつ</div>
+                <div class="term-zh">可用率</div>
+                <div class="term-en">Availability Rate</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムが正常に稼働している時間の割合。MTBF ÷ (MTBF + MTTR) で算出される。</div>
+                <div class="summary-zh">系統正常運作的時間比例。可透過 MTBF ÷ (MTBF + MTTR) 計算得出。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        MTBFが45時間、MTTRが5時間であるシステムの稼働率は幾らか。
+<br>
+                        <div class="option">ア. 0.10</div>
+                        <div class="option">イ. 0.85</div>
+                        <div class="option">ウ. 0.90</div>
+                        <div class="option">エ. 0.95</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：稼働率は「MTBF ÷ (MTBF ＋ MTTR)」で求められます。45 ÷ (45 ＋ 5) ＝ 45 ÷ 50 ＝ 0.90 となります。</div></td>
+                    <td>                        若某系統的 MTBF 為 45 小時，MTTR 為 5 小時，則該系統的可用率（稼働率）是多少？
+<br>
+                        <div class="option">A. 0.10</div>
+                        <div class="option">B. 0.85</div>
+                        <div class="option">C. 0.90</div>
+                        <div class="option">D. 0.95</div>
+                        <div class="answer">答案：C</div>
+<br>
+                        <div class="analysis">解析：可用率計算公式為 MTBF ÷ (MTBF + MTTR)。計算為 45 ÷ (45 + 5) = 45 ÷ 50 = 0.90 (90%)。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 3: 系統成本評估指標 -->
+    <div class="group-container">
+        <div class="group-header">系統成本評估指標</div>
+
+        <!-- Term 6: イニシャルコスト -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">イニシャルコスト</div>
+                <div class="term-reading">いにしゃるこすと</div>
+                <div class="term-zh">初始成本</div>
+                <div class="term-en">Initial Cost</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの導入や開始時に必要な初期費用。機器購入費や設定費、構築費などが含まれる。</div>
+                <div class="summary-zh">導入或啟動系統時所需的最初費用。包含硬體軟體購買費、安裝與初期設定費等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システムの導入時に発生する、ハードウェア購入費や初期設定費用などのことを何と呼ぶか。
+<br>
+                        <div class="option">ア. ランニングコスト</div>
+                        <div class="option">イ. イニシャルコスト</div>
+                        <div class="option">ウ. TCO</div>
+                        <div class="option">エ. 運用コスト</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：イニシャルコスト（初期費用）は、システムを新たに導入・稼働させるまでに必要な費用のことです。</div></td>
+                    <td>                        系統導入時所發生的硬體購買費與初期設定費用等，稱為以下哪一種成本？
+<br>
+                        <div class="option">A. 營運成本</div>
+                        <div class="option">B. 初始成本</div>
+                        <div class="option">C. TCO</div>
+                        <div class="option">D. 運作成本</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：初始成本（Initial Cost）是指引進、建立或啟動新系統時所需支付的一次性初期費用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 7: ランニングコスト -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ランニングコスト</div>
+                <div class="term-reading">らんにんぐこすと</div>
+                <div class="term-zh">營運成本</div>
+                <div class="term-en">Running Cost</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムを運用・維持するために継続して発生する費用。保守費や電気代、人件費などが含まれる。</div>
+                <div class="summary-zh">系統運作與維持期間所需持續支付的費用。包含維護費、電費及技術人員人工費等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システム導入後、日常の運用や保守のために継続的に発生する費用を表すものはどれか。
+<br>
+                        <div class="option">ア. イニシャルコスト</div>
+                        <div class="option">イ. ランニングコスト</div>
+                        <div class="option">ウ. 開発コスト</div>
+                        <div class="option">エ. 初期投資</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ランニングコスト（運用コスト）は、システムの運用・維持に定期的かつ継続的にかかり続ける費用です。</div></td>
+                    <td>                        系統導入後，為了日常運作與維護而持續發生的費用稱為以下哪一種？
+<br>
+                        <div class="option">A. 初始成本</div>
+                        <div class="option">B. 營運成本</div>
+                        <div class="option">C. 開發成本</div>
+                        <div class="option">D. 初期投資</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：營運成本（Running Cost）是指系統上線後，維護、操作及營運過程中持續產生的費用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

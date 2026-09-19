@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ソリューションビジネス - 6語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>ソリューションビジネス - 6語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- Group 1: 雲端服務與主權雲 (Cloud Services and Sovereign Cloud) -->
+    <div class="group-container">
+        <div class="group-header">雲端服務與主權雲</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クラウドサービス</div>
+                <div class="term-reading">くらうどさーびす</div>
+                <div class="term-zh">雲端服務</div>
+                <div class="term-en">Cloud Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを通じてデータの保存やアプリケーション利用、サーバ運用などのコンピュータサービスを提供する仕組み。</div>
+                <div class="summary-zh">透過網際網路提供資料儲存、應用程式使用及伺服器營運等各種電腦服務的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>クラウドサービスに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを通じて、データの保存やアプリケーションの利用、サーバの運用などのコンピュータサービスを提供すること。</div>
+                        <div class="option">イ. 特定の国や地域の法律や規制のみに準拠し、国外のデータ移転を完全に禁止すること。</div>
+                        <div class="option">ウ. 自社の物理的なハードウェア上に直接ソフトウェアをインストールして運用すること。</div>
+                        <div class="option">エ. インターネットを介さずに、専用の物理回線のみで限定された端末間だけで接続すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】クラウドサービスはインターネットを通じて提供される各種のコンピュータサービスであり、データの保存やアプリケーションの利用、サーバの運用などが含まれます。初期投資が少なく柔軟性が高いのが特徴です。</div></td>
+                    <td>                        <strong>【問】</strong>關於雲端服務的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路提供資料儲存、應用程式使用以及伺服器營運等電腦服務。</div>
+                        <div class="option">B. 僅遵循特定國家或地區的法律與規範，完全禁止跨國資料傳輸。</div>
+                        <div class="option">C. 直接在自家公司的實體硬體上安裝軟體進行營運。</div>
+                        <div class="option">D. 不透過網際網路，僅透過專用實體線路在受限的終端機之間進行連接。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】雲端服務是透過網際網路所提供的各種電腦服務，包含資料儲存、應用程式使用與伺服器營運等，具備低初期投資與高靈活性的特點。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ソブリンクラウド</div>
+                <div class="term-reading">そぶりんくらうど</div>
+                <div class="term-zh">主權雲</div>
+                <div class="term-en">Sovereign Cloud</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の国や地域の法律や規制に準拠し、データの所有権やプライバシー保護に重点を置いたクラウドサービス。</div>
+                <div class="summary-zh">遵循特定國家或地區的法律與規範，以資料所有權與隱私保護為重點的雲端服務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ソブリンクラウドに関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 特定の国や地域の法律や規制に準拠し、データの所有権やプライバシーの保護に重点置いて運営されるクラウドサービス。</div>
+                        <div class="option">イ. 世界中のすべてのユーザーが国境を意識せずに自由にデータを無制限で共有し合うシステム。</div>
+                        <div class="option">ウ. 個人ユーザー向けに特化し、法的規制を受けずに完全に自由なファイル共有を行う仕組み。</div>
+                        <div class="option">エ. 物理的なサーバーを持たず、完全に仮想空間上だけで独立して動作するオープンソースのOS。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ソブリンクラウドは特定の国や地域の法律や規制に準拠して運営されるクラウドサービスであり、データの所有権やプライバシーの保護に重点を置き、ユーザーが自国の法律に則ってデータを管理できることを目的としています。</div></td>
+                    <td>                        <strong>【問】</strong>關於主權雲（Sovereign Cloud）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 遵循特定國家或地區的法律與規範，以資料所有權與隱私保護為重點來營運的雲端服務。</div>
+                        <div class="option">B. 全世界所有用戶在不意識國境的情況下自由且無限期共享資料的系統。</div>
+                        <div class="option">C. 專為個人用戶設計、不受法律規範約束而完全自由進行檔案共享的機制。</div>
+                        <div class="option">D. 不具備實體伺服器、完全僅在虛擬空間中獨立運作的開源作業系統。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】主權雲是遵循特定國家或地區法律規範所營運的雲端服務，重點在於資料所有權與隱私保護，旨在讓用戶依循本國法律管理資料。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 雲端服務模式 (Cloud Service Models - SaaS, PaaS, IaaS, ASP) -->
+    <div class="group-container">
+        <div class="group-header">雲端服務模式</div>
+        
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SaaS</div>
+                <div class="term-reading">さーす</div>
+                <div class="term-zh">軟體即服務</div>
+                <div class="term-en">Software as a Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを介してクラウド上で動作するアプリケーションを利用し、常に最新の機能を提供するモデル。</div>
+                <div class="summary-zh">透過網際網路使用在雲端上運作的應用程式，並隨時提供最新功能的服務模式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>SaaS（Software as Service）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを介してクラウド上で動作するアプリケーションを利用し、月額や年額で最新機能を提供するモデル。</div>
+                        <div class="option">イ. アプリケーション開発やデプロイを行うための開発プラットフォームやフレームワークを提供するサービス。</div>
+                        <div class="option">ウ. サーバやストレージなどのインフラ基盤をインターネットを通じて貸し出すサービス。</div>
+                        <div class="option">エ. 特定のアプリケーションを自社のコンピュータに直接インストールして買い切る形態。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】SaaSはインターネットを介してソフトウェアを提供するモデルであり、クラウド上で動作するアプリケーションにアクセスし、メンテナンスやアップデートはサービス提供者によって行われます。</div></td>
+                    <td>                        <strong>【問】</strong>關於SaaS（Software as a Service）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路使用在雲端上運作的應用程式，並以月費或年費形式提供最新功能的模式。</div>
+                        <div class="option">B. 提供應用程式開發與部署所需之開發平台或框架的服務。</div>
+                        <div class="option">C. 透過網際網路租借伺服器或儲存設備等基礎架構的服務。</div>
+                        <div class="option">D. 直接將特定應用程式安裝在自家電腦上並以買斷方式使用的型態。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】SaaS是透過網際網路提供軟體的模式，讓用戶存取在雲端上執行的應用程式，維護與更新皆由服務提供者處理。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">PaaS</div>
+                <div class="term-reading">ぱーす</div>
+                <div class="term-zh">平台即服務</div>
+                <div class="term-en">Platform as a Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">アプリケーション開発やデプロイを行うためのプラットフォームや開発環境をクラウド上で提供するサービス。</div>
+                <div class="summary-zh">在雲端上提供用於應用程式開發與部署的平台或開發環境的服務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>PaaS（Platform as a Service）に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. アプリケーションの開発やデプロイを行うためのプラットフォームを提供し、開発者がサーバ管理に煩わされずに開発に集中できるようにすること。</div>
+                        <div class="option">イ. 物理的なハードウェアを持たずとも、サーバやストレージなどの基盤を自由な設定で借り受けること。</div>
+                        <div class="option">ウ. インターネットを介して完成されたビジネス用アプリケーションソフトを月額制でそのまま利用すること。</div>
+                        <div class="option">エ. 特定の国や地域の法律や規制に準拠し、データの所有権やプライバシー保護に特化して管理すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】PaaSはアプリケーション開発やデプロイを行うためのプラットフォームを提供するものであり、開発者はサーバ管理やインフラ構築に煩わされることなく、アプリケーション開発に集中できます。</div></td>
+                    <td>                        <strong>【問】</strong>關於PaaS（Platform as a Service）的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 提供應用程式開發與部署所需的平台，使開發者無需受伺服器管理困擾而能專注於開發。</div>
+                        <div class="option">B. 在不具備實體硬體的情況下，以自由設定租借伺服器或儲存設備等基礎架構。</div>
+                        <div class="option">C. 透過網際網路直接以月費制使用已完成的商業應用軟體。</div>
+                        <div class="option">D. 遵循特定國家或地區的法律與規範，專注於資料所有權與隱私保護的管轄。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】PaaS提供用於應用程式開發與部署的平台，讓開發者免於處理伺服器管理與基礎架構建置，專心進行應用程式開發。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">IaaS</div>
+                <div class="term-reading">いあーす</div>
+                <div class="term-zh">基礎架構即服務</div>
+                <div class="term-en">Infrastructure as a Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを通じてサーバやストレージなどのITインフラ基盤を提供するサービス。</div>
+                <div class="summary-zh">透過網際網路提供伺服器或儲存設備等IT基礎架構的服務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>IaaS（Infrastructure as a Service）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを通じて、サーバやストレージなどの基盤（インフラ）を必要なだけ提供するサービス。</div>
+                        <div class="option">イ. クラウド上でアプリケーションの開発ツールやフレームワークのみを提供するプラットフォーム。</div>
+                        <div class="option">ウ. インターネットを介して特定の業務アプリケーションソフトをサービスとして利用させるモデル。</div>
+                        <div class="option">エ. 特定の国や地域の法規制に準拠したデータ管理を安全に行うための専用ネットワーク。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】IaaSはインターネットを通じてサーバやストレージなどの基盤を提供するサービスです。物理的なハードウェアを持たずとも必要なリソースを借りることができ、柔軟な環境構築が可能です。</div></td>
+                    <td>                        <strong>【問】</strong>關於IaaS（Infrastructure as a Service）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路，按需提供伺服器或儲存設備等基礎架構（Infrastructure）的服務。</div>
+                        <div class="option">B. 在雲端上僅提供應用程式開發工具與框架的平台。</div>
+                        <div class="option">C. 透過網際網路將特定業務應用軟體作為服務使用的模式。</div>
+                        <div class="option">D. 為了安全執行符合特定國家或地區法律規範之資料管理的專用網路。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】IaaS是透過網際網路提供伺服器與儲存設備等基礎架構的服務。無需擁有實體硬體即可租借所需資源，以靈活建構環境。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ASP</div>
+                <div class="term-reading">えーえすぴー</div>
+                <div class="term-zh">應用服務提供者</div>
+                <div class="term-en">Application Service Provider</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定のアプリケーションソフトウェアをインターネット経由で提供するサービスモデル。</div>
+                <div class="summary-zh">透過網際網路提供特定應用程式軟體的服務模式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ASP（Application Service Provider）に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 特定のアプリケーションソフトウェアをインターネット経由で提供し、ユーザーがサーバ上で直接利用できるようにするサービスモデル。</div>
+                        <div class="option">イ. アプリケーション開発やデプロイを行うためのプラットフォームや開発環境をクラウド上で構築すること。</div>
+                        <div class="option">ウ. インターネット上で不特定多数のユーザーがメッセージを投稿し、自由に意見交換を行う仕組み。</div>
+                        <div class="option">エ. 特定の国や地域の法律や規制に準拠してクラウドシステム全体のセキュリティを高めること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ASPは特定のアプリケーションソフトウェアをインターネット経由で提供するサービスモデルです。ユーザーはインストールせずにサーバ上のアプリを利用し、初期投資を抑えられます。</div></td>
+                    <td>                        <strong>【問】</strong>關於ASP（Application Service Provider）的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路提供特定應用程式軟體，讓用戶能直接在伺服器上使用的服務模式。</div>
+                        <div class="option">B. 在雲端上建構用於應用程式開發與部署的平台或開發環境。</div>
+                        <div class="option">C. 由不特定多數用戶在網路上張貼訊息並自由進行意見交流的機制。</div>
+                        <div class="option">D. 遵循特定國家或地區的法律與規範以提升整體雲端系統安全性的作法。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】ASP是透過網際網路提供特定應用程式軟體的服務模式。用戶無需安裝即可利用伺服器上的應用程式，能有效降低初期投資。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

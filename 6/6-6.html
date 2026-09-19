@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトの時間 - 3語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトの時間 - 3語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案時間與時程管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">時間の対象群</div>
+                <div class="term-reading">じかんのたいしょうぐん</div>
+                <div class="term-zh">時程管理（時間管理領域）</div>
+                <div class="term-en">Time Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトのアクティビティ順序付け、期間見積もり、スケジュール作成を行い、期日通りの完了を図る管理プロセス。</div>
+                <div class="summary-zh">進行專案活動排序、工期估算與制定時程表，以確保專案按時完成的完整管理過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトの時間管理（スケジュール・マネジメント）におけるプロセスの推進順序として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. スケジュール作成 → アクティビティの順序設定 → アクティビティの定義</div>
+                        <div class="option">イ. アクティビティの定義 → アクティビティの順序設定 → アクティビティの所要期間見積り → スケジュール作成</div>
+                        <div class="option">ウ. 所要期間見積り → スケジュール作成 → アクティビティの定義</div>
+                        <div class="option">エ. アクティビティの順序設定 → スケジュール作成 → アクティビティの定義</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：時間管理（スケジュール・マネジメント）では、まず作業（アクティビティ）を定義し、その依存関係を順序付けし、所要期間を見積もった上で、最終的なスケジュールを作成します。</div></td>
+                    <td>                        【題目】關於專案時間管理（時程管理）的程序推進順序，下列何者最恰當？
+<br>
+                        <div class="option">A. 制定時程表 → 活動排序 → 定義活動</div>
+                        <div class="option">B. 定義活動 → 活動排序 → 估算活動工期 → 制定時程表</div>
+                        <div class="option">C. 估算工期 → 制定時程表 → 定義活動</div>
+                        <div class="option">D. 活動排序 → 制定時程表 → 定義活動</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案時程管理標準流程為：定義活動（識別作業項目） → 活動排序（確定前後相依關係） → 估算活動工期 → 制定時程表（Schedule）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">活動リスト</div>
+                <div class="term-reading">かつどうりすと</div>
+                <div class="term-zh">活動清單</div>
+                <div class="term-en">Activity List</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトで実施すべきすべてのアクティビティ（タスク）の識別子や作業内容を網羅した一覧表。</div>
+                <div class="summary-zh">完整列出專案中預計執行的所有活動（任務）之識別碼與具體工作內容的項目清單。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「アクティビティの定義」プロセスのアウトプットとして作成される「活動リスト（アクティビティ・リスト）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトで実施するすべてのアクティビティを網羅し、各アクティビティの識別子や作業記述を含む一覧表。</div>
+                        <div class="option">イ. チームメンバーの過去の給与支給実績を一覧化した表。</div>
+                        <div class="option">ウ. 納品後のシステム障害履歴を記録するリスト。</div>
+                        <div class="option">エ. プロジェクトで使用するサーバーハードウェアの型番一覧。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：活動リスト（アクティビティ・リスト）は、WBSのワークパッケージを分解して特定された、プロジェクトで実行すべきすべてのアクティビティを漏れなく記述した一覧表です。</div></td>
+                    <td>                        【題目】關於執行「定義活動」過程所產出的「活動清單（Activity List）」說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 涵蓋專案中欲執行的所有活動，並包含各活動之識別碼與工作說明描述的清單。</div>
+                        <div class="option">B. 彙整團隊成員過去薪資發放紀錄的列表。</div>
+                        <div class="option">C. 記錄系統交付後障礙歷程的清單。</div>
+                        <div class="option">D. 專案所使用伺服器硬體型號清單。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：活動清單（Activity List）包含專案預計執行的全部活動項目，包含活動識別碼（ID）與足夠詳細的工作說明範疇，是後續進行時程排程與估算工期基礎。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">PERT</div>
+                <div class="term-reading">ぱーと</div>
+                <div class="term-zh">計畫評核術</div>
+                <div class="term-en">Program Evaluation and Review Technique</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">アローダイアグラム等のネットワーク図を用いて作業関係を示し、3点見積もり等により工期や経路を分析する手法。</div>
+                <div class="summary-zh">運用箭線圖等網路圖呈現工作相依性，並透過三點估算法分析整體工期與關鍵路徑的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】PERT（Program Evaluation and Review Technique）に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 各タスクの依存関係やクリティカルパスを視覚化し、プロジェクト全体の所要期間や遅延リスクを分析する手法。</div>
+                        <div class="option">イ. チームメンバーの勤務シフトを自動で決定するためのシフト表作成アルゴリズム。</div>
+                        <div class="option">ウ. ソフトウェアのソースコード内のセキュリティ脆弱性を自動検出するツール。</div>
+                        <div class="option">エ. 開発されたシステムデータベースの物理バックアップ設計手法。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：PERTは、アクティビティ間の順序関係をネットワーク図で表し、3点見積もり（楽観値・悲観値・最確値）などを活用してクリティカルパスやプロジェクト全体の完了所要時間を予測・管理する手法です。</div></td>
+                    <td>                        【題目】關於 PERT（計畫評核術）的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 將各任務間的相依性與關鍵路徑視覺化，藉以分析專案整體所需工期與延誤風險的手法。</div>
+                        <div class="option">B. 用於自動決定團隊成員排班的班表制定演算法。</div>
+                        <div class="option">C. 自動檢測軟體原始碼內資安漏洞的工具。</div>
+                        <div class="option">D. 所開發系統資料庫的實體備份設計手法。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：PERT（Program Evaluation and Review Technique）透過箭線圖/網路圖展現活動間的順序與相依關係，並以三點估算法（樂觀值、悲觀值、最可能值）估算預期工期，找出關鍵路徑（Critical Path）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

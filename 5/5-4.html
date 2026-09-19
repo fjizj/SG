@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ネットワーク管理 - 4語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>ネットワーク管理 - 4語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+  <!-- Group 1: 網路運營統計與故障管理 -->
+  <div class="group-container">
+    <div class="group-header">【網路運營統計與故障管理】</div>
+
+    <!-- 稼働統計 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">稼働統計</div>
+        <div class="term-reading">かどうとうけい</div>
+        <div class="term-zh">運營統計</div>
+        <div class="term-en">Operational Statistics</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">システムの稼働時間や遅延、障害頻度などのデータを収集・分析し、性能評価や改善を行う。</div>
+        <div class="summary-zh">收集並分析系統運作時間、延遲及故障頻率等數據，用於評估性能與進行系統改善。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>ネットワークやシステムの稼働状態を継続的に計測し、稼働率や応答時間などのデータを収集・分析する活動はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 稼働統計の収集</div>
+              <div class="option">イ. 障害の切分け</div>
+              <div class="option">ウ. リリース管理</div>
+              <div class="option">エ. 構成管理</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>稼働統計の収集は、システムの稼働率、応答時間、トラフィック量などを計測・収集し、性能評価やキャパシティ管理に役立てる活動です。</span></td>
+            <td>              <strong>題目：</strong>持續測量網路或系統的運作狀態，並收集與分析可用性及回應時間等資料的活動為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 收集運營統計資料</div>
+              <div class="option">B. 故障隔離與定位</div>
+              <div class="option">C. 發布管理</div>
+              <div class="option">D. 組態管理</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>收集運營統計資料是指對系統可用性、回應時間及流量等數據進行測量與收集，以用於效能評估及產能管理。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 障害の切分け -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">障害の切分け</div>
+        <div class="term-reading">しょうがいのきりわけ</div>
+        <div class="term-zh">故障隔離與定位</div>
+        <div class="term-en">Fault Isolation</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">発生した障害がシステムのどの部分に起因するかを分析し、影響範囲を限定して切り離す。</div>
+        <div class="summary-zh">分析發生的故障源自系統的哪個部分，限定影響範圍並將問題部位單獨隔離。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>システムに障害が発生した際、影響範囲を特定し、問題がハードウェア、ソフトウェア、ネットワークのどこにあるかを明確にするプロセスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 障害の切分け</div>
+              <div class="option">イ. キャパシティ計画</div>
+              <div class="option">ウ. アクセス制御</div>
+              <div class="option">エ. バックアップの作成</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>障害の切分け（Fault Isolation）は、問題の発生箇所を限定・特定し、迅速な復旧や他部分への影響防止を図る手続です。</span></td>
+            <td>              <strong>題目：</strong>當系統發生故障時，確定影響範圍並明確問題存在於硬體、軟體或網路何處的過程為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 故障隔離與定位</div>
+              <div class="option">B. 容量規劃</div>
+              <div class="option">C. 存取控制</div>
+              <div class="option">D. 建立備份</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>故障隔離與定位（Fault Isolation）是指限定並明確問題發生的具體位置，從而達成迅速復原並防止影響擴大至其他部分。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 障害原因の特定 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">障害原因の特定</div>
+        <div class="term-reading">しょうがいげんいんのとくてい</div>
+        <div class="term-zh">故障原因認定</div>
+        <div class="term-en">Root Cause Analysis</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">表面的な現象だけでなく、障害が発生した根本的な要因を体系的に究明し再発を防ぐ。</div>
+        <div class="summary-zh">不僅處理表面症狀，而是系統性地深掘並查明故障發生的根本原因以防止再發。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>障害管理において、単なる一時的な回避策の実施にとどまらず、問題の根本原因を追究して再発防止策を講じるプロセスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. インシデント管理</div>
+              <div class="option">イ. 問題管理（障害原因の特定）</div>
+              <div class="option">ウ. 変更管理</div>
+              <div class="option">エ. サービスレベル管理</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>問題管理では、インシデントの根本原因（障害原因）を特定・追究し、永久的な解決策や再発防止策を策定します。</span></td>
+            <td>              <strong>題目：</strong>在故障管理中，不局限於執行臨時應變措施，而是深入追查問題根本原因並制定再發防止對策的過程為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 事件管理</div>
+              <div class="option">B. 問題管理（故障原因認定）</div>
+              <div class="option">C. 變更管理</div>
+              <div class="option">D. 服務水準管理</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>問題管理旨在查明與追查事件的根本原因（Root Cause Analysis），進而制定永久的解決方案與防範再發措施。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 復旧措置 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">復旧措置</div>
+        <div class="term-reading">ふっきゅうそち</div>
+        <div class="term-zh">恢復措施</div>
+        <div class="term-en">Recovery Measures</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">障害発生時にバックアップからの復元や予備系統への切り替えを行い、正常な状態に戻す。</div>
+        <div class="summary-zh">發生故障時，透過從備份復原或切換至備用系統等方式，將系統恢復至正常運作狀態。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>システム障害が発生した際、サービスの継続性を確保するために予備のシステムに切り替えたりデータを復元したりする対応はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 予防保守</div>
+              <div class="option">イ. 復旧措置</div>
+              <div class="option">ウ. 要件定義</div>
+              <div class="option">エ. 性能評価</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>復旧措置（Recovery Measures）は、障害による影響を最小限に抑え、システムを迅速に正常状態へ戻すための作業全般を指します。</span></td>
+            <td>              <strong>題目：</strong>發生系統故障時，為了確保服務持續性而切換至備用系統或復原資料的處置為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 預防性維護</div>
+              <div class="option">B. 恢復措施</div>
+              <div class="option">C. 需求定義</div>
+              <div class="option">D. 效能評估</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>恢復措施（Recovery Measures）是指將故障所造成的損害降至最低，並迅速將系統回復至正常狀態的所有相關作業。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

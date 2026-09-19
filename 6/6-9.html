@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトの品質 - 2語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトの品質 - 2語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案品質管理與檢驗報告</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">品質管理の遂行</div>
+                <div class="term-reading">ひんしつかんりのすいこう</div>
+                <div class="term-zh">執行品質管理</div>
+                <div class="term-en">Quality Management Execution</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">品質目標を達成するために、計画に基づく品質保証や品質コントロールのプロセスを実行・評価・改善する活動。</div>
+                <div class="summary-zh">為達成品質目標，依據計畫執行品質保證與品質管制過程並進行評估與改善的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトの品質マネジメントプロセスにおいて、成果物やプロセスが品質要求を満たしているかを検証し、不具合の要因を特定して改善する活動として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトのコストベースラインを設定すること。</div>
+                        <div class="option">イ. 品質要件に基づいて検査やテストを実施し、成果物の適合性を確認・管理すること。</div>
+                        <div class="option">ウ. チームメンバーの労働時間を管理して残業を削減すること。</div>
+                        <div class="option">エ. 開発作業の完了後に顧客へ一括して請求書を発行すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：品質管理の遂行（品質コントロール／品質保証）では、定義された品質基準や計画に基づき、テストや検査を通じて成果物やプロセスの適合性を検証し、品質改善を図ります。</div></td>
+                    <td>                        【題目】在專案品質管理過程中，驗證交付標的與過程是否符合品質要求，並找出瑕疵原因加以改善的活動，下列何者最恰當？
+<br>
+                        <div class="option">A. 設定專案的成本基準線。</div>
+                        <div class="option">B. 依據品質需求進行檢驗與測試，確認並管理交付標的之符合性。</div>
+                        <div class="option">C. 管理團隊成員的工作時間以減少加班。</div>
+                        <div class="option">D. 開發作業完成後統一向客戶開立發票。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：執行品質管理（含品質保證與品質管制）係依據既定品質標準與計畫，透過測試與檢驗來驗證成果物與程序的合規性，並據以進行品質維護與改善。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">検査報告書</div>
+                <div class="term-reading">けんさほうこくしょ</div>
+                <div class="term-zh">檢驗報告書</div>
+                <div class="term-en">Inspection Report</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">実施された製品やサービスの品質検査結果、合格基準への適合状況、発見された不具合を記録した正式文書。</div>
+                <div class="summary-zh">記錄產品或服務之品質檢驗結果、符合合格標準之狀況及所發現缺陷的正式文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム開発や製品製造における「検査報告書」の目的および記述内容に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 開発プロジェクト全体の総予算と資金計画のみを記録する。</div>
+                        <div class="option">イ. 実施した検査の対象、基準、測定結果および判定結果を記録し、品質状態を証跡として明確にする。</div>
+                        <div class="option">ウ. プログラマーごとの出勤状況と評価点を公表する。</div>
+                        <div class="option">エ. 次年度の製品マーケティング戦略と広告費用を提示する。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：検査報告書は、対象となる成果物に対してどのような基準で検査を行い、どのような結果や不具合が得られたかを記録し、関係者に品質評価の根拠を示すための重要な文書です。</div></td>
+                    <td>                        【題目】關於系統開發或產品製造中「檢驗報告書」的目的與內容描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 僅記錄開發專案整體的總預算與資金計畫。</div>
+                        <div class="option">B. 記錄所執行檢驗的對象、標準、測量結果與判定結果，做為品質狀態的正式佐證。</div>
+                        <div class="option">C. 公開每位程式設計師的出勤狀況與評分。</div>
+                        <div class="option">D. 提出下一年度的產品行銷策略與廣告費用。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：檢驗報告書（Inspection Report）記錄檢驗標的、採用標準、測試數據與合格判定結果，提供利害關係人客觀之品質評估證明，並做為後續改善與除錯之依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

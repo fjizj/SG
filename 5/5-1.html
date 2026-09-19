@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ネットワーク方式 - 20語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>ネットワーク方式 - 20語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組 1: 資訊社會與通訊技術 -->
+    <div class="group-container">
+        <div class="group-header">資訊社會與通訊技術</div>
+
+        <!-- Term 1: ネットワーク社会 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ネットワーク社会</div>
+                <div class="term-reading">ねっとわーくしゃかい</div>
+                <div class="term-zh">網路社會</div>
+                <div class="term-en">Networked Society</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットなどを通じて人々や組織が高度に接続され、情報共有や価値創造が行われる社会。</div>
+                <div class="summary-zh">透過網際網路等通訊技術讓個人與組織高度緊密連結，並進行資訊共享與價值創造的社會。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        情報通信ネットワークの進展により、地理的制約を超えて人々が相互に情報を共有し交流する社会形態を何と呼ぶか。
+<br>
+                        <div class="option">ア. ネットワーク社会</div>
+                        <div class="option">イ. 農業社会</div>
+                        <div class="option">ウ. 工業社会</div>
+                        <div class="option">エ. 封建社会</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ネットワーク社会とは、ICTの発展により人々や組織がネットワークを介して密接に繋がり、情報交換や協働を行う社会のことです。</div></td>
+                    <td>                        隨著資訊通訊網路的發展，打破地理限制使人們能夠相互共享資訊與交流的社會型態稱爲什麼？
+<br>
+                        <div class="option">A. 網路社會</div>
+                        <div class="option">B. 農業社會</div>
+                        <div class="option">C. 工業社會</div>
+                        <div class="option">D. 封建社會</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：網路社會（Networked Society）是指因資訊通訊技術的普及，使得個人與組織透過網路緊密連結並進行資訊交換的現代社會型態。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: 情報社会 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報社会</div>
+                <div class="term-reading">じょうほうしゃかい</div>
+                <div class="term-zh">資訊社會</div>
+                <div class="term-en">Information Society</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報の収集・処理・伝達が中心となり、経済や生活の発展において情報が重要な資源となる社会。</div>
+                <div class="summary-zh">以資訊的收集、處理與傳播為中心，資訊成為驅動經濟與日常生活發展之重要資源的社會。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        物質やエネルギー以上に、情報の価値やその流通・活用が社会・経済の中心的な役割を果たす社会を何と呼ぶか。
+<br>
+                        <div class="option">ア. 情報社会</div>
+                        <div class="option">イ. 工業社会</div>
+                        <div class="option">ウ. 狩猟社会</div>
+                        <div class="option">エ. 封建社会</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：情報社会は、情報の生産、加工、流通が価値創造の中心的役割を果たす社会を指します。</div></td>
+                    <td>                        相較於物質或能源，資訊的價值及其流通與應用在社會及經濟中佔據核心主導地位的社會稱為什麼？
+<br>
+                        <div class="option">A. 資訊社會</div>
+                        <div class="option">B. 工業社會</div>
+                        <div class="option">C. 狩獵社會</div>
+                        <div class="option">D. 封建社會</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：資訊社會（Information Society）是指資訊的取得、處理與傳遞成為整體社會與經濟活動核心驅動力的現代社會型態。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: ICT -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ICT</div>
+                <div class="term-reading">あいしーてぃー</div>
+                <div class="term-zh">資訊與通訊技術</div>
+                <div class="term-en">Information and Communication Technology</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報処理技術に通信技術を組み合わせ、データ共有やコミュニケーションを促進する技術の総称。</div>
+                <div class="summary-zh">將資訊處理技術與通訊技術相結合，用以促進資料共享與溝通交流之技術的總稱。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        IT（情報技術）に通信（Communication）の概念を加え、ネットワークを介した情報共有や伝達技術を指す用語はどれか。
+<br>
+                        <div class="option">ア. ICT</div>
+                        <div class="option">イ. IoT</div>
+                        <div class="option">ウ. AI</div>
+                        <div class="option">エ. DX</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ICT（Information and Communication Technology）は、従来のITにコミュニケーションの要素を加えた情報通信技術全般を指します。</div></td>
+                    <td>                        在傳統 IT（資訊技術）基礎上加入「通訊（Communication）」概念，指稱透過網路進行資訊共享與傳遞技術的術語是哪一個？
+<br>
+                        <div class="option">A. ICT</div>
+                        <div class="option">B. IoT</div>
+                        <div class="option">C. AI</div>
+                        <div class="option">D. DX</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：ICT（Information and Communication Technology）即資訊與通訊技術，著重強調資訊技術在通訊與人際溝通上的應用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 2: 區域網路與無線通訊 -->
+    <div class="group-container">
+        <div class="group-header">區域網路與無線通訊</div>
+
+        <!-- Term 4: LAN -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">LAN</div>
+                <div class="term-reading">らん</div>
+                <div class="term-zh">區域網路</div>
+                <div class="term-en">Local Area Network</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">同一の建物や敷地内など、限定された狭い範囲でコンピュータ同士を接続するネットワーク。</div>
+                <div class="summary-zh">在同一棟建築物或校區等特定狹小地理範圍內，將多台電腦與設備相互連接的網路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        企業や家庭などの限定されたエリア内で、機器同士を接続してデータ共有などを行うネットワークはどれか。
+<br>
+                        <div class="option">ア. LAN</div>
+                        <div class="option">イ. WAN</div>
+                        <div class="option">ウ. MAN</div>
+                        <div class="option">エ. PAN</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：LAN（Local Area Network）は、同一建物内など限定された狭い地域で構成される構内情報通信網です。</div></td>
+                    <td>                        在企業或家庭等限定的狹小區域內，將設備互相連接以進行資料共享的網路是哪一個？
+<br>
+                        <div class="option">A. LAN</div>
+                        <div class="option">B. WAN</div>
+                        <div class="option">C. MAN</div>
+                        <div class="option">D. PAN</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：LAN（區域網路）是指在單一建築物或家庭等封閉區域內建立的高速內部資料傳輸網路。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5: 有線LAN -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">有線LAN</div>
+                <div class="term-reading">ゆうせんらん</div>
+                <div class="term-zh">有線區域網路</div>
+                <div class="term-en">Wired Local Area Network</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">イーサネットケーブル等を用いて物理的に機器を結び、高速かつ安定した通信を提供するネットワーク。</div>
+                <div class="summary-zh">使用乙太網路線等實體纜線將設備互相連接，提供高速且穩定傳輸品質的區域網路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        無線LANと比較して、電波干渉を受けにくく、安定した高速通信と高いセキュリティが得られるネットワーク接続方式はどれか。
+<br>
+                        <div class="option">ア. 有線LAN</div>
+                        <div class="option">イ. Bluetooth</div>
+                        <div class="option">ウ. Wi-Fi</div>
+                        <div class="option">エ. 5G</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：有線LANはLANケーブル（イーサネット）を使用するため、電波干渉を受けず通信が安定しておりセキュリティ面でも優れています。</div></td>
+                    <td>                        與無線 LAN 相比，不易受電磁干擾、能提供穩定高速傳輸且具備較高安全性的網路連接方式是哪一個？
+<br>
+                        <div class="option">A. 有線 LAN</div>
+                        <div class="option">B. 藍牙（Bluetooth）</div>
+                        <div class="option">C. Wi-Fi</div>
+                        <div class="option">D. 5G</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：有線 LAN 使用實體網路線（Ethernet Cable）進行傳輸，因此具有抗干擾強、傳輸穩定性高以及安全性優於無線網路的特點。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6: 無線LAN -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">無線LAN</div>
+                <div class="term-reading">むせんらん</div>
+                <div class="term-zh">無線區域網路</div>
+                <div class="term-en">Wireless Local Area Network</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">電波などの無線技術を用いて機器間を接続し、ケーブルなしでネットワーク利用を可能にする技術。</div>
+                <div class="summary-zh">利用電波等無線通訊技術連接設備，免去實體接線即可連接內部網路與網際網路的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        電波を利用してコンピュータやスマートフォンをネットワークに接続する規格で、代表的なものにWi-Fiがある技術はどれか。
+<br>
+                        <div class="option">ア. 無線LAN</div>
+                        <div class="option">イ. 有線LAN</div>
+                        <div class="option">ウ. 光ファイバー</div>
+                        <div class="option">エ. ADSL</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：無線LANは電波を利用してデータ通信を行うLANの構築技術であり、Wi-Fiはその国際標準規格のブランド名です。</div></td>
+                    <td>                        利用電波將電腦或智慧型手機連接至網路的標準規格，代表性技術為 Wi-Fi 的是哪一個？
+<br>
+                        <div class="option">A. 無線 LAN</div>
+                        <div class="option">B. 有線 LAN</div>
+                        <div class="option">C. 光纖</div>
+                        <div class="option">D. ADSL</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：無線 LAN（WLAN）透過高頻電波進行資料傳送，免去了實體佈線的限制，Wi-Fi 是最常見的無線 LAN 標準。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 7: 無線LANアクセスポイント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">無線LANアクセスポイント</div>
+                <div class="term-reading">むせんらんあくせすぽいんと</div>
+                <div class="term-zh">無線區域網路基地台</div>
+                <div class="term-en">Wireless LAN Access Point</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">無線LAN端末からの電波を受信し、有線ネットワークやインターネットへ仲介接続する通信機器。</div>
+                <div class="summary-zh">接收無線 LAN 終端設備發出的電波訊號，並將其轉接至有線網路或網際網路的通訊設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        無線LAN機器（クライアント）からの電波を受け取り、有線LANやインターネットとの通信を中継する機器はどれか。
+<br>
+                        <div class="option">ア. 無線LANアクセスポイント</div>
+                        <div class="option">イ. ハブ</div>
+                        <div class="option">ウ. モデム</div>
+                        <div class="option">エ. リピータ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：無線LANアクセスポイント（AP）は、無線端末からの電波を有線LAN信号に変換して中継する通信装置です。</div></td>
+                    <td>                        接收來自無線 LAN 終端（客戶端）的電波，並將其封包中繼轉發至有線 LAN 或網際網路的設備是哪一個？
+<br>
+                        <div class="option">A. 無線 LAN 基地台（AP）</div>
+                        <div class="option">B. 集線器（Hub）</div>
+                        <div class="option">C. 數據機（Modem）</div>
+                        <div class="option">D. 中繼器（Repeater）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：無線 LAN 基地台（Access Point）扮演無線訊號與有線網路之間的橋樑，負責接收並轉送無線封包。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 8: SSID -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SSID</div>
+                <div class="term-reading">えすえすあいでぃ</div>
+                <div class="term-zh">服務設定識別碼</div>
+                <div class="term-en">Service Set Identifier</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">無線LAN（Wi-Fi）アクセスポイントを識別するために設定される最大32文字のネットワーク名。</div>
+                <div class="summary-zh">用於識別無線 LAN（Wi-Fi）基地台所設定的網路名稱，長度上限為 32 個字元。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        無線LANにおいて、混信を防止して接続対象のアクセスポイントを識別するために割り振られるネットワーク名はどれか。
+<br>
+                        <div class="option">ア. SSID</div>
+                        <div class="option">イ. MACアドレス</div>
+                        <div class="option">ウ. IPアドレス</div>
+                        <div class="option">エ. Subnet Mask</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SSID（Service Set Identifier）は、無線LANのアクセスポイントを識別するための名称です。</div></td>
+                    <td>                        在無線 LAN 中，為了防止訊號干擾並識別欲連接之基地台而設定的網路名稱是哪一個？
+<br>
+                        <div class="option">A. SSID</div>
+                        <div class="option">B. MAC 位址</div>
+                        <div class="option">C. IP 位址</div>
+                        <div class="option">D. 子網路遮罩</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：SSID（Service Set Identifier）是 Wi-Fi 基地台的識別名稱，使用者透過搜尋 SSID 來選擇欲加入的無線網路。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 3: 廣域網路與網際網路連接 -->
+    <div class="group-container">
+        <div class="group-header">廣域網路與網際網路連接</div>
+
+        <!-- Term 9: WAN -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">WAN</div>
+                <div class="term-reading">わん</div>
+                <div class="term-zh">廣域網路</div>
+                <div class="term-en">Wide Area Network</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">離れた都市や国、企業の拠点間を電気通信事業者の回線を利用して結合する大規模ネットワーク。</div>
+                <div class="summary-zh">利用電信業者的專線或公用網路，將遠距離的城市、國家或企業分公司互相串聯的大規模網路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        地理的に離れた拠点（本社と支社など）を公衆回線や専用線を用いて相互接続する広域ネットワークはどれか。
+<br>
+                        <div class="option">ア. WAN</div>
+                        <div class="option">イ. LAN</div>
+                        <div class="option">ウ. PAN</div>
+                        <div class="option">エ. SAN</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：WAN（Wide Area Network）は、電気通信事業者の網を利用して地理的に離れたLAN同士を結ぶネットワークです。</div></td>
+                    <td>                        利用電信業者之專線或公用線路，將地理上相隔遙遠的據點（如總公司與分公司）互相連接的廣域網路是哪一個？
+<br>
+                        <div class="option">A. WAN</div>
+                        <div class="option">B. LAN</div>
+                        <div class="option">C. PAN</div>
+                        <div class="option">D. SAN</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：WAN（廣域網路）涵蓋跨城市、跨國家的廣大地理範圍，主要用於連結各個分散的區域網路（LAN）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 10: インターネット接続サービス -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">インターネット接続サービス</div>
+                <div class="term-reading">いんたーねっとせつぞくさーびす</div>
+                <div class="term-zh">網際網路連接服務</div>
+                <div class="term-en">Internet Connection Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">光ファイバーやモバイル通信などを用いて、ユーザーをインターネットへ接続する通信サービス。</div>
+                <div class="summary-zh">透過光纖、行動數據等線路管道，協助使用者終端設備接入國際網際網路的通訊服務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        光ファイバー（FTTH）やモバイル回線などを通じて、家庭や企業をインターネットに物理的・論理的に接続するサービスはどれか。
+<br>
+                        <div class="option">ア. インターネット接続サービス</div>
+                        <div class="option">イ. クラウドストレージサービス</div>
+                        <div class="option">ウ. DNSサービス</div>
+                        <div class="option">エ. ホスティングサービス</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：インターネット接続サービスは、通信回線提供事業者やISPによって提供され、端末をインターネット環境へ接続させます。</div></td>
+                    <td>                        透過光纖（FTTH）或行動網路等實體/無線線路，將家庭或企業終端連通至網際網路的服務稱為哪一個？
+<br>
+                        <div class="option">A. 網際網路連接服務</div>
+                        <div class="option">B. 雲端儲存服務</div>
+                        <div class="option">C. DNS 服務</div>
+                        <div class="option">D. 主機託管服務</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：網際網路連接服務（Internet Connection Service）是指由電信商或 ISP 提供的網路存取與連線基礎服務。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 11: インターネットサービスプロバイダ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">インターネットサービスプロバイダ</div>
+                <div class="term-reading">いんたーねっとさーびすぷろばいだ</div>
+                <div class="term-zh">網際網路服務提供者 (ISP)</div>
+                <div class="term-en">Internet Service Provider</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーに対してインターネットへの接続環境や関連サービス（メール等）を提供する事業者。</div>
+                <div class="summary-zh">向個人或企業用戶提供網際網路接入能力及相關附加服務（如電子郵件帳號）的營運業者。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ユーザーに対してインターネットへの接続回線やIPアドレスの設定、メールアカウントなどを提供する事業者はどれか。
+<br>
+                        <div class="option">ア. ISP</div>
+                        <div class="option">イ. ASP</div>
+                        <div class="option">ウ. SaaS</div>
+                        <div class="option">エ. SIer</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ISP（Internet Service Provider）は、利用者がインターネットにアクセスするための通信経路や環境を提供する事業者です。</div></td>
+                    <td>                        向使用者提供網際網路連線管道、IP 位址配置及電子郵件帳號等服務的商業機構是哪一個？
+<br>
+                        <div class="option">A. ISP</div>
+                        <div class="option">B. ASP</div>
+                        <div class="option">C. SaaS</div>
+                        <div class="option">D. SIer</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：ISP（Internet Service Provider，網際網路服務提供者）是讓終端使用者連上國際網際網路的中介橋樑機構。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 4: 網路架構與傳輸協定 -->
+    <div class="group-container">
+        <div class="group-header">網路架構與傳輸協定</div>
+
+        <!-- Term 12: TCP/IP -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">TCP/IP</div>
+                <div class="term-reading">てぃーしーぴーあいぴー</div>
+                <div class="term-zh">TCP/IP 協定組</div>
+                <div class="term-en">TCP/IP</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットで標準的に使用される通信プロトコルの群。データの信頼性確保とアドレス管理を行う。</div>
+                <div class="summary-zh">網際網路廣泛採用的標準通訊協定集合，分別負責資料傳送的可靠性驗證與定址定路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        インターネットや標準的なネットワークで広く使用されている、通信信頼性を担保するTCPとアドレスを識別するIPを組み合わせた通信プロトコル群はどれか。
+<br>
+                        <div class="option">ア. TCP/IP</div>
+                        <div class="option">イ. HTTP/HTTPS</div>
+                        <div class="option">ウ. FTP/SFTP</div>
+                        <div class="option">エ. SMTP/POP3</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：TCP/IPは、インターネットにおける事実上の標準プロトコル体系であり、通信の制御と識別を司ります。</div></td>
+                    <td>                        廣泛應用於網際網路，結合確保傳輸可靠性的 TCP 與負責位址定址的 IP 之標準通訊協定組是哪一個？
+<br>
+                        <div class="option">A. TCP/IP</div>
+                        <div class="option">B. HTTP/HTTPS</div>
+                        <div class="option">C. FTP/SFTP</div>
+                        <div class="option">D. SMTP/POP3</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：TCP/IP 是網際網路運作的基石協定組，包含傳輸層的 TCP 協定與網路層的 IP 協定。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 13: サーバ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サーバ</div>
+                <div class="term-reading">さーば</div>
+                <div class="term-zh">伺服器</div>
+                <div class="term-en">Server</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワーク上でクライアントからの要求（リクエスト）を受け取り、情報やサービスを提供するコンピュータ。</div>
+                <div class="summary-zh">在網路上接收來自客戶端（Client）的請求，並處理回傳相應資訊或服務的電腦系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        クライアント・サーバシステムにおいて、ネットワーク経由で他のコンピュータからの要求を受けて機能やデータを提供するコンピュータはどれか。
+<br>
+                        <div class="option">ア. サーバ</div>
+                        <div class="option">イ. クライアント</div>
+                        <div class="option">ウ. ルータ</div>
+                        <div class="option">エ. スイッチ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サーバ（Server）は、クライアントからのリクエストに対して各種サービス（Web、メール、ファイル共有など）を提供する側のシステムです。</div></td>
+                    <td>                        在主從式架構（Client-Server）中，透過網路接收其他電腦的請求並提供相應功能或資料的電腦是哪一個？
+<br>
+                        <div class="option">A. 伺服器（Server）</div>
+                        <div class="option">B. 客戶端（Client）</div>
+                        <div class="option">C. 路由器（Router）</div>
+                        <div class="option">D. 交換器（Switch）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：伺服器（Server）專門負責集中儲存資料、處理算力並回應網路客戶端的服務請求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 14: クライアント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クライアント</div>
+                <div class="term-reading">くらいあんと</div>
+                <div class="term-zh">客戶端</div>
+                <div class="term-en">Client</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サーバに接続して機能やデータの処理を要求し、その結果を利用するコンピュータやソフトウェア。</div>
+                <div class="summary-zh">連接至伺服器發送服務或資料請求，並接收伺服器回傳結果加以呈現的電腦或應用軟體。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        Webブラウザやメールソフトのように、サーバに対してサービスや処理を要求する側の端末やソフトウェアを何と呼ぶか。
+<br>
+                        <div class="option">ア. クライアント</div>
+                        <div class="option">イ. サーバ</div>
+                        <div class="option">ウ. プロキシ</div>
+                        <div class="option">エ. ゲートウェイ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：クライアント（Client）は、サーバに対してデータや処理の要求（リクエスト）を出し、サービスを受ける側のシステムです。</div></td>
+                    <td>                        如網頁瀏覽器或郵件軟體般，主動向伺服器發送服務或資料處理請求的終端設備或軟體稱爲什麼？
+<br>
+                        <div class="option">A. 客戶端（Client）</div>
+                        <div class="option">B. 伺服器（Server）</div>
+                        <div class="option">C. 代理伺服器（Proxy）</div>
+                        <div class="option">D. 閘道器（Gateway）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：客戶端（Client）發起服務請求，並利用伺服器傳回的資料進行展示或進一步操作。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 15: ルーティング -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ルーティング</div>
+                <div class="term-reading">るーてぃんぐ</div>
+                <div class="term-zh">路由選擇</div>
+                <div class="term-en">Routing</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">パケットが送信元から目的地まで到達するための最適な通信経路を選択・決定する制御技術。</div>
+                <div class="summary-zh">將資料封包由來源端傳送至目的地時，在網路節點間選擇並決定最佳傳送路徑的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ネットワーク上でデータパケットを目的地まで効率よく送信するために、最適な経路を選択して転送する制御を何と呼ぶか。
+<br>
+                        <div class="option">ア. ルーティング</div>
+                        <div class="option">イ. ゾーニング</div>
+                        <div class="option">ウ. スポーリング</div>
+                        <div class="option">エ. フィルタリング</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ルーティング（経路制御）は、ルータなどのネットワーク機器がIPアドレス情報を参照し、目的地までの最適経路を選択する機能です。</div></td>
+                    <td>                        在網路上為了將資料封包有效率地送達目的地，選擇最佳路徑並予以轉送的控制機制稱爲什麼？
+<br>
+                        <div class="option">A. 路由選擇（Routing）</div>
+                        <div class="option">B. 區域劃分（Zoning）</div>
+                        <div class="option">C. 輪詢（Polling）</div>
+                        <div class="option">D. 過濾（Filtering）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：路由選擇（Routing）由路由器等網路設備依據 IP 位址與路由表，決定封包跨越不同網路的最佳傳送途徑。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 5: IP 位址與功能 -->
+    <div class="group-container">
+        <div class="group-header">IP 位址與功能</div>
+
+        <!-- Term 16: グローバルIPアドレス -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">グローバルIPアドレス</div>
+                <div class="term-reading">ぐろーばるあいぴーあどれす</div>
+                <div class="term-zh">公用 IP 位址</div>
+                <div class="term-en">Global IP Address</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネット上で端末やルータを一意に識別するために割り振られる世界で唯一のアドレス。</div>
+                <div class="summary-zh">用於在網際網路上唯一識別終端設備或路由器，全網不重複的全球唯一 IP 位址。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        インターネット上で一意であり、世界中で重なることなく直接通信するために割り当てられるIPアドレスはどれか。
+<br>
+                        <div class="option">ア. グローバルIPアドレス</div>
+                        <div class="option">イ. プライベートIPアドレス</div>
+                        <div class="option">ウ. MACアドレス</div>
+                        <div class="option">エ. ループバックアドレス</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：グローバルIPアドレスは、ICANN等の機関により管理され、インターネット上で重複しないよう世界的に一意に割り当てられます。</div></td>
+                    <td>                        在網際網路上具有唯一性、於全球範圍內不重複且可用於直接公開通訊的 IP 位址是哪一個？
+<br>
+                        <div class="option">A. 公用 IP 位址</div>
+                        <div class="option">B. 私有 IP 位址</div>
+                        <div class="option">C. MAC 位址</div>
+                        <div class="option">D. 環回位址（Loopback）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：公用 IP 位址（Global IP Address）由網際網路位址分配機構統一管理，確保在網際網路上全球不重複。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 17: プライベートIPアドレス -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プライベートIPアドレス</div>
+                <div class="term-reading">ぷらいべーとあいぴーあどれす</div>
+                <div class="term-zh">私有 IP 位址</div>
+                <div class="term-en">Private IP Address</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業や家庭などの組織内（LAN）で自由に使用できる、インターネット上で直接ルーティングされないアドレス。</div>
+                <div class="summary-zh">供企業或家庭內部區域網路（LAN）自由指派使用，無法直接在網際網路上傳輸的 IP 位址。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        社内LANや家庭内ネットワークなどの閉じた組織内で自由に割り当てて使用できる、インターネット上では直接使用できないIPアドレスはどれか。
+<br>
+                        <div class="option">ア. プライベートIPアドレス</div>
+                        <div class="option">イ. グローバルIPアドレス</div>
+                        <div class="option">ウ. マルチキャストアドレス</div>
+                        <div class="option">エ. ブロードキャストアドレス</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：プライベートIPアドレス（ローカルIPアドレス）は、同一LAN内で一意であれば自由に使える内部ネットワーク専用アドレスです。</div></td>
+                    <td>                        供企業內網或家庭網路等封閉內部組織自由分配使用，無法在網際網路上直接路由的 IP 位址是哪一個？
+<br>
+                        <div class="option">A. 私有 IP 位址</div>
+                        <div class="option">B. 公用 IP 位址</div>
+                        <div class="option">C. 多播位址</div>
+                        <div class="option">D. 廣播位址</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：私有 IP 位址（Private IP Address，如 192.168.x.x）專供內部區域網路使用，需搭配 NAT 技術才能連接外部網際網路。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 18: ドメイン -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ドメイン</div>
+                <div class="term-reading">どめいん</div>
+                <div class="term-zh">網域名稱</div>
+                <div class="term-en">Domain</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">数字のIPアドレスを人間が識別しやすい文字列（例: example.com）で表現したインターネット上の住所。</div>
+                <div class="summary-zh">將由數字組成的 IP 位址轉換為人類易於記憶的文字字串（如 example.com），作為網路上的識別名稱。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        インターネット上のコンピュータやWebサイトの場所を人間が理解しやすい文字列で表した識別名称（例：example.co.jp）はどれか。
+<br>
+                        <div class="option">ア. ドメイン名</div>
+                        <div class="option">イ. IPアドレス</div>
+                        <div class="option">ウ. MACアドレス</div>
+                        <div class="option">エ. ポート番号</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ドメイン名（Domain Name）は、数字のみで表現されるIPアドレスを人間が覚えやすい文字表記に変換したインターネット上の名称です。</div></td>
+                    <td>                        將網際網路上的電腦或網站位置，以人類易於理解的文字字串（例如 example.co.jp）表示的識別名稱是哪一個？
+<br>
+                        <div class="option">A. 網域名稱</div>
+                        <div class="option">B. IP 位址</div>
+                        <div class="option">C. MAC 位址</div>
+                        <div class="option">D. 連接埠號（Port Number）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：網域名稱（Domain Name）為 IP 位址的文字別名，方便人類閱讀、記憶與進行品牌推廣。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 19: DNS -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">DNS</div>
+                <div class="term-reading">でぃーえぬえす</div>
+                <div class="term-zh">網域名稱系統</div>
+                <div class="term-en">Domain Name System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人間が読みやすいドメイン名と、コンピュータが扱うIPアドレスを相互に変換（名前解決）する仕組み。</div>
+                <div class="summary-zh">負責將人類易讀的網域名稱與電腦處理所需的 IP 位址互相轉換（名稱解析）的網路系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        「example.com」のようなドメイン名から「192.0.2.1」のようなIPアドレスを検索・変換する（名前解決を行う）システムはどれか。
+<br>
+                        <div class="option">ア. DNS</div>
+                        <div class="option">イ. DHCP</div>
+                        <div class="option">ウ. NTP</div>
+                        <div class="option">エ. SNMP</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：DNS（Domain Name System）は、ドメイン名とIPアドレスの対応関係を管理し、相互に変換する名前解決サーバーシステムです。</div></td>
+                    <td>                        將如「example.com」的網域名稱查詢並轉換為如「192.0.2.1」的 IP 位址（執行名稱解析）的系統是哪一個？
+<br>
+                        <div class="option">A. DNS</div>
+                        <div class="option">B. DHCP</div>
+                        <div class="option">C. NTP</div>
+                        <div class="option">D. SNMP</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：DNS（Domain Name System）執行名稱解析（Name Resolution）服務，讓使用者不必輸入複雜的數字 IP 即可存取網站。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 20: RADIUS -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RADIUS</div>
+                <div class="term-reading">らでぃうす</div>
+                <div class="term-zh">遠端用戶撥號認證服務</div>
+                <div class="term-en">Remote Authentication Dial-In User Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワーク接続時のユーザー認証、権限付与、利用履歴記録（AAA）を一元管理するプロトコル。</div>
+                <div class="summary-zh">用於集中管理使用者接入網路時的身份認證、授權與存取紀錄（AAA）的通訊協定。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ネットワークアクセスにおけるユーザー認証、承認、利用記録（AAA機能）をサーバで一元的に管理するためのプロトコルはどれか。
+<br>
+                        <div class="option">ア. RADIUS</div>
+                        <div class="option">イ. SNMP</div>
+                        <div class="option">ウ. SMTP</div>
+                        <div class="option">エ. LDAP</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：RADIUS（Remote Authentication Dial-In User Service）は、ダイヤルアップ接続や無線LAN、VPNなどにおけるユーザー認証を一元管理する標準プロトコルです。</div></td>
+                    <td>                        在網路存取控制中，於伺服器端集中管理使用者身份認證、授權與使用紀錄（AAA 功能）的協定是哪一個？
+<br>
+                        <div class="option">A. RADIUS</div>
+                        <div class="option">B. SNMP</div>
+                        <div class="option">C. SMTP</div>
+                        <div class="option">D. LDAP</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：RADIUS 協定廣泛應用於 Wi-Fi 企業認證及 VPN 存取控制，集中處理身份認證（Authentication）、授權（Authorization）與計費紀錄（Accounting）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

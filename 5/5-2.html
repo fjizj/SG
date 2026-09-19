@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ通信と制御 - 14語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>データ通信と制御 - 14語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組 1: 數據傳輸與線路方式 -->
+    <div class="group-container">
+        <div class="group-header">數據傳輸與線路方式</div>
+
+        <!-- Term 1: パケット交換 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">パケット交換</div>
+                <div class="term-reading">ぱけっとこうかん</div>
+                <div class="term-zh">封包交換</div>
+                <div class="term-en">Packet Switching</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データをパケットと呼ばれる小さな単位に分割して送信し、回線を効率的に共有する通信方式。</div>
+                <div class="summary-zh">將資料分割成稱為封包的小單位進行傳輸，能有效率地共享通信線路的傳輸方式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データを「パケット」という小さな単位に分割して送信し、共有回線を効率的に利用する通信方式はどれか。
+<br>
+                        <div class="option">ア. パケット交換</div>
+                        <div class="option">イ. 回線交換</div>
+                        <div class="option">ウ. メッセージ交換</div>
+                        <div class="option">エ. セッション交換</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：パケット交換は、送信データを分割してパケット単位で送受信することで、回線の利用効率を高める技術です。</div></td>
+                    <td>                        將資料分割成稱為「封包」的小單位傳輸，以有效率地利用共享線路的通訊方式是哪一個？
+<br>
+                        <div class="option">A. 封包交換</div>
+                        <div class="option">B. 線路交換</div>
+                        <div class="option">C. 訊息交換</div>
+                        <div class="option">D. 會話交換</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：封包交換（Packet Switching）透過將資料切割成封包進行傳輸，大幅提升通信線路的共享與傳輸效率。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: 公衆回線 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">公衆回線</div>
+                <div class="term-reading">こうしゅうかいせん</div>
+                <div class="term-zh">公用線路</div>
+                <div class="term-en">Public Circuit</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">不特定多数の利用者が通信リソースを共有して利用する、通信事業者が提供するネットワーク回線。</div>
+                <div class="summary-zh">由電信業者提供，供不特定多數使用者共同分享並利用通訊資源的網路線路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不特定多数のユーザーで回線を共有するため、コストが安い一方で時間帯によって速度が低下する通信回線はどれか。
+<br>
+                        <div class="option">ア. 公衆回線</div>
+                        <div class="option">イ. 専用線</div>
+                        <div class="option">ウ. 自設線</div>
+                        <div class="option">エ. 構内LAN</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：公衆回線は通信インフラを多数のユーザーで共有するため低コストですが、混雑時に品質が低下することがあります。</div></td>
+                    <td>                        因多數使用者共享通信線路而成本較低，但可能在尖峰時段導致速度下降的通信線路是哪一個？
+<br>
+                        <div class="option">A. 公用線路</div>
+                        <div class="option">B. 專用線路</div>
+                        <div class="option">C. 自設線路</div>
+                        <div class="option">D. 內部區域網路</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：公用線路（Public Circuit）供不特定多數人共享，雖然經濟實惠，但網路品質易受到整體頻寬擠壓影響。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: 専用線 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">専用線</div>
+                <div class="term-reading">せんようせん</div>
+                <div class="term-zh">專用線路</div>
+                <div class="term-en">Dedicated Line</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の契約者が帯域を占有して常時接続する、高信頼性かつセキュリティに優れた通信回線。</div>
+                <div class="summary-zh">由特定簽約者獨佔頻寬並維持常時連線，具備高可靠度與優異安全性的專屬通訊線路。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        他のユーザーと共有せず、送信帯域や品質が保証されセキュリティに優れた企業向けの通信回線はどれか。
+<br>
+                        <div class="option">ア. 専用線</div>
+                        <div class="option">イ. 公衆回線</div>
+                        <div class="option">ウ. Wi-Fi</div>
+                        <div class="option">エ. ダイヤルアップ回線</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：専用線は特定の拠点間を独占的に接続するため、帯域や通信品質が保証され高い安全性を持ちます。</div></td>
+                    <td>                        不與其他使用者共享，傳輸頻寬與品質受到保障且安全性高的企業用通訊線路是哪一個？
+<br>
+                        <div class="option">A. 專用線路</div>
+                        <div class="option">B. 公用線路</div>
+                        <div class="option">C. Wi-Fi</div>
+                        <div class="option">D. 撥接線路</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：專用線路（Dedicated Line）獨佔專屬線路頻寬，能保證傳輸速度與最高等級的資訊安全。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 2: 網路連接層級與範圍 -->
+    <div class="group-container">
+        <div class="group-header">網路連接層級與範圍</div>
+
+        <!-- Term 4: LAN内接続 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">LAN内接続</div>
+                <div class="term-reading">らんないせつぞく</div>
+                <div class="term-zh">區域網路內部連接</div>
+                <div class="term-en">Local Area Network Connection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">同一の建物や施設などの限られたエリア内で、機器同士を直接接続して高速にデータ通信を行う構成。</div>
+                <div class="summary-zh">在同一棟建築或設施等受限區域內，將設備直接連接進行高速資料傳輸的架構。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        同一のオフィス内にあるパソコンやプリンターなどの機器を物理的または論理的に接続し、ファイル共有を行う形態はどれか。
+<br>
+                        <div class="option">ア. LAN内接続</div>
+                        <div class="option">イ. WAN接続</div>
+                        <div class="option">ウ. VPN接続</div>
+                        <div class="option">エ. LAN間接続</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：同一エリア内の端末同士を接続して通信や機器共有を行うのがLAN内接続です。</div></td>
+                    <td>                        將同一辦公室內的電腦與印表機等設備進行實體或邏輯上的連接以共享檔案的型態是哪一個？
+<br>
+                        <div class="option">A. 區域網路內部連接</div>
+                        <div class="option">B. 廣域網路連接</div>
+                        <div class="option">C. VPN 連接</div>
+                        <div class="option">D. 區域網路間連接</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：區域網路內部連接（LAN Connection）專指在局域範圍內各端點設備間直接進行檔案與資源共享。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 5: LAN間接続 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">LAN間接続</div>
+                <div class="term-reading">らんかんせつぞく</div>
+                <div class="term-zh">區域網路間連接</div>
+                <div class="term-en">LAN Interconnection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">異なる部門やフロアごとに構築された複数のLAN同士を、ルータやブリッジ等を用いて相互接続する構成。</div>
+                <div class="summary-zh">透過路由器或橋接器等設備，將不同部門或樓層各自建立的多個 LAN 互相串聯的架構。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        企業内の異なるフロアにある複数のLAN同士をルータやブリッジを介して接続し、相互通信を可能にする形態はどれか。
+<br>
+                        <div class="option">ア. LAN間接続</div>
+                        <div class="option">イ. LAN内接続</div>
+                        <div class="option">ウ. スタンドアロン</div>
+                        <div class="option">エ. クラウド接続</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：LAN間接続は独立した複数のLANを接続して統合的なネットワークを構築する手法です。</div></td>
+                    <td>                        透過路由器或橋接器連接企業內不同樓層的多個 LAN，使彼此能夠相互傳輸資料的型態是哪一個？
+<br>
+                        <div class="option">A. 區域網路間連接</div>
+                        <div class="option">B. 區域網路內部連接</div>
+                        <div class="option">C. 單機運作</div>
+                        <div class="option">D. 雲端連接</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：區域網路間連接（LAN Interconnection）利用網路設備整合分散的 LAN 區域，擴大資訊流通範圍。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6: LAN-WAN接続 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">LAN-WAN接続</div>
+                <div class="term-reading">らん-わんせつぞく</div>
+                <div class="term-zh">區域網路與廣域網路連接</div>
+                <div class="term-en">LAN-WAN Connection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">構内のLANをルータやルータ機能を用いて、インターネットや遠隔拠点を結ぶWANへ接続する技術。</div>
+                <div class="summary-zh">使用路由器等介面設備將內部 LAN 連接至跨區域的網際網路或遠端據點 WAN 的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        社内LANからルータを経由してインターネットや広域網（WAN）へ接続し、拠点間通信を行う接続形態はどれか。
+<br>
+                        <div class="option">ア. LAN-WAN接続</div>
+                        <div class="option">イ. LAN内接続</div>
+                        <div class="option">ウ. ループバック接続</div>
+                        <div class="option">エ. ピアツーピア接続</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：内部ネットワーク（LAN）と外部の広域網（WAN）をルータ等を介して結ぶ接続形態を指します。</div></td>
+                    <td>                        經由路由器將公司內部的 LAN 連接至網際網路或廣域網路（WAN）以進行據點通訊的型態是哪一個？
+<br>
+                        <div class="option">A. 區域網路與廣域網路連接</div>
+                        <div class="option">B. 區域網路內部連接</div>
+                        <div class="option">C. 環回連接</div>
+                        <div class="option">D. 對等網路連接</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：LAN-WAN 連接是指將區域網路中的數據封包導向外部廣域網路，實現遠距跨域存取。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 3: 網路硬體與交換設備 -->
+    <div class="group-container">
+        <div class="group-header">網路硬體與交換設備</div>
+
+        <!-- Term 7: スイッチングハブ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">スイッチングハブ</div>
+                <div class="term-reading">すいっちんぐはぶ</div>
+                <div class="term-zh">交換式集線器</div>
+                <div class="term-en">Switching Hub</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">受信データのMACアドレスを解析し、目的のポートのみにデータを転送して帯域を効率化する集約装置。</div>
+                <div class="summary-zh">解析接收資料的 MAC 位址，僅將封包轉發至目標埠口以優化頻寬使用效率的集線設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        受信したデータの宛先MACアドレスを確認し、該当するポートだけにデータを転送するネットワーク機器はどれか。
+<br>
+                        <div class="option">ア. スイッチングハブ</div>
+                        <div class="option">イ. リピータハブ</div>
+                        <div class="option">ウ. モデム</div>
+                        <div class="option">エ. タップ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：スイッチングハブ（L2スイッチ相当）はMACアドレスを識別して特定のポートにのみデータを送信します。</div></td>
+                    <td>                        確認接收資料的目標 MAC 位址，並僅將資料轉發至相對應埠口的網路設備是哪一個？
+<br>
+                        <div class="option">A. 交換式集線器</div>
+                        <div class="option">B. 重複器集線器</div>
+                        <div class="option">C. 數據機</div>
+                        <div class="option">D. 網路分接器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：交換式集線器（Switching Hub）具備 MAC 位址判讀能力，能避免將資料廣播給無關埠口。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 8: ルータ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ルータ</div>
+                <div class="term-reading">るーた</div>
+                <div class="term-zh">路由器</div>
+                <div class="term-en">Router</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">OSI参照モデルのネットワーク層で動作し、IPアドレスに基づいて異なるネットワーク間の最適経路を選択し転送する機器。</div>
+                <div class="summary-zh">運作於 OSI 網路層，根據 IP 位址在不同網路之間選擇最佳傳輸路徑並進行封包轉發的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        OSI参照モデルのネットワーク層で動作し、IPアドレスを基にパケットの最適経路を選択（ルーティング）する機器はどれか。
+<br>
+                        <div class="option">ア. ルータ</div>
+                        <div class="option">イ. スイッチングハブ</div>
+                        <div class="option">ウ. ブリッジ</div>
+                        <div class="option">エ. リピータ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ルータはネットワーク層（第3層）で動作し、IPアドレスを用いて異なるネットワーク間の通信を中継します。</div></td>
+                    <td>                        運作於 OSI 參考模型的網路層，依據 IP 位址為封包選擇最佳傳送路徑（路由）的設備是哪一個？
+<br>
+                        <div class="option">A. 路由器</div>
+                        <div class="option">B. 交換式集線器</div>
+                        <div class="option">C. 橋接器</div>
+                        <div class="option">D. 中繼器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：路由器（Router）位於網路層（L3），透過建立路由表引導 IP 封包跨越不同網路。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 9: レイヤー2スイッチ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">レイヤー2スイッチ</div>
+                <div class="term-reading">れいやーつーすいっち</div>
+                <div class="term-zh">第二層交換機</div>
+                <div class="term-en">Layer 2 Switch</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データリンク層でMACアドレスを参照してフレームの転送を行い、ネットワーク内の通信効率と衝突回避を高める機器。</div>
+                <div class="summary-zh">運作於資料鏈結層，參照 MAC 位址進行訊框轉送，提高區域網路內部通訊效率並消除碰撞的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        OSI参照モデルのデータリンク層（第2層）で動作し、MACアドレスに基づいてフレームを高速転送する機器はどれか。
+<br>
+                        <div class="option">ア. レイヤー2スイッチ</div>
+                        <div class="option">イ. レイヤー3スイッチ</div>
+                        <div class="option">ウ. ルータ</div>
+                        <div class="option">エ. ゲートウェイ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：レイヤー2スイッチ（L2スイッチ）はデータリンク層で動作し、MACアドレステーブルを参照してデータ転送を行います。</div></td>
+                    <td>                        運作於 OSI 參考模型的資料鏈結層（第二層），根據 MAC 位址高速轉送訊框的設備是哪一個？
+<br>
+                        <div class="option">A. 第二層交換機</div>
+                        <div class="option">B. 第三層交換機</div>
+                        <div class="option">C. 路由器</div>
+                        <div class="option">D. 閘道器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：L2 交換機在資料鏈結層根據 MAC 位址過濾與轉發訊框（Frame），提升 LAN 內的傳輸效能。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 10: レイヤー3スイッチ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">レイヤー3スイッチ</div>
+                <div class="term-reading">れいやーすりーすいっち</div>
+                <div class="term-zh">第三層交換機</div>
+                <div class="term-en">Layer 3 Switch</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワーク層のルーティング機能をハードウェア処理で高速化した、L2スイッチとルータの機能を併せ持つ機器。</div>
+                <div class="summary-zh">以硬體晶片加速實現網路層路由功能，同時兼具 L2 交換機傳輸效能與路由器路由選擇的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        レイヤー2スイッチの機能に加え、IPアドレスに基づくルーティング機能をハードウェアで高速処理するネットワーク機器はどれか。
+<br>
+                        <div class="option">ア. レイヤー3スイッチ</div>
+                        <div class="option">イ. リピータハブ</div>
+                        <div class="option">ウ. プロキシサーバ</div>
+                        <div class="option">エ. ブリッジ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：レイヤー3スイッチはネットワーク層（第3層）に対応し、ハードウェア処理により高速にルーティングを行えます。</div></td>
+                    <td>                        除了第二層交換機的功能外，更以硬體加速處理基於 IP 位址之路由功能的網路設備是哪一個？
+<br>
+                        <div class="option">A. 第三層交換機</div>
+                        <div class="option">B. 重複器集線器</div>
+                        <div class="option">C. 代理伺服器</div>
+                        <div class="option">D. 橋接器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：L3 交換機結合了 L2 的高效硬體轉發與 L3 的路由判斷能力，適合用於大型 VLAN 間的高速通訊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 11: ブリッジ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ブリッジ</div>
+                <div class="term-reading">ぶりっじ</div>
+                <div class="term-zh">橋接器</div>
+                <div class="term-en">Bridge</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データリンク層で同種のネットワークセグメント間を接続し、MACアドレスでフィルタリングして不要なトラフィックを遮断する装置。</div>
+                <div class="summary-zh">運作於資料鏈結層，用來連接相同類型的網路區段，並透過 MAC 位址進行訊框過濾以減少碰撞與流量負擔。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        OSI参照モデルのデータリンク層で動作し、MACアドレスを見て通過の可否を判断（フィルタリング）しセグメント間を接続する機器はどれか。
+<br>
+                        <div class="option">ア. ブリッジ</div>
+                        <div class="option">イ. ルータ</div>
+                        <div class="option">ウ. ゲートウェイ</div>
+                        <div class="option">エ. リピータ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ブリッジはデータリンク層において、MACアドレスに基づき同一プロトコル内のセグメント間通信を中継・遮断します。</div></td>
+                    <td>                        運作於 OSI 參考模型的資料鏈結層，檢視 MAC 位址以決定是否通過（過濾），進而連接不同網路區段的設備是哪一個？
+<br>
+                        <div class="option">A. 橋接器</div>
+                        <div class="option">B. 路由器</div>
+                        <div class="option">C. 閘道器</div>
+                        <div class="option">D. 中繼器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：橋接器（Bridge）運作於 L2，依據 MAC 位址來隔離網路區段的碰撞網域（Collision Domain）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 12: ゲートウェイ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ゲートウェイ</div>
+                <div class="term-reading">げーとうぇい</div>
+                <div class="term-zh">閘道器</div>
+                <div class="term-en">Gateway</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">OSI参照モデルの上位層（トランスポート層〜アプリケーション層）で異種プロトコル体系の通信を相互変換し中継する装置。</div>
+                <div class="summary-zh">運作於 OSI 高層（傳輸層至應用層），專門用於將不同協定體系的網路通信進行互相轉換與中繼的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        OSI参照モデルの第4層〜第7層などで、プロトコルの異なるネットワーク同士をデータ変換して接続する機器はどれか。
+<br>
+                        <div class="option">ア. ゲートウェイ</div>
+                        <div class="option">イ. ルータ</div>
+                        <div class="option">ウ. ブリッジ</div>
+                        <div class="option">エ. リピータ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ゲートウェイはトランスポート層以上の異なるプロトコルを相互に変換して通信を可能にする装置です。</div></td>
+                    <td>                        在 OSI 參考模型的第 4 層至第 7 層，負責將使用不同協定的網路進行資料轉換並連接的設備是哪一個？
+<br>
+                        <div class="option">A. 閘道器</div>
+                        <div class="option">B. 路由器</div>
+                        <div class="option">C. 橋接器</div>
+                        <div class="option">D. 中繼器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：閘道器（Gateway）可跨越不同協定架構（如 TCP/IP 與其他非 IP 協定）進行深層通訊協定轉換。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 4: 代理伺服器與中繼技術 -->
+    <div class="group-container">
+        <div class="group-header">代理伺服器與中繼技術</div>
+
+        <!-- Term 13: プロキシサーバ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロキシサーバ</div>
+                <div class="term-reading">ぷろきしさーば</div>
+                <div class="term-zh">正向代理伺服器</div>
+                <div class="term-en">Proxy Server</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">クライアントの代理としてWebアクセスを行い、キャッシュ保存、アクセス制限、セキュリティ向上を図る中継サーバ。</div>
+                <div class="summary-zh">代表內部客戶端發起網頁請求，具備快取保存、存取過濾與提升內部網路安全性的中繼伺服器。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        内部ネットワークのクライアントに代わってインターネットへのアクセスを行い、Webページのキャッシュやフィルタリングを行うサーバはどれか。
+<br>
+                        <div class="option">ア. プロキシサーバ</div>
+                        <div class="option">イ. DNSサーバ</div>
+                        <div class="option">ウ. DHCPサーバ</div>
+                        <div class="option">エ. FTPサーバ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：フォワードプロキシ（単にプロキシサーバ）はクライアントを代理して外部Webサイトへアクセスを仲介します。</div></td>
+                    <td>                        代表內部網路的客戶端存取網際網路，並能執行網頁快取與瀏覽過濾的伺服器是哪一個？
+<br>
+                        <div class="option">A. 代理伺服器</div>
+                        <div class="option">B. DNS 伺服器</div>
+                        <div class="option">C. DHCP 伺服器</div>
+                        <div class="option">D. FTP 伺服器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：正向代理伺服器（Forward Proxy）作為內部使用者連往外網的中繼站，能進行快取加速與安全控管。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 14: リバースプロキシサーバ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リバースプロキシサーバ</div>
+                <div class="term-reading">りばーすぷろきしさーば</div>
+                <div class="term-zh">反向代理伺服器</div>
+                <div class="term-en">Reverse Proxy Server</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">Webサーバ群の前面に配置され、クライアントからのアクセスを分散・中継し、負荷分散やセキュリティ保護を行うサーバ。</div>
+                <div class="summary-zh">設定於 Web 伺服器陣列前端，接收外部請求並轉發至內部伺服器，用以實現負載平衡與隱藏真實伺服器的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        Webサーバの直前に配置され、外部からのアクセスを中継して負荷分散（ロードバランシング）やセキュリティ保護を行うサーバはどれか。
+<br>
+                        <div class="option">ア. リバースプロキシサーバ</div>
+                        <div class="option">イ. フォワードプロキシサーバ</div>
+                        <div class="option">ウ. メールサーバ</div>
+                        <div class="option">エ. データベースサーバ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：リバースプロキシはサーバー側に配置され、クライアントのアクセスを代行受信してバックエンドサーバーに振り分けます。</div></td>
+                    <td>                        部署於 Web 伺服器前端，用以轉發外部請求、進行負載平衡（Load Balancing）與防護伺服器安全的是哪一個？
+<br>
+                        <div class="option">A. 反向代理伺服器</div>
+                        <div class="option">B. 正向代理伺服器</div>
+                        <div class="option">C. 郵件伺服器</div>
+                        <div class="option">D. 資料庫伺服器</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：反向代理伺服器（Reverse Proxy）代表內部伺服器接收外部請求，主要用於負載平衡、SSL 加解密與伺服器隱藏。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

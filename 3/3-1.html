@@ -1,0 +1,1787 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システムの構成 - 35語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>システムの構成 - 35語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+  <!-- 第一組：系統處理模式 -->
+  <div class="group-container">
+    <div class="group-header">系統處理模式</div>
+
+    <!-- 集中処理 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">集中処理</div>
+        <div class="term-reading">しゅうちゅうしょり</div>
+        <div class="term-zh">集中處理</div>
+        <div class="term-en">Centralized Processing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">1台の大型ホストコンピュータにデータや処理を集中させる方式。<br>管理やセキュリティ運用が簡素化されるが、障害発生時に全系停止のリスクがある。</div>
+        <div class="summary-zh">將資料與運算集中於單一大型主機電腦進行處理的架構方式。<br>維護管理與安全管控較簡便，但中央主機故障時恐致整體系統中斷。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 集中処理システムの特徴に関する記述として、適切なものはどれか。
+<br>
+              <div class="option">ア. データが一箇所に集中するため、セキュリティ管理やデータの運用管理が容易である。</div>
+              <div class="option">イ. システムの一部分に障害が発生しても、システム全体が停止することはない。</div>
+              <div class="option">ウ. 処理能力の拡張が必要になった場合、安価な小型機器を追加するだけで容易に対応できる。</div>
+              <div class="option">エ. ネットワークの通信負荷が分散されるため、回線帯域の節約になる。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】集中処理はデータや機能を1箇所（ホスト）に集約するため、セキュリティやデータの一貫性管理が容易です。障害発生時に全系へ影響することや、拡張時のコストが高価になりやすい点がデメリットです。</div></td>
+            <td>              Q: 關於集中處理系統特性的敘述，下列何者適當？
+<br>
+              <div class="option">A. 因資料集中於單一處，資安管理與資料運作維護較為容易。</div>
+              <div class="option">B. 即使系統局部發生故障，整體系統亦絕不會停止運作。</div>
+              <div class="option">C. 當需要擴充處理能力時，僅需追加廉價的小型設備即可輕鬆應對。</div>
+              <div class="option">D. 因網路通訊負擔被平均分散，故可節省線路頻寬。</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】集中處理將資料與處理集中於單一主機，優點是安全控管與集中維護簡單；缺點是單點故障影響全體，且單機擴充成本較高。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 分散処理 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">分散処理</div>
+        <div class="term-reading">ぶんさんしょり</div>
+        <div class="term-zh">分散式處理</div>
+        <div class="term-en">Distributed Processing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">複数のコンピュータで処理や機能を分担し、協調して実行する方式。<br>拡張性や耐障害性に優れ、システム全体の処理能力向上と負荷軽減を実現する。</div>
+        <div class="summary-zh">由多台電腦分工承擔處理與功能，彼此協調執行的架構方式。<br>具備優異的擴充性與容錯能力，可降低單機負擔並提升整體效能。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 分散処理システムの利点として、最も適切なものはどれか。
+<br>
+              <div class="option">ア. 一部のコンピュータが故障しても、システム全体の停止を回避しやすい。</div>
+              <div class="option">イ. システム全体のデータの一貫性保持が極めて容易である。</div>
+              <div class="option">ウ. 運用管理やセキュリティ設定が集中処理よりも単純になる。</div>
+              <div class="option">エ. ネットワーク通信の必要性がなくなる。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】分散処理システムはリスクが分散されるため、一部の機器がダウンしても代替処理や隔離を行うことで全系ダウンを防止しやすい（耐障害性が高い）特徴があります。</div></td>
+            <td>              Q: 關於分散式處理系統的優點，下列何者最為適當？
+<br>
+              <div class="option">A. 即使部分電腦發生故障，亦較容易避免整體系統停擺。</div>
+              <div class="option">B. 保持整體系統資料的一致性變得極為容易。</div>
+              <div class="option">C. 維護管理與資安設定比集中處理更加簡單。</div>
+              <div class="option">D. 完全不再需要網路通訊。</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】分散式處理將風險分散至多台節點，特定節點故障時不易引發全域癱瘓，具備較高之可用性與容錯能力。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 対話型処理 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">対話型処理</div>
+        <div class="term-reading">たいわがたしょり</div>
+        <div class="term-zh">對話型處理 / 互動式處理</div>
+        <div class="term-en">Interactive Processing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ユーザーの入力指示に対して、システムがリアルタイムで結果を返す処理方式。<br>チャットボットやオンライン操作など、迅速なフィードバックが求められる場面で使われる。</div>
+        <div class="summary-zh">針對使用者的輸入指令，系統能即時給予對應結果的處理方式。<br>廣泛應用於聊天機器人、線上交易等需要快速獲得反饋之情境。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 端末からの入力に対して、システムが即座に応答を返し、ユーザーとシステムがやり取りしながら処理を進める方式はどれか。
+<br>
+              <div class="option">ア. 対話型処理</div>
+              <div class="option">イ. バッチ処理</div>
+              <div class="option">ウ. オフライン処理</div>
+              <div class="option">エ. パイプライン処理</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ユーザーとシステムが交互に入出力を行ってリアルタイムに処理を進める形態を「対話型処理（インタラクティブ処理）」と呼びます。</div></td>
+            <td>              Q: 針對來自終端的輸入，系統立即傳回回應，由使用者與系統相互交替進行處理的方式稱為？
+<br>
+              <div class="option">A. 對話型處理</div>
+              <div class="option">B. 批次處理</div>
+              <div class="option">C. 離線處理</div>
+              <div class="option">D. 管線化處理</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】使用者發出請求後系統即刻回應，以雙向互動形式推進作業流程者，即為對話型（Interactive）處理。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- バッチ処理 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">バッチ処理</div>
+        <div class="term-reading">ばっちしょり</div>
+        <div class="term-zh">批次處理</div>
+        <div class="term-en">Batch Processing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">発生したデータを一定期間や一定量蓄積し、まとめて一括実行する処理方式。<br>夜間などのシステム低負荷時間帯に給与計算や月次集計を行うのに適している。</div>
+        <div class="summary-zh">將產生的資料累積至特定時間或數量後，一次集中整批執行的處理方式。<br>適合於夜間等離峰時段進行薪資計算、月結統計等大量資料運算。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 一定期間または一定量のデータをためておき、まとめて一括して処理する方式はどれか。
+<br>
+              <div class="option">ア. バッチ処理</div>
+              <div class="option">イ. リアルタイム処理</div>
+              <div class="option">ウ. インタラクティブ処理</div>
+              <div class="option">エ. タイムシェアリング処理</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】データを蓄積してから一括処理する形態をバッチ処理（Batch Processing）と呼びます。リソースの有効利用に優れます。</div></td>
+            <td>              Q: 將一定期間或一定數量的資料事先累積，再一次整批集中處理的方式為何？
+<br>
+              <div class="option">A. 批次處理</div>
+              <div class="option">B. 即時處理</div>
+              <div class="option">C. 互動式處理</div>
+              <div class="option">D. 分時處理</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】批次處理（Batch Processing）係將資料收集達一定單位後統一執行，能極佳地優化系統資源利用率。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- リアルタイム処理 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">リアルタイム処理</div>
+        <div class="term-reading">りあるたいむしょり</div>
+        <div class="term-zh">即時處理</div>
+        <div class="term-en">Real-Time Processing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">データが発生した瞬間に即座に処理を開始し、決められた時間内に結果を出力する方式。<br>座席予約システムや航空機制御、医療モニタリングなど極めて高い応答性が求められる。</div>
+        <div class="summary-zh">於資料產生的當下立即開始處理，並於嚴格限制時間內傳回結果的模式。<br>應用於機位預約系統、航空器控制與醫療監控等對回應速度要求極高之領域。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: データの発生と同時に処理を行い、定められた制限時間以内に処理結果を返すことが強く要求されるシステム処理方式はどれか。
+<br>
+              <div class="option">ア. リアルタイム処理</div>
+              <div class="option">イ. バッチ処理</div>
+              <div class="option">ウ. スプール処理</div>
+              <div class="option">エ. 延期処理</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】データの発生に合わせて即座に処理を行い、指定されたデッドライン内に結果を保証する方式をリアルタイム処理と呼びます。</div></td>
+            <td>              Q: 伴隨資料發生的同時立即執行處理，且被嚴格要求必須於預設之限時內傳回結果的系統處理方式為何？
+<br>
+              <div class="option">A. 即時處理</div>
+              <div class="option">B. 批次處理</div>
+              <div class="option">C. 排隊假脫機處理 (Spooling)</div>
+              <div class="option">D. 延遲處理</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】即時處理（Real-Time Processing）強調高度時間約束，必須於限定時間內精確完成輸入至輸出的運算過程。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 機能配分 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">機能配分</div>
+        <div class="term-reading">きのうはいぶん</div>
+        <div class="term-zh">功能分配</div>
+        <div class="term-en">Function Allocation</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">システム設計において、UI・処理ロジック・DBなどの機能を最適なハードウェアに割り振る設計。<br>各要素の負担を適正化し、システム全体の拡張性や保守性を向上させる。</div>
+        <div class="summary-zh">在系統設計中，將 UI、業務邏輯及資料庫等功能分配至最合適硬體的過程。<br>有助於適正化各組件之負擔，進而提升整體系統之擴充性與可維護性。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: クライアントサーバシステムにおいて、ユーザーインターフェース処理、ビジネスロジック処理、データベース処理をそれぞれ異なる層に分散させる設計を何と呼ぶか。
+<br>
+              <div class="option">ア. 3層クライアントサーバシステム（機能配分の最適化）</div>
+              <div class="option">イ. ピアツーピアシステム</div>
+              <div class="option">ウ. 集中型メインフレームシステム</div>
+              <div class="option">エ. 単層システム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】各処理機能を適切な階層（層）に分ける設計は機能配分の代表例であり、システムの保守性やスケーラビリティを高めます。</div></td>
+            <td>              Q: 在主從式架構中，將使用者介面處理、業務邏輯處理與資料庫處理分別分散至不同階層的設計稱為？
+<br>
+              <div class="option">A. 三層式主從系統（功能分配最佳化）</div>
+              <div class="option">B. 對等網路系統 (P2P)</div>
+              <div class="option">C. 集中型大型主機系統</div>
+              <div class="option">D. 單層系統</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】三層式架構即為典型之「功能分配」應用，透過解耦不同職責之模組以提昇系統維護性與彈性。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第二組：高可用性與冗長系統 -->
+  <div class="group-container">
+    <div class="group-header">高可用性與冗長系統</div>
+
+    <!-- 冗長構成 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">冗長構成</div>
+        <div class="term-reading">じょうちょうこうせい</div>
+        <div class="term-zh">冗餘架構</div>
+        <div class="term-en">Redundant Configuration</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">障害が発生してもサービスを継続できるよう、予備のシステムや部品を準備した設計。<br>単一障害点（SPOF）を排除し、システムの可用性（稼働率）を大幅に向上させる。</div>
+        <div class="summary-zh">為確保故障發生時仍能持續提供服務，預先配置備用組件或系統之設計。<br>旨在消除單點故障（SPOF），顯著提升系統整體之可用性（稼動率）。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システムの信頼性を高めるために、同じ機能を持つ装置を二重化するなど、予備の機器を配置する設計概念はどれか。
+<br>
+              <div class="option">ア. 冗長構成</div>
+              <div class="option">イ. シングルポイント障害構成</div>
+              <div class="option">ウ. 仮想化構成</div>
+              <div class="option">エ. 省電力構成</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】予備の機器を用意して二重化（マルチ化）し、故障時にもサービスを維持できるようにする設計を「冗長構成（Redundancy）」と言います。</div></td>
+            <td>              Q: 為提高系統可靠性，將具備相同功能之裝置實施雙重化配置，設置備用設備之設計概念為何？
+<br>
+              <div class="option">A. 冗餘架構</div>
+              <div class="option">B. 單點故障架構</div>
+              <div class="option">C. 虛擬化架構</div>
+              <div class="option">D. 省電架構</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】預留備援設備以達雙重化或多重化，確保故障時運作不受中斷之設計即為「冗餘架構（Redundant Configuration）」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 負荷分散 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">負荷分散</div>
+        <div class="term-reading">ふかぶんさん</div>
+        <div class="term-zh">負載平衡</div>
+        <div class="term-en">Load Balancing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">クライアントからのアクセスを複数のサーバへ均等に振り分ける技術。<br>特定のサーバへの集中を防ぎ、システム全体の応答速度維持と安定稼働に寄与する。</div>
+        <div class="summary-zh">將來自客戶端的存取請求平均分配至多台伺服器的技術。<br>防止流量過度集中於單一伺服器，有助於維持系統回應速度與穩定運作。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: Webサイトへのアクセス集中時に、複数のWebサーバにリクエストを分配して特定のサーバへの過負荷を防ぐ装置や手法はどれか。
+<br>
+              <div class="option">ア. ロードバランサ（負荷分散）</div>
+              <div class="option">イ. ルータ</div>
+              <div class="option">ウ. スイッチングハブ</div>
+              <div class="option">エ. DNSサーバ</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】複数のサーバに処理を割り振って負荷を均等化する機器・技術はロードバランサ（負荷分散装置）です。</div></td>
+            <td>              Q: 當 Web 網站存取暴增時，將請求分配至多台 Web 伺服器以防止單一伺服器過載之裝置或手法為何？
+<br>
+              <div class="option">A. 負載平衡器 (Load Balancer / 負荷分散)</div>
+              <div class="option">B. 路由器</div>
+              <div class="option">C. 交換器集線器 (Switching Hub)</div>
+              <div class="option">D. DNS 伺服器</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】負載平衡器（Load Balancer）透過特定演算法分配 incoming 流量，達成硬體資源運算之平滑化。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- デュアルシステム -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デュアルシステム</div>
+        <div class="term-reading">でゅあるしすてむ</div>
+        <div class="term-zh">雙重系統</div>
+        <div class="term-en">Dual System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">独立した2系のシステムで同一処理を同時に実行し、処理結果を照合しながら進める方式。<br>結果が一致しない場合は障害を検知して切り離すため、極めて高い信頼性を誇る。</div>
+        <div class="summary-zh">由兩套獨立系統同時執行相同運算，並比對處理結果以推進作業的模式。<br>當比對結果不一致時能迅速偵測故障並切離，具備極高的可靠度。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 2組の処理系で同一の処理を行い、その結果を照合することで処理の正確性を確認する、信頼性の高いシステム構成はどれか。
+<br>
+              <div class="option">ア. デュアルシステム</div>
+              <div class="option">イ. デュプレックスシステム</div>
+              <div class="option">ウ. マルチプロセッサシステム</div>
+              <div class="option">エ. タイムシェアリングシステム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】「2系で同じ処理をして結果を照合する」のがデュアルシステムの特徴です。デュプレックスシステムは主系・従系に分かれて待機する方式です。</div></td>
+            <td>              Q: 由兩組處理單元執行相同運算，並透過比對其結果以確認處理正確性之高可靠度系統架構為何？
+<br>
+              <div class="option">A. 雙重系統 (Dual System)</div>
+              <div class="option">B. 雙工系統 (Duplex System)</div>
+              <div class="option">C. 多處理器系統</div>
+              <div class="option">D. 分時系統</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「兩系同時處理且比對結果」為 Dual System 之核心特徵；而 Duplex System 則區分為主要系統與待機備援系統。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- デュプレックスシステム -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デュプレックスシステム</div>
+        <div class="term-reading">でゅぷれっくすしすてむ</div>
+        <div class="term-zh">雙工系統 / 主備系統</div>
+        <div class="term-en">Duplex System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">オンライン処理を行う「主系」と、待機または別処理を行う「従系」で構成される方式。<br>主系の障害時には従系へ処理を引き継ぎ（フェールオーバー）、業務の継続性を保つ。</div>
+        <div class="summary-zh">由負責線上處理的「主系」與處於待機或執行其他低優先度任務的「從系」組成。<br>當主系故障時會切換由從系接管（Failover），以維持業務連續性。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: オンライン処理を行う現用系（主系）と、障害発生時に備えて待機する待機系（従系）から構成されるシステムはどれか。
+<br>
+              <div class="option">ア. デュプレックスシステム</div>
+              <div class="option">イ. デュアルシステム</div>
+              <div class="option">ウ. クラスタシステム</div>
+              <div class="option">エ. マルチアレイシステム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】主系（現用系）と従系（待機系）に明確に役割が分かれている redundant システムはデュプレックスシステムです。</div></td>
+            <td>              Q: 由執行線上處理的現用系（主系）與為因應故障發生而預先待機之待機系（從系）所構成的系統為何？
+<br>
+              <div class="option">A. 雙工系統 (Duplex System)</div>
+              <div class="option">B. 雙重系統 (Dual System)</div>
+              <div class="option">C. 叢集系統 (Cluster System)</div>
+              <div class="option">D. 多陣列系統</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】職責明確分為「現用（主）」與「待機（從）」的備援架構即為 Duplex System。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- クラスタ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">クラスタ</div>
+        <div class="term-reading">くらすた</div>
+        <div class="term-zh">叢集</div>
+        <div class="term-en">Cluster</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">複数のサーバを連携させ、ユーザー側からは1台のシステムとして見せる技術。<br>高可用性を実現するHAクラスタや、処理能力を高める負荷分散クラスタなどがある。</div>
+        <div class="summary-zh">將多台伺服器串聯，使用戶端視其為單一系統運作的技術。<br>包含實現高可用性的 HA 叢集與提升計算效能之負載平衡叢集等。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 複数のコンピュータを相互に接続し、全体として1台の高性能・高信頼なコンピュータであるかのように振る舞わせる構成を何と呼ぶか。
+<br>
+              <div class="option">ア. クラスタ</div>
+              <div class="option">イ. グリッド</div>
+              <div class="option">ウ. スタンドアロン</div>
+              <div class="option">エ. ブレード</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】複数のサーバを組み合わせて1つのシステムとして見せる構成を「クラスタ（Cluster）」と呼びます。</div></td>
+            <td>              Q: 將多台電腦相互連接，使其整體展現出如同單一高性態、高可靠度電腦般運作的架構稱為？
+<br>
+              <div class="option">A. 叢集 (Cluster)</div>
+              <div class="option">B. 網格 (Grid)</div>
+              <div class="option">C. 單機 (Stand-alone)</div>
+              <div class="option">D. 刀鋒 (Blade)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】叢集（Cluster）技術透過結合多台實體伺服器，對外展現單一高可用或高吞吐量的服務入口。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 主系 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">主系</div>
+        <div class="term-reading">しゅけい</div>
+        <div class="term-zh">主系統 / 現用系</div>
+        <div class="term-en">Main System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">デュプレックスシステム等において、通常時に実際のオンライン処理を担当するシステム。<br>「現用系」とも呼ばれ、業務の稼働を直接支える中心的な役割を担う。</div>
+        <div class="summary-zh">在雙工系統等架構中，平常負責實際線上業務運算處理的系統。<br>亦稱為「現用系」，直接承擔商業運作的核心功能。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: デュプレックス構成において、通常業務のオンライン処理を実際に実行している側のシステムを何と呼ぶか。
+<br>
+              <div class="option">ア. 主系（現用系）</div>
+              <div class="option">イ. 従系（待機系）</div>
+              <div class="option">ウ. 分散系</div>
+              <div class="option">エ. 制御系</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】日常のオンライン処理を行うシステムを主系（現用系）と呼び、障害時に備えて控えている側を従系（待機系）と呼びます。</div></td>
+            <td>              Q: 在雙工架構中，平常實際執行日常業務線上處理之系統稱為？
+<br>
+              <div class="option">A. 主系統（現用系）</div>
+              <div class="option">B. 從系統（待機系）</div>
+              <div class="option">C. 分散系</div>
+              <div class="option">D. 控制系</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】負責第一線實際運算的即為「主系（現用系）」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 従系 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">従系</div>
+        <div class="term-reading">じゅうけい</div>
+        <div class="term-zh">從系統 / 待機系</div>
+        <div class="term-en">Standby System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">主系の障害時に即座に処理を引き継ぐために待機状態にある予備システム。<br>「待機系」とも呼ばれ、ホットスタンバイやコールドスタンバイなどの形態がある。</div>
+        <div class="summary-zh">當主系發生故障時，能立即接管處理之預備待機系統。<br>亦稱為「待機系」，包含熱備援 (Hot Standby) 與冷備援 (Cold Standby) 等模式。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 主系（現用系）のダウン時に切り替えて業務を継続させるために準備されているシステムを何と呼ぶか。
+<br>
+              <div class="option">ア. 従系（待機系）</div>
+              <div class="option">イ. 主系</div>
+              <div class="option">ウ. メインフレーム</div>
+              <div class="option">エ. ターミナル</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】主系の故障時に切り替えてサービスを継続する予備系は「従系（待機系）」です。</div></td>
+            <td>              Q: 當主系統（現用系）故障時，用以接管並維持業務持續運作為目的所預備之系統稱為？
+<br>
+              <div class="option">A. 從系統（待機系）</div>
+              <div class="option">B. 主系統</div>
+              <div class="option">C. 大型主機</div>
+              <div class="option">D. 終端機</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】作為備援目的、隨時準備接管的主機稱為「從系（待機系）」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第三組：客戶端/伺服器與網路架構 -->
+  <div class="group-container">
+    <div class="group-header">客戶端/伺服器與網路架構</div>
+
+    <!-- クライアントサーバシステム -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">クライアントサーバシステム</div>
+        <div class="term-reading">くらいあんとさーばしすてむ</div>
+        <div class="term-zh">主從式架構</div>
+        <div class="term-en">Client-Server System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">サービスを要求する「クライアント」と提供する「サーバ」に役割を分担する構成。<br>リソースの集中管理と高い拡張性を持ち、企業の基幹システム等で幅広く利用される。</div>
+        <div class="summary-zh">將角色明確劃分為請求服務的「客戶端」與提供資源的「伺服器」之架構。<br>兼具集中管理與良好擴充性，廣泛應用於企業資訊系統中。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: サービスをリクエストする側と、リクエストに応じて処理結果を提供する側に役割を分担して処理を行うネットワーク構成はどれか。
+<br>
+              <div class="option">ア. クライアントサーバシステム</div>
+              <div class="option">イ. ピアツーピアシステム</div>
+              <div class="option">ウ. スタンドアロンシステム</div>
+              <div class="option">エ. メインフレームシステム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】要求側（クライアント）と提供側（サーバ）に分かれて分散処理を行う形態をクライアントサーバシステムと呼びます。</div></td>
+            <td>              Q: 將角色劃分為發出請求端與提供相應處理結果端，以此進行作業的網路架構為何？
+<br>
+              <div class="option">A. 主從式架構 (Client-Server System)</div>
+              <div class="option">B. 對等網路系統 (P2P)</div>
+              <div class="option">C. 單機系統</div>
+              <div class="option">D. 大型主機系統</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】由 Client 發出 Request，Server 回應 Response 之運算架構即為主從式架構（Client-Server System）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- シンクライアント -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">シンクライアント</div>
+        <div class="term-reading">しんくらいあんと</div>
+        <div class="term-zh">精簡客戶端</div>
+        <div class="term-en">Thin Client</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">端末側には必要最小限の機能（キーボード入力や画面表示等）のみを持たせる方式。<br>アプリケーションやデータの管理をサーバに集中させ、セキュリティ向上を図る。</div>
+        <div class="summary-zh">終端設備僅保有最低限度之介面顯示與輸入功能，將運算與資料集中於伺服器的架構。<br>能大幅防止資料外洩，並降低終端設備維護與管理成本。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: クライアント端末側にハードディスクなどの記憶装置を持たせず、処理やデータの管理をすべてサーバ側で行うシステム構成はどれか。
+<br>
+              <div class="option">ア. シンクライアント</div>
+              <div class="option">イ. ファットクライアント</div>
+              <div class="option">ウ. ピアツーピア</div>
+              <div class="option">エ. Webサーバ</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】端末にストレージを持たせず、サーバ集中型で処理を行うシステムをシンクライアント（Thin Client）と呼びます。</div></td>
+            <td>              Q: 用戶端不配備硬碟等本機儲存裝置，將所有應用運算與資料管理全數移至伺服器端的系統架構為何？
+<br>
+              <div class="option">A. 精簡客戶端 (Thin Client)</div>
+              <div class="option">B. 胖客戶端 (Fat Client)</div>
+              <div class="option">C. 對等網路 (P2P)</div>
+              <div class="option">D. Web 伺服器</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】精簡客戶端（Thin Client）本機不留存資料，能大幅減少設備遺失時的情報洩漏風險。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Webシステム -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webシステム</div>
+        <div class="term-reading">うぇぶしすてむ</div>
+        <div class="term-zh">Web 系統</div>
+        <div class="term-en">Web System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Web技術（HTTP, HTML等）を利用し、ブラウザを介して提供されるシステム。<br>端末への専用ソフトインストールが不要で、OSに依存せずアクセスできる。</div>
+        <div class="summary-zh">運用 Web 技術（HTTP、HTML等）並經由瀏覽器展現之應用系統。<br>客戶端無需安裝特定應用軟體，且能跨越作業系統平台進行存取。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: インターネット標準技術に基づき、クライアント側はWebブラウザのみを利用してアクセスできるシステムの総称はどれか。
+<br>
+              <div class="option">ア. Webシステム</div>
+              <div class="option">イ. メインフレームシステム</div>
+              <div class="option">ウ. C/S専用アプリケーションシステム</div>
+              <div class="option">エ. スタンドアロンシステム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】Webブラウザを共通のインタフェースとして利用するシステムをWebシステムと呼びます。端末展開や更新の手間が非常に少ないのが特徴です。</div></td>
+            <td>              Q: 基於網際網路標準技術，用戶端僅需使用 Web 瀏覽器即可進行存取的系統總稱為何？
+<br>
+              <div class="option">A. Web 系統</div>
+              <div class="option">B. 大型主機系統</div>
+              <div class="option">C. C/S 專用應用程式系統</div>
+              <div class="option">D. 單機系統</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Web 系統以瀏覽器作為統一的操作介面，部署與跨平台維護費用低廉。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Webブラウザ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webブラウザ</div>
+        <div class="term-reading">うぇぶぶらうざ</div>
+        <div class="term-zh">Web 瀏覽器</div>
+        <div class="term-en">Web Browser</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webサーバから取得したHTMLやCSS、JavaScriptを解釈し、画面に描画するソフト。<br>ユーザーがハイパーリンクを介してWeb上の情報を閲覧・操作するためのクライアント。</div>
+        <div class="summary-zh">負責解析從 Web 伺服器取得之 HTML、CSS 及 JavaScript 並呈現在螢幕上的軟體。<br>為使用者透過超連結瀏覽與操作 Web 資源的主要客戶端介面。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: WebサーバからHTTPプロトコルを通じてデータを受信し、HTML形式の記述を解釈して人間に読みやすい画面として表示するソフトウェアはどれか。
+<br>
+              <div class="option">ア. Webブラウザ</div>
+              <div class="option">イ. Webサーバ</div>
+              <div class="option">ウ. プロキシサーバ</div>
+              <div class="option">エ. DNSクライアント</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】HTTP通信で取得したHTML等を解釈・レンダリングして閲覧を可能にするクライアントアプリはWebブラウザです。</div></td>
+            <td>              Q: 透過 HTTP 協定接收來自 Web 伺服器之資料，並解析 HTML 格式內容以轉化為人類可讀畫面之軟體為何？
+<br>
+              <div class="option">A. Web 瀏覽器</div>
+              <div class="option">B. Web 伺服器</div>
+              <div class="option">C. 代理伺服器 (Proxy Server)</div>
+              <div class="option">D. DNS 客戶端</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】解析並渲染（Rendering）網頁描述語言之用戶端應用程式即為 Web 瀏覽器。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Webサーバ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webサーバ</div>
+        <div class="term-reading">うぇぶさーば</div>
+        <div class="term-zh">Web 伺服器</div>
+        <div class="term-en">Web Server</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">HTTP/HTTPSプロトコルに従い、ブラウザからのリクエストに応じてWebコンテンツを返す。<br>静的なHTMLファイルの送信だけでなく、APサーバと連携して動的ページも生成・返答する。</div>
+        <div class="summary-zh">依據 HTTP/HTTPS 協定，回應來自瀏覽器之請求並傳回 Web 內容。<br>除傳送靜態 HTML 檔案外，亦可搭配應用程式伺服器產生動態網頁。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: WebブラウザからのHTTPリクエストを受け取り、対応するHTML文書や画像などのデータをクライアントに送信する役割を持つサーバはどれか。
+<br>
+              <div class="option">ア. Webサーバ</div>
+              <div class="option">イ. FTPサーバ</div>
+              <div class="option">ウ. DHCPサーバ</div>
+              <div class="option">エ. DBサーバ</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】HTTPリクエストに対してWebコンテンツを応答配信するサーバをWebサーバと呼びます。</div></td>
+            <td>              Q: 接收來自 Web 瀏覽器之 HTTP 請求，並將對應之 HTML 文件或圖片等資料傳送至客戶端之伺服器為何？
+<br>
+              <div class="option">A. Web 伺服器</div>
+              <div class="option">B. FTP 伺服器</div>
+              <div class="option">C. DHCP 伺服器</div>
+              <div class="option">D. DB 伺服器</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Web 伺服器主司接收 HTTP 請求並回應相應之網頁靜態/動態檔案。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ピアツーピア -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ピアツーピア</div>
+        <div class="term-reading">ぴあつーぴあ</div>
+        <div class="term-zh">對等網路</div>
+        <div class="term-en">Peer-to-Peer</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">中央サーバを介さず、ネットワーク上の端末（ノード）同士が直接通信を行う方式。<br>各端末がクライアントとサーバの両方の機能を担い、ファイル共有やブロックチェーンに使われる。</div>
+        <div class="summary-zh">不依賴中央伺服器，由網路上的各個終端（節點）直接進行點對點通信的架構。<br>每個節點兼具客戶端與伺服器雙重角色，常用於檔案分享與區塊鏈技術。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 専用の管理サーバを置かず、ネットワークに接続された同等な権限を持つ端末同士が直接データやリソースを共有する通信方式はどれか。
+<br>
+              <div class="option">ア. ピアツーピア（P2P）</div>
+              <div class="option">イ. クライアントサーバシステム</div>
+              <div class="option">ウ. シンクライアント</div>
+              <div class="option">エ. メインフレーム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】中央の制御サーバを介さずに端末間（Peer間）で直接通信する方式を「ピアツーピア（P2P）」と呼びます。</div></td>
+            <td>              Q: 不設專用管理伺服器，由連接於網路上具相同權限之終端相互直接分享資料或資源之通訊方式為何？
+<br>
+              <div class="option">A. 對等網路 (P2P)</div>
+              <div class="option">B. 主從式架構</div>
+              <div class="option">C. 精簡客戶端</div>
+              <div class="option">D. 大型主機</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】P2P（Peer-to-Peer）架構去中心化，節點之間平等互傳，不需倚賴中央集中伺服器。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第四組：虛擬化與雲端運算 -->
+  <div class="group-container">
+    <div class="group-header">虛擬化與雲端運算</div>
+
+    <!-- 仮想化 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">仮想化</div>
+        <div class="term-reading">かそうか</div>
+        <div class="term-zh">虛擬化</div>
+        <div class="term-en">Virtualization</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">物理的なハードウェアリソース（CPU、メモリ、ストレージ等）を論理的に分割・統合する技術。<br>1台の物理サーバ上で複数のOSを独立して動作させ、リソース使用効率を高める。</div>
+        <div class="summary-zh">將實體硬體資源（CPU、記憶體、儲存空間等）進行邏輯切分或統合之技術。<br>可在單一實體伺服器上獨立執行多個作業系統，顯著提升硬體利用率。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 1台の物理サーバ上でソフトウェアを用いて複数の仮想的なサーバ環境を構築・稼働させる技術を何と呼ぶか。
+<br>
+              <div class="option">ア. サーバ仮想化</div>
+              <div class="option">イ. マルチスレッド</div>
+              <div class="option">ウ. クラスタリング</div>
+              <div class="option">エ. デュアルシステム</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】物理リソースを抽象化し、複数の論理環境を構築する技術を「仮想化（Virtualization）」と言います。</div></td>
+            <td>              Q: 在單一實體伺服器上利用軟體構建並運作多個虛擬伺服器環境之技術稱為？
+<br>
+              <div class="option">A. 伺服器虛擬化</div>
+              <div class="option">B. 多執行緒 (Multi-threading)</div>
+              <div class="option">C. 叢集化 (Clustering)</div>
+              <div class="option">D. 雙重系統 (Dual System)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】透過 Hypervisor 等軟體層將實體機器抽象化以多開 OS 的技術即為虛擬化。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VM -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">VM（仮想マシン）</div>
+        <div class="term-reading">ぶいえむ</div>
+        <div class="term-zh">虛擬機器</div>
+        <div class="term-en">Virtual Machine</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">仮想化ソフトウェアによって物理コンピュータ上にソフトウェア的に構築された仮想計算機。<br>各自が独自のOS（ゲストOS）を持ち、物理リソースを共有しながら完全に独立して稼働する。</div>
+        <div class="summary-zh">透過虛擬化軟體於實體電腦上建構出的虛擬化計算機環境。<br>各虛擬機器擁有獨立的 Guest OS，共享實體資源但運作高度隔離。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: ハイパーバイザーやコンテナ技術などによって構築された、独立したOSを実行可能な論理的な計算環境を何と呼ぶか。
+<br>
+              <div class="option">ア. 仮想マシン（VM）</div>
+              <div class="option">イ. 物理サーバ</div>
+              <div class="option">ウ. プロセッサ</div>
+              <div class="option">エ. BIOS</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ソフトウェア上で再現された論理的なコンピュータ環境を仮想マシン（VM）と呼びます。</div></td>
+            <td>              Q: 透過 Hypervisor 或容器技術所建立、可執行獨立 OS 的邏輯運算環境稱為？
+<br>
+              <div class="option">A. 虛擬機器 (VM)</div>
+              <div class="option">B. 實體伺服器</div>
+              <div class="option">C. 處理器</div>
+              <div class="option">D. BIOS</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】於實體軟硬體基礎之上，以邏輯隔離方式運行特定 OS 之計算實體即稱為虛擬機器（Virtual Machine）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VDI -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">VDI</div>
+        <div class="term-reading">ぶいでぃーあい</div>
+        <div class="term-zh">虛擬桌面架構</div>
+        <div class="term-en">Virtual Desktop Infrastructure</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ユーザーのデスクトップ環境を中央サーバ上に集中的に仮想化して配置・管理する技術。<br>端末側からネットワーク経由で操作し、テレワーク推進や情報漏洩対策に有効。</div>
+        <div class="summary-zh">將多個使用者的桌面環境集中於伺服器端實施虛擬化與統一管理的技術。<br>使用者可經由網路以多元終端遙控操作，利於推動遠距工作與防範洩密。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: サーバ上に構築した仮想マシン内でクライアントOSを動作させ、ユーザーが手元の端末からネットワーク経由でそのデスクトップ画面を操作する仕組みはどれか。
+<br>
+              <div class="option">ア. VDI</div>
+              <div class="option">イ. VPN</div>
+              <div class="option">ウ. NAS</div>
+              <div class="option">エ. SAN</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】デスクトップ環境をサーバ側で仮想化し、手元の端末には画面情報のみを転送して操作する技術をVDI（Virtual Desktop Infrastructure）と呼びます。</div></td>
+            <td>              Q: 於伺服器架設之虛擬機器內部運行客戶端 OS，並由使用者透過手邊終端經網路遙控該桌面畫面之機制為何？
+<br>
+              <div class="option">A. VDI</div>
+              <div class="option">B. VPN</div>
+              <div class="option">C. NAS</div>
+              <div class="option">D. SAN</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】VDI（Virtual Desktop Infrastructure）將桌面運算完全集約於 Server 端，端點只傳送影像與輸入訊號。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- クラウドコンピューティング -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">クラウドコンピューティング</div>
+        <div class="term-reading">くらうどこんぴゅーてぃんぐ</div>
+        <div class="term-zh">雲端運算</div>
+        <div class="term-en">Cloud Computing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ネットワーク経由でコンピュータ資源（計算機、ストレージ、アプリ等）をオンデマンドで利用する形態。<br>自前で設備を所有・管理する必要がなく、従量課金制や迅速な拡張性が特徴。</div>
+        <div class="summary-zh">經由網際網路隨選（On-Demand）存取各項 IT 資源（運算、儲存、應用等）的服務模式。<br>免除自建機房之設備投資，具備按用量計費與迅速擴充等彈性特點。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: インターネットを通じて、必要に応じたプロビジョニングにより、サーバー、ストレージ、アプリケーションなどのITリソースをサービスとして提供するモデルはどれか。
+<br>
+              <div class="option">ア. クラウドコンピューティング</div>
+              <div class="option">イ. ハウジングサービス</div>
+              <div class="option">ウ. オンプレミス</div>
+              <div class="option">エ. スタンドアロン</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】インターネット経由で必要なITリソースをオンデマンド利用できるサービス形態を「クラウドコンピューティング」と呼びます。自社保有する「オンプレミス」と対比されます。</div></td>
+            <td>              Q: 經由網際網路按需動態配置，將伺服器、儲存與應用程式等 IT 資源作為服務加以提供之模式為何？
+<br>
+              <div class="option">A. 雲端運算 (Cloud Computing)</div>
+              <div class="option">B. 機房代管服務 (Housing Service)</div>
+              <div class="option">C. 地端自建 (On-Premises)</div>
+              <div class="option">D. 單機 (Stand-alone)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】雲端運算（Cloud Computing）提供彈性擴充與按量計費，相較於在地端（On-Premises）自購硬體展現極佳資產靈活性。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SaaS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">SaaS</div>
+        <div class="term-reading">さーす</div>
+        <div class="term-zh">軟體即服務</div>
+        <div class="term-en">Software as a Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ソフトウェアを端末にインストールせず、インターネット経由でサービスとして利用する形態。<br>インフラや開発環境の管理は事業者が行い、ユーザーはブラウザ等から最新機能を利用できる。</div>
+        <div class="summary-zh">無需於本機安裝軟體，經由網際網路隨選使用應用程式軟體的服務模式。<br>基礎設施與維護更新全由供應商負責，使用者透過瀏覽器即可享用最新功能。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 電子メールやグループウェアなどのアプリケーション機能を、インターネット経由でユーザーにサービスとして提供するクラウドの形態はどれか。
+<br>
+              <div class="option">ア. SaaS</div>
+              <div class="option">イ. PaaS</div>
+              <div class="option">ウ. IaaS</div>
+              <div class="option">エ. DaaS</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】アプリケーションレベルの機能をサービスとして提供するクラウドモデルは「SaaS（Software as a Service）」です。</div></td>
+            <td>              Q: 將電子郵件、協同作業（Groupware）等應用程式功能經由網際網路作為服務提供給使用者之雲端型態為何？
+<br>
+              <div class="option">A. SaaS</div>
+              <div class="option">B. PaaS</div>
+              <div class="option">C. IaaS</div>
+              <div class="option">D. DaaS</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】SaaS（Software as a Service）係直接交付最上層之「應用軟體」服務供使用者存取。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PaaS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">PaaS</div>
+        <div class="term-reading">ぱーす</div>
+        <div class="term-zh">平台即服務</div>
+        <div class="term-en">Platform as a Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">アプリケーションの開発や実行に必要なプラットフォーム（OS、DB、プログラミング環境）を提供する形態。<br>インフラ管理の負担を減らし、開発者はアプリ開発そのものに集中できる。</div>
+        <div class="summary-zh">提供開發與執行應用程式所需之平台基底（包含 OS、資料庫、程式語言環境）的服務。<br>可減輕基礎設施部署負擔，使開發團隊能專注於應用程式之編寫。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: アプリケーションを開発・動作させるためのデータベースやミドルウェア、OSなどのプラットフォーム環境をインターネット経由で提供するサービスはどれか。
+<br>
+              <div class="option">ア. PaaS</div>
+              <div class="option">イ. SaaS</div>
+              <div class="option">ウ. IaaS</div>
+              <div class="option">エ. HaaS</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】OSやDB、ミドルウェアなどの「アプリ開発環境（プラットフォーム）」を提供するクラウドサービスはPaaS（Platform as a Service）です。</div></td>
+            <td>              Q: 經由網際網路提供用以開發與運行應用程式之資料庫、中間件與 OS 等平台環境的服務為何？
+<br>
+              <div class="option">A. PaaS</div>
+              <div class="option">B. SaaS</div>
+              <div class="option">C. IaaS</div>
+              <div class="option">D. HaaS</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】PaaS（Platform as a Service）為開發人員提供託管式 runtime 平台環境，省去維護 OS / DB 基礎結構之人力。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IaaS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IaaS</div>
+        <div class="term-reading">いあーす</div>
+        <div class="term-zh">基礎設施即服務</div>
+        <div class="term-en">Infrastructure as a Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">仮想サーバやネットワーク、ストレージといったインフラリソースをクラウドで提供する形態。<br>OSの選定からシステム構成まで高い自由度を持ち、インフラを迅速に増設・変更できる。</div>
+        <div class="summary-zh">透過雲端提供虛擬伺服器、網路與儲存等基礎設施資源之服務模式。<br>使用者可自由選擇 OS 與配置架構，並能依負需求快速擴充或縮減基礎設施。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システム構築に必要な仮想サーバ、CPU、ストレージ、ネットワークなどのインフラ基盤をインターネット経由で提供するクラウドモデルはどれか。
+<br>
+              <div class="option">ア. IaaS</div>
+              <div class="option">イ. PaaS</div>
+              <div class="option">ウ. SaaS</div>
+              <div class="option">エ. ASP</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ハードウェアやネットワークなどの「インフラ」そのものをサービスとして提供するモデルはIaaS（Infrastructure as a Service）です。</div></td>
+            <td>              Q: 經由網際網路提供建置系統所需之虛擬伺服器、CPU、儲存空間與網路等基礎設施之雲端模式為何？
+<br>
+              <div class="option">A. IaaS</div>
+              <div class="option">B. PaaS</div>
+              <div class="option">C. SaaS</div>
+              <div class="option">D. ASP</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】IaaS（Infrastructure as a Service）提供最底層的虛擬硬體與網路硬體元件供使用者自定軟體堆疊。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- エッジコンピューティング -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">エッジコンピューティング</div>
+        <div class="term-reading">えっじこんぴゅーてぃんぐ</div>
+        <div class="term-zh">邊緣運算</div>
+        <div class="term-en">Edge Computing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">データをクラウドへ全送信せず、端末の近く（エッジ）で一次処理・解析を行う技術。<br>通信の低遅延化、ネットワーク帯域の節減、セキュリティ強化を実現する。</div>
+        <div class="summary-zh">不將資料全數上傳雲端，而是在靠近終端設備側（邊緣）即時進行處理與分析的技術。<br>能實現極低延遲通訊、節省網際網路頻寬並提升資料隱私安全性。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: IoT機器から発生する大量のデータを、クラウドサーバに直接送信するのではなく、端末の物理的に近い場所で分散処理する分散システムモデルはどれか。
+<br>
+              <div class="option">ア. エッジコンピューティング</div>
+              <div class="option">イ. グリッドコンピューティング</div>
+              <div class="option">ウ. メインフレーム</div>
+              <div class="option">エ. 集中処理</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】データ発生源の近く（ネットワークのエッジ）で前処理等を行う技術をエッジコンピューティングと呼び、リアルタイム性の向上とクラウド負荷軽減を図ります。</div></td>
+            <td>              Q: 將 IoT 裝置產生之海量資料，非直接全數傳送至雲端，而是在實體距離靠近終端處先行分散處理的架構模式為何？
+<br>
+              <div class="option">A. 邊緣運算 (Edge Computing)</div>
+              <div class="option">B. 網格運算 (Grid Computing)</div>
+              <div class="option">C. 大型主機 (Mainframe)</div>
+              <div class="option">D. 集中處理 (Centralized Processing)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】於網路邊緣節點先預處理資料以降低整體傳送延遲並節省 WAN 頻寬之技術即為 Edge Computing。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第五組：儲存系統 -->
+  <div class="group-container">
+    <div class="group-header">儲存系統</div>
+
+    <!-- RAID -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">RAID</div>
+        <div class="term-reading">れいど</div>
+        <div class="term-zh">磁碟陣列</div>
+        <div class="term-en">Redundant Array of Independent Disks</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">複数の物理ディスクを組み合わせ、1つの論理ディスクとして運用する技術。<br>データ転送の高速化（RAID 0）や耐障害性の向上（RAID 1, 5等）の目的別にレベルがある。</div>
+        <div class="summary-zh">將多個實體硬碟組合，作為單一邏輯硬碟進行運行的技術。<br>依據提升傳輸速度（RAID 0）或強化容錯性（RAID 1, 5等）之目的區分為多種層級。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 2台のハードディスクに全く同じデータを書き込むことで冗長性を確保するRAIDの構成レベル（ミラーリング）はどれか。
+<br>
+              <div class="option">ア. RAID 1</div>
+              <div class="option">イ. RAID 0</div>
+              <div class="option">ウ. RAID 5</div>
+              <div class="option">エ. RAID 6</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】RAID 0はストライピング（高速化）、RAID 1はミラーリング（二重化による冗長化）、RAID 5はパリティ分散保存です。</div></td>
+            <td>              Q: 將完全相同的資料同時寫入 2 台硬碟中以達冗餘備份（鏡像）目的之 RAID 構成層級為何？
+<br>
+              <div class="option">A. RAID 1</div>
+              <div class="option">B. RAID 0</div>
+              <div class="option">C. RAID 5</div>
+              <div class="option">D. RAID 6</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】RAID 1 為鏡像（Mirroring）；RAID 0 為帶狀分割（Striping）；RAID 5 則採用分散式奇偶校驗碼。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- NAS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">NAS</div>
+        <div class="term-reading">なす</div>
+        <div class="term-zh">網路附加儲存</div>
+        <div class="term-en">Network Attached Storage</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">LANなどのTCP/IPネットワークに直接接続して共有利用するファイルサーバ専用機器。<br>NFSやSMB(CIFS)プロトコルを用いて、異機種クライアント間でのファイル共有を容易にする。</div>
+        <div class="summary-zh">直接連接於 LAN 等 TCP/IP 網路，供多台機器共享使用之專用檔案儲存設備。<br>透過 NFS 或 SMB 協定，使不同 OS 平台間之檔案存取與共享極為簡便。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: LANに直接接続し、ファイル共有機能を提供する専用のストレージ機器はどれか。
+<br>
+              <div class="option">ア. NAS</div>
+              <div class="option">イ. SAN</div>
+              <div class="option">ウ. DAS</div>
+              <div class="option">エ. RAID</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】TCP/IPネットワーク（LAN）に直接接続してファイルレベルで共有アクセスを行うストレージはNAS（Network Attached Storage）です。</div></td>
+            <td>              Q: 直接連接於 LAN 網路，提供檔案級共享功能之專用儲存設備為何？
+<br>
+              <div class="option">A. NAS</div>
+              <div class="option">B. SAN</div>
+              <div class="option">C. DAS</div>
+              <div class="option">D. RAID</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】NAS（Network Attached Storage）具備專用檔案系統 OS，經由以太網路 TCP/IP 進行檔案層級（File-level）存取。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SAN -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">SAN</div>
+        <div class="term-reading">さん</div>
+        <div class="term-zh">儲存區域網路</div>
+        <div class="term-en">Storage Area Network</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">サーバとストレージ間を高速な専用ネットワーク（ファイバチャネル等）で接続する技術。<br>ブロックレベルでの高速データ転送を実現し、データベースや大容量環境に適している。</div>
+        <div class="summary-zh">透過高速專用網路（如光纖通道 FC）連接伺服器集群與儲存陣列之架構。<br>提供區塊層級（Block-level）的高速資料傳送，非常適合大型資料庫環境。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 複数のサーバとストレージ装置との間を、ファイバチャネルなどを用いて構築したストレージ専用の高速ネットワークはどれか。
+<br>
+              <div class="option">ア. SAN</div>
+              <div class="option">イ. NAS</div>
+              <div class="option">ウ. LAN</div>
+              <div class="option">エ. WAN</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ファイバチャネル（FC）等の専用プロトコルを用いて構築するストレージネットワークをSAN（Storage Area Network）と呼びます。</div></td>
+            <td>              Q: 在多台伺服器與儲存設備之間，利用光纖通道 (FC) 等技術所建置之儲存專用高速網路為何？
+<br>
+              <div class="option">A. SAN</div>
+              <div class="option">B. NAS</div>
+              <div class="option">C. LAN</div>
+              <div class="option">D. WAN</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】SAN（Storage Area Network）係儲存設備專用網路，進行 Block 級別之超高速傳輸。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第六組：系統容錯與安全設計 -->
+  <div class="group-container">
+    <div class="group-header">系統容錯與安全設計</div>
+
+    <!-- フォールトトレラント -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">フォールトトレラント</div>
+        <div class="term-reading">ふぉーるととれらんと</div>
+        <div class="term-zh">容錯設計 / 容錯能力</div>
+        <div class="term-en">Fault Tolerance</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">障害が発生してもシステム全体を停止させず、正常に処理を継続させる設計思想。<br>コンポーネントの多重化や自動切替機構を備えることで、ダウンタイムをゼロに近づける。</div>
+        <div class="summary-zh">即使局部元件發生故障，亦能使整體系統維持正常運作而不致停機之設計思想。<br>透過組件多重化與自動切換機制，儘可能將停機時間降至趨近於零。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システムを構成する一部の部品に障害が発生しても、システム全体としては機能を維持して処理を継続する考え方を表す用語はどれか。
+<br>
+              <div class="option">ア. フォールトトレラント</div>
+              <div class="option">イ. フェールセーフ</div>
+              <div class="option">ウ. フールプルーフ</div>
+              <div class="option">エ. フォールトアボイダンス</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】障害（Fault）に耐えて（Tolerant）処理を継続する設計をフォールトトレラントと言います。フェールセーフは「安全側に倒す」、フールプルーフは「誤操作防止」です。</div></td>
+            <td>              Q: 即使構成系統之部分組件發生故障，整體系統仍可維持其功能並持續執行處理之設計思維為何？
+<br>
+              <div class="option">A. 容錯設計 (Fault Tolerance)</div>
+              <div class="option">B. 故障安全 (Fail-Safe)</div>
+              <div class="option">C. 防呆設計 (Foolproof)</div>
+              <div class="option">D. 避錯設計 (Fault Avoidance)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Fault Tolerance 強調「故障時業務繼續運行」；Fail-Safe 強調「故障時自動轉至安全狀態」；Foolproof 強調「防止誤操作」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- フェールセーフ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">フェールセーフ</div>
+        <div class="term-reading">ふぇーるせーふ</div>
+        <div class="term-zh">故障安全設計</div>
+        <div class="term-en">Fail-Safe</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">機器やシステムに障害が発生した際、常に安全側の状態へ移行させる設計概念。<br>踏切の遮断機が停電時に自重で下がる構造など、人命や安全保護を最優先する場合に用いられる。</div>
+        <div class="summary-zh">當機器或系統發生故障時，確保其自動切換至安全狀態以防止損害之設計概念。<br>如平交道遮斷機停電時靠自重降下等，以生命與安全防護為第一優先考量。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システムに障害が発生したとき、被害を最小限に抑えるよう常に「安全な状態」にシステムを導く設計思想はどれか。
+<br>
+              <div class="option">ア. フェールセーフ</div>
+              <div class="option">イ. フールプルーフ</div>
+              <div class="option">ウ. フェールソフト</div>
+              <div class="option">エ. フォールトトレラント</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】障害時に「安全（Safe）側」へ制御を移行させる考え方はフェールセーフです。（例：信号機が故障時に赤点滅になる、踏切が降りる）</div></td>
+            <td>              Q: 當系統發生故障時，為將損害控制於最小程度而始終將系統導向「安全狀態」之設計思想為何？
+<br>
+              <div class="option">A. 故障安全 (Fail-Safe)</div>
+              <div class="option">B. 防呆設計 (Foolproof)</div>
+              <div class="option">C. 故障軟著陸 (Fail-Soft)</div>
+              <div class="option">D. 容錯設計 (Fault Tolerance)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Fail-Safe 核心目的為避免災害擴大，優先維護安全（例：信號燈故障預設顯示紅燈）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- フールプルーフ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">フールプルーフ</div>
+        <div class="term-reading">ふーるぷるーふ</div>
+        <div class="term-zh">防呆設計</div>
+        <div class="term-en">Foolproof</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ユーザーが誤った操作を行っても、事故やシステム障害を起こさないようにする設計。<br>入力欄の形式チェックや確認ダイアログ表示、物理的な差し込み防止形状などが該当。</div>
+        <div class="summary-zh">即使使用者發生人為誤操作，亦能防止事故或系統異常發生之機制設計。<br>例如欄位格式檢核、確認對話框提示或防呆形狀插頭設計等。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 人間が操作ミスをすることを前提とし、誤った操作をしてもシステムの安全が保たれるように設計する考え方はどれか。
+<br>
+              <div class="option">ア. フールプルーフ</div>
+              <div class="option">イ. フェールセーフ</div>
+              <div class="option">ウ. フォールトアボイダンス</div>
+              <div class="option">エ. フェールソフト</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】「人の誤操作（Fool）」に対処・防止（Proof）する設計思想をフールプルーフと言います。（例：電子レンジのドアを開けると加熱が止まる等）</div></td>
+            <td>              Q: 以人為操作失誤為前提，設計即使進行錯誤操作亦能維護系統安全之思維為何？
+<br>
+              <div class="option">A. 防呆設計 (Foolproof)</div>
+              <div class="option">B. 故障安全 (Fail-Safe)</div>
+              <div class="option">C. 避錯設計 (Fault Avoidance)</div>
+              <div class="option">D. 故障軟著陸 (Fail-Soft)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Foolproof 著眼於預防「人為操作錯誤」所致的危險或錯誤處理。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ヒューマンエラー -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ヒューマンエラー</div>
+        <div class="term-reading">ひゅーまんえらー</div>
+        <div class="term-zh">人為疏失 / 人為錯誤</div>
+        <div class="term-en">Human Error</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">人間のうっかりミスや認識・判断の誤りによって引き起こされる意図しないエラー。<br>システム設計ではヒューマンエラーが発生することを前提としてフールプルーフ等を導入する。</div>
+        <div class="summary-zh">因個人疏忽、認知失誤或判斷偏差所導致的非預期錯誤。<br>現代資訊系統設計預設人為錯誤必然發生，並藉由防呆機制等手段予以防範。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システムの運用において、人間のうっかりミスや誤認によって生じる障害の原因を何と呼ぶか。
+<br>
+              <div class="option">ア. ヒューマンエラー</div>
+              <div class="option">イ. ハードウェア故障</div>
+              <div class="option">ウ. バグ</div>
+              <div class="option">エ. サイバー攻撃</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】人間の不注意や記憶違いなどに起因するミスをヒューマンエラーと呼び、チェックリスト導入やフールプルーフ設計で対策します。</div></td>
+            <td>              Q: 於系統運作過程中，因人為疏忽或誤認而衍生障礙的原因稱為？
+<br>
+              <div class="option">A. 人為疏失 (Human Error)</div>
+              <div class="option">B. 硬體故障</div>
+              <div class="option">C. 軟體 Bug</div>
+              <div class="option">D. 網路攻擊</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Human Error 指作業人員之疏失，通常需配合制度宣導與防呆機制等手法進行預防。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- UPS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">UPS（無停電電源装置）</div>
+        <div class="term-reading">ゆーぴーえす</div>
+        <div class="term-zh">不斷電系統</div>
+        <div class="term-en">Uninterruptible Power Supply</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">停電や瞬時電圧低下が発生した際、接続機器へ一定時間連続して電力を供給する装置。<br>サーバなどを安全にシャットダウンするための時間を確保し、データ破損を防ぐ。</div>
+        <div class="summary-zh">當發生停電或電壓瞬降時，能即時為連接設備持續提供電力之裝置。<br>可確保伺服器有充分時間完成安全關機程序，防範硬碟與資料毀損。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歴屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 停電などが原因で落雷や商用電源が切断された際、接続されたコンピュータへ一定時間安定して電力を給電し続ける装置はどれか。
+<br>
+              <div class="option">ア. UPS（無停電電源装置）</div>
+              <div class="option">イ. AVR（自動電圧調整器）</div>
+              <div class="option">ウ. PoE給電ハブ</div>
+              <div class="option">エ. インバータ発電機</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】電源異常時にバッテリーから給電を行い、データ消失や故障を防ぐ装置はUPS（Uninterruptible Power Supply）です。</div></td>
+            <td>              Q: 當落雷或市電中斷致電力供應停止時，能為連接之電腦持續穩定供電一定時間之裝置為何？
+<br>
+              <div class="option">A. UPS (不斷電系統 / 無停電電源装置)</div>
+              <div class="option">B. AVR (自動電壓調整器)</div>
+              <div class="option">C. PoE 供電集線器</div>
+              <div class="option">D. 變頻發電機</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】UPS（Uninterruptible Power Supply）內建蓄電池，可於瞬停或突發停電時發揮緩衝供電功能。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

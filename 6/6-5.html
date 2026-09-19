@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトの資源 - 1語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトの資源 - 1語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案資源與人力管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">資源の対象群</div>
+                <div class="term-reading">しげんのたいしょうぐん</div>
+                <div class="term-zh">資源池（資源群）</div>
+                <div class="term-en">Resource Pool</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトに必要な人員、設備、資金などのリソースを集約管理し、最適かつ効率的に分配するための供給源。</div>
+                <div class="summary-zh">集中管理專案所需的人力、設備與資金等資源，以便於專案間進行最佳化與高效分配的供給源。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおいて「リソースプール（資源の対象群）」を活用する主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 個別の開発作業におけるプログラミングコード記述を自動化すること。</div>
+                        <div class="option">イ. 組織内の人員や設備などのリソースを一元管理し、複数プロジェクト間での最適な配分と効率的運用を図ること。</div>
+                        <div class="option">ウ. システム開発完了後の製品マーケティング費用を削減すること。</div>
+                        <div class="option">エ. プロジェクトマネージャーの権限を完全に廃止し、メンバーの自主性に委ねること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：リソースプール（資源の対象群）は、組織内で利用可能な人員や設備などの資源をまとめて一元管理する仕組みです。これにより、リソースの稼働状況に応じた柔軟な配置が可能となり、資源の重複や不足を防ぎ最適運用を実現します。</div></td>
+                    <td>                        【題目】在專案管理中，運用「資源池（Resource Pool / 資源的對象群）」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 自動化個別開發作業中的程式碼編寫。</div>
+                        <div class="option">B. 一元化管理組織內部的人力與設備等資源，以實現跨專案的最佳分配與高效運用。</div>
+                        <div class="option">C. 降低系統開發完成後的產品行銷費用。</div>
+                        <div class="option">D. 完全廢除專案經理的權限，完全改由成員自主決定。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：資源池（Resource Pool）是指將組織內部可供調配的人力、設備等資源進行集中與一元化管理。透過資源池可即時掌握資源動態與專長，避免資源閒置或過度指派，達成分配最佳化。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データベース設計 - 3語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>データベース設計 - 3語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組 1: 資料重複排除與優化 -->
+    <div class="group-container">
+        <div class="group-header">資料重複排除與優化</div>
+
+        <!-- Term 1: データ重複の排除 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データ重複の排除</div>
+                <div class="term-reading">でーたじゅうふくのはいじょ</div>
+                <div class="term-zh">資料重複排除</div>
+                <div class="term-en">Data Deduplication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データベース内の重複情報を取り除き、ストレージ効率と分析精度を向上させるプロセス。</div>
+                <div class="summary-zh">移除資料庫中重複的資訊，藉此提高儲存空間利用效率與資料分析精確度的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ストレージ容量を節約するために、保存されるデータの中から重複する部分を検出して排除し、実データを一元化して記憶する技術はどれか。
+<br>
+                        <div class="option">ア. データ重複の排除（データデデュープ）</div>
+                        <div class="option">イ. データマイニング</div>
+                        <div class="option">ウ. データディクショナリ</div>
+                        <div class="option">エ. データの正規化</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：データ重複の排除（データデデュープ）は、重複するデータを排除してストレージの利用効率を向上させる技術です。</div></td>
+                    <td>                        為了節省儲存容量，在保存的資料中檢測並排除重複部分，將實際資料集中儲存的技術是哪一個？
+<br>
+                        <div class="option">A. 資料重複排除（Data Deduplication）</div>
+                        <div class="option">B. 資料探勘</div>
+                        <div class="option">C. 資料字典</div>
+                        <div class="option">D. 資料正規化</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：資料重複排除（Data Deduplication）是指排除重複資料以提高儲存空間使用效率的技術。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 群組 2: 元資料與資料字典管理 -->
+    <div class="group-container">
+        <div class="group-header">元資料與資料字典管理</div>
+
+        <!-- Term 2: メタデータ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">メタデータ</div>
+                <div class="term-reading">めたでーた</div>
+                <div class="term-zh">元資料</div>
+                <div class="term-en">Metadata</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データの内容、形式、作成日時などを説明する「データに関するデータ」であり、効率的な管理に役立つ。</div>
+                <div class="summary-zh">用於說明資料的內容、格式、建立時間等資訊的「描述資料的資料」，有助於資料的高效管理。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        「データに関するデータ」のことであり、データの内容や形式、作成日時、作成者などの情報を保持してデータの管理や検索を容易にするものはどれか。
+<br>
+                        <div class="option">ア. メタデータ</div>
+                        <div class="option">イ. マスターデータ</div>
+                        <div class="option">ウ. ビッグデータ</div>
+                        <div class="option">エ. オープンデータ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：メタデータは「データについてのデータ」を意味し、データ本体を管理・検索・理解するための付加的な情報のことです。</div></td>
+                    <td>                        指「描述資料的資料」，保存資料的內容、格式、建立日期、創作者等資訊，以便於資料管理與檢索的是哪一個？
+<br>
+                        <div class="option">A. 元資料（Metadata）</div>
+                        <div class="option">B. 主資料（Master Data）</div>
+                        <div class="option">C. 大數據（Big Data）</div>
+                        <div class="option">D. 開放資料（Open Data）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：元資料（Metadata）意指「關於資料的資料」，是用來管理、檢索與理解資料主體本身的附加資訊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: データディクショナリ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データディクショナリ</div>
+                <div class="term-reading">でーたでぃくしょなり</div>
+                <div class="term-zh">資料字典</div>
+                <div class="term-en">Data Dictionary</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データベースの構造、カラムの型、制約条件などの定義情報を一元管理するシステム。</div>
+                <div class="summary-zh">集中管理資料庫結構、欄位型態、約束條件等定義資訊的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データベースの設計や運用を効率的に行うために、テーブルの構造、属性、制約条件などのメタデータを一元的に管理するシステムはどれか。
+<br>
+                        <div class="option">ア. データディクショナリ</div>
+                        <div class="option">イ. データウェアハウス</div>
+                        <div class="option">ウ. データマート</div>
+                        <div class="option">エ. データベース管理システム</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：データディクショナリは、データベース内のオブジェクトの定義情報（メタデータ）を集中管理する辞書機能のことです。</div></td>
+                    <td>                        為了高效進行資料庫的設計與維運，集中管理表格結構、屬性、約束條件等元資料的系統是哪一個？
+<br>
+                        <div class="option">A. 資料字典（Data Dictionary）</div>
+                        <div class="option">B. 資料倉庫（Data Warehouse）</div>
+                        <div class="option">C. 資料市集（Data Mart）</div>
+                        <div class="option">D. 資料庫管理系統（DBMS）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：資料字典（Data Dictionary）是指集中管理資料庫內各個物件之定義資訊（元資料）的字典功能。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

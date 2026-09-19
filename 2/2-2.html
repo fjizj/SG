@@ -1,0 +1,1412 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セキュリティ関連法規 - 32語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>セキュリティ関連法規 - 32語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>サイバーセキュリティ・個人情報保護 用語分析</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Group 1: 網路安全體系與國家戰略 -->
+    <div class="group-container">
+        <div class="group-header">網路安全體系與國家戰略</div>
+
+        <!-- 1. サイバーセキュリティ基本法 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サイバーセキュリティ基本法</div>
+                <div class="term-reading">さいばーせきゅりてぃきほんほう</div>
+                <div class="term-zh">網路安全基本法</div>
+                <div class="term-en">Cyber Security Basic Act</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">国や地方公共団体、事業者のサイバーセキュリティに関する責務を定め、施策の基本となる事項を定めた法律。</div>
+                <div class="summary-zh">規定國家、地方公共團體及事業單位的網路安全責任，為推動安全施策提供基本框架的法律。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        サイバーセキュリティ基本法において、国の責務として規定されているものはどれか。
+<br>
+                        <div class="option">ア. 国民に対する情報の安全管理に関する教育の実施</div>
+                        <div class="option">イ. 基本理念にのっとり、サイバーセキュリティに関する施策を策定・実施すること</div>
+                        <div class="option">ウ. 民間企業のシステム監査を義務付けること</div>
+                        <div class="option">エ. 個人の通信内容を常時監視すること</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：サイバーセキュリティ基本法では、国は基本理念にのっとり、サイバーセキュリティに関する施策を総合的に策定し、推進する責務を有すると定めている。</div></td>
+                    <td>                        在日本《網路安全基本法》中，關於國家的責任，下列何者描述正確？
+<br>
+                        <div class="option">A. 對國民強制實施資訊安全管理教育</div>
+                        <div class="option">B. 依據基本理念，制定並實施網路安全相關施策</div>
+                        <div class="option">C. 強制規定民營企業必須進行系統審計</div>
+                        <div class="option">D. 常態性監控個人的通訊內容</div>
+                        <div class="answer">正確答案：(B)</div>
+<br>
+                        <div class="analysis">解析：《網路安全基本法》規定，國家有責任依據基本理念綜合制定並推動網路安全相關施策。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 2. サイバーセキュリティ戦略 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サイバーセキュリティ戦略</div>
+                <div class="term-reading">さいばーせきゅりてぃせんりゃく</div>
+                <div class="term-zh">網路安全戰略</div>
+                <div class="term-en">Cybersecurity Strategy</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サイバーセキュリティ基本法に基づき、情報社会の安全確保に向けた国の総合的な施策の方針を示した計画。</div>
+                <div class="summary-zh">依據網路安全基本法制定，旨在確保資訊社會安全並提供國家綜合性施策方針的計畫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        サイバーセキュリティ戦略に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 基本法に基づき、政府がサイバーセキュリティ施策の総合的な推進のために閣議決定する戦略である。</div>
+                        <div class="option">イ. 民間企業が個別で作成する社内セキュリティ規程のことである。</div>
+                        <div class="option">ウ. 国際標準化機構（ISO）が定めた国際規格のことである。</div>
+                        <div class="option">エ. 暗号アルゴリズムの選定基準を定めたガイドラインである。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サイバーセキュリティ戦略は、サイバーセキュリティ基本法に基づき、政府が基本的施策の推進のために策定・閣議決定する方針である。</div></td>
+                    <td>                        關於「網路安全戰略」的敘述，下列何者正確？
+<br>
+                        <div class="option">A. 依據基本法，由政府為綜合推進網路安全施策而經內閣會議決議的戰略</div>
+                        <div class="option">B. 指民營企業個別制定的內部安全規章</div>
+                        <div class="option">C. 指國際標準化組織 (ISO) 制定的國際標準</div>
+                        <div class="option">D. 指定義加密演算法遴選標準的指南</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：網路安全戰略是依據《網路安全基本法》，由日本政府擬定並經內閣會議決議的國家級戰略。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 3. サイバーセキュリティ協議会 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サイバーセキュリティ協議会</div>
+                <div class="term-reading">さいばーせきゅりてぃきょうぎかい</div>
+                <div class="term-zh">網路安全協議會</div>
+                <div class="term-en">Cyber Security Council</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">国、地方公共団体、重要インフラ事業者等がサイバーセキュリティに関する情報を共有・協議するための組織。</div>
+                <div class="summary-zh">由國家、地方政府及重要基礎設施營運商等組成的組織，旨在共享網路安全情報並進行協議合作。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        サイバーセキュリティ基本法に基づき設置され、関係機関間でサイバー攻撃に関する情報共有等を行う協議会はどれか。
+<br>
+                        <div class="option">ア. 情報処理推進機構 (IPA)</div>
+                        <div class="option">イ. サイバーセキュリティ協議会</div>
+                        <div class="option">ウ. 個人情報保護委員会</div>
+                        <div class="option">エ. 日本ネットワークインフォメーションセンター (JPNIC)</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：サイバーセキュリティ基本法に基づき、官民の関係主体が相互に連携し情報共有を図る組織として「サイバーセキュリティ協議会」が規定されている。</div></td>
+                    <td>                        依據《網路安全基本法》設置，用於在相關機關之間進行網路攻擊情報共享與協調的組織為何？
+<br>
+                        <div class="option">A. 資訊處理推進機構 (IPA)</div>
+                        <div class="option">B. 網路安全協議會</div>
+                        <div class="option">C. 個人情報保護委員會</div>
+                        <div class="option">D. 日本網路資訊中心 (JPNIC)</div>
+                        <div class="answer">正確答案：(B)</div>
+<br>
+                        <div class="analysis">解析：依據《網路安全基本法》，為加強官民與相關機關之間的情報共享與橫向合作而成立「網路安全協議會」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 未經授權存取與存取控制 -->
+    <div class="group-container">
+        <div class="group-header">未經授權存取與存取控制</div>
+
+        <!-- 4. アクセス制御機能 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">アクセス制御機能</div>
+                <div class="term-reading">あくせすせいぎょきのう</div>
+                <div class="term-zh">存取控制功能</div>
+                <div class="term-en">Access Control Function</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">利用者の身元を確認し、許可されたリソースや情報のみへのアクセスを制限・管理するシステム機能。</div>
+                <div class="summary-zh">確認使用者身分並限制僅能存取獲授權資源與資訊的系統管理功能。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不正アクセス禁止法において定義される「アクセス制御機能」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 特定電子メールの送信を制限する機能</div>
+                        <div class="option">イ. 特定利用者が特定利用制限された特定部分を利用できるように管理する機能</div>
+                        <div class="option">ウ. 暗号化された通信を無条件で遮断する機能</div>
+                        <div class="option">エ. ウイルス感染を自動的に検知して駆除する機能</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：不正アクセス禁止法において、特定利用者が特定の特定利用制限部分を利用できるようにアクセスを制御・管理する機能を指す。</div></td>
+                    <td>                        關於《禁止未經授權存取法》中所定義的「存取控制功能」，下列何者正確？
+<br>
+                        <div class="option">A. 限制發送特定電子郵件的功能</div>
+                        <div class="option">B. 管理特定使用者僅能使用被限制之特定部分存取權限的功能</div>
+                        <div class="option">C. 無條件阻斷加密通訊的功能</div>
+                        <div class="option">D. 自動偵測並清除病毒感染的功能</div>
+                        <div class="answer">正確答案：(B)</div>
+<br>
+                        <div class="analysis">解析：《禁止未經授權存取法》定義存取控制功能為：透過身分識別驗證，管理並許可特定使用者存取特定受限資源的功能。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 5. 不正アクセス行為 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">不正アクセス行為</div>
+                <div class="term-reading">ふせいあくせすこうい</div>
+                <div class="term-zh">未經授權存取行為</div>
+                <div class="term-en">Unauthorized Access Act</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">アクセス制御機能を持つコンピュータに対し、他人の識別符号を無断入力する等して利用可能な状態にする行為。</div>
+                <div class="summary-zh">對設有存取控制功能的電腦，擅自輸入他人識別碼等方式，使其處於可存取使用狀態的違法行為。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不正アクセス禁止法で禁止されている「不正アクセス行為」に該当するものはどれか。
+<br>
+                        <div class="option">ア. 他人のパスワードを無断で入力してログインし、アクセス制限されたページを閲覧する。</div>
+                        <div class="option">イ. 自分が所有するPCのパスワードを忘れたため、解析ツールを使ってログインする。</div>
+                        <div class="option">ウ. Webサイトのセキュリティホールについて管理者に報告する。</div>
+                        <div class="option">エ. 公開されているWebサイトのページをブラウザで閲覧する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：他人のパスワード等の識別符号を無断で入力し、制限されたコンピュータを利用可能にする行為は不正アクセス行為に該当する。</div></td>
+                    <td>                        下列何者屬於《禁止未經授權存取法》所禁止的「未經授權存取行為」？
+<br>
+                        <div class="option">A. 擅自輸入他人密碼登入，並瀏覽受存取限制的頁面</div>
+                        <div class="option">B. 因忘記個人電腦密碼而使用解析工具登入</div>
+                        <div class="option">C. 向管理員回報網站的安全漏洞</div>
+                        <div class="option">D. 使用瀏覽器瀏覽公開的網站頁面</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：未經同意輸入他人帳號密碼，入侵受存取控制保護的電腦系統，屬於典型的未經授權存取行為。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 6. 不正アクセス行為を助長する行為 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">不正アクセス行為を助長する行為</div>
+                <div class="term-reading">ふせいあくせすこういをじょちょうするこうい</div>
+                <div class="term-zh">助長未經授權存取之行為</div>
+                <div class="term-en">Acts Promoting Unauthorized Access</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">正当な理由なく他人の識別符号（パスワード等）を第三者に提供・教示し、不正アクセスを容易にする行為。</div>
+                <div class="summary-zh">無正當理由將他人的帳號密碼等識別碼提供或告知第三方，致使未經授權存取行為得以輕易發生的行為。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不正アクセス禁止法において、「不正アクセス行為を助長する行為」として禁止されているものはどれか。
+<br>
+                        <div class="option">ア. 他人のIDとパスワードを、相手の同意を得ずに第三者に提供する。</div>
+                        <div class="option">イ. 自社のセキュリティ診断のために社内ネットワークをスキャンする。</div>
+                        <div class="option">ウ. 複雑なパスワードの設定を推奨するパンフレットを配布する。</div>
+                        <div class="option">エ. パスワード管理ソフトを利用して自身のパスワードを管理する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：他人の識別符号（IDやパスワード）を正当な理由なく第三者に提供する行為は、不正アクセス行為を助長する行為として禁止されている。</div></td>
+                    <td>                        下列何者屬於《禁止未經授權存取法》中被禁止的「助長未經授權存取之行為」？
+<br>
+                        <div class="option">A. 未經當事人同意，將他人的 ID 與密碼提供給第三方</div>
+                        <div class="option">B. 為了公司內部的安全診斷而掃描內部網路</div>
+                        <div class="option">C. 發放建議設定複雜密碼的宣傳冊</div>
+                        <div class="option">D. 使用密碼管理軟體管理自己的密碼</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：無正當理由將他人的帳號密碼提供給第三方，會使他人易於發起非法存取，屬於「助長不正存取」之違法行為。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 個人資料保護與個人番號制度 -->
+    <div class="group-container">
+        <div class="group-header">個人資料保護與個人番號制度</div>
+
+        <!-- 7. 個人情報保護に関するガイドライン -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">個人情報保護に関するガイドライン</div>
+                <div class="term-reading">こじんじょうほうほごにかんするがいどらいん</div>
+                <div class="term-zh">個人資料保護相關指南</div>
+                <div class="term-en">Guidelines for the Protection of Personal Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報取扱事業者が遵守すべき具体的なルールや運用の基準を個人情報保護委員会が定めた方針。</div>
+                <div class="summary-zh">由個人情報保護委員會制定，規範個人資料處理事業單位應遵守之具體規則與運營基準的指南。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護委員会が策定する「個人情報保護に関するガイドライン」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 個人情報取扱事業者が法を守り適切に対応するための具体的事例や留意点を示すこと。</div>
+                        <div class="option">イ. すべての企業にプライバシーマークの取得を強制すること。</div>
+                        <div class="option">ウ. 個人情報の第三者提供を全面的に禁止すること。</div>
+                        <div class="option">エ. IT企業に対して専用のセキュリティハードウェアの導入を義務付けること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ガイドラインは、事業者が法令の規定を適切かつスムーズに遵守できるよう、具体的な解釈や事例を示したものである。</div></td>
+                    <td>                        關於個人情報保護委員會所制定的「個人資料保護相關指南」之目的，下列何者最適當？
+<br>
+                        <div class="option">A. 為個資處理事業單位提供遵守法律與妥善處理的具體實例與注意事項</div>
+                        <div class="option">B. 強制所有企業取得個人資料保護標章 (PrivacyMark)</div>
+                        <div class="option">C. 全面禁止將個人資料提供給第三方</div>
+                        <div class="option">D. 強制 IT 企業導入專用的安全硬體設備</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：指南的作用在於補充法律條文，提供具體說明與解說案例，以利事業單位貫徹法令要求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 8. 個人情報取扱事業者 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">個人情報取扱事業者</div>
+                <div class="term-reading">こじんじょうほうとりあつかいじぎょうしゃ</div>
+                <div class="term-zh">個人資料處理事業單位</div>
+                <div class="term-en">Personal Information Handling Business</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報データベース等を事業の用に供している者を指し、法令に基づく適切な個人情報管理義務を負う。</div>
+                <div class="summary-zh">指將個人資料資料庫等用於業務營運的事業主體，依法負有適當管理個人資料之義務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法における「個人情報取扱事業者」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 取り扱う個人情報の件数に関わらず、個人情報データベース等を事業に利用している事業者が該当する。</div>
+                        <div class="option">イ. 取り扱う個人情報が5,000人分以下の事業者は除外される。</div>
+                        <div class="option">ウ. 国や地方公共団体のみが対象であり、民間企業は該当しない。</div>
+                        <div class="option">エ. 非営利団体（NPO等）は対象外である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：平成29年（2017年）の法改正により、5,000人以下の小規模事業者除外規定が廃止され、個人情報データベース等を事業で扱う全ての事業者が対象となった。</div></td>
+                    <td>                        關於《個人資料保護法》中的「個人資料處理事業單位」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 無論處理的個人資料筆數多寡，只要將個資資料庫等用於事業的業者均屬之</div>
+                        <div class="option">B. 保有個資人數在 5,000 人以下的業者可豁免排除</div>
+                        <div class="option">C. 僅包含國家與地方政府，不包含民營企業</div>
+                        <div class="option">D. 非營利組織 (如 NPO) 不在規範範圍內</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：日本 2017 年修法後取消了 5,000 人以下免責的門檻，只要將個資資料庫化並用於業務之事業（包含 NPO 與小微企業）皆為規範對象。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 9. 安全管理措置 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">安全管理措置</div>
+                <div class="term-reading">あんぜんかんりそち</div>
+                <div class="term-zh">安全管理措施</div>
+                <div class="term-en">Safety Management Measures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報の漏洩・紛失等を防ぐため、組織的・人的・物理的・技術的な観点から講じるべきセキュリティ対策。</div>
+                <div class="summary-zh">為防止個人資料外洩或遺失，從組織、人員、物理與技術層面所採取的安全防護措施。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法に基づく安全管理措置の4つの分類に含まれないものはどれか。
+<br>
+                        <div class="option">ア. 組織的安全管理措置</div>
+                        <div class="option">イ. 人的安全管理措置</div>
+                        <div class="option">ウ. 物理的安全管理措置</div>
+                        <div class="option">エ. 法的安全管理措置</div>
+                        <div class="answer">正解：エ</div>
+<br>
+                        <div class="analysis">解説：安全管理措置は「組織的」「人的」「物理的」「技術的」の4つの観点から構成される。（法的安全管理措置という分類はない）</div></td>
+                    <td>                        依據《個人資料保護法》，下列何者不屬於安全管理措施四大分類之一？
+<br>
+                        <div class="option">A. 組織性安全管理措施</div>
+                        <div class="option">B. 人員性安全管理措施</div>
+                        <div class="option">C. 物理性安全管理措施</div>
+                        <div class="option">D. 法律性安全管理措施</div>
+                        <div class="answer">正確答案：(D)</div>
+<br>
+                        <div class="analysis">解析：安全管理措施的四大構面為「組織性」、「人員性」、「物理性」與「技術性」，並不包含「法律性」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 10. 要配慮個人情報 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要配慮個人情報</div>
+                <div class="term-reading">ようはいりょこじんじょうほう</div>
+                <div class="term-zh">敏感個人資料 (應特別照顧個資)</div>
+                <div class="term-en">Sensitive Personal Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人種、信条、社会的身分、病歴、犯罪の経歴等、不当な差別や不利益が生じないよう特に配慮を要する情報。</div>
+                <div class="summary-zh">包含種族、信仰、社會身分、病歷、犯罪紀錄等，為避免產生不當歧視或不利對待而需特別保護之資訊。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法において「要配慮個人情報」に該当するものはどれか。
+<br>
+                        <div class="option">ア. 健康診断の結果や病歴</div>
+                        <div class="option">イ. 自宅の電話番号</div>
+                        <div class="option">ウ. 勤務先の会社名</div>
+                        <div class="option">エ. 所有している自動車の車種</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：要配慮個人情報には、病歴、健康診断結果、人種、信条、社会的身分、犯罪歴などが含まれ、取得時には原則として本人の事前同意が必要である。</div></td>
+                    <td>                        在《個人資料保護法》中，下列何者屬於「應特別照顧之個人資料（敏感個資）」？
+<br>
+                        <div class="option">A. 健康檢查結果與病歷</div>
+                        <div class="option">B. 住家電話號碼</div>
+                        <div class="option">C. 任職公司名稱</div>
+                        <div class="option">D. 名下擁有的車輛型號</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：病歷、健康檢查結果、種族、宗教信仰、身分背景、犯罪紀錄等均屬於敏感個資，原則上蒐集時須先取得本人同意。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 11. 特定個人情報の適正な取扱いに関するガイドライン -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">特定個人情報の適正な取扱いに関するガイドライン</div>
+                <div class="term-reading">とくていこじんじょうほうのてきせいなとりあつかいにかんするがいどらいん</div>
+                <div class="term-zh">特定個人資料適正處理指南</div>
+                <div class="term-en">Guidelines for Proper Handling of Specific Personal Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">マイナンバー（個人番号）を含む特定個人情報の漏洩等を防ぐため、事業者が講ずべき措置をまとめた指針。</div>
+                <div class="summary-zh">旨在防止包含個人番號（My Number）在內的特定個人資料外洩，規範事業單位應採取措施之指針。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        「特定個人情報の適正な取扱いに関するガイドライン」において、特定個人情報の範囲に関する記述として適切なものはどれか。
+<br>
+                        <div class="option">ア. 個人番号（マイナンバー）を含む個人情報のことである。</div>
+                        <div class="option">イ. 氏名と住所のみが記載された名簿のことである。</div>
+                        <div class="option">ウ. 企業の売上データのことである。</div>
+                        <div class="option">エ. 匿名化加工された統計データのことである。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：「特定個人情報」とは、個人番号（マイナンバー）をその内容に含む個人情報のことを指す。</div></td>
+                    <td>                        在「特定個人資料適正處理指南」中，關於特定個人資料的定義，下列何者正確？
+<br>
+                        <div class="option">A. 包含個人番號（My Number）在內的個人資料</div>
+                        <div class="option">B. 僅記載姓名與住址的名冊</div>
+                        <div class="option">C. 企業的營業額數據</div>
+                        <div class="option">D. 經過去識別化加工的統計資料</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：「特定個人資料」指任何含有個人番號（My Number）的個人資料，其保護規範較一般個資更為嚴格。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 12. マイナンバー法 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">マイナンバー法</div>
+                <div class="term-reading">まいなんばーほう</div>
+                <div class="term-zh">個人番號法 (My Number 法)</div>
+                <div class="term-en">My Number Act</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">行政手続きにおける特定の個人を識別するための番号の利用等に関する法律の通称。社会保障・税・災害対策等で利用。</div>
+                <div class="summary-zh">規範行政程序中用於識別特定個人之番號利用的法律（通稱 My Number 法），主要用於社會保障、稅務及災害對策。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        マイナンバー法（行政手続における特定の個人を識別するための番号の利用等に関する法律）において、マイナンバーの利用範囲として認められている分野はどれか。
+<br>
+                        <div class="option">ア. 社会保障、税、災害対策の3分野</div>
+                        <div class="option">イ. 民間企業のマーケティングや顧客分析</div>
+                        <div class="option">ウ. クレジットカードの審査や与信管理</div>
+                        <div class="option">エ. スポーツクラブの会員管理</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：マイナンバーの利用範囲は、法律で定められた「社会保障」「税」「災害対策」の分野およびこれらに準ずる行政手続に限定されている。</div></td>
+                    <td>                        在《個人番號法》（My Number 法）中，法定的個人番號使用範圍主要限定於哪三大領域？
+<br>
+                        <div class="option">A. 社會保障、稅務、災害對策</div>
+                        <div class="option">B. 民營企業行銷與客戶分析</div>
+                        <div class="option">C. 信用卡審核與授信管理</div>
+                        <div class="option">D. 健身房會員管理</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：個人番號的使用範圍受到極嚴格的限制，依法僅能用於社會保障、稅款徵收管理及災害對策等特定法定行政程序。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 13. 個人情報保護委員会 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">個人情報保護委員会</div>
+                <div class="term-reading">こじんじょうほうほごいいんかい</div>
+                <div class="term-zh">個人情報保護委員會</div>
+                <div class="term-en">Personal Information Protection Commission</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">内閣府の外局として設置され、個人情報およびマイナンバーの適正な取扱いの確保・監視を行う独立行政機関。</div>
+                <div class="summary-zh">設於內閣府下轄的獨立行政機關，負責監督與確保個人資料及個人番號的合法與適當處理。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護委員会に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 個人情報の適正な取扱いを確保するために設置された、独立性の高い行政機関である。</div>
+                        <div class="option">イ. IT関連企業の利益団体であり、民間主導で運用されている。</div>
+                        <div class="option">ウ. 警察庁の内部組織であり、サイバー犯罪の捜査のみを行う。</div>
+                        <div class="option">エ. 各企業のセキュリティ認証（Pマーク等）を発行する民間審査機関である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：個人情報保護委員会は、内閣総理大臣の所轄の下に置かれる独立性の高い行政委員会である。</div></td>
+                    <td>                        關於「個人情報保護委員會」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 為確保個人資料適當處理而設立、具有高度獨立性的行政機關</div>
+                        <div class="option">B. 由民間主導運作的 IT 企業利益團體</div>
+                        <div class="option">C. 屬於警察廳的內部組織，僅負責網路犯罪調查</div>
+                        <div class="option">D. 核發各企業標章（如 PrivacyMark）的民間審查機構</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：個人情報保護委員會是依據《個人資料保護法》設於內閣府下的獨立行政機關，擁有監察、指導及行政處分等權限。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: 隱私保護與個資應用框架 -->
+    <div class="group-container">
+        <div class="group-header">隱私保護與個資應用框架</div>
+
+        <!-- 14. JIS Q 15001 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">JIS Q 15001</div>
+                <div class="term-reading">じすきゅー15001</div>
+                <div class="term-zh">日本工業標準 JIS Q 15001</div>
+                <div class="term-en">JIS Q 15001</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報保護マネジメントシステム（PIMS）に関する日本の産業規格。プライバシーマークの審査基準となる。</div>
+                <div class="summary-zh">日本關於個人資料保護管理系統 (PIMS) 的國家標準，亦為申請 PrivacyMark 的審查基準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護マネジメントシステム（PIMS）の要求事項を定めた日本の規格はどれか。
+<br>
+                        <div class="option">ア. JIS Q 15001</div>
+                        <div class="option">イ. JIS Q 27001</div>
+                        <div class="option">ウ. JIS Q 9001</div>
+                        <div class="option">エ. JIS Q 14001</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：JIS Q 15001は「個人情報保護マネジメントシステムー要求事項」であり、プライバシーマーク制度の基準となっている。（27001はISMS）</div></td>
+                    <td>                        定義「個人資料保護管理系統 (PIMS)」要求的日本國家標準為何？
+<br>
+                        <div class="option">A. JIS Q 15001</div>
+                        <div class="option">B. JIS Q 27001</div>
+                        <div class="option">C. JIS Q 9001</div>
+                        <div class="option">D. JIS Q 14001</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：JIS Q 15001 為個人資料保護管理系統標準；JIS Q 27001 則為資訊安全管理系統 (ISMS) 標準。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 15. プライバシーマーク -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プライバシーマーク</div>
+                <div class="term-reading">ぷらいばしーまーく</div>
+                <div class="term-zh">個人資料保護標章 (PrivacyMark)</div>
+                <div class="term-en">Privacy Mark</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">JIS Q 15001に適合し、個人情報を適切に取り扱う体制を整備している事業者に付与される認定マーク。</div>
+                <div class="summary-zh">頒發給符合 JIS Q 15001 標準、具備妥善管理個人資料體系之事業單位的認證標章。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        プライバシーマーク制度に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. JIS Q 15001に適合した事業者に対して、JIPDEC等が使用許諾を与える制度。</div>
+                        <div class="option">イ. すべての個人情報取扱事業者に取得が法的に義務付けられている。</div>
+                        <div class="option">ウ. 一度取得すれば更新手続きなしで永久に有効である。</div>
+                        <div class="option">エ. 個人ではなく、システム製品に対して付与される技術認証である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：プライバシーマークはJIS Q 15001に適合している事業者に与えられ、2年ごとの更新審査が必要である。</div></td>
+                    <td>                        關於「PrivacyMark (個人資料保護標章)」制度，下列敘述何者正確？
+<br>
+                        <div class="option">A. 由 JIPDEC 等機構核發給符合 JIS Q 15001 標準之事業單位的認證制度</div>
+                        <div class="option">B. 所有個資處理事業單位皆被法律強制要求取得</div>
+                        <div class="option">C. 一旦取得即可永久有效，無需辦理更新</div>
+                        <div class="option">D. 並非針對事業單位，而是針對個別系統產品核發的技術認證</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：PrivacyMark 係由 JIPDEC 等授權機構頒發給符合 JIS Q 15001 之事業單位，有效期限為 2 年，須定期申請更新。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 16. OECDプライバシーガイドライン -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">OECDプライバシーガイドライン</div>
+                <div class="term-reading">おーいーしーでぃーぷらいばしーがいどらいん</div>
+                <div class="term-zh">OECD 隱私權指南</div>
+                <div class="term-en">OECD Privacy Guidelines</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">1980年にOECDが勧告した、個人情報保護に関する8原則（収集制限、データ内容、目的明確化等）を示す国際指針。</div>
+                <div class="summary-zh">經濟合作暨發展組織於 1980 年提出，包含蒐集限制、資料內容、目的明確化等 8 大原則的國際隱私指針。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        OECDプライバシーガイドラインに定められた「8原則」に含まれないものはどれか。
+<br>
+                        <div class="option">ア. 収集制限の原則</div>
+                        <div class="option">イ. 目的明確化の原則</div>
+                        <div class="option">ウ. 完全暗号化義務の原則</div>
+                        <div class="option">エ. 利用制限の原則</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：OECDの8原則は、収集制限、データ内容、目的明確化、利用制限、安全保護、公開、個人参加、責任の原則である。暗号化の義務化は含まれない。</div></td>
+                    <td>                        下列何者不屬於 OECD 隱私權指南所說明的「8 大原則」之一？
+<br>
+                        <div class="option">A. 蒐集限制原則</div>
+                        <div class="option">B. 目的明確化原則</div>
+                        <div class="option">C. 完全強制加密原則</div>
+                        <div class="option">D. 利用限制原則</div>
+                        <div class="answer">正確答案：(C)</div>
+<br>
+                        <div class="analysis">解析：OECD 八大原則包含：蒐集限制、資料內容、目的明確化、利用限制、安全保護、公開、個人參與及問責原則，不包含強制加密之規定。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 17. プライバシー影響アセスメント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プライバシー影響アセスメント</div>
+                <div class="term-reading">ぷらいばしーえいきょうあせすめんと</div>
+                <div class="term-zh">隱私影響評估 (PIA)</div>
+                <div class="term-en">Privacy Impact Assessment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報を扱うシステム導入等の前に、プライバシー侵害のリスクを事前に特定・分析・軽減するための手続き。</div>
+                <div class="summary-zh">在導入處理個資之系統或計畫前，事先識別、分析與減輕個人隱私侵害風險的評估流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        プライバシー影響アセスメント（PIA）を実施する適切なタイミングはどれか。
+<br>
+                        <div class="option">ア. システムの企画・設計段階</div>
+                        <div class="option">イ. システム運用開始から数年経過した後</div>
+                        <div class="option">ウ. セキュリティ事故が発生した直後のみ</div>
+                        <div class="option">エ. システムを廃棄する直前</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：PIAは、プライバシーへの影響やリスクを未然に防ぐため、システムの企画・設計・開発の段階で実施するのが適切である。</div></td>
+                    <td>                        實施「隱私影響評估 (PIA)」最適當的時間點為何？
+<br>
+                        <div class="option">A. 系統的企劃與設計階段</div>
+                        <div class="option">B. 系統上線運作數年之後</div>
+                        <div class="option">C. 僅在發生安全事故之後</div>
+                        <div class="option">D. 系統報廢汰換前夕</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：PIA 旨在「事前預防」，因此應在系統規劃、設計或重大變更初期即進行評估。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 18. プライバシーフレームワーク -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プライバシーフレームワーク</div>
+                <div class="term-reading">ぷらいばしーふれーむわーく</div>
+                <div class="term-zh">隱私權框架</div>
+                <div class="term-en">Privacy Framework</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織がプライバシーリスクを管理し、適切なデータ保護を推進するための包括的な基準や構造体系（NIST等）。</div>
+                <div class="summary-zh">組織用以管理隱私風險、推動合規資料保護的綜合性指針與架構體系 (如 NIST 隱私框架)。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        NIST（米国標準技術研究所）が公表した「プライバシーフレームワーク」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 組織がプライバシーリスクを特定し、プライバシーに配慮したシステムやサービスを構築するための枠組みを提供すること。</div>
+                        <div class="option">イ. 世界のすべての国で共通の法律を制定すること。</div>
+                        <div class="option">ウ. ソーシャルメディアの利用を全面的に禁止すること。</div>
+                        <div class="option">エ. 暗号キーの長さを統一すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：プライバシーフレームワークは、プライバシーリスクのマネジメントを組織のセキュリティ対策や設計プロセスに統合するための構造を提供する。</div></td>
+                    <td>                        關於 NIST 所公布的「隱私權框架 (Privacy Framework)」，其主要目的為何？
+<br>
+                        <div class="option">A. 為組織提供識別隱私風險並建立具隱私保護設計之系統與服務的架構</div>
+                        <div class="option">B. 在全球各國制定統一的法律條文</div>
+                        <div class="option">C. 全面禁止社群媒體的使用</div>
+                        <div class="option">D. 統一金鑰的長度標準</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：隱私權框架旨在協助組織改善隱私風險管理，將隱私設計 (Privacy by Design) 融入系統開發與日常運作。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 19. 一般データ保護規則 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">一般データ保護規則</div>
+                <div class="term-reading">いっぱんでーたほごきそく</div>
+                <div class="term-zh">歐盟通用資料保護規則 (GDPR)</div>
+                <div class="term-en">General Data Protection Regulation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">EUにおける個人データの保護に関する規則。EU域内の個人データを扱う日本企業にも適用され、厳格な罰則がある。</div>
+                <div class="summary-zh">歐盟規範個人資料保護的法律，若日本或外國企業處理 EU 境內個人資料亦受其拘束，罰則極嚴。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        EUの「一般データ保護規則（GDPR）」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. EU域内の個人データを処理・移転する事業者に対し、日本企業であっても適用される場合がある。</div>
+                        <div class="option">イ. EU市民のみを対象とし、EU域外の企業には一切適用されない。</div>
+                        <div class="option">ウ. データ侵害が発生した場合の報告義務は存在しない。</div>
+                        <div class="option">エ. 個人データの消去権（忘れられる権利）は認められていない。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：GDPRは域外適用規定があり、EU域内の消費者にサービスを提供するEU域外の事業者にも適用される。また「忘れられる権利」等を保障している。</div></td>
+                    <td>                        關於歐盟「通用資料保護規則 (GDPR)」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 凡處理或轉移 EU 境內個人資料者，即使是日本或海外企業亦可能適用</div>
+                        <div class="option">B. 僅約束 EU 境內企業，完全不適用於 EU 以外的海外企業</div>
+                        <div class="option">C. 當發生資料外洩事件時，無須向主管機關通報</div>
+                        <div class="option">D. 未保障個人的資料被遺忘權 (Right to be forgotten)</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：GDPR 具備「域外效力」，海外企業只要向 EU 境內居民提供商品服務或監控其行為，均須符合 GDPR 規範。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 20. オプトイン -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">オプトイン</div>
+                <div class="term-reading">おぷといん</div>
+                <div class="term-zh">事先同意 (Opt-in)</div>
+                <div class="term-en">Opt-in</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーに対して事前に明示的な同意を得た上で、情報の収集やメール送信等を行う方式。</div>
+                <div class="summary-zh">在收集資料或發送行銷郵件前，必須先獲得使用者明確事先同意的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        マーケティング等において「オプトイン方式」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. あらかじめ受信者の同意（承諾）を得てから広告メールを送信する方式。</div>
+                        <div class="option">イ. 同意なしでメールを送り、受信者が拒否の連絡をした場合に送信を止める方式。</div>
+                        <div class="option">ウ. 暗号化されたメールのみを送信する方式。</div>
+                        <div class="option">エ. アンケートの回答者に無条件で電子マネーを付与する方式。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：オプトインは、事前に対象者の明確な同意を得てから情報の収集や広告の送信を行う方式である。</div></td>
+                    <td>                        關於行銷上的「Opt-in（事先同意方式）」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 先取得收件人的明確同意（承諾）後才發送廣告郵件的方式</div>
+                        <div class="option">B. 先未經同意發送郵件，等收件人提出拒絕後才停止發送的方式</div>
+                        <div class="option">C. 僅發送加密郵件的方式</div>
+                        <div class="option">D. 向問卷回答者無條件贈送電子貨幣的方式</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：Opt-in 採取「事前許可制」，未經使用者主動勾選或同意前，不得傳送行銷訊息或進行資料蒐集。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 21. オプトアウト -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">オプトアウト</div>
+                <div class="term-reading">おぷとおうと</div>
+                <div class="term-zh">事後退出/拒絕 (Opt-out)</div>
+                <div class="term-en">Opt-out</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報提供等を一旦開始し、本人が拒否（停止請求）の意思表示をした場合に利用や提供を停止する方式。</div>
+                <div class="summary-zh">先預設進行資料利用或提供，當本人主動提出拒絕或停止請求時即予以終止的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報の第三者提供やメール配信における「オプトアウト」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 本人の求めに応じて、第三者への提供やメール配信を停止する措置。</div>
+                        <div class="option">イ. 必ず事前に文書で本人の署名を得てから提供する措置。</div>
+                        <div class="option">ウ. データの匿名化を自動的に行うシステム機能。</div>
+                        <div class="option">エ. セキュリティ警告を無視してWebサイトにアクセスすること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：オプトアウトは、事前に拒否の機会を与えつつ、本人の停止請求に応じて提供・配信を止める仕組みである。</div></td>
+                    <td>                        在個資第三方提供或郵件發送中，「Opt-out（事後退出）」的敘述何者正確？
+<br>
+                        <div class="option">A. 依據本人的請求，停止向第三方提供個資或停止發送郵件的措施</div>
+                        <div class="option">B. 提供前必須先取得本人書面簽名的措施</div>
+                        <div class="option">C. 自動進行資料去識別化的系統功能</div>
+                        <div class="option">D. 忽視安全警告存取網站的行為</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：Opt-out 是指預設開啟或告知後，只要當事人發出拒絕請求即停止利用或停止提供給第三方。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 22. 第三者提供 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">第三者提供</div>
+                <div class="term-reading">だいさんしゃていきょう</div>
+                <div class="term-zh">提供給第三方</div>
+                <div class="term-en">Third-Party Provision</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人データを本人以外の第三者に渡すこと。原則としてあらかじめ本人の同意を得る必要がある。</div>
+                <div class="summary-zh">將個人資料交付給本人以外的第三方，原則上必須事先取得當事人的同意。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法において、あらかじめ本人の同意を得ずに個人データを第三者に提供できる例外事例として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 法令に基づく場合（警察からの捜査照会等）</div>
+                        <div class="option">イ. 新商品のDM（ダイレクトメール）を送付する場合</div>
+                        <div class="option">ウ. 子会社との間で顧客データを共有して営業活動を行う場合</div>
+                        <div class="option">エ. 提携先企業にマーケティング目的でリストを売却する場合</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：法令に基づく場合や、人の生命・身体・財産の保護に必要な場合などは、例外として本人の同意なく第三者提供が可能である。</div></td>
+                    <td>                        在《個人資料保護法》中，下列何者屬於「無須事先取得本人同意即可將個資提供給第三方」的例外情形？
+<br>
+                        <div class="option">A. 依據法令規定（如配合警察合法調查調閱）</div>
+                        <div class="option">B. 為發送新商品宣傳單 (DM) 時</div>
+                        <div class="option">C. 與子公司共享客戶資料進行推銷時</div>
+                        <div class="option">D. 將客戶名單出售給合作企業進行行銷時</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：依據法律規定、或涉及保護生命/財產安全等緊急法定事由時，得例外免除取得本人同意之要求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 23. 匿名加工情報 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">匿名加工情報</div>
+                <div class="term-reading">とくめいかこうじょうほう</div>
+                <div class="term-zh">匿名加工資訊 (去識別化資料)</div>
+                <div class="term-en">Anonymously Processed Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の個人を識別できないように個人情報を加工し、元に復元できないようにした情報。同意なしで利活用可能。</div>
+                <div class="summary-zh">將個人資料加工至無法識別特定個人且絕無法復原的資訊，可不經本人同意進行巨量資料活用。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法における「匿名加工情報」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 特定の個人を識別できないように加工し、かつ復元できないようにした情報であり、本人の同意なく第三者提供が可能である。</div>
+                        <div class="option">イ. 他の情報と照合することで個人を復元できる状態に保った情報である。</div>
+                        <div class="option">ウ. 要配慮個人情報については匿名加工情報を作成することが禁止されている。</div>
+                        <div class="option">エ. 社内でのみ利用可能であり、第三者提供は一切禁止されている。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：匿名加工情報は復元不可能な加工を施したものであり、規程に沿った公表を行えば本人の同意なく自由な利活用や第三者提供が可能。</div></td>
+                    <td>                        關於《個人資料保護法》中的「匿名加工資訊」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 該資訊經過處理，無法識別特定個人，也無法恢復到原始狀態，可以在未經個人同意的情況下提供給第三方。</div>
+                        <div class="option">B. 為能與其他資料比對而還原出特定個人的資訊</div>
+                        <div class="option">C. 敏感個資（要配慮個人情報）禁止製作成匿名加工資訊</div>
+                        <div class="option">D. 僅限公司內部使用，完全禁止提供給第三方</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：匿名加工資訊經過嚴格去識別化且「不可逆復原」，法規允許在踐行公告程序後，免經本人同意進行商業或學術利活用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 24. 仮名加工情報 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">仮名加工情報</div>
+                <div class="term-reading">かめいかこうじょうほう</div>
+                <div class="term-zh">假名加工資訊 (假名化資料)</div>
+                <div class="term-en">Pseudonymized Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">他の情報と照合しない限り特定個人を識別できないように加工した情報。内部分析目的等での活用を想定。</div>
+                <div class="summary-zh">加工至若不與額外資料比對即無法識別特定個人的資訊，主要設計用於事業者內部統計分析。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        個人情報保護法における「仮名加工情報」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 他の情報と照合しない限り特定個人を識別できないように加工した情報であり、原則として第三者提供は禁止されている。</div>
+                        <div class="option">イ. 完全に復元不可能な状態に加工した情報であり、自由に第三者へ売却できる。</div>
+                        <div class="option">ウ. 本人の同意があれば、マーケティングのダイレクトメール送付に利用できる。</div>
+                        <div class="option">エ. 氏名や住所の変更手続きが不要となる特殊なデータ形式である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：仮名加工情報は事業者の内部分析用途を想定しており、第三者提供は原則禁止（匿名加工情報との大きな違い）。</div></td>
+                    <td>                        關於《個人資料保護法》中的「假名加工資訊」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 若不與其他資料比對即無法識別個人，原則上禁止提供給第三方</div>
+                        <div class="option">B. 為完全不可逆之加工資訊，可自由出售給第三方</div>
+                        <div class="option">C. 只要取得本人同意，即可用於發送行銷郵件</div>
+                        <div class="option">D. 一種免除更新姓名住址手續的特殊格式</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：假名加工資訊允許事業者進行內部數據分析，但為維護個人隱私，原則上「禁止向第三方提供」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 5: 網路與電腦犯罪相關法規 -->
+    <div class="group-container">
+        <div class="group-header">網路與電腦犯罪相關法規</div>
+
+        <!-- 25. 不正指令電磁的記録に関する罪 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">不正指令電磁的記録に関する罪</div>
+                <div class="term-reading">ふせいしれいでんじてききろくにかんするつみ</div>
+                <div class="term-zh">不當指令電磁紀錄罪 (電腦病毒罪)</div>
+                <div class="term-en">Crime of Creating Malicious Software</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">正当な理由なく、意図に反して悪質な指令を与えるプログラム（ウイルス等）を作成・供用・取得する罪。</div>
+                <div class="summary-zh">無正當理由，意圖製造違背使用者意願並給予惡意指令之程式（如電腦病毒）的製造、取得或使用罪。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        刑法に規定されている「不正指令電磁的記録に関する罪（通称：ウイルス作成罪）」の処罰対象となる行為はどれか。
+<br>
+                        <div class="option">ア. 正当な理由なく、他人のコンピュータで意図しない動作をさせる悪質プログラムを作成する行為。</div>
+                        <div class="option">イ. 自身のPCのパスワードを忘れてリセットする行為。</div>
+                        <div class="option">ウ. セキュリティ対策ソフトを購入してインストールする行為。</div>
+                        <div class="option">エ. オープンソースのソフトウェアをダウンロードして改変する行為。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：正当な理由がなく、人がコンピュータを使用するに際して意図に沿うべき動作をさせず、又は意図に反する動作をさせる不正な指令を与えるプログラムを作成等する行為を処罰する。</div></td>
+                    <td>                        在刑法所規定的「不當指令電磁紀錄罪（通稱：電腦病毒製造罪）」中，下列何者屬於處罰對象？
+<br>
+                        <div class="option">A. 無正當理由，製造會使他人電腦執行非預期惡意動作之程式</div>
+                        <div class="option">B. 因忘記個人電腦密碼而重置密碼</div>
+                        <div class="option">C. 購買並安裝防毒安全軟體</div>
+                        <div class="option">D. 下載開源軟體並進行二次開發修改</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：該罪主要打擊無正當理由製造、提供、取得會破壞系統或意圖非法控制他人電腦的電腦病毒與惡意程式。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 26. 電子計算機使用詐欺罪 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子計算機使用詐欺罪</div>
+                <div class="term-reading">でんしけいさんきしようさぎざい</div>
+                <div class="term-zh">電子計算機使用詐欺罪</div>
+                <div class="term-en">Fraud in Electronic Computers</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">コンピュータへ虚偽のデータや不正な指令を入力し、不実の電磁的記録を作出して不当な利益を得る罪。</div>
+                <div class="summary-zh">向電腦輸入虛偽資料或不正指令，製作不實電磁紀錄以取得不當財產利益之罪。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        刑法第246条の2に規定される「電子計算機使用詐欺罪」に該当する行為はどれか。
+<br>
+                        <div class="option">ア. 他人のオンラインバンキングに不正アクセスし、自己の口座に無断で振込送金を行って利益を得る行為。</div>
+                        <div class="option">イ. 店員を言葉で騙して商品を無償で受け取る行為。</div>
+                        <div class="option">ウ. 他人のクレジットカードを盗んで店舗のレジで使用する行為。</div>
+                        <div class="option">エ. 路上で他人の財布を拾って持ち去る行為。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：人を介さず、コンピュータに不正な情報や指令を入力して財産上の不法な利益を得る行為は「電子計算機使用詐欺罪」となる。（人を騙す場合は通常の詐欺罪）</div></td>
+                    <td>                        刑法第 246 條之 2 規定的「電子計算機使用詐欺罪」，下列何者符合其描述？
+<br>
+                        <div class="option">A. 非法登入他人網路銀行，向自己帳戶進行擅自轉帳操作以獲取財產利益</div>
+                        <div class="option">B. 用言語欺騙店員從而免費獲取商品</div>
+                        <div class="option">C. 偷竊他人信用卡並至實體店家刷卡消費</div>
+                        <div class="option">D. 在路上拾獲他人錢包並據為己有</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：不經過人工審核，直接對電腦系統輸入虛偽數據以篡改賬目獲得利益，屬於電子計算機使用詐欺罪（欺騙人者則屬於一般詐欺罪）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 27. 電子計算機損壊等業務妨害罪 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子計算機損壊等業務妨害罪</div>
+                <div class="term-reading">でんしけいさんきそんかいとうぎょうむぼうがいざい</div>
+                <div class="term-zh">損壞電子計算機等妨害業務罪</div>
+                <div class="term-en">Computer Damage and Interference Offense</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">コンピュータや電磁的記録を損壊したり虚偽情報を与え、本来の動作を阻害して人の業務を妨害する罪。</div>
+                <div class="summary-zh">損毀電腦、破壞電磁紀錄或給予虛偽指令，致使系統無法正常運作從而妨害他人業務之罪。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        刑法第234条の2「電子計算機損壊等業務妨害罪」に該当する行為はどれか。
+<br>
+                        <div class="option">ア. 企業サーバーに大量のリクエスト（DDoS攻撃）を送り、サーバーを停止させて業務を妨害する行為。</div>
+                        <div class="option">イ. 他人のSNSアカウントのパスワードを推測してログインする行為。</div>
+                        <div class="option">ウ. 会社のパソコンをうっかり床に落として破損させる行為。</div>
+                        <div class="option">エ. 業務用のメールを誤送信する行為。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：DDoS攻撃等によってサーバーに過大な負荷を与え、本来の目的に沿うべき動作をさせず業務を妨害する行為は本罪に該当する。（過失による破損は過失損壊となり不該当）</div></td>
+                    <td>                        下列何者屬於日本刑法第 234 條之 2「損壞電子計算機等妨害業務罪」所處罰的行為？
+<br>
+                        <div class="option">A. 向企業伺服器發送大量請求 (DDoS 攻擊) 使其癱瘓停止服務，從而妨害其業務</div>
+                        <div class="option">B. 猜測他人社群帳號密碼並嘗試登入</div>
+                        <div class="option">C. 不小心將公司的電腦摔落在地導致損壞</div>
+                        <div class="option">D. 誤發送業務相關電子郵件</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：發起 DDoS 攻擊或惡意刪除業務資料庫，致使電腦系統無法正常運作並干擾企業業務，觸犯損壞電子計算機等妨害業務罪。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 28. 電磁的記録不正作出及び供用罪 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電磁的記録不正作出及び供用罪</div>
+                <div class="term-reading">でんじてききろくふせいさくしゅつおよびきょうようざい</div>
+                <div class="term-zh">偽造與使用不正電磁紀錄罪</div>
+                <div class="term-en">Crime of Unauthorized Creation and Use of Electromagnetic Records</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人の権利・義務に関する電磁的記録（電子文書等）を不正に作り出したり、使用したりする罪。</div>
+                <div class="summary-zh">意圖損害他人權利義務，非法製作或使用電子數據與電磁紀錄之犯罪。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        刑法における「電磁的記録不正作出及び供用罪」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 他人の名義を使って電子契約書などの電磁的記録を不正に作成し、使用する行為を処罰する。</div>
+                        <div class="option">イ. 紙の契約書をコピー機で複製する行為。</div>
+                        <div class="option">ウ. 自分のパソコンで日記のテキストファイルを作成する行為。</div>
+                        <div class="option">エ. 公開されているデータをバックアップする行為。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：人の権利・義務に関する電磁的記録を不正に作成（作出）し、又はこれを実行の用に供する（供用）行為を罰する規定である。</div></td>
+                    <td>                        關於刑法中的「偽造與使用不正電磁紀錄罪」，下列敘述何者正確？
+<br>
+                        <div class="option">A. 處罰冒用他人名義非法製作電子契約等電磁紀錄並加以使用之行為</div>
+                        <div class="option">B. 用影印機複製紙本契約書之行為</div>
+                        <div class="option">C. 在個人電腦上撰寫日記文字檔之行為</div>
+                        <div class="option">D. 備份公開資料之行為</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：此罪相當於數位時代的「偽造/使用私文書罪」，懲罰非法創設或使用涉及他人權利義務的不實電磁紀錄。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 29. 支払用カード電磁的記録不正作出等罪 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">支払用カード電磁的記録不正作出等罪</div>
+                <div class="term-reading">しはらいようかーどでんじてききろくふせいさくしゅつとうざい</div>
+                <div class="term-zh">偽造與使用付款卡電磁紀錄罪 (偽造信用卡罪)</div>
+                <div class="term-en">Electromagnetic Record Fraud Regarding Payment Cards</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">クレジットカード等の支払用カードの電磁的記録を不正にスキミング・偽造・使用する行為を処罰する罪。</div>
+                <div class="summary-zh">側錄、非法偽造或使用信用卡等付款卡之電磁紀錄的犯罪（俗稱偽造信用卡罪）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        刑法第163条の2「支払用カード電磁的記録不正作出等罪」の対象となる行為はどれか。
+<br>
+                        <div class="option">ア. 他人のクレジットカードの磁気情報を不正にスキミングし、偽造カードを作成する行為。</div>
+                        <div class="option">イ. 期限切れのカードをハサミで切って破棄する行為。</div>
+                        <div class="option">ウ. 自分のクレジットカードでポイントを貯める行為。</div>
+                        <div class="option">エ. 現金で買い物をしてレシートを受け取る行為。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：支払用カード（クレジットカードやデビットカード）の電磁的記録を不正に作出・所持・譲渡・使用する行為を厳しく処罰する。</div></td>
+                    <td>                        下列何者屬於刑法第 163 條之 2「偽造與使用付款卡電磁紀錄罪」之處罰對象？
+<br>
+                        <div class="option">A. 非法側錄他人信用卡的磁條資訊並製作偽造克隆卡</div>
+                        <div class="option">B. 將過期信用卡用剪刀剪碎丟棄</div>
+                        <div class="option">C. 使用個人信用卡刷卡累積紅利點數</div>
+                        <div class="option">D. 以現金購物並索取收據</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：針對側錄 (Skimming) 信用卡電磁紀錄、製作克隆偽造卡或持偽卡消費之犯罪行為設有專條懲罰。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 6: 電子商務與資訊流通法規 -->
+    <div class="group-container">
+        <div class="group-header">電子商務與資訊流通法規</div>
+
+        <!-- 30. 電子署名及び認証業務等に関する法律 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子署名及び認証業務等に関する法律</div>
+                <div class="term-reading">でんししょめいおよびにんしょうぎょうむとうにかんするほうりつ</div>
+                <div class="term-zh">電子簽章及認證業務法 (電子簽章法)</div>
+                <div class="term-en">Act on Electronic Signatures and Certification Business</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">電子署名が手書き署名や押印と同等の法的効力を有すること、および認証業務の認定制度等を定めた法律。</div>
+                <div class="summary-zh">規定電子簽章具備與親筆簽名及蓋章同等法律效力，並規範認證服務機構認定制度的法律。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        「電子署名法（電子署名及び認証業務等に関する法律）」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 一定の条件を満たす電子署名は、文書への親筆署名や押印と同等の法的効力が認められる。</div>
+                        <div class="option">イ. 電子署名は法人のみが利用でき、個人は利用できない。</div>
+                        <div class="option">ウ. すべての電子署名には国家資格が必要である。</div>
+                        <div class="option">エ. 紙の文書に電子画像を貼り付けるだけで法的効力が発生する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：本人が行った一定の要件を満たす電子署名は、真正に成立したもの（親筆署名・押印と同等）と推定される。</div></td>
+                    <td>                        關於《電子簽章及認證業務法》（電子簽章法），下列敘述何者正確？
+<br>
+                        <div class="option">A. 滿足一定條件的電子簽章，被認定具備與親筆簽名或蓋章同等的法律效力</div>
+                        <div class="option">B. 電子簽章僅限法人使用，個人無法使用</div>
+                        <div class="option">C. 施加所有電子簽章皆須取得國家執照資格</div>
+                        <div class="option">D. 只要在紙本文件貼上電子圖片即可產生法律效力</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：該法確立了合格電子簽章的法律推定效力，使其在電子商務與數位契約中等同親筆簽名蓋章。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 31. 情報流通プラットフォーム対処法 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報流通プラットフォーム対処法</div>
+                <div class="term-reading">じょうほうりゅうつうぷらっとふぉーむたいしょほう</div>
+                <div class="term-zh">資訊流通平台應對法 (舊稱 Provider 責任限制法)</div>
+                <div class="term-en">Information Distribution Platform Response Measures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">大規模プラットフォーム事業者に対し、削除対応の迅速化や運用状況の開示等を義務付け、権利侵害に対応する法律。</div>
+                <div class="summary-zh">要求大型平台業者建立快速刪除侵權/違法內容機制並公開運作狀況，以因應網路權利侵害的法律。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        令和6年に改正・改称された「情報流通プラットフォーム対処法（旧プロバイダ責任制限法）」の主な目的として適切なものはどれか。
+<br>
+                        <div class="option">ア. 大規模プラットフォーム事業者に対する削除対応の迅速化や運用状況の透明化の義務付け。</div>
+                        <div class="option">イ. インターネットの利用時間を制限すること。</div>
+                        <div class="option">ウ. すべてのWebサイトを事前に検閲すること。</div>
+                        <div class="option">エ. 通信事業者にユーザーの閲覧履歴を公開させること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：誹謗中傷や権利侵害情報への対応迅速化・透明化を図るため、大規模プラットフォーム事業者への義務付け等を強化した。</div></td>
+                    <td>                        於 2024 年修訂並更名的《資訊流通平台應對法》（舊稱 Provider 責任限制法），其主要目的為何？
+<br>
+                        <div class="option">A. 要求大型平台業者加速刪除違法/侵權內容，並將處置基準與運作狀況透明化</div>
+                        <div class="option">B. 限制國民每日使用網際網路的時間</div>
+                        <div class="option">C. 對所有網站進行事前出版審查</div>
+                        <div class="option">D. 強制電信業者公開所有使用者的瀏覽歷史紀錄</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：該法旨針對大型社群平台，強化對網路誹謗、詐欺廣告及侵權資訊的快速下架與透明化規範。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 32. 特定電子メール法 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">特定電子メール法</div>
+                <div class="term-reading">とくていでんしめーるほう</div>
+                <div class="term-zh">特定電子郵件法 (垃圾郵件防止法)</div>
+                <div class="term-en">Specific Electric Mail Law</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">営利目的の迷惑メール（スパムメール）を規制する法律。原則としてオプトイン（事前同意）方式を義務付けている。</div>
+                <div class="summary-zh">旨在規制營利性垃圾郵件的法律，原則上強制要求採取 Opt-in（事前同意）發送機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        「特定電子メール法」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 原則として、あらかじめ同意を得た相手（オプトイン）に対してのみ営業メールの送信が認められる。</div>
+                        <div class="option">イ. 個人間のプライベートなメールも規制対象に含まれる。</div>
+                        <div class="option">ウ. 送信者の氏名や住所の表示義務はない。</div>
+                        <div class="option">エ. 受信者が拒否（オプトアウト）しても送信し続けてよい。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：特定電子メール法では、原則として事前同意を得た者に対する送信（オプトイン）のみを許可し、送信者情報の表示等を義務付けている。</div></td>
+                    <td>                        關於《特定電子郵件法》，下列敘述何者正確？
+<br>
+                        <div class="option">A. 原則上僅允許向事先表示同意（Opt-in）的對象發送商業營利郵件</div>
+                        <div class="option">B. 個人之間的私聊郵件也在本法的規制範圍內</div>
+                        <div class="option">C. 發送者無須標示真實姓名與地址</div>
+                        <div class="option">D. 即使收件者發出拒絕（Opt-out）通知，仍可繼續發送</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：特定電子郵件法採「事前同意（Opt-in）」原則，且發送者必須標明身分與退訂方式（Opt-out 管道）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+</body>
+</html>

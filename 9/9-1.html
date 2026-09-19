@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情報システム戦略 - 2語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>情報システム戦略 - 2語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- Group: 資訊系統戰略與組織體制 (Information System Strategy and Organizational Structure) -->
+    <div class="group-container">
+        <div class="group-header">資訊系統戰略與組織體制</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システム戦略委員会</div>
+                <div class="term-reading">じょうほうしすてむせんりゃくいいんかい</div>
+                <div class="term-zh">資訊系統戰略委員會</div>
+                <div class="term-en">Information Systems Strategy Committee</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業や組織において情報システムの戦略的な計画や運用を担い、重要な意思決定を行う委員会。</div>
+                <div class="summary-zh">企業或組織中負責資訊系統戰略性規劃與營運並進行重要決策的委員會。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>情報システム戦略委員会に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 経営目標を達成するために情報システムの戦略的な計画や運用を担い、重要な意思決定を行う。</div>
+                        <div class="option">イ. コンピュータウイルスの感染状況を監視し、ハードウェアの物理的修理のみを担当する。</div>
+                        <div class="option">ウ. 企業の財務諸表を作成し、外部の株主に対して配当金の計算を行う。</div>
+                        <div class="option">エ. 従業員の給与計算や労働環境の改善に関する労務管理のみを実行する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報システム戦略委員会は、企業や組織において情報システムの戦略的な計画や運用を担い、ビジネスニーズに応じたシステムの導入や最適化に関する重要な意思決定を行う委員会です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「資訊系統戰略委員會」的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 為達成經營目標而負責資訊系統的戰略性規劃與營運，並進行重要決策。</div>
+                        <div class="option">B. 監控電腦病毒感染狀況，並僅負責硬體的實體修理。</div>
+                        <div class="option">C. 製作企業財務報表，並向外部股東計算股利。</div>
+                        <div class="option">D. 僅執行員工薪資計算與勞動環境改善等勞務管理。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】資訊系統戰略委員會是企業或組織中負責資訊系統戰略性規劃與營運，並針對業務需求進行系統導入與優化等重要決策的委員會。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システム戦略遂行のための組織体制</div>
+                <div class="term-reading">じょうほうしすてむせんりゃくすいこうのためのそしきたいせい</div>
+                <div class="term-zh">執行資訊系統戰略的組織體制</div>
+                <div class="term-en">Organizational Structure for Executing Information System Strategy</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報技術を活用して戦略的目标を達成するため、部門の設置や連携の仕組みを整えた組織構造。</div>
+                <div class="summary-zh">為利用資訊技術達成戰略目標而完備部門設置與協同機制的組織結構。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>情報システム戦略遂行のための組織体制に関する説明として、適切なものはどれか。
+<br>
+                        <div class="option">ア. IT部門が経営戦略に基づいて新しいシステムを提案し、他部門と協力して戦略的目标の達成を図ること。</div>
+                        <div class="option">イ. 情報システムを一切排除し、完全に手作業の紙ベースでの業務運営体制を構築すること。</div>
+                        <div class="option">ウ. 社内のすべての部門の独立性を高め、部門間の連携や情報共有を完全に遮断すること。</div>
+                        <div class="option">エ. 外部の委託業者に経営の全権を委任し、自社内での組織構造を一切持たないこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】情報システム戦略遂行のための組織体制とは、情報技術を活用して戦略的目标を達成するために必要な組織構造や役割であり、IT部門が経営戦略に基づいてシステムを提案し、他部門と協力して効率化や競争力向上を図る仕組みが含まれます。</div></td>
+                    <td>                        <strong>【問】</strong>關於「執行資訊系統戰略的組織體制」的說明，下列何者適當？
+<br>
+                        <div class="option">A. IT部門根據經營戰略提出新系統，並與其他部門合作以達成戰略目標。</div>
+                        <div class="option">B. 完全排除資訊系統，建構全手動紙本化的業務營運體制。</div>
+                        <div class="option">C. 提升社內各部門的獨立性，完全阻斷部門間的協同與資訊共享。</div>
+                        <div class="option">D. 將經營全權委託給外部承包商，社內不保有任何組織結構。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】執行資訊系統戰略的組織體制是指為利用資訊技術達成戰略目標所需的組織結構與角色，包含IT部門基於經營戰略提案新系統，並與其他部門合作以提升效率與競爭力的機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

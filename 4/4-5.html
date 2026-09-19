@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データベース応用 - 3語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>データベース応用 - 3語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- 群組: 海量資料與進階應用技術 -->
+    <div class="group-container">
+        <div class="group-header">海量資料與進階應用技術</div>
+
+        <!-- Term 1: データウェアハウス -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データウェアハウス</div>
+                <div class="term-reading">でーたうぇあはうす</div>
+                <div class="term-zh">資料倉庫</div>
+                <div class="term-en">Data Warehouse</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">意思決定や分析のために、様々なシステムから大量の時系列データを集約・一元管理するデータベース。</div>
+                <div class="summary-zh">為支援營運決策與分析，將來自不同系統的大量時間序列資料進行彙整與集中管理的資料庫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        意思決定を支援するために、基幹系システムなどの様々なデータソースから収集した大量の時系列データを一元的に蓄積したデータベースはどれか。
+<br>
+                        <div class="option">ア. データウェアハウス</div>
+                        <div class="option">イ. データマート</div>
+                        <div class="option">ウ. データディクショナリ</div>
+                        <div class="option">エ. データベース管理システム</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：データウェアハウス（DWH）は、意思決定を支援するために様々なシステムから時系列データを収集・蓄積するデータベースです。</div></td>
+                    <td>                        為支援決策制定，將來自核心系統等多種資料源收集的大量時間序列資料集中儲存的資料庫是哪一個？
+<br>
+                        <div class="option">A. 資料倉庫</div>
+                        <div class="option">B. 資料市集</div>
+                        <div class="option">C. 資料字典</div>
+                        <div class="option">D. 資料庫管理系統</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">解析：資料倉庫（Data Warehouse, DWH）是用於儲存來自多種系統的時間序列資料，以協助企業進行分析與營運決策的集中式資料庫。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2: ビッグデータ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ビッグデータ</div>
+                <div class="term-reading">びっぐでーた</div>
+                <div class="term-zh">大數據</div>
+                <div class="term-en">Big Data</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従来の手法では処理が困難なほど大容量・多様で、高速度に発生する大規模なデータ群。</div>
+                <div class="summary-zh">規模龐大、格式多樣且生成速度極快，超越傳統資料處理能力的大型資料集。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        従来のデータ処理システムでは扱うことが困難なほど、大容量、多種多様、かつ高速度で生成・更新されるデータ群を表す概念はどれか。
+<br>
+                        <div class="option">ア. メタデータ</div>
+                        <div class="option">イ. ビッグデータ</div>
+                        <div class="option">ウ. マスターデータ</div>
+                        <div class="option">エ. オープンデータ</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ビッグデータは、Volume（容量）、Variety（多様性）、Velocity（速度）などの特徴を持つ、従来の手法では処理困難なデータ群を指します。</div></td>
+                    <td>                        代表傳統資料處理系統難以處理的大容量、多樣化且高速生成與更新的資料集的概念是哪一個？
+<br>
+                        <div class="option">A. 元資料</div>
+                        <div class="option">B. 大數據</div>
+                        <div class="option">C. 主資料</div>
+                        <div class="option">D. 開放資料</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：大數據（Big Data）具有容量大（Volume）、多樣性（Variety）、速度快（Velocity）等特性，是傳統處理技術難以處理的巨量資料集。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3: 分散ファイルシステム -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">分散ファイルシステム</div>
+                <div class="term-reading">ぶんさんふぁいるしすてむ</div>
+                <div class="term-zh">分散式檔案系統</div>
+                <div class="term-en">Distributed File System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワークで接続された複数の機器にデータを分散して保存し、1つのストレージのように扱うシステム。</div>
+                <div class="summary-zh">將資料分開儲存於透過網路連接的多台電腦中，並讓使用者能如單一儲存空間般操作的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ネットワークに接続された複数のコンピュータのストレージを統合し、ユーザーに対して単一のファイルシステムのようにアクセス可能にする仕組みはどれか。
+<br>
+                        <div class="option">ア. 仮想ファイルシステム</div>
+                        <div class="option">イ. 分散ファイルシステム</div>
+                        <div class="option">ウ. データベース管理システム</div>
+                        <div class="option">エ. RAID</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：分散ファイルシステム（HDFSやGFSなど）は、複数のサーバーにまたがってデータを分散保持し、大容量データの効率的な管理や高可用性を実現します。</div></td>
+                    <td>                        將連接至網路的多台電腦之儲存空間加以整合，使使用者能夠像存取單一檔案系統般進行存取的機制是哪一個？
+<br>
+                        <div class="option">A. 虛擬檔案系統</div>
+                        <div class="option">B. 分散式檔案系統</div>
+                        <div class="option">C. 資料庫管理系統</div>
+                        <div class="option">D. RAID</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：分散式檔案系統（如 HDFS、GFS 等）跨多台伺服器分散儲存資料，以實現海量資料的高效管理與高可用性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

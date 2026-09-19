@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービスマネジメント - 6語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>サービスマネジメント - 6語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">IT服務管理與SLA服務水準指標</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SLA</div>
+                <div class="term-reading">えすえるえー</div>
+                <div class="term-zh">服務水準協議</div>
+                <div class="term-en">Service Level Agreement</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サービス提供者と顧客との間で、提供されるサービスの品質や範囲について明確に合意した契約文書。</div>
+                <div class="summary-zh">服務提供者與客戶之間，就所提供服務之品質與範疇明確達成共識的協議文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおけるSLA（Service Level Agreement）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サービス提供者と顧客との間で、サービスの内容、品質レベル、運用ルールなどについて合意した文書。</div>
+                        <div class="option">イ. システム障害が発生した際に、開発者がプログラムを復旧させるための詳細手順書。</div>
+                        <div class="option">ウ. サービスの開発費用や運用コストの明細を記した請求明細書。</div>
+                        <div class="option">エ. 競合他社のサービス品質と比較した自社のマーケティング分析資料。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SLA（サービスレベル合意書）は、サービス提供者と顧客の間で、提供するサービスの内容や達成すべき品質水準（稼働率や応答時間など）についてあらかじめ明確に取り交わす合意文書です。</div></td>
+                    <td>                        【題目】關於 IT 服務管理中 SLA（Service Level Agreement）的說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 服務提供者與客戶之間，就服務內容、品質水準及營運規則等達成共識的文件。</div>
+                        <div class="option">B. 發生系統故障時，開發人員用於修復程式的詳細步驟說明書。</div>
+                        <div class="option">C. 載明服務開發費用與營運成本明細的請款單。</div>
+                        <div class="option">D. 與競爭對手服務品質進行比較的自家行銷分析資料。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：SLA（服務水準協議）是服務提供者與客戶之間簽訂的合約，明確定義服務範疇、可用性、回應時間等指標與懲罰/補償機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">顧客満足</div>
+                <div class="term-reading">こきゃくまんぞく</div>
+                <div class="term-zh">顧客滿意度</div>
+                <div class="term-en">Customer Satisfaction</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">顧客が体験したサービスの品質が、事前期待にどれだけ応えられたかを示す評価・満足度のこと。</div>
+                <div class="summary-zh">客戶體驗服務後，其服務品質滿足或超越事前期望程度的評估指標。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスにおける顧客満足度を向上させる取り組みとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 定期的なアンケートやSLAの達成状況確認を通じて課題を把握し、継続的なサービス改善を行う。</div>
+                        <div class="option">イ. コスト削減のため、顧客への障害連絡や問い合わせ窓口の数を最小限に絞る。</div>
+                        <div class="option">ウ. SLAで定めた目標値を達成できなくても、改善計画の立案や顧客への報告を行わない。</div>
+                        <div class="option">エ. 顧客の要望を聞かずに、システム側の都合のみで仕様変更やメンテナンスを実施する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：顧客満足度を維持・向上させるには、SLAの達成度管理だけでなく、顧客からのフィードバックを収集してサービス管理プロセスを継続的に改善（PDCA）することが不可欠です。</div></td>
+                    <td>                        【題目】關於提升 IT 服務中顧客滿意度的作為，下列何者最恰當？
+<br>
+                        <div class="option">A. 透過定期問卷調查與 SLA 達成狀況確認來掌握問題，進行持續性的服務改善。</div>
+                        <div class="option">B. 為降低成本，將向客戶通報故障與諮詢窗口的數量縮減至最低。</div>
+                        <div class="option">C. 即使未能達到 SLA 規定的目標值，亦不制定改善計畫或向客戶提出報告。</div>
+                        <div class="option">D. 不聆聽客戶需求，單憑系統端方便即逕行實施規格變更或維護。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：持續滿意度調查、透明化 SLA 達成回報以及實施 CSI（持續服務改善）是保持高顧客滿意度的關鍵手段。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス時間</div>
+                <div class="term-reading">さーびすじかん</div>
+                <div class="term-zh">服務時間</div>
+                <div class="term-en">Service Time</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">SLAに基づき、顧客に対してシステムやサービスが正常に提供・利用可能であると約束された時間帯。</div>
+                <div class="summary-zh">基於 SLA 規範，向客戶承諾系統或服務可正常提供與使用的時間段。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】SLAにおいて設定される「サービス時間（合意されたサービス時間）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 開発者がプログラムのコーディングにかかった合計時間のこと。</div>
+                        <div class="option">イ. 契約上、サービス提供者が顧客に対してサービスを提供・運用することを合意している時間帯。</div>
+                        <div class="option">ウ. 障害が発生してから復舊するまでにかかった計画外の停止時間のこと。</div>
+                        <div class="option">エ. 1日の中でシステム管理者が出社して勤務している時間のこと。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：サービス時間（Agreed Service Time）は、SLAで明確に合意された「サービスが利用可能であるべき時間（例：平日の9:00〜18:00、または24時間365日）」を指し、稼働率計算の分母となります。</div></td>
+                    <td>                        【題目】關於在 SLA 中設定的「服務時間（Agreed Service Time）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 開發人員進行程式碼撰寫所花費的總時間。</div>
+                        <div class="option">B. 合約上，服務提供者與客戶同意應提供並營運服務的時間區段。</div>
+                        <div class="option">C. 發生故障後至復原為止所花費的計畫外停機時間。</div>
+                        <div class="option">D. 一天之中系統管理員出勤上班的時間。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：服務時間指的是 SLA 履約期間內雙方約定系統「必須上線提供服務」的時間區間（如 7x24 或平日 8:00-20:00），亦為計算可用性（Availability %）的基礎。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">応答時間</div>
+                <div class="term-reading">おうとうじかん</div>
+                <div class="term-zh">回應時間</div>
+                <div class="term-en">Response Time</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーが処理要求を送出してから、システムが応答や最初の結果を返し始めるまでの時間。</div>
+                <div class="summary-zh">使用者發出處理請求後，至系統開始回傳回應或第一筆結果所經過的時間。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】オンラインシステムにおける「応答時間（レスポンスタイム）」の定義として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ユーザーが入力完了や実行ボタンを押してから、システムが最初の応答を返すまでの時間。</div>
+                        <div class="option">イ. システムの処理要求を出してから、すべてのデータ印刷が完了するまでの時間。</div>
+                        <div class="option">ウ. 障害が発生した連絡を受けてから、保守要員が現場に到着するまでの時間。</div>
+                        <div class="option">エ. システム全体の年間総運用時間に対する稼働時間の割合。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：応答時間（レスポンスタイム）は、ユーザーの要求送信からシステムの応答開始までの時間を指します。全処理の完了までの時間であるターンアラウンドタイム（TAT）とは區別されます。</div></td>
+                    <td>                        【題目】關於線上系統中「回應時間（Response Time）」的定義，下列何者最恰當？
+<br>
+                        <div class="option">A. 使用者完成輸入或按下執行鍵後，至系統回傳第一筆回應為止的時間。</div>
+                        <div class="option">B. 發出系統處理請求後，至所有資料列印完畢為止的時間。</div>
+                        <div class="option">C. 接獲發生故障通知後，至維護人員抵達現場為止的時間。</div>
+                        <div class="option">D. 系統整體年度總營運時間中稼働時間所佔的比例。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：回應時間（Response Time）指終端發出 Request 到收到第一個 Response 位元組的等待時間；與處理全部完成的 Turnaround Time (TAT) 不同。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス及びサービスマネジメントシステムのパフォーマンス</div>
+                <div class="term-reading">さーびすおよびさーびすまねじめんとしすてむのぱふぉーまんす</div>
+                <div class="term-zh">服務及服務管理系統之績效</div>
+                <div class="term-en">Performance of Service and Service Management System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">提供されるサービスとそれを管理する仕組み（SMS）が、所定の目標やSLA要件を満たしているかを測定・評価した結果。</div>
+                <div class="summary-zh">評估所提供的服務及其管理機制（SMS）是否符合預定目標及 SLA 需求的測定與評價結果。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】サービス及びサービスマネジメントシステム（SMS）のパフォーマンス評価に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. SLAで合意したサービス目標の達成度やプロセスの有効性を定量的・定性的に測定し、改善につなげること。</div>
+                        <div class="option">イ. 毎月ハードウェアの故障台数のみを記録し、それ以外の測定やレビューは行わないこと。</div>
+                        <div class="option">ウ. パフォーマンス評価はシステム導入時の一度だけ実施し、運用開始後は評価を行わないこと。</div>
+                        <div class="option">エ. 競合他社に売上額で勝っているかどうかのみを基準として評価すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービスおよびSMSのパフォーマンス評価は、ISO/IEC 20000等の枠組みにおいて、サービス目標（稼働率、応答時間等）やプロセスの有効性を測定し、継続的な改善を確実にするための重要な活動です。</div></td>
+                    <td>                        【題目】關於服務及服務管理系統（SMS）績效評估的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 定量與定性地測量 SLA 合意服務目標的達成度與流程有效性，並用於持續改善。</div>
+                        <div class="option">B. 每月僅記錄硬體故障台數，不進行其他項目的測量與審查。</div>
+                        <div class="option">C. 績效評估僅在系統導入時實施一次，營運開始後即不再評估。</div>
+                        <div class="option">D. 單純以銷售額是否超越競爭對手作為唯一的評估標準。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：依據 ISO/IEC 20000 規範，SMS 績效評估包含測量服務達成率（可用性、容量、回應時間）與管理流程效能，作為 PDCA 循環中「Check」與「Act」的依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスマネジメントシステム</div>
+                <div class="term-reading">さーびすまねじめんとしすてむ</div>
+                <div class="term-zh">服務管理系統</div>
+                <div class="term-en">Service Management System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">高品質なITサービスを効率的に設計・移行・提供・改善するために、組織のプロセスやリソースを統合管理する枠組み。</div>
+                <div class="summary-zh">為有效率地設計、轉移、交付與改善高品質 IT 服務，而將組織流程與資源進行整合管理的系統化框架。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントシステム（SMS）に関する国際標準規格として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ISO/IEC 27001</div>
+                        <div class="option">イ. ISO/IEC 20000</div>
+                        <div class="option">ウ. ISO 9001</div>
+                        <div class="option">エ. ISO 14001</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ISO/IEC 20000は、ITサービスマネジメントシステム（SMS）に関する国際規格であり、ITILなどのベストプラクティスをベースに組織が適切なサービス管理を行うための要求事項を定めています。</div></td>
+                    <td>                        【題目】關於 IT 服務管理系統（SMS）的國際標準規範，下列何者最恰當？
+<br>
+                        <div class="option">A. ISO/IEC 27001</div>
+                        <div class="option">B. ISO/IEC 20000</div>
+                        <div class="option">C. ISO 9001</div>
+                        <div class="option">D. ISO 14001</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：ISO/IEC 20000 為 IT 服務管理系統（Service Management System, SMS）的國際認證標準（ISO/IEC 27001 為資安 ISMS，ISO 9001 為一般品質管理 QMS）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

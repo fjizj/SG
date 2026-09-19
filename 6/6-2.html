@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトの統合 - 5語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトの統合 - 5語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案啟動、執行與基準管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクト憲章の作成</div>
+                <div class="term-reading">ぷろじぇくとけんしょうのさくせい</div>
+                <div class="term-zh">制定專案章程</div>
+                <div class="term-en">Project Charter Creation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの存在を正式に承認し、目的、範囲、プロジェクトマネージャーの権限などを明確に定義するプロセス。</div>
+                <div class="summary-zh">正式授權專案成立，並明確定義專案目的、範圍以及專案經理權限的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおいて、プロジェクト憲章を作成する主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトの実施を正式に承認し、プロジェクトマネージャーに必要な権限を与える。</div>
+                        <div class="option">イ. システムの個別機能に関する詳細な技術仕様書を作成する。</div>
+                        <div class="option">ウ. プロジェクト完了後の運用保守スケジュールを決定する。</div>
+                        <div class="option">エ. 各プログラマーの毎日の作業時間と給与を詳細に記録する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：プロジェクト憲章は、プロジェクトの存在を正式に承認し、プロジェクトマネージャーを任命して組織のリソースを投入する権限を与えるために作成される重要な文書です。</div></td>
+                    <td>                        【題目】在專案管理中，制定專案章程的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 正式授權專案成立，並給予專案經理所需的資源調配權限。</div>
+                        <div class="option">B. 撰寫系統個別功能的詳細技術規格書。</div>
+                        <div class="option">C. 決定專案結束後的維運時程表。</div>
+                        <div class="option">D. 詳細記錄每位程式設計師的每日工作時間與薪資。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：專案章程（Project Charter）是用於正式宣告專案成立的官方文件，其主要目的在於賦予專案經理動用組織資源以執行專案活動的權力。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクト作業の管理</div>
+                <div class="term-reading">ぷろじぇくとさぎょうのかんり</div>
+                <div class="term-zh">專案作業管理</div>
+                <div class="term-en">Project Work Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクト目標の達成に向けて、計画されたアクティビティを実行・監視・制御し、作業を円滑に進めるプロセス。</div>
+                <div class="summary-zh">為達成專案目標，進行計畫活動之執行、監控與管制，確保各項工作順利推進的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクト作業の指示・管理プロセスに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトの成果物を納品した後に初めて計画を開始すること。</div>
+                        <div class="option">イ. 定められた計画に基づいて作業を実行し、成果物の生成やリスク対応を円滑に行うこと。</div>
+                        <div class="option">ウ. システム開発のプログラミング言語を自動で生成すること。</div>
+                        <div class="option">エ. 開発チームの給料体系を改定すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクト作業の指示・管理（Direct and Manage Project Work）は、プロジェクトマネジメント計画書に定義された作業を実行し、成果物を生み出す中心的なプロセスです。</div></td>
+                    <td>                        【題目】關於專案作業的指導與管理過程，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 於專案交付物交貨後才開始進行計畫。</div>
+                        <div class="option">B. 依據既定計畫執行工作，順利產出交付物並應對風險。</div>
+                        <div class="option">C. 自動產生系統開發的程式語言。</div>
+                        <div class="option">D. 修訂開發團隊的薪資體系。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：指導與管理專案作業（Direct and Manage Project Work）是執行專案計畫的核心過程，包含完成專案說明書中所定義的工作，以達成專案的各項目標。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ベースライン</div>
+                <div class="term-reading">べーすらいん</div>
+                <div class="term-zh">基準線 / 基準</div>
+                <div class="term-en">Baseline</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">進捗や成果を比較・評価するための承認された基準。スケジュール、コスト、スコープなどの計画値を示す。</div>
+                <div class="summary-zh">用於比較與評估實際進度的已核准基準，包含範圍、時程及成本等計畫基準值。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおけるベースラインの説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 発生した障害に対する緊急の修正対応手順のこと。</div>
+                        <div class="option">イ. プロジェクトの計画段階で承認された基準であり、実際の進捗や変更を評価するための参照点。</div>
+                        <div class="option">ウ. プログラミング時に使用する推奨フォントサイズのこと。</div>
+                        <div class="option">エ. 毎週行われる進捗確認会議の議事録のこと。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ベースライン（Baseline）は、スコープ・スケジュール・コストなどの承認された計画基準であり、実績との差異分析や変更管理の基準点となります。正式な変更手続きなしには変更されません。</div></td>
+                    <td>                        【題目】關於專案管理中的「基準線（Baseline）」說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 針對發生的障礙所採取的緊急修正處置程序。</div>
+                        <div class="option">B. 於專案規劃階段經過核准的基準，作為評估實際進度與變更的參照點。</div>
+                        <div class="option">C. 撰寫程式時建議使用的字型大小。</div>
+                        <div class="option">D. 每週進行的進度確認會議紀錄。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：基準線（Baseline）是經過正式核准的計畫版本（如範圍基準線、時程基準線與成本基準線），用來作為後續與實際績效比較、測量偏差與實施變更控制的依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <div class="group-container">
+        <div class="group-header">專案收尾與教訓傳承</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトフェーズ又はプロジェクトの終結</div>
+                <div class="term-reading">ぷろじぇくとふぇーずまたはぷろじぇくとのしゅうけつ</div>
+                <div class="term-zh">專案階段或專案收尾</div>
+                <div class="term-en">Project Phase or Project Closure</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの段階的区分や最終完了プロセス。成果物の確認・納品、契約の終了、評価や学習の共有を行う。</div>
+                <div class="summary-zh">專案的階段性劃分或最終完工程序，包含交付物驗收、合約結算、績效評估與經驗分享。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトの終結プロセスにおいて実施すべき作業として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 新しいプロジェクトの予算を増額申請すること。</div>
+                        <div class="option">イ. プロジェクト成果物の正式な受入確認、リソースの解放、最終報告書の作成を行うこと。</div>
+                        <div class="option">ウ. 初めてシステム要件のヒアリングを開始すること。</div>
+                        <div class="option">エ. チームメンバーの毎日の打刻データを集計すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトの終結（Project Closure）プロセスでは、成果物の引き渡し・受入確認、契約や管理上の終了手続き、得た教訓の記録、チームリソースの解放などを行います。</div></td>
+                    <td>                        【題目】在專案收尾過程中應執行的工作，下列何者最恰當？
+<br>
+                        <div class="option">A. 提出新專案的增加預算申請。</div>
+                        <div class="option">B. 進行專案交付物的正式驗收確認、資源釋放並撰寫最終報告書。</div>
+                        <div class="option">C. 首次開始進行系統需求的訪談。</div>
+                        <div class="option">D. 彙整團隊成員每日的出勤打卡資料。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案收尾（Project Closure）包含確認所有程序已完成、正式交付專案成果、辦理結案手續、記錄經驗教訓並釋放專案團隊資源。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">得た教訓の収集</div>
+                <div class="term-reading">えたきょうくんのしゅうしゅう</div>
+                <div class="term-zh">經驗教訓收集</div>
+                <div class="term-en">Gathering Lessons Learned</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクト進行中や完了時に成功・失敗要因を整理・記録し、将来のプロジェクトへ活かすためのナレッジ蓄積プロセス。</div>
+                <div class="summary-zh">在專案執行中或結束時整理並記錄成功與失敗經驗，累積組織知識以供未來專案參考。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトにおける「得た教訓（Lessons Learned）」の収集と記録を行う主な目的はどれか。
+<br>
+                        <div class="option">ア. 今回のプロジェクトで発生した失敗の責任者を特定して処罰するため。</div>
+                        <div class="option">イ. 成功事例や課題の改善点を組織のナレッジとして蓄積し、将来のプロジェクトの成功率を高めるため。</div>
+                        <div class="option">ウ. システムの動作ログを外部ストレージにバックアップするため。</div>
+                        <div class="option">エ. 開発ソフトウェアのライセンス費用を計算するため。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：得た教訓（Lessons Learned）の収集は、今回の経験（成功要因や問題点・失敗）をナレッジとして記録・共有し、将来のプロジェクトで同様のミスを避け、標準プロセスを改善するために実施されます。</div></td>
+                    <td>                        【題目】在專案中收集與記錄「經驗教訓（Lessons Learned）」的主要目的為何？
+<br>
+                        <div class="option">A. 追究本次專案發生失敗的責任歸屬並予以懲處。</div>
+                        <div class="option">B. 將成功案例與改善點作為組織知識予以累積，以提高未來專案的成功率。</div>
+                        <div class="option">C. 將系統的運作日誌備份至外部儲存裝置。</div>
+                        <div class="option">D. 計算開發軟體的授權費用。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：經驗教訓（Lessons Learned）登錄表用於記錄專案過程中學到的經驗，包含問題處理方法與成功做法，目的在於為組織累積知識資產，避免未來重複犯錯並提升後續專案績效。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

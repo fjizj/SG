@@ -1,0 +1,2518 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービスマネジメントシステムの計画及び運用 - 62語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>サービスマネジメントシステムの計画及び運用 - 62語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+    <!-- 1. 服務設計與需求管理 -->
+    <div class="group-container">
+        <div class="group-header">服務設計與需求管理</div>
+
+        <!-- サービスの要求事項 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスの要求事項</div>
+                <div class="term-reading">さーびすのようきゅうじこう</div>
+                <div class="term-zh">服務需求事項</div>
+                <div class="term-en">Service Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">顧客や事業のニーズを満たすために、サービスが備えるべき機能面および非機能面の到達基準。</div>
+                <div class="summary-zh">為滿足客戶與業務需求，服務在功能性及非功能性層面所必須達到的條件與標準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおいて、サービスの要求事項を定義する目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 顧客のニーズを明確にし、設計や運用において達成すべき具体的な品質や機能の基準を設定するため。</div>
+                        <div class="option">イ. システムの障害発生時に、復旧作業を自動化するためのプログラムを作成するため。</div>
+                        <div class="option">ウ. 過去に発生したインシデントの根本原因を特定し、データベースに記録するため。</div>
+                        <div class="option">エ. ハードウェアの保守契約期間を管理し、更新手続きを自動化するため。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービスの要求事項の定義は、顧客の事業上のニーズを明確化し、それに沿った機能・性能・セキュリティなどの基準を設計・運用の指針として設定することを目的とします。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，定義「服務需求事項」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 明確化客戶需求，並設定設計與營運階段應達成的具體品質及功能標準。</div>
+                        <div class="option">B. 在系統發生故障時，撰寫用於自動化復原作業的程式。</div>
+                        <div class="option">C. 找出過去所發生事件的根本原因，並將其記錄於資料庫中。</div>
+                        <div class="option">D. 管理硬體維護合約的期限，並將續約手續自動化。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務需求事項旨在釐清業務與使用者需求，建立包含功能與非功能要件的量化或質化標準，作為後續服務設計、轉移及維運的依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービスカタログ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスカタログ</div>
+                <div class="term-reading">さーびすかたろぐ</div>
+                <div class="term-zh">服務目錄</div>
+                <div class="term-en">Service Catalog</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">運用中および提供可能なすべてのITサービスについて、概要や利用条件を一覧化して提示する資料。</div>
+                <div class="summary-zh">將營運中及可供申請的所有 IT 服務項目、概要、費用與申請條件進行彙整清單化的資料庫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおけるサービスカタログの説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 稼働中のすべてのITサービスに関する詳細、価格、申請方法などが記載された顧客向けの文書。</div>
+                        <div class="option">イ. 開発中のソフトウェアのソースコードとその設計書を管理するためのデータベース。</div>
+                        <div class="option">ウ. 障害が発生したハードウェアの修理履歴と交換部品の価格一覧表。</div>
+                        <div class="option">エ. 組織内で使用されているIT機器の購入時期と減価償却費をまとめた台帳。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービスカタログは、現在提供されている（または提供可能な）ITサービスの一覧であり、サービスの内容、利用資格、料金、申請手順などを顧客やユーザーにわかりやすく公開するものです。</div></td>
+                    <td>                        【題目】關於 ITIL 中「服務目錄（Service Catalog）」的說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 記載目前運作中所有 IT 服務之詳細內容、價格、申請方式等資訊並面向客戶的面向文件。</div>
+                        <div class="option">B. 用於管理開發中軟體原始碼及其設計規格書的資料庫。</div>
+                        <div class="option">C. 發生故障之硬體的維修履歷與替換零件價格清單。</div>
+                        <div class="option">D. 彙整組織內部所使用 IT 設備之購入時期與折舊费用的帳簿。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務目錄是服務組合（Service Portfolio）中對外公開的可營運部分，用以向使用者與客戶展示可取得的服務項目與相關申請細節。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス設計書 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス設計書</div>
+                <div class="term-reading">さーびすせっけいしょ</div>
+                <div class="term-zh">服務設計文件</div>
+                <div class="term-en">Service Design Document</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">新サービスや変更を導入する際、技術仕様や運用モデル、要件への適合性を定義した文書。</div>
+                <div class="summary-zh">導入新服務或變更時，定義其技術規格、營運架構及對需求之符合性的整體設計文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】新サービスの開発や既存サービスの変更時に作成される「サービス設計書」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスが満たすべき機能・非機能要件、運用手順、インフラ構成などを総合的に定義した文書。</div>
+                        <div class="option">イ. システムの障害が発生した際に、復旧を自動的に行うためのスクリプト集。</div>
+                        <div class="option">ウ. 過去に発生したインシデントのログを蓄積したトラブルシューティングデータベース。</div>
+                        <div class="option">エ. サービス提供者が外部ベンダーに支払う委託費用のみを記録した契約明細書。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービス設計書（SDP: Service Design Package 等とも呼ばれる）は、サービスの導入・移行・運用を円滑に行うため、要件、アーキテクチャ、プロセス、指標などを定めた包括的な設計ドキュメントです。</div></td>
+                    <td>                        【題目】關於開發新服務或變更現有服務時所撰寫的「服務設計文件」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 綜合定義服務應滿足之功能與非功能需求、營運流程及基礎架構配置等內容的文件。</div>
+                        <div class="option">B. 發生系統故障時，用以自動進行復原作業的指令碼集。</div>
+                        <div class="option">C. 蓄積過去所發生事件日誌的疑難排解資料庫。</div>
+                        <div class="option">D. 僅記錄服務提供者支付給外部廠商委託費用的合約明細單。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務設計文件包含服務之技術規格、營運架構、支援模式及量測指標，確保服務能順利轉移至營運階段並符合業務需求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 非機能要件 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">非機能要件</div>
+                <div class="term-reading">ひきのうようけん</div>
+                <div class="term-zh">非功能性需求</div>
+                <div class="term-en">Non-Functional Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務機能以外の、システムの性能、可用性、拡張性、セキュリティ、運用性に関する要件。</div>
+                <div class="summary-zh">業務功能以外，攸關系統效能、可用性、擴充性、資安與維護性等品質屬性之要求。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム開発における「非機能要件」に該当するものとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 売上データを入力した際、自動的に消費税を計算して画面に表示する機能。</div>
+                        <div class="option">イ. システムの稼働率を99.9%以上とし、ピーク時でも応答時間を2秒以内とすること。</div>
+                        <div class="option">ウ. 顧客情報画面で、会員番号を指定して検索した結果を表示する機能。</div>
+                        <div class="option">エ. 注文データを受け取った際に、データベースの在庫数を更新する処理。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ア、ウ、エはシステムが提供すべき具体的な業務機能（機能要件）です。イの稼働率や応答時間といった性能・品質に関する基準が「非機能要件」に該当します。</div></td>
+                    <td>                        【題目】在系統開發中，下列何者屬於「非功能性需求」？
+<br>
+                        <div class="option">A. 輸入銷售資料時，自動計算營業稅並顯示於畫面的功能。</div>
+                        <div class="option">B. 系統可用性需達 99.9% 以上，且尖峰時段的回應時間需在 2 秒以內。</div>
+                        <div class="option">C. 在客戶資料畫面中，指定會員編號並顯示查詢結果的功能。</div>
+                        <div class="option">D. 收到訂單資料時，更新資料庫庫存數量的處理作業。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：A、C、D 均為系統必須執行的業務功能（功能需求）；而 B 設定了可用性與效能指標，屬於非功能性需求（NFR）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. 服務水準與品質管理 -->
+    <div class="group-container">
+        <div class="group-header">服務水準與品質管理</div>
+
+        <!-- サービス満足度 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス満足度</div>
+                <div class="term-reading">さーびすまんぞくど</div>
+                <div class="term-zh">服務滿意度</div>
+                <div class="term-en">Service Satisfaction</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">提供されたサービスに対し、ユーザーが抱いた事前の期待と実際の体験とのギャップを評価する尺度。</div>
+                <div class="summary-zh">評估使用者對所接受之服務，其事前期望與實際體驗間相符程度的衡量指標。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスにおける「サービス満足度」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ユーザーの期待値と実際に提供されたサービスの品質との比較によって決まる評価指標。</div>
+                        <div class="option">イ. 1年間に発生したハードウェア障害の件数を単純に集計した数値。</div>
+                        <div class="option">ウ. システムのCPU使用率やメモリ使用量が適切に保たれているかを示す数値。</div>
+                        <div class="option">エ. サービス提供者が契約に基づいて請求した金額が正しいかを示す指標。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービス満足度は、ユーザーが受けたサービスの体験（感知された品質）が、利用前の期待を満たしているか（または上回っているか）を測定する心理的・主観的評価指標です。</div></td>
+                    <td>                        【題目】關於 IT 服務中「服務滿意度」的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 由使用者的期望值與實際接受到的服務品質相互比較後所決定的評估指標。</div>
+                        <div class="option">B. 單純統計一年內所發生硬體故障次數的數值。</div>
+                        <div class="option">C. 顯示系統 CPU 使用率與記憶體使用量是否保持適當的數值。</div>
+                        <div class="option">D. 顯示服務提供者依據合約所請款的金額是否正確的指標。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務滿意度取決於「實際獲得的服務品質」與「事前期望」之間的落差，通常透過使用者問卷與定期服務審查進行量測。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービスレベル管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスレベル管理</div>
+                <div class="term-reading">さーびすれべるかんり</div>
+                <div class="term-zh">服務水準管理</div>
+                <div class="term-en">Service Level Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">SLAの締結、達成状況の監視・評価、定期的なレビューを通じてサービス品質を維持・改善するプロセス。</div>
+                <div class="summary-zh">透過簽署 SLA、監控評估達成率及定期審查，以維持並持續改善服務品質的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「サービスレベル管理（SLM）」の活動として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 顧客とSLAを締結し、サービスの達成状況を監視・評価して、定期的にレビューを行い改善を推進する。</div>
+                        <div class="option">イ. システムのバックアップデータを定期的に外部の保管庫へ移送する。</div>
+                        <div class="option">ウ. 未知の障害に対する一時的な回避策をナレッジベースに登録する。</div>
+                        <div class="option">エ. ソースコードのバージョン管理を行い、不正な変更を防止する。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービスレベル管理（SLM）は、SLAの合意・定義、サービスパフォーマンスの監視・測定、顧客とのサービスレビュー、改善計画（SIP）の策定といった一連のPDCAサイクルを回すプロセスです。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，下列何者最符合「服務水準管理（SLM）」的活動內容？
+<br>
+                        <div class="option">A. 與客戶簽訂 SLA，監控並評估服務達成狀況，定期進行審查以推動改善。</div>
+                        <div class="option">B. 定期將系統備份資料移轉至外部庫房保管。</div>
+                        <div class="option">C. 將針對未知故障的臨時替代方案註冊至知識庫中。</div>
+                        <div class="option">D. 進行原始碼的版本控制，以防止未授權的變更。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：SLM 負責確保所有現行的 IT 服務及其績效符合雙方協議的目標，主要涵蓋 SLA 定義、績效監控、定期服務報告與審查會議。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービスレベル目標 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスレベル目標</div>
+                <div class="term-reading">さーびすれべるもくひょう</div>
+                <div class="term-zh">服務水準目標</div>
+                <div class="term-en">Service Level Objective</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">SLA内で明確に定められる、稼働率や応答時間などの計測可能な具体的パフォーマンス指標（SLO）。</div>
+                <div class="summary-zh">在 SLA 中所明確規範，如可用性或回應時間等具體可測量的績效目標指標（SLO）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】SLAの中で設定される「サービスレベル目標（SLO）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスの品質を測定・評価するために設定される、定量的かつ測定可能な具体的な目標値。</div>
+                        <div class="option">イ. 障害が発生した際に事業を継続するための予算の上限値。</div>
+                        <div class="option">ウ. システムを開発するエンジニアのスキルレベルを示す定性的な分類。</div>
+                        <div class="option">エ. 競合他社が提供しているサービスの平均価格設定。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービスレベル目標（SLO: Service Level Objective）は、SLAを構成する個別具体的な要素であり、「月間稼働率99.9%以上」「平均応答時間1秒以内」といった measurable（測定可能）な数値目標を指します。</div></td>
+                    <td>                        【題目】關於 SLA 中設定的「服務水準目標（SLO）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 為測量與評估服務品質所設定之定量且可測量的具體目標值。</div>
+                        <div class="option">B. 發生故障時用以維持業務持續營運的預算上限值。</div>
+                        <div class="option">C. 顯示開發系統之工程師技能水準的定性分類。</div>
+                        <div class="option">D. 競爭對手所提供服務的平均價格設定。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：SLO 是 SLA 條文中的特定衡量指標（如 Availability >= 99.9%），必須具備明確、客觀且可透過工具監控測量的量化特性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 運用サービス基準 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">運用サービス基準</div>
+                <div class="term-reading">うんようさーびすきじゅん</div>
+                <div class="term-zh">營運服務標準</div>
+                <div class="term-en">Operational Service Standards</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">日常のシステム運用において、安定したサービス品質を維持・確保するために順守すべき内部基準。</div>
+                <div class="summary-zh">於日常系統營運中，為維持與確保穩定服務品質所必須遵循的內部維運規範。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスの運用において設定される「運用サービス基準」の目的に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 運用作業の標準化を図り、障害の発生を防止するとともに一定のサービス品質を継続的に維持するため。</div>
+                        <div class="option">イ. システムの開発期間を最小限に抑えるため、テスト工程を省略できるようにすること。</div>
+                        <div class="option">ウ. 外部の競合他社に対して自社の運用ノウハウを無償で公開するため。</div>
+                        <div class="option">エ. 経営陣に対してIT投資の回収率のみを報告するため。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：運用サービス基準は、運用チームが日々の監視、バックアップ、障害対応などを一貫した品質で行うための内部規程・基準であり、運用の標準化と品質安定化を図るものです。</div></td>
+                    <td>                        【題目】關於在 IT 服務營運中所設定的「營運服務標準」，其主要目的下列何者最恰當？
+<br>
+                        <div class="option">A. 促進營運作業標準化，防止故障發生並持續維持一定的服務品質。</div>
+                        <div class="option">B. 為縮短系統開發時程，使測試階段得以予以省略。</div>
+                        <div class="option">C. 向外部競爭對手無償公開自家的營運 Know-how。</div>
+                        <div class="option">D. 專門用於向高階管理階層陳報 IT 投資報酬率。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：營運服務標準（OLA/SOP 的基礎）旨在建立穩定的內部日常營運指引，確保基礎設施與系統維護作業遵循一致的規範。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. 資產、組態與軟體授權管理 -->
+    <div class="group-container">
+        <div class="group-header">資產、組態與軟體授權管理</div>
+
+        <!-- 資産管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">資産管理</div>
+                <div class="term-reading">しさんかんり</div>
+                <div class="term-zh">資產管理</div>
+                <div class="term-en">Asset Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織が保有するハードウェア、ライセンス、ファシリティなどのIT資産のライフサイクルと財務価値を追跡・管理する活動。</div>
+                <div class="summary-zh">追蹤與管理組織所擁有的硬體、授權軟體、設施等 IT 資產之生命週期與財務價值的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITアセットマネジメント（IT資産管理）の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. IT資産の所有状況、コスト、契約、ライフサイクルを把握し、最適化とリスク削減を図ること。</div>
+                        <div class="option">イ. システムのプログラムコードをリファクタリングして実行速度を向上させること。</div>
+                        <div class="option">ウ. ネットワーク上の通信パケットをリアルタイムで解析して不正侵入を検知すること。</div>
+                        <div class="option">エ. ユーザーからのパスワードリセット要求に対して自動で再発行を行うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：IT資産管理（ITAM）は、ハードウェアやソフトウェアなどのIT資産について、調達から廃棄までのライフサイクル、所有権、コスト、契約関係を正確に管理・最適化するプロセスです。</div></td>
+                    <td>                        【題目】關於 IT 資產管理（ITAM）的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 掌握 IT 資產的持有狀況、成本、合約及生命週期，以達到資源最佳化並降低風險。</div>
+                        <div class="option">B. 對系統程式碼進行重構（Refactoring）以提升執行速度。</div>
+                        <div class="option">C. 即時解析網路封包以偵測未授權的入侵行為。</div>
+                        <div class="option">D. 針對使用者的重設密碼請求，自動進行密碼重新發放。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：IT 資產管理著重於「財務、合約與實體數量」的掌控，追蹤資產從採購、使用、維護至報廢清算的全生命週期。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ライセンスマネジメント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ライセンスマネジメント</div>
+                <div class="term-reading">らいせんすまねじめんと</div>
+                <div class="term-zh">軟體授權管理</div>
+                <div class="term-en">License Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ソフトウェアの使用許諾契約の順守狀況、使用数を適正に把握し、法規違反リスク防止とコスト最適化を図る管理。</div>
+                <div class="summary-zh">妥善掌握軟體授權合約遵循狀況與安裝使用數，以防範違法風險並達到成本最佳化的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ソフトウェアライセンス管理を適切に行わない場合のリスクとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 不正使用（ライセンス違反）による損害賠償請求や法的処罰、企業信用の失墜。</div>
+                        <div class="option">イ. ネットワークの通信速度が物理的に低下すること。</div>
+                        <div class="option">ウ. サーバの電源装置が突発的に故障すること。</div>
+                        <div class="option">エ. データベースのバックアップファイルが自動的に暗号化されること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ライセンス管理（SAM）を怠ると、許諾数を超えた不正インストールが発生し、著作権法違反や契約違反による高額な違約金請求・法的リスクを招く恐れがあります。</div></td>
+					<td>                    【問題】若未能適當進行軟體授權管理，下列何者是最為適當的風險？
+<br>
+                    <div class="option">A. 因非法使用（違反授權）而導致的損害賠償請求、法律處罰，以及企業信譽的失墜。</div>
+                    <div class="option">B. 網路的通訊速度在物理上變慢。</div>
+                    <div class="option">C. 伺服器的電源供應器發生突發性故障。</div>
+                    <div class="option">D. 資料庫的備份檔案被自動加密。</div>
+                    <div class="answer">正確答案：A</div>
+<br>
+                    <div class="analysis">解析：若疏於進行授權管理（SAM），將會導致超出授權數的非法安裝，恐招致違反著作權法或合約違約的高額違約金請求與法律風險。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 構成管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">構成管理</div>
+                <div class="term-reading">こうせいかんり</div>
+                <div class="term-zh">組態管理</div>
+                <div class="term-en">Configuration Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITサービスを構成するすべての構成品目（CI）の属性と相互關係をCMDB等で正確に認識・維持するプロセス。</div>
+                <div class="summary-zh">於 CMDB 中精確識別、記錄並維持組成 IT 服務之所有組態項目（CI）的屬性與關聯性的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける構成管理の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ITインフラを構成する構成品目（CI）とその関係性を正確に把握・維持し、サービスの決定や変更を支援すること。</div>
+                        <div class="option">イ. 将来のアクセス増加に備えて、サーバのハードディスク容量を予測して買い足すこと。</div>
+                        <div class="option">ウ. ユーザーからの問い合わせに対して、過去の解決事例を提示して一次回答を行うこと。</div>
+                        <div class="option">エ. サービス提供者が競合他社と比較して優位に立つための価格戦略を立案すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：構成管理（Configuration Management）の目的は、サービスを構成するCIの属性や依存関係情報を構成管理データベース（CMDB）等で正確に保持し、インシデント管理や変更管理等に正しい情報を提供することです。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，關於組態管理的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 精確掌握與維持組成 IT 基礎設施之組態項目（CI）及其關聯性，以支援服務決策與變更。</div>
+                        <div class="option">B. 為因應未來存取量增加，預測伺服器硬碟容量並進行加購。</div>
+                        <div class="option">C. 針對使用者的諮詢，提供過去的解決案例進行一次解答。</div>
+                        <div class="option">D. 制定價格策略，使服務提供者相較於競爭對手占據優勢。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：組態管理著重於維持 CMDB 中 CI 之屬性與關聯圖譜，提供變更影響分析與事件追蹤所需的準確架構資訊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 構成品目 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">構成品目</div>
+                <div class="term-reading">こうせいひんもく</div>
+                <div class="term-zh">組態項目</div>
+                <div class="term-en">Configuration Item</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITサービスの提供に必要な、構成管理の対象として個別識別・管理されるハードウェア、ソフト、ドキュメント等の要素（CI）。</div>
+                <div class="summary-zh">交付 IT 服務所必需，且作為組態管理標的而被個別識別與管理的硬體、軟體及文件等元件（CI）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「構成品目（CI: Configuration Item）」の説明として、適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスを提供するために管理対象となる、ハードウェア、ソフトウェア、ドキュメント、サービスなどの構成要素。</div>
+                        <div class="option">イ. サービスレベル合意書（SLA）において定められた罰則規定のこと。</div>
+                        <div class="option">ウ. ITサービスデスクに配属されているオペレーターの個人のスキルシート。</div>
+                        <div class="option">エ. 障害発生時に一時的に適用する回避策（ワークアラウンド）の記録。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：CI（Configuration Item）は、構成管理の制御下にあるすべての要素を指します。物理的なサーバやネットワーク機器だけでなく、OS、アプリ、SLA文書、設計書などもCIに含まれます。</div></td>
+                    <td>                        【題目】關於 ITIL 中的「組態項目（CI: Configuration Item）」，下列描述何者正確？
+<br>
+                        <div class="option">A. 為提供服務而列入管理對象的硬體、軟體、文件及服務等構成元件。</div>
+                        <div class="option">B. 在服務水準協議（SLA）市所規定的懲罰條款。</div>
+                        <div class="option">C. 派駐於 IT 服務台之服務人員的個人技能表。</div>
+                        <div class="option">D. 發生故障時臨時套用的替代方案（Workaround）記錄。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：CI 是受組態管理控制的最小可識別實體，除了實體硬體與軟體外，系統規格書、SLA 合約等文件亦可作為 CI 列管。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 4. 供應商與契約管理 -->
+    <div class="group-container">
+        <div class="group-header">供應商與契約管理</div>
+
+        <!-- 供給者管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">供給者管理</div>
+                <div class="term-reading">きょうきゅうしゃかんり</div>
+                <div class="term-zh">供應商管理</div>
+                <div class="term-en">Supplier Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">外部ベンダーとの契約交渉、パフォーマンス評価、関係維持を行い、支払った費用に見合うサービス品質を確保するプロセス。</div>
+                <div class="summary-zh">進行外部廠商合約談判、績效評估與關係維繫，以確保取得符合支付對價之服務品質的流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「供給者管理（サプライヤ管理）」の活動として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 外部ベンダーの選定、契約評価、パフォーマンスの測定を行い、対価に見合ったサービスが提供されているか管理すること。</div>
+                        <div class="option">イ. 社内の開発チームの月間残業時間を集計し、労務管理を行うこと。</div>
+                        <div class="option">ウ. 顧客からの問い合わせ要求を分類し、担当部署へ割り振ること。</div>
+                        <div class="option">エ. サーバのCPU使用率が閾値を超えた場合に自動で警告メールを送信すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：供給者管理（Supplier Management）は、外部のサービスプロバイダーやベンダーを管理し、UC（アンダーピニング・コントラクト：裏付け契約）に基いて適切なサービスが提供されているかを担保するプロセスです。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，下列何者最符合「供應商管理」的活動內容？
+<br>
+                        <div class="option">A. 進行外部廠商評選、合約評估及績效測量，管理其是否提供符合對價的服務。</div>
+                        <div class="option">B. 統計內部開發團隊的每月加班時數並進行勞務管理。</div>
+                        <div class="option">C. 將客戶的諮詢請求進行分類並指派給相應部門。</div>
+                        <div class="option">D. 當伺服器 CPU 使用率超越門檻值時自動發送警告郵件。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：供應商管理旨在確保第三方供應商及其提供的服務符合組織合約要求，並落實支撐合約（Underpinning Contract, UC）的履約管理。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 外部供給者 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">外部供給者</div>
+                <div class="term-reading">がいぶきょうきゅうしゃ</div>
+                <div class="term-zh">外部供應商</div>
+                <div class="term-en">External Provider</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織の外部に存在し、契約に基づきITインフラ、ソフトウェア、運用サービス等を提供するサードパーティ企業。</div>
+                <div class="summary-zh">位於組織外部，依據合約提供 IT 基礎設施、軟體或營運服務之第三方企業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「外部供給者（サードパーティ）」の活用に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 自社にない専門技術やリソースを補うために、明確な契約（UC）のもとでサービスの一部を委託する外部組織。</div>
+                        <div class="option">イ. 組織内部の別部門で、ITサービスを提供するインフラチームのこと。</div>
+                        <div class="option">ウ. サービスを直接利用し、対価を支払うエンドユーザーのこと。</div>
+                        <div class="option">エ. 自社の経営方針やIT戦略を決定する最高情報責任者（CIO）のこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：外部供給者（External Provider）は、組織外のサードパーティ事業者であり、契約（Underpinning Contract: UC）を交わしてサービスやリソースの提供を受けます。</div></td>
+                    <td>                        【題目】關於在 IT 服務管理中使用「外部供應商（第三方）」的描述，下列何者正確？
+<br>
+                        <div class="option">A. 為補充自有的專業技術或資源，在明確合約（UC）規範下委託提供部分服務的外部組織。</div>
+                        <div class="option">B. 位於組織內部其他部門、負責提供 IT 服務的基礎設施團隊。</div>
+                        <div class="option">C. 直接使用服務並支付對價的最終使用者。</div>
+                        <div class="option">D. 決定自家經營方針與 IT 策略的最高資訊主管（CIO）。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：外部供應商係指獨立於組織之外的第三方實體，透過簽署具法律約束力的第三方支撐合約（UC）來補足內部能力或容量。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 内部供給者 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">内部供給者</div>
+                <div class="term-reading">ないぶきょうきゅうしゃ</div>
+                <div class="term-zh">內部供應商</div>
+                <div class="term-en">Internal Supplier</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">同一組織内の他部門（インフラ部門やネットワークチームなど）に対して、サービスやリソースを提供する内部チーム。</div>
+                <div class="summary-zh">於同一組織內部，向其他部門（如基礎設施部、網路組）提供服務或資源的內部團隊。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「内部供給者（Internal Supplier）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 同一組織内に存在し、 SLA や OLA（運用レベル合意書）に基づいて他の部門にサービスを提供するチーム。</div>
+                        <div class="option">イ. 法律上の売買契約を取り交わしてクラウドサービスを提供する外部企業。</div>
+                        <div class="option">ウ. 製品を購入して使用する一般の顧客やエンドユーザー。</div>
+                        <div class="option">エ. システムの監査を第三者視点で行う外部の公認会計士。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：内部供給者は、社内のIT部門やインフラ運用チームなどを指し、他の部門（顧客やアプリ開発チーム）に対して運用レベル合意書（OLA: Operational Level Agreement）等に基づいてサービスを提供します。</div></td>
+                    <td>                        【題目】關於「內部供應商（Internal Supplier）」的說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 存在於同一組織內部，依據 SLA 或 OLA（營運水準協議）向其他部門提供服務的團隊。</div>
+                        <div class="option">B. 簽立法律買賣合約並提供雲端服務的外部企業。</div>
+                        <div class="option">C. 購買並使用產品的一般客戶或最終使用者。</div>
+                        <div class="option">D. 以第三方視角進行系統審計的外部認證會計師。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：內部供應商係指與服務提供者隸屬於同一法人組織的內部部門，雙方通常透過營運水準協議（OLA）界定權責。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 契約 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">契約</div>
+                <div class="term-reading">けいやく</div>
+                <div class="term-zh">合約 / 契約</div>
+                <div class="term-en">Contract</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">二者以上の間で法的な拘束力を持つ合意。ITサービス管理では外部供給者との裏付け契約（UC）などが該当する。</div>
+                <div class="summary-zh">兩方或多方之間具法律約束力的協議。於 IT 服務管理中包含與外部供應商簽訂之支撐合約（UC）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおいて、外部のサービスプロバイダーとの間で締結される、法的な拘束力を持つ合意文書を何と呼ぶか。
+<br>
+                        <div class="option">ア. OLA（運用レベル合意書）</div>
+                        <div class="option">イ. UC（裏付け契約 / Underpinning Contract）</div>
+                        <div class="option">ウ. SLA（サービスレベル合意書）</div>
+                        <div class="option">エ. Requirement Specification（要件定義書）</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：外部供給者（ベンダー）との間で交わされる法的な契約はITILにおいて「UC（裏付け契約）」と呼ばれ、組織が顧客と交わすSLAの目標を達成するための下支えとなります。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，與外部服務提供者所簽訂、具備法律約束力的協議文件稱作什麼？
+<br>
+                        <div class="option">A. OLA（營運水準協議）</div>
+                        <div class="option">B. UC（支撐合約 / Underpinning Contract）</div>
+                        <div class="option">C. SLA（服務水準協議）</div>
+                        <div class="option">D. Requirement Specification（需求規格書）</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：與外部第三方簽署的法規合約稱為 UC（Underpinning Contract），用以確保外部條款能完全支撐內部對客戶承諾的 SLA。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 5. 容量、效能與需求管理 -->
+    <div class="group-container">
+        <div class="group-header">容量、效能與需求管理</div>
+
+        <!-- 需要管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">需要管理</div>
+                <div class="term-reading">じゅようかんり</div>
+                <div class="term-zh">需求管理</div>
+                <div class="term-en">Demand Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">顧客のサービス利用パターン（PBA）を理解・予測し、ピーク時の負荷を分散・平準化するための管理プロセス。</div>
+                <div class="summary-zh">理解並預測客戶的服務使用模式（PBA），透過定價或調度化解尖峰負載以平衡資源的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「需要管理」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 顧客のサービス利用パターンを理解・予測し、インフラの過負荷を防ぐために需要の平準化を図ること。</div>
+                        <div class="option">イ. 過去の障害データを分析して、根本原因を特定すること。</div>
+                        <div class="option">ウ. ライセンスの保有数と利用数を一致させて法的な違反を防ぐこと。</div>
+                        <div class="option">エ. 新しいソフトウェアのバージョンアップ手順を計画すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：需要管理（Demand Management）は、顧客の事業活動パターン（PBA）を分析し、オフピーク時の割引価格設定などによって利用時間を分散させ、キャパシティ超過を防ぐプロセスです。</div></td>
+                    <td>                        【題目】關於 ITIL 中「需求管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 理解並預測客戶的服務使用模式，促成需求的平準化以防止基礎設施過載。</div>
+                        <div class="option">B. 分析過去的故障資料以找出根本原因。</div>
+                        <div class="option">C. 比對授權保有數與使用數以防止法律違規。</div>
+                        <div class="option">D. 規劃新軟體的版本升級步驟。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：需求管理影響顧客對服務的需求取向（如差別定價、差別優先級），協助容量管理在不必無限擴充設備的前提下維持品質。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- キャパシティ管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">キャパシティ管理</div>
+                <div class="term-reading">きゃぱしてぃかんり</div>
+                <div class="term-zh">容量管理</div>
+                <div class="term-en">Capacity Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITリソース（CPU、メモリ、ディスク等）の現状と将来の需要を把握し、適正なコストで必要な処理能力を確保するプロセス。</div>
+                <div class="summary-zh">掌握 IT 資源現況與未來需求，以合宜成本確保系統具備足夠處理效能與容量的流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「キャパシティ管理」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務上の要求に対して、将来にわたって適切なITリソースを適正なコストで継続的に供給すること。</div>
+                        <div class="option">イ. サービスデスクのオペレーターの人数を最適化し、給与コストを削減すること。</div>
+                        <div class="option">ウ. 障害が発生した際に、サービスをあらかじめ合意した時間内に復旧させること。</div>
+                        <div class="option">エ. 外部ベンダーとの契約違反が発生した場合の損害賠償額を算出すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：キャパシティ管理（Capacity Management）は、ビジネス、サービス、コンポーネントの3つの観点から、適正なコストで適切なITリソース（処理能力、記憶容量等）をタイムリーに確保するプロセスです。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，關於「容量管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 針對業務需求，以適當的成本持續提供未來所需之適正 IT 資源容量。</div>
+                        <div class="option">B. 最佳化服務台客服人員的配置人數以削減薪資成本。</div>
+                        <div class="option">C. 當發生故障時，於事先合意之時間內復原服務。</div>
+                        <div class="option">D. 當外部廠商發生違約情事時，計算損害賠償金額。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：容量管理旨在平衡「成本」與「容量需求」，確保系統在當前及未來皆能符合 SLA 所要求的效能要件。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 監視 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監視</div>
+                <div class="term-reading">かんし</div>
+                <div class="term-zh">監控 / 監視</div>
+                <div class="term-en">Monitoring</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">CIやサービスの稼働状態、パフォーマンス、環境指標を継続的に観察・測定し、異常や変化を即座に検出する活動。</div>
+                <div class="summary-zh">持續觀察並測量 CI 與服務的運作狀態、效能與環境指標，以及時偵測異常或狀態變化的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITインフラの「監視（Monitoring）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムの状態やパフォーマンスデータを継続的に収集・観察し、異常の徴候や閾値超過を検知すること。</div>
+                        <div class="option">イ. システムのバックアップデータを週1回外部メディアに保存する作業。</div>
+                        <div class="option">ウ. ユーザーに対して新しいシステムの操作方法をレクチャーする教育活動。</div>
+                        <div class="option">エ. ソフトウェアのバグを修正するためにプログラムコードを書き換えること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：監視活動は、イベント管理プロセスやキャパシティ管理の基礎であり、システムの各種指標（CPU、応答時間、ログなど）を常時モニタリングして状態変化を検知します。</div></td>
+                    <td>                        【題目】關於 IT 基礎設施之「監控（Monitoring）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 持續收集並觀察系統狀態與效能資料，以偵測異常徵兆或超越門檻值的狀況。</div>
+                        <div class="option">B. 每週一次將系統備份資料儲存至外部介面的作業。</div>
+                        <div class="option">C. 針對使用者進行新系統操作方法的講授與教育活動。</div>
+                        <div class="option">D. 為修復軟體 Bug 而重寫程式碼的作業。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：監控包含主動（Active）與被動（Passive）偵測，為事件管理（Event Management）與容量監控提供基礎數據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 管理指標 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">管理指標</div>
+                <div class="term-reading">かんりしひょう</div>
+                <div class="term-zh">管理指標</div>
+                <div class="term-en">Management Metrics</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの健全性やプロセスの効率性を評価・管理するために測定される定量的数値（KPIやKPI候補値）。</div>
+                <div class="summary-zh">用於評估與管理系統健康度及流程效率所測量之定量化數值（如 KPI 等）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおいて、プロセスの達成度や品質を評価するために用いられる「管理指標（メトリクス）」に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. KPI（重要業績評価指標）など、客観的に測定・比較が可能な定量的な数値。</div>
+                        <div class="option">イ. 担当者の主観的な感想や満足感を記した自由記述のメモ。</div>
+                        <div class="option">ウ. システム構成図に描かれたネットワーク機器のアイコンの配置。</div>
+                        <div class="option">エ. 法律によって提出が義務付けられている財務諸表の勘定科目。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：管理指標（Metrics）は、サービスやプロセスのパフォーマンスを評価するために測定する定量的基準であり、目標達成率（KPI）の計測などに直接使用されます。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，用於評估流程達成度與品質的「管理指標（Metrics）」，下列描述何者正確？
+<br>
+                        <div class="option">A. 如 KPI（主要績效指標）等，可進行客觀測量與比較的定量化數值。</div>
+                        <div class="option">B. 記有負責人員主觀感想與滿足感的可自由敘述備忘錄。</div>
+                        <div class="option">C. 繪製於系統架構圖上的網路設備圖示擺設方式。</div>
+                        <div class="option">D. 依法規強制要求提出之財務報表中的會計科目。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：管理指標（Metrics）必須具備可量化、客觀性與可追蹤性，以作為持續服務改善（CSI）的數據支撐。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- しきい値 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">しきい値</div>
+                <div class="term-reading">しきいち</div>
+                <div class="term-zh">門檻值 / 閾值</div>
+                <div class="term-en">Threshold</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやリソースの状態が警戒・異常・正常と判定される境界となる設定数値。</div>
+                <div class="summary-zh">用於判定系統或資源狀態屬於正常、警戒或異常的臨界設定數值。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】キャパシティ管理や監視において設定される「しきい値（閾値）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムのリソース使用率などが特定の値を超えた際に、警告や自動アクションを発生させるための境界値。</div>
+                        <div class="option">イ. 障害が発生してから復旧するまでにかかった時間の平均値。</div>
+                        <div class="option">ウ. 1サービスあたりに割り当てられる開発予算の最大金額。</div>
+                        <div class="option">エ. ユーザーがパスワードを間違えて入力できる上限回数。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：しきい値（Threshold）は、例えば「CPU使用率80%以上で警戒アラート発報、95%以上で緊急通知」のように、状態の変化に応じて通知や処置を起動するための基準点です。</div></td>
+                    <td>                        【題目】關於容量管理與監控市所設定的「門檻值（Threshold）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 當系統資源使用率等超越特定數值時，用於觸發警告或自動化動作的臨界值。</div>
+                        <div class="option">B. 發生故障後至復原為止所花費時間的平均值。</div>
+                        <div class="option">C. 每個服務所能分配之開發預算的最大金額。</div>
+                        <div class="option">D. 使用者輸入錯誤密碼時所允許的上限次數。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：門檻值為預警機制的核心，透過設定 Warn/Critical 臨界點，能在系統效能徹底崩潰前及時觸發事件警報。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 6. 變更、受入與發行展開管理 -->
+    <div class="group-container">
+        <div class="group-header">變更、受入與發行展開管理</div>
+
+        <!-- 変更管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">変更管理</div>
+                <div class="term-reading">へんこうかんり</div>
+                <div class="term-zh">變更管理</div>
+                <div class="term-en">Change Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サービスやインフラへの変更に伴うリスクを正しく評価・承認（CAB等）し、障害発生を最小限に抑えて実装するプロセス。</div>
+                <div class="summary-zh">對服務或基礎設施變更引發之風險進行評估與審查承認（CAB），以降低衝擊並順利實施的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「変更管理」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 変更に伴うサービスの中断やリスクを最小限に抑えつつ、必要な変更を円滑に実施・管理すること。</div>
+                        <div class="option">イ. システムのソースコードを書き換えて、新しい新機能を毎日自動でリリースすること。</div>
+                        <div class="option">ウ. 障害が発生した際に、原因究明をせずに即座にシステムを初期状態に戻すこと。</div>
+                        <div class="option">エ. 外部ベンダーに支払う委託費用を改定するための交渉を行うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：変更管理の主な目的は、変更要求（RFC）のリスクやビジネスへの影響を事前に評価・承認（変更諮問委員会: CAB等）し、サービス障害を防ぎながら変更を制御することです。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，關於「變更管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 將變更引發的服務中斷與風險降至最低，同時圓滿實施與管控必要的變更。</div>
+                        <div class="option">B. 重寫系統原始碼，每天自動發行新功能。</div>
+                        <div class="option">C. 發生故障時不追查原因，立即將系統還原至初始狀態。</div>
+                        <div class="option">D. 進行談判以調降支付給外部廠商的委託費用。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：變更管理著重於控管變更風險，透過變更請求（RFC）審查與 CAB 評估機制，平衡「變更效益」與「中斷風險」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 変更によるサービスへの影響 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">変更によるサービスへの影響</div>
+                <div class="term-reading">へんこうによるさーびすへのえいきょう</div>
+                <div class="term-zh">變更對服務之衝擊分析</div>
+                <div class="term-en">Change Impact on Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">変更の実施が既存サービス、稼働中のCI、顧客業務に及ぼす波及効果やリスクを事前評価すること。</div>
+                <div class="summary-zh">事前評估實施變更對既存服務、運作中之 CI 及客戶業務可能產生之波及效果與風險。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】変更管理プロセスにおいて「変更によるサービスへの影響（インパクト）」を評価する際に考慮すべき事項として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 変更が失敗した場合の業務への波及範囲、ダウンタイムの長さ、およびロールバック計画の実現性。</div>
+                        <div class="option">イ. サーバ機器の減価償却期間と会計上の残存価値。</div>
+                        <div class="option">ウ. サービスデスクの担当者が使用しているキーボードの配列。</div>
+                        <div class="option">エ. 過去5年間の会社の株価推移。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：変更のサービスへの影響評価では、その変更が依存する他のCIにどう影響するか、失敗した場合のビジネスへの中断リスクや復元手順（ロールバック案）があるかを多角的に調査します。</div></td>
+                    <td>                        【題目】在變更管理流程中評估「變更對服務之衝擊（Impact）」時，下列何者為應考量的事項？
+<br>
+                        <div class="option">A. 變更失敗時對業務的波及範圍、停機時間長短，以及倒回計畫（Rollback）的可行性。</div>
+                        <div class="option">B. 伺服器設備的折舊年限與會計上的殘餘價值。</div>
+                        <div class="option">C. 服務台人員所使用鍵盤的排列方式。</div>
+                        <div class="option">D. 過去 5 年間公司的股價走勢。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：衝擊評估（Impact Assessment）需審視變更所影響的 CI 範圍、可能造成的停機風險及復原方案（Rollback Plan）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス受入れ基準 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス受入れ基準</div>
+                <div class="term-reading">さーびすうけいれきじゅん</div>
+                <div class="term-zh">服務受入基準</div>
+                <div class="term-en">Service Acceptance Criteria</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">新サービスや変更されたサービスが本番環境へ移行・正式引渡しされるために満たすべき条件（SAC）。</div>
+                <div class="summary-zh">新服務或變更後之服務欲轉移並正式交付至正式營運環境前，必須滿足的條件（SAC）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「サービス受入れ基準（SAC: Service Acceptance Criteria）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 新しいサービスが本番運用に移行するにあたり、機能面・運用面で満たさなければならない条件の一覧。</div>
+                        <div class="option">イ. 顧客が毎月のサービス利用料を支払う際の口座振込基準。</div>
+                        <div class="option">ウ. インシデントが発生した際に、一次回答を行うまでの目標時間。</div>
+                        <div class="option">エ. 外部ベンダーが契約を途中解除する際に適用される違約金の計算基準。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービス受入れ基準（SAC）は、開発されたサービスが本番稼働する準備が整っているかを厳格に判定するための必須チェックリスト（機能、テスト結果、運用マニュアル、訓練状況等）です。</div></td>
+                    <td>                        【題目】關於 ITIL 中的「服務受入基準（SAC）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 新服務轉移至正式營運時，在功能面與營運面所必須滿足之條件清單。</div>
+                        <div class="option">B. 客戶支付每月服務使用費時的銀行匯款標準。</div>
+                        <div class="option">C. 發生事件時，至進行一次回覆為止的目標時間。</div>
+                        <div class="option">D. 外部廠商中途解除合約時所套用的違約金計算標準。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：SAC 是服務轉移（Service Transition）的重要關卡，確保新服務不僅「功能正常」，且包含運維手冊、備份方案等「營運就緒」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 運用テスト -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">運用テスト</div>
+                <div class="term-reading">うんようてすと</div>
+                <div class="term-zh">營運測試</div>
+                <div class="term-en">Operational Test</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">本番稼働前に、バックアップ、障害リカバリ、監視、運用手順が正常に機能するかを検証するテスト。</div>
+                <div class="summary-zh">於正式上線前，驗證備份、故障復原、監控與日常維護流程等營運作業是否正常運作的測試。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】新システムの導入前に行われる「運用テスト」で確認する項目として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. バックアップ・リストア手順、障害発生時の切り替え、運用マニュアルの妥当性などの運用性。</div>
+                        <div class="option">イ. プログラムの内部構造や関数レベルでのアルゴリズムの正当性。</div>
+                        <div class="option">ウ. 個々のモジュールを結合した際のデータ受け渡しの不整合。</div>
+                        <div class="option">エ. 画面のレイアウトやフォントのデザインがデザイナーの指示通りかどうかの確認。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：運用テスト（Operational Readiness Test: ORT）は、開発されたシステムが実際に運用チームによって問題なく運用・保守できるか（非機能面の運用性）を確認するテストです。</div></td>
+                    <td>                        【題目】在新系統導入前進行的「營運測試（ORT）」中，下列何者為主要的確認項目？
+<br>
+                        <div class="option">A. 備份/還原步驟、故障切換及營運手冊之妥當性等營運面屬性。</div>
+                        <div class="option">B. 程式內部結構與函式層級演算法之正確性。</div>
+                        <div class="option">C. 各別模組進行整合時資料傳遞的不一致性。</div>
+                        <div class="option">D. 畫面版面與字型設計是否符合設計師指示。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：營運測試（ORT）著重於驗證「營運就緒度」，包含備份與還原測試、故障切換演練及監控告警觸發測試。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 受入れテスト -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">受入れテスト</div>
+                <div class="term-reading">うけいれてすと</div>
+                <div class="term-zh">受入測試</div>
+                <div class="term-en">Acceptance Testing</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">発注者（顧客・ユーザー）が、システムが要求定義通りに動作し本番利用可能かを確認する最終確認テスト。</div>
+                <div class="summary-zh">委託方（客戶/使用者）驗證系統是否符合需求定義並具備正式上線資格的最終確認測試（UAT）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム開発の最終段階で顧客（ユーザー）主体で行われる「受入れテスト（UAT）」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 開発されたシステムが、要求定義書で定められた業務要件や仕様を満たしているか確認・判定すること。</div>
+                        <div class="option">イ. プログラムの全コード行を網羅的に実行してバグを検出すること。</div>
+                        <div class="option">ウ. サーバのCPUやメモリに極端な負荷をかけて物理的な限界値を測定すること。</div>
+                        <div class="option">エ. ソースコードがプログラミングの命名規約に従っているかを自動チェックすること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：受入れテスト（UAT: User Acceptance Test）は、最終的な利用主体のユーザーが実際の業務シナリオに沿ってテストを行い、システムを引き取る（受入れ許可する）かどうかを判断する工程です。</div></td>
+                    <td>                        【題目】在系統開發最終階段由客戶（使用者）主導進行的「受入測試（UAT）」，其主要目的下列何者最恰當？
+<br>
+                        <div class="option">A. 確認並判定所開發的系統是否符合需求定義書中所規範的業務需求與規格。</div>
+                        <div class="option">B. 完整涵蓋執行程式所有程式碼行以檢測 Bug。</div>
+                        <div class="option">C. 對伺服器 CPU 與記憶體施加極限負載以測量實體極限值。</div>
+                        <div class="option">D. 自動檢查原始碼是否符合程式碼命名規範。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：使用者受入測試（UAT）係以業務視角驗證系統功能，作為付款與正式驗收引渡的依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 運用引継ぎ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">運用引継ぎ</div>
+                <div class="term-reading">うんようひきつぎ</div>
+                <div class="term-zh">營運交接</div>
+                <div class="term-en">Operation Handover</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">開発チームから運用チームへ、ドキュメント・知識・権限を移転し、本番サービスの責任を引き渡すプロセス。</div>
+                <div class="summary-zh">由開發團隊向營運團隊移轉文件、知識與權限，正式交付正式服務維運責任的流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】開発プロジェクトから運用チームへの「運用引継ぎ」を成功させるための取り組みとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 運用マニュアルや設計書を整備し、ナレッジの共有と運用チームへのスキルトランスファーを事前に行う。</div>
+                        <div class="option">イ. 本番稼働の当日に、事前の説明なしで運用ドキュメントのみをメールで送付する。</div>
+                        <div class="option">ウ. 開発チームは引継ぎを行わず、本番稼働後の障害対応もすべて運用チームに丸投げする。</div>
+                        <div class="option">エ. 運用チームからの質問や懸念点については、本番稼働が終了するまで一切回答しない。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：運用引継ぎ（Handover）では、マニュアル等のドキュメント共有だけでなく、KT（Knowledge Transfer：知識移転）セッションを実施し、運用チームが自立して運用・一次対応できる状態を作ることが不可欠です。</div></td>
+                    <td>                        【題目】為使開發專案順利「營運交接」至營運團隊，下列何者為最恰當的作為？
+<br>
+                        <div class="option">A. 整備營運手冊與設計書，事先進行知識共享與對營運團隊的技能轉移（KT）。</div>
+                        <div class="option">B. 於正式上線當天，在未事前說明的情況下僅透過 Email 發送營運文件。</div>
+                        <div class="option">C. 開發團隊不進行交接，將正式上線後的故障排除責任全部甩鍋給營運團隊。</div>
+                        <div class="option">D. 針對營運團隊提出的提問與疑慮，在上線完成前一律不予回應。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：營運交接包含文件交付、KT（知識轉移）演練以及平滑過渡期（Early Life Support, ELS）的共同守護。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- リリース及び展開管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リリース及び展開管理</div>
+                <div class="term-reading">りりーすおよびてんかいかんり</div>
+                <div class="term-zh">發行與展開管理</div>
+                <div class="term-en">Release and Deployment Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">承認された変更をテスト環境から本番環境へ安全に構築・テスト・リリース・導入（デプロイ）する管理プロセス。</div>
+                <div class="summary-zh">將經核可之變更從測試環境安全地進行建置、測試、發行並建置（Deploy）至正式環境的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「リリース及び展開管理」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 承認された変更を、本番環境へ安全かつ計画的にビルド、テスト、移行し、事業への影響を最小限に抑えること。</div>
+                        <div class="option">イ. 顧客からのサービス向上要求を受付け、優先順位を決定すること。</div>
+                        <div class="option">ウ. IT機器の購入費用を記録し、会計処理を行うこと。</div>
+                        <div class="option">エ. ネットワークの障害原因となったルータのハードウェア修理を行うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：リリース及び展開管理（Release and Deployment Management）は、変更管理で承認されたコンポーネントをまとめ（リリースパッケージ）、本番環境へ安全にデプロイ（展開）する一連の活動を担当します。</div></td>
+                    <td>                        【題目】關於 ITIL 中「發行與展開管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 將審查通過的變更，安全且計畫性地進行建置、測試與轉移至正式環境，將對業務衝擊降至最低。</div>
+                        <div class="option">B. 接收來自客戶的服務改善要求，並決定處置優先順序。</div>
+                        <div class="option">C. 記錄 IT 設備的購入費用並進行會計處理。</div>
+                        <div class="option">D. 進行引發網路故障之路由器硬體的實體維修。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：發行與展開管理確保軟體/硬體變更以符合品質標準的 Release Package 形式實施部署，並包含必要的倒回計畫與正式發行紀錄（DML）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 7. 系統轉移與評估 -->
+    <div class="group-container">
+        <div class="group-header">系統轉移與評估</div>
+
+        <!-- 移行 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行</div>
+                <div class="term-reading">いこう</div>
+                <div class="term-zh">轉移 / 移轉</div>
+                <div class="term-en">Migration</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">旧システムや既存データから、新システムや新しい運用環境へ安全かつ確実に切り替える一連の作業。</div>
+                <div class="summary-zh">從舊有系統或既有資料，安全且確實地切換轉移至新系統或新營運環境的一系列作業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITシステムの「移行（マイグレーション）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 既存のデータやシステム機能を、業務の継続性を保ちながら新しいハードウェアやソフトウェア環境へ移すこと。</div>
+                        <div class="option">イ. 毎日の業務終了後に、システムをシャットダウンして翌朝再起動すること。</div>
+                        <div class="option">ウ. 開発途中のプログラムのソースコードをバックアップサーバーにコピーすること。</div>
+                        <div class="option">エ. 不正アクセスを防止するために、定期的に管理者のパスワードを変更すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：移行（Migration）は、旧環境から新環境へのデータ・プログラム・業務プロセスの切替えであり、業務の中断（ダウンタイム）を最小化して安全に引き渡す必要があります。</div></td>
+                    <td>                        【題目】關於 IT 系統的「轉移（Migration）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 在維持業務持續性的前提下，將既有資料或系統功能移轉至新的硬體或軟體環境。</div>
+                        <div class="option">B. 每日業務結束後將系統關機，並於隔天早晨重新開機。</div>
+                        <div class="option">C. 將開發中程式的原始碼複製到備份伺服器。</div>
+                        <div class="option">D. 為防止未授權存取，定期變更管理員密碼。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：系統轉移（Migration）涉及資料轉換、平載平行運作與新舊切換，需確保資料零遺失與最小化營運中斷。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 業務及びシステムの移行 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">業務及びシステムの移行</div>
+                <div class="term-reading">ぎょうむおよびしすてむのいこう</div>
+                <div class="term-zh">業務及系統轉移</div>
+                <div class="term-en">Business and System Migration</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITシステムのみならず、運用手順、業務プロセス、組織体制を含めて新環境へスムーズに切り替える活動。</div>
+                <div class="summary-zh">不僅限於 IT 系統，亦包含維運流程、業務作法及組織體系全面順利切換至新環境的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「業務及びシステムの移行」を実施する際に、システム面以外で特に考慮すべき要素として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務プロセスの変更に伴うユーザーの教育・訓練や運用手順書の刷新。</div>
+                        <div class="option">イ. サーバラックの物理的な寸法と耐荷重のみ。</div>
+                        <div class="option">ウ. 開発言語の文法規則とコンパイラのバージョン。</div>
+                        <div class="option">エ. 競合他社が使用しているデータベース製品の市場シェア。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：業務及びシステムの移行では、ITシステムという「ツール」の移行だけでなく、それを使うエンドユーザーの業務フロー刷新や操作トレーニング、新運用プロセスの定着が不可欠です。</div></td>
+                    <td>                        【題目】實施「業務及系統轉移」時，在系統技術面之外特別應考量的要素，下列何者最恰當？
+<br>
+                        <div class="option">A. 隨業務流程變更所進行的使用者教育訓練與營運步驟書的更新。</div>
+                        <div class="option">B. 僅考量伺服器機架的實體尺寸與承載重量。</div>
+                        <div class="option">C. 開發語言的語法規則與編譯器版本。</div>
+                        <div class="option">D. 競爭對手所使用之資料庫產品的市場占有率。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：全面的 Migration 不僅切換軟硬體，更需涵蓋人員作業習慣（Business Process）與組織標準作業程序（SOP）的重新調適。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 移行計画 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行計画</div>
+                <div class="term-reading">いこうけいかく</div>
+                <div class="term-zh">轉移計畫</div>
+                <div class="term-en">Migration Plan</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">移行手順、スケジュール、体制、リスク対策、ロールバック条件などを事前に詳細にまとめた計画書。</div>
+                <div class="summary-zh">事前詳細彙整轉移步驟、時程表、人員體系、風險對策及倒回（Rollback）條件的計畫書。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム移行時に作成される「移行計画書」に記載すべき項目として、最も不適切なものはどれか。
+<br>
+                        <div class="option">ア. 移行作業のタイムスケジュールおよび担当者の役割分担。</div>
+                        <div class="option">イ. 移行が失敗した場合に旧環境へ戻すための切り戻し（ロールバック）手順と判断基準。</div>
+                        <div class="option">ウ. システム導入から10年後の保守費用の確定見積もり。</div>
+                        <div class="option">エ. 移行対象データ範囲とデータクレンジング・変換手順。</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：移行計画書には、移行当日の詳細工程、体制、データ移行手順、切り戻し基準などを記載します。10年後の確定見積もりなどは移行計画の範囲外です。</div></td>
+                    <td>                        【題目】在系統轉移時所撰寫的「轉移計畫書」中，下列何者最「不適合」列入記載？
+<br>
+                        <div class="option">A. 轉移作業的時程表（Time schedule）及負責人員的分工安排。</div>
+                        <div class="option">B. 轉移失敗時還原至舊環境的切回（Rollback）步驟與判斷基準。</div>
+                        <div class="option">C. 系統導入 10 年後的確切維護費用預算估算。</div>
+                        <div class="option">D. 轉移標的資料範疇與資料清洗/轉換步驟。</div>
+                        <div class="answer">正確答案：C</div>
+<br>
+                        <div class="analysis">解析：轉移計畫聚焦於「切換切換當下與前後」的執行細節、切回對策與時程控管；遠期 10 年的維修估算不屬於轉移計畫範疇。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 移行リハーサル -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行リハーサル</div>
+                <div class="term-reading">いこうりはーさる</div>
+                <div class="term-zh">轉移演練 / 轉移彩排</div>
+                <div class="term-en">Migration Rehearsal</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">本番移行の前に、模擬環境や実際のデータを用いて移行手順や所要時間を事前検証する演練。</div>
+                <div class="summary-zh">於正式轉移前，利用模擬環境或實際資料事先驗證轉移步驟與所需時間的實機演練。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】本番移行の直前に実施される「移行リハーサル」の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 移行手順書の不備、作業にかかる時間、データ変換時のトラブルなどを事前に洗い出し、修正すること。</div>
+                        <div class="option">イ. ユーザーから提出された新しい機能要求を追加でプログラミングすること。</div>
+                        <div class="option">ウ. 開発チームのメンバー評価を行い、ボーナスの査定額を決定すること。</div>
+                        <div class="option">エ. 外部ベンダーとの契約書を再交渉して値引きさせること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：移行リハーサル（Dry Run）は、計画通りの時間内に移行が完了するか、手順書に抜け漏れがないか、切り戻し手順が機能するかを事前検証してリスクを極限まで減らすために実施します。</div></td>
+                    <td>                        【題目】在正式轉移前夕實施的「轉移演練（Migration Rehearsal）」，其主要目的下列何者最恰當？
+<br>
+                        <div class="option">A. 事先找出轉移步驟書的缺失、作業所需時間差距及資料轉檔時的故障，並予以修正。</div>
+                        <div class="option">B. 針對使用者所提出的新功能需求進行追加程式撰寫。</div>
+                        <div class="option">C. 進行開發團隊成員的績效評估，以決定考績獎金。</div>
+                        <div class="option">D. 重新與外部廠商進行合約談判以要求折扣。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：轉移演練（Dry Run）旨在校正實際作業所需耗時（Downtime Window）、驗證指令腳本精確度及測試 Rollback 切換機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 移行判断 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行判断</div>
+                <div class="term-reading">いこうはんだん</div>
+                <div class="term-zh">轉移判定 / Go-No-Go 判斷</div>
+                <div class="term-en">Transition Decision</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">テスト結果やリハーサル実績に基づき、本番移行を開始・完遂するか（Go/No-Go）を決定するプロセスのこと。</div>
+                <div class="summary-zh">基於測試結果與演練實績，決定是否開始或完成正式轉移（Go/No-Go）的決策流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】移行作業における「移行判断（Go / No-Go判断）」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 定められた判定基準（テスト完了率、残存バグ数、リハーサル結果等）に基づき、本番移行の実施または中止・切り戻しを決定すること。</div>
+                        <div class="option">イ. プログラミング言語としてJavaを採用するかPythonを採用するかを決定すること。</div>
+                        <div class="option">ウ. 障害が発生したサーバーを新品に交換するか中古品にするかを決定すること。</div>
+                        <div class="option">エ. 外部委託先のシステムエンジニアの時給を設定すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：移行判断（Go/No-Go判定）は、移行開始前や移行途中の判定ポイント（Check Point）において、あらかじめ定めた基準を満たしているか確認し、続行か中止（切り戻し）かを厳格に判断する活動です。</div></td>
+                    <td>                        【題目】關於轉移作業中的「轉移判定（Go / No-Go 判斷）」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 基於既定判定基準（測試完成率、殘存缺陷數、演練結果等），決定實施正式轉移或終止/切回。</div>
+                        <div class="option">B. 決定程式語言應採用 Java 或是 Python。</div>
+                        <div class="option">C. 決定將發生故障的伺服器更換為新品或是二手備品。</div>
+                        <div class="option">D. 設定外包廠商系統工程師的時薪薪資。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Go/No-Go 判定是控制轉移風險的核心門檻，設有嚴格的 Checkpoint，若未達 Gate 基準即啟動 No-Go 倒回機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 移行の通知 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行の通知</div>
+                <div class="term-reading">いこうのつうち</div>
+                <div class="term-zh">轉移通知</div>
+                <div class="term-en">Migration Notification</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム切替えに伴うサービス停止期間、影響範囲、注意事項をユーザーや関係者へ事前にアナウンスすること。</div>
+                <div class="summary-zh">向使用者及相關利益關係人事前公告因系統切換所引發的服務中斷期間、波及範圍及注意事項。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム移行時の「移行の通知」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスの停止時間帯、影響を受ける機能、ユーザーが事前に準備・確認すべき事項を関係者へ周知すること。</div>
+                        <div class="option">イ. 開発したプログラムの著作権を特許庁へ登録通知すること。</div>
+                        <div class="option">ウ. 移行作業中に発生した作業員の残業手当を人事部に通知すること。</div>
+                        <div class="option">エ. 競合他社に対して自社が新システムへ移行したことをプレスリリースすることのみ。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：移行の通知は、メンテナンスに伴うサービス停止（ダウンタイム）や、移行後にユーザー側で行うべき作業（キャッシュクリアやパスワード再設定等）をタイムリーかつ明確に伝える広報活動です。</div></td>
+                    <td>                        【題目】關於系統轉移時的「轉移通知」，下列描述何者最恰當？
+<br>
+                        <div class="option">A. 向利益關係人充分公告服務中斷時段、受影響功能及使用者事前應準備/確認的事項。</div>
+                        <div class="option">B. 將所開發程式的著作權向專利局進行登記通知。</div>
+                        <div class="option">C. 將轉移作業期間所產生作業人員的加班津貼通知人事部門。</div>
+                        <div class="option">D. 單純向競爭對手發布新聞稿聲明自家已切換至新系統。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：轉移通知需涵蓋服務停機時間（Service Outage Window）、受影響範圍與使用者配合事項，以降低對業務營運的衝擊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 移行評価 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">移行評価</div>
+                <div class="term-reading">いこうひょうか</div>
+                <div class="term-zh">轉移事後評估</div>
+                <div class="term-en">Transition Assessment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">移行完了後、新環境が目標通り稼働しているか、計画との差異や課題がないかを検証・レビューする活動（PIR）。</div>
+                <div class="summary-zh">轉移完成後，驗證新環境是否按目標正常運作，並檢討計畫差異與問題點的審查活動（PIR）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】移行作業が完了した後に実施される「移行評価（Post Implementation Review: PIR）」の目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 移行が計画通りに成功したかを検証し、発生した課題や反省点を次回プロジェクトへの教訓（ナレッジ）として残すこと。</div>
+                        <div class="option">イ. 移行作業にかかった費用を開発エンジニア個人の給与から控除すること。</div>
+                        <div class="option">ウ. 旧システムの物理サーバを破棄せずに永久に保管し続けること。</div>
+                        <div class="option">エ. 顧客に対して移行完了に伴う追加料金を請求するための根拠を作成すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：移行評価（PIR: 事後レビュー）は、移行後のサービス品質や障害発生率を測定し、プロジェクトの目標達成度を評価するとともに、得られたナレッジを組織の標準プロセス改善に活かすために行われます。</div></td>
+                    <td>                        【題目】轉移作業完成後實施的「轉移事後評估（PIR）」，其主要目的下列何者最恰當？
+<br>
+                        <div class="option">A. 驗證轉移是否依計畫成功，並將發生的課題與反省點作為教訓（Knowledge）留存給後續專案。</div>
+                        <div class="option">B. 將轉移作業所耗費的費用從開發工程師個人薪資中扣除。</div>
+                        <div class="option">C. 將舊系統的實體伺服器不予銷毀並永久保存。</div>
+                        <div class="option">D. 撰寫向客戶索取因轉移完成所生追加費用的依據。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：轉移事後評估（Post Implementation Review, PIR）旨在確認新服務績效，並進行 Lessons Learned 總結以納入組織過程資產。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 8. 事件、服務要求與問題管理 -->
+    <div class="group-container">
+        <div class="group-header">事件、服務要求與問題管理</div>
+
+        <!-- インシデント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">インシデント</div>
+                <div class="term-reading">いんしでんと</div>
+                <div class="term-zh">事件 / 事故</div>
+                <div class="term-en">Incident</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ITサービスの計画外の中断、品質の低下、またはサービスに影響を与え得る事象のこと。</div>
+                <div class="summary-zh">IT 服務計畫外之中斷、品質降低，或可能對服務產生影響的非預期事件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「インシデント」の定義として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ITサービスの計画外の中断、またはITサービスの品質の低下。</div>
+                        <div class="option">イ. 将来発生する可能性のある潜在的なシステム障害の根本原因。</div>
+                        <div class="option">ウ. ユーザーから出される新しいソフトウェアの導入申請。</div>
+                        <div class="option">エ. システムのハードウェアを新品に交換する計画的な変更。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：インシデントは「計画外のサービス中断や品質低下（まだサービスに影響していないが起こり得る事象も含む）」を指します。根本原因（問題）とは明確に区別されます。</div></td>
+                    <td>                        【題目】關於 ITIL 中「事件（Incident）」的定義，下列何者最恰當？
+<br>
+                        <div class="option">A. IT 服務計畫外之中斷，或 IT 服務品質之降低。</div>
+                        <div class="option">B. 未來可能發生之潛在系統故障的根本原因。</div>
+                        <div class="option">C. 使用者提出之引進新軟體的申請案。</div>
+                        <div class="option">D. 將系統硬體更換為新品的計畫性變更。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Incident 指任何非預期的服務中斷或品質下降事件（例如印表機故障、系統連線逾時），首要目標為快速復原服務。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- インシデント管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">インシデント管理</div>
+                <div class="term-reading">いんしでんとかんり</div>
+                <div class="term-zh">事件管理</div>
+                <div class="term-en">Incident Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">発生したインシデントに対し、回避策の適用等により可能な限り迅速に正常サービスを復旧させるプロセス。</div>
+                <div class="summary-zh">對發生的事件套用臨時替代方案，以儘可能快速恢復正常服務運作的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「インシデント管理」の主たる目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスの中断時間を最小限に抑え、あらかじめ合意されたサービス品質へ可能な限り迅速に復旧させること。</div>
+                        <div class="option">イ. インシデントの根本原因を究明し、恒久的な修正プログラムを開発すること。</div>
+                        <div class="option">ウ. 将来のインフラ容量不足を予測し、追加のハードウェアを調達すること。</div>
+                        <div class="option">エ. ユーザーからの標準的なリクエスト（パスワードリセット等）を処理すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：インシデント管理の最優先目標は「サービスの迅速な復旧」です。根本原因の追及（問題管理）よりも、回避策（ワークアラウンド）などを用いた早期復旧を重視します。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，關於「事件管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 將服務中斷時間降至最低，儘速復原至事先合意之服務品質狀態。</div>
+                        <div class="option">B. 查明事件的根本原因，並開發永久性的修正程式。</div>
+                        <div class="option">C. 預測未來基礎設施容量不足，並採購追加之硬體。</div>
+                        <div class="option">D. 處理來自使用者的標準請求（如重設密碼等）。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：事件管理（Incident Management）的核心旨意為「Quick Restore」，即先透過替代方案恢復營運，原因分析則交由問題管理。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 影響 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">影響</div>
+                <div class="term-reading">えいきょう</div>
+                <div class="term-zh">衝擊度 / 影響度</div>
+                <div class="term-en">Impact</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インシデントや障害が、ビジネスプロセスやユーザー数、財務に対して及ぼす損害の大きさの尺度。</div>
+                <div class="summary-zh">事件或故障對業務流程、受影響使用者數及財務所造成之損害程度的衡量尺度。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】インシデントの優先度を決定する際に用いられる「影響度（Impact）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インシデントがビジネスプロセスやユーザー数、売上等に対して及ぼす支障・損害の大きさ。</div>
+                        <div class="option">イ. インシデントが発生してから解決するまでにかかった時間。</div>
+                        <div class="option">ウ. インシデントを解決するために必要なエンジニアの人数。</div>
+                        <div class="option">エ. インシデントの根本原因となったハードウェアの購入価格。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：優先度は「影響度（Impact：業務への損害規模）」と「緊急度（Urgency：対応の急ぎ度）」の組合せで決定されます。</div></td>
+                    <td>                        【題目】在決定事件優先順序時所使用的「衝擊度（Impact）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 事件對業務流程、受影響使用者數或銷售額等所造成的阻礙與損害規模。</div>
+                        <div class="option">B. 事件發生後至解決為止所耗費的時間。</div>
+                        <div class="option">C. 為解決事件所需的工程師人數。</div>
+                        <div class="option">D. 引發事件根本原因之硬體的購買價格。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：事件優先級矩陣（Priority Matrix）係由衝擊度（Impact）與緊急度（Urgency）交會決定。衝擊度即評估其業務破壞範圍。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス要求 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス要求</div>
+                <div class="term-reading">さーびすようきゅう</div>
+                <div class="term-zh">服務要求</div>
+                <div class="term-en">Service Request</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーからの日常的・標準的な要望（情報提供、パスワード再設定、機器貸出など）の申請。</div>
+                <div class="summary-zh">來自使用者的日常常態性請求（如資訊諮詢、重設密碼、借用設備等）的正式申請。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「サービス要求（Service Request）」に該当するものとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ユーザーからの「パスワードを忘れたので初期化してほしい」という定常的な依頼。</div>
+                        <div class="option">イ. 基幹データベースが突然クラッシュして全業務が停止した状態。</div>
+                        <div class="option">ウ. システムの設計不備により、毎週決まった時間に発生するエラー処理。</div>
+                        <div class="option">エ. 未知のウイルスによって社内PCが感染したというセキュリティアラート。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービス要求は、システムの故障（インシデント）ではなく、事前承認された日常的な標準リクエスト（パスワードリセット、PC貸出、情報照会等）を指します。</div></td>
+                    <td>                        【題目】下列何者屬於 ITIL 中的「服務要求（Service Request）」？
+<br>
+                        <div class="option">A. 使用者提出「忘記密碼請幫忙初始化」的常態性請求。</div>
+                        <div class="option">B. 核心資料庫突然 Crash 導致全業務中斷的狀態。</div>
+                        <div class="option">C. 因系統設計不全，每週固定時間發生的錯誤處理。</div>
+                        <div class="option">D. 遭未知病毒感染導致公司內部 PC 告警的資安事件。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務要求（Service Request）非屬系統故障，而是低風險、預先核准的日常服務申請（如 Password Reset, 標準軟體安裝）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス要求管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス要求管理</div>
+                <div class="term-reading">さーびすようきゅうかんり</div>
+                <div class="term-zh">服務要求管理</div>
+                <div class="term-en">Service Request Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーからのサービス要求を標準化された手順で迅速かつ効率的に受付・処理するプロセス。</div>
+                <div class="summary-zh">以標準化流程高效接收並處理使用者各類日常服務要求的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「サービス要求管理」プロセスを導入するメリットとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 日常的なユーザーリクエストを標準化・自動化し、インシデント対応とは分離して効率的に処理できること。</div>
+                        <div class="option">イ. システムの障害原因を根本から解決し、再発防止を図ることができること。</div>
+                        <div class="option">ウ. 競合他社との市場優位性を維持するための新サービス開発を促進すること。</div>
+                        <div class="option">エ. 外部ベンダーとの契約違反に対する罰則金を自動的に徴収できること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：サービス要求管理は、定型的な要求のワークフロー化やセルフサービスポータル化を推進し、障害対応（インシデント管理）のラインを塞がずに効率処理することを目的とします。</div></td>
+                    <td>                        【題目】導入「服務要求管理」流程的主要優點，下列何者最恰當？
+<br>
+                        <div class="option">A. 將日常的使用者請求進行標準化與自動化，使其與事件排除處理分流並高效處置。</div>
+                        <div class="option">B. 從根本解決系統故障原因，並達致防止再發。</div>
+                        <div class="option">C. 促進新服務開發以維持相較於競爭對手的市場優勢。</div>
+                        <div class="option">D. 自動扣繳因外部廠商違約所應產生的罰款。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：服務要求管理建立預先核准的處理流程與標準 SOP，避免日常雜項調度佔用事件管理（Incident Management）處置緊急故障的資源。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- エスカレーション -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">エスカレーション</div>
+                <div class="term-reading">えすかれーしょん</div>
+                <div class="term-zh">升級機制 / 向上轉呈</div>
+                <div class="term-en">Escalation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">一次対応で解決できない問題や重大なインシデントを、専門チームや上位管理者に引き継ぐ手続き。</div>
+                <div class="summary-zh">當第一線無法排除問題或遇到重大事件時，將權責轉呈給二線專家團隊或高階管理者的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスデスクにおける「エスカレーション」の分類として、技術的な専門知識を持つ上級チームへ引き継ぐ「技術的エスカレーション」と、より上位の管理者に判断を仰ぐ「階層的（機能的）エスカレーション」がある。この説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 正しい記述である。</div>
+                        <div class="option">イ. 技術的エスカレーションのみが存在し、階層的エスカレーションは存在しない。</div>
+                        <div class="option">ウ. 階層的エスカレーションとは、外部ベンダーへ契約解除を通知することを指す。</div>
+                        <div class="option">エ. エスカレーションはインシデント管理では禁止されている手法である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：エスカレーションには、専門技術を持つ2次・3次サポートへ回す「技術的エスカレーション（Functional）」と、権限やリソース追加判断を求める「階層的エスカレーション（Hierarchic）」の2種類があります。</div></td>
+                    <td>                        【題目】在 IT 服務台的「升級機制（Escalation）」中，區分為轉呈給具備專門技術之進階團隊的「技術升級（Functional Escalation）」，以及向高階主管請示決策的「階層升級（Hierarchical Escalation）」。關於此描述何者正確？
+<br>
+                        <div class="option">A. 此描述完全正確。</div>
+                        <div class="option">B. 僅存在技術升級，不存在階層升級。</div>
+                        <div class="option">C. 階層升級係指向外部廠商通知解除合約。</div>
+                        <div class="option">D. 升級機制在事件管理中是被嚴格禁止的做法。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Escalation 包含 Functional Escalation（轉交 2nd/3rd line 技術專家）與 Hierarchical Escalation（通知高階主管調度資源或進行風險裁決）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 回避策 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">回避策</div>
+                <div class="term-reading">かいひさく</div>
+                <div class="term-zh">替代方案 / 臨時權宜措施</div>
+                <div class="term-en">Workaround / Mitigation Measures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">根本原因が未解明な状態でも、インシデントによる影響を緩和しサービスを仮復旧させる一時的な対処法。</div>
+                <div class="summary-zh">在根本原因尚未釐清前，為緩和事件衝擊並使服務暫時復原所採取的臨時權宜措施（Workaround）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおいて「回避策（ワークアラウンド）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 根本的な原因が解決していない状態でも、インシデントの影響を低減または解消し、サービスを暫定的に復旧させる方法。</div>
+                        <div class="option">イ. 障害が発生したコードを永久に削除して機能自体を廃止すること。</div>
+                        <div class="option">ウ. システムの導入計画をキャンセルして旧システムに戻すこと。</div>
+                        <div class="option">エ. 外部ベンダーとの契約内容を即座に変更すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：回避策（Workaround）は、根本原因の解決（恒久対策）に時間がかかる場合、サービスを一時的に動かすために適用される暫定手順（例：サービスの再起動、特定設定の迂回）です。</div></td>
+                    <td>                        【題目】關於 ITIL 中「替代方案（Workaround / 權宜措施）」的說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 即使根本原因尚未解決，仍可降低或消除事件衝擊，使服務獲得暫時性復原的方法。</div>
+                        <div class="option">B. 將發生故障的程式碼永久刪除並廢止該功能。</div>
+                        <div class="option">C. 取消系統導入計畫並退回舊系統。</div>
+                        <div class="option">D. 立即變更與外部廠商的合約內容。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Workaround（權宜措施）係事件管理常使用的手段（如重啟服務以清空 RAM），目的在於爭取時間讓問題管理分析 Root Cause。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 重大なインシデント -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">重大なインシデント</div>
+                <div class="term-reading">じゅうだいないんしでんと</div>
+                <div class="term-zh">重大事件</div>
+                <div class="term-en">Major Incident</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">事業や組織に極めて深刻な影響を与える最高優先度のインシデント。專門の手順で緊急處置される。</div>
+                <div class="summary-zh">對業務或組織造成極度嚴重衝擊的最高優先級事件，需啟動專門之指揮小組與緊急流程處理。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「重大なインシデント（Major Incident）」が発生した際の対応として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 通常のインシデント対応とは異なる専用の緊急手順（Major Incident Procedure）を適用し、関係者を集めたコマンドチームを設置して優先対処する。</div>
+                        <div class="option">イ. 通常のインシデントと同じキュー（処理待ち行列）に入れ、受付順に処理する。</div>
+                        <div class="option">ウ. 問題の原因が判明するまで、顧客や経営陣への報告を一切控える。</div>
+                        <div class="option">エ. 翌営業日の朝まで対応を保留し、通常の勤務時間内に原因究明を行う。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：重大なインシデント（MI）が発生した場合、ビジネスへの致命的影響を防ぐため、通常の一次対応ラインをバイパスし、專屬の緊急復舊チーム（Major Incident Team）を立ち上げて最優先対応します。</div></td>
+					<td>                    【問題】發生「重大事件（Major Incident）」時，下列何者是最為適當的應對方式？
+<br>
+						<div class="option">A. 套用有別於一般事件應對的專用緊急程序（Major Incident Procedure），並成立集結相關人員的指揮團隊（Command Team）優先進行處理。</div>
+						<div class="option">B. 放入與一般事件相同的佇列（處理等待行列）中，依受理順序進行處理。</div>
+						<div class="option">C. 在查明問題原因之前，一律暫緩向客戶或經營高層報告。</div>
+						<div class="option">D. 保留處理直到次一營業日早晨，在正常工作時間內進行原因調查。</div>
+						<div class="answer">正確答案：A</div>
+<br>
+						<div class="analysis">解析：發生重大事件（MI）時，為了防止對商業運作造成致命影響，應繞過一般的初步應對管道，成立專屬的緊急復原團隊（Major Incident Team）進行最優先處理。</div></td>
+					</tr>
+            </table>
+        </div>
+
+        <!-- ヒヤリハット -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ヒヤリハット</div>
+                <div class="term-reading">ひやりはっと</div>
+                <div class="term-zh">虛驚事件 / 近錯事件</div>
+                <div class="term-en">Near Miss</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">重大な事故や障害には至らなかったものの、直前で肝を冷やしたような潜在的危険事象。予防処置に活用。</div>
+                <div class="summary-zh">雖未造成重大事故或故障，但險些引發危機的潛在危險事例。常用於預防措施之改進。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】IT運用における「ヒヤリハット（Near Miss）」の情報を収集・分析する目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 事故や障害が発生する手前の潜在的な危険要因を把握し、重大なインシデントの発生を未然に防止（予防処置）するため。</div>
+                        <div class="option">イ. ミスをした担当者を特定し、個人の減点評価を行うため。</div>
+                        <div class="option">ウ. 過去に発生した重大障害の損害額を計算するため。</div>
+                        <div class="option">エ. 外部ベンダーに対する違約金の請求根拠とするため。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ハインリッヒの法則にあるように、1件の重大事故の背景には多くのヒヤリハットが存在します。これを共有・対策することで予防処置（Preventive Action）につなげます。</div></td>
+                    <td>                        【題目】在 IT 營運中收集並分析「虛驚事件（Near Miss / ヒヤリハット）」資訊的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 掌握未達事故或故障程度之潛在危險因子，以未雨綢繆防止重大事件發生（預防措施）。</div>
+                        <div class="option">B. 揪出犯錯的負責人員，並進行個人績效扣分。</div>
+                        <div class="option">C. 計算過去所發生重大故障的損害金額。</div>
+                        <div class="option">D. 作為向外部廠商索取違約金的扣款依據。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：根據海因里希法則（Heinrich's Law），分析未遂的 Near Miss（虛驚事件）能主動發現流程漏洞，落實主動式預防對策。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 問題管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">問題管理</div>
+                <div class="term-reading">もんだいかんり</div>
+                <div class="term-zh">問題管理</div>
+                <div class="term-en">Problem Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インシデントの根本原因を究明し、既知の誤りとして記録・恒久対策を講じることで再発を防止するプロセス。</div>
+                <div class="summary-zh">探究事件的根本原因，將其記錄為已知錯誤並提出永久解決方案以防止再發的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「問題管理」の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インシデントの根本原因を特定して解決策を見つけ、インシデントの再発を防止すること。</div>
+                        <div class="option">イ. ユーザーからの問い合わせに対して、できるだけ早く一次回答を行うこと。</div>
+                        <div class="option">ウ. ハードウェアの購入履歴を管理し、保守切れを防ぐこと。</div>
+                        <div class="option">エ. 新しいシステムの移行手順を作成すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：問題管理（Problem Management）は、インシデントのバックグラウンドにある根本原因（Root Cause）を調査・特定し、恒久対策（Known Error化および変更要求発行）により再発を防ぎます。</div></td>
+                    <td>                        【題目】關於 ITIL 中「問題管理」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 找出事件的根本原因並尋得解決方案，以防止事件再次發生。</div>
+                        <div class="option">B. 針對使用者的諮詢，盡可能迅速進行一次回覆。</div>
+                        <div class="option">C. 管理硬體購置履歷以防止維護合約過期。</div>
+                        <div class="option">D. 撰寫新系統的轉移步驟。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：問題管理（Problem Management）著眼於「消除根本原因（Root Cause Analysis）」與「防範再發」，與著重於「快速恢復服務」的事件管理互補。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 既知の誤り -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">既知の誤り</div>
+                <div class="term-reading">きちのあやまり</div>
+                <div class="term-zh">已知錯誤</div>
+                <div class="term-en">Known Error</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">根本原因が特定され、回避策が存在する状態の「問題」（KEDBに記録され迅速な対応に利用される）。</div>
+                <div class="summary-zh">已成功找出根本原因且具備替代方案的問題狀態（記錄於 KEDB 中供快速套用）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITILにおける「既知の誤り（Known Error）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 根本原因が特定されており、回避策（ワークアラウンド）が確認・文書化されている状態の問題。</div>
+                        <div class="option">イ. ユーザーから報告されたが、再現性がなく放置されているバグ。</div>
+                        <div class="option">ウ. 過去に一度も発生したことがない未知のシステムエラー。</div>
+                        <div class="option">エ. 仕様書に記載されているが、プログラマーが実装を忘れた機能。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：根本原因が解明され、回避策が定義された「問題」は「既知の誤り（Known Error）」となり、Known Error Database（KEDB）に登録されて二次インシデントの高速復旧に役立てられます。</div></td>
+                    <td>                        【題目】關於 ITIL 中的「已知錯誤（Known Error）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 根本原因已被特定，且其替代方案（Workaround）已獲確認並文件化的問題狀態。</div>
+                        <div class="option">B. 使用者雖有回報，但無法重現且遭到擱置的 Bug。</div>
+                        <div class="option">C. 過去從未發生過的未知系統錯誤。</div>
+                        <div class="option">D. 記載於規格書中但程式人員忘記實作的功能。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：當 Problem 分析出 Root Cause 且找到有效的替代方案（Workaround）後，即轉化為 Known Error 並登錄至 Known Error Database (KEDB)。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 根本原因 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">根本原因</div>
+                <div class="term-reading">こんぽんげんいん</div>
+                <div class="term-zh">根本原因</div>
+                <div class="term-en">Root Cause</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">1つまたは複数のインシデントを引き起こしている元々の要因。これを解消することで再発を防ぐ。</div>
+                <div class="summary-zh">引發單一或多起事件的原始根本因素。將其消除方能徹查問題根源並防範再發。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】問題管理において「根本原因（Root Cause）」を特定するために用いられる手法として、適切なものはどれか。
+<br>
+                        <div class="option">ア. なぜなぜ分析（5 Whys）やフィッシュボーン図（特性要因図）。</div>
+                        <div class="option">イ. サービスデスクのオペレーターに対する意識調査アンケート。</div>
+                        <div class="option">ウ. システムの販売価格を決定するための損益分岐点分析。</div>
+                        <div class="option">エ. 暗号化キーの長さ（ビット数）をランダムに変更する手法。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：根本原因解析（RCA: Root Cause Analysis）では、なぜなぜ分析（5 Whys）や特性要因図（フィッシュボーン図）などの品質管理手法を用いて、表面的な現象ではなく真の要因を探り当てます。</div></td>
+                    <td>                        【題目】在問題管理中，用於特定「根本原因（Root Cause）」的手法，下列何者正確？
+<br>
+                        <div class="option">A. 5 Whys 分析法（連續追問為什麼）或魚骨圖（特性要因圖）。</div>
+                        <div class="option">B. 對服務台客服人員進行的意識調查問卷。</div>
+                        <div class="option">C. 為決定系統銷售價格所進行的損益平衡點分析。</div>
+                        <div class="option">D. 隨機變更加密金鑰長度（位元數）的手法。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Root Cause Analysis (RCA) 常用 5 Whys（五問法）與 Ishigawa/Fishbone Diagram（魚骨圖）來擺脫表面症狀，找出真正的系統缺陷。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 予防処置 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">予防処置</div>
+                <div class="term-reading">よぼうしょち</div>
+                <div class="term-zh">預防措施 / 主動式問題管理</div>
+                <div class="term-en">Preventive Action</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インシデントが実際に発生する前に、傾向分析などを通じて潜在的リスクを特定し対策を講じる活動。</div>
+                <div class="summary-zh">於事件尚未實際發生前，透過趨勢分析等手法主動發掘潛在風險並預先處置的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】問題管理における「能動的（プロアクティブな）問題管理」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インシデントが発生する前に、システムログや傾向分析を通じて潜在的な不具合を発見し、予防処置を行うこと。</div>
+                        <div class="option">イ. インシデントが発生した後に、急いで一時的な回避策を適用すること。</div>
+                        <div class="option">ウ. 顧客からの苦情を受けてから、担当部署を決定すること。</div>
+                        <div class="option">エ. サーバが完全に停止してから、新しいパーツを発注すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：能動的問題管理（Proactive Problem Management）は、インシデント未発生の段階でログ分析やトレンド分析を行い、事前に故障の芽を摘む「予防処置」を講じる活動です。</div></td>
+                    <td>                        【題目】關於問題管理中的「主動式（Proactive）問題管理」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 在事件發生前，透過系統日誌與趨勢分析發掘潛在缺陷，並採取預防措施。</div>
+                        <div class="option">B. 在事件發生後，緊急套用臨時替代方案。</div>
+                        <div class="option">C. 接獲客戶抱怨後，才決定處置的負責部門。</div>
+                        <div class="option">D. 待伺服器完全停擺後，才下單訂購新零件。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Proactive Problem Management 主動檢視系統 Log、監控趨勢與 Near Miss，在使用者遭到不便前預先進行預防矯正（Preventive Action）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 傾向分析 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">傾向分析</div>
+                <div class="term-reading">けいこうぶんせき</div>
+                <div class="term-zh">趨勢分析</div>
+                <div class="term-en">Trend Analysis</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">過去のインシデントデータやパフォーマンスログを時系列で分析し、将来のパターンや脆弱性を予測する手法。</div>
+                <div class="summary-zh">依時間序列分析歷史事件資料與效能日誌，以預測未來模式與潛在弱點的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】インシデント管理や問題管理において「傾向分析（トレンド分析）」を行う目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 過去のデータを時系列で分析し、特定の時間帯や機器に集中するトラブルの傾向を把握して予防に活かすため。</div>
+                        <div class="option">イ. 社員の勤務時間帯の傾向を把握して、給与計算を自動化するため。</div>
+                        <div class="option">ウ. システムの購入費用と減価償却費の比率を分析するため。</div>
+                        <div class="option">エ. ソースコードの行数の推移をグラフ化してプログラムの難易度を測るため。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：傾向分析（Trend Analysis）は、例えば「毎月第1月曜日の朝にログイン遅延が増加する」といった規則性やパターンをデータから発見し、事前のキャパシティ強化や予防処置に結びつけます。</div></td>
+                    <td>                        【題目】在事件管理或問題管理中進行「趨勢分析（Trend Analysis）」的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 依時間序列分析歷史資料，掌握集中於特定時段或設備的故障趨勢，發揮預防效益。</div>
+                        <div class="option">B. 掌握員工出勤時段的趨勢以實現薪資計算自動化。</div>
+                        <div class="option">C. 分析系統購置費用與折舊費用的比例。</div>
+                        <div class="option">D. 將原始碼行數推移繪製成圖表以測量程式難易度。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：趨勢分析（Trend Analysis）協助維運團隊從大量歷史 Log 與 Incident 紀錄中發掘週期性模式，提供主動式問題管理實質依據。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- 9. 服務可用性與業務持續性管理 -->
+    <div class="group-container">
+        <div class="group-header">服務可用性與業務持續性管理</div>
+
+        <!-- サービス可用性管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス可用性管理</div>
+                <div class="term-reading">さーびすかようせいかんり</div>
+                <div class="term-zh">服務可用性管理</div>
+                <div class="term-en">Service Availability Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サービスが必要な時に利用可能であることを保証するため、可用性・信頼性・保守性を測定・維持するプロセス。</div>
+                <div class="summary-zh">為確保服務於需要時皆處於可用狀態，對可用性、可靠性及維護性進行測量與維持的管理流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービスマネジメントにおける「可用性管理（Availability Management）」の対象に含まれる指標の組み合わせとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 可用性（Availability）、信頼性（Reliability）、保守性（Maintainability）、サービス性（Serviceability）</div>
+                        <div class="option">イ. 記憶容量（Storage）、CPU速度（Clock）、メモリサイズ（RAM）</div>
+                        <div class="option">ウ. 売上高（Sales）、利益率（Profit）、コスト（Cost）</div>
+                        <div class="option">エ. ユーザー数（Users）、アクセス数（Hits）、ページビュー（PV）</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：可用性管理では、稼働率（可用性）だけでなく、故障のしにくさ（信頼性：MTBF）、復旧の速さ（保守性：MTTR）、ベンダーの保守契約（サービス性）を総合的に管理します。</div></td>
+                    <td>                        【題目】在 IT 服務管理中，下列何者屬於「可用性管理」所涵蓋的量測指標組合？
+<br>
+                        <div class="option">A. 可用性（Availability）、可靠性（Reliability）、維護性（Maintainability）、服務性（Serviceability）</div>
+                        <div class="option">B. 儲存容量（Storage）、CPU 時脈（Clock）、記憶體大小（RAM）</div>
+                        <div class="option">C. 營業額（Sales）、利潤率（Profit）、成本（Cost）</div>
+                        <div class="option">D. 使用者數（Users）、存取次數（Hits）、瀏覽量（PV）</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：可用性管理包含四大核心要素：Availability（可用性）、Reliability（可靠性/MTBF）、Maintainability（維護性/MTTR）及 Serviceability（第三方服務性）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス継続管理 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス継続管理</div>
+                <div class="term-reading">さーびすけいぞくかんり</div>
+                <div class="term-zh">服務持續性管理</div>
+                <div class="term-en">Service Continuity Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">大災害や致命的障害が発生した際にも、最小限の事業継続性を維持し合意時間内に復旧させるリスク管理。</div>
+                <div class="summary-zh">當發生重大災害或致命故障時，仍能維持最低限度之業務持續性並於合意時間內復原的風險管理（ITSCM）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ITサービス継続性管理（ITSCM）の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 自然災害や大規模障害が発生した際に、あらかじめ定めた時間内に事業に必要なITサービスを復旧・継続させること。</div>
+                        <div class="option">イ. 日常的なヘルプデスクへの問い合わせ件数を削減すること。</div>
+                        <div class="option">ウ. システムの開発コストを削減し、安いハードウェアを選定すること。</div>
+                        <div class="option">エ. ユーザーのパスワード変更周期を厳格化すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ITSCM（IT Service Continuity Management）は、BCP（事業継続計画）をIT面から支えるプロセスであり、リスク分析や事業影響度分析（BIA）を行い、災害時の復旧体制を維持します。</div></td>
+                    <td>                        【題目】關於 IT 服務持續性管理（ITSCM）的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 當發生自然災害或大規模故障時，於預先設定之時間內復原並持續業務所需之 IT 服務。</div>
+                        <div class="option">B. 減少日常諮詢服務台的案件數量。</div>
+                        <div class="option">C. 削減系統開發成本並選購便宜的硬體設備。</div>
+                        <div class="option">D. 嚴格規範使用者的密碼變更週期。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：ITSCM 旨在支撐企業 BCP，針對重大災難情境進行風險評估與 BIA（業務衝擊分析），落實備援機制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス継続計画 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス継続計画</div>
+                <div class="term-reading">さーびすけいぞくけいかく</div>
+                <div class="term-zh">服務持續性計畫</div>
+                <div class="term-en">Service Continuity Plan</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">緊急事態発災時の復旧手順、代替手段、非常時体制、訓練計画などを具体的に策定した計画ドキュメント。</div>
+                <div class="summary-zh">具體制定緊急事態發生時之復原步驟、替代手段、應變體系及演練計畫的計畫文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】「サービス継続計画（ITSCMプラン）」の実効性を高めるために最も重要な活動はどれか。
+<br>
+                        <div class="option">ア. 計画書を作成しただけで満足せず、定期的な避難・復旧訓練（リハーサル）を実施し、計画の検証と改定を行うこと。</div>
+                        <div class="option">イ. 計画書を金庫に保管し、緊急時まで誰にも見せないように秘匿すること。</div>
+                        <div class="option">ウ. 過去に発生した小規模なバグ修正の履歴のみを記載すること。</div>
+                        <div class="option">エ. システムの運用マニュアルを開発エンジニア個人のPCにのみ保存すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：継続計画は作成して終わりではなく、定期的な防災・切り替え訓練（テスト）を実施し、問題点をフィードバックして見直すことで初めて有事の際に機能します。</div></td>
+                    <td>                        【題目】為提升「服務持續性計畫（ITSCM Plan）」的可行性與有效性，下列何者為最重要的活動？
+<br>
+                        <div class="option">A. 不僅限於撰寫計畫書，需定期實施避難與復原演練（Rehearsal），進行計畫的驗證與修訂。</div>
+                        <div class="option">B. 將計畫書鎖入保險箱，在緊急事態發生前絕不公開給任何人審閱。</div>
+                        <div class="option">C. 僅記錄過去所發生的微小 Bug 修復履歷。</div>
+                        <div class="option">D. 將系統營運手冊僅儲存於開發工程師個人 PC 中。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：持續性計畫（Continuity Plan）必須透過定期測試與演練（Testing & Exercise）進行動態維護，確保災難發生時能運作無礙。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- RTO -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RTO</div>
+                <div class="term-reading">あーるてぃーおー</div>
+                <div class="term-zh">目標復原時間</div>
+                <div class="term-en">Recovery Time Objective</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">障害が発生してから、中断されたサービスを許容されるレベルまで復旧させるべき目標時間（時間的制限）。</div>
+                <div class="summary-zh">發生故障後，將受中斷之服務復原至可接受運作水準的目標時間（時間界限）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】事業継続計画（BCP）において設定される「RTO（Recovery Time Objective: 目標復旧時間）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムが停止してから、業務を再開・復旧させるまでに許容される目標時間。</div>
+                        <div class="option">イ. 障害発生時に失われても容認できるデータの時間的範囲（損害範囲）。</div>
+                        <div class="option">ウ. システムが次回故障するまでの平均連続稼働時間。</div>
+                        <div class="option">エ. 故障したシステムを修理・復旧するのにかかった平均時間。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：RTO（目標復旧時間）は、「何時間以内にシステムを復旧させなければならないか」を示す「時間（Down Time）」の目標値です。</div></td>
+                    <td>                        【題目】在業務持續計畫（BCP）中所設定的「RTO（目標復原時間）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 系統停擺後，至業務得以重新開始/復原為止所允許的目標時間。</div>
+                        <div class="option">B. 發生故障時允許遺失之資料的時間範疇（損害範圍）。</div>
+                        <div class="option">C. 系統至下一次發生故障為止的平均連續運作時間。</div>
+                        <div class="option">D. 進行修復故障系統所耗費的平均時間。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：RTO (Recovery Time Objective) 衡量「停機多久時間內必須恢復營運」，著重於時間跨度。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- RPO -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RPO</div>
+                <div class="term-reading">あーるぴーおー</div>
+                <div class="term-zh">目標復原點</div>
+                <div class="term-en">Recovery Point Objective</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">障害発生時に、失われても事業上許容できるデータの損失量（どの過去の時点までデータを戻すか）。</div>
+                <div class="summary-zh">發生故障時，於業務上所能容忍的資料遺失量（需還原至過去哪個時間點的資料）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】事業継続計画（BCP）において設定される「RPO（Recovery Point Objective: 目標復旧時点）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 障害発生時に、バックアップ等から復旧すべき「データの過去の時点（損失容認量）」。</div>
+                        <div class="option">イ. サービスが障害から完全に復旧するまでにかかる目標時間。</div>
+                        <div class="option">ウ. バックアップメディアを遠隔地へ搬送するのに要する時間。</div>
+                        <div class="option">エ. システムの年間目標稼働率のパーセンテージ。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：RPO（目標復旧時点）は、「過去のどの時点までのデータが戻れば業務を再開できるか（＝どの程度のデータ消失なら許容できるか）」を示すデータのフレッシュネスの指標です。</div></td>
+                    <td>                        【題目】在業務持續計畫（BCP）中所設定的「RPO（目標復原點）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 發生故障時，需透過備份等還原之「過去資料時間點（可容忍資料遺失量）」。</div>
+                        <div class="option">B. 服務自故障中完全復原為止所耗費的目標時間。</div>
+                        <div class="option">C. 將備份介面運送至遠端地點所需的耗時。</div>
+                        <div class="option">D. 系統的全年目標可用性百分比。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：RPO (Recovery Point Objective) 決定「備份頻率」，衡量災難發生時可容忍的最大資料遺失量（如 RPO = 1 小時即代表最多損失 1 小時內的新增資料）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- RLO -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RLO</div>
+                <div class="term-reading">あーるえるおー</div>
+                <div class="term-zh">目標復原水準</div>
+                <div class="term-en">Recovery Level Objective</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">災害発生後、段階的に復旧させるサービスや業務処理の達成レベル（平常時の何%の能力で運用するか）。</div>
+                <div class="summary-zh">發生災害後，階段性復原服務或業務處理的目標達成水準（如恢復至平時的百分之幾能力）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】事業継続計画（BCP）において用いられる「RLO（Recovery Level Objective: 目標復旧レベル）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 災害復旧時に、業務処理能力やサービス機能をどの程度のレベル（例：平常時の50%や重要業務のみ等）まで復旧させるかを示す目標。</div>
+                        <div class="option">イ. バックアップデータを保管するストレージの暗号化強度レベル。</div>
+                        <div class="option">ウ. 障害対応を行う運用スタッフの技術スキル等級。</div>
+                        <div class="option">エ. ネットワーク回線の物理的な通信速度の限界値。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：RLO（目標復旧レベル）は、非常時に「100%完全復旧」を目指すのではなく、「まずはコア業務である50%の処理能力で再開する」といった業務レベルの目標設定を意味します。</div></td>
+                    <td>                        【題目】在業務持續計畫（BCP）市所使用的「RLO（目標復原水準）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 進行災害復原時，將業務處理能力或服務功能復原至何種水準（如：平時的 50% 或僅限核心業務）的目標。</div>
+                        <div class="option">B. 保管備份資料之儲存裝置的加密強度等級。</div>
+                        <div class="option">C. 進行故障處置之維運人員的技術技能等級。</div>
+                        <div class="option">D. 網路線路實體傳輸速度的極限值。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：RLO (Recovery Level Objective) 界定災難發生時「服務產能/功能的降級幅度與恢復百分比」，配合 RTO 進行階段性復原。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 障害復旧 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">障害復旧</div>
+                <div class="term-reading">しょうがいふっきゅう</div>
+                <div class="term-zh">故障復原</div>
+                <div class="term-en">Disaster Recovery / Incident Recovery</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの故障や障害が発生した際、影響を取り除き、正常な稼働状態に戻す一連の復旧作業。</div>
+                <div class="summary-zh">當系統發生故障或異常時，排除不良衝擊並使其恢復至正常營運狀態的一系列復原作業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システム障害が発生した際の「障害復旧手順」として、適切な順序はどれか。
+<br>
+                        <div class="option">ア. ①影響範囲の確認・一時対応（回避策） → ②原因調査・恒久対応 → ③復旧確認・正常稼働監視</div>
+                        <div class="option">イ. ①原因調査 → ②システムの完全再構築 → ③影響範囲の確認</div>
+                        <div class="option">ウ. ①恒久対応のプログラミング → ②本番環境への無検証リリース → ③障害報告</div>
+                        <div class="option">エ. ①障害放置 → ②バックアップ作成 → ③システム買い替え</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：障害復旧は、まず迅速な被害抑止とサービス復旧（ワークアラウンド適用等）を最優先し、その後根本原因の究明・恒久対策、最終確認というステップを踏みます。</div></td>
+                    <td>                        【題目】發生系統故障時進行「故障復原步驟」的適當順序為何？
+<br>
+                        <div class="option">A. ①確認受影響範圍/進行臨時處置（替代方案） → ②原因調查/恒久處置 → ③復原確認與正常營運監控</div>
+                        <div class="option">B. ①原因調查 → ②系統完全重新建置 → ③確認受影響範圍</div>
+                        <div class="option">C. ①撰寫恒久處置程式 → ②未經驗證直接發行至正式環境 → ③故障陳報</div>
+                        <div class="option">D. ①擱置故障 → ②建立備份 → ③採購新系統更換</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：故障復原依循「遏止損害並暫時復原 (Workaround) -> 查找 Root Cause -> 恒久修復 -> 觀察驗證」之正則處置流程。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 災害復旧 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">災害復旧</div>
+                <div class="term-reading">さいがいふっきゅう</div>
+                <div class="term-zh">災害復原</div>
+                <div class="term-en">Disaster Recovery</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">地震や火災などの大災害（Disaster）によって被災したITインフラを、遠隔地サイト等を用いて再建・復旧すること。</div>
+                <div class="summary-zh">因地震、火災等重大自然或人為災害致使 IT 基礎設施受災時，利用遠端備援站點等進行重建復原（DR）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】IT分野における「災害復旧（DR: Disaster Recovery）」の施策として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 地理的に離れた場所にバックアップサイト（DRサイト）を確保し、定期的なデータ同期を行っておくこと。</div>
+                        <div class="option">イ. 同一のサーバーラック内に予備の電源ユニットを追加で設置すること。</div>
+                        <div class="option">ウ. オペレーティングシステム（OS）のセキュリティパッチを毎週適用すること。</div>
+                        <div class="option">エ. 社員のパソコンのパスワード文字数を8桁から12桁に増やせさせること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：災害復旧（DR）は廣域災害を想定するため、メインデータセンターと地理的に離れた遠隔地にDRサイト（ホット/ウォーム/コールドスタンバイ）を用意することが典型的施策です。</div></td>
+                    <td>                        【題目】在 IT 領域中關於「災害復原（DR: Disaster Recovery）」的措施，下列何者最恰當？
+<br>
+                        <div class="option">A. 在地理相隔之遠端地點建立備援站點（DR Site），並進行定期資料同步。</div>
+                        <div class="option">B. 在同一伺服器機架內額外安裝備用電源模組。</div>
+                        <div class="option">C. 每週套用作業系統（OS）的安全性修補程式。</div>
+                        <div class="option">D. 要求員工將電腦密碼長度由 8 碼增加為 12 碼。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：DR（Disaster Recovery）針對地域性災難（如地震、洪災），需靠地理異地備援站點（Off-site Backup / DR Site）來達成系統重建。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- コールドスタンバイ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コールドスタンバイ</div>
+                <div class="term-reading">こーるどすたんばい</div>
+                <div class="term-zh">冷備援</div>
+                <div class="term-en">Cold Standby</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">予備の環境や機器を用意しておくが、普段は電源を入れず、有事の際に機器手配・設定・データ復元から始める方式。</div>
+                <div class="summary-zh">事先準備備援環境與設備，但平時不安裝或不通電，有事時才從設備調度、設定與資料還原開始執行的備援方式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】バックアップサイトの運用方式のうち「コールドスタンバイ」の特徴として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 復旧コストや維持費用は最も安いが、災害発生後の立ち上げやデータ復元に時間がかかる。</div>
+                        <div class="option">イ. 普段から本番機と全く同じシステムが稼働しており、瞬時に自動切り替えが可能である。</div>
+                        <div class="option">ウ. 本番機とリアルタイムでデータベースの同期を行っている。</div>
+                        <div class="option">エ. 維持費用が最も高額であり、大企業のみで採用されている。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：コールドスタンバイは、設置場所や電源・通信回線などの基礎インフラのみ（または非稼働機器）を準備しておき、被災後に機器搬入やOS/データ導入を行うため、コストは安いがRTOは長くなります。</div></td>
+                    <td>                        【題目】在備援站點的營運模式中，關於「冷備援（Cold Standby）」的特徵，下列何者最恰當？
+<br>
+                        <div class="option">A. 維護成本與費用最低，但發生災害後的系統啟動與資料還原所需時間較長。</div>
+                        <div class="option">B. 平時即運作與正式機完全相同的系統，能做到瞬間自動切換。</div>
+                        <div class="option">C. 與正式機進行即時（Real-time）的資料庫同步。</div>
+                        <div class="option">D. 維護費用最昂貴，僅有大型企業予以採用。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Cold Standby 具備最低維持成本，但因欠缺即時備份與預先部署，故其 RTO（復原時間）與 RPO（資料遺失量）皆為三種備援模式中最高者。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ホットスタンバイ -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ホットスタンバイ</div>
+                <div class="term-reading">ほっとすたんばい</div>
+                <div class="term-zh">熱備援</div>
+                <div class="term-en">Hot Standby</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">予備機を常に起動・データ同期状態にしておき、障害発生時に自動または瞬時に処理を引き継ぐ冗長化方式。</div>
+                <div class="summary-zh">使備用機維持常時啟動與資料同步狀態，當故障發生時可自動或瞬時接管處理的冗餘備援方式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】バックアップサイトの運用方式のうち「ホットスタンバイ」の特徴として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 予備機を常に稼働させてデータを同期させておくため、障害発生時に非常に短時間（あるいは自動）で切り替えが可能である。</div>
+                        <div class="option">イ. 予備機の電源を常に切っておくため、電気代が最も節約できる。</div>
+                        <div class="option">ウ. 障害が発生してから新しいサーバを発注して組み立てる方式である。</div>
+                        <div class="option">エ. データのバックアップをテープメディアで磁気金庫に保管しておく方式である。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ホットスタンバイ（Hot Standby）は、本番機と予備機をともに常時起動・同期させ、Failover（自動切り替え）等によって障害時のダウンタイム（RTO）を極小化する仕組みです。</div></td>
+                    <td>                        【題目】在備援站點的營運模式中，關於「熱備援（Hot Standby）」的特徵，下列何者最恰當？
+<br>
+                        <div class="option">A. 備用機常時保持運作與資料同步，發生故障時能以極短時間（或自動切換）完成接管。</div>
+                        <div class="option">B. 平時將備用機電源關閉，故最能節省電費。</div>
+                        <div class="option">C. 待發生故障後才下單採購新伺服器並進行組裝的方式。</div>
+                        <div class="option">D. 將資料備份至磁帶介面並保管於磁性保險箱的方式。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：Hot Standby 實現最小化 RTO 與 RPO，透過雙機抄寫（Replication）與自動故障轉移（Failover）提供高度連續性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- サービス可用性 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス可用性</div>
+                <div class="term-reading">さーびすかようせい</div>
+                <div class="term-zh">服務可用性</div>
+                <div class="term-en">Service Availability</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">要求された時に、サービスが合意された条件のもとで正しく機能し、利用可能な状態にある確率・割合。</div>
+                <div class="summary-zh">當收到需求時，服務於合意條件下能正確執行功能且處於可用狀態的概率或比例（Availability %）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システムの「可用性（Availability）」を示す計算式として、最も適切なものはどれか。
+<br>
+                        （ただし、MTBFは平均故障間隔、MTTRは平均修理時間を表す）
+<br>
+                        <div class="option">ア. 可用性 ＝ MTBF ／ (MTBF ＋ MTTR)</div>
+                        <div class="option">イ. 可用性 ＝ MTTR ／ (MTBF ＋ MTTR)</div>
+                        <div class="option">ウ. 可用性 ＝ MTBF × MTTR</div>
+                        <div class="option">エ. 可用性 ＝ (MTBF － MTTR) ／ 24</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：可用性（稼働率）は、「稼働時間（MTBF） ÷ 全運用時間（MTBF＋MTTR）」で求められます。MTBFが長く、MTTRが短いほど可用性は高くなります。</div></td>
+                    <td>                        【題目】代表系統「可用性（Availability）」的計算公式，下列何者最恰當？
+<br>
+                        （其中 MTBF 代表平均故障間隔時間，MTTR 代表平均修復時間）
+<br>
+                        <div class="option">A. 可用性 ＝ MTBF ／ (MTBF ＋ MTTR)</div>
+                        <div class="option">B. 可用性 ＝ MTTR ／ (MTBF ＋ MTTR)</div>
+                        <div class="option">C. 可用性 ＝ MTBF × MTTR</div>
+                        <div class="option">D. 可用性 ＝ (MTBF － MTTR) ／ 24</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：可用性（稼働率）公式為：$A = \frac{\text{MTBF}}{\text{MTBF} + \text{MTTR}}$。提升 MTBF（可靠性）或降低 MTTR（修復耗時）皆可提高可用性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 信頼性 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">信頼性</div>
+                <div class="term-reading">しんらいせい</div>
+                <div class="term-zh">可靠性 / 經久性</div>
+                <div class="term-en">Reliability</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやサービスが指定された条件のもとで、中断することなく正常に動き続ける能力（MTBFで測定）。</div>
+                <div class="summary-zh">系統或服務於指定條件下，能不發生中斷持續正常運作的能力（通常以 MTBF 衡量）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システムの「信頼性（Reliability）」を高めるための指標である「MTBF（Mean Time Between Failures）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムが故障してから修理が完了するまでにかかった平均時間。</div>
+                        <div class="option">イ. システムが正常に稼働していた連続稼働時間の平均値（故障間隔の平均）。</div>
+                        <div class="option">ウ. 1年間の中で計画メンテナンスのためにシステムを停止した合計時間。</div>
+                        <div class="option">エ. ユーザーがシステムにログインしてからログアウトするまでの平均時間。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：信頼性を示す指標であるMTBF（平均故障間隔）は、「故障と故障の間の正常に稼働していた平均時間」であり、この値が大きいほど「故障しにくい＝信頼性が高い」ことを意味します。</div></td>
+                    <td>                        【題目】關於代表系統「可靠性（Reliability）」指標之「MTBF（平均故障間隔時間）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 系統發生故障後至維修完成為止所耗費的平均時間。</div>
+                        <div class="option">B. 系統正常運作之連續運作時間的平均值（故障與故障間的平均時間）。</div>
+                        <div class="option">C. 一年之中因計畫性維護而停止系統的合計時間。</div>
+                        <div class="option">D. 使用者登入系統至登出系統為止的平均時間。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：MTBF (Mean Time Between Failures) 代表系統連續無故障運作的平均時間，MTBF 越長代表系統越穩定、可靠性越高。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 保守性 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">保守性</div>
+                <div class="term-reading">ほしゅせい</div>
+                <div class="term-zh">可維護性 / 保修性</div>
+                <div class="term-en">Maintainability</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">障害が発生した際に、いかに迅速かつ容易に修理・復旧できるかを示す能力（MTTRで測定）。</div>
+                <div class="summary-zh">當發生故障時，能多迅速且輕易地進行維修與復原的能力（通常以 MTTR 衡量）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】システムの「保守性（Maintainability）」を高めるための指標である「MTTR（Mean Time To Repair）」の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 障害が発生したシステムを修理・復旧させるのに要した平均時間。</div>
+                        <div class="option">イ. システムが連続して正常に稼働していた平均時間。</div>
+                        <div class="option">ウ. 外部ベンダーに保守費用を支払う頻度。</div>
+                        <div class="option">エ. 1回のリリースに含まれる変更箇所の個数。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：保守性を示す指標であるMTTR（平均修理時間）は、「障害が発生してから復旧するまでにかかった平均時間」であり、この値が小さいほど「修理しやすい＝保守性が高い」ことを意味します。</div></td>
+                    <td>                        【題目】關於代表系統「維護性（Maintainability）」指標之「MTTR（平均修復時間）」，下列說明何者最恰當？
+<br>
+                        <div class="option">A. 進行修復/復原發生故障之系統所耗費的平均時間。</div>
+                        <div class="option">B. 系統連續正常運作的平均時間。</div>
+                        <div class="option">C. 向外部廠商支付維護費用的頻率。</div>
+                        <div class="option">D. 單次發行（Release）中所包含變更位置的數量。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：MTTR (Mean Time To Repair) 代表故障發生到復原完成的平均耗時。MTTR 越短，代表診斷與維修越便利，即可維護性越高。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

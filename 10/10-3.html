@@ -1,0 +1,1321 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>調達計画・実施 - 30語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>調達計画・実施 - 30語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+    <!-- Group 1 -->
+    <div class="group-container">
+        <div class="group-header">系統整合與委外服務 (システムインテグレータ・SI事業者・アウトソーシング)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システムインテグレータ</div>
+                <div class="term-reading">システムインテグレータ</div>
+                <div class="term-zh">系統整合商</div>
+                <div class="term-en">System Integrator</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">異なるシステムや技術を統合し、クライアントの要望に応じた機能的なシステムを構築する専門家や企業。</div>
+                <div class="summary-zh">整合不同系統與技術，根據客戶需求建構功能性系統的專家或企業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：異なるシステムや技術を統合し、最適なシステムを構築する専門家や企業を何と呼ぶか？</div>
+                        <div class="option">ア. アウトソーサー</div>
+<div class="option">イ. システムインテグレータ</div>
+<div class="option">ウ. ベンダー</div>
+<div class="option">エ. コンサルタント</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：システムインテグレータは、ハードウェア、ソフトウェア、ネットワークを組み合わせて全体の最適化を図る役割を持つ。</div>
+                    </td>
+                    <td>
+                        <div>問：整合不同系統與技術，並建構最佳化系統的專家或企業稱為何？</div>
+                        <div class="option">A. 外包商</div>
+<div class="option">B. 系統整合商（System Integrator）</div>
+<div class="option">C. 供應商</div>
+<div class="option">D. 顧問</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：系統整合商負責結合硬體、軟體與網路以實現整體系統的最佳化。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SI事業者</div>
+                <div class="term-reading">えすあいじぎょうしゃ</div>
+                <div class="term-zh">SI業者</div>
+                <div class="term-en">SIer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">顧客のニーズに応じて情報システムの設計から運用までトータルで支援する企業。</div>
+                <div class="summary-zh">根據客戶需求，提供從資訊系統設計到維運等全方位支援的企業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：顧客のニーズに応じて情報システムの設計、開発、導入から運用までをトータルで支援する事業者を指す用語はどれか？</div>
+                        <div class="option">ア. SI事業者</div>
+<div class="option">イ. ベンダーフリー</div>
+<div class="option">ウ. プロバイダ</div>
+<div class="option">エ. インテグレータ</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：SI事業者（SIer）は、システムインテグレーションを行い、企画から運用までの一連のプロセスを支援する。</div>
+                    </td>
+                    <td>
+                        <div>問：根據客戶需求，全面支援資訊系統從設計、開發、導入到維運的業者稱為何？</div>
+                        <div class="option">A. SI事業者（SIer）</div>
+<div class="option">B. 獨立供應商</div>
+<div class="option">C. 網路服務供應商</div>
+<div class="option">D. 系統整合商</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：SI事業者（SIer）執行系統整合，並支援從規劃到維運的一系列流程。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">アウトソーシング</div>
+                <div class="term-reading">アウトソーシング</div>
+                <div class="term-zh">委外服務 / 外包</div>
+                <div class="term-en">Outsourcing</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業が特定の業務を外部の専門業者に委託し、内部リソースの集中や効率化を図ること。</div>
+                <div class="summary-zh">企業將特定業務委託給外部專業業者，以集中內部資源並提升效率。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業が特定の業務を自社内ではなく外部の専門業者に委託し、内部リソースを他の業務に集中させる手法は何か？</div>
+                        <div class="option">ア. オフショア開発</div>
+<div class="option">イ. アウトソーシング</div>
+<div class="option">ウ. クラウドファンディング</div>
+<div class="option">エ. リエンジニアリング</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：アウトソーシングにより、専門知識の活用やコスト削減、業務効率化が期待できる。</div>
+                    </td>
+                    <td>
+                        <div>問：企業將特定業務交由外部專業業者處理，並將內部資源集中於其他業務的手法為何？</div>
+                        <div class="option">A. 離岸開發</div>
+<div class="option">B. 外包（Outsourcing）</div>
+<div class="option">C. 群眾募資</div>
+<div class="option">D. 企業再造</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：透過外包可活用專業知識、降低成本並提升業務效率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="group-container">
+        <div class="group-header">IT資產與系統管理 (ライセンス管理・構成管理)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ライセンス管理</div>
+                <div class="term-reading">らいせんすかんり</div>
+                <div class="term-zh">授權管理</div>
+                <div class="term-en">License Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ソフトウェアや技術を合法的に使用するための権利を適切に管理するプロセス。</div>
+                <div class="summary-zh">適當管理合法使用軟體或技術權利的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：ソフトウェアの不正使用を防ぎ、購入したライセンスの条件や使用状況を適切に把握・管理するプロセスはどれか？</div>
+                        <div class="option">ア. 構成管理</div>
+<div class="option">イ. ライセンス管理</div>
+<div class="option">ウ. 資産管理</div>
+<div class="option">エ. 変更管理</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：ライセンス管理は、法的なトラブルを避け、コスト最適化と業務効率の向上を図る。</div>
+                    </td>
+                    <td>
+                        <div>問：防止軟體非法使用，並適當掌握與管理所購買授權條件與使用狀況的程序為何？</div>
+                        <div class="option">A. 組態管理</div>
+<div class="option">B. 授權管理（License Management）</div>
+<div class="option">C. 資產管理</div>
+<div class="option">D. 變更管理</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：授權管理可避免法律糾紛，並實現成本最佳化與業務效率提升。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">構成管理</div>
+                <div class="term-reading">こうせいかんり</div>
+                <div class="term-zh">組態管理 / 構成管理</div>
+                <div class="term-en">Configuration Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやソフトウェアの構成要素、変更履歴、依存関係を把握し、安定性を向上させるプロセス。</div>
+                <div class="summary-zh">掌握系統與軟體構成要素、變更歷史及相依關係，以提升穩定性的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムやソフトウェアの構成要素の変更履歴や依存関係を明確にし、安定性や信頼性を向上させるプロセスはどれか？</div>
+                        <div class="option">ア. 構成管理</div>
+<div class="option">イ. リリース管理</div>
+<div class="option">ウ. インシデント管理</div>
+<div class="option">エ. キャパシティ管理</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：構成管理を行うことで、既存機能に悪影響を与えずに安全に変更を行うことができる。</div>
+                    </td>
+                    <td>
+                        <div>問：明確掌握系統與軟體構成要素之變更歷史與相依關係，以提升穩定性與可靠性的程序為何？</div>
+                        <div class="option">A. 組態管理（Configuration Management）</div>
+<div class="option">B. 發布管理</div>
+<div class="option">C. 事件管理</div>
+<div class="option">D. 容量管理</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：執行組態管理能在不對既有功能造成不良影響的情況下安全地進行變更。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3 -->
+    <div class="group-container">
+        <div class="group-header">調達流程與文件管理 (調達の代表的な方法・RFI・RFP・RFQ)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">調達の代表的な方法</div>
+                <div class="term-reading">ちょうたつのだいひょうてきなほうほう</div>
+                <div class="term-zh">採購的代表性方法</div>
+                <div class="term-en">Typical Procurement Methods</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">競争入札、指名入札、協議入札、随意契約など、商品やサービスを入手するための主な手段。</div>
+                <div class="summary-zh">包含競爭投標、指名投標、協議投標及隨意契約等取得商品或服務的主要手段。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：多くの業者が参加し、最も条件の良い提案を選定する、公平性の高い調達方法はどれか？</div>
+                        <div class="option">ア. 随意契約</div>
+<div class="option">イ. 指名入札</div>
+<div class="option">ウ. 競争入札</div>
+<div class="option">エ. 協議入札</div>
+                        <div class="answer">正解：ウ</div>
+                        <div class="analysis">解説：競争入札は多くの業者が参加するため公平性が高いのが特徴である。</div>
+                    </td>
+                    <td>
+                        <div>問：由許多業者參加並選出條件最佳提案、公平性極高的採購方法為何？</div>
+                        <div class="option">A. 隨意契約</div>
+<div class="option">B. 指名投標</div>
+<div class="option">C. 競爭投標（Competitive Bidding）</div>
+<div class="option">D. 協議投標</div>
+                        <div class="answer">正確答案：C</div>
+                        <div class="analysis">解析：競爭投標因有多家業者參與，具有高度公平性的特徵。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RFI</div>
+                <div class="term-reading">あーるえふあい</div>
+                <div class="term-zh">資訊需求書</div>
+                <div class="term-en">Request for Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">調達プロセスにおいて、特定の製品やサービスについての情報を集めるためにサプライヤーに発行される文書。</div>
+                <div class="summary-zh">在採購過程中，為收集特定產品或服務相關資訊而發給供應商的文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システム導入に先立ち、ベンダーに対して製品の特長や価格などの情報提供を依頼する文書はどれか？</div>
+                        <div class="option">ア. RFI</div>
+<div class="option">イ. RFP</div>
+<div class="option">ウ. RFQ</div>
+<div class="option">エ. SLA</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：RFI（Request for Information）は情報提供依頼書であり、基礎データを収集する目的で発行される。</div>
+                    </td>
+                    <td>
+                        <div>問：在導入系統前，向供應商請求提供產品特長與價格等資訊的文件為何？</div>
+                        <div class="option">A. RFI（資訊需求書）</div>
+<div class="option">B. RFP</div>
+<div class="option">C. RFQ</div>
+<div class="option">D. SLA</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：RFI（Request for Information）為資訊提供邀請書，旨在收集基礎資料。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RFP</div>
+                <div class="term-reading">あーるえふぴー</div>
+                <div class="term-zh">提案請求書 / 專案建議書邀請函</div>
+                <div class="term-en">Request For Proposal</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業が外部業者に具体的な要件や条件を提示し、最適な解決策の提案を求める文書。</div>
+                <div class="summary-zh">企業向外部業者提出具體需求與條件，並尋求最佳解決方案提案的文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：発注者がシステム開発の具体的な要件や条件を提示し、ベンダーに提案書や見積もりを依頼する文書はどれか？</div>
+                        <div class="option">ア. RFI</div>
+<div class="option">イ. RFP</div>
+<div class="option">ウ. RFQ</div>
+<div class="option">エ. SOW</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：RFP（Request For Proposal）は提案依頼書であり、透明性と競争性を持たせるために重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：發注方提出系統開發的具體需求與條件，並委託供應商提出建議書與報價的文件為何？</div>
+                        <div class="option">A. RFI</div>
+<div class="option">B. RFP（提案請求書）</div>
+<div class="option">C. RFQ</div>
+<div class="option">D. SOW</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：RFP（Request For Proposal）為提案請求書，對於維持透明度與競爭性至關重要。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RFQ</div>
+                <div class="term-reading">あーるえふきゅー</div>
+                <div class="term-zh">報價請求書</div>
+                <div class="term-en">Request for Quotation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">商品やサービスの価格、納期、条件などの見積もりを複数のサプライヤーに求める文書。</div>
+                <div class="summary-zh">向多個供應商請求商品或服務之價格、交期、條件等報價的文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：商品やサービスの価格や納期に関する見積もりを複数のサプライヤーに取得するために作成する文書はどれか？</div>
+                        <div class="option">ア. RFI</div>
+<div class="option">イ. RFP</div>
+<div class="option">ウ. RFQ</div>
+<div class="option">エ. NDA</div>
+                        <div class="answer">正解：ウ</div>
+                        <div class="analysis">解説：RFQ（Request for Quotation）は価格見積依頼書であり、コスト削減や業務効率化に寄与する。</div>
+                    </td>
+                    <td>
+                        <div>問：為向多個供應商獲取商品或服務之價格與交期相關估價而製作的文件為何？</div>
+                        <div class="option">A. RFI</div>
+<div class="option">B. RFP</div>
+<div class="option">C. RFQ（報價請求書）</div>
+<div class="option">D. NDA</div>
+                        <div class="answer">正確答案：C</div>
+                        <div class="analysis">解析：RFQ（Request for Quotation）為報價請求書，有助於成本削減與業務效率化。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4 -->
+    <div class="group-container">
+        <div class="group-header">提案書需求與規格定義 (対象範囲・システムモデル・サービス要件・目標スケジュール・契約条件)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">対象範囲</div>
+                <div class="term-reading">たいしょうはんい</div>
+                <div class="term-zh">工作範圍 / 實施範圍</div>
+                <div class="term-en">Scope of Work</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトや調達において、実施する内容や範囲を明確に定義し認識のズレを防ぐもの。</div>
+                <div class="summary-zh">在專案或採購中明確定義實施內容與範圍，以防範認知落差的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：プロジェクトにおいて、実施する作業内容や提供されるサービス、納期、場所などの範囲を明確に定義するものは何か？</div>
+                        <div class="option">ア. 対象範囲（SOW）</div>
+<div class="option">イ. システムモデル</div>
+<div class="option">ウ. サービス要件</div>
+<div class="option">エ. 契約条件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：対象範囲（Scope of Work）を設定することで、関係者間での認識のズレを防ぐことができる。</div>
+                    </td>
+                    <td>
+                        <div>問：在專案中明確定義作業內容、提供服務、交期與地點等範圍的項目為何？</div>
+                        <div class="option">A. 實施範圍（Scope of Work）</div>
+<div class="option">B. 系統模型</div>
+<div class="option">C. 服務需求</div>
+<div class="option">D. 契約條件</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：設定工作範圍（Scope of Work）可防止相關人員之間的認知落差。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システムモデル</div>
+                <div class="term-reading">システムモデル</div>
+                <div class="term-zh">系統模型</div>
+                <div class="term-en">System Model</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの要件や機能を視覚的・抽象的に表現し、関係者間の共通理解を促進する表現。</div>
+                <div class="summary-zh">以視覺化或抽象化方式表現系統需求與功能，促進相關人員共同理解的表達方式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムの要件や機能をデータフロー図やユースケース図などを用いて視覚的に表現し、共通理解を促進するものは何か？</div>
+                        <div class="option">ア. サービス要件</div>
+<div class="option">イ. システムモデル</div>
+<div class="option">ウ. 費用内訳</div>
+<div class="option">エ. 提案評価基準</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：システムモデルを用いることで、発注者が求める機能や性能を明確に伝えることができる。</div>
+                    </td>
+                    <td>
+                        <div>問：運用資料流圖或使用案例圖等視覺化方式表現系統需求與功能以促進共同理解的項目為何？</div>
+                        <div class="option">A. 服務需求</div>
+<div class="option">B. 系統模型（System Model）</div>
+<div class="option">C. 費用明細</div>
+<div class="option">D. 提案評估標準</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：透過系統模型，發注方能夠清晰傳達所需的機能與性能。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービス要件</div>
+                <div class="term-reading">さーびすようけん</div>
+                <div class="term-zh">服務需求</div>
+                <div class="term-en">Service Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定のサービスを提供するために必要とされる機能、性能、安全性などの条件や仕様。</div>
+                <div class="summary-zh">提供特定服務所需的功能、效能、安全性等條件與規格。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：ITシステム導入において、システムの機能、性能、安全性、コストなど、提供されるべき条件や仕様を指すものはどれか？</div>
+                        <div class="option">ア. サービス要件</div>
+<div class="option">イ. 経営要件</div>
+<div class="option">ウ. 体制要件</div>
+<div class="option">エ. 契約条件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：サービス要件はRFPなどで明示され、サービス選定や運用・保守の基準となる。</div>
+                    </td>
+                    <td>
+                        <div>問：在IT系統導入中，指系統應具備的功能、效能、安全性與成本等條件或規格的項目為何？</div>
+                        <div class="option">A. 服務需求（Service Requirements）</div>
+<div class="option">B. 經營要求</div>
+<div class="option">C. 體制要求</div>
+<div class="option">D. 契約條件</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：服務需求會在RFP中明確列出，並作為服務選取與維運管理的標準。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">目標スケジュール</div>
+                <div class="term-reading">もくひょうすけじゅーる</div>
+                <div class="term-zh">目標時程</div>
+                <div class="term-en">Target Schedule</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの達成すべき期限やマイルストーンを示し、進捗状況を把握するための計画。</div>
+                <div class="summary-zh">指示專案應達成的期限或里程碑，作為掌握進度指標的計畫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：プロジェクトの達成すべき期限やマイルストーンを示し、進捗状況を把握するための指標となる計画はどれか？</div>
+                        <div class="option">ア. 提案書</div>
+<div class="option">イ. 目標スケジュール</div>
+<div class="option">ウ. 費用内訳</div>
+<div class="option">エ. 最終納期</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：目標スケジュールを設定することで、関係者はプロジェクトの進行を共有し業務効率を高められる。</div>
+                    </td>
+                    <td>
+                        <div>問：指示專案應達成的期限或里程碑，並作為掌握進度狀況指標的計畫為何？</div>
+                        <div class="option">A. 提案書</div>
+<div class="option">B. 目標時程（Target Schedule）</div>
+<div class="option">C. 費用明細</div>
+<div class="option">D. 最終交期</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：設定目標時程可讓相關人員共享專案進展，提升業務效率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">契約条件</div>
+                <div class="term-reading">けいやくじょうけん</div>
+                <div class="term-zh">契約條件</div>
+                <div class="term-en">Contract Terms</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">価格、納期、品質、支払い方法など、取引における当事者の権利と義務を定めた規則。</div>
+                <div class="summary-zh">規定價格、交期、品質、付款方式等交易當事人權利與義務的規則。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：取引において価格、納期、品質、支払い方法などを合意し、当事者の権利と義務を明確にするものはどれか？</div>
+                        <div class="option">ア. 契約条件</div>
+<div class="option">イ. 要求事項適合度</div>
+<div class="option">ウ. 提案評価基準</div>
+<div class="option">エ. ベンダー要件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：契約条件を明確にすることで、後のトラブルを防ぎ円滑な取引を進行できる。</div>
+                    </td>
+                    <td>
+                        <div>問：在交易中合意價格、交期、品質與付款方式，並明確規定當事人權利與義務的項目為何？</div>
+                        <div class="option">A. 契約條件（Contract Terms）</div>
+<div class="option">B. 要求事項符合度</div>
+<div class="option">C. 提案評估標準</div>
+<div class="option">D. 供應商要求</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：明確規定契約條件有助於預防後續糾紛並順利進行交易。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 5 -->
+    <div class="group-container">
+        <div class="group-header">供應商評估與管理要求 (ベンダーの経営要件・プロジェクト体制要件・技術及び実績評価)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ベンダーの経営要件</div>
+                <div class="term-reading">べんだーのけいえいようけん</div>
+                <div class="term-zh">供應商經營要求</div>
+                <div class="term-en">Vendor Management Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サプライヤーの経営基盤や信頼性など、調達プロセスの円滑化を目的とする基準や条件。</div>
+                <div class="summary-zh">旨在促進採購過程順暢，針對供應商經營基礎與信賴度等所設定的標準或條件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：サプライヤーの財務状況や経営基盤、信頼性など、調達プロセスの円滑化を目的として設定する基準はどれか？</div>
+                        <div class="option">ア. ベンダーの経営要件</div>
+<div class="option">イ. ベンダーのプロジェクト体制要件</div>
+<div class="option">ウ. ベンダーの技術及び実績評価</div>
+<div class="option">エ. サービス要件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ベンダーの経営要件は、サプライヤーが持続的な関係を築けるか判断するための基準となる。</div>
+                    </td>
+                    <td>
+                        <div>問：為促進採購過程順暢，針對供應商財務狀況、經營基礎與信賴度所設定的標準為何？</div>
+                        <div class="option">A. 供應商經營要求（Vendor Management Requirements）</div>
+<div class="option">B. 供應商專案體制要求</div>
+<div class="option">C. 供應商技術及實績評估</div>
+<div class="option">D. 服務需求</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：供應商經營要求是用以判斷供應商能否建立持續合作關係的標準。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ベンダーのプロジェクト体制要件</div>
+                <div class="term-reading">べんだーのぷろじぇくとたいせいようけん</div>
+                <div class="term-zh">供應商專案體制要求</div>
+                <div class="term-en">Vendor Project Management Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクト成功に必要なリソース配置や連絡体制、役割分担に関するベンダーの管理要件。</div>
+                <div class="summary-zh">關於專案成功所需的資源配置、聯絡體制與角色分工之供應商管理要求。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：プロジェクトに参加するベンダーが遵守すべき管理体制、プロジェクトマネージャーの指定、連絡方法などの要件はどれか？</div>
+                        <div class="option">ア. ベンダーの経営要件</div>
+<div class="option">イ. ベンダーのプロジェクト体制要件</div>
+<div class="option">ウ. ベンダーの技術及び実績評価</div>
+<div class="option">エ. サービス要件</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：プロジェクト体制要件を明確にすることで、リスク管理や問題解決がスムーズに進む。</div>
+                    </td>
+                    <td>
+                        <div>問：參與專案的供應商應遵守的管理體制、指定專案經理與聯絡方法等要求為何？</div>
+                        <div class="option">A. 供應商經營要求</div>
+<div class="option">B. 供應商專案體制要求（Vendor Project Management Requirements）</div>
+<div class="option">C. 供應商技術及實績評估</div>
+<div class="option">D. 服務需求</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：明確規定專案體制要求有助於順利進行風險管理與問題解決。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ベンダーの技術及び実績評価</div>
+                <div class="term-reading">べんだーのぎじゅつおよびじっせきひょうか</div>
+                <div class="term-zh">供應商技術及實績評估</div>
+                <div class="term-en">Vendor Technology and Performance Evaluation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ベンダーの過去のプロジェクト成功事例や専門知識などの技術力を評価するプロセス。</div>
+                <div class="summary-zh">評估供應商過去專案成功案例與專業知識等技術能力的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：ベンダーが持つ過去のプロジェクト成功事例や専門知識などの技術力を審査し、信頼性を判断するプロセスはどれか？</div>
+                        <div class="option">ア. ベンダーの技術及び実績評価</div>
+<div class="option">イ. ベンダーの経営要件</div>
+<div class="option">ウ. 構成管理</div>
+<div class="option">エ. ライセンス管理</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：適切な技術及び実績評価を行うことで、最適な業者を選定し調達の成功率を高める。</div>
+                    </td>
+                    <td>
+                        <div>問：審查供應商過去的專案成功案例與專業知識等技術能力以判斷其信賴度的程序為何？</div>
+                        <div class="option">A. 供應商技術及實績評估（Vendor Technology and Performance Evaluation）</div>
+<div class="option">B. 供應商經營要求</div>
+<div class="option">C. 組態管理</div>
+<div class="option">D. 授權管理</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：執行適當的技術及實績評估可選出最佳業者並提高採購成功率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 6 -->
+    <div class="group-container">
+        <div class="group-header">投標審查與費用評估 (提案書・見積書、提案評価基準、要求事項適合度、費用内訳)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">提案書・見積書</div>
+                <div class="term-reading">ていあんしょ・みつもりしょ</div>
+                <div class="term-zh">提案書與估價單</div>
+                <div class="term-en">Proposal and Quotation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">解決策を提示する提案書と、費用や詳細を明示する見積書による信頼構築ツール。</div>
+                <div class="summary-zh">透過提出解決方案的提案書及明確列示費用與細節的估價單來建立信任的工具。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：課題に対する解決策や実施方法を示す文書と、価格や数量の詳細を明示する文書の組み合わせはどれか？</div>
+                        <div class="option">ア. 提案書・見積書</div>
+<div class="option">イ. RFI・RFP</div>
+<div class="option">ウ. 契約書・合意書</div>
+<div class="option">エ. 仕様書・設計書</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：明確な提案書と見積書の提供により、誤解を防ぎスムーズな取引を促進する。</div>
+                    </td>
+                    <td>
+                        <div>問：顯示針對課題之解決方案與實施方法的文書，以及明確列出價格與數量細節文書的組合為何？</div>
+                        <div class="option">A. 提案書與估價單（Proposal and Quotation）</div>
+<div class="option">B. RFI與RFP</div>
+<div class="option">C. 契約書與協議書</div>
+<div class="option">D. 規格書與設計書</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：提供清晰的提案書與估價單可防止誤解並促進順暢的交易。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">提案評価基準</div>
+                <div class="term-reading">ていあんひょうかきじゅん</div>
+                <div class="term-zh">提案評估標準</div>
+                <div class="term-en">Proposal Evaluation Criteria</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">価格や技術力、納期などを基に公平かつ客観的に最適な提案を選定するための基準。</div>
+                <div class="summary-zh">依據價格、技術力、交期等公平客觀選定最佳提案的標準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：入札や提案書を査定し、価格、技術力、納期などを基に公平かつ客観的に最適な提案を選定するためのものはどれか？</div>
+                        <div class="option">ア. 提案評価基準</div>
+<div class="option">イ. 要求事項適合度</div>
+<div class="option">ウ. サービス要件</div>
+<div class="option">エ. 対象範囲</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：提案評価基準を明確にすることで、評価者が客観的な判断を行えるようになる。</div>
+                    </td>
+                    <td>
+                        <div>問：審查投標或提案書，並依據價格、技術力與交期等公平客觀選定最佳提案的項目為何？</div>
+                        <div class="option">A. 提案評估標準（Proposal Evaluation Criteria）</div>
+<div class="option">B. 要求事項符合度</div>
+<div class="option">C. 服務需求</div>
+<div class="option">D. 實施範圍</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：明確設定提案評估標準可使評估者進行客觀判斷。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要求事項適合度</div>
+                <div class="term-reading">ようきゅうじこうてきごうど</div>
+                <div class="term-zh">要求事項符合度</div>
+                <div class="term-en">Degree of Compliance with Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">提供される製品やサービスがプロジェクトの要求要件や条件をどれだけ満たしているかを示す指標。</div>
+                <div class="summary-zh">表示提供的產品或服務滿足專案需求條件程度的指標。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：調達選定プロセスにおいて、サプライヤーが提供する製品やサービスが要求条件にどれだけ適合しているかを示す指標はどれか？</div>
+                        <div class="option">ア. 要求事項適合度</div>
+<div class="option">イ. 費用内訳</div>
+<div class="option">ウ. 提案評価基準</div>
+<div class="option">エ. 最終納期</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：要求事項適合度が高いほど、調達先が信頼できることを示しプロジェクトの成功に寄与する。</div>
+                    </td>
+                    <td>
+                        <div>問：在採購選定過程中，表示供應商提供的產品或服務符合需求條件程度的指標為何？</div>
+                        <div class="option">A. 要求事項符合度（Degree of Compliance with Requirements）</div>
+<div class="option">B. 費用明細</div>
+<div class="option">C. 提案評估標準</div>
+<div class="option">D. 最終交期</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：要求事項符合度越高，代表採購對象越值得信賴且有助於專案成功。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">費用内訳</div>
+                <div class="term-reading">ひよううちわけ</div>
+                <div class="term-zh">費用明細</div>
+                <div class="term-en">Cost Breakdown</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">全体の費用を構成する要素（材料費、人件費など）を詳細に分け、予算管理を容易にする明細。</div>
+                <div class="summary-zh">將整體費用構成要素（材料費、人事費等）詳細拆分，以利預算管理的明細。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：材料費、人件費、運搬費など、プロジェクト全体の費用を構成する要素を詳細に分けて示すものはどれか？</div>
+                        <div class="option">ア. 費用内訳</div>
+<div class="option">イ. 目標スケジュール</div>
+<div class="option">ウ. 契約条件</div>
+<div class="option">エ. 工程別スケジュール</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：費用内訳を作成することで、透明性が向上し予算管理やコスト削減の分析が行いやすくなる。</div>
+                    </td>
+                    <td>
+                        <div>問：將材料費、人事費與運費等構成專案整體費用的要素詳細拆分並列示的項目為何？</div>
+                        <div class="option">A. 費用明細（Cost Breakdown）</div>
+<div class="option">B. 目標時程</div>
+<div class="option">C. 契約條件</div>
+<div class="option">D. 分階段時程</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：製作費用明細可提升透明度，並便於進行預算管理與成本削減分析。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 7 -->
+    <div class="group-container">
+        <div class="group-header">專案時程與驗收管理 (工程別スケジュール・最終納期・受入システム・費用・受入時期・役割分担)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">工程別スケジュール</div>
+                <div class="term-reading">こうていべつすけじゅーる</div>
+                <div class="term-zh">分階段時程</div>
+                <div class="term-en">Process-Specific Schedule</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">調達や製造の各工程における作業の開始・終了時期を整理し、遅延リスクを減らすスケジュール。</div>
+                <div class="summary-zh">整理採購或製造各工程作業起訖時間以降低延遲風險的時程表。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：調達や製造プロセスにおいて、各工程の作業の開始日や終了日を整理し、遅延リスクを減らすための計画はどれか？</div>
+                        <div class="option">ア. 工程別スケジュール</div>
+<div class="option">イ. 目標スケジュール</div>
+<div class="option">ウ. 最終納期</div>
+<div class="option">エ. 受入時期</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：工程別スケジュールを活用することで、全体の進行状況を把握し計画通りにプロジェクトを進められる。</div>
+                    </td>
+                    <td>
+                        <div>問：在採購或製造過程中，整理各工程作業起訖日以降低延遲風險的計畫為何？</div>
+                        <div class="option">A. 分階段時程（Process-Specific Schedule）</div>
+<div class="option">B. 目標時程</div>
+<div class="option">C. 最終交期</div>
+<div class="option">D. 接收時期</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：善用分階段時程可掌握整體進度並使專案按計畫推進。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">最終納期</div>
+                <div class="term-reading">さいしゅうのうき</div>
+                <div class="term-zh">最終交期</div>
+                <div class="term-en">Final Delivery Date</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">契約において納品が完了しなければならない最終的な期限。</div>
+                <div class="summary-zh">契約中規定必須完成交貨的最終期限。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：契約や取引において、納品が完了しなければならない最終的な期限を指す用語はどれか？</div>
+                        <div class="option">ア. 最終納期</div>
+<div class="option">イ. 受入時期</div>
+<div class="option">ウ. 目標スケジュール</div>
+<div class="option">エ. 工程別スケジュール</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：最終納期を守るためには適切な在庫管理やサプライヤーとの調整が必要である。</div>
+                    </td>
+                    <td>
+                        <div>問：在契約或交易中，指必須完成交貨之最終期限的術語為何？</div>
+                        <div class="option">A. 最終交期（Final Delivery Date）</div>
+<div class="option">B. 接收時期</div>
+<div class="option">C. 目標時程</div>
+<div class="option">D. 分階段時程</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：為遵守最終交期，需要進行適當的庫存管理與供應商協調。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">受入システム</div>
+                <div class="term-reading">うけいれしすてむ</div>
+                <div class="term-zh">驗收系統</div>
+                <div class="term-en">Acceptance System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">納入された商品やサービスが契約内容に適合しているかを確認し記録するシステム。</div>
+                <div class="summary-zh">確認並記錄交付的商品或服務是否符合契約內容的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：納入された商品やサービスが契約内容に適合しているかを確認し、不良品などの対応や記録を行う仕組みはどれか？</div>
+                        <div class="option">ア. 受入システム</div>
+<div class="option">イ. 構成管理</div>
+<div class="option">ウ. ライセンス管理</div>
+<div class="option">エ. サービス要件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：受入システムは、調達の効率化やコスト管理に寄与し、トレーサビリティを確保するために重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：確認交付的商品或服務是否符合契約內容，並進行瑕疵品處理與紀錄的機制為何？</div>
+                        <div class="option">A. 驗收系統（Acceptance System）</div>
+<div class="option">B. 組態管理</div>
+<div class="option">C. 授權管理</div>
+<div class="option">D. 服務需求</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：驗收系統有助於採購效率化與成本管理，並確保可追溯性。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">費用</div>
+                <div class="term-reading">ひよう</div>
+                <div class="term-zh">費用 / 成本</div>
+                <div class="term-en">Cost</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">製品やサービスを生産・提供するために必要とされる金銭的な支出（原材料費や人件費など）。</div>
+                <div class="summary-zh">生產或提供產品與服務所需的金錢支出（如原材料費、人事費等）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：製品やサービスを生産・提供するために必要とされる原材料費や人件費などの金銭的支出を何と呼ぶか？</div>
+                        <div class="option">ア. 費用</div>
+<div class="option">イ. 利益</div>
+<div class="option">ウ. 資産</div>
+<div class="option">エ. 負債</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：費用を正確に把握することで、適正価格の設定や利益の最大化を図ることが可能となる。</div>
+                    </td>
+                    <td>
+                        <div>問：生產或提供產品與服務所需的原材料費、人事費等金錢支出稱為何？</div>
+                        <div class="option">A. 費用（Cost）</div>
+<div class="option">B. 利潤</div>
+<div class="option">C. 資產</div>
+<div class="option">D. 負債</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：準確掌握費用有助於設定適當價格並實現利潤最大化。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">受入時期</div>
+                <div class="term-reading">うけいれじき</div>
+                <div class="term-zh">接收時期 / 驗收時期</div>
+                <div class="term-en">Receiving Period</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">契約締結後、必要な物品やサービスが指定された日時に受け取られることを保証する期間。</div>
+                <div class="summary-zh">契約簽署後，保證在指定日期接收所需物品或服務的期間。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：契約締結後、必要な物品やサービスが指定された日時に受け取られることを保証するための期間を指すものはどれか？</div>
+                        <div class="option">ア. 受入時期</div>
+<div class="option">イ. 最終納期</div>
+<div class="option">ウ. 目標スケジュール</div>
+<div class="option">エ. 工程別スケジュール</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：受入時期の管理は、調達プロセスを円滑に進め、納品遅延などのトラブルを防ぐために役立つ。</div>
+                    </td>
+                    <td>
+                        <div>問：契約簽署後，保證在指定日期與時間接收所需物品或服務的期間為何？</div>
+                        <div class="option">A. 接收時期（Receiving Period）</div>
+<div class="option">B. 最終交期</div>
+<div class="option">C. 目標時程</div>
+<div class="option">D. 分階段時程</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：管理接收時期有助於順利推進採購流程並預防交貨延遲等問題。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">発注元とベンダー企業の役割分担</div>
+                <div class="term-reading">はっちゅうもととべんだーきぎょうのやくわりぶんたん</div>
+                <div class="term-zh">發注方與供應商的角色分工</div>
+                <div class="term-en">Roles and Responsibilities of Clients and Vendor Companies</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">発注元（ニーズ特定・予算管理）とベンダー企業（提供・品質維持）の責任を明確にする分担。</div>
+                <div class="summary-zh">明確劃分發注方（需求識別與預算管理）與供應商（提供與品質維持）責任的分工。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：調達プロセスにおいて、ニーズを特定する発注元と、条件に基づき製品を提供するベンダー企業の責任を明確にすることは何か？</div>
+                        <div class="option">ア. 発注元とベンダー企業の役割分担</div>
+<div class="option">イ. 契約条件</div>
+<div class="option">ウ. サービス要件</div>
+<div class="option">エ. 提案評価基準</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：役割分担によりお互いの期待を明確にし、スムーズな取引や迅速な問題対応が可能になる。</div>
+                    </td>
+                    <td>
+                        <div>問：在採購過程中，明確劃分負責識別需求的發注方與依據條件提供產品的供應商之責任的項目為何？</div>
+                        <div class="option">A. 發注方與供應商的角色分工（Roles and Responsibilities of Clients and Vendor Companies）</div>
+<div class="option">B. 契約條件</div>
+<div class="option">C. 服務需求</div>
+<div class="option">D. 提案評估標準</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：角色分工可明確彼此期望，實現順暢交易與迅速問題應對。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 8 -->
+    <div class="group-container">
+        <div class="group-header">資訊系統契約與智慧財產權 (ソフトウェア開発委託モデル契約・情報システム取引契約・知的財産権利用許諾契約)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ソフトウェア開発委託モデル契約</div>
+                <div class="term-reading">そふとうぇあかいはついたくもでるけいやく</div>
+                <div class="term-zh">軟體開發委託範本契約</div>
+                <div class="term-en">Software Development Outsourcing Model Contract</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ソフトウェアの外部開発におけるプロセス、納期、費用、品質要件の権利義務を規定する契約。</div>
+                <div class="summary-zh">規定軟體外部開發過程、交期、費用、品質要求等權利義務的契約。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業が自社のソフトウェア開発を外部業者に依頼する際に結び、納期や品質要件などの権利義務を規定する契約はどれか？</div>
+                        <div class="option">ア. ソフトウェア開発委託モデル契約</div>
+<div class="option">イ. 情報システム・モデル取引・契約書</div>
+<div class="option">ウ. 知的財産権利用許諾契約</div>
+<div class="option">エ. 秘密保持契約</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ソフトウェア開発委託モデル契約を結ぶことで、リスクを軽減しトラブル時に対応しやすくなる。</div>
+                    </td>
+                    <td>
+                        <div>問：企業將自身軟體開發委託給外部業者時簽訂，並規定交期與品質要求等權利義務的契約為何？</div>
+                        <div class="option">A. 軟體開發委託範本契約（Software Development Outsourcing Model Contract）</div>
+<div class="option">B. 資訊系統範本交易契約書</div>
+<div class="option">C. 智慧財產權授權契約</div>
+<div class="option">D. 保密協議</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：簽訂軟體開發委託範本契約有助於降低風險並在發生糾紛時便於應對。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システム・モデル取引・契約書</div>
+                <div class="term-reading">じょうほうしすてむ・もでるとりひき・けいやくしょ</div>
+                <div class="term-zh">資訊系統範本交易契約書</div>
+                <div class="term-en">Information System Model Transaction Contract</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムの導入や運用に関する取引条件や範囲、責任を明示する契約のひな型。</div>
+                <div class="summary-zh">明示資訊系統導入或維運相關交易條件、範圍與責任的契約範本。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システムの導入や運用に関する取引条件、範囲、責任を明示し、企業間の取引を円滑に進めるための契約のひな型はどれか？</div>
+                        <div class="option">ア. 情報システム・モデル取引・契約書</div>
+<div class="option">イ. ソフトウェア開発委託モデル契約</div>
+<div class="option">ウ. 知的財産権利用許諾契約</div>
+<div class="option">エ. サービスレベル契約</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：モデル契約書を利用することで、リスク管理や誤解を避け、トラブル発生時の目安となる。</div>
+                    </td>
+                    <td>
+                        <div>問：明示資訊系統導入或維運相關交易條件、範圍與責任，以促進企業間交易順暢的契約範本為何？</div>
+                        <div class="option">A. 資訊系統範本交易契約書（Information System Model Transaction Contract）</div>
+<div class="option">B. 軟體開發委託範本契約</div>
+<div class="option">C. 智慧財産權授權契約</div>
+<div class="option">D. 服務水準協議</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：使用契約範本有助於風險管理、避免誤解，並作為發生糾紛時的參考基準。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">知的財産権利用許諾契約</div>
+                <div class="term-reading">ちてきざいさんけんりようきょだくけいやく</div>
+                <div class="term-zh">智慧財產權授權契約</div>
+                <div class="term-en">Intellectual Property License Agreement</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特許や著作権などの知的財産権を持つ者が、他者に対して特定の条件下で利用を許可する契約。</div>
+                <div class="summary-zh">擁有專利或著作權等智慧財產權者，允許他人於特定條件下使用的契約。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：特許権や著作権などの権利を持つ者が、許可した相手に対して特定の条件下で権利を使用することを認める契約はどれか？</div>
+                        <div class="option">ア. 知的財産権利用許諾契約</div>
+<div class="option">イ. ソフトウェア開発委託モデル契約</div>
+<div class="option">ウ. 情報システム・モデル取引・契約書</div>
+<div class="option">エ. 業務委託契約</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：正確な条件（利用方法や範囲、報酬など）を明記することで、後のトラブルを避けることができる。</div>
+                    </td>
+                    <td>
+                        <div>問：擁有專利權或著作權等權利者，允許獲許可之對象在特定條件下使用權利的契約為何？</div>
+                        <div class="option">A. 智慧財產權授權契約（Intellectual Property License Agreement）</div>
+<div class="option">B. 軟體開發委託範本契約</div>
+<div class="option">C. 資訊系統範本交易契約書</div>
+<div class="option">D. 業務委託契約</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：詳細載明使用方法、範圍與報酬等正確條件，有助於避免後續糾紛。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

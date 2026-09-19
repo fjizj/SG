@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データベース方式 - 2語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>データベース方式 - 2語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">資料庫基礎與管理系統</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">関係データベース</div>
+                <div class="term-reading">かんけいでーたべーす</div>
+                <div class="term-zh">關聯式資料庫</div>
+                <div class="term-en">Relational Database</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データを表形式（行と列）で管理し、SQLを使用してデータの操作や検索を効率的に行うデータベース。</div>
+                <div class="summary-zh">以表格（行與列）形式管理資料，並使用SQL來高效進行資料操作與檢索的資料庫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データを、行と列からなる2次元の表形式で管理し、複数の表を関連付けて扱うことができるデータベースモデルはどれか。
+<br>
+                        <div class="option">ア. 階層型データベース</div>
+                        <div class="option">イ. ネットワーク型データベース</div>
+                        <div class="option">ウ. 関係データベース</div>
+                        <div class="option">エ. オブジェクト指向データベース</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：関係データベース（リレーショナルデータベース）は、データを「行」と「列」からなる表（テーブル）の形式で管理し、共通のキーを用いて複数の表を関連付けることができるデータベースです。</div></td>
+                    <td>                        將資料以由行和列組成的二維表格形式進行管理，並且可以將多個表格關聯起來處理的資料庫模型是哪一個？
+<br>
+                        <div class="option">A. 階層式資料庫</div>
+                        <div class="option">B. 網路式資料庫</div>
+                        <div class="option">C. 關聯式資料庫</div>
+                        <div class="option">D. 物件導向資料庫</div>
+                        <div class="answer">答案：C</div>
+<br>
+                        <div class="analysis">解析：關聯式資料庫（Relational Database）是將資料以「行」與「列」構成的表格形式來管理，並能透過共同的鍵值將多個表格相互關聯的資料庫。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データベース管理システム</div>
+                <div class="term-reading">でーたべーすかんりしすてむ</div>
+                <div class="term-zh">資料庫管理系統</div>
+                <div class="term-en">Database Management System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データの保全機能（バックアップ・復元）や機密保護機能（アクセス制御）を備え、データを効率的に管理するソフトウェア。</div>
+                <div class="summary-zh">具備資料保全功能（備份與還原）及機密保護功能（存取控制），用於高效管理資料的軟體系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データベース管理システム(DBMS)が提供する機能のうち、システム障害が発生した際に、バックアップデータなどを用いてデータベースを障害発生前の状態に復旧させる機能はどれか。
+<br>
+                        <div class="option">ア. 機密保護機能</div>
+                        <div class="option">イ. 保全機能（リカバリ機能）</div>
+                        <div class="option">ウ. 排他制御機能</div>
+                        <div class="option">エ. アクセス制御機能</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：保全機能（リカバリ機能）は、データの消失や破損に備えて定期的なバックアップを行い、障害時にデータを復元可能にするDBMSの重要な機能です。</div></td>
+                    <td>                        在資料庫管理系統(DBMS)提供的功能中，當系統發生故障時，利用備份資料等將資料庫復原到故障發生前狀態的功能是哪一個？
+<br>
+                        <div class="option">A. 機密保護功能</div>
+                        <div class="option">B. 保全功能（復原功能）</div>
+                        <div class="option">C. 互斥控制功能</div>
+                        <div class="option">D. 存取控制功能</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">解析：保全功能（復原功能）是DBMS的重要功能之一，為了防範資料遺失或損壞而進行定期備份，使系統在發生故障時能夠還原資料。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

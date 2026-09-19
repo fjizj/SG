@@ -1,0 +1,1065 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通信プロトコル - 17語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>通信プロトコル - 17語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+  <!-- Group 1: IP位址與子網管理 -->
+  <div class="group-container">
+    <div class="group-header">【IP位址與子網管理】</div>
+
+    <!-- IPアドレス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IPアドレス</div>
+        <div class="term-reading">あいぴーあどれす</div>
+        <div class="term-zh">IP位址</div>
+        <div class="term-en">IP Address</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">インターネットやイントラネット上でデバイスを識別するための一意の番号であり、通信相手を特定する位置情報の役割を果たす。</div>
+        <div class="summary-zh">在網際網路或企業內部網路中用於唯一識別裝置的專屬編號，扮演著明確標示通訊對象位置的角色。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IPアドレスに関する記述として、最も適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ネットワークインターフェースカード（NIC）固有の物理アドレスである。</div>
+              <div class="option">イ. インターネットなどのネットワークに接続された機器を識別するための論理アドレスである。</div>
+              <div class="option">ウ. Webブラウザが閲覧対象のWebページを指定するためのURLのことである。</div>
+              <div class="option">エ. 電子メールを送受信する際に個人を識別するためのアカウント名である。</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IPアドレスはネットワークに接続された端末を識別・特定するための論理的なアドレスです。物理アドレスはMACアドレスを指します。</span></td>
+            <td>              <strong>題目：</strong>關於 IP 位址的敘述，下列何者最恰當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 網路介面卡（NIC）固有的實體位址。</div>
+              <div class="option">B. 用於識別連接至網際網路等網路中之設備的邏輯位址。</div>
+              <div class="option">C. Web 瀏覽器指定欲瀏覽網頁時所使用的 URL。</div>
+              <div class="option">D. 電子郵件收發時用於識別個人的帳號名稱。</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IP 位址是用於識別與定位網路上各項設備的邏輯位址。實體位址則是指 MAC 位址。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- サブネットアドレス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">サブネットアドレス</div>
+        <div class="term-reading">さぶねっとあどれす</div>
+        <div class="term-zh">子網路位址</div>
+        <div class="term-en">Subnet Address</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">大規模なネットワークを部門別や機能別に細分化し、効率的に管理・運用するためのネットワーク識別アドレスである。</div>
+        <div class="summary-zh">將大型網路按部門或功能進行細分，以便更高效進行管理與通訊控制的子網路識別位址。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>大規模ネットワークをサブネット化する主な目的として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. MACアドレスの重複を完全に防止するため</div>
+              <div class="option">イ. ネットワークを細分化し、管理の効率化とトラフィックの制限を図るため</div>
+              <div class="option">ウ. 通信速度を物理的に増加させるため</div>
+              <div class="option">エ. 暗号化通信を強制的に適用するため</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>サブネット化によりネットワークを小さな単位に分割することで、ブロードキャストドメインの制限やセキュリティ、管理の効率化が可能になります。</span></td>
+            <td>              <strong>題目：</strong>將大型網路進行劃分子網（Subnetting）的主要目的為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 完全防止 MAC 位址發生重複</div>
+              <div class="option">B. 將網路進行細分，以提升管理效率並控制廣播流量</div>
+              <div class="option">C. 物理性地大幅增加傳輸速度</div>
+              <div class="option">D. 強制套用加密通訊協定</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>劃分子網可將大網路切分成小單位，達到限制廣播範疇、提升網路效能與便於維護管理的目的。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- サブネットマスク -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">サブネットマスク</div>
+        <div class="term-reading">さぶねっとますく</div>
+        <div class="term-zh">子網路遮罩</div>
+        <div class="term-en">Subnet Mask</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">IPアドレスのどの部分がネットワーク部で、どの部分がホスト部かを示すための識別ビット列である。</div>
+        <div class="summary-zh">用於區分 IP 位址中何者代表網路位址部分、何者代表主機位址位元的識別位元列。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IPv4アドレス「192.168.10.15」でサブネットマスク「255.255.255.0」を使用する場合、ネットワークアドレスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 192.168.10.0</div>
+              <div class="option">イ. 192.168.10.15</div>
+              <div class="option">ウ. 192.168.10.255</div>
+              <div class="option">エ. 255.255.255.0</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>サブネットマスク「255.255.255.0」は上位24ビットがネットワーク部を示します。ホスト部を全ビット0にした「192.168.10.0」がネットワークアドレスとなります。</span></td>
+            <td>              <strong>題目：</strong>使用 IPv4 位址「192.168.10.15」與子網路遮罩「255.255.255.0」時，網路位址為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 192.168.10.0</div>
+              <div class="option">B. 192.168.10.15</div>
+              <div class="option">C. 192.168.10.255</div>
+              <div class="option">D. 255.255.255.0</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>子網路遮罩「255.255.255.0」表示前 24 位元為網路部分，將主機部分位元全設為 0 後所得之「192.168.10.0」即為網路位址。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ルーティング -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ルーティング</div>
+        <div class="term-reading">るーてぃんぐ</div>
+        <div class="term-zh">路由選擇</div>
+        <div class="term-en">Routing</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">パケットが送信元から目的地まで最適かつ正確に到達するための経路を決定し、転送するプロセスである。</div>
+        <div class="summary-zh">在網路通訊中，選擇並判定讓封包從來源端有效率地傳送至目的地最佳路徑的控制機制。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>OSI参照モデルのネットワーク層で動作し、IPアドレスをもとに最適な経路を選択してパケットを転送する機器はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. リピーター</div>
+              <div class="option">イ. スイッチングハブ</div>
+              <div class="option">ウ. ルーター</div>
+              <div class="option">エ. ゲートウェイ</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ルーターはルーティングテーブルを参照し、宛先IPアドレスに基づいてパケットの最適な経路を決定（ルーティング）します。</span></td>
+            <td>              <strong>題目：</strong>運作於 OSI 參考模型的網路層，根據 IP 位址選擇最佳路徑並轉發封包的設備為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 中繼器 (Repeater)</div>
+              <div class="option">B. 交換式集線器 (Switching Hub)</div>
+              <div class="option">C. 路由器 (Router)</div>
+              <div class="option">D. 閘道器 (Gateway)</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>路由器參照路由表，根據目的 IP 位址執行路徑選擇（Routing）並進行封包轉發。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 2: IP通訊協定版本 -->
+  <div class="group-container">
+    <div class="group-header">【IP通訊協定版本】</div>
+
+    <!-- IPv4 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IPv4</div>
+        <div class="term-reading">あいぴーぶいふぉー</div>
+        <div class="term-zh">IPv4 通訊協定</div>
+        <div class="term-en">Internet Protocol version 4</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">32ビットのアドレス空間（約42億個）を持ち、ドット区切りの10進数で表現される従来標準のIPプロトコル。</div>
+        <div class="summary-zh">採用 32 位元（約 42 億個）位址空間，並以點分十進位格式標示的網際網路基本協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IPv4アドレスのビット長として、正しいものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 16ビット</div>
+              <div class="option">イ. 32ビット</div>
+              <div class="option">ウ. 64ビット</div>
+              <div class="option">エ. 128ビット</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IPv4アドレスは32ビットの数値で構成され、8ビットごとにドットで区切って10進数表示します。</span></td>
+            <td>              <strong>題目：</strong>下列何者為 IPv4 位址的位元長度？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 16 位元</div>
+              <div class="option">B. 32 位元</div>
+              <div class="option">C. 64 位元</div>
+              <div class="option">D. 128 位元</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IPv4 位址由 32 位元的數值組成，每 8 位元一組以點分隔並轉為十進位標示。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IPv6 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IPv6</div>
+        <div class="term-reading">あいぴーぶいしっくす</div>
+        <div class="term-zh">IPv6 通訊協定</div>
+        <div class="term-en">Internet Protocol version 6</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">IPv4のアドレス枯渇に対応するため設計された、128ビットの膨大なアドレス空間を持つ次世代プロトコル。</div>
+        <div class="summary-zh">為解決 IPv4 位址枯竭問題而設計，擁有 128 位元龐大位址空間的新一代網際網路協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IPv6に関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. アドレス空間は32ビットで構成される。</div>
+              <div class="option">イ. アドレス表記には16進数が使用され、128ビットの長さを持つ。</div>
+              <div class="option">ウ. IPv4とアドレス長が同じであり互換性がある。</div>
+              <div class="option">エ. ドットで区切られた4つの10進数で表記される。</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IPv6は128ビットの長さを持ち、16ビットごとにコロンで区切られた16進数で表記されます。</span></td>
+            <td>              <strong>題目：</strong>關於 IPv6 的敘述，下列何者正確？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 位址空間由 32 位元組成。</div>
+              <div class="option">B. 位址採用十六進位標示，長度為 128 位元。</div>
+              <div class="option">C. 與 IPv4 長度相同且具備完全相容性。</div>
+              <div class="option">D. 由以點分隔的 4 個十進位數字組成。</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IPv6 具備 128 位元的長度，每 16 位元以冒號分隔並以十六進位格式表示。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 3: 區域網路與硬體定址 -->
+  <div class="group-container">
+    <div class="group-header">【區域網路與硬體定址】</div>
+
+    <!-- MACアドレス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">MACアドレス</div>
+        <div class="term-reading">まっくあどれす</div>
+        <div class="term-zh">MAC 位址 / 實體位址</div>
+        <div class="term-en">Media Access Control Address</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ネットワーク機器のNICに製造時に割り当てられる48ビットの物理アドレスで、ローカル通信で機器を識別する。</div>
+        <div class="summary-zh">出廠時刻錄於網路卡（NIC）上的 48 位元實體位址，用於區域網路內部的裝置識別。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>MACアドレスの説明として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ネットワーク層で通信相手を特定するために使用される論理アドレス</div>
+              <div class="option">イ. ネットワーク機器の製造時にNICへ書き込まれる48ビットの物理アドレス</div>
+              <div class="option">ウ. DHCPサーバによって接続時に動的に割り当てられるアドレス</div>
+              <div class="option">エ. Webサーバ上のリソースを一意に指定するための識別子</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>MACアドレスはデータリンク層で使用される48ビットの物理アドレスで、前半24ビットはベンダーコード、後半24ビットは固有番号です。</span></td>
+            <td>              <strong>題目：</strong>下列關於 MAC 位址的說明，何者正確？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 於網路層用於指定通訊對象之邏輯位址</div>
+              <div class="option">B. 於網路設備製造時燒錄至 NIC 的 48 位元實體位址</div>
+              <div class="option">C. 連線時由 DHCP 伺服器動態分配的位址</div>
+              <div class="option">D. 用於唯一指定 Web 伺服器資源的識別碼</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>MAC 位址是用於資料鏈結層的 48 位元實體位址，前 24 位元為廠商代碼，後 24 位元為設備獨有編號。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ethernet -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Ethernet</div>
+        <div class="term-reading">いーさねっと</div>
+        <div class="term-zh">乙太網路</div>
+        <div class="term-en">Ethernet</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">有線LANで最も広く利用されている通信標準であり、データを「フレーム」という単位で送受信する技術。</div>
+        <div class="summary-zh">最廣泛使用的有線區域網路（LAN）標準通訊規格，以「訊框（Frame）」為基本單位進行資料傳輸。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>有線LAN規格であるイーサネット（Ethernet）で伝統的に使われている媒体アクセス制御方式はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. CSMA/CD</div>
+              <div class="option">イ. CSMA/CA</div>
+              <div class="option">ウ. トークンパッシング</div>
+              <div class="option">エ. TDMA</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>有線LANのイーサネットでは衝突検出を行うCSMA/CD方式が用いられます。無線LANでは衝突回避のCSMA/CA方式が使われます。</span></td>
+            <td>              <strong>題目：</strong>有線 LAN 規格乙太網路（Ethernet）傳統採用的通訊介面存取控制方式為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. CSMA/CD</div>
+              <div class="option">B. CSMA/CA</div>
+              <div class="option">C. Token Passing (記號傳遞)</div>
+              <div class="option">D. TDMA</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>有線乙太網路採用碰撞偵測機制 CSMA/CD；而無線 LAN 則採用碰撞避免機制 CSMA/CA。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 4: 傳輸層與網路自動化服務 -->
+  <div class="group-container">
+    <div class="group-header">【傳輸層與網路自動化服務】</div>
+
+    <!-- ポート番号 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ポート番号</div>
+        <div class="term-reading">ぽーとばんごう</div>
+        <div class="term-zh">連接埠號碼</div>
+        <div class="term-en">Port Number</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">同一端末上で動作する複数のアプリケーションや通信サービスを識別するための0〜65535の識別番号である。</div>
+        <div class="summary-zh">用於在同一台裝置上區分不同應用程式或服務通訊管道的 0 至 65535 號通訊埠編號。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>TCP/IP通信において、トランスポート層で特定のアプリケーションプログラムを識別するために使用される番号はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. IPアドレス</div>
+              <div class="option">イ. MACアドレス</div>
+              <div class="option">ウ. ポート番号</div>
+              <div class="option">エ. ホストID</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IPアドレスが「通信相手のコンピュータ」を特定するのに対し、ポート番号は「そのコンピュータ内のどのアプリケーションか」を特定します。</span></td>
+            <td>              <strong>題目：</strong>在 TCP/IP 通訊中，傳輸層用於識別特定應用程式的編號為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. IP 位址</div>
+              <div class="option">B. MAC 位址</div>
+              <div class="option">C. 連接埠號碼 (Port Number)</div>
+              <div class="option">D. 主機 ID</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IP 位址用於指定「網路上的電腦」，而連接埠號碼則是用於指定「該電腦內部的特定應用程式」。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DHCP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">DHCP</div>
+        <div class="term-reading">でぃーえいちしーぴー</div>
+        <div class="term-zh">動態主機設定協定</div>
+        <div class="term-en">Dynamic Host Configuration Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ネットワークに接続された端末へIPアドレスなどの設定情報を自動的に割り当てるプロトコルである。</div>
+        <div class="summary-zh">自動為連接至網路的用戶端裝置發放 IP 位址及相關網路組態設定的協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>PCをLANに接続した際、IPアドレスやサブネットマスク、デフォルトゲートウェイの情報を自動取得するために利用されるプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. DNS</div>
+              <div class="option">イ. DHCP</div>
+              <div class="option">ウ. ARP</div>
+              <div class="option">エ. NTP</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>DHCP（Dynamic Host Configuration Protocol）は、クライアントに対してIPアドレス等のネットワーク設定を自動的に配布するプロトコルです。</span></td>
+            <td>              <strong>題目：</strong>將電腦接入 LAN 時，用於自動取得 IP 位址、子網路遮罩與預設閘道等設定資訊的協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. DNS</div>
+              <div class="option">B. DHCP</div>
+              <div class="option">C. ARP</div>
+              <div class="option">D. NTP</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>DHCP（動態主機設定協定）負責向用戶端自動分發 IP 位址等網路設定參數。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 5: 應用層通訊協定 -->
+  <div class="group-container">
+    <div class="group-header">【應用層通訊協定】</div>
+
+    <!-- HTTP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">HTTP</div>
+        <div class="term-reading">えいちてぃてぃぴー</div>
+        <div class="term-zh">超文字傳輸協定</div>
+        <div class="term-en">Hypertext Transfer Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">WebブラウザとWebサーバ間で、HTMLテキストや画像などのデータを送受信するためのリクエスト・レスポンス型プロトコル。</div>
+        <div class="summary-zh">用於 Web 瀏覽器與伺服器之間傳送 HTML 與圖片等 Web 內容，採請求-回應機制的通訊協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>WebブラウザとWebサーバの間で、Webページデータの送受信に用いられるプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. FTP</div>
+              <div class="option">イ. HTTP</div>
+              <div class="option">ウ. SMTP</div>
+              <div class="option">エ. POP3</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>HTTP（Hypertext Transfer Protocol）はWebページ（HTML等）を取得するためのプロトコルです。</span></td>
+            <td>              <strong>題目：</strong>在 Web 瀏覽器與 Web 伺服器之間傳送網頁資料時所採用的協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. FTP</div>
+              <div class="option">B. HTTP</div>
+              <div class="option">C. SMTP</div>
+              <div class="option">D. POP3</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTTP（超文字傳輸協定）專門用於擷取與傳送包含 HTML 內容之 Web 頁面資料。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SMTP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">SMTP</div>
+        <div class="term-reading">えすえむてぃぴー</div>
+        <div class="term-zh">簡單郵件傳輸協定</div>
+        <div class="term-en">Simple Mail Transfer Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">電子メールをクライアントから送信したり、メールサーバ同士で転送したりする際に使用されるプロトコル。</div>
+        <div class="summary-zh">用於將電子郵件從用戶端發送，或在各郵件伺服器之間進行轉送傳輸的標準協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>電子メールシステムにおいて、メールの「送信」および「サーバ間転送」に使われるプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. POP3</div>
+              <div class="option">イ. IMAP</div>
+              <div class="option">ウ. SMTP</div>
+              <div class="option">エ. DHCP</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>メール送信・転送にはSMTPが使われます。POP3やIMAPはメール受信用のプロトコルです。</span></td>
+            <td>              <strong>題目：</strong>於電子郵件系統中，專用於郵件「發送」與「伺服器間轉發」的通訊協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. POP3</div>
+              <div class="option">B. IMAP</div>
+              <div class="option">C. SMTP</div>
+              <div class="option">D. DHCP</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>郵件的發送與轉發均使用 SMTP 協定；POP3 與 IMAP 則為收取郵件所使用的協定。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- POP3 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">POP3</div>
+        <div class="term-reading">ぽっぷすりー</div>
+        <div class="term-zh">郵局協定第三版</div>
+        <div class="term-en">Post Office Protocol version 3</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">メールサーバからメールを端末にダウンロードし、ローカル環境で保存・管理・閲覧するための受信プロトコル。</div>
+        <div class="summary-zh">將電子郵件從伺服器下載至本機裝置儲存，以便進行離線閱讀與管理的收件通訊協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>電子メール受信プロトコルであるPOP3の特徴として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. メールを端末にダウンロードしてローカルで管理する。</div>
+              <div class="option">イ. メールを常にサーバ上で管理し、複数端末での未読状態を同期する。</div>
+              <div class="option">ウ. Webブラウザ上でメールの送受信を行う。</div>
+              <div class="option">エ. メール送信時の暗号化を行う。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>POP3はメールをローカル端末にダウンロードして管理します。サーバ側で一括管理して複数端末同期を行うのはIMAPです。</span></td>
+            <td>              <strong>題目：</strong>關於電子郵件收件協定 POP3 的特性，下列何者正確？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 將郵件下載至本機裝置並於本機端進行管理。</div>
+              <div class="option">B. 郵件常駐於伺服器管理，並同步多台裝置間的未讀狀態。</div>
+              <div class="option">C. 直接於 Web 瀏覽器上執行郵件的收發。</div>
+              <div class="option">D. 負責郵件發送時的內容加密。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>POP3 會將郵件下載至本機端進行管理。若要在伺服器端一併託管並實現跨裝置同步則為 IMAP。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IMAP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IMAP</div>
+        <div class="term-reading">あいまっぷ</div>
+        <div class="term-zh">網際網路訊息存取協定</div>
+        <div class="term-en">Internet Message Access Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">メールをサーバ上で管理し、複数デバイス間で未読・既読・フォルダ状態をリアルタイム同期できる受信プロトコル。</div>
+        <div class="summary-zh">將電子郵件保留於伺服器上管理，可實現跨多台裝置即時同步已讀/未讀狀態與資料夾的收件協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>POP3と比較したときのIMAPの主な利点として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. メールをサーバに移動させず端末内にのみ保存できる点</div>
+              <div class="option">イ. 複数の端末からアクセスしても、サーバ上で未読・既読やフォルダ状態が同期される点</div>
+              <div class="option">ウ. 送信用のサーバを別途用意する必要がない点</div>
+              <div class="option">エ. インターネットに接続せずに新しいメールを受信できる点</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IMAPはメール本体やフォルダ構成をサーバ上で管理するため、PCやスマートフォンなど異なる端末からアクセスしても同じ状態を保てます。</span></td>
+            <td>              <strong>題目：</strong>與 POP3 相比，IMAP 通訊協定的主要優勢為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 不將郵件移至伺服器，僅儲存於單一裝置內部</div>
+              <div class="option">B. 由多台裝置登入存取時，伺服器上的未讀/已讀與資料夾狀態皆能保持同步</div>
+              <div class="option">C. 不需要另外準備發信用伺服器</div>
+              <div class="option">D. 無須連線至網際網路即可接收新郵件</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IMAP 直接於伺服器託管郵件主體與資料夾結構，因此無論使用電腦或手機登入，均可同步最新的資料狀態。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FTP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">FTP</div>
+        <div class="term-reading">えふてぃーぴー</div>
+        <div class="term-zh">檔案傳輸協定</div>
+        <div class="term-en">File Transfer Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ネットワークを介してクライアントとサーバ間でファイルをアップロード・ダウンロードするための専用プロトコル。</div>
+        <div class="summary-zh">用於在用戶端與伺服器之間透過網路進行檔案上傳與下載傳送的專用協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>ネットワークを介してクライアントとサーバ間でファイルを転送するために用いられるアプリケーション層プロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. FTP</div>
+              <div class="option">イ. DHCP</div>
+              <div class="option">ウ. NTP</div>
+              <div class="option">エ. ARP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>FTP（File Transfer Protocol）はファイル転送専用のプロトコルです。セキュリティを高めた方式としてSFTPやFTPSが存在します。</span></td>
+            <td>              <strong>題目：</strong>用於在用戶端與伺服器之間透過網路傳輸檔案的應用層通訊協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. FTP</div>
+              <div class="option">B. DHCP</div>
+              <div class="option">C. NTP</div>
+              <div class="option">D. ARP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>FTP（檔案傳輸協定）為專用於檔案傳輸的通訊協定。升級安全性的變體包括 SFTP 與 FTPS。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 6: 無線通訊與 Wi-Fi 規格 -->
+  <div class="group-container">
+    <div class="group-header">【無線通訊與 Wi-Fi 規格】</div>
+
+    <!-- IEEE802.11a/b/g/n/ac/ax -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IEEE802.11a/b/g/n/ac/ax</div>
+        <div class="term-reading">あいとりぷるいーはちまるにてんいちいち・えー/びー/じー/えぬ/えーしー/えーえっくす</div>
+        <div class="term-zh">IEEE 802.11 無線網路標準群</div>
+        <div class="term-en">IEEE 802.11 Standards</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">米国IEEEが策定した無線LAN技術の標準規格群であり、周波数帯域や最高伝送速度が世代ごとに規定されている。</div>
+        <div class="summary-zh">由 IEEE 制定之無線區域網路（Wi-Fi）標準規格群，詳細規定了各世代之通訊頻段與傳輸速率。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>無線LAN規格であるIEEE 802.11nに関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 2.4GHz帯と5GHz帯の両方の周波数帯に対応している。</div>
+              <div class="option">イ. 5GHz帯のみを使用し、2.4GHz帯には対応していない。</div>
+              <div class="option">ウ. 赤外線を用いて近距離通信を行う。</div>
+              <div class="option">エ. 最大伝送速度は54Mbpsにとどまる。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>802.11n（Wi-Fi 4）は2.4GHz帯と5GHz帯の両方に対応し、MIMO（Multiple-Input Multiple-Output）技術の採用により高速化を実現しました。</span></td>
+            <td>              <strong>題目：</strong>關於無線 LAN 規格 IEEE 802.11n 的敘述，下列何者正確？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 支援 2.4GHz 與 5GHz 兩種通訊頻段。</div>
+              <div class="option">B. 僅支援 5GHz 頻段，無法使用 2.4GHz 頻段。</div>
+              <div class="option">C. 採用紅外線執行短距離資料傳輸。</div>
+              <div class="option">D. 最大傳輸速率僅限於 54Mbps。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>802.11n (Wi-Fi 4) 可同時支援 2.4GHz 與 5GHz 雙頻段，並引進 MIMO 天線技術大幅提升傳輸速度。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Wi-Fi4/5/6/6E -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Wi-Fi4/5/6/6E</div>
+        <div class="term-reading">わいふぁい4/5/6/6E</div>
+        <div class="term-zh">Wi-Fi 世代標示規格</div>
+        <div class="term-en">Wi-Fi 4/5/6/6E</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">IEEE 802.11規格の世代を分かりやすく表記したブランド名称であり、Wi-Fi 6Eでは新たに6GHz帯も利用可能。</div>
+        <div class="summary-zh">為方便使用者識別將 802.11 規格簡化之世代品牌名稱，其中 6E 更導入了全新 6GHz 通訊頻段。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Wi-Fi 6（IEEE 802.11ax）の主な特徴として、最も適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 従来規格より最高速度が向上しただけでなく、OFDMA等により多数の端末が同時接続する環境でも通信効率が高い。</div>
+              <div class="option">イ. 2.4GHz帯のみを使用する低速低消費電力専用規格である。</div>
+              <div class="option">ウ. 通信距離が10メートルに限定される近距離規格である。</div>
+              <div class="option">エ. 有線LANのケーブル接続を代替するための規格である。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Wi-Fi 6（802.11ax）は通信速度の向上（最大9.6Gbps）に加え、OFDMA技術により高密度環境（多数機器接続）での混雑緩和が図られています。</span></td>
+            <td>              <strong>題目：</strong>關於 Wi-Fi 6 (IEEE 802.11ax) 的主要特徵，下列何者最恰當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 不僅最高速率大幅提升，透過 OFDMA 等技術，在大量裝置同時連線的環境中亦具高傳輸效率。</div>
+              <div class="option">B. 僅使用 2.4GHz 頻段，為低速低耗電專用之規格。</div>
+              <div class="option">C. 通訊距離嚴格限制於 10 公尺以內之近距離規格。</div>
+              <div class="option">D. 為替代有線 LAN 實體線路連接而設計之規格。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Wi-Fi 6 (802.11ax) 除了提升傳輸速率（最高 9.6Gbps）外，更利用 OFDMA 技術有效改善高密度多設備連結下的網路壅塞。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

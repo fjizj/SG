@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ファシリティマネジメント - 4語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>ファシリティマネジメント - 4語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">設施與設備管理</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ファシリティマネジメント</div>
+                <div class="term-reading">ふぁしりてぃまねじめんと</div>
+                <div class="term-zh">設施管理</div>
+                <div class="term-en">Facility Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業や組織の資産や施設を効率的に運用・管理し、業務の効率化やコスト削減、生産性向上を実現する手法。</div>
+                <div class="summary-zh">有效營運與管理企業或組織的資產與設施，以實現業務效率化、成本削減及生產力提升的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ファシリティマネジメントの説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 組織の建物や施設を効率的に運用・管理し、コスト削減や生産性向上を図ること。</div>
+                        <div class="option">イ. コンピュータウイルスの感染を防ぎ、ネットワークの安全性を保つこと。</div>
+                        <div class="option">ウ. 製品の製造工程において不良品の発生を防ぐための是正処置を行うこと。</div>
+                        <div class="option">エ. 利用者からの問い合わせを受け付け、解決を支援する窓口を運営すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ファシリティマネジメントは、企業や組織の資産や施設を効率的に運用・管理し、業務の効率化やコスト削減、生産性向上の実現を目的とします。</div></td>
+                    <td>                        <strong>【問】</strong>關於設施管理（Facility Management）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 有效營運與管理組織的建築物與設施，以期達成成本削減與生產力提升。</div>
+                        <div class="option">B. 預防電腦病毒感染並維持網路安全性。</div>
+                        <div class="option">C. 在產品製造過程中採取矯正措施以預防不良品產生。</div>
+                        <div class="option">D. 營運受理使用者查詢並支援解決的窗口。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】設施管理是指有效營運與管理企業或組織的資產與設施，藉此實現業務效率化、成本削減以及提升員工生產力。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">施設管理</div>
+                <div class="term-reading">しせつかんり</div>
+                <div class="term-zh">設施管理</div>
+                <div class="term-en">Facility Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">建物や施設の運営、保守、管理を総合的に行い、利用効率の向上や長寿命化を図るプロセス。</div>
+                <div class="summary-zh">綜合進行建築物與設施的營運、維護與管理，以提升利用效率並延長使用壽命的流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「施設管理」の主な目的や内容に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 建物や施設の運営・保守を総合的に行い、利用効率の向上や長寿命化を図ること。</div>
+                        <div class="option">イ. ソフトウェアのプログラムコードを解析し、バグを修正すること。</div>
+                        <div class="option">ウ. 従業員の給与計算や社会保険の手続きを行うこと。</div>
+                        <div class="option">エ. 企業の財務状況を監査し、決算報告書を作成すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】施設管理は建物や施設の運営、保守、管理を総合的に行い、利用効率を向上させ、建物の価値を高め長寿命化を図ります。</div></td>
+                    <td>                        <strong>【問】</strong>關於「設施管理」的主要目的與內容敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 綜合進行建築物與設施的營運與維護，以提升利用效率並延長使用壽命。</div>
+                        <div class="option">B. 解析軟體程式碼並修正錯誤。</div>
+                        <div class="option">C. 進行員工薪資計算與社會保險手續。</div>
+                        <div class="option">D. 審核企業財務狀況並製作結算報告書。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】設施管理是綜合進行建築物與設施的營運、維護與管理，旨在提升利用效率、提高建築物價值並延長其使用壽命。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">設備管理</div>
+                <div class="term-reading">せつびかんり</div>
+                <div class="term-zh">設備管理</div>
+                <div class="term-en">Facility Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">建物内の電気や空調などの設備を安全に運営・維持するため、定期点検やメンテナンスを行う技術。</div>
+                <div class="summary-zh">為了安全營運與維持建築物內的電力與空調等設備，進行定期點檢與維護的管理技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「設備管理」の具体例として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 空調設備のフィルター清掃や定期点検を行い、故障を防いで快適な環境を維持すること。</div>
+                        <div class="option">イ. 顧客からの問い合わせにメールや電話で対応するサービス窓口を設けること。</div>
+                        <div class="option">ウ. 企業の売上推移や顧客の購買傾向を分析してマーケティングに活かすこと。</div>
+                        <div class="option">エ. インターネット回線の通信速度を測定し、プロバイダを変更すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】設備管理は建物内の電気や空調設備などを効果的に運営・維持するため、定期点検やメンテナンスを行い故障や劣化を防ぎます。</div></td>
+                    <td>                        <strong>【問】</strong>關於「設備管理」的具體範例，下列何者最為適當？
+<br>
+                        <div class="option">A. 進行空調設備的濾網清潔與定期點檢，以預防故障並維持舒適環境。</div>
+                        <div class="option">B. 設立以郵件或電話回覆客戶查詢的服務窗口。</div>
+                        <div class="option">C. 分析企業銷售走勢與客戶購買傾向以應用於行銷。</div>
+                        <div class="option">D. 測量網際網路連線速度並更換ISP業者。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】設備管理是為了有效營運與維持建築物內的電力、空調等設備，透過定期點檢與維護來預防故障與劣化，維持設施機能。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <div class="group-container">
+        <div class="group-header">電力備援設備</div>
+        
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">UPS</div>
+                <div class="term-reading">ゆーぴーえす</div>
+                <div class="term-zh">不斷電系統</div>
+                <div class="term-en">Uninterruptible Power Supply</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">電力供給が途切れた際に一時的に電力を提供し、コンピュータやサーバのデータ消失や業務中断を防ぐ装置。</div>
+                <div class="summary-zh">在電力供應中斷時提供臨時電力，防止電腦或伺服器資料遺失或業務中斷的裝置。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「UPS（無停電電源装置）」の役割として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 停電などの際に一時的に電力を供給し、サーバのデータ消失やシステム停止を防ぐこと。</div>
+                        <div class="option">イ. インターネット上の不正アクセスを検知し、ファイアウォールでブロックすること。</div>
+                        <div class="option">ウ. ハードディスクのデータを定期的に磁気テープや別媒体にバックアップすること。</div>
+                        <div class="option">エ. プリンタの印刷ジョブを管理し、用紙切れやインク切れを通知すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】UPSは無停電電源装置であり、停電や電力の質が変化した際に一時的に電力を提供し、サーバ等の重要機器が正常に動作し続け、データの消失や業務の中断を防ぎます。</div></td>
+                    <td>                        <strong>【問】</strong>關於「UPS（不斷電系統）」的角色，下列何者最為適當？
+<br>
+                        <div class="option">A. 在停電等情況下暫時提供電力，防止伺服器資料遺失或系統停止。</div>
+                        <div class="option">B. 偵檢網際網路上的非法存取並以防火牆進行封鎖。</div>
+                        <div class="option">C. 定期將硬碟資料備份至磁帶或其他媒體。</div>
+                        <div class="option">D. 管理列印工作並通知缺紙或缺墨。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】UPS是不斷電系統，當停電或電力品質驟變時能暫時提供電力，使伺服器等重要設備持續正常運作，防止資料遺失或業務中斷。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

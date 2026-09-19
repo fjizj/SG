@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>標準化関連 - 6語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>標準化関連 - 6語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+  <!-- 第一組：標準規格與制定機構 -->
+  <div class="group-container">
+    <div class="group-header">標準規格與制定機構</div>
+
+    <!-- JIS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">JIS（日本産業規格）</div>
+        <div class="term-reading">じす</div>
+        <div class="term-zh">日本產業規格</div>
+        <div class="term-en">Japanese Industrial Standards</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">日本の産業製品や技術の品質、安全性、互換性を確保するために定められた国家規格。<br>電子機器、建材、自動車などの幅広い分野で品質保証と取引の円滑化に貢献している。</div>
+        <div class="summary-zh">為確保日本產業製品與技術之品質、安全性及相容性所制定之國家標準。<br>廣泛應用於電子機器、建材與汽車等領域，有助於品質保證與交易順暢化。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 日本における産業製品の品質改善や生産効率の向上を目的として、産業標準化法に基づいて制定される国家規格はどれか。
+<br>
+              <div class="option">ア. JIS</div>
+              <div class="option">イ. ISO</div>
+              <div class="option">ウ. IEEE</div>
+              <div class="option">エ. W3C</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】産業標準化法に基づいて制定される日本の国家規格はJIS（日本産業規格）です。</div></td>
+            <td>              Q: 以改善日本產業製品品質及提升生產效率為目的，依據《產業標準化法》制定之國家標準為何？
+<br>
+              <div class="option">A. JIS</div>
+              <div class="option">B. ISO</div>
+              <div class="option">C. IEEE</div>
+              <div class="option">D. W3C</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】依據日本《產業標準化法》制定之日本國家級產業標準即為 JIS（日本產業規格）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IS（国際規格）</div>
+        <div class="term-reading">あいえす</div>
+        <div class="term-zh">國際規格</div>
+        <div class="term-en">International Standards</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">国際的に合意されたルールや基準であり、世界的な取引や技術連携を円滑にする基盤。<br>製品の互換性や安全性を確保し、国際市場における企業の競争力強化に寄与する。</div>
+        <div class="summary-zh">經國際共識達成之規範與基準，為全球貿易與技術合作之順暢運作提供基礎。<br>確保產品之相容性與安全性，並有助於提升企業於國際市場之競爭力。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 国際的な取引や技術協力をスムーズにし、製品の安全性を世界規模で保証するために制定される共通の規格を何と呼ぶか。
+<br>
+              <div class="option">ア. 国際規格（IS）</div>
+              <div class="option">イ. 社内規格</div>
+              <div class="option">ウ. ローカル標準</div>
+              <div class="option">エ. 独自規格</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】国を越えたスムーズな取引や互換性の確保を目的として合意・制定される標準ルールを「国際規格（International Standards）」と呼びます。</div></td>
+            <td>              Q: 為促進跨國貿易與技術合作順暢，並於全球範圍內確保產品安全性所制定之共通標準稱為？
+<br>
+              <div class="option">A. 國際規格 (IS)</div>
+              <div class="option">B. 社內規格</div>
+              <div class="option">C. 區域標準</div>
+              <div class="option">D. 自有專利規格</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】跨越國界在全球範圍內達成共識並通用的技術與產品標準即稱為「國際規格（International Standards）」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ISO -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ISO（国際標準化機構）</div>
+        <div class="term-reading">あいえすおー</div>
+        <div class="term-zh">國際標準化機構</div>
+        <div class="term-en">International Organization for Standardization</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">電気・通信分野を除く国際規格の策定を行う非政府機関。<br>品質管理のISO 9001や環境管理のISO 14001など、世界的標準を制定している。</div>
+        <div class="summary-zh">負責制定除電氣與電信領域外之各項國際標準的非政府組織。<br>制定包含品質管理（ISO 9001）與環境管理（ISO 14001）等全球性通用標準。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: ISO規格のうち、組織の「品質マネジメントシステム」に関する要求事項を定めた規格はどれか。
+<br>
+              <div class="option">ア. ISO 9001</div>
+              <div class="option">イ. ISO 14001</div>
+              <div class="option">ウ. ISO 27001</div>
+              <div class="option">エ. ISO 20000</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ISO 9001は品質マネジメントシステム、ISO 14001は環境マネジメントシステム、ISO 27001は情報セキュリティマネジメントシステムの国際規格です。</div></td>
+            <td>              Q: 在 ISO 國際標準中，規範組織「品質管理系統（QMS）」要求事項之標準為何？
+<br>
+              <div class="option">A. ISO 9001</div>
+              <div class="option">B. ISO 14001</div>
+              <div class="option">C. ISO 27001</div>
+              <div class="option">D. ISO 20000</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】ISO 9001 為品質管理標準；ISO 14001 為環境管理標準；ISO 27001 為資訊安全管理（ISMS）標準。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IEEE -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IEEE（米国電気電子学会）</div>
+        <div class="term-reading">あいとりぷるいー</div>
+        <div class="term-zh">美國電氣電子工程師學會</div>
+        <div class="term-en">Institute of Electrical and Electronics Engineers</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">電気・電子・情報工学分野における世界最大の技術専門家組織および標準化機関。<br>Wi-Fi（IEEE 802.11）や有線LAN（IEEE 802.3）などの標準規格を制定している。</div>
+        <div class="summary-zh">電氣、電子與資訊工程領域全球最大之專業技術組織與標準制定機構。<br>主導制定包含 Wi-Fi（IEEE 802.11）及乙太網路（IEEE 802.3）等通訊標準。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 無線LANの標準規格である「IEEE 802.11」シリーズを策定している規格制定団体はどれか。
+<br>
+              <div class="option">ア. IEEE</div>
+              <div class="option">イ. ISO</div>
+              <div class="option">ウ. IETF</div>
+              <div class="option">エ. ITU-T</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】IEEE（米国電気電子学会）は、LAN（IEEE 802.3）や無線LAN（IEEE 802.11）など通信・LAN関連の標準規格を策定しています。</div></td>
+            <td>              Q: 制定無線區域網路（Wi-Fi）標準規範「IEEE 802.11」系列之標準制定組織為何？
+<br>
+              <div class="option">A. IEEE</div>
+              <div class="option">B. ISO</div>
+              <div class="option">C. IETF</div>
+              <div class="option">D. ITU-T</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】IEEE（美國電氣電子工程師學會）主導了 IEEE 802 系列區域網路與無線網路傳輸標準之制定。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第二組：標準化類型與模式 -->
+  <div class="group-container">
+    <div class="group-header">標準化類型與模式</div>
+
+    <!-- デジュレスタンダード -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デジュレスタンダード</div>
+        <div class="term-reading">でじゅれすたんだーど</div>
+        <div class="term-zh">正式標準 / 法定標準</div>
+        <div class="term-en">De Jure Standard</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">標準化機関や公的機関によって正当な手続きを経て制定された公的規格。<br>ISOやJISなどが該当し、合意形成と公正なプロセスの下で定められる。</div>
+        <div class="summary-zh">經由官方機構或標準化組織按正式程序審議頒布之法定公的標準。<br>包含 ISO 及 JIS 等，係於公開共識與公正程序下所制定之規範。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 公的な標準化機関において、定められた手続きに従って制定される「公的規格」を指す用語はどれか。
+<br>
+              <div class="option">ア. デジュレスタンダード</div>
+              <div class="option">イ. デファクトスタンダード</div>
+              <div class="option">ウ. フォーラム標準</div>
+              <div class="option">エ. オープン標準</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ISOやJISのように、公的な標準化機関が厳格な手続きに基づいて定めた標準を「デジュレスタンダード（De Jure Standard）」と言います。</div></td>
+            <td>              Q: 由公立標準化機構依據法定嚴謹程序審議並頒布之「公的標準/官方標準」稱為？
+<br>
+              <div class="option">A. 正式標準 (De Jure Standard)</div>
+              <div class="option">B. 事實標準 (De Facto Standard)</div>
+              <div class="option">C. 論壇標準 (Forum Standard)</div>
+              <div class="option">D. 開放標準 (Open Standard)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「De Jure」源自拉丁文「法律上」，指由國際或國家授權之官方機構經由正式合議程序制定之標準（如 ISO、JIS）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- デファクトスタンダード -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デファクトスタンダード</div>
+        <div class="term-reading">でふぁくとすたんだーど</div>
+        <div class="term-zh">事實標準 / 實質標準</div>
+        <div class="term-en">De Facto Standard</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">公的な機関による制定ではなく、市場競争や普及の結果として事実上の標準となった規格。<br>市場シェアの拡大や利便性の高さによって多くのユーザーに支持されることで形成される。</div>
+        <div class="summary-zh">非經由公立機構制定，而是透過市場自由競爭與普及結果所形成之事實上標準。<br>藉由廣大之市場占有率及使用者支持，成為該領域實質採用之規範。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 標準化機関による制定ではなく、市場での自由な競争や広く普及した結果として事実上の標準となったものを何と呼ぶか。
+<br>
+              <div class="option">ア. デファクトスタンダード</div>
+              <div class="option">イ. デジュレスタンダード</div>
+              <div class="option">ウ. ISO標準</div>
+              <div class="option">エ. JIS規格</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】市場競争を通じて多くのユーザーを獲得し、事実上の業界標準となった仕様や製品を「デファクトスタンダード（De Facto Standard）」と言います。</div></td>
+            <td>              Q: 未經由官方標準化機構制定，而是透過市場自由競爭及廣泛普及結果成為實質標準者稱為？
+<br>
+              <div class="option">A. 事實標準 (De Facto Standard)</div>
+              <div class="option">B. 正式標準 (De Jure Standard)</div>
+              <div class="option">C. ISO 標準</div>
+              <div class="option">D. JIS 規格</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「De Facto」意為「事實上」，指未經官方立法或審議，純粹因市場高占有率與普及率而形成的實質產業標準（如 Windows 作業系統或特定影音格式）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

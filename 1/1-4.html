@@ -1,0 +1,2953 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情報セキュリティ対策 - 75語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>情報セキュリティ対策 - 75語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startCategoryQuizFromButtonWithFile('情報セキュリティ対策',30)">
+			開始綜合測驗
+		</button>
+	</div>
+
+    <!-- Group 1 -->
+    <div class="group-container">
+        <div class="group-header">組織與人員安全管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">組織における内部不正防止ガイドライン</div>
+                <div class="term-reading">そしきにおけるないぶふせいぼうしがいどらいん</div>
+                <div class="term-zh">組織內部不正行為預防指南（IPA制定）</div>
+                <div class="term-en">Internal Fraud Prevention Guidelines by IPA</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報処理推進機構（IPA）が策定した、企業や団体が内部の不正行為を防ぐために必要な指針である。権限管理や監査体制の強化、従業員教育などを通じて不正リスクを軽減することを目的とする。</div>
+                <div class="summary-zh">由日本情報處理推進機構（IPA）制定的指南，旨在幫助企業與團體預防內部人員違規。透過權限管理、強化審計體制及員工教育等手段，降低組織內部的違規風險。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        IPA「組織における内部不正防止ガイドライン」において、内部不正を防止するための基本原則に含まれるものはどれか。
+<br>
+                        <div class="option">ア. システム対策のみで人的対策は不要とする</div>
+                        <div class="option">イ. 経営層主導での対策推進と不正を行いにくい環境の構築</div>
+                        <div class="option">ウ. 内部不正のログ監視はプライバシー侵害となるため実施しない</div>
+                        <div class="option">エ. 権限は特定の担当者に長期にわたり集中させる</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：内部不正防止には経営層のリーダーシップのもと、人的・組織的・技術的対策を統合し「不正を行いにくい環境」を作ることが推奨されています。</div></td>
+                    <td>                        在日本IPA發布的《組織內部不正行為預防指南》中，下列何者屬於預防內部違規的基本原則？
+<br>
+                        <div class="option">A. 僅需系統對策，不需要人員對策</div>
+                        <div class="option">B. 由管理層主導推進對策並打造不易發生違規的環境</div>
+                        <div class="option">C. 內部違規的日誌監控會侵犯隱私，因此不予實施</div>
+                        <div class="option">D. 將權限長期集中於特定負責人身上</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：預防內部違規需要管理層發揮領導力，整合人員、組織與技術對策，建立「難以實施違規」的組織環境。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報セキュリティ啓発</div>
+                <div class="term-reading">じょうほうせきゅりてぃけいはつ</div>
+                <div class="term-zh">資訊安全宣導與意識提升</div>
+                <div class="term-en">Information Security Awareness</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織や個人が情報セキュリティに対する認識を高めるための活動である。講習会やポスター掲示等を通じて適切な知識を提供し、日常的に脅威を防ぐ行動を促す。</div>
+                <div class="summary-zh">提升組織與個人對資訊安全認識的各項活動。透過講座、海報等提供正確知識，促使員工在日常生活中採取防範脅威的行動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        情報セキュリティ啓発活動の主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 従業員のセキュリティ意識を高め、無意識の不適切行動によるリスクを低減する</div>
+                        <div class="option">イ. ファイアウォール等の技術的セキュリティ製品を全自動化する</div>
+                        <div class="option">ウ. セキュリティ事故が発生した際、責任をすべて従業員個人の負担とする</div>
+                        <div class="option">エ. 法的義務を果たすための形式的なポスター掲示のみを行う</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：啓発活動は、従業員のセキュリティ意識向上と知識定着を図り、人間のうっかりミスや無知によるインシデントを防ぐことを目的としています。</div></td>
+                    <td>                        關於資訊安全宣導活動的主要目的，下列何者最適當？
+<br>
+                        <div class="option">A. 提高員工的安全意識，降低因無意間的不當行為帶來的風險</div>
+                        <div class="option">B. 將防火牆等技術性安全產品完全自動化</div>
+                        <div class="option">C. 當發生安全事故時，將所有責任歸咎於員工個人</div>
+                        <div class="option">D. 僅進行形式上的海報張貼以滿足法律義務</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：宣導活動旨在強化員工的安全意識與知識，進而防止因人為疏忽或缺乏認識所引發的安全事件。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報セキュリティ訓練</div>
+                <div class="term-reading">じょうほうせきゅりてぃくんれん</div>
+                <div class="term-zh">資訊安全演練與培訓</div>
+                <div class="term-en">Information Security Training</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従業員に対して知識や対処法を教育・実戦訓練するプロセスである。標的型攻撃メール訓練やレッドチーム演習を通じて、実際に脅威に遭遇した際の対応力を高める。</div>
+                <div class="summary-zh">針對員工進行資安知識與應對方法的教育及實戰演練過程。透過社交工程郵件演練與紅隊演練等，提高面對真實脅威時的應變能力。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        従業員に対して疑似的なスパムメールを送信し、開かれなかった割合や報告率を測定する訓練はどれか。
+<br>
+                        <div class="option">ア. パスワードクラッキング訓練</div>
+                        <div class="option">イ. 標的型攻撃メール対応訓練</div>
+                        <div class="option">ウ. 物理セキュリティ侵入訓練</div>
+                        <div class="option">エ. デジタルフォレンジック演習</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：標的型攻撃メール対応訓練は、擬似的な不審メールを送信して開封防止や報告フローの確認を行う代表的な情報セキュリティ訓練です。</div></td>
+                    <td>                        向員工發送模擬垃圾郵件，並統計未點擊率與通報率的演練屬於下列何者？
+<br>
+                        <div class="option">A. 密碼破解演練</div>
+                        <div class="option">B. 社交工程（目標型攻擊）郵件應對演練</div>
+                        <div class="option">C. 實體安全入侵演練</div>
+                        <div class="option">D. 數位鑑識演練</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：社交工程郵件演練是透過發送模擬可疑郵件，來驗證員工防範意識與通報流程的典型訓練項目。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">セキュリティクリアランス</div>
+                <div class="term-reading">せきゅりてぃくりあらんす</div>
+                <div class="term-zh">安全審查制度／安全通關許可</div>
+                <div class="term-en">Security Clearance</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の機密情報や安全管理区域にアクセスするために必要な適性評価・許可資格である。調査や審査を経て、国家機密や高度な機密情報を扱う信用性があると認定された個人に与えられる。</div>
+                <div class="summary-zh">存取特定機密資訊或安全區域所需的資質審查與許可資格。經過背景調查與評估，授權給具備處理國家機密或高階機密可信度的個人。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        セキュリティクリアランスに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. すべての従業員に自動的に付与される基本的なID管理制度</div>
+                        <div class="option">イ. 政府や特定企業が指定する機密情報にアクセスできる適性を評価・認定する制度</div>
+                        <div class="option">ウ. ファイアウォールで通信許可を設定する技術的フィルタリングの名称</div>
+                        <div class="option">エ. 外部ベンダーと取り交わす一般的な秘密保持契約（NDA）の別称</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：セキュリティクリアランスは、個人の背景調査等を行い機密情報を扱う適性・信用性があるかを認定する制度です。</div></td>
+                    <td>                        關於安全審查制度（Security Clearance）的描述，下列何者最適當？
+<br>
+                        <div class="option">A. 自動發放給所有員工的基本身分管理制度</div>
+                        <div class="option">B. 評估並認定個人是否具備存取政府或指定企業機密資訊資質的制度</div>
+                        <div class="option">C. 在防火牆設定通訊允許的技術過濾名稱</div>
+                        <div class="option">D. 與外部廠商簽署的普通保密協定（NDA）別稱</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：安全審查制度透過背景調查等方式，認定個人是否具備處理關鍵機密資訊的可信度與資質。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">秘密保持契約・誓約書</div>
+                <div class="term-reading">ひみつほじけいやく・せいやくしょ</div>
+                <div class="term-zh">保密條約與誓約書（NDA）</div>
+                <div class="term-en">Non-Disclosure Agreement</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務上知り得た機密情報を第三者に漏洩しないことを約束する法的な契約または誓約文書である。情報流出や不正流用を防ぎ、企業のビジネス活動の安全性を確保する。</div>
+                <div class="summary-zh">承諾不將業務上獲悉的機密資訊洩漏給第三方的法律契約或誓約文書。防止資訊外洩與非法挪用，保障企業商業活動的安全。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        企業間での新技術共同開発時に、相互の機密情報を保護するために締結する契約はどれか。
+<br>
+                        <div class="option">ア. SLA（Service Level Agreement）</div>
+                        <div class="option">イ. NDA（Non-Disclosure Agreement）</div>
+                        <div class="option">ウ. RFP（Request for Proposal）</div>
+                        <div class="option">エ. BCP（Business Continuity Plan）</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：NDA（秘密保持契約）は、開示された機密情報を許可なく第三者に開示・漏洩・目的外利用しないことを定める契約です。</div></td>
+                    <td>                        企業間進行新技術共同開發時，為保護雙方機密資訊所簽署的合約是下列何者？
+<br>
+                        <div class="option">A. SLA（服務標準協議）</div>
+                        <div class="option">B. NDA（保密協定）</div>
+                        <div class="option">C. RFP（建議書徵求文件）</div>
+                        <div class="option">D. BCP（業務連續性計畫）</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：NDA（保密協定）規定不得未經許可向第三方披露、洩漏或挪用開示的機密資訊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="group-container">
+        <div class="group-header">存取控制與身分驗證</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">認証情報の割当て及び管理</div>
+                <div class="term-reading">にんしょうじょうほうのわりあておよびかんり</div>
+                <div class="term-zh">身份驗證資訊之分配與管理</div>
+                <div class="term-en">Assignment and Management of Authentication Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">IDやパスワード、生体情報等の認証情報を各利用者に安全に割り当て、厳格に管理するプロセスである。不正アクセスを防ぐために適切な更新や安全な保管を徹底する。</div>
+                <div class="summary-zh">將帳號、密碼、生物識別等身份驗證資訊安全地分配給各使用者並進行嚴格管理的過程。貫徹定期更新與安全保管以防範非法存取。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        認証情報の管理において、安全性を高めるための適切な運用はどれか。
+<br>
+                        <div class="option">ア. 初期パスワードを全員共通で固定し長期間変更させない</div>
+                        <div class="option">イ. 初期パスワード変更を初回ログイン時に義務付け、使い回しを防ぐ</div>
+                        <div class="option">ウ. 認証情報を記載したメモをディスプレイに貼付しておく</div>
+                        <div class="option">エ. 複数の従業員で単一の管理者アカウントを常時共有する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：初回ログイン時のパスワード変更要求やアカウント共有の禁止などは、認証情報管理の重要な基本原則です。</div></td>
+                    <td>                        在身份驗證資訊的管理中，下列何者是提高安全性的適當作法？
+<br>
+                        <div class="option">A. 所有人的初始密碼統一且長期不作修改</div>
+                        <div class="option">B. 強制要求於首次登入時修改初始密碼，並防止重複使用</div>
+                        <div class="option">C. 將寫有驗證資訊的便利貼貼在螢幕上</div>
+                        <div class="option">D. 多名員工長期共用單一管理員帳號</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：首次登入強制變更密碼及禁止帳號共用是身分驗證資訊管理的關鍵原則。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">アクセス制御</div>
+                <div class="term-reading">あくせすせいぎょ</div>
+                <div class="term-zh">存取控制</div>
+                <div class="term-en">Access Control</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報資源へのアクセスを制限し、許可されたユーザーのみに権限を与えるセキュリティ対策。RBACやABACなどのモデルを用い、必要最小限のアクセス権を設定する。</div>
+                <div class="summary-zh">限制對資訊資源的存取，僅授予獲授權使用者特定權限的安全對策。採用RBAC（角色控制）或ABAC（屬性控制）等模型設定最小權限。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        アクセス制御における「最小権限の原則」の説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. すべての利用者にすべてのファイルへのフルアクセス権を与える</div>
+                        <div class="option">イ. 業務遂行に必要な最小限の権限のみを利用者に付与する</div>
+                        <div class="option">ウ. システム管理者の権限を限界まで制限し操作不能にする</div>
+                        <div class="option">エ. 退職者のアクセス権限を半永久的に維持する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：最小権限の原則とは、誤操作や不正利用の影響を最小限に抑えるため、ユーザーに業務上真に必要な最低限の権限のみを与える考え方です。</div></td>
+                    <td>                        關於存取控制中的「最小權限原則」，下列描述何者適當？
+<br>
+                        <div class="option">A. 給予所有使用者對所有檔案的完全存取權</div>
+                        <div class="option">B. 僅賦予使用者執行業務所必需的最小限度權限</div>
+                        <div class="option">C. 將系統管理員的權限限制到極致使其無法操作</div>
+                        <div class="option">D. 半永久地保留離職員工的存取權限</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：最小權限原則是指僅賦予使用者完成工作所必需的最低權限，以儘可能降低誤操作與非法挪用的風險。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">特権的アクセス権の管理</div>
+                <div class="term-reading">とっけんてきあくせすけんのかんり</div>
+                <div class="term-zh">特權存取管理（PAM）</div>
+                <div class="term-en">Privileged Access Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">管理者アカウント等の高権限アクセスを制御・監視・ログ記録する仕組みである。特権の乱用やなりすましによる過大なリスクを低減するために厳重に管理する。</div>
+                <div class="summary-zh">管控、監控並記錄系統管理員等高權限存取行為的機制。進行嚴格管理，以降低因特權濫用或冒用所引發的巨大風險。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        特権的アクセス権の管理（PAM）における適切な運用はどれか。
+<br>
+                        <div class="option">ア. 管理者権限（root/Administrator）を全作業員に配布する</div>
+                        <div class="option">イ. 特権の利用申請・承認プロセスを設け、操作ログを記録・監査する</div>
+                        <div class="option">ウ. 特権アカウントのパスワードは変更せず公開しておく</div>
+                        <div class="option">エ. 特権アカウントで行われた操作のログ採取を免除する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：特権アクセスはシステム全体に重大な影響を与えるため、事前申請と承認、および厳密な作業ログの監査が必要です。</div></td>
+                    <td>                        在特權存取管理（PAM）中，下列何者屬於適當的操作？
+<br>
+                        <div class="option">A. 將管理員權限（root/Administrator）發放給所有工作人員</div>
+                        <div class="option">B. 建立特權使用申請與審核流程，並記錄與審計操作日誌</div>
+                        <div class="option">C. 特權帳號的密碼保持不變並予以公開</div>
+                        <div class="option">D. 免除對特權帳號所執行操作的日誌收集</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：由於特權存取會影響整個系統，必須建立事前申請審核機制，並嚴格記錄與審計操作日誌。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">アクセス権の設定</div>
+                <div class="term-reading">あくせすけんのせってい</div>
+                <div class="term-zh">存取權限設定</div>
+                <div class="term-en">Access Rights Configuration</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">フォルダやデータに対して読取・書込・実行等の権限を個別に定義する設定。異動や退職に合わせて定期的に見直しを行い、不適切なアクセスを防ぐ。</div>
+                <div class="summary-zh">針對資料夾或資料個別定義讀取、寫入、執行等權限的設定。配合人員調動或離職定期審查，以防止不當存取。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        アクセス権の設定運用において、セキュリティ上最も重要な対策はどれか。
+<br>
+                        <div class="option">ア. 人事異動や退職の発生時に、遅滞なく不要となったアクセス権を抹消する</div>
+                        <div class="option">イ. グループフォルダの権限はすべて「全員フルアクセス」に固定する</div>
+                        <div class="option">ウ. 退職した従業員のアクセス権はそのまま放置する</div>
+                        <div class="option">エ. アクセス権の設定変更履歴を残さないようにする</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：退職者や異動者の不要な権限が残存していると、不正アクセスの温床となるため、タイムリーな権限削除が必要です。</div></td>
+                    <td>                        在存取權限設定的運作中，下列何者是安全上最重要的對策？
+<br>
+                        <div class="option">A. 當發生人事調動或離職時，及時廢除不再需要的存取權限</div>
+                        <div class="option">B. 將群組資料夾的權限統一設定為「所有人完全存取」</div>
+                        <div class="option">C. 對於離職員工的存取權限保持原狀不予理會</div>
+                        <div class="option">D. 盡量不保留存取權限變更的履歷紀錄</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：若保留離職或調職人員過時的權限，容易成為非法存取的破口，因此必須及時撤銷不必要的權限。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">許可リスト</div>
+                <div class="term-reading">きょかりすと</div>
+                <div class="term-zh">允許清單（白名單）</div>
+                <div class="term-en">Allow List</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">事前許可された信頼できるユーザー、IPアドレス、アプリのみを許可し、それ以外を拒否する方式。未知の攻撃に対しても強固な防御を実現できる。</div>
+                <div class="summary-zh">僅允許事前核可且可信的使用者、IP位址或應用程式，其餘一律拒絕的機制。對未知攻擊亦能發揮強大的防護作用。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        許可リスト（ホワイトリスト）方式の特徴として適切なものはどれか。
+<br>
+                        <div class="option">ア. 危険と判明したアプリのみを順次登録して遮断する</div>
+                        <div class="option">イ. 実行を許可するアプリのみを定義し、リストにない未認識のアプリはすべて遮断する</div>
+                        <div class="option">ウ. パターンファイルの更新が遅れると未知のマルウェアを誤許可してしまう</div>
+                        <div class="option">エ. 登録の手間が一切かからないゼロ運用方式である</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：許可リスト方式は「明示的に許可したもの以外はすべて拒否」するため、未知の悪意あるプログラムもブロック可能です。</div></td>
+                    <td>                        關於允許清單（白名單）方式的特徵，下列何者適當？
+<br>
+                        <div class="option">A. 僅將確認有危險的應用程式依序登記並予以阻擋</div>
+                        <div class="option">B. 僅定義允許執行的應用程式，未在清單中的未知名程式一律阻擋</div>
+                        <div class="option">C. 若特徵碼更新延遲，容易誤放行未知的惡意軟體</div>
+                        <div class="option">D. 完全不需花費登記成本的零維護方式</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：允許清單採用「預設拒絕，僅允許明示對象」的哲學，因此能夠有效阻擋未知的惡意程式。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">拒否リスト</div>
+                <div class="term-reading">きょひりすと</div>
+                <div class="term-zh">拒絕清單（黑名單）</div>
+                <div class="term-en">Block List</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">悪意のある攻撃者、IPアドレス、有害サイト等を指定してアクセスを拒否する方式。既知の脅威を迅速にブロックできるが、未知の脅威への対応には限界がある。</div>
+                <div class="summary-zh">指定惡意攻擊者、IP位址、有害網站等並阻擋其存取的機制。能迅速封鎖已知脅威，但防範未知脅威有其局限。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        拒否リスト（ブラックリスト）方式の限界に関する説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 登録された不正アクセス攻撃しか遮断できず、新種の攻撃に対応しにくい</div>
+                        <div class="option">イ. 正規のユーザーの利便性を著しく低下させる</div>
+                        <div class="option">ウ. リストの登録件数が少なくなるとシステムが動作しなくなる</div>
+                        <div class="option">エ. 既知の脅威を遮断することが一切できない</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：拒否リスト方式は「悪と判明したものを遮断する」ため、リスト未登録の新種・変種の攻撃（ゼロデイ攻撃）を防ぎにくい欠点があります。</div></td>
+                    <td>                        關於拒絕清單（黑名單）方式的局限性，下列說明何者適當？
+<br>
+                        <div class="option">A. 只能封鎖已登記的非法存取，難以應對新型態攻擊</div>
+                        <div class="option">B. 會顯著降低合法使用者的便利性</div>
+                        <div class="option">C. 當清單登記數量過少時系統將無法運作</div>
+                        <div class="option">D. 完全無法封鎖已知的威脅</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：拒絕清單採取「排除已知惡意對象」的做法，故面對尚未登錄於清單的新型或零日（Zero-day）攻擊時防禦力較弱。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3 -->
+    <div class="group-container">
+        <div class="group-header">威脅防禦與資訊保護</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クラッキング対策</div>
+                <div class="term-reading">くらっきんぐたいさく</div>
+                <div class="term-zh">惡意破解防護對策</div>
+                <div class="term-en">Cracking Protection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの脆弱性を悪用した無断アクセスや改ざん、データの破壊を防ぐための総合的施策。強固な認証、脆弱性修復、IDS/IPS導入などが含まれる。</div>
+                <div class="summary-zh">防止利用系統漏洞進行非法入侵、竄改或破壞資料的綜合對策。包含強效驗證、修補漏洞與導入IDS/IPS等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        クラッキング被害を防ぐための対策として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. パスワードを単純な文字列にし、定期更新を不要とする</div>
+                        <div class="option">イ. システムの脆弱性情報を把握し、セキュリティパッチを迅速に適用する</div>
+                        <div class="option">ウ. 通信ログの取得を停止し、サーバの負荷を削減する</div>
+                        <div class="option">エ. すべての管理アクセスを認証なしで許可する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：クラッキングの多くは既知の脆弱性を狙うため、セキュリティパッチの適切な適用と脆弱性管理が極めて有効です。</div></td>
+                    <td>                        關於防範惡意破解（Cracking）損害的對策，下列何者最適當？
+<br>
+                        <div class="option">A. 將密碼設為簡單字串且不進行定期更新</div>
+                        <div class="option">B. 掌握系統漏洞資訊並迅速套用安全修補程式（Patch）</div>
+                        <div class="option">C. 停止收集通訊日誌以減輕伺服器負載</div>
+                        <div class="option">D. 允許所有管理存取皆不需身分驗證</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：惡意破解多半利用既有漏洞攻擊，因此及時更新安全修補程式與落實漏洞管理是極為有效的防衛手段。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">不正アクセス対策</div>
+                <div class="term-reading">ふせいあくせすたいさく</div>
+                <div class="term-zh">未授權存取（非法入侵）防禦對策</div>
+                <div class="term-en">Unauthorized Access Prevention</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">非許可ユーザーによるシステム侵入を防ぐ技術・運用の総称。多要素認証やファイアウォール、アクセス権限の厳格化等により不正侵入を多層的に防ぐ。</div>
+                <div class="summary-zh">防止未授權使用者入侵系統的技術與營運措施總稱。透過多重因素驗證、防火牆及嚴格的權限控管進行多層次防禦。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不正アクセス行為の防止を強化するために、認証システムへ導入すべき対策はどれか。
+<br>
+                        <div class="option">ア. 多要素認証（MFA）の導入</div>
+                        <div class="option">イ. IPアドレス固定化の全廃</div>
+                        <div class="option">ウ. 平文でのパスワード通信</div>
+                        <div class="option">エ. アカウントロックアウト機能の無効化</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：多要素認証（MFA）を導入することで、パスワード漏洩時にも第三者による不正ログインを強力に防御できます。</div></td>
+                    <td>                        為強化防止未授權存取行為，身分驗證系統應導入下列哪項對策？
+<br>
+                        <div class="option">A. 導入多重因素驗證（MFA）</div>
+                        <div class="option">B. 全面廢除固定IP位址設定</div>
+                        <div class="option">C. 使用明文進行密碼傳輸</div>
+                        <div class="option">D. 停用帳號鎖定機制</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：導入多重因素驗證（MFA）能在密碼不幸外洩時，依然有效阻止第三方的非法登入行為。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報漏えい対策</div>
+                <div class="term-reading">じょうほうろうえいたいさく</div>
+                <div class="term-zh">資訊洩漏防護對策</div>
+                <div class="term-en">Information Leakage Countermeasures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">機密データが組織外へ流出することを防ぐ包括的な取り組み。暗号化、DLP、アクセス制御、記憶媒体の持ち出し制限等を組み合わせて統合的に運用する。</div>
+                <div class="summary-zh">防止機密資料外流至組織外部的綜合防護措施。結合資料加密、DLP、存取控制及攜帶式媒體管制等進行整合運作。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ノートPCの盗難・紛失による情報漏えいリスクを直接低減する技術的対策はどれか。
+<br>
+                        <div class="option">ア. ディスク全体の暗号化（BitLocker等）</div>
+                        <div class="option">イ. Webサーバのポート開放</div>
+                        <div class="option">ウ. クラウドバックアップの停止</div>
+                        <div class="option">エ. パターンマッチングエンジンの更新</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ハードディスク全体を暗号化しておけば、万一端末が盗難に遭った場合でも第三者によるデータの復元・解読を防ぐことができます。</div></td>
+                    <td>                        針對筆記型電腦遺失或被竊所導致的資訊洩漏風險，下列何者能直接降低該風險？
+<br>
+                        <div class="option">A. 全磁碟加密（如 BitLocker 等）</div>
+                        <div class="option">B. 開放 Web 伺服器通訊埠</div>
+                        <div class="option">C. 停止雲端備份</div>
+                        <div class="option">D. 更新特徵碼比對引擎</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：將硬碟進行整體加密後，即使設備遭竊，第三方亦無法解密與讀取其中的資料。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+	
+	<div class="group-container">
+        <div class="group-header">侵入檢測與防禦 (侵入検知・侵入防止)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">侵入検知</div>
+                <div class="term-reading">しんにゅうけんち</div>
+                <div class="term-zh">入侵檢測</div>
+                <div class="term-en">Intrusion Detection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワークやシステムに対する不正アクセスや攻撃を監視し、検出するための技術や手法。</div>
+                <div class="summary-zh">監控並檢測針對網路或系統之未授權存取或攻擊的技術與手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <div>問：ネットワークやシステムに対する不正アクセスや攻撃を監視し、検出することでセキュリティを強化する技術や手法はどれか？</div>
+<br>
+<div class="option">ア. 侵入検知</div>
+<div class="option">イ. 侵入防止</div>
+<div class="option">ウ. フォールスネガティブ</div>
+<div class="option">エ. フォールスポジティブ</div></div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：侵入検知（IDSなど）はネットワークトラフィックを分析して異常な動きや攻撃パターンを検出し、警告を発することで迅速な対応を可能にする。</div></td>
+                    <td>                        <div>問：監控並檢測針對網路或系統之未授權存取或攻擊以強化資安的技術與手法為何？</div>
+<br>
+<div class="option">A. 入侵檢測（Intrusion Detection）</div>
+<div class="option">B. 入侵防禦</div>
+<div class="option">C. 偽陰性</div>
+<div class="option">D. 偽陽性</div></div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：入侵檢測（如IDS等）透過分析網路流量來檢測異常活動或攻擊模式，並發出警告以實現迅速應對。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">侵入防止</div>
+                <div class="term-reading">しんにゅうぼうし</div>
+                <div class="term-zh">入侵防禦</div>
+                <div class="term-en">Intrusion Prevention</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワークやシステムへの不正アクセスを検知し、それをリアルタイムで阻止するための技術や手法。</div>
+                <div class="summary-zh">檢測對網路或系統的未授權存取，並即時加以阻止的技術與手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <div>問：リアルタイムでトラフィックを監視し、異常な動きや攻撃パターンを検出することで即座に攻撃を遮断する仕組みはどれか？</div>
+<br>
+<div class="option">ア. 侵入防止</div>
+<div class="option">イ. 侵入検知</div>
+<div class="option">ウ. フォールスポジティブ</div>
+<div class="option">エ. フォールスネガティブ</div></div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：侵入防止システム（IPS）は不正ログインなどの試行を察知した場合に接続を自動的に切断し、システムを守る役割を果たす。</div></td>
+                    <td>                        <div>問：即時監控流量、檢測異常活動或攻擊模式並立即阻斷攻擊的機制為何？</div>
+<br>
+<div class="option">A. 入侵防禦（Intrusion Prevention）</div>
+<div class="option">B. 入侵檢測</div>
+<div class="option">C. 偽陽性</div>
+<div class="option">D. 偽陰性</div></div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：入侵防禦系統（IPS）在察覺未授權登入等嘗試時會自動切斷連線，以發揮保護系統的作用。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+	
+	<div class="group-container">
+        <div class="group-header">檢測誤判類型 (フォールスネガティブ・フォールスポジティブ)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">フォールスネガティブ</div>
+                <div class="term-reading">フォールスネガティブ</div>
+                <div class="term-zh">偽陰性（漏報）</div>
+                <div class="term-en">False Negative</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">実際には攻撃であるにもかかわらず、システムがそれを未検知として「安全」と判断してしまう誤判定。</div>
+                <div class="summary-zh">實際上是攻擊卻被系統未檢測到並誤判為「安全」的錯誤判定。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <div>問：セキュリティ分野において、実際には脅威や攻撃であるにもかかわらず未検知として「安全」と判断してしまう誤判定を何と呼ぶか？</div>
+<br>
+<div class="option">ア. フォールスネガティブ</div>
+<div class="option">イ. フォールスポジティブ</div>
+<div class="option">ウ. 侵入検知</div>
+<div class="option">エ. 侵入防止</div></div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：フォールスネガティブは脅威を見逃すことでシステムやデータの安全性を脅かす深刻なリスクとなる。</div></td>
+                    <td>                        <div>問：在資安領域中，實際上是威脅或攻擊卻被未檢測到並誤判為「安全」的錯誤判定稱為何？</div>
+<br>
+<div class="option">A. 偽陰性（False Negative）</div>
+<div class="option">B. 偽陽性</div>
+<div class="option">C. 入侵檢測</div>
+<div class="option">D. 入侵防禦</div></div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：偽陰性是由於漏掉威脅而對系統與資料安全構成嚴重風險的錯誤判定。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">フォールスポジティブ</div>
+                <div class="term-reading">フォールスポジティブ</div>
+                <div class="term-zh">偽陽性（誤報）</div>
+                <div class="term-en">False Positive</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">実際には問題がないにもかかわらず、システムが誤って警告や脅威と判断する誤検知。</div>
+                <div class="summary-zh">實際上沒有問題卻被系統錯誤判定為警告或威脅的誤檢測。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <div>問：セキュリティ関連の処理において、実際には問題がない無害なファイルを誤ってウイルスと判断するなど、不必要な警告が発生する現象はどれか？</div>
+<br>
+<div class="option">ア. フォールスポジティブ</div>
+<div class="option">イ. フォールスネガティブ</div>
+<div class="option">ウ. 侵入検知</div>
+<div class="option">エ. 侵入防止</div></div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：フォールスポジティブは運用上の効率を損ない、エンジニアやユーザーの労力を浪費させるため、誤検知率の減少が求められる。</div></td>
+                    <td>                        <div>問：在資安相關處理中，實際上無問題的無害檔案被錯誤判定為病毒等並產生不必要警告的現象為何？</div>
+<br>
+<div class="option">A. 偽陽性（False Positive）</div>
+<div class="option">B. 偽陰性</div>
+<div class="option">C. 入侵檢測</div>
+<div class="option">D. 入侵防禦</div></div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：偽陽性會損害營運效率並浪費工程師或使用者的心力，因此需要減少誤報率。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+	
+    <!-- Group 4 -->
+    <div class="group-container">
+        <div class="group-header">惡意軟體與偵測技術</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">マルウェア対策</div>
+                <div class="term-reading">まるうぇあたいさく</div>
+                <div class="term-zh">惡意軟體防護對策</div>
+                <div class="term-en">Malware Protection</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ウイルス、ワーム、トロイの木馬等の悪意あるソフトから端末や網を守る手法。対策ソフトの導入、定義ファイルの最新化、OSのパッチ適用等を実施する。</div>
+                <div class="summary-zh">保護終端與網路免受病毒、蠕蟲、特洛伊木馬等惡意程式危害的方法。執行防護軟體安裝、定義檔更新及OS修補。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        マルウェア対策ソフトの効果を維持するために継続して実施すべき作業はどれか。
+<br>
+                        <div class="option">ア. ウイルス定義ファイル（パターンファイル）の自動更新</div>
+                        <div class="option">イ. リアルタイムスキャン機能の停止</div>
+                        <div class="option">ウ. セキュリティソフトの定期アンインストール</div>
+                        <div class="option">エ. OSの自動アップデートの無効化</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：日々新種が登場するマルウェアに対抗するには、定義ファイルを常に最新状態に保つことが不可欠です。</div></td>
+                    <td>                        為維持惡意軟體防護軟體的有效性，應持續執行的工作是下列何者？
+<br>
+                        <div class="option">A. 自動更新病毒定義檔（特徵碼檔案）</div>
+                        <div class="option">B. 停用即時掃描功能</div>
+                        <div class="option">C. 定期解除安裝安全軟體</div>
+                        <div class="option">D. 停用作業系統的自動更新</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：面對每日不斷出現的新型惡意軟體，時刻將定義檔保持在最新狀態是不可或缺的。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ランサムウェア対策</div>
+                <div class="term-reading">らんさむうぇあたいさく</div>
+                <div class="term-zh">勒索軟體防護對策</div>
+                <div class="term-en">Ransomware Countermeasures</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データを暗号化して金銭を要求する脅威への対策。オフラインバックアップの確保、メール添付ファイルの警戒、アクセス権制限等を統合して備える。</div>
+                <div class="summary-zh">防範資料遭加密並被勒索贖金的脅威對策。包含建立離線備份、警戒郵件附件及限制存取權限等綜合防禦。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ランサムウェア攻撃によってデータが暗号化された場合、最も確実に復旧を可能にする対策はどれか。
+<br>
+                        <div class="option">ア. 攻撃者に指示された身代金を即座に支払う</div>
+                        <div class="option">イ. ネットワークから隔離された場所に取得したオフラインバックアップからの復元</div>
+                        <div class="option">ウ. システムの再起動を何度も繰り返す</div>
+                        <div class="option">エ. 定義ファイルの更新を停止する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ランサムウェアはネットワーク経由でバックアップも暗号化しようとするため、切り離されたオフラインバックアップが復旧の命綱となります。</div></td>
+                    <td>                        當遭受勒索軟體攻擊導致資料遭加密時，最能確保復原資料的對策是下列何者？
+<br>
+                        <div class="option">A. 立即支付攻擊者要求的贖金</div>
+                        <div class="option">B. 從網路隔離處存放的離線備份進行資料還原</div>
+                        <div class="option">C. 不斷重複重啟系統設備</div>
+                        <div class="option">D. 停止防毒軟體定義檔更新</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：勒索軟體會嘗試感染連線中的備份，因此保持網路切離的離線備份是資料還原的最佳保障。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">パターンマッチング法</div>
+                <div class="term-reading">ぱたーんまっちんぐほう</div>
+                <div class="term-zh">特徵碼比對法</div>
+                <div class="term-en">Pattern Matching Method</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">既知マルウェアの固有パターン（シグネチャ）と検査対象を比較して検知する手法。計算負荷が低く高精度だが、未知のマルウェアは検知できない。</div>
+                <div class="summary-zh">將已知惡意軟體的特徵碼（Signature）與比對對象進行比對以進行偵測的方法。計算負載低且精準，但無法偵測未知惡意軟體。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        パターンマッチング法に関する説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 未知のマルウェアを100%検出できる</div>
+                        <div class="option">イ. ウイルス定義データベースに登録されている既知のシグネチャと一致するか調べる</div>
+                        <div class="option">ウ. プログラムを実行させた際の挙動から判定する</div>
+                        <div class="option">エ. 事前定義ファイルが一切不要な技術である</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：パターンマッチングは、登録済みのシグネチャデータと照合することで既知の脅威を高速かつ正確に検出します。</div></td>
+                    <td>                        關於特徵碼比對法（Pattern Matching）的描述，下列何者適當？
+<br>
+                        <div class="option">A. 能百分之百偵測出未知的惡意軟體</div>
+                        <div class="option">B. 比對是否與病毒定義資料庫中已登記的特徵碼一致</div>
+                        <div class="option">C. 根據程式執行時的行為模式進行判斷</div>
+                        <div class="option">D. 完全不需要事前準備定義檔的技術</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：特徵碼比對法是透過與資料庫中已登錄的特徵資料比對，藉此快速且精準地找出已知脅威。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ビヘイビア法</div>
+                <div class="term-reading">びへいびあほう</div>
+                <div class="term-zh">動態行為分析法</div>
+                <div class="term-en">Behavioral Detection Method</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プログラムの実際の動作（ファイル変更、レジストリ操作等）を監視し、不審な挙動から異常を検知する手法。未知の脅威にも対応可能。</div>
+                <div class="summary-zh">監視程式的實際運作行為（如檔案變更、登錄檔操作等），藉由可疑動作偵測異常的方法。可應對未知脅威。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ビヘイビア検知技術の特徴として適切なものはどれか。
+<br>
+                        <div class="option">ア. 事前に定義されたファイル名のみをブロックする</div>
+                        <div class="option">イ. 実行中のプログラムが示す不審な挙動（不自然なファイル暗号化や通信など）を検知する</div>
+                        <div class="option">ウ. ハッシュ値が完全に一致しない限り検知できない</div>
+                        <div class="option">エ. 静的なコード解析のみを行う</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ビヘイビア法はプログラムを実際に動作させてその動的挙動を観察・判定するため、新種マルウェアの検知に有効です。</div></td>
+                    <td>                        關於動態行為分析技術（Behavioral Detection）的特徵，下列何者適當？
+<br>
+                        <div class="option">A. 僅阻擋事前定義好的特定檔案名稱</div>
+                        <div class="option">B. 偵測執行中程式所顯示的可疑行為（如不自然的檔案加密或異常通訊等）</div>
+                        <div class="option">C. 除非雜湊值完全一致否則無法偵測</div>
+                        <div class="option">D. 僅進行靜態的程式碼解析</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：行為分析法透過實際執行程式並觀察其動態行為，因此對於新型惡意軟體的偵測相當有效。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ヒューリスティック法</div>
+                <div class="term-reading">ひゅーりすてぃっくほう</div>
+                <div class="term-zh">啟發式偵測法</div>
+                <div class="term-en">Heuristic Method</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">既知の脅威の特徴や経験則をもとに、類似する構造や挙動を持つコードを解析して未知のマルウェアを予測・検知する手法である。</div>
+                <div class="summary-zh">基於已知脅威的特徵與經驗法則，解析具有相似結構或行為模式的程式碼，以預測並偵測未知惡意軟體的方法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ヒューリスティック検索の説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 既存のウイルス定義ファイルとの完全一致のみをチェックする</div>
+                        <div class="option">イ. ウイルスの持つ危険な処理手順やパターン上の特徴・類似性を比較し、未知のウイルスを推測検知する</div>
+                        <div class="option">ウ. ハードディスクの物理的な不良セクタを検出・復旧する</div>
+                        <div class="option">エ. 暗号化通信の鍵長を測定して安全性を評価する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ヒューリスティック検知は、既知悪性コードとの構造的・機能的類似性や経験則を用いて新種を推測・検知します。</div></td>
+                    <td>                        關於啟發式偵測法（Heuristic Method）的說明，下列何者適當？
+<br>
+                        <div class="option">A. 僅檢查與現有病毒定義檔是否完全吻合</div>
+                        <div class="option">B. 比較病毒所包含的危險處理程序或結構特徵與相似性，以預測並偵測未知病毒</div>
+                        <div class="option">C. 檢測並修元硬碟的實體壞軌</div>
+                        <div class="option">D. 測量加密通訊的金鑰長度以評估安全性</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：啟發式偵測利用已知惡意程式碼的結構特徵與經驗法則，推測並找出變種或新種的資安脅威。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">未知マルウェア検出手法</div>
+                <div class="term-reading">みちまるうぇあけんしゅつしゅほう</div>
+                <div class="term-zh">未知惡意軟體偵測技術</div>
+                <div class="term-en">Unknown Malware Detection Technique</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">シグネチャが存在しない新種やゼロデイ攻撃に対応するための技術の総称。サンドボックス、機械学習、挙動解析等を組み合わせて検知する。</div>
+                <div class="summary-zh">應對無特徵碼的新型惡意軟體或零日攻擊技術之總稱。結合沙盒（Sandbox）、機器學習及行為解析進行偵測。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        未知のマルウェアを検出するための「サンドボックス技術」の説明はどれか。
+<br>
+                        <div class="option">ア. 定義ファイルをクラウドから高速ダウンロードする技術</div>
+                        <div class="option">イ. 仮想的な隔離環境内でファイルを実行させ、その動的挙動を安全に観察・判定する技術</div>
+                        <div class="option">ウ. ソースコードのテキスト検索を行い特定のキーワードを探す技術</div>
+                        <div class="option">エ. ネットワークの帯域幅を自動調整する技術</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：サンドボックスは、システムに影響を与えない隔離環境で危険なプログラムを実際に動かし、その動作を分析する未知脅威対策です。</div></td>
+                    <td>                        關於用於偵測未知惡意軟體的「沙盒技術（Sandbox）」，下列說明何者正確？
+<br>
+                        <div class="option">A. 從雲端高速下載定義檔的技術</div>
+                        <div class="option">B. 在虛擬隔離環境中執行檔案，並安全地觀察與判斷其動態行為的技術</div>
+                        <div class="option">C. 對原始碼進行文字搜尋以尋找特定關鍵字的技術</div>
+                        <div class="option">D. 自動調整網路頻寬的技術</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：沙盒技術是在不影響真實系統的隔離環境中試執行可疑程式，藉由觀察其動作來辨識未知脅威。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">マルウェア対策ソフト</div>
+                <div class="term-reading">まるうぇあたいさくそふと</div>
+                <div class="term-zh">防惡意軟體／防毒軟體</div>
+                <div class="term-en">Malware Protection Software</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">端末上のマルウェアをリアルタイム監視、検知、隔離・駆除するためのソフトウェア。各種検知エンジンと自動定義更新によりシステムを保護する。</div>
+                <div class="summary-zh">即時監控、偵測、隔離與清除終端設備上惡意軟體的應用程式。透過多重偵測引擎與自動更新保護系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        マルウェア対策ソフトの機能において「リアルタイムスキャン」の役割はどれか。
+<br>
+                        <div class="option">ア. 端末にファイルが保存・実行・受信される瞬間に自動で不審性をチェックする</div>
+                        <div class="option">イ. 週に1回夜間のみハードディスク全体をスキャンする</div>
+                        <div class="option">ウ. 暗号化された通信を無条件で復号する</div>
+                        <div class="option">エ. 破損したオペレーティングシステムを自動修復する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：リアルタイムスキャンは、ファイルへのアクセスやダウンロード等の挙動が発生したタイミングで即座にウイルス検査を実施する機能です。</div></td>
+                    <td>                        在防毒／防惡意軟體的功能中，「即時掃描（Real-time Scan）」的作用是下列何者？
+<br>
+                        <div class="option">A. 在檔案被儲存、執行或接收的瞬間自動檢查是否可疑</div>
+                        <div class="option">B. 僅於每週一次的夜間進行全系統硬碟掃描</div>
+                        <div class="option">C. 無條件解密所有加密通訊</div>
+                        <div class="option">D. 自動修復損壞的作業系統</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：即時掃描是指在檔案被存取、下載或執行的當下，立即進行資安檢查防範感染。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 5 -->
+    <div class="group-container">
+        <div class="group-header">資料隱私與去識別化</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">秘匿化</div>
+                <div class="term-reading">ひとくか</div>
+                <div class="term-zh">混淆化／隱匿化</div>
+                <div class="term-en">Obfuscation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データやプログラムコードの内容を第三者に解析・理解されにくい形式に変形する技術。逆コンパイルの防止や機密データの難読化に利用される。</div>
+                <div class="summary-zh">將資料或程式碼轉換成第三方難以解析與理解形式的技術。常用於防止反編譯（Decompile）及機密資料難讀化。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ソフトウェアの難読化（秘匿化）を行う主な目的はどれか。
+<br>
+                        <div class="option">ア. プログラムの実行速度を数倍に高速化する</div>
+                        <div class="option">イ. リバースエンジニアリングによるソースコードやアルゴリズムの解析・不正解読を防ぐ</div>
+                        <div class="option">ウ. ファイルサイズを極限まで圧縮する</div>
+                        <div class="option">エ. コンパイルエラーを自動的に修正する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：秘匿化（難読化）は、コードのロジックや変数を複雑化し、第三者によるリバースエンジニアリング（解析）を困難にするために用いられます。</div></td>
+                    <td>                        進行軟體程式碼難讀化（混淆化）的主要目的是下列何者？
+<br>
+                        <div class="option">A. 將程式執行速度提高數倍</div>
+                        <div class="option">B. 防止透過逆向工程對原始碼及演算法進行解析或非法解讀</div>
+                        <div class="option">C. 將檔案容量大幅壓縮</div>
+                        <div class="option">D. 自動修復編譯過程中的錯誤</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：混淆化技術透過將程式邏輯與變數名稱變得複雜難懂，提升第三方進行逆向工程分析的門檻。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">匿名化の手法</div>
+                <div class="term-reading">とくめいかのしゅほう</div>
+                <div class="term-zh">資料去識別化（匿名化）手法</div>
+                <div class="term-en">Anonymization Techniques</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人識別性を排除し特定不可にする手法群。項目削除、セル削除、トップコーディング、k-匿名化などが含まれ、データの利活用とプライバシー保護を両立する。</div>
+                <div class="summary-zh">移除個人可識別性使之無法特定個體的方法總稱。包含項目刪除、單元格刪除、Top-coding及k-匿名化等，兼顧資料利用與隱私保護。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データセット内の同一属性を持つレコード群が少なくともk個以上存在するように加工し、個人特定を困難にする手法はどれか。
+<br>
+                        <div class="option">ア. k-匿名化</div>
+                        <div class="option">イ. ハッシュ化</div>
+                        <div class="option">ウ. 暗号化消去</div>
+                        <div class="option">エ. 差分バックアップ</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：k-匿名化は、准識別子（年齢・性別など）の組み合わせが同じレコードが少なくともk件以上存在するようにデータを加工する手法です。</div></td>
+                    <td>                        將資料集中具有相同屬性的紀錄加工至至少存在 k 筆以上，使其難以特定個體的手法為下列何者？
+<br>
+                        <div class="option">A. k-匿名化（k-Anonymity）</div>
+                        <div class="option">B. 雜湊化（Hashing）</div>
+                        <div class="option">C. 加密消除（Cryptographic Erase）</div>
+                        <div class="option">D. 差異備份（Differential Backup）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：k-匿名化是指透過數據加工，使含有相同準識別碼（如年齡、性別組合）的紀錄至少有 k 筆，從而保護個人隱私。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データマスキング</div>
+                <div class="term-reading">でーたますきんぐ</div>
+                <div class="term-zh">資料遮蔽（Data Masking）</div>
+                <div class="term-en">Data Masking</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">開発・テスト環境等で本番データを使用する際、氏名やクレジットカード番号などの機密部分をダミー文字（Xや*）に置き換えて保護する技術。</div>
+                <div class="summary-zh">在開發與測試環境使用實體資料時，將姓名、信用卡號等敏感資訊替換為虛擬字元（如 X 或 *）進行保護的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        システムテストを行う際、本番データベース内の個人情報を保護するために有効な手法はどれか。
+<br>
+                        <div class="option">ア. データマスキング</div>
+                        <div class="option">イ. データの圧縮解凍</div>
+                        <div class="option">ウ. ディスクミラーリング</div>
+                        <div class="option">エ. URLフィルタリング</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：データマスキングにより、開発者やテスト担当者が実際の個人情報や機密データに触れることなく安全にテストを行えます。</div></td>
+                    <td>                        進行系統測試時，為保護營運資料庫中的個人隱私資訊，下列何種手法最為有效？
+<br>
+                        <div class="option">A. 資料遮蔽（Data Masking）</div>
+                        <div class="option">B. 資料壓縮與解壓縮</div>
+                        <div class="option">C. 磁碟鏡像（Mirroring）</div>
+                        <div class="option">D. URL 過濾（Filtering）</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：資料遮蔽可使開發與測試人員在不接觸真實敏感個人資料的情況下，安全地進行測試作業。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 6 -->
+    <div class="group-container">
+        <div class="group-header">系統監控、日誌與漏洞管理</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ログ管理</div>
+                <div class="term-reading">ろぐかんり</div>
+                <div class="term-zh">日誌管理</div>
+                <div class="term-en">Log Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">アクセス履歴やシステムイベントログを収集・保管・分析するプロセス。障害解析、不正アクセスの事後追跡、改ざん検知等において根拠情報を提供する。</div>
+                <div class="summary-zh">收集、保存並分析存取履歷與系統事件日誌的過程。為故障排除、事後追蹤非法入侵及偵測竄改提供關鍵證據。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ログ管理におけるセキュリティ上の注意点として最も適切なものはどれか。
+<br>
+                        <div class="option">ア. ログファイルへの変更権限を全一般ユーザーに付与する</div>
+                        <div class="option">イ. ログの改ざんや削除を防ぐため、アクセス権を限定し安全なストレージに保管する</div>
+                        <div class="option">ウ. ログの保管期間は最大1時間とする</div>
+                        <div class="option">エ. ログの時刻同期（NTP）は不必要である</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ログは不正調査の証拠となるため、改ざん防止対策と時刻同期（NTP）を施して安全に長期保管することが必須です。</div></td>
+                    <td>                        關於日誌管理在安全上的注意事項，下列何者最適當？
+<br>
+                        <div class="option">A. 將日誌檔案的變更權限賦予所有一般使用者</div>
+                        <div class="option">B. 為防止日誌遭竄改或刪除，應限制存取權限並保存於安全儲存區</div>
+                        <div class="option">C. 日誌的保存期限最多設定為1小時</div>
+                        <div class="option">D. 日誌的時間同步（NTP）完全是不必要的</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：日誌是資安事件調查的重要證據，必須進行嚴格的存取控制與防竄改保護，並確保時間同步（NTP）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">脆弱性管理</div>
+                <div class="term-reading">ぜいじゃくせいかんり</div>
+                <div class="term-zh">系統漏洞管理</div>
+                <div class="term-en">Vulnerability Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">OSやソフトウェアの欠陥を特定・評価し、修正パッチの適用や設定変更を通じてリスクを継続的に無効化・最小化する一連の運用プロセスである。</div>
+                <div class="summary-zh">特定與評估作業系統或軟體中的安全瑕疵，透過套用修補程式（Patch）與變更設定持續消彌並最小化風險的營運過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        脆弱性管理のライフサイクルに含まれるプロセスとして適切なものはどれか。
+<br>
+                        <div class="option">ア. 脆弱性の発見、リスク評価、修正パッチのテストと適用</div>
+                        <div class="option">イ. 脆弱性を発見しても公表せず放置する</div>
+                        <div class="option">ウ. パッチをテストなしで直ちに全本番環境へ一括適用する</div>
+                        <div class="option">エ. 開発終了後のソフトウェアに対する脆弱性検査の禁止</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：脆弱性管理は、定期的なスキャンでの検出、危険度評価、動作検証後の安全なパッチ適用までを継続的に回す運用です。</div></td>
+                    <td>                        關於系統漏洞管理生命週期中所包含的流程，下列何者適當？
+<br>
+                        <div class="option">A. 漏洞發現、風險評估、修補程式測試與套用</div>
+                        <div class="option">B. 即使發現漏洞也不公開且任其存在</div>
+                        <div class="option">C. 不經測試便直接將修補程式一口氣套用至所有正式環境</div>
+                        <div class="option">D. 開發完成後的軟體禁止進行漏洞檢查</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：漏洞管理涵蓋定期檢測發現問題、評估影響層面與風險，並在經測試確認後安全地套用修補程式。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SBOM</div>
+                <div class="term-reading">えすぼむ</div>
+                <div class="term-zh">軟體物料清單（Software Bill of Materials）</div>
+                <div class="term-en">Software Bill of Materials</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ソフトウェアを構成するコンポーネントやオープンソースライブラリ、依存関係の一覧名簿。サプライチェーン攻撃や脆弱性の把握に不可欠。</div>
+                <div class="summary-zh">記錄軟體組成元件、開源函式庫及其依賴關係的詳細清單。對於應對供應鏈攻擊與掌握漏洞至關重要。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        SBOM（Software Bill of Materials）を導入する主なメリットはどれか。
+<br>
+                        <div class="option">ア. ソフトウェア内で利用されているサードパーティ製ライブラリの既知脆弱性を迅速に特定できる</div>
+                        <div class="option">イ. プログラムの実行処理を全自動で最適化できる</div>
+                        <div class="option">ウ. ネットワークの通信速度を飛躍的に向上させる</div>
+                        <div class="option">エ. ハードウェアの物理的な故障率を低下させる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SBOMによって構成部品の一覧が視覚化され、新たな脆弱性（Log4j等）が発表された際に自社ソフトへの影響を即座に特定できます。</div></td>
+                    <td>                        導入軟體物料清單（SBOM）的主要優點是下列何者？
+<br>
+                        <div class="option">A. 能迅速特定軟體中所使用的第三方函式庫之既有漏洞</div>
+                        <div class="option">B. 能全自動優化程式的執行處理速度</div>
+                        <div class="option">C. 能飛躍性地提升網路通訊速度</div>
+                        <div class="option">D. 能降低硬體設備的實體故障率</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：SBOM透明化了軟體元件組成，當發布新的開源元件漏洞時，能立即釐清內部系統是否受到影響。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ネットワーク監視</div>
+                <div class="term-reading">ねっとわーくかんし</div>
+                <div class="term-zh">網路監控</div>
+                <div class="term-en">Network Monitoring</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">トラフィックや接続状態を常時モニタリングし、帯域圧迫や異常通信、不正アクセスの兆候を早期検出・警告する維持管理手法。</div>
+                <div class="summary-zh">持續監控流量與連線狀態，及早發現並警告頻寬擠壓、異常通訊或非法存取徵兆的維運管理手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ネットワーク監視において、トラフィックの急増や異常なポートへの接続を検出するツール・手法はどれか。
+<br>
+                        <div class="option">ア. SNMPやFlow解析を活用したトラフィック監視</div>
+                        <div class="option">イ. ストレージのディスクフォーマット</div>
+                        <div class="option">ウ. ソースコードの静的単体テスト</div>
+                        <div class="option">エ. データの匿名化処理</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SNMPプロトコルやNetFlow等のフロー解析を用いてネットワークトラフィックを監視することで、異常な挙動を検知できます。</div></td>
+                    <td>                        在網路監控中，用於偵測流量驟增或異常連接埠連線的工具與手法為下列何者？
+<br>
+                        <div class="option">A. 活用 SNMP 或 Flow 解析進行流量監控</div>
+                        <div class="option">B. 儲存設備的磁碟格式化</div>
+                        <div class="option">C. 原始碼的靜態單元測試</div>
+                        <div class="option">D. 資料去識別化處理</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：利用 SNMP 通訊協定或流量（Flow）解析技術監控網路，能及時察覺流量異常與潛在攻擊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 7 -->
+    <div class="group-container">
+        <div class="group-header">網路邊界與架構防護</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">DMZ</div>
+                <div class="term-reading">でぃーえむぜっと</div>
+                <div class="term-zh">非軍事區（Demilitarized Zone）</div>
+                <div class="term-en">Demilitarized Zone</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">外部網（インターネット）と内部網の間に配置される中立ネットワーク区域。Webやメール等、外部公開が必要なサーバ群を設置し内部への侵入を防ぐ。</div>
+                <div class="summary-zh">位於外部網路與內部網路之間的中立網路區域。用於放置Web或郵件伺服器等需要對外公開的設備，防止直接侵入內網。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        DMZに配置するWebサーバが外部から侵害された場合でも、内部ネットワークを守るための設計として適切なものはどれか。
+<br>
+                        <div class="option">ア. DMZから内部ネットワークへの直接アクセスをファイアウォールで遮断する</div>
+                        <div class="option">イ. DMZと内部ネットワークの間にファイアウォールを設置しない</div>
+                        <div class="option">ウ. DMZ内のサーバに社内の全個人データベースを保存する</div>
+                        <div class="option">エ. DMZ内の通信を全許可に設定する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：DMZ上の公開サーバが乗っ取られた場合でも、DMZから内部網への通信を制御・遮断しておくことで被害の拡大を防ぎます。</div></td>
+                    <td>                        即使位於 DMZ 的 Web 伺服器遭外部入侵，為保護內部網路而採取的適當設計為下列何者？
+<br>
+                        <div class="option">A. 利用防火牆阻擋由 DMZ 發起直接存取內部網路的通訊</div>
+                        <div class="option">B. DMZ 與內部網路之間不設置防火牆</div>
+                        <div class="option">C. 將公司內所有的個人資料庫直接存放在 DMZ 內的伺服器</div>
+                        <div class="option">D. 將 DMZ 內的通訊設定為完全允許存取</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：即使 DMZ 內的公開伺服器失陷，只要透過防火牆管制 DMZ 對內網的連線，便可防止威脅進一步擴散。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">検疫ネットワーク</div>
+                <div class="term-reading">けんえきねっとわーく</div>
+                <div class="term-zh">隔離檢疫網路</div>
+                <div class="term-en">Quarantine Network</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">接続端末のパッチ適用状態やウイルス感染の有無を事前に検査し、問題のない端末のみを社内網へ接続させるための隔離セグメントである。</div>
+                <div class="summary-zh">事前檢查連線設備的修補程式狀態與是否感染病毒，僅允許安全無虞的設備進入公司內網的隔離網路區劃。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        持ち込みPCを社内ネットワークに接続する際、検疫ネットワークが行う処理として適切なものはどれか。
+<br>
+                        <div class="option">ア. セキュリティポリシー適合性（OSパッチ適用、定義ファイル状態）を検査し、不合格端末を隔離する</div>
+                        <div class="option">イ. 接続端末のデータを自動的に全消去する</div>
+                        <div class="option">ウ. 検査なしで即座に社内コアネットワークへ接続許可を出す</div>
+                        <div class="option">エ. 暗号化通信を強制的に解除する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：検疫ネットワークは、社内網接続前に安全基準（パッチや防毒ソフトの更新状況）を確認し、未対策のPCを隔離して治療させます。</div></td>
+                    <td>                        當外來攜帶式電腦欲連線至公司內網時，檢疫網路所執行的處理下列何者適當？
+<br>
+                        <div class="option">A. 檢查資安合規性（OS修補更新、防毒定義檔狀態），並隔離不合格的設備</div>
+                        <div class="option">B. 自動將連線設備內的資料全數抹除</div>
+                        <div class="option">C. 完全不作檢查，直接允許存取公司核心內網</div>
+                        <div class="option">D. 強制解除所有加密通訊協定</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：檢疫網路在設備連線至內網前，檢查其防毒與修補程式狀態，隔離並矯正未達安全標準的設備。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">URLフィルタリング</div>
+                <div class="term-reading">ゆーあーるえるふぃるたりんぐ</div>
+                <div class="term-zh">網址過濾（URL Filtering）</div>
+                <div class="term-en">URL Filtering</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">閲覧WebサイトのURLをカテゴリやデータベースと照合し、危険なサイトや業務無関係なサイトへのアクセスを閲覧遮断・制御する技術。</div>
+                <div class="summary-zh">將瀏覽網站的網址與資料庫或類別進行比對，藉此阻擋與管制對危險網站或非業務相關網站存取的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        URLフィルタリングの目的として適切なものはどれか。
+<br>
+                        <div class="option">ア. ユーザーをフィッシング詐欺サイトやマルウェア配布サイトへ接続させないように制限する</div>
+                        <div class="option">イ. Webサーバの処理速度を高速化する</div>
+                        <div class="option">ウ. クライアントPCのハードディスク容量を自動拡張する</div>
+                        <div class="option">エ. LANケーブルの通信帯域を物理的に増加させる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：URLフィルタリングは、有害・危険サイトへのアクセスをブロックすることで、マルウェア感染や情報流出の被害を防止します。</div></td>
+                    <td>                        關於網址過濾（URL Filtering）的目的，下列何者適當？
+<br>
+                        <div class="option">A. 限制使用者連線至網路釣魚網站或惡意軟體散播網站</div>
+                        <div class="option">B. 加速 Web 伺服器的處理速度</div>
+                        <div class="option">C. 自動擴充用戶端電腦的硬碟容量</div>
+                        <div class="option">D. 實體增加網路線的通訊頻寬</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：網址過濾透過封鎖有害與高風險網站，防範惡意軟體感染及網路釣魚攻擊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コンテンツフィルタリング</div>
+                <div class="term-reading">こんてんつふぃるたりんぐ</div>
+                <div class="term-zh">內容過濾（Content Filtering）</div>
+                <div class="term-en">Content Filtering</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">Webページや電子メールの本文・添付ファイル内の文字列や情報を自動解析し、不適切なデータや機密情報の送受信を監視・遮断する技術。</div>
+                <div class="summary-zh">自動解析網頁或電子郵件內文、附件中的文字與資訊，監視並封鎖不當內容或機密資料傳輸的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        コンテンツフィルタリングの説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 送受信されるデータの中身（キーワードや添付ファイルの内容）を解析してアクセスや送信を制限する</div>
+                        <div class="option">イ. IPアドレスのみを見て通信を許可・拒否判定する</div>
+                        <div class="option">ウ. ハードディスクの物理フォーマットを行う</div>
+                        <div class="option">エ. 通信速度の低下を完全に防止する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：コンテンツフィルタリングは、通信のペイロード（中身）まで踏み込んで不適切なキーワードや情報を検査・判定します。</div></td>
+                    <td>                        關於內容過濾（Content Filtering）的說明，下列何者適當？
+<br>
+                        <div class="option">A. 解析傳輸資料的內容（關鍵字或附件內容）並限制存取或傳送</div>
+                        <div class="option">B. 僅根據 IP 位址判斷允許或拒絕通訊</div>
+                        <div class="option">C. 執行硬碟的實體低階格式化</div>
+                        <div class="option">D. 完全防止通訊速度下降</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：內容過濾會深入檢視傳輸資料的封包內文（Payload），針對不當關鍵字或敏感資訊進行防護。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">Webアイソレーション</div>
+                <div class="term-reading">うぇぶあいそれーしょん</div>
+                <div class="term-zh">網頁隔離技術（Web Isolation / RBI）</div>
+                <div class="term-en">Web Isolation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">Webブラウジングをクラウド上の仮想環境で実行し、描画結果の安全な画像等のみを端末へ送信することで、端末へのマルウェア侵入を完全に隔離・遮断する。</div>
+                <div class="summary-zh">在雲端虛擬環境中執行網頁瀏覽，僅將安全渲染的畫面影像傳送至終端，從而完全隔離並阻擋惡意軟體入侵設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        Webアイソレーション（RBI：Remote Browser Isolation）技術の利点はどれか。
+<br>
+                        <div class="option">ア. 悪意のあるWebサイト上のスクリプトやコードがローカル端末上で直接実行される危険性を排除できる</div>
+                        <div class="option">イ. ローカルPCのWebブラウザが不要になる</div>
+                        <div class="option">ウ. すべてのインターネット通信速度が10倍に向上する</div>
+                        <div class="option">エ. 端末のパスワード認証が不要になる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：Webアイソレーションは分離環境でWebページを実行するため、未知のゼロデイWeb攻撃からも端末を安全に保護できます。</div></td>
+                    <td>                        網頁遠端隔離技術（RBI / Web Isolation）的優勢為下列何者？
+<br>
+                        <div class="option">A. 能排除惡意網站上的腳本與程式碼直接在本地終端執行的危險</div>
+                        <div class="option">B. 使本地電腦不再需要安裝網頁瀏覽器</div>
+                        <div class="option">C. 能將所有網際網路通訊速度提升 10 倍</div>
+                        <div class="option">D. 使終端不再需要進行密碼身份驗證</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：網頁隔離技術將瀏覽過程隔離在雲端容器中，可完全阻止惡意網頁腳本與零日攻擊影響實體終端。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ファイアウォール</div>
+                <div class="term-reading">ふぁいあうぉーる</div>
+                <div class="term-zh">防火牆</div>
+                <div class="term-en">Firewall</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">IPアドレスやポート番号、ステートフル検査に基づき、内部網と外部網の間のトラフィックをフィルタリングして不正通信を遮断するネットワークセキュリティ機器。</div>
+                <div class="summary-zh">根據 IP 位址、連接埠號及狀態檢查，過濾內部網路與外部網路間的流量並封鎖非法通訊的網路安全設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        パケットフィルタリング型ファイアウォールで判断の基準として用いられる情報の組み合わせはどれか。
+<br>
+                        <div class="option">ア. 送信元/送信先IPアドレス、送信元/送信先ポート番号</div>
+                        <div class="option">イ. HTTPリクエストのURL文字列とSQL構文</div>
+                        <div class="option">ウ. 送信者の顔画像データと指紋パターン</div>
+                        <div class="option">エ. ハードディスクの空き容量とCPU使用率</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：伝統的なパケットフィルタリング型ファイアウォールは、ネットワーク層とトランスポート層のヘッダ情報（IP・ポート等）で通過判定を行います。</div></td>
+                    <td>                        封包過濾型防火牆判定通訊允許與否所使用的資訊組合為下列何者？
+<br>
+                        <div class="option">A. 來源/目的 IP 位址、來源/目的 連接埠號（Port）</div>
+                        <div class="option">B. HTTP 請求的網址字串與 SQL 語法</div>
+                        <div class="option">C. 傳送者的面部影像資料與指紋特徵</div>
+                        <div class="option">D. 硬碟剩餘容量與 CPU 使用率</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：傳統封包過濾防火牆主要檢查網路層與傳輸層的標頭資訊（IP與Port）來決定封包放行與否。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">WAF</div>
+                <div class="term-reading">わふ</div>
+                <div class="term-zh">Web應用程式防火牆（Web Application Firewall）</div>
+                <div class="term-en">Web Application Firewall</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">Webアプリケーション層（L7）に特化したファイアウォール。SQLインジェクションやクロスサイトスクリプティング（XSS）等の攻撃を検知・遮断する。</div>
+                <div class="summary-zh">專門防護 Web 應用程式層（L7）的防火牆。能檢測並阻擋 SQL 注入、跨網站指令碼（XSS）等針對 Web 的攻擊。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        WAF（Web Application Firewall）が防ぐのに最も適している攻撃はどれか。
+<br>
+                        <div class="option">ア. SQLインジェクション攻撃</div>
+                        <div class="option">イ. SYNフラッド攻撃（ネットワーク層のDDoS）</div>
+                        <div class="option">ウ. 物理的なサーバの持ち出し</div>
+                        <div class="option">エ. 標的型攻撃メールの開封</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：WAFはHTTP/HTTPS通信のリクエスト内容（L7）を詳細に検査するため、Webアプリの脆弱性を狙うSQLインジェクションやXSSの防御に最適です。</div></td>
+                    <td>                        WAF（Web應用程式防火牆）最適合用來防禦下列哪一種攻擊？
+<br>
+                        <div class="option">A. SQL 注入攻擊（SQL Injection）</div>
+                        <div class="option">B. SYN Flood 攻擊（網路層的 DDoS）</div>
+                        <div class="option">C. 實體伺服器遭搬離偷竊</div>
+                        <div class="option">D. 點擊開啟社交工程社交郵件</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：WAF 能深入檢查 HTTP/HTTPS 請求內容（L7），因此非常適合用來阻擋 SQL 注入與 XSS 等應用程式層攻擊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">IDS</div>
+                <div class="term-reading">あいでぃーえす</div>
+                <div class="term-zh">入侵偵測系統（Intrusion Detection System）</div>
+                <div class="term-en">Intrusion Detection System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワークやホスト上の不正アクセスや攻撃の兆候を監視・検知し、管理者にアラート通知するシステム。自ら通信を直接遮断することはしない。</div>
+                <div class="summary-zh">監視並偵測網路或主機上的非法存取與攻擊徵兆，並發出警報通知管理員的系統。本身不直接阻斷通訊。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        IDS（Intrusion Detection System）の主な機能に関する記述として適切なものはどれか。
+<br>
+                        <div class="option">ア. 通信やログを監視し、攻撃や異常を検知して管理者に通知する</div>
+                        <div class="option">イ. 検出した攻撃通信をインラインで即座に直接遮断する</div>
+                        <div class="option">ウ. 破損したファイルを全自動で修復する</div>
+                        <div class="option">エ. ユーザーのパスワードを自動生成する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：IDSは「検知と通知（アラート）」を主目的とするシステムであり、直接通信を遮断するIPSとは区別されます。</div></td>
+                    <td>                        關於 IDS（入侵偵測系統）的主要功能描述，下列何者適當？
+<br>
+                        <div class="option">A. 監控通訊或日誌，偵測到攻擊或異常時發出警報通知管理員</div>
+                        <div class="option">B. 於線上（Inline）即時且直接封鎖偵測到的攻擊通訊</div>
+                        <div class="option">C. 全自動修復損壞的檔案</div>
+                        <div class="option">D. 自動產生使用者的密碼</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：IDS 的核心功能在於「偵測與通報警報」，與具備主動阻斷能力的 IPS 有所區別。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">IPS</div>
+                <div class="term-reading">あいぴーえす</div>
+                <div class="term-zh">入侵防禦系統（Intrusion Prevention System）</div>
+                <div class="term-en">Intrusion Prevention System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">異常なトラフィックや不正アクセスを検知すると同時に、リアルタイムでその通信をインラインでブロック・遮断するシステム。</div>
+                <div class="summary-zh">偵測到異常流量或非法存取時，能在線上（Inline）即時封鎖並阻斷該通訊的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        IDSと比較した際のIPS（Intrusion Prevention System）の最大の特徴はどれか。
+<br>
+                        <div class="option">ア. 不正な通信を検知した際、管理者の介入なしにリアルタイムで直接遮断（防御）する</div>
+                        <div class="option">イ. 導入コストが一切かからない</div>
+                        <div class="option">ウ. ログの保存機能が存在しない</div>
+                        <div class="option">エ. 暗号化通信の解読のみを行う</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：IPSはインラインに配置され、不正アクセスを検知すると自動的・即座に通信を遮断して攻撃を防ぎます。</div></td>
+                    <td>                        相較於 IDS，IPS（入侵防禦系統）的最大特徵為下列何者？
+<br>
+                        <div class="option">A. 當偵測到非法通訊時，無需管理員介入即可進行即時且直接的封鎖防禦</div>
+                        <div class="option">B. 完全不需要任何導入成本</div>
+                        <div class="option">C. 不具備任何日誌保存功能</div>
+                        <div class="option">D. 僅專門執行加密通訊的解密作業</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：IPS 串接在網路串列（Inline）路徑上，偵測到攻擊時能自動即時予以封鎖阻斷。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">UTM</div>
+                <div class="term-reading">ゆーてぃーえむ</div>
+                <div class="term-zh">統一威脅管理（Unified Threat Management）</div>
+                <div class="term-en">Unified Threat Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ファイアウォール、アンチウイルス、IDS/IPS、Webフィルタリング等、複数のセキュリティ機能を1台のアプライアンス機器に統合して一元管理するシステム。</div>
+                <div class="summary-zh">將防火牆、防毒、IDS/IPS、網頁過濾等多種資安功能整合至單一硬體設備中進行集中管理的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        中小企業などでUTM（統合脅威管理）アプライアンスを導入する主なメリットはどれか。
+<br>
+                        <div class="option">ア. 複数のセキュリティ機能を1台で運用でき、導入・管理の手間やコストを削減できる</div>
+                        <div class="option">イ. 社内の全クライアントPCのハードウェア性能が向上する</div>
+                        <div class="option">ウ. 通信回線の契約容量が無制限になる</div>
+                        <div class="option">エ. 物理的な施錠管理が全自動化される</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：UTMは多様なセキュリティ対策を1台に凝縮しているため、専任IT担当者が少ない環境でも効率的にセキュリティを高められます。</div></td>
+                    <td>                        在中小型企業等環境導入 UTM（統一威脅管理）設備的主要好處為下列何者？
+<br>
+                        <div class="option">A. 單台設備整合多種資安功能，能降低導入與維運管理的人力與成本</div>
+                        <div class="option">B. 提升公司內所有用戶端電腦的硬體性能</div>
+                        <div class="option">C. 使網路通訊線路的合約流量變為無上限</div>
+                        <div class="option">D. 使實體門禁鎖定管理變為全自動化</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：UTM 集中多項資安防護功能於一身，讓缺乏專職 IT 資安人員的企業也能高效簡便地維護網路安全。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SSL/TLSアクセラレーター</div>
+                <div class="term-reading">えすえすえる/てぃーえるえすあくせられーたー</div>
+                <div class="term-zh">SSL/TLS 加速器</div>
+                <div class="term-en">SSL/TLS Accelerator</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">SSL/TLSの暗号化・復号処理を専用のハードウェアで肩代わり（オフロード）し、WebサーバのCPU負荷を軽減して通信処理を高速化する装置。</div>
+                <div class="summary-zh">利用專用硬體代勞（Offload）SSL/TLS 加密與解密計算，減輕 Web 伺服器 CPU 負載並加速通訊處理的設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        Webサーバの前段にSSL/TLSアクセラレーターを配置する主な目的はどれか。
+<br>
+                        <div class="option">ア. 暗号化通信に伴う鍵交換や復号処理の負荷をオフロードし、Webサーバの応答性能を高める</div>
+                        <div class="option">イ. ユーザーのパスワード設定規則を強制強化する</div>
+                        <div class="option">ウ. HTMLコンテンツの自動翻訳を行う</div>
+                        <div class="option">エ. サーバのバックアップデータを自動生成する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SSL/TLSアクセラレーターは負荷の高い暗号処理を代行処理することで、本体サーバの負荷を削減し応答速度を改善します。</div></td>
+                    <td>                        在 Web 伺服器前端部署 SSL/TLS 加速器的主要目的為下列何者？
+<br>
+                        <div class="option">A. 卸載加密通訊產生的金鑰交換與解密負擔，提升 Web 伺服器的回應效能</div>
+                        <div class="option">B. 強制強化使用者的密碼設定規則</div>
+                        <div class="option">C. 自動翻譯 HTML 網頁內容</div>
+                        <div class="option">D. 自動產生伺服器的備份資料</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：SSL/TLS 加速器透過分擔高運算量的加密解密計算，減輕主伺服器的負載並顯著提升系統回應效能。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 8 -->
+    <div class="group-container">
+        <div class="group-header">資料備份與儲存安全</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">3-2-1ルール</div>
+                <div class="term-reading">さんにいちるーる</div>
+                <div class="term-zh">3-2-1 備份原則</div>
+                <div class="term-en">3-2-1 Rule</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データ保護の黄金律。「3つのコピーを作成し、2種類の異なるメディアに保存し、1つは遠隔地（オフサイト）で保管する」という原則。</div>
+                <div class="summary-zh">資料保護的金科玉律。指「保留3份資料副本、使用2種不同儲存介質、並將1份副本存放在異地（Offsite）」的原則。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        バックアップの「3-2-1ルール」における「1」が意味する適切な内容はどれか。
+<br>
+                        <div class="option">ア. バックアップを1つのメディアのみに保存する</div>
+                        <div class="option">イ. 少なくとも1つのバックアップ副本を遠隔地（オフサイト）に保管する</div>
+                        <div class="option">ウ. 1日1回バックアップを実行する</div>
+                        <div class="option">エ. 復元にかかる時間を1分以内にする</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：3-2-1ルールの「1」は、火災や大規模広域災害からデータを守るための「1つの異地（オフサイト）保管」を示します。</div></td>
+                    <td>                        在資料備份的「3-2-1原則」中，「1」所代表的適當內容為下列何者？
+<br>
+                        <div class="option">A. 僅將備份資料儲存在1種介質上</div>
+                        <div class="option">B. 至少將1份備份副本存放在異地（Offsite）</div>
+                        <div class="option">C. 每天執行1次備份作業</div>
+                        <div class="option">D. 將資料復原時間控制在1分鐘以內</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：3-2-1 原則中的「1」代表將至少1份副本放在遠離主場區的異地，防範火災或區域性自然災害導致資料全毀。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">WORM</div>
+                <div class="term-reading">わーむ</div>
+                <div class="term-zh">單寫多讀儲存技術（Write Once Read Many）</div>
+                <div class="term-en">Write Once Read Many</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データの消去や上書き変更を物理・論理的に不可能な構造にし、改ざん防止と長期非改変保存（ログや証拠保存）を保証するストレージ技術。</div>
+                <div class="summary-zh">在物理或邏輯上禁止刪除與覆寫，確保資料無法經人為竄改並進行長期原樣保存（如日誌與法律證據）的儲存技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        WORM（Write Once Read Many）メディアの特性として最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 何度でも自由に消去や上書き更新ができる</div>
+                        <div class="option">イ. 一度書き込まれたデータは削除・改ざんできず、読み出しのみが可能である</div>
+                        <div class="option">ウ. データの書き込みには専用のAIが必要となる</div>
+                        <div class="option">エ. 通信速度が既存メディアの100倍となる</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：WORMは「一度だけ書き込み可能で、以降は読み取り専用」となるため、重要なログや証拠データの改ざん防止に用いられます。</div></td>
+                    <td>                        關於 WORM（單寫多讀）儲存介質的特性，下列描述何者最適當？
+<br>
+                        <div class="option">A. 可以隨意進行多次抹除與覆寫更新</div>
+                        <div class="option">B. 資料一旦寫入後便無法刪除或竄改，僅能重複進行讀取</div>
+                        <div class="option">C. 寫入資料時必須搭配專用的 AI 技術</div>
+                        <div class="option">D. 通訊速度可達現有介質的100倍</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：WORM 特性為「只能寫入一次，後續僅供讀取」，能有效防止關鍵日誌或稽核證據遭事後變更與抹滅。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ストレージのミラーリング</div>
+                <div class="term-reading">すとれーじのみらーりんぐ</div>
+                <div class="term-zh">儲存設備鏡像（Mirroring / RAID 1）</div>
+                <div class="term-en">Storage Mirroring</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">同一データを複数のディスクにリアルタイムで重複書き込みする技術（RAID 1等）。片方が故障しても業務を停止させずに継続運用可能にする。</div>
+                <div class="summary-zh">將同一份資料即時同步寫入多個硬碟的技術（如 RAID 1）。即使單一硬碟故障，系統仍能不中斷地持續運作。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        ストレージのミラーリング（RAID 1）を構築する主な目的はどれか。
+<br>
+                        <div class="option">ア. データ読み書きの通信速度を極限まで加速する</div>
+                        <div class="option">イ. ディスク1台が物理故障しても、もう片方のディスクで継続稼働できるように冗長性を高める</div>
+                        <div class="option">ウ. ストレージの利用可能容量を2倍に増やす</div>
+                        <div class="option">エ. ウイルス感染を自動的に検知・駆除する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ミラーリングは同一内容を2台に保持して二重化（冗長化）し、耐障害性（アベイラビリティ）を高める手法です。</div></td>
+                    <td>                        建置儲存設備鏡像（Storage Mirroring / RAID 1）的主要目的為下列何者？
+<br>
+                        <div class="option">A. 將資料讀寫通訊速度提升至極致</div>
+                        <div class="option">B. 提高冗餘性，使單一磁碟發生實體故障時仍能由另一顆磁碟維持運作</div>
+                        <div class="option">C. 使儲存設備的可用容量擴增為 2 倍</div>
+                        <div class="option">D. 自動偵測並清除病毒感染</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：鏡像技術（RAID 1）透過將資料同時寫入兩顆硬碟建立容錯備份，大幅提高系統的連續可用性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">遠隔バックアップ</div>
+                <div class="term-reading">えんかくばっくあっぷ</div>
+                <div class="term-zh">異地遠端備份</div>
+                <div class="term-en">Remote Backup</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワーク経由で遠隔地のデータセンターやクラウドにバックアップデータを自動送信・保管する手法。災害発生時の事業継続（BCP）に寄与する。</div>
+                <div class="summary-zh">透過網路將備份資料自動傳送並保管於異地資料中心或雲端的做法。為遭遇災害時的業務連續性（BCP）提供保障。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        遠隔バックアップを導入することによって最も直接的に備えることができるリスクはどれか。
+<br>
+                        <div class="option">ア. 本社データセンターが地震や火災などの大規模災害で被災するリスク</div>
+                        <div class="option">イ. クライアントPCのCPU過熱によるフリーズ</div>
+                        <div class="option">ウ. 社内ネットワークのLANケーブル断線</div>
+                        <div class="option">エ. 退職者による認証情報の持ち出し</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：遠隔地（オフサイト）にバックアップを保持しておけば、拠点が全滅するような地域災害時にもデータ損失を免れます。</div></td>
+                    <td>                        導入異地遠端備份最能直接防範下列哪一種風險？
+<br>
+                        <div class="option">A. 總公司資料中心因地震或火災等大規模災害而受創的風險</div>
+                        <div class="option">B. 用戶端電腦因 CPU 過熱導致當機</div>
+                        <div class="option">C. 公司內部網路 LAN 線路斷線</div>
+                        <div class="option">D. 離職員工帶走驗證身分資訊</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：異地遠端備份能確保即便主要據點遭受毀滅性區域災害，機密資料仍可在遠方安全保留並進行還原。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">暗号化消去</div>
+                <div class="term-reading">あんごうかしょうきょ</div>
+                <div class="term-zh">加密銷毀（Cryptographic Erase）</div>
+                <div class="term-en">Cryptographic Erase</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">暗号化されたストレージの復号鍵（暗号鍵）のみを完全に削除・破壊することで、記憶領域全体のデータを実質的に復元・解読不能にする高速消去技術。</div>
+                <div class="summary-zh">僅完全刪除或摧毀加密儲存設備的解密金鑰，使整個儲存區域的資料在實質上無法復原與解密的快速銷毀技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        暗号化消去（Cryptographic Erase）の主なメリットはどれか。
+<br>
+                        <div class="option">ア. 復号鍵のみを破棄・消去することで、大容量ストレージでも瞬時に復元不可能な状態にできる</div>
+                        <div class="option">イ. 物理破壊装置が不要になるためディスクを再利用不可にする</div>
+                        <div class="option">ウ. 消去後もいつでもデータを元に戻せる</div>
+                        <div class="option">エ. 暗号化されていないデータにもそのまま適用できる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：暗号化消去は、鍵を消すだけでデータを復号不能なランダムノイズ化できるため、大容量メディアも即座に安全廃棄・リサイクル準備できます。</div></td>
+                    <td>                        加密銷毀（Cryptographic Erase）的主要優點為下列何者？
+<br>
+                        <div class="option">A. 僅需銷毀解密金鑰，即可在瞬間使大容量儲存設備變為無法復元狀態</div>
+                        <div class="option">B. 因不需要實體破壞設備，使磁碟變得完全無法重複利用</div>
+                        <div class="option">C. 銷毀後隨時皆可將資料還原為原始狀態</div>
+                        <div class="option">D. 未經加密處理的資料亦可直接適用此方法</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：加密銷毀只要抹除對應金鑰，即可讓硬碟資料瞬間變為不可解密的亂碼，極具高效性與安全性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子透かし</div>
+                <div class="term-reading">でんしすかし</div>
+                <div class="term-zh">數位浮水印（Digital Watermarking）</div>
+                <div class="term-en">Digital Watermarking</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">画像、音声、動画等のマルチメディアデータに不可視な形で著作権情報や識別コードを埋め込み、不正コピーや改ざんの検出・トレースを行う技術。</div>
+                <div class="summary-zh">在影像、聲音、影片等多媒體資料中以不可見形式嵌入著作權資訊或識別碼，用以偵測與追蹤非法複製或竄改的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        電子透かし（デジタルウォーターマーク）技術の利用目的として適切なものはどれか。
+<br>
+                        <div class="option">ア. デジタルコンテンツの著作権者を証明し、不正流出や無断転載を追跡・抑止する</div>
+                        <div class="option">イ. 画像の解像度を自動的に10倍に向上させる</div>
+                        <div class="option">ウ. 動画ファイルの容量を半減させる圧縮技術</div>
+                        <div class="option">エ. ネットワーク上の通信速度を加速させる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：電子透かしはデータ内に著作権情報や利用者の識別子を潜ませることで、不正配布の特定や著作権主張を可能にします。</div></td>
+                    <td>                        關於數位浮水印（Digital Watermarking）技術的使用目的，下列何者適當？
+<br>
+                        <div class="option">A. 證明數位內容的著作權人，並追蹤與遏止外洩或未經授權的轉載</div>
+                        <div class="option">B. 自動將影像解析度提升 10 倍</div>
+                        <div class="option">C. 將影片檔案容量減半的壓縮技術</div>
+                        <div class="option">D. 加速網路上的通訊傳輸速度</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：數位浮水印將版權標誌或追蹤碼隱藏於多媒體資料中，當發生非法侵權流出時，能明確進行著作權主張與來源追蹤。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 9 -->
+    <div class="group-container">
+        <div class="group-header">新興技術與雲端安全</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">携帯端末のセキュリティ</div>
+                <div class="term-reading">けいたいたんまつのせきゅりてぃ</div>
+                <div class="term-zh">行動裝置安全</div>
+                <div class="term-en">Mobile Device Security</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">スマホやタブレットの盗難・紛失や悪意あるアプリから情報を守る対策。画面ロック、生体認証、リモートワイプ、アプリ権限制御などを包括する。</div>
+                <div class="summary-zh">保護智慧型手機與平板免於遺失遭竊或惡意 App 危害的對策。包含螢幕鎖、生物識別、遠端抹除及 App 權限控制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        スマートフォンを紛失した際、端末内の機密情報の流出を防ぐためにあらかじめ設定しておくべき機能はどれか。
+<br>
+                        <div class="option">ア. リモートワイプ（遠隔データ消去）機能</div>
+                        <div class="option">イ. テザリング機能</div>
+                        <div class="option">ウ. 画面の自動回転機能</div>
+                        <div class="option">エ. ダークモード表示</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：リモートワイプを設定しておけば、紛失時に遠隔操作で端末のデータを全削除し、第三者による閲覧を阻止できます。</div></td>
+                    <td>                        當遺失智慧型手機時，為防止裝置內的機密資料外洩，應預先設定好下列哪一項功能？
+<br>
+                        <div class="option">A. 遠端清除（Remote Wipe）功能</div>
+                        <div class="option">B. 網路分享（Tethering）功能</div>
+                        <div class="option">C. 螢幕自動旋轉功能</div>
+                        <div class="option">D. 深色模式顯示設定</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：預先啟用遠端抹除功能，可在設備不慎遺失時，透過遠端連線強制清空設備內部資料以防止洩密。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クラウドサービスのセキュリティ</div>
+                <div class="term-reading">くらうどさーびすのせきゅりてぃ</div>
+                <div class="term-zh">雲端服務安全</div>
+                <div class="term-en">Cloud Service Security</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">クラウド上のデータやアクセス環境を守る施策。責任共有モデル（Shared Responsibility Model）を理解し、設定ミス防止や通信暗号化を徹底する。</div>
+                <div class="summary-zh">保護雲端上資料與存取環境的措施。須釐清責任共擔模型（Shared Responsibility Model），貫徹防範設定失誤與加密通訊。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        クラウドサービス（IaaS/PaaS/SaaS）における「責任共有モデル」の説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. クラウド事業者と利用者が、サービス層（インフラ、OS、データ等）に応じた適切なセキュリティ管理責任を分担する</div>
+                        <div class="option">イ. セキュリティ上のトラブル責任はすべてクラウド事業者が100%負う</div>
+                        <div class="option">ウ. 利用者がクラウドインフラの物理ハードウェアの修理・保守まで行う</div>
+                        <div class="option">エ. 政府がすべてのクラウドセキュリティ責任を一括管理する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：責任共有モデルでは、インフラ層はクラウド事業者、設定やデータ管理は利用者が責任を持つという範囲明確化がなされています。</div></td>
+                    <td>                        關於雲端服務（IaaS/PaaS/SaaS）中的「責任共擔模型」，下列說明何者適當？
+<br>
+                        <div class="option">A. 雲端業者與使用者依服務層級（基礎設施、OS、資料等）劃分並承擔相應資安責任</div>
+                        <div class="option">B. 所有資安事故的責任皆由雲端業者 100% 全權承擔</div>
+                        <div class="option">C. 使用者必須負責雲端硬體設備的實體維修與維護作業</div>
+                        <div class="option">D. 由政府一律統一管理所有雲端服務的安全責任</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：責任共擔模型明確劃分了領域，雲端提供商負責雲端基礎設施的安全，而使用者需對資料存取與設定安全負責。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">IoTのセキュリティ</div>
+                <div class="term-reading">あいおーてぃーのせきゅりてぃ</div>
+                <div class="term-zh">物聯網資安（IoT Security）</div>
+                <div class="term-en">IoT Security</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">家電や産業機器等、リソース制限のあるIoT機器の保護技術。初期ID/パスワード変更、ファームウェアの迅速な更新、ネットワークの分離が必須。</div>
+                <div class="summary-zh">保護家電或工業設備等資源受限 IoT 設備的技術。修改預設帳密、及時更新韌體及網路劃分隔離為關鍵對策。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        IoT機器がボットネット（Mirai等）の台頭によりマルウェア感染の標的になりやすい主な理由はどれか。
+<br>
+                        <div class="option">ア. 出荷時のデフォルトのID・パスワードが変更されずに利用されているケースが多い</div>
+                        <div class="option">イ. 機器の通信速度がPCより格段に速いため</div>
+                        <div class="option">ウ. すべてのIoT機器にファイアウォールが標準搭載されているため</div>
+                        <div class="option">エ. 物理的な設置場所が宇宙空間であるため</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：多くのIoT機器は初期パスワード（admin/admin等）のままインターネットに公開され、ボットネットの標的となりやすい問題があります。</div></td>
+						
+    <td>
+        IoT 機器因殭屍網路（Mirai 等）的崛起而容易成為惡意軟體感染標的主要原因為何？
+<br>
+        <div class="option">A. 出廠時的預設 ID 與密碼未經變更就被使用的情況很多</div>
+        <div class="option">B. 機器通訊速度比 PC 快得多</div>
+        <div class="option">C. 所有 IoT 機器都標準搭載了防火牆</div>
+        <div class="option">D. 物理安裝位置在宇宙空間</div>
+        <div class="answer">正確解答：A</div>
+<br>
+        <div class="analysis">解析：許多 IoT 機器在維持初始密碼（admin/admin 等）的狀態下公開於網際網路，容易成為殭屍網路標靶的問題。</div>
+    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">AIを使ったセキュリティ技術</div>
+                <div class="term-reading">えーあいをつかったせきゅりてぃぎじゅつ</div>
+                <div class="term-zh">AI 資安防衛應用（AI for Security）</div>
+                <div class="term-en">AI for Security</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">機械学習や深層学習を活用して大量のログや通信パターンを自動解析し、未知のゼロデイ攻撃や高度な脅威（APT）をリアルタイムで自動検知・対処する。</div>
+                <div class="summary-zh">運用機器學習與深度學習自動解析大量日誌與通訊模式，即時自動偵測與應對未知的零日攻擊與高級持續性威脅（APT）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        AIを活用した情報セキュリティ技術（AI for Security）の特徴として適切なものはどれか。
+<br>
+                        <div class="option">ア. 大規模な過去ログから平常時のパターンを学習し、未知の脅威や異常な振る舞いを高精度に検出できる</div>
+                        <div class="option">イ. 人間による確認作業が一切不要になるためセキュリティ担当者を全廃できる</div>
+                        <div class="option">ウ. システムの消費電力をゼロにする</div>
+                        <div class="option">エ. 既知のパターンマッチングしか実行できない</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：AIを活用することで、人間では処理しきれない大量のデータを分析し、未知の攻撃や微妙な異常行動の検知が可能になります。</div></td>
+                    <td>                        關於運用 AI 的資安防護技術（AI for Security）之特徵，下列何者適當？
+<br>
+                        <div class="option">A. 能從龐大歷史日誌中學習正常模式，進而高精度地偵測未知脅威或異常行為</div>
+                        <div class="option">B. 完全不再需要人工確認，可全面解僱資安管理人員</div>
+                        <div class="option">C. 能使系統的整體電力消耗降至零</div>
+                        <div class="option">D. 僅能執行傳統的特徵碼比對</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：AI 防禦技術可分析超越人類處理能力上限的大規模數據，藉由建立基準行為模式自動警示未知的異常偏離。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">AIそのものを守るセキュリティ技術</div>
+                <div class="term-reading">えーあいそのものをまもるせきゅりてぃぎじゅつ</div>
+                <div class="term-zh">AI 模型與系統防護（Security for AI）</div>
+                <div class="term-en">Security for AI</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">AIモデルへの敵対的攻撃（Adversarial Attacks）、学習データの汚染（データポイズニング）、モデルの不正抽出や盗難を防ぎ、AIの信頼性を担保する技術。</div>
+                <div class="summary-zh">防範針對 AI 模型的對抗性攻擊（Adversarial Attacks）、訓練資料毒化（Data Poisoning）及模型竊取，確保 AI 可信度的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        AIシステムに対する「データポイズニング（汚染）攻撃」の説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 学習データに悪意ある誤データを混入させ、AIの学習結果や予測モデルを意図的に誤動作させる</div>
+                        <div class="option">イ. AIサーバの電源ケーブルを物理的に切断する</div>
+                        <div class="option">ウ. 大量のメールをAI担当者のアドレスへ送信する</div>
+                        <div class="option">エ. AIモデルのソースコードを削除する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：データポイズニングはAIの学習フェーズを狙い、偽データを学習させることで判定精度を著しく低下・歪曲させる攻撃です。</div></td>
+                    <td>                        關於針對 AI 系統的「資料毒化攻擊（Data Poisoning）」，下列說明何者適當？
+<br>
+                        <div class="option">A. 在訓練資料中混入惡意的錯誤資料，意圖使 AI 訓練出的模型產生誤判</div>
+                        <div class="option">B. 實體剪斷 AI 伺服器的電源線路</div>
+                        <div class="option">C. 發送大量的電子郵件至 AI 負責人的信箱</div>
+                        <div class="option">D. 直接刪除 AI 模型的原始程式碼</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：資料毒化攻擊瞄準 AI 的學習階段，透過注入偽造或受污染的訓練數據，操控並破壞 AI 模型最終的判斷準確性。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 10 -->
+    <div class="group-container">
+        <div class="group-header">端點、行動裝置與數位鑑識</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">EDR</div>
+                <div class="term-reading">いーでぃーあーる</div>
+                <div class="term-zh">端點偵測與回應（Endpoint Detection and Response）</div>
+                <div class="term-en">Endpoint Detection and Response</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">端末（PC・スマホ等）の挙動や通信を常時監視・ログ記録し、侵入されたマルウェアの検知、隔離、感染経路の隔離追跡を行う端點向けセキュリティ製品。</div>
+                <div class="summary-zh">持續監控並記錄端點設備的行為與通訊，於惡意軟體侵入時進行偵測、網路隔離及感染路徑追蹤的端點安全產品。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        EPP（従来のウイルス対策ソフト）と比較した際のEDRの主な役割はどれか。
+<br>
+                        <div class="option">ア. 侵入を防ぐことだけでなく、侵入された後の被害拡大防止・挙動追跡・端末隔離を行う</div>
+                        <div class="option">イ. 物理的な端末の持ち出しを鍵でロックする</div>
+                        <div class="option">ウ. システムのバックアップ電源を供給する</div>
+                        <div class="option">エ. メール本文の自動作成を行う</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：EPPが「侵入防止（事前）」を目的とするのに対し、EDRは「侵入検知・対応（事後）」に特化して被害を最小化します。</div></td>
+                    <td>                        與 EPP（傳統防毒軟體）相比，EDR 的主要作用為下列何者？
+<br>
+                        <div class="option">A. 不僅止於預防入侵，更著重於入侵發生後的止血遏止、行為追蹤與終端隔離</div>
+                        <div class="option">B. 使用實體鎖防止設備遭搬離偷竊</div>
+                        <div class="option">C. 為系統提供備用應急電源</div>
+                        <div class="option">D. 自動撰寫電子郵件內文</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：EPP 著重於事前防禦，而 EDR 則著重於假設威脅已入侵端點時的「事後監控、應變、追蹤與隔離」。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">DLP</div>
+                <div class="term-reading">でぃーえるぴー</div>
+                <div class="term-zh">資料遺失／洩漏防護（Data Loss Prevention）</div>
+                <div class="term-en">Data Loss Prevention</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定機密データ（マイナンバーやクレジットカード番号等）そのものを識別・追跡し、外部への無断送信やUSBコピーを強制遮断するデータ保護ソリューション。</div>
+                <div class="summary-zh">識別並追蹤機密資料（如身份證號、信用卡號等）本身，強制封鎖將其未授權傳送至外網或複製至 USB 的專用防護方案。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        DLP（Data Loss Prevention）システムの最も特徴的な機能はどれか。
+<br>
+                        <div class="option">ア. 機密情報のデータパターンを自動識別し、操作者が誰であれ不正なコピーや外部送信を自動ブロックする</div>
+                        <div class="option">イ. ユーザーのログインパスワードを日替わりで自動変更する</div>
+                        <div class="option">ウ. ネットワーク機器の物理的な故障を自動修理する</div>
+                        <div class="option">エ. スパムメールを無条件で自動返信する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：DLPは「データそのもの」に着目して監視・制御するため、正規権限を持つユーザーによるうっかり漏洩や不正持ち出しも防止できます。</div></td>
+                    <td>                        DLP（資料防洩漏系統）最具特徵的功能為下列何者？
+<br>
+                        <div class="option">A. 自動識別機密資料特徵，不論操作者身分為何皆自動阻擋非法複製或對外傳送</div>
+                        <div class="option">B. 每天自動更換使用者的登入密碼</div>
+                        <div class="option">C. 自動維修網路設備的實體故障</div>
+                        <div class="option">D. 無條件自動回覆垃圾郵件</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：DLP 以「資料內容本身」為核心進行監控與防護，因此能有效防止內部合法使用者無意或有意的機密外洩。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SIEM</div>
+                <div class="term-reading">しーむ</div>
+                <div class="term-zh">資安資訊與事件管理（SIEM）</div>
+                <div class="term-en">Security Information and Event Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ファイアウォール、サーバ、ネットワーク機器等多様な機器のログを一元集約し、相関分析によって潜在的脅威や攻撃の兆候をリアルタイム検知するシステム。</div>
+                <div class="summary-zh">集中收集防火牆、伺服器、網路設備等多元日誌，透過關聯分析（Correlation Analysis）即時偵測潛在威脅與攻擊徵兆的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        SIEM（Security Information and Event Management）の機能として最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 様々な機器からログを集約し、イベントの相関分析を行って攻撃の兆候を発見・通知する</div>
+                        <div class="option">イ. クライアントPCのOSインフラを全自動で再インストールする</div>
+                        <div class="option">ウ. WebサイトのHTMLデザインを動的に生成する</div>
+                        <div class="option">エ. 物理キーボードのキー入力を機械的にロックする</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：SIEMは単一ログでは見抜けない高度な攻撃を、複数の異なる機器ログの「相関分析」によって検出する強みを持ちます。</div></td>
+                    <td>                        關於 SIEM（資安資訊與事件管理）的功能，下列何者最適當？
+<br>
+                        <div class="option">A. 集中來自各種設備的日誌進行事件關聯分析，察覺並通報潛在攻擊徵兆</div>
+                        <div class="option">B. 全自動為用戶端電腦重新安裝作業系統</div>
+                        <div class="option">C. 動態生成 Web 網站的 HTML 視覺設計</div>
+                        <div class="option">D. 機械式地鎖定實體鍵盤的按鍵輸入</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：SIEM 的優勢在於將分散於不同設備的日誌進行「關聯性分析」，找出單一機器日誌難以察覺的高階威脅。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">MDM</div>
+                <div class="term-reading">えむでぃーえむ</div>
+                <div class="term-zh">行動裝置管理系統（Mobile Device Management）</div>
+                <div class="term-en">Mobile Device Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織が所有・利用する多数のスマートフォンやタブレットの設定、セキュリティポリシー適用、アプリ配布、リモートロックを一括管理するシステム。</div>
+                <div class="summary-zh">統一管理組織內龐大手機與平板設定、套用安全策略、分發應用程式及執行遠端鎖定的系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        企業で導入するMDM（Mobile Device Management）で実施できる管理機能として適切なものはどれか。
+<br>
+                        <div class="option">ア. 端末へのパスコード強制適用、業務アプリの一括配信、紛失時のリモートロック・ワイプ</div>
+                        <div class="option">イ. 端末のバッテリー容量を物理的に増大させる処理</div>
+                        <div class="option">ウ. 通信キャリアの月額契約料金を無条件で半額にする処理</div>
+                        <div class="option">エ. 端末のCPU動作周波数を10倍にオーバクロックする処理</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：MDMはモバイル端末の設定や利用アプリを中央から遠隔制御・統合管理し、組織のモバイル安全性を確保します。</div></td>
+                    <td>                        企業導入 MDM（行動裝置管理系統）可執行的管理功能，下列何者適當？
+<br>
+                        <div class="option">A. 強制實施裝置密碼設定、統一分發企業 App、遺失時執行遠端鎖定與抹除</div>
+                        <div class="option">B. 實體擴增行動裝置的電池容量</div>
+                        <div class="option">C. 無條件將電信商的月租費砍半</div>
+                        <div class="option">D. 將裝置 CPU 的運作時脈超頻 10 倍</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：MDM 允許管理員遠端對組織內的行動設備統一發布安全策略、控制 App 權限，並在設備遺失時實施遠端抹除。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">デジタルフォレンジックス</div>
+                <div class="term-reading">でじたるふぉれんじっくす</div>
+                <div class="term-zh">數位鑑識（Digital Forensics）</div>
+                <div class="term-en">Digital Forensics</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">セキュリティインシデントや犯罪の際、電子的記録を法的証拠性を保ったまま収集・保全・解析・鑑識し、原因や被害状況を解明する手続き。</div>
+                <div class="summary-zh">資安事件或犯罪發生時，在維持法律證據力的前提下，對電子紀錄進行收集、保存、解析與鑑識以釐清真相的程序。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        デジタルフォレンジックの手順において、証拠の法的採用可能性を保つために最も重要な対応はどれか。
+<br>
+                        <div class="option">ア. 対象ストレージのライトブロッカードライバを使用し、ライトプロテクト（書き込み禁止）の状態で保全コピー（イメージ取得）を作成する</div>
+                        <div class="option">イ. 証拠となるPCをそのまま日常業務で使い続ける</div>
+                        <div class="option">ウ. 解析前にディスクの内容を適当に書き換える</div>
+                        <div class="option">エ. 調査手順の記録を一切残さない</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：デジタルフォレンジックでは証拠の改ざんを防ぐため、書き込み防止措置を施した上でビットレベルの完全イメージ複製を作成して解析します。</div></td>
+                    <td>                        在數位鑑識（Digital Forensics）流程中，為維持證據在法律上的可採信度，最重要的處置為下列何者？
+<br>
+                        <div class="option">A. 使用防寫裝置（Write Blocker），在寫入保護狀態下製作磁碟鏡像複本（Image）進行分析</div>
+                        <div class="option">B. 將作為證據的電腦繼續留給日常業務使用</div>
+                        <div class="option">C. 在解析分析前隨意改寫磁碟內容</div>
+                        <div class="option">D. 完全不留下任何調查步驟的紀錄</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：數位鑑識關鍵在於確保原始資料未經竄改，必須使用防寫設備複製出位元級的唯讀鏡像檔進行深入解析。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 11 -->
+    <div class="group-container">
+        <div class="group-header">實體安全、設備防護與系統可用性</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RASIS</div>
+                <div class="term-reading">れいしす</div>
+                <div class="term-zh">RASIS 系統評價指標</div>
+                <div class="term-en">Reliability, Availability, Serviceability, Integrity, Security</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムの品質を評価する5つの指標（ Reliability（信頼性）、Availability（可用性）、Serviceability（運用性）、Integrity（完全性）、Security（安全性)）の頭文字をとったもの。信頼できる堅牢なシステム運用の基準。</div>
+                <div class="summary-zh">評估系統品質的5項指標（Reliability(可靠性)、Availability(可用性）、Serviceability(可維護性）、Integrity(完整性）、Security(安全性））首字縮寫。為評估堅固系統運作的基準。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        RASISの各評価指標と意味の組み合わせとして正しいものはどれか。
+<br>
+                        <div class="option">ア. Availability - 可用性（システムが利用可能な状態を維持している割合）</div>
+                        <div class="option">イ. Reliability - 応答速度（画面が表示されるまでのミリ秒数）</div>
+                        <div class="option">ウ. Serviceability - 画面デザインの美しさ</div>
+                        <div class="option">エ. Security - 通信回線の帯域幅</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：A（Availability）は可用性を表し、MTBF/(MTBF+MTTR)などの稼働率で計測されます。</div></td>
+                    <td>                        關於 RASIS 各項指標與其含義的組合，下列何者正確？
+<br>
+                        <div class="option">A. Availability - 可用性（系統維持在可正常使用狀態的比例）</div>
+                        <div class="option">B. Reliability - 回應速度（畫面載入所需的毫秒數）</div>
+                        <div class="option">C. Serviceability - 視覺介面設計的美觀程度</div>
+                        <div class="option">D. Security - 網路通訊線路的頻寬大小</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：A（Availability）代表可用性，通常以系統運作時間比率（稼動率）來指標化測量。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RAS技術</div>
+                <div class="term-reading">らすぎじゅつ</div>
+                <div class="term-zh">遠端存取安全技術（Remote Access Security Technology）</div>
+                <div class="term-en">Remote Access Security Technology</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">社外から社内網へ遠隔接続する際の安全性を担保する技術群。VPNトンネリング、強固な相互認証、暗号通信等を組み合わせて盗聴や不正侵入を防ぐ。</div>
+                <div class="summary-zh">保障由社外遠端連線至公司內網安全的技術總稱。結合 VPN 隧道、強效雙向驗證及加密通訊防範竊聽與入侵。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        リモートワークにおいて社外から社内ネットワークへ安全にアクセスするために利用されるRAS技術の代表例はどれか。
+<br>
+                        <div class="option">ア. IPsecやTLSを用いたVPN（Virtual Private Network）</div>
+                        <div class="option">イ. FTPによる平文ファイル転送</div>
+                        <div class="option">ウ. Telnetによるコマンド遠隔操作</div>
+                        <div class="option">エ. DNSによるドメイン名解決</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：VPNは公衆網上に暗号化された安全な仮想専用トンネルを構築する、代表的なリモートアクセスセキュリティ（RAS）技術です。</div></td>
+                    <td>                        在遠距工作環境中，為由外部安全存取公司內網所使用的 RAS 技術代表範例為下列何者？
+<br>
+                        <div class="option">A. 使用 IPsec 或 TLS 的 VPN（虛擬私有網路）</div>
+                        <div class="option">B. 使用 FTP 進行明文檔案傳輸</div>
+                        <div class="option">C. 使用 Telnet 進行遠端指令操作</div>
+                        <div class="option">D. 使用 DNS 進行網域名稱解析</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：VPN 在公用網際網路上建立加密的虛擬專用隧道，是典型的遠端存取安全（RAS）技術代表。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">耐震耐火設備</div>
+                <div class="term-reading">たいしんたいかせつび</div>
+                <div class="term-zh">耐震與耐火實體防護設備</div>
+                <div class="term-en">Seismic and Fire Resistance Equipment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">データセンターやサーバルームを地震の揺れや火災の熱・炎から物理的に保護する装置群（免震フリーアクセス床、ガス消火設備等）。</div>
+                <div class="summary-zh">保護資料中心與伺服器房免受地震搖晃或火災高溫破壞的實體設備群（如免震架高地板、惰性氣體滅火設備等）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        サーバルームの火災対策において、精密電子機器への水損ダメージを防ぐために採用される消火設備はどれか。
+<br>
+                        <div class="option">ア. 水スプリンクラー設備</div>
+                        <div class="option">イ. ガス系消火設備（FM-200や窒素ガス等）</div>
+                        <div class="option">ウ. 泡消火設備</div>
+                        <div class="option">エ. 砂バケツの配備のみ</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：サーバルームでは放水による機器短絡や二次被害を防ぐため、電子機器に影響を与えないガス系消火設備が一般的に用いられます。</div></td>
+                    <td>                        在伺服器房的火災預防措施中，為避免水損導致精密電子機器二次毀損所採用的滅火設備為下列何者？
+<br>
+                        <div class="option">A. 灑水滅火系統</div>
+                        <div class="option">B. 氣體類滅火系統（如 FM-200、氮氣等）</div>
+                        <div class="option">C. 泡沫滅火系統</div>
+                        <div class="option">D. 僅配置沙桶</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：為防止噴水造成電子設備短路與二次水損損毀，伺服器房多半採用不導電的氣體滅火系統。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">UPS</div>
+                <div class="term-reading">ゆーぴーえす</div>
+                <div class="term-zh">不斷電系統（Uninterruptible Power Supply）</div>
+                <div class="term-en">Uninterruptible Power Supply</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">停電や落雷による瞬間電圧低下（瞬低）の際、内蔵バッテリーから即座に給電を行い、サーバの安全終了や継続稼働を担保する電源装置。</div>
+                <div class="summary-zh">當發生停電或落雷導致壓降時，能立即由內部電池供電，確保伺服器安全關機或持續運作的電源設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データセンターにUPS（無停電電源装置）を設置する主な目的はどれか。
+<br>
+                        <div class="option">ア. 予期せぬ停電時に、自家発電機が起動するまでの間や安全なシャットダウンまでの電源を継続確保する</div>
+                        <div class="option">イ. 電気代を永久的に半額へ節減する</div>
+                        <div class="option">ウ. 通信回線の帯域幅を拡張する</div>
+                        <div class="option">エ. サーバの室温を適正に冷却維持する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：UPSは商用電源の遮断時にバッテリー給電へ切り替わり、データ破損を伴う突発的な強制終了を防ぎます。</div></td>
+                    <td>                        在資料中心設置不斷電系統（UPS）的主要目的為下列何者？
+<br>
+                        <div class="option">A. 在突發停電時，於發電機發動前或系統安全關機前持續提供緊急電源供電</div>
+                        <div class="option">B. 永久將伺服器的電費開銷砍半</div>
+                        <div class="option">C. 擴充網路通訊線路的頻寬大小</div>
+                        <div class="option">D. 將伺服器機房的室溫保持在適當冷卻狀態</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：UPS 可以在市電中斷的瞬間無縫切換為電池供電，防止系統因突發斷電而造成資料遺失或損毀。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">多重化技術</div>
+                <div class="term-reading">たじゅうかぎじゅつ</div>
+                <div class="term-zh">多路復用／多重化技術（Multiplexing Technology）</div>
+                <div class="term-en">Multiplexing Technology</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">1本の高帯域物理通信回線上に複数の独立したデータ信号（音声、データ等）を時分割や周波数分割等で同時にまとめて伝送する効率化技術。</div>
+                <div class="summary-zh">在單一高頻寬實體線路上，透過時分或頻分等方式，同時整合傳送多個獨立數據訊號（如語音、資料）的高效技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        多重化技術（TDMやFDMなど）を用いる主なメリットはどれか。
+<br>
+                        <div class="option">ア. 1本の物理回線の帯域を効率的に分割利用し、複数の通信チャネルを同時伝送してコストを削減できる</div>
+                        <div class="option">イ. 通信データの暗号化強度を無条件で高める</div>
+                        <div class="option">ウ. パスワード認証を不要にする</div>
+                        <div class="option">エ. 電波の到達距離を無限にのばす</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：多重化技術は既存の伝送路設備を効率よく共用し、通信インフラの利用効率を高めるために用いられます。</div></td>
+                    <td>                        使用多重化技術（如 TDM 或 FDM 等）的主要優點為下列何者？
+<br>
+                        <div class="option">A. 高效分割利用單一實體線路的頻寬，同時傳輸多個獨立管道以降低佈線成本</div>
+                        <div class="option">B. 無條件提升傳輸資料的加密強度</div>
+                        <div class="option">C. 使系統完全不再需要密碼驗證</div>
+                        <div class="option">D. 將無線電波的傳輸距離延伸至無限遠</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：多重化技術讓單一實體通訊鏈路能承載多路訊號，提高基礎設施的利用率並降低鋪設成本。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">セキュリティゾーニング</div>
+                <div class="term-reading">せきゅりてぃぞーにんぐ</div>
+                <div class="term-zh">安全分區管理（Security Zoning）</div>
+                <div class="term-en">Security Zoning</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">施設やネットワーク内部を情報の機密性や重要度レベルに応じて複数のゾーンに区画分けし、境界ごとに物理・論理アクセス制御を適用する手法。</div>
+                <div class="summary-zh">依據資訊機密性與重要度等級，將設施或網路劃分為多個安全分區，並在各區域邊界設置實體或邏輯門禁管控。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        物理セキュリティゾーニングの構成として適切なものはどれか。
+<br>
+                        <div class="option">ア. 受付・一般執務エリア・サーバルーム等の重要度に応じたエリア区分を設け、奥に進むほど制限を厳格化する</div>
+                        <div class="option">イ. 全エリアのアクセス権限を統一し区分けをなくす</div>
+                        <div class="option">ウ. 最重要データのある部屋を一番外側の公道に面した場所に配置する</div>
+                        <div class="option">エ. 防犯カメラをゾーニングの代わりに全廃する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：ゾーニングでは、重要度に応じた境界防護（段階的アクセス制御）を適用することでリスクを隔離します。</div></td>
+                    <td>                        關於實體安全分區管理（Security Zoning）的配置，下列何者適當？
+<br>
+                        <div class="option">A. 依據重要度區分接待處、一般辦公區與伺服器機房，越深入核心管制越嚴格</div>
+                        <div class="option">B. 統一所有區域的存取權限並取消任何區域劃分</div>
+                        <div class="option">C. 將存放最重要資料的房間安排在最外側臨街位置</div>
+                        <div class="option">D. 以全數拆除監視器來替代分區管理</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：安全分區採漸進式管制，依據資料資產重要性分層防護，越核心區域邊界門禁越嚴格。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">監視カメラ</div>
+                <div class="term-reading">かんしかめら</div>
+                <div class="term-zh">監控攝影機（CCTV）</div>
+                <div class="term-en">Surveillance Camera</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">施設内への不審者の侵入や不正行為を常時映像記録・監視する物理セキュリティ設備。犯罪抑止効果と事後検証の映像証拠を提供する。</div>
+                <div class="summary-zh">即時影像記錄與監視設施內可疑人士入侵或不法行為的實體安全設備。具備犯罪威嚇與事後查證影像證據功能。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        監視カメラの設置運用において、セキュリティを高めるための適切な留意点はどれか。
+<br>
+                        <div class="option">ア. 死角を最小限にし、出入口や重要アセット周辺をカバーするとともに、映像ログの保存期間を適正に管理する</div>
+                        <div class="option">イ. カメラの電源コードを誰でも抜ける場所に露出させておく</div>
+                        <div class="option">ウ. 映像データを一切録画せずリアルタイム表示のみとする</div>
+                        <div class="option">エ. 画質を最も低いモノクロ解像度に固定する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：監視カメラは設置場所（死角撲滅）と、事後調査に耐えうる録画映像の適切な長期保管管理が重要です。</div></td>
+                    <td>                        在監控攝影機的設置與維運中，下列何者是提高安全性的適當留意事項？
+<br>
+                        <div class="option">A. 最小化監控死角並覆蓋出入口與重要資產周邊，同時妥善管理影像日誌的保存期限</div>
+                        <div class="option">B. 將攝影機電源線路外露於任何人皆可拔除的位置</div>
+                        <div class="option">C. 完全不錄影保存，僅作現場即時畫面顯示</div>
+                        <div class="option">D. 將畫質固定為最低階的黑白低解析度模式</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：監視攝影機必須減少死角，重點覆蓋關鍵區域，並確保影像資料保留足夠天數以備事後稽核。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">インターロック</div>
+                <div class="term-reading">いんたーろっく</div>
+                <div class="term-zh">互鎖機制／雙門連鎖門禁（Interlock）</div>
+                <div class="term-en">Interlock</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">一方の扉が完全に閉じて施錠されない限りもう一方の扉が開かない二重扉構造等の物理制御。共連れ（ピギーバック）侵入を物理的に阻止する。</div>
+                <div class="summary-zh">在一扇門未完全關閉並鎖上之前，另一扇門絕無法開啟的雙重門結構。能實體阻絕共乘尾隨（Tailgating）非法進入。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        データセンターのセキュリティゲート等に設置されるインターロック（二重扉）の主な役割はどれか。
+<br>
+                        <div class="option">ア. 許可された1名が入室した際、共連れ（ tailgating ）によって未認証の者が同時に侵入するのを防止する</div>
+                        <div class="option">イ. 扉の開閉速度を10倍に高速化する</div>
+                        <div class="option">ウ. 火災発生時に自動的に酸素を遮断して消火する</div>
+                        <div class="option">エ. 入室者の体重を正確に自動計測する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：インターロックゲート（サークルゲート）は、一度に1人しか通過できない物理構造により共連れ侵入を確実に阻止します。</div></td>
+                    <td>                        在資料中心安全門禁等處設置的互鎖雙重門（Interlock）主要作用為下列何者？
+<br>
+                        <div class="option">A. 防止經授權人員進入時，未核可人員利用尾隨共乘（Tailgating）方式同時潛入</div>
+                        <div class="option">B. 將門扇的開閉速度提升 10 倍</div>
+                        <div class="option">C. 發生火災時自動封鎖氧氣進行滅火</div>
+                        <div class="option">D. 自動精確測量進出人員的體重</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：雙門連鎖機制利用一次僅容許單人通過的實體結構，能有效杜絕未經身分驗證者跟隨尾隨進入機密管制區。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">施錠管理</div>
+                <div class="term-reading">せじょうかんり</div>
+                <div class="term-zh">門鎖與鑰匙安全管理</div>
+                <div class="term-en">Lock Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">物理鍵、電子ロック、ICカードキー等の貸出履歴や管理権限を適切に追跡・制御し、鍵の紛失や無断複製による不正侵入を予防する運用管理。</div>
+                <div class="summary-zh">妥善追蹤與管控實體鑰匙、電子鎖及 IC 卡鑰匙的借還履歷與存取權，防範因鑰匙遺失或複製帶來的非法侵入。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        重要施設における施錠管理の運用として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 物理鍵の貸出台帳を運用し、定期的な鍵の棚卸しと権限見直しを実施する</div>
+                        <div class="option">イ. マスターキーを誰でも持ち出せる場所に放置する</div>
+                        <div class="option">ウ. 鍵を紛失してもシリンダー交換を行わない</div>
+                        <div class="option">エ. 電子ロックの暗証番号を何年間も初期設定のまま共有する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：鍵の厳格な貸出・返却ログ管理や定期的な実物点検（棚卸し）は物理セキュリティの基本です。</div></td>
+                    <td>                        關於重要設施門鎖與鑰匙管理的維運，下列何者最適當？
+<br>
+                        <div class="option">A. 落實實體鑰匙借還登記冊，並定期執行鑰匙盤點與權限審查</div>
+                        <div class="option">B. 將萬能鑰匙（Master Key）隨意放在任何人皆可拿取之處</div>
+                        <div class="option">C. 即使鑰匙遺失也絕不更換門鎖鎖芯</div>
+                        <div class="option">D. 電子鎖密碼多年來保持預設設定且公開共用</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：鑰匙屬實體門禁的核心，必須建立嚴格的借還紀錄，並定期盤點確認個數與控管授權狀態。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">入退室管理</div>
+                <div class="term-reading">にゅうたいしつかんり</div>
+                <div class="term-zh">門禁出入管理系統</div>
+                <div class="term-en">Access Control Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ICカードや生体認証等を用いて「誰が、いつ、どの区域に入退室したか」を厳格に記録・監視し、許可なき者の立ち入りを阻止するシステム。</div>
+                <div class="summary-zh">利用 IC 卡或生物識別等嚴格記錄與監控「何人、何時、進入何區域」，並阻止未獲授權者闖入的門禁系統。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        入退室管理システムで導入される「アンチパスバック機能」の説明として適切なものはどれか。
+<br>
+                        <div class="option">ア. 入室記録がないIDカードでの退室や、退室記録がないIDカードでの再入室を拒否する機能</div>
+                        <div class="option">イ. 入室時に自動的に電子メールを送信する機能</div>
+                        <div class="option">ウ. 危険物を検知してドアを自動破壊する機能</div>
+                        <div class="option">エ. 退室時にアンケートへ回答させる機能</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：アンチパスバックは、入室ログと退室ログの整合性をチェックし、カードの使い回しや共連れを防止する機能です。</div></td>
+                    <td>                        關於門禁管理系統中導入的「防反潛／防回傳功能（Anti-Passback）」，下列說明何者適當？
+<br>
+                        <div class="option">A. 拒絕無入室紀錄卡片的退室，或拒絕無退室紀錄卡片的再次入室功能</div>
+                        <div class="option">B. 進入房間時自動向管理員發送電子郵件的功能</div>
+                        <div class="option">C. 偵測到危險物品時自動破壞門扇的功能</div>
+                        <div class="option">D. 離開房間時強制填寫問卷調查的功能</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：防反潛機制強制檢查進出紀錄的先後順序，能有效防範卡片借用或未刷卡尾隨進入。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クリアデスク</div>
+                <div class="term-reading">くりあですく</div>
+                <div class="term-zh">淨空桌面政策（Clear Desk Policy）</div>
+                <div class="term-en">Clear Desk</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">離席時や退社時に、デスクの上に機密書類やUSBメモリ等を放置せず、鍵付き引き出し等に施錠保管して盗み見や持ち去りを防ぐ運用規則。</div>
+                <div class="summary-zh">暫時離座或下班時，禁止將機密文件、USB隨身碟留在桌上，須鎖入抽屜以防窺視或遭偷走的安全規範。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        クリアデスクポリシーを徹底することによって防ぐことができる主なリスクはどれか。
+<br>
+                        <div class="option">ア. 離席中のデスク上の機密書類の盗み見や、持ち去り（盗難）による情報漏えい</div>
+                        <div class="option">イ. サーバのハードディスク障害</div>
+                        <div class="option">ウ. メール送受信の遅延</div>
+                        <div class="option">エ. コンピュータウイルスのネットワーク感染</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：クリアデスクは物理的な情報保管に関するセキュリティルールであり、離席時の紙媒体や記憶媒体からの情報流出を防ぎます。</div></td>
+                    <td>                        貫徹淨空桌面政策（Clear Desk Policy）主要能防範下列哪一種風險？
+<br>
+                        <div class="option">A. 離座時桌上機密文件遭人窺視或偷走帶離導致的資訊洩漏</div>
+                        <div class="option">B. 伺服器硬碟發生實體故障</div>
+                        <div class="option">C. 電子郵件收發發生延遲</div>
+                        <div class="option">D. 電腦病毒透過網路擴散感染</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：淨空桌面原則是實體資安規範，旨在避免人不在座位時，紙本文件或記憶媒體暴露遭人竊視或順手牽羊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">クリアスクリーン</div>
+                <div class="term-reading">くりあすくりーん</div>
+                <div class="term-zh">淨空螢幕政策（Clear Screen Policy）</div>
+                <div class="term-en">Clear Screen</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">離席時にPC画面を即座にロック（Windows+L等）またはスクリーンセーバーを自動発動させ、第三者による画面覗き見や無断操作を防ぐ運用規則。</div>
+                <div class="summary-zh">離座時立即鎖定電腦螢幕（如 Win+L）或設定自動螢幕保護程式，防範第三方窺視畫面或擅自操作設備的安全規範。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        クリアスクリーンポリシーの具体的な実施方法として最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 離席の際は必ずショートカットキー（Win+L等）で画面をロックするか、無操作時の短時間パスワードロックを設定する</div>
+                        <div class="option">イ. ディスプレイの電源を切らずに放置する</div>
+                        <div class="option">ウ. モニターの明るさを最大にする</div>
+                        <div class="option">エ. パスワード不要のスクリーンセーバーのみを設定する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：クリアスクリーンは離席時の画面ロックの習慣化や短時間での自動ロック設定によって、覗き見や勝手な操作を防ぎます。</div></td>
+                    <td>                        關於淨空螢幕政策（Clear Screen Policy）的具體實施方式，下列何者最適當？
+<br>
+                        <div class="option">A. 離座時務必使用捷徑鍵（如 Win+L）鎖定螢幕，或設定短時間未操作自動密碼鎖定</div>
+                        <div class="option">B. 離座時保持螢幕電源開啟並隨意放置</div>
+                        <div class="option">C. 將螢幕顯示亮度調至最大</div>
+                        <div class="option">D. 僅設定不需要輸入密碼即可解鎖的螢幕保護程式</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：淨空螢幕要求員工養成離座手動鎖定螢幕的習慣，並搭配系統短時間無操作強制密碼鎖定以確保安全。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">USBキー</div>
+                <div class="term-reading">ゆーえすびーきー</div>
+                <div class="term-zh">USB 實體安全金鑰</div>
+                <div class="term-en">USB Key</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">物理的なUSBトークンをPCに挿入することで身元認証や暗号鍵の保持を行い、端末ログインやデータアクセスを許可するハードウェア認証セキュリティ。</div>
+                <div class="summary-zh">將實體 USB Token 插入電腦進行身份驗證或保管解密金鑰，以此允許登入裝置或存取資料的硬體安全設備。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        認証においてUSBキー（ハードウェアトークン）を導入する主な効果はどれか。
+<br>
+                        <div class="option">ア. 「所持情報」を用いた多要素認証を実現し、パスワード漏洩のみによる不正ログインを防止する</div>
+                        <div class="option">イ. PCの処理速度を高速化する</div>
+                        <div class="option">ウ. USBポートからのウイルス感染を全自動で駆除する</div>
+                        <div class="option">エ. インターネット通信速度を増強する</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：USBキーは「本人が所有している物」による認証要素を提供するため、パスワード（記憶情報）と組み合わせた多要素認証に有効です。</div></td>
+                    <td>                        在身分驗證中導入 USB 實體金鑰（Hardware Token）的主要效果為下列何者？
+<br>
+                        <div class="option">A. 實現利用「所持資訊」的多重因素驗證，防止僅因密碼外洩帶來的非法登入</div>
+                        <div class="option">B. 提升電腦的處理效能速度</div>
+                        <div class="option">C. 全自動清除由 USB 連接埠侵入的病毒感染</div>
+                        <div class="option">D. 增強網際網路通訊傳輸速度</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：USB 安全金鑰提供了「持有的實體物品」驗證因子，與密碼搭配可組成強效的多重因素驗證（MFA）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">セキュリティケーブル</div>
+                <div class="term-reading">せきゅりてぃけーぶる</div>
+                <div class="term-zh">防盜鋼纜鎖（Security Cable Lock）</div>
+                <div class="term-en">Security Cable</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ノートPCや周辺機器を頑丈な鋼鉄製ワイヤーでデスク等の固定物に物理的に繋ぎ止め、持ち去り盗難を防ぐハードウェア防犯器具。</div>
+                <div class="summary-zh">使用堅固的鋼纜將筆記型電腦或周邊設備鎖定在桌子等固定物上，防止設備遭搬離偷竊的實體防盜器具。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        オフィスや展示会でノートPCの物理的持ち出しを防ぐために使用する器具はどれか。
+<br>
+                        <div class="option">ア. セキュリティケーブル（ワイヤーロック）</div>
+                        <div class="option">イ. LANケーブル</div>
+                        <div class="option">ウ. USBハブ</div>
+                        <div class="option">エ. HDMIケーブル</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：セキュリティケーブルは端末のKensingtonスロット等に固定し、物理的な持ち去り盗難を防止する最も手軽で強力な器具です。</div></td>
+                    <td>                        在辦公室或展覽會場中，為防止筆記型電腦遭實體搬離偷竊所使用的器具為下列何者？
+<br>
+                        <div class="option">A. 防盜鋼纜鎖（Security Cable / Wire Lock）</div>
+                        <div class="option">B. 網路線（LAN Cable）</div>
+                        <div class="option">C. USB 集線器（USB Hub）</div>
+                        <div class="option">D. HDMI 訊號線</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：防盜鋼纜鎖鎖定於設備的防盜孔，並繫於實體柱石或桌腳，可防止設備遭有心人士順手牽羊。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">記憶媒体の管理</div>
+                <div class="term-reading">きおくばいたいのかんり</div>
+                <div class="term-zh">儲存介質管理</div>
+                <div class="term-en">Memory Media Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">USBメモリや外付けHDD、テープ等の保管・持ち出し・受払記録・暗号化・紛失時対応を厳格に行い、物理媒体経由の情報漏えいを防ぐ管理運用。</div>
+                <div class="summary-zh">嚴格執行 USB 隨身碟、外接硬碟、磁帶等保管、攜出、進出登記、加密與遺失應變，防範實體介質外洩。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        記憶媒体（USBメモリ等）の管理において、情報漏えいを防止するための適切なルールはどれか。
+<br>
+                        <div class="option">ア. 私物USBメモリの業務利用禁止（BYOD制限）、全媒体の暗号化、受払台帳による棚卸しの徹底</div>
+                        <div class="option">イ. 未暗号化のUSBメモリを社外へ自由に持ち出させる</div>
+                        <div class="option">ウ. 媒体の管理番号ラベルを剥がして使用する</div>
+                        <div class="option">エ. 廃棄するUSBメモリをそのまま一般ゴミとして捨てる</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：記憶媒体は持ち運びが容易で紛失しやすいため、私物利用禁止・暗号化・管理台帳運用の徹底が不可欠です。</div></td>
+                    <td>                        在儲存介質（如 USB 隨身碟等）的管理中，為防止資訊洩漏的適當規範為下列何者？
+<br>
+                        <div class="option">A. 禁止私人 USB 於公務使用、全數介質強制加密、落實進出帳冊登記與盤點</div>
+                        <div class="option">B. 允許未加密的 USB 隨身碟自由攜帶至公司外部</div>
+                        <div class="option">C. 撕毀介質上的資產管理標籤後再行使用</div>
+                        <div class="option">D. 將欲廢棄的 USB 隨身碟直接當作一般垃圾丟棄</div>
+                        <div class="answer">答案：A</div>
+<br>
+                        <div class="analysis">分析：攜帶式儲存介質極易遺失，必須嚴格執行公私區分、強制作業加密並留存完整的領用盤點紀錄。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">装置のセキュリティを保った処分又は再利用</div>
+                <div class="term-reading">そうちのせきゅりてぃをたもったしょぶんまたはさいりよう</div>
+                <div class="term-zh">設備安全處置與再利用</div>
+                <div class="term-en">Security Disposal or Reuse of Devices</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">機器廃棄や他部署再利用時に、ハードディスク内のデータを専用ソフトでの上書き消去や物理破壊、磁気消去により完全抹消し情報復元を不能にする。</div>
+                <div class="summary-zh">報廢或跨部門轉用設備時，透過專用軟體覆寫、實體破壞或磁氣消磁完全抹除硬碟資料，使其無法復原。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        PCを廃棄する際、ハードディスク内の機密情報を復元不能にするための正しい処置はどれか。
+<br>
+                        <div class="option">ア. OSの標準の「ゴミ箱を空にする」や「フォーマット」のみを実行して破棄する</div>
+                        <div class="option">イ. データ消去専用ソフトによる無作為データの複数回上書き、または物理的破壊・強磁気消去を行う</div>
+                        <div class="option">ウ. ディスプレイを割って不燃ゴミに出す</div>
+                        <div class="option">エ. 電源コードを切断して廃棄する</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：単なるOSフォーマットでは特殊ソフトでデータ復元が可能なため、完全上書き・物理破砕・強磁気照射が必要です。</div></td>
+                    <td>                        當報廢廢棄電腦時，為使硬碟內的機密資料達到無法復元狀態，正確的處置方式為下列何者？
+<br>
+                        <div class="option">A. 僅執行作業系統標準的「清空資源回收桶」或「格式化」後即拋棄</div>
+                        <div class="option">B. 使用專用軟體多次覆寫隨機資料，或進行實體穿孔破壞與強磁消磁處理</div>
+                        <div class="option">C. 敲碎螢幕面板後當作不可燃垃圾丟棄</div>
+                        <div class="option">D. 剪斷電源線路後直接丟棄</div>
+                        <div class="answer">答案：B</div>
+<br>
+                        <div class="analysis">分析：一般的格式化仍可透過鑑識軟體還原資料，必須採取完全隨機資料覆寫、實體粉碎或強磁消磁才能確保無法還原。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+

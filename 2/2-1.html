@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知的財産権 - 4語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>知的財産権 - 4語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">智慧財產權</div>
+
+        <!-- 1. 著作権法 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">著作権法</div>
+                <div class="term-reading">ちょさくけんほう</div>
+                <div class="term-zh">著作權法</div>
+                <div class="term-en">Copyright Law</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">創作物に対する著作者の権利を保護し、無断使用を防止して対価を得られるようにする法律。文学・音楽・ソフトウェアなどが含まれ、文化の発展に寄与する。</div>
+                <div class="summary-zh">保護創作者對其創作物權利的法律，防止未經授權的使用並保障獲取報酬。範圍涵蓋文學、音樂及軟體等，促進文化發展。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        著作権法によって保護される対象として、適切なものはどれか。
+<br>
+                        <div class="option">ア. プログラミング言語の規約</div>
+                        <div class="option">イ. プログラムのアルゴリズム</div>
+                        <div class="option">ウ. ソフトウェアのソースコード</div>
+                        <div class="option">エ. データ通信のプロトコル</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">解説：著作権法は表現を保護対象とするため、ソフトウェアのソースコードは保護される。言語規約、アルゴリズム、プロトコルなどの「アイデア」や「約束事」は保護対象外である。</div></td>
+                    <td>                        關於著作權法保護對象，下列何者正確？
+<br>
+                        <div class="option">A. 程式語言的規範</div>
+                        <div class="option">B. 程式的演算法</div>
+                        <div class="option">C. 軟體的原始碼</div>
+                        <div class="option">D. 資料傳輸協定</div>
+                        <div class="answer">正確答案：(C)</div>
+<br>
+                        <div class="analysis">解析：著作權法保護具體的「表達」，因此軟體的原始碼屬於保護對象。程式語言規範、演算法及傳輸協定等屬於「概念/規則」，不在著作權保護範圍內。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 2. コピープロテクト外し -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コピープロテクト外し</div>
+                <div class="term-reading">こぴーぷろてくとはずし</div>
+                <div class="term-zh">解除防拷保護</div>
+                <div class="term-en">Copy Protection Removal</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">著作権保護されたコンテンツの技術的保護手段（コピー防止機能）を解除する行為。著作権法に抵触し、罰則の対象となる場合がある。</div>
+                <div class="summary-zh">解除受著作權保護之數位內容的技術保護措施（防拷功能）之行為。此行為常違反著作權法，並可能面臨法律處罰。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        著作権法における技術的保護手段の回避に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 市販のDVDのコピー防止機能を解除して複製するツールを配布する行為は違法である。</div>
+                        <div class="option">イ. 自身が購入したCDの防拷機能を解除して私的使用の範囲で複製することは全面的に認められている。</div>
+                        <div class="option">ウ. コピープロテクト解除装置の販売は著作権法上何ら制限されない。</div>
+                        <div class="option">エ. 暗号化されたデータの復号技術を研究目的で開発することは全て禁止されている。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：技術的保護手段を回避する装置やプログラムを公衆に提供する行為は著作権法で禁止されている。私的使用目的であっても技術的保護手段を解除して行う複製は違法となる。</div></td>
+                    <td>                        關於著作權法中規避技術保護措施的敘述，下列何者正確？
+<br>
+                        <div class="option">A. 提供解除市售DVD防拷功能並進行複製的工具屬於違法行為。</div>
+                        <div class="option">B. 解除自己購買的CD防拷功能並在私人使用範圍內複製是全面被允許的。</div>
+                        <div class="option">C. 販售解除防拷保護的裝置在著作權法上不受任何限制。</div>
+                        <div class="option">D. 以研究為目的開發加密資料解密技術是被全面禁止的。</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：向公眾提供用於規避技術保護措施的裝置或程式屬於違法行為。即使出於私人使用目的，若故意規避技術保護措施進行複製亦屬違法。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 3. 営業秘密 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">営業秘密</div>
+                <div class="term-reading">えいぎょうひみつ</div>
+                <div class="term-zh">營業秘密</div>
+                <div class="term-en">Trade Secret</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業の競争優位性を保つための法的保護対象。保護には「秘密管理性」「有用性」「非公知性」の3要件を満たす必要がある。</div>
+                <div class="summary-zh">企業維持競爭優勢的重要資產。受法律保護需同時滿足「秘密管理性」、「有用性」及「非公開性」三項要件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        不正競争防止法において、営業秘密として認められるための3つの要件の組み合わせとして、適切なものはどれか。
+<br>
+                        <div class="option">ア. 秘密管理性、有用性、非公知性</div>
+                        <div class="option">イ. 特許性、有用性、公知性</div>
+                        <div class="option">ウ. 秘密管理性、独占性、公知性</div>
+                        <div class="option">エ. 新規性、有用性、非公知性</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：営業秘密として保護されるには、「秘密として管理されていること（秘密管理性）」、「事業活動に有用な情報であること（有用性）」、「公に知られていないこと（非公知性）」の3要件をすべて満たす必要がある。</div></td>
+                    <td>                        根據不正當競爭防止法，認定為營業秘密必須具備的三大要件為何？
+<br>
+                        <div class="option">A. 秘密管理性、有用性、非公開性</div>
+                        <div class="option">B. 專利性、有用性、公開性</div>
+                        <div class="option">C. 秘密管理性、獨占性、公開性</div>
+                        <div class="option">D. 新穎性、有用性、非公開性</div>
+                        <div class="answer">正確答案：(A)</div>
+<br>
+                        <div class="analysis">解析：營業秘密法律保護的三大要件為：1. 秘密管理性（有採取合理保密措施）、2. 有用性（具有經濟或商業價值）、3. 非公開性（未為大眾所知悉）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 4. ドメイン名の不正取得 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ドメイン名の不正取得</div>
+                <div class="term-reading">どめいんめいのふせいしゅとく</div>
+                <div class="term-zh">網域名稱不正當取得</div>
+                <div class="term-en">Domain Name Hijacking</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">他人の商標や著名ブランド名に類似するドメイン名を悪意を持って取得・使用する行為。フィッシングや高値売却等に利用される。</div>
+                <div class="summary-zh">懷有惡意取得或使用與他人商標/知名品牌相似之網域名稱的行為。常用於網路釣魚或高價勒索轉售。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        他人の著名な商品等表示と同一又は類似のドメイン名を図利目的又は加害目的で取得・保有・使用する行為を取り締まる法律はどれか。
+<br>
+                        <div class="option">ア. 著作権法</div>
+                        <div class="option">イ. 不正競争防止法</div>
+                        <div class="option">ウ. 特許法</div>
+                        <div class="option">エ. 個人情報保護法</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：不正競争防止法では、不正の利益を得る目的や他人に損害を与える目的で、他人の商品・サービス表示と同一・類似のドメイン名を取得・保有・使用する行為を不正競争行為と定めている。</div></td>
+                    <td>                        以獲取不正當利益或損害他人為目的，取得、持有或使用與他人知名標示相同或近似之網域名稱，係受下列哪一部法律規範與取締？
+<br>
+                        <div class="option">A. 著作權法</div>
+                        <div class="option">B. 不正當競爭防止法</div>
+                        <div class="option">C. 專利法</div>
+                        <div class="option">D. 個人資料保護法</div>
+                        <div class="answer">正確答案：(B)</div>
+<br>
+                        <div class="analysis">解析：不正當競爭防止法明文禁止以不正利益或加害目的，濫用與他人著名標籤或品牌相同/近似之網域名稱。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

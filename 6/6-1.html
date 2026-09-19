@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトマネジメント - 7語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトマネジメント - 7語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案管理基礎與環境</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクト</div>
+                <div class="term-reading">ぷろじぇくと</div>
+                <div class="term-zh">專案</div>
+                <div class="term-en">Project</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の目的を達成するために、明確な開始と終了を持ち、期限・予算・リソースが定められた一時的な活動。</div>
+                <div class="summary-zh">為達成特定目標，具備明確起止時間、期限、預算與資源限制的一時性活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトの特徴に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 独自のプロダクトやサービスを創出するための定常的な業務である。</div>
+                        <div class="option">イ. 明確な開始と終了の期限を持つ一時的な取り組みである。</div>
+                        <div class="option">ウ. 終了期限を設けずに継続的に業務改善を行う活動である。</div>
+                        <div class="option">エ. 組織の日常的な運用保守を継続して行う活動である。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトは「一時的な取り組み（Temporary）」であり、独自の目的・成果物（Unique）と明確な開始・終了期限を持ちます。定常業務（ルーチンワーク）とは異なります。</div></td>
+                    <td>                        【題目】關於專案特性的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 為產出獨特的產品或服務所進行的常態性業務。</div>
+                        <div class="option">B. 具有明確開始與結束期限的一時性工作。</div>
+                        <div class="option">C. 不設定結束期限並持續進行業務改善的活動。</div>
+                        <div class="option">D. 持續進行組織日常營運維護的活動。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案（Project）屬於「一時性工作（Temporary）」，具有明確的開始與結束時間，並以產出特定成果為目標，與日常營運（Routine operations）不同。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトマネジメント</div>
+                <div class="term-reading">ぷろじぇくとまねじめんと</div>
+                <div class="term-zh">專案管理</div>
+                <div class="term-en">Project Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の目標を達成するために、計画・実行・監視・制御を行い、時間や資源を最適活用する手法の体系。</div>
+                <div class="summary-zh">為達成特定目標，進行計畫、執行、監控與管制，並最佳化利用時間與資源的方法體系。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントの目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムの恒久的な日常運用コストを削減すること。</div>
+                        <div class="option">イ. 制約条件（時間・コスト・品質）のもとで目標を達成すること。</div>
+                        <div class="option">ウ. 組織の全社員の評価制度を一元管理すること。</div>
+                        <div class="option">エ. 特定の場所で新店舗を永続的に運営すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトマネジメントは、スコープ、時間（スケジュール）、コスト（予算）、品質などの制約条件を満たしながら、目標を最適に達成するために実施されます。</div></td>
+                    <td>                        【題目】關於專案管理的目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 降低系統永久性的日常營運成本。</div>
+                        <div class="option">B. 在限制條件（時間、成本、品質）下達成目標。</div>
+                        <div class="option">C. 統一管理組織內全體員工的考績制度。</div>
+                        <div class="option">D. 永久營運特定地點的新店面。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案管理的核心目的在於運用知識、技能與工具，在範圍、時間、成本及品質等各項限制條件下成功實現專案目標。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトの環境</div>
+                <div class="term-reading">ぷろじぇくとのかんきょう</div>
+                <div class="term-zh">專案環境</div>
+                <div class="term-en">Project Environment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">組織の文化、市場動向、技術進歩、政治的状況など、プロジェクトの遂行や結果に影響を与える内外の要因。</div>
+                <div class="summary-zh">包含組織文化、市場趨勢、技術進步及政治局勢等，影響專案執行與結果的內外部因素。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクト環境（事業環境要因）に関する説明として、適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトマネージャーが完全に自由変更できる要素である。</div>
+                        <div class="option">イ. 組織文化、市場の競合状況、法規制などプロジェクトに影響を与える条件である。</div>
+                        <div class="option">ウ. 開発プロジェクトのソースコードそのものを指す。</div>
+                        <div class="option">エ. プロジェクト完了後に作成される最終報告書のことである。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクト環境（EEFsなど）は、組織の文化・体制、市場動向、関連法令など、プロジェクトを取り巻く制約要因や影響要因を含みます。</div></td>
+                    <td>                        【題目】關於專案環境（事業環境因素）的說明，下列何者恰當？
+<br>
+                        <div class="option">A. 指專案經理可完全自由修改的要素。</div>
+                        <div class="option">B. 包含組織文化、市場競爭狀況、法律法規等影響專案的各項條件。</div>
+                        <div class="option">C. 專指開發專案中的程式碼本身。</div>
+                        <div class="option">D. 指專案結束後所撰寫的最終報告書。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案環境（如企業環境因素 EEFs）涵括內部組織文化、結構以及外部市場狀況、政府法規等，這些環境條件會直接或間接影響專案的決策與成功與否。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトガバナンス</div>
+                <div class="term-reading">ぷろじぇくとがばなんす</div>
+                <div class="term-zh">專案治理</div>
+                <div class="term-en">Project Governance</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトの意思決定、リスク管理、責任の所在を明確にし、目標達成と利益最大化を図る枠組み。</div>
+                <div class="summary-zh">明確規範專案決策機制、風險管理與責任歸屬，以確保目標達成與利益最大化的框架。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトガバナンスの役割として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プログラマーの日常的なコード記述作業を直接監督すること。</div>
+                        <div class="option">イ. プロジェクトの意思決定構造、監視基準、利害関係者の役割を定義し統制すること。</div>
+                        <div class="option">ウ. 製品のマーケティング広告デザインを決定すること。</div>
+                        <div class="option">エ. サーバーのハードウェア交換時期を自動化すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトガバナンスは、プロジェクトが組織の戦略目標に沿って適切に運営されるよう、意思決定の枠組みやリスク監視、責任・権限の定義を行う統制構造です。</div></td>
+                    <td>                        【題目】關於專案治理（Project Governance）的作用，下列何者最恰當？
+<br>
+                        <div class="option">A. 直接監督程式設計師的日常程式碼撰寫作業。</div>
+                        <div class="option">B. 定義並管制專案的決策結構、監控標準與利害關係人的職責。</div>
+                        <div class="option">C. 決定產品的行銷廣告設計。</div>
+                        <div class="option">D. 自動化伺服器的硬體更換時間。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案治理提供了一個與組織整體治理相一致的架構，定義決策機制、授權層級、審查流程與監督標準，確保專案能順利且合規地推進。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <div class="group-container">
+        <div class="group-header">專案生命週期與管理體制</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトライフサイクル</div>
+                <div class="term-reading">ぷろじぇくとらいふさいくる</div>
+                <div class="term-zh">專案生命週期</div>
+                <div class="term-en">Project Life Cycle</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">立ち上げから計画、実行、監視・コントロール、終結（完了）に至るプロジェクトの全過程。</div>
+                <div class="summary-zh">從啟動、規劃、執行、監控到結束（完成）的專案全過程階段。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】一般的なプロジェクトライフサイクルのフェーズ順序として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 実行 → 立ち上げ → 計画 → 完了</div>
+                        <div class="option">イ. 立ち上げ → 計画 → 実行・監視コントロール → 終結（完了）</div>
+                        <div class="option">ウ. 計画 → 終結 → 実行 → 立ち上げ</div>
+                        <div class="option">エ. 監視 → 立ち上げ → 計画 → 実行</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトライフサイクルは、一般的に「立ち上げ（Initiation）」→「計画（Planning）」→「実行（Executing）・監視コントロール（Monitoring & Controlling）」→「終結（Closing）」のステップで進行します。</div></td>
+                    <td>                        【題目】下列關於一般專案生命週期階段順序的描述，何者正確？
+<br>
+                        <div class="option">A. 執行 → 啟動 → 規劃 → 結束</div>
+                        <div class="option">B. 啟動 → 規劃 → 執行與監控 → 結束（完成）</div>
+                        <div class="option">C. 規劃 → 結束 → 執行 → 啟動</div>
+                        <div class="option">D. 監控 → 啟動 → 規劃 → 執行</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案生命週期標準過程順序為：啟動（Initiating）→ 規劃（Planning）→ 執行與監控（Executing & Monitoring/Controlling）→ 結束（Closing）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトの体制</div>
+                <div class="term-reading">ぷろじぇくとのたいせい</div>
+                <div class="term-zh">專案組織體制</div>
+                <div class="term-en">Project Structure</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトマネージャーやメンバー、ステークホルダーの役割分担と報告ラインを定めた組織構造。</div>
+                <div class="summary-zh">明確規範專案經理、團隊成員與利害關係人之分工職責與回報層級的組織結構。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクト体制図を作成する主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクト参加者の給料体系を公表するため。</div>
+                        <div class="option">イ. 各メンバーの役割、責任範囲、コミュニケーションラインを明確にするため。</div>
+                        <div class="option">ウ. プログラムのアルゴリズム処理フローを図式化するため。</div>
+                        <div class="option">エ. システムのハードウェア配置構成を示すため。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトの体制を整えることで、責任者（PM）やチームメンバー、ステークホルダー間の役割分担や連絡・意思決定フローが明確になり、スムーズな進行が可能となります。</div></td>
+                    <td>                        【題目】製作專案組織體制圖的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 公開專案參與人員的薪資體系。</div>
+                        <div class="option">B. 明確規範各成員的職責、責任範圍與溝通管道。</div>
+                        <div class="option">C. 圖解程式的演算法處理流程。</div>
+                        <div class="option">D. 展示系統的硬體配置架構。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：建立明確的專案體制能確立團隊角色分工、決策層級與溝通回報路線（Communication Line），避免職責重疊或缺乏權責對應的問題。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトの自己管理</div>
+                <div class="term-reading">ぷろじぇくとのじこかんり</div>
+                <div class="term-zh">專案自我管理</div>
+                <div class="term-en">Project Self-management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">変更管理、問題検知、報告、対策立案、文書化など、プロジェクト自体の健全性を維持・改善する活動。</div>
+                <div class="summary-zh">包含變更管理、問題察覺、通報、對策擬定與文件化等，維持並改善專案本身健全度的活動。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトの自己管理において、問題が発生した際の対応として最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 問題を隠蔽し、プロジェクト完了まで報告しない。</div>
+                        <div class="option">イ. 発生した問題を早期に察知・報告し、原因分析と対策立案を行って文書化する。</div>
+                        <div class="option">ウ. 計画の変更を一切認めず、初期計画通りの作業のみを強制する。</div>
+                        <div class="option">エ. 問題の責任を特定のメンバー個人にのみ追求して終了する。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プロジェクトの自己管理では、問題の早期発見、適切な関係者への報告、対策の立案と実行、そして今後のナレッジ蓄積のための文書化（ドキュメント化）が不可欠です。</div></td>
+                    <td>                        【題目】在專案自我管理中，當發生問題時，下列處置何者最恰當？
+<br>
+                        <div class="option">A. 隱瞞問題，直到專案結束前均不回報。</div>
+                        <div class="option">B. 及早察覺並通報發生的問題，進行原因分析與對策擬定，並記錄於文件中。</div>
+                        <div class="option">C. 完全不允許修改計畫，強制僅執行初始計畫的作業。</div>
+                        <div class="option">D. 僅將問題責任歸咎於特定個人即結束處理。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：專案自我管理機制強調變更控制與問題管理流程，包含早期察覺、及時通報、制定對策以及完整的文件化記錄，以利回顧與經驗傳承。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

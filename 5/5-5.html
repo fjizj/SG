@@ -1,0 +1,2494 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ネットワーク応用 - 47語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>ネットワーク応用 - 47語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+  <!-- Group 1: 電子郵件系統與服務 -->
+  <div class="group-container">
+    <div class="group-header">【電子郵件系統與服務】</div>
+
+    <!-- メールサーバ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">メールサーバ</div>
+        <div class="term-reading">めーるさーば</div>
+        <div class="term-zh">郵件伺服器</div>
+        <div class="term-en">Mail Server</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">電子メールの送受信や保管を管理し、クライアントからの要求に応じて配送を行うシステム。</div>
+        <div class="summary-zh">管理電子郵件的收發與儲存，並根據用戶端的要求進行郵件遞送的系統。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>電子メールの送信時に用いられるSMTPプロトコルと、受信時に用いられるPOP3プロトコルの説明として適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. SMTPはメールサーバ間でメールを転送する際にも使用される。</div>
+              <div class="option">イ. POP3はメールをサーバ上に残したまま閲覧するために設計された。</div>
+              <div class="option">ウ. SMTPは受信者のクライアントが直接メールを取りに行くためのプロトコルである。</div>
+              <div class="option">エ. POP3は暗号化機能が標準で組み込まれている。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>SMTP（Simple Mail Transfer Protocol）は、クライアントからサーバへの送信だけでなく、メールサーバ同士での転送にも利用されます。</span></td>
+            <td>              <strong>題目：</strong>關於發送郵件時使用的 SMTP 協定與接收郵件時使用的 POP3 協定，下列說明何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. SMTP 也可用於在郵件伺服器之間轉發郵件。</div>
+              <div class="option">B. POP3 專為將郵件保留在伺服器上進行瀏覽而設計。</div>
+              <div class="option">C. SMTP 是接收端用戶端直接去存取擷取郵件的協定。</div>
+              <div class="option">D. POP3 標準內建了加密功能。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>SMTP 不僅用於用戶端將郵件寄給伺服器，也用於郵件伺服器與郵件伺服器之間的訊息中繼轉發。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- メールクライアント -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">メールクライアント</div>
+        <div class="term-reading">めーるくらいあんと</div>
+        <div class="term-zh">郵件用戶端軟件</div>
+        <div class="term-en">Mail Client</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ユーザーが電子メールの作成、送信、受信、整理を行うための端末用管理ソフトウェア。</div>
+        <div class="summary-zh">供使用者進行電子郵件撰寫、發送、接收與整理的終端管理軟體。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>メールクライアントがメールサーバから新着メールを受信する際に一般的に使用されるプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. SMTP</div>
+              <div class="option">イ. POP3</div>
+              <div class="option">ウ. FTP</div>
+              <div class="option">エ. HTTP</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>メールクライアントがサーバから電子メールを受信（ダウンロード）する際には、POP3やIMAP4などのプロトコルが使用されます。</span></td>
+            <td>              <strong>題目：</strong>郵件用戶端從郵件伺服器接收新郵件時，一般使用的是哪一個通信協定？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. SMTP</div>
+              <div class="option">B. POP3</div>
+              <div class="option">C. FTP</div>
+              <div class="option">D. HTTP</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>郵件用戶端從伺服器下載或接收電子郵件時，主要使用 POP3 或 IMAP4 協定。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- リレー方式 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">リレー方式</div>
+        <div class="term-reading">りれーほうしき</div>
+        <div class="term-zh">郵件轉發機制</div>
+        <div class="term-en">Relay Method</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">送信者から受信者への途中で、中継サーバを経由して電子メールを転送する仕組み。</div>
+        <div class="summary-zh">在發送者至接收者之間，透過中繼伺服器進行電子郵件轉發的機制。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>不正な第三者による迷惑メールの大量送信を防ぐために、特定の許可された送信元以外からのメール中継を拒否する対策はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. オープンリレーの禁止（第三者中継の制限）</div>
+              <div class="option">イ. ポートスキャンの実施</div>
+              <div class="option">ウ. Webメールの導入</div>
+              <div class="option">エ. DNSの逆引き無効化</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>誰でも自由にメールを転送できる「オープンリレー」を放置するとスパム発信台座とされるため、適切なリレー制限を設ける必要があります。</span></td>
+            <td>              <strong>題目：</strong>為了防止未授權的第三方大量發送垃圾郵件，拒絕來自非特定許可發送源的郵件轉發措施為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 禁止開放式轉發（限制第三方中繼）</div>
+              <div class="option">B. 執行通訊埠掃描</div>
+              <div class="option">C. 導入 Webmail 系統</div>
+              <div class="option">D. 停用 DNS 反向解析</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>若郵件伺服器被設定為開放式轉發（Open Relay），容易被駭客用作發送垃圾郵件的跳板，因此必須實施第三方轉發限制。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 同報メール -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">同報メール</div>
+        <div class="term-reading">どうほうめーる</div>
+        <div class="term-zh">群發郵件</div>
+        <div class="term-en">Broadcast Email</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">同一の内容を持つ電子メールを、一回の操作で複数の宛先へ一斉送信する方式。</div>
+        <div class="summary-zh">透過一次操作將完全相同的電子郵件內容同時發送給多個收件者的通訊方式。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>同報メールを送信する際、受信者同士のメールアドレスを互いに知られないようにするための指定欄はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. To</div>
+              <div class="option">イ. Cc</div>
+              <div class="option">ウ. Bcc</div>
+              <div class="option">エ. Reply-To</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Bcc（Blind Carbon Copy）を利用すると、他の受信者にはそのアドレスが表示されないため、情報漏洩を防ぎつつ同報送信ができます。</span></td>
+            <td>              <strong>題目：</strong>發送群發郵件時，為了防止收件者之間互相看到彼此的電子郵件地址，應使用哪一個欄位？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. To (收件者)</div>
+              <div class="option">B. Cc (副本)</div>
+              <div class="option">C. Bcc (密件副本)</div>
+              <div class="option">D. Reply-To (回覆至)</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>使用 Bcc（密件副本）發送群發郵件時，其他收件者將無法看見被設定在 Bcc 欄位中的郵件地址，能妥善保護個人隱私。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- メーリングリスト -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">メーリングリスト</div>
+        <div class="term-reading">めーりんぐりすと</div>
+        <div class="term-zh">郵件論壇群組</div>
+        <div class="term-en">Mailing List</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">特定の代表アドレスにメールを送ると、登録された全メンバーに自動配信される仕組み。</div>
+        <div class="summary-zh">將郵件發送至特定代表地址後，系統會自動轉發給所有已登記成員的群組機制。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>メーリングリストの運用に関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 投稿されたメールは、リストに登録されたすべての配信先に自動的に転送される。</div>
+              <div class="option">イ. 参加者は他のメンバーのアドレスを個別に指定して送信しなければならない。</div>
+              <div class="option">ウ. メーリングリストへの登録は管理者のみが行い、自動登録機能は利用できない。</div>
+              <div class="option">エ. 送信されたメールは同一サーバ内のユーザーに限定して届く。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>メーリングリストは専用のアドレスにメールを1本送信するだけで、登録された全構成員へ自動配布される仕組みです。</span></td>
+            <td>              <strong>題目：</strong>關於郵件論壇群組（Mailing List）運作的描述，下列何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 投稿的郵件會自動轉發給所有已登記在列表中的收件者。</div>
+              <div class="option">B. 參與者必須分別指定其他成員的地址進行發送。</div>
+              <div class="option">C. 登記至郵件論壇只能由管理員手動進行，無法使用自動登記。</div>
+              <div class="option">D. 發送的郵件僅限於同一伺服器內的使用者接收。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Mailing List 的機制是只需發送郵件給該群組代表地址，系統就會自動將內容分發給列表中所有註冊成員。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- メールボックス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">メールボックス</div>
+        <div class="term-reading">めーるぼっくす</div>
+        <div class="term-zh">電子郵箱</div>
+        <div class="term-en">Mailbox</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">メールサーバ上に確保された、アカウントごとに電子メールを保管するための記憶領域。</div>
+        <div class="summary-zh">在郵件伺服器上為每個帳號劃分專用來儲存電子郵件的記憶體空間。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>メールサーバのメールボックス容量の上限に達した場合に発生する問題として、最も適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 新しいメールが受信できなくなり、送信元にエラーメッセージが返送される。</div>
+              <div class="option">イ. 自動的に古いメールが削除されて新しいメールが受信される。</div>
+              <div class="option">ウ. 送信機能のみが制限され、受信は問題なく継続できる。</div>
+              <div class="option">エ. メールサーバ全体の電源が落とされる。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>メールボックスが満杯になると、新たなメールを受け取れなくなり、送信者に配送失敗のエラー（バウンスメール）が返ります。</span></td>
+            <td>              <strong>題目：</strong>當郵件伺服器上的電子郵箱容量達到上限時，最可能發生的問題為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 無法接收新郵件，並會向發件人退回錯誤訊息。</div>
+              <div class="option">B. 自動刪除舊郵件以利接收新郵件。</div>
+              <div class="option">C. 僅發送功能受限，接收功能仍可正常運作。</div>
+              <div class="option">D. 郵件伺服器全體自動關機。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>若電子郵箱儲存容量額滿，伺服器將無法寫入新郵件，通常會產生退信退回給發件人通知容量超限。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- cc -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">cc</div>
+        <div class="term-reading">しーしー</div>
+        <div class="term-zh">副本</div>
+        <div class="term-en">Carbon Copy</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">メインの宛先以外に、共有や参考目的で同じメールを同時送信するための指定方法。</div>
+        <div class="summary-zh">除了主要收件者外，以資訊共享或參考為目的同時發送同份郵件的指定欄位。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>電子メールのCc（Carbon Copy）機能に関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. Cc欄に設定されたメールアドレスは、他の受信者には表示されない。</div>
+              <div class="option">イ. 情報共有や確認のために参照してほしい相手のアドレスを指定する。</div>
+              <div class="option">ウ. 送信元のアドレスを偽装するために用いられる。</div>
+              <div class="option">エ. 送信エラーが発生した際の通知先を指定する。</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Ccは「参考・共有のために確認してほしい人」のアドレスを指定する欄であり、受信者全員にCcのアドレスが開示されます。</span></td>
+            <td>              <strong>題目：</strong>關於電子郵件的 Cc（副本）功能，下列描述何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 設定在 Cc 欄位的郵件地址，其他收件者無法看到。</div>
+              <div class="option">B. 用於指定希望其了解內容、作為參考或資訊共享的對象地址。</div>
+              <div class="option">C. 用於偽造發件人地址。</div>
+              <div class="option">D. 指定發送發生錯誤時的通知對象。</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Cc 常用於將郵件副本抄送給非直接處理人但需要知道該事項相關資訊的人員，所有收件人都可見此欄位地址。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- bcc -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">bcc</div>
+        <div class="term-reading">びーしーしー</div>
+        <div class="term-zh">密件副本</div>
+        <div class="term-en">Blind Carbon Copy</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">他の受信者にメールアドレスを開示せずに、裏で同じメールを送るための指定方法。</div>
+        <div class="summary-zh">在不向其他收件者公開郵件地址的情況下，私下發送同一份郵件的指定欄位。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>顧客50名に対して一斉に案内メールを送信する際、個人情報漏洩を防ぐための適切な送信方法はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 全員のメールアドレスをTo欄に指定する。</div>
+              <div class="option">イ. 全員のメールアドレスをCc欄に指定する。</div>
+              <div class="option">ウ. 差出人を自社アドレスにし、全員のアドレスをBcc欄に指定する。</div>
+              <div class="option">エ. メール本文の最後に全員のアドレスを記載する。</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Bccに指定されたアドレスは他の受信者には見えないため、複数顧客への一斉送信時のアドレス漏洩を防止できます。</span></td>
+            <td>              <strong>題目：</strong>向 50 位客戶發送群發通知郵件時，為防止個人資料外洩，最適當的發送方式為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 將所有人的郵件地址設定在 To 欄位。</div>
+              <div class="option">B. 將所有人的郵件地址設定在 Cc 欄位。</div>
+              <div class="option">C. 發件人設定為自家公司地址，並將所有人地址設定在 Bcc 欄位。</div>
+              <div class="option">D. 將所有人地址寫在郵件內文最後方。</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Bcc 欄位可以隱藏收件者名單，防止各收件者之間互相看到彼此的 Email，是防止個資洩漏的最佳做法。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MIME -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">MIME</div>
+        <div class="term-reading">まいむ</div>
+        <div class="term-zh">多用途網際網路郵件擴充協定</div>
+        <div class="term-en">Multipurpose Internet Mail Extensions</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">テキスト以外の画像や音声、添付ファイル、日本語などの多言語をメールで扱うための規格。</div>
+        <div class="summary-zh">使電子郵件能夠傳送純文字以外之圖片、聲音、附件檔案及多國語言的擴充標準。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>テキスト情報しか扱えなかった電子メールで、画像や音声、添付ファイルなどの多様なデータを送信できるように拡充された規格はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. MIME</div>
+              <div class="option">イ. SMTP</div>
+              <div class="option">ウ. POP3</div>
+              <div class="option">エ. IMAP4</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>MIMEは、ASCIIテキストのみを前提としていた電子メールでバイナリデータやマルチバイト文字を扱うための拡張規格です。</span></td>
+            <td>              <strong>題目：</strong>原本僅能處理文字訊息的電子郵件，為能傳送圖片、聲音、附件等多樣化資料而擴充的標準為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. MIME</div>
+              <div class="option">B. SMTP</div>
+              <div class="option">C. POP3</div>
+              <div class="option">D. IMAP4</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>MIME（Multipurpose Internet Mail Extensions）允許電子郵件傳輸非 ASCII 文字、非純文字格式的二進位檔案及多媒體內容。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HTMLメール -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">HTMLメール</div>
+        <div class="term-reading">えいちてぃーえむえるめーる</div>
+        <div class="term-zh">HTML 格式郵件</div>
+        <div class="term-en">HTML Mail</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">文字の装飾や画像の埋め込み、レイアウトをHTMLタグを用いて表現できる電子メール。</div>
+        <div class="summary-zh">利用 HTML 標籤來呈現文字排版樣式、字體顏色與內嵌圖片的高豐富度電子郵件。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>HTMLメールに関する記述として、セキュリティ上の注意点として最も適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. テキストメールに比べてファイルサイズが常に小さくなる。</div>
+              <div class="option">イ. 悪意あるスクリプトが埋め込まれ、開くだけでウイルス感染やWeb誘導される危険性がある。</div>
+              <div class="option">ウ. 専用の画像編集ソフトを導入しないと受信・閲覧ができない。</div>
+              <div class="option">エ. 送信元のIPアドレスが自動的に隠蔽される。</div>
+              <span class="answer"><strong>正解：</strong>イ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>HTMLメールは表現力が高い反面、悪意のあるJavaScriptやWebビーコンが埋め込まれるリスクがあるため注意が必要です。</span></td>
+            <td>              <strong>題目：</strong>關於 HTML 郵件，下列何者是資安維護上最需注意的事項？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 檔案大小總是比純文字郵件小。</div>
+              <div class="option">B. 可能內嵌惡意指令碼，導致僅開啟郵件就遭受病毒感染或被導向惡意網站。</div>
+              <div class="option">C. 必須安裝專用的影像編輯軟體才能接收與閱讀。</div>
+              <div class="option">D. 發件人的 IP 地址會被自動隱藏。</div>
+              <span class="answer"><strong>正確答案：</strong>(B)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTML 郵件支援網頁語法，若被塞入惡意腳本或追踪郵件載入的外部圖片，可能帶來資安漏洞與隱私洩漏問題。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Webメール -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webメール</div>
+        <div class="term-reading">うぇぶめーる</div>
+        <div class="term-zh">網路郵件服務</div>
+        <div class="term-en">Webmail</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webブラウザを介してメールサーバにアクセスし、送受信や管理を行うメールサービス。</div>
+        <div class="summary-zh">透過網頁瀏覽器連線至郵件伺服器進行郵件收發與管理的網路服務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webメールの特徴として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 端末にメール専用クライアントソフトをインストールする必要がない。</div>
+              <div class="option">イ. オフライン状態でも常に最新の受信メールを取得できる。</div>
+              <div class="option">ウ. メールデータは必ずローカルディスクにのみ保存される。</div>
+              <div class="option">エ. 利用可能な通信プロトコルはFTPに限られる。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Webメールはブラウザとインターネット環境があればどの端末からでも利用でき、専用ソフトのインストールが不要です。</span></td>
+            <td>              <strong>題目：</strong>關於 Webmail（網頁郵件）的特徵，下列描述何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 終端設備無需安裝專用的郵件用戶端軟體。</div>
+              <div class="option">B. 即使在離線狀態下也能隨時獲取最新的接收郵件。</div>
+              <div class="option">C. 郵件資料強制僅儲存在本地端硬碟中。</div>
+              <div class="option">D. 唯一可使用的通訊協定僅限於 FTP。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Webmail（如 Gmail、Yahoo Mail）直接透過瀏覽器進行操作，省去了於裝置安裝專用郵件軟體的繁瑣設定。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 2: Web技術與標記語言 -->
+  <div class="group-container">
+    <div class="group-header">【Web技術與標記語言】</div>
+
+    <!-- Webブラウザ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webブラウザ</div>
+        <div class="term-reading">うぇぶぶらうざ</div>
+        <div class="term-zh">網頁瀏覽器</div>
+        <div class="term-en">Web Browser</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webサーバから取得したHTMLや画像データを解析し、画面に閲覧可能な形で表示する閲覧ソフト。</div>
+        <div class="summary-zh">解析從 Web 伺服器獲取的 HTML 與圖片等數據，並將其視覺化呈現於螢幕上的應用軟體。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webブラウザの役割として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. HTML記述を解釈し、ユーザーが見える形にレンダリング表示する。</div>
+              <div class="option">イ. ドメイン名をIPアドレスに変換する名前解決を行う。</div>
+              <div class="option">ウ. Webコンテンツを他のサーバへアップロード管理する。</div>
+              <div class="option">エ. ルーティングテーブルを保持して最適な経路を選択する。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ブラウザはHTTP/HTTPSで受け取ったHTML、CSS、JavaScriptなどを解釈（レンダリング）して画面に表示します。</span></td>
+            <td>              <strong>題目：</strong>下列關於網頁瀏覽器（Web Browser）的作用，何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 解譯 HTML 描述，並渲染顯示為使用者可閱讀的視覺畫面。</div>
+              <div class="option">B. 進行將域名解析轉譯為 IP 地址的名義解析作業。</div>
+              <div class="option">C. 將 Web 內容上傳至其他伺服器進行管理。</div>
+              <div class="option">D. 保留路由表並選擇最佳的通訊路徑。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>瀏覽器的核心功能即是將接收到的 HTML 等程式碼進行渲染（Rendering），轉化為使用者可閱讀互動的視訊介面。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- マークアップ言語 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">マークアップ言語</div>
+        <div class="term-reading">まーくあっぷげんご</div>
+        <div class="term-zh">標記語言</div>
+        <div class="term-en">Markup Language</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">文章の構造や装飾情報を、「タグ」と呼ばれる特別な文字列を挿入して記述する言語の総称。</div>
+        <div class="summary-zh">透過插入稱為「標籤」的特殊符號文字，來描述文件結構與視覺樣式的語言總稱。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>マークアップ言語に該当するものの組み合わせとして、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. HTML, XML</div>
+              <div class="option">イ. C言語, Java</div>
+              <div class="option">ウ. Python, SQL</div>
+              <div class="option">エ. HTTP, FTP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>HTMLやXMLはタグを用いて文書の構造やデータ属性を定義するマークアップ言語です。</span></td>
+            <td>              <strong>題目：</strong>下列哪一組組合屬於「標記語言」（Markup Language）？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. HTML, XML</div>
+              <div class="option">B. C 語言, Java</div>
+              <div class="option">C. Python, SQL</div>
+              <div class="option">D. HTTP, FTP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTML 與 XML 皆使用「<tag>」標籤機制來標註與定義結構，屬於標準的標記語言。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HTML -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">HTML</div>
+        <div class="term-reading">えいちてぃーえむえる</div>
+        <div class="term-zh">超文本標記語言</div>
+        <div class="term-en">HyperText Markup Language</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webページを構築するための標準言語。見出しや段落、リンクなどの要素をタグで定義する。</div>
+        <div class="summary-zh">用於建立網頁的標準標記語言，透過標籤定義標題、段落、超連結等元件。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webページを作成するための標準的な記述言語であり、ハイパーリンクを設定できる特徴を持つものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. HTML</div>
+              <div class="option">イ. HTTP</div>
+              <div class="option">ウ. URL</div>
+              <div class="option">エ. XML</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>HTMLはハイパーテキスト（超テキスト）を記述し、相互にページをリンク結び付けできるWebの基礎言語です。</span></td>
+            <td>              <strong>題目：</strong>用於製作網頁的標準語言，且具備可設定超連結（Hyperlink）特徵的語言為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. HTML</div>
+              <div class="option">B. HTTP</div>
+              <div class="option">C. URL</div>
+              <div class="option">D. XML</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTML 專門用於建構網頁結構與內嵌超連結，為 World Wide Web 的基礎構成技術。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- XML -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">XML</div>
+        <div class="term-reading">えっくすえむえる</div>
+        <div class="term-zh">可擴充標記語言</div>
+        <div class="term-en">eXtensible Markup Language</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ユーザーが独自のタグを定義でき、異なるシステム間でのデータ交換に適した構造化言語。</div>
+        <div class="summary-zh">允許使用者自行定義標籤，非常適合用於不同系統間資料交換的結構化標記語言。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>XMLの特徴に関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ユーザーが独自のタグを定義してデータ構造を表現できる。</div>
+              <div class="option">イ. 表示用レイアウトを固定で定義するためのHTMLの上位互換言語である。</div>
+              <div class="option">ウ. Webブラウザ上での動的な処理を行うためのプログラミング言語である。</div>
+              <div class="option">エ. 通信データを暗号化するためのプロトコルである。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>XML（eXtensible Markup Language）は拡張性が高く、用途に応じてタグ名を自由に使ってデータを構造化できます。</span></td>
+            <td>              <strong>題目：</strong>關於 XML 的特徵描述，下列何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 使用者可以自行定義標籤來表達資料結構。</div>
+              <div class="option">B. 為固定定義顯示排版而設計的 HTML 向上相容語言。</div>
+              <div class="option">C. 在網頁瀏覽器上執行動態處理的程式語言。</div>
+              <div class="option">D. 用于對傳輸資料進行加密的網路協定。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>XML 的核心特性即為「可擴充性」，開發者可依業務資料需求自行制訂專屬標籤名稱。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ハイパーリンク -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ハイパーリンク</div>
+        <div class="term-reading">はいぱーりんく</div>
+        <div class="term-zh">超連結</div>
+        <div class="term-en">Hyperlink</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webページ上の文字や画像をクリックすることで、別のページやリソースへ移動する参照機能。</div>
+        <div class="summary-zh">點擊網頁上的文字或圖片時，即可跳轉至其他網頁或資源位置的參照功能。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>HTMLにおいて、他のWebページへのハイパーリンクを設定するために使用されるタグはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. &lt;a&gt;</div>
+              <div class="option">イ. &lt;img&gt;</div>
+              <div class="option">ウ. &lt;p&gt;</div>
+              <div class="option">エ. &lt;div&gt;</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ハイパーリンクの設置には Anchor（アンカー）を意味する &lt;a href="..."&gt; タグが使用されます。</span></td>
+            <td>              <strong>題目：</strong>在 HTML 中，用於設定前往其他網頁之超連結（Hyperlink）的標籤為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. &lt;a&gt;</div>
+              <div class="option">B. &lt;img&gt;</div>
+              <div class="option">C. &lt;p&gt;</div>
+              <div class="option">D. &lt;div&gt;</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTML 透過 &lt;a href="URL"&gt; 標籤來建立指向目標位址的超連結。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Webアプリケーションソフトウェア -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">Webアプリケーションソフトウェア</div>
+        <div class="term-reading">うぇぶあぷりけーしょんそふとうぇあ</div>
+        <div class="term-zh">網頁應用程式軟體</div>
+        <div class="term-en">Web Application Software</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webブラウザ上で動作し、サーバ側でデータ処理を行うインタラクティブな各種システム。</div>
+        <div class="summary-zh">於網頁瀏覽器介面上運行，並由伺服器端進行即時資料處理與互動的各類應用系統。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webアプリケーションソフトの特徴として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. クライアント側に専用ソフトを個別インストールせずブラウザ経由で利用できる。</div>
+              <div class="option">イ. ネットワークに接続されていないオフライン端末でのみ高速動作する。</div>
+              <div class="option">ウ. OSごとに異なるバイナリファイルを直接実行する必要がある。</div>
+              <div class="option">エ. データベースとの連携は技術的に不可能である。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>WebアプリケーションはWebブラウザからアクセスすることで、OS環境を問わず即座に利用できる利点があります。</span></td>
+            <td>              <strong>題目：</strong>關於 Web 應用程式軟體的特點，下列何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 無需在用戶端個別安裝專用軟體，直接透過瀏覽器即可使用。</div>
+              <div class="option">B. 僅在未連接網路的離線終端機上才能高速運行。</div>
+              <div class="option">C. 必須針對各作業系統直接執行不同的二進位執行檔。</div>
+              <div class="option">D. 在技術上無法與資料庫進行串接整合。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>網頁應用程式（如網路銀行、線上試算表）只需瀏覽器即可跨平台運作，大大降低用戶端的部署與維護成本。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HTTP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">HTTP</div>
+        <div class="term-reading">えいちてぃーてぃーぴー</div>
+        <div class="term-zh">超文本傳輸協定</div>
+        <div class="term-en">Hypertext Transfer Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">WebブラウザとWebサーバ間で、HTMLなどのデータを送受信するための通信プロトコル。</div>
+        <div class="summary-zh">用於網頁瀏覽器與 Web 伺服器之間傳送 HTML 等資料的基本通訊協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>WebブラウザがWebサーバに対してWebページの送信を要求（リクエスト）する際に使用する標準的なプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. HTTP</div>
+              <div class="option">イ. SMTP</div>
+              <div class="option">ウ. FTP</div>
+              <div class="option">エ. DHCP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>Web閲覧の基本となるリクエスト／レスポンス通信には HTTP プロトコルが用いられます。</span></td>
+            <td>              <strong>題目：</strong>網頁瀏覽器向 Web 伺服器請求（Request）傳送網頁時，所使用的標準通訊協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. HTTP</div>
+              <div class="option">B. SMTP</div>
+              <div class="option">C. FTP</div>
+              <div class="option">D. DHCP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTTP（Hypertext Transfer Protocol）是全球資訊網用於傳輸網頁資料的主要基礎協定。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- HTTPS -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">HTTPS</div>
+        <div class="term-reading">えいちてぃーてぃーぴーえす</div>
+        <div class="term-zh">安全超文本傳輸協定</div>
+        <div class="term-en">HyperText Transfer Protocol Secure</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">HTTPによる通信をTLS/SSLで暗号化し、盗聴や改ざん、なりすましを防ぐ安全な通信プロトコル。</div>
+        <div class="summary-zh">透過 TLS/SSL 技術對 HTTP 通訊進行加密，可防止竊聽、竄改與冒充的安全通訊協定。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>HTTPにTLSによる暗号化機能を組み合わせ、Webサービスでの個人情報やクレジットカード情報の安全な通信を実現する仕組みはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. HTTPS</div>
+              <div class="option">イ. SFTP</div>
+              <div class="option">ウ. S/MIME</div>
+              <div class="option">エ. IPsec</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>HTTPS（HTTP Secure）はHTTP通信全体をTLSで暗号化することで、安全性を確保します。</span></td>
+            <td>              <strong>題目：</strong>將 HTTP 結合 TLS 加密功能，以實現網頁服務中個人資料與信用卡號等敏感資訊安全傳輸的機制為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. HTTPS</div>
+              <div class="option">B. SFTP</div>
+              <div class="option">C. S/MIME</div>
+              <div class="option">D. IPsec</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>HTTPS 即「HTTP + TLS加密」，能全面保護網頁傳輸內容，防範網路監聽與竊密。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- cookie -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">cookie</div>
+        <div class="term-reading">くっきー</div>
+        <div class="term-zh">小型文字數據檔案 (Cookie)</div>
+        <div class="term-en">Cookie</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Webサイトがブラウザに一時保存させ、ログイン状態や訪問履歴などを識別・維持するデータ。</div>
+        <div class="summary-zh">由網站指示瀏覽器於本地端儲存的小型資料，用以識別身分並維持登入狀態或紀錄訪問歷程。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>WebサーバがWebブラウザに一時的にデータを保存させ、セッション状態の維持やユーザー管理を行うために用いる仕組みはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. Cookie</div>
+              <div class="option">イ. Cache</div>
+              <div class="option">ウ. History</div>
+              <div class="option">エ. Bookmark</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>CookieはWebサーバからの指示でブラウザ側に識別子や状態情報をテキスト保存させる技術です。</span></td>
+            <td>              <strong>題目：</strong>Web 伺服器讓網頁瀏覽器於本地端暫存資料，以維持連線 Session 狀態與進行使用者辨識的機制為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. Cookie</div>
+              <div class="option">B. 快取 (Cache)</div>
+              <div class="option">C. 歷史紀錄 (History)</div>
+              <div class="option">D. 書籤 (Bookmark)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Cookie 常用於保持電商購物車內容、記憶使用者登入 Session 權限狀態等用途。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ドメイン名 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ドメイン名</div>
+        <div class="term-reading">どめいんめい</div>
+        <div class="term-zh">域名</div>
+        <div class="term-en">Domain Name</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">IPアドレスを人間が覚えやすい文字列（例: example.com）に置き換えたインターネット上の住所。</div>
+        <div class="summary-zh">將數字構成的 IP 地址轉換為人類易於記憶的文字組合（如 example.com）之網路位址表示法。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>インターネット上のコンピュータを識別する「ドメイン名」と「IPアドレス」を相互に変換するシステムはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. DNS</div>
+              <div class="option">イ. DHCP</div>
+              <div class="option">ウ. NAT</div>
+              <div class="option">エ. NTP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>DNS（Domain Name System）がドメイン名とIPアドレスの対応付け（名前解決）を行います。</span></td>
+            <td>              <strong>題目：</strong>負責在網際網路上將用於辨識電腦的「域名」與「IP 地址」進行相互轉換的系統為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. DNS</div>
+              <div class="option">B. DHCP</div>
+              <div class="option">C. NAT</div>
+              <div class="option">D. NTP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>域名系統（DNS）負責進行域名與 IP 位址之間的轉譯對照（稱為域名解析 / Name Resolution）。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- URL -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">URL</div>
+        <div class="term-reading">ゆーあーるえる</div>
+        <div class="term-zh">統一資源定位符</div>
+        <div class="term-en">Uniform Resource Locator</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">インターネット上に存在する情報リソースの位置（スキーム、ドメイン、パス）を示す統一記述形式。</div>
+        <div class="summary-zh">用於精確標示網際網路上特定資源位置（包含協定、域名與路徑）的統一格式位址。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>URL「https://www.example.co.jp/index.html」における「https」部分が表しているものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. スキーム（使用するプロトコル）</div>
+              <div class="option">イ. ホスト名</div>
+              <div class="option">ウ. ドメイン名</div>
+              <div class="option">エ. ファイルパス</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>URLの先頭（://の前）は通信手段・スキーマ（プロトコル指定）を表します。</span></td>
+            <td>              <strong>題目：</strong>在網址 URL「https://www.example.co.jp/index.html」中，「https」部分代表的是什麼？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 通訊方案 / 協定（Scheme）</div>
+              <div class="option">B. 主機名稱 (Host Name)</div>
+              <div class="option">C. 網域名稱 (Domain Name)</div>
+              <div class="option">D. 檔案路徑 (File Path)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>URL 最前方的部分稱為 Scheme（方案/協定），用於告知瀏覽器存取該資源時應使用的通訊協定。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 3: 檔案傳輸與雲端儲存 -->
+  <div class="group-container">
+    <div class="group-header">【檔案傳輸與雲端儲存】</div>
+
+    <!-- FTPサーバ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">FTPサーバ</div>
+        <div class="term-reading">えふてぃーぴーさーば</div>
+        <div class="term-zh">FTP 檔案伺服器</div>
+        <div class="term-en">FTP Server</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">FTPプロトコルに従い、ネットワーク経由でファイルのアップロードやダウンロードを提供するサーバ。</div>
+        <div class="summary-zh">依循 FTP 協定，透過網路提供檔案上傳與下載儲存服務的伺服器。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>FTPサーバへアクセスしファイルを操作する際、セキュリティを高めるために通信全体を暗号化するプロトコルはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. FTPS (FTP over SSL/TLS)</div>
+              <div class="option">イ. HTTP</div>
+              <div class="option">ウ. Telnet</div>
+              <div class="option">エ. SMTP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>従来のFTPはパスワード等が平文で流れるため、TLSで暗号化するFTPSやSSHを使うSFTPが推奨されます。</span></td>
+            <td>              <strong>題目：</strong>連線至 FTP 伺服器操作檔案時，為了提高安全性而對整體通訊進行加密的協定為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. FTPS (FTP over SSL/TLS)</div>
+              <div class="option">B. HTTP</div>
+              <div class="option">C. Telnet</div>
+              <div class="option">D. SMTP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>傳統 FTP 會以明文傳輸帳號密碼，因此常使用結合 SSL/TLS 加密機制的 FTPS 來加強檔案傳輸安全。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FTPクライアント -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">FTPクライアント</div>
+        <div class="term-reading">えふてぃーぴーくらいあんと</div>
+        <div class="term-zh">FTP 傳輸用戶端</div>
+        <div class="term-en">FTP Client</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">FTPサーバに接続し、ローカルとリモート間でのファイル転送操作を行うための専用ソフト。</div>
+        <div class="summary-zh">連線至 FTP 伺服器，用以進行本地端與遠端主機間檔案傳送與管理的專用軟體。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webサイトの更新作業において、作成したHTMLファイルをWebサーバへ転送するために管理者が利用するソフトウェアはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. FTPクライアント</div>
+              <div class="option">イ. Webブラウザ</div>
+              <div class="option">ウ. DNSサーバ</div>
+              <div class="option">エ. メールクライアント</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ローカルで作成したWebコンテンツをサーバに流し込む（アップロードする）にはFTPクライアントが多用されます。</span></td>
+            <td>              <strong>題目：</strong>進行網站更新作業時，管理者將本機製作好的 HTML 檔案傳輸至 Web 伺服器所使用的軟體為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. FTP 用戶端軟體</div>
+              <div class="option">B. 網頁瀏覽器</div>
+              <div class="option">C. DNS 伺服器</div>
+              <div class="option">D. 郵件用戶端軟體</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>管理者常使用 FTP 用戶端（如 FileZilla）將網頁檔案上傳複製到 Web 伺服器檔案目錄中。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- アップロード -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">アップロード</div>
+        <div class="term-reading">あっぷろーど</div>
+        <div class="term-zh">上傳</div>
+        <div class="term-en">Upload</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ローカルのコンピュータにあるデータを、ネットワーク上のサーバへ送信して保存させること。</div>
+        <div class="summary-zh">將本機電腦上的資料或檔案傳送並儲存至網路伺服器上的行為過程。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>自分のパソコンに保存されている写真ファイルをクラウドストレージに送信して保存する操作を何と呼ぶか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. アップロード</div>
+              <div class="option">イ. ダウンロード</div>
+              <div class="option">ウ. ストリーミング</div>
+              <div class="option">エ. インストール</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ローカルからネットワーク（雲側）へデータを送る操作をアップロード（Upload）と呼びます。</span></td>
+            <td>              <strong>題目：</strong>將儲存於自己個人電腦中的相片檔案傳送至雲端硬碟儲存的操作稱為什麼？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 上傳 (Upload)</div>
+              <div class="option">B. 下載 (Download)</div>
+              <div class="option">C. 串流 (Streaming)</div>
+              <div class="option">D. 安裝 (Install)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>將資料由本地端發送至網路遠端伺服器端的傳輸動作即稱為上傳（Upload）。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ダウンロード -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ダウンロード</div>
+        <div class="term-reading">だうんろーど</div>
+        <div class="term-zh">下載</div>
+        <div class="term-en">Download</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">ネットワーク上のサーバに存在するデータを、ローカルのコンピュータへ受信して保存すること。</div>
+        <div class="summary-zh">將存在於網路伺服器上的資料傳輸並儲存至本地端設備上的行為過程。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>Webサイトからソフトウェアの設置プログラムを自分のパソコンに転送して保存する操作を表す用語はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ダウンロード</div>
+              <div class="option">イ. アップロード</div>
+              <div class="option">ウ. レプリケーション</div>
+              <div class="option">エ. エクスポート</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>サーバ側からローカル側へデータを受信・保存する処理をダウンロード（Download）と呼びます。</span></td>
+            <td>              <strong>題目：</strong>從網站將軟體的安裝程式檔傳輸並儲存到自己個人電腦上的操作術語為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 下載 (Download)</div>
+              <div class="option">B. 上傳 (Upload)</div>
+              <div class="option">C. 抄寫複製 (Replication)</div>
+              <div class="option">D. 匯出 (Export)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>將資料從網路遠端伺服器取得並儲存至本地端裝置的動作稱為下載（Download）。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- オンラインストレージ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">オンラインストレージ</div>
+        <div class="term-reading">おんらいんすとれーじ</div>
+        <div class="term-zh">線上儲存空間</div>
+        <div class="term-en">Online Storage</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">インターネット経由でディスク領域を貸し出し、ファイル保存や共有を可能にするサービス。</div>
+        <div class="summary-zh">透過網際網路租賃磁碟空間，供使用者進行檔案儲存與共享的網路服務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>インターネット上にファイルを保存し、複数の端末や他者とファイル共有を行えるようにするサービスの総称はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. オンラインストレージ</div>
+              <div class="option">イ. オンライン取引</div>
+              <div class="option">ウ. メッセージキュー</div>
+              <div class="option">エ. ナレッジベース</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>インターネット経由でファイルをストレージに預け、どこからでもアクセス可能にするのがオンラインストレージです。</span></td>
+            <td>              <strong>題目：</strong>將檔案儲存於網際網路上，並能透過多個終端設備或與他人進行檔案分享的服務總稱為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 線上儲存空間 (Online Storage)</div>
+              <div class="option">B. 線上交易 (Online Transaction)</div>
+              <div class="option">C. 訊息佇列 (Message Queue)</div>
+              <div class="option">D. 知識庫 (Knowledge Base)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>線上儲存空間提供跨裝置存取與線上共享資料的能力，為雲端服務常見的應用形式。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- クラウドストレージ -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">クラウドストレージ</div>
+        <div class="term-reading">くらうどすとれーじ</div>
+        <div class="term-zh">雲端硬碟儲存</div>
+        <div class="term-en">Cloud Storage</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">クラウド事業者が提供する仮想化された大容量ストレージ基盤を必要に応じて利用する形態。</div>
+        <div class="summary-zh">由雲端服務商提供彈性擴充且高度高可用性的虛擬化儲存基建，供用戶按需使用的服務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>クラウドストレージの導入メリットとして、適切でないものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 物理的なハードウェアの保守管理負担を軽減できる。</div>
+              <div class="option">イ. 必要に応じて動的にストレージ容量を拡張できる。</div>
+              <div class="option">ウ. ネットワーク接続が遮断された環境でも常にリアルタイム同期できる。</div>
+              <div class="option">エ. 複数拠点からのデータアクセスや共同編集が容易になる。</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>クラウドストレージはインターネット接続が前提であるため、オフライン状態ではリアルタイム同期は行えません。</span></td>
+            <td>              <strong>題目：</strong>關於導入雲端硬碟儲存（Cloud Storage）的好處，下列何者「不適當」？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 能減輕實體硬體設備的維護管理負擔。</div>
+              <div class="option">B. 可依需求動態擴充儲存空間容量。</div>
+              <div class="option">C. 即使在網路連線中斷的環境下也能隨時進行即時同步。</div>
+              <div class="option">D. 方便由多個據點進行資料存取與協同編輯。</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>雲端硬碟依賴網際網路傳輸，當處於斷網的離線狀態時，無法執行與雲端端點的即時資料同步。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 4: 商業應用與網路通訊協定 -->
+  <div class="group-container">
+    <div class="group-header">【商業應用與網路通訊協定】</div>
+
+    <!-- VPN -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">VPN</div>
+        <div class="term-reading">ぶいぴーえぬ</div>
+        <div class="term-zh">虛擬私人網路</div>
+        <div class="term-en">Virtual Private Network</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">公衆回線上に暗号化やトンネリング技術を用いて、専用線のような安全な仮想経路を構築する技術。</div>
+        <div class="summary-zh">利用加密與隧道技術於公用網路上，建立類似專線般高安全性虛擬通道的技術。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>インターネットなどの公衆ネットワークを利用しながら、暗号化や認証技術によって安全な仮想専用通信網を確立する技術はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. VPN</div>
+              <div class="option">イ. VLAN</div>
+              <div class="option">ウ. NAT</div>
+              <div class="option">エ. DNS</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>VPN（Virtual Private Network）はトンネリングと暗号化により公衆網上でセキュアな通信を実現します。</span></td>
+            <td>              <strong>題目：</strong>利用網際網路等公用網路時，透過加密與認證技術建立安全之虛擬專用通訊網路的技術為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. VPN</div>
+              <div class="option">B. VLAN</div>
+              <div class="option">C. NAT</div>
+              <div class="option">D. DNS</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>VPN（虛擬私人網路）利用加密技術建構安全通道，在成本較低的公用網路上實現專線級的保密安全性。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- プライベートIPアドレス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">プライベートIPアドレス</div>
+        <div class="term-reading">ぷらいべーとあいぴーあどれす</div>
+        <div class="term-zh">私有 IP 位址</div>
+        <div class="term-en">Private IP Address</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">社内LANなどの限定された組織内でのみ自由に利用できる、インターネット上で重複可能なアドレス。</div>
+        <div class="summary-zh">僅供公司內部 LAN 等限定封閉網路使用的 IP 位址，無法直接在網際網路上進行路由。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>プライベートIPアドレスに関する記述として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. インターネット上で直接ルーティングして通信できる。</div>
+              <div class="option">イ. ICANN等の組織から全世界で一意になるように直接割り当てられる。</div>
+              <div class="option">ウ. 組織内のLANで自由に使用でき、インターネット接続にはNAT等が必要である。</div>
+              <div class="option">エ. IPv6でのみ使用可能であり、IPv4には存在しない。</div>
+              <span class="answer"><strong>正解：</strong>ウ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>プライベートIPアドレスは組織内で自由に使用できますが、インターネットに出るにはNAT/NAPTでグローバルIPへ変換が必要です。</span></td>
+            <td>              <strong>題目：</strong>關於私有 IP 位址（Private IP Address）的描述，下列何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 可直接在網際網路上進行路由與直接連線。</div>
+              <div class="option">B. 由 ICANN 等全球組織統一分配，保證全球唯一。</div>
+              <div class="option">C. 可在組織內部 LAN 自由配發，連線至網際網路時需要 NAT 技術進行轉譯。</div>
+              <div class="option">D. 僅能使用於 IPv6，在 IPv4 中並不存在此概念。</div>
+              <span class="answer"><strong>正確答案：</strong>(C)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>私有 IP 位址（如 192.168.x.x）僅限內部網路使用，通往外網時必須透過 NAT 轉譯為公用 IP。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- EC -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">EC</div>
+        <div class="term-reading">いーしー</div>
+        <div class="term-zh">電子商務</div>
+        <div class="term-en">Electronic Commerce</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">インターネットなどのネットワークを通じて、商品やサービスの売買・取引を行う商業形態。</div>
+        <div class="summary-zh">透過網際網路等網路媒介，進行商品或服務之買賣與交易的商業營運模式。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>企業と一般消費者との間で行われる電子商取引の形態を表す略称はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. BtoC</div>
+              <div class="option">イ. BtoB</div>
+              <div class="option">ウ. CtoC</div>
+              <div class="option">エ. GtoC</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>EC（電子商取引）の分類において、企業（Business）と消費者（Consumer）間の取引は BtoC と呼ばれます。</span></td>
+            <td>              <strong>題目：</strong>表示企業與一般消費者之間所進行之電子商務（EC）型態的簡稱為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. BtoC</div>
+              <div class="option">B. BtoB</div>
+              <div class="option">C. CtoC</div>
+              <div class="option">D. GtoC</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>EC（電子商務）依交易對象分類，企業對消費者的交易模型簡稱為 BtoC（Business-to-Consumer）。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- EDI -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">EDI</div>
+        <div class="term-reading">いーでぃーあい</div>
+        <div class="term-zh">電子資料交換</div>
+        <div class="term-en">Electronic Data Interchange</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">発注書や請求書などの商取引文書を、標準化された規約に従い企業間で電子的に交換する仕組み。</div>
+        <div class="summary-zh">依據標準化格式規範，將訂單、發票等商業文件於企業系統之間進行自動化電子交換的機制。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>異なる企業間で、受発注や伝票などのビジネスデータを標準的な形式に統一して電子的に交換する仕組みはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. EDI</div>
+              <div class="option">イ. ERP</div>
+              <div class="option">ウ. CRM</div>
+              <div class="option">エ. SCM</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>EDI（Electronic Data Interchange）は企業間取引データの自動化・標準化交換技術です。</span></td>
+            <td>              <strong>題目：</strong>在不同企業之間，將訂進貨與單據等商業資料統一為標準格式並進行電子化交換的機制為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. EDI</div>
+              <div class="option">B. ERP</div>
+              <div class="option">C. CRM</div>
+              <div class="option">D. SCM</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>EDI（電子資料交換）能實現企業間跨系統商業傳票的無紙化與自動化處理，大幅提升營運效率。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 専用線サービス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">専用線サービス</div>
+        <div class="term-reading">せんようせんさーびす</div>
+        <div class="term-zh">專線服務</div>
+        <div class="term-en">Leased Line Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">特定の拠点間を独占的な通信回線で常時接続し、高品質で安定した帯域を保証する通信サービス。</div>
+        <div class="summary-zh">使用獨佔式實體線路恆常連接特定據點，提供保證頻寬與高穩定度通訊質量的網路服務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>通信事業者が特定のユーザー向けに回線を占有提供し、他者のトラフィック影響を受けない帯域確保型サービスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 専用線サービス</div>
+              <div class="option">イ. ベストエフォート型接続</div>
+              <div class="option">ウ. 公衆無線LAN</div>
+              <div class="option">エ. ダイヤルアップ接続</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>専用線は契約したユーザーのみが回線を独占して利用するため、常に安定した通信速度が保証されます。</span></td>
+            <td>              <strong>題目：</strong>電信業者針對特定用戶提供獨占線路，完全不受其他使用者流量影響的頻寬保證型服務為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 專線服務 (Leased Line Service)</div>
+              <div class="option">B. 盡力而為型連線 (Best Effort)</div>
+              <div class="option">C. 公用無線區域網路</div>
+              <div class="option">D. 撥接連線</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>專線（Leased Line）為特定客戶獨占之數據通道，具備極高的保密性、低延遲與保證頻寬特點。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 回線交換サービス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">回線交換サービス</div>
+        <div class="term-reading">かいせんこうかんさーびす</div>
+        <div class="term-zh">電路交換服務</div>
+        <div class="term-en">Circuit Switched Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">通信開始から終了まで物理的な通信経路を専有・占有して通信を行う接続方式（例: 物理電話）。</div>
+        <div class="summary-zh">於通訊建立起至結束期間，全程獨佔一條專屬物理通訊線路的傳輸方式（如傳統固網電話）。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>通信を行う間、送信者と受信者の間に接続経路を占有確保し、安定した通信を行う方式はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 回線交換方式</div>
+              <div class="option">イ. パケット交換方式</div>
+              <div class="option">ウ. ストアアンドフォワード方式</div>
+              <div class="option">エ. メッセージ交換方式</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>回線交換方式（Circuit Switching）は通信中に1本の物理回路を占有するため、データ転送中の遅延が極めて少ないです。</span></td>
+            <td>              <strong>題目：</strong>進行通訊期間，在發送端與接收端之間獨佔並確保一條固定傳輸路徑的通訊方式為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 電路交換方式 (Circuit Switching)</div>
+              <div class="option">B. 封包交換方式 (Packet Switching)</div>
+              <div class="option">C. 儲存轉發方式 (Store and Forward)</div>
+              <div class="option">D. 訊息交換方式 (Message Switching)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>電路交換（如傳統電話網路）在通訊期間建立一條專屬電路，優點是傳輸延遲固定但線路利用率較低。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- パケット交換サービス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">パケット交換サービス</div>
+        <div class="term-reading">ぱけっとこうかんさーびす</div>
+        <div class="term-zh">封包交換服務</div>
+        <div class="term-en">Packet Switching Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">データを小分割（パケット）し、回線を複数ユーザーで共有して効率よく送信する通訊方式。</div>
+        <div class="summary-zh">將資料拆解為小型區塊（封包），讓多位使用者共享傳輸線路以提高效率的通訊方式。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>送受信データを「パケット」と呼ばれる小さな単位に分割し、一つの通信回線を複数のユーザーで共有して送信する方式はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. パケット交換方式</div>
+              <div class="option">イ. 回線交換方式</div>
+              <div class="option">ウ. 専用線方式</div>
+              <div class="option">エ. 同期通信方式</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>パケット交換方式は現代のインターネットの基盤であり、回線利用効率が非常に高い特長を持ちます。</span></td>
+            <td>              <strong>題目：</strong>將收發資料分割為稱為「封包」的小型單位，並由多個使用者共享同一條通訊線路進行傳輸的方式為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 封包交換方式 (Packet Switching)</div>
+              <div class="option">B. 電路交換方式 (Circuit Switching)</div>
+              <div class="option">C. 專線方式 (Leased Line)</div>
+              <div class="option">D. 同步通訊方式 (Synchronous Communication)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>封包交換是現代網際網路（TCP/IP）的核心機制，大幅提升了網路實體線路的頻寬使用效率。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- インターネットサービス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">インターネットサービス</div>
+        <div class="term-reading">いんたーねっとさーびす</div>
+        <div class="term-zh">網際網路服務</div>
+        <div class="term-en">Internet Service</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">Web閲覧、電子メール、クラウドなど、網際網路上で提供される各種機能・サービスの総称。</div>
+        <div class="summary-zh">包含網頁瀏覽、電子郵件、雲端運算等所有基於網際網路所提供之服務與應用的總稱。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>インターネットサービスプロバイダ（ISP）の主な役割として、適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ユーザーの端末をインターネットへ接続する環境を提供する。</div>
+              <div class="option">イ. パソコンのハードウェア障害を現地で修理する。</div>
+              <div class="option">ウ. アプリケーションソフトウェアのプログラミング開発を行う。</div>
+              <div class="option">エ. Webページのコンテンツ内容を検閲・承認する。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ISP（Internet Service Provider）は、個人や企業に対してインターネットへの接続回線・環境を提供する事業者です。</span></td>
+            <td>              <strong>題目：</strong>下列關於網際網路服務提供者（ISP）的主要角色，何者描述適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 提供將使用者的終端設備連通至網際網路的接入環境。</div>
+              <div class="option">B. 進行個人電腦硬體故障的現場維修作業。</div>
+              <div class="option">C. 進行各類應用軟體的程式開發。</div>
+              <div class="option">D. 審查與批准網頁的內容細節。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>ISP（Internet Service Provider，如中華電信、So-net）主要業務即為向用戶提供連上 Internet 的網際網路存取服務。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- Group 5: 現代電信與行動網路技術 -->
+  <div class="group-container">
+    <div class="group-header">【現代電信與行動網路技術】</div>
+
+    <!-- FTTH -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">FTTH</div>
+        <div class="term-reading">えふてぃーてぃーえいち</div>
+        <div class="term-zh">光纖到府</div>
+        <div class="term-en">Fiber to the Home</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">光ファイバーケーブルを一般家庭の敷地内まで直接引き込み、超高速通信を実現するアクセス網。</div>
+        <div class="summary-zh">將光纖纜線直接鋪設拉引至一般用戶住宅內，實現超高速寬頻連線的通訊網路。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>光ファイバーを各家庭まで直接引き込むことで、大容量かつ高速なデータ通信を提供する通信方式はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. FTTH</div>
+              <div class="option">イ. ADSL</div>
+              <div class="option">ウ. CATV</div>
+              <div class="option">エ. ISDN</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>FTTH（Fiber to the Home）は光ファイバーを家庭まで直接引くブロードバンド技術です。</span></td>
+            <td>              <strong>題目：</strong>將光纖直接引進至各個家庭中，以提供大容量且高速數據傳輸的通訊方式為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. FTTH</div>
+              <div class="option">B. ADSL</div>
+              <div class="option">C. CATV</div>
+              <div class="option">D. ISDN</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>FTTH（Fiber to the Home）為現代有線寬頻上網的最主流技術，傳輸速率可達 1Gbps 至 10Gbps 以上。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IP電話 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IP電話</div>
+        <div class="term-reading">あいぴーでんわ</div>
+        <div class="term-zh">IP 網路電話</div>
+        <div class="term-en">Internet Protocol Telephone</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">VoIP技術を用い、TCP/IPネットワークを介して音声データをデジタルパケット送信する電話。</div>
+        <div class="summary-zh">應用 VoIP 技術，透過 TCP/IP 封包網路進行數位語音數據傳輸的電話服務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IP電話において、音声をデジタル化してパケットに変換し、リアルタイム伝送するためのコア技術はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. VoIP</div>
+              <div class="option">イ. POP3</div>
+              <div class="option">ウ. DNS</div>
+              <div class="option">エ. DHCP</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IP電話の基礎技術はVoIP（Voice over Internet Protocol）です。</span></td>
+            <td>              <strong>題目：</strong>在 IP 電話中，將語音數位化轉換為封包並進行即時傳輸的核心技術為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. VoIP</div>
+              <div class="option">B. POP3</div>
+              <div class="option">C. DNS</div>
+              <div class="option">D. DHCP</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IP 電話即是利用 VoIP（Voice over IP）技術，將類比語音訊號轉換成 IP 封包於 IP 網路上傳輸。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- モバイル通信 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">モバイル通信</div>
+        <div class="term-reading">もばいるつうしん</div>
+        <div class="term-zh">行動通訊</div>
+        <div class="term-en">Mobile Communication</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">携帯電話基地局などの電波網を利用し、移動中の端末同士で音声やデータを通信する技術。</div>
+        <div class="summary-zh">利用基地台的無線電波涵蓋網，供移動中的終端設備進行語音與數據資料傳輸的技術。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>移動体通信（モバイル通信）における「ハンドオーバー」の説明として適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 移動に伴い、接続する無線基地局をスムーズに切り替えて通信を維持する技術。</div>
+              <div class="option">イ. SIMカードの識別番号を別の端末へ転送する処理。</div>
+              <div class="option">ウ. Wi-Fi通信からBluetooth通信へ自動切換する機能。</div>
+              <div class="option">エ. 端末のバッテリー消費を抑える省電力制御。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>ハンドオーバー（Handover）は、移動に伴い通信対象の基地局を途切れることなく自動切換する技術です。</span></td>
+            <td>              <strong>題目：</strong>關於行動通訊中的「越區切換 / 越區移轉 (Handover)」描述，下列何者適當？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 隨著用戶移動，平順切換所連線之無線基地台以維持通訊不中斷的技術。</div>
+              <div class="option">B. 將 SIM 卡的識別號碼轉移至另一台終端的處理過程。</div>
+              <div class="option">C. 從 Wi-Fi 通訊自動切換至 Bluetooth 通訊的功能。</div>
+              <div class="option">D. 降低終端電池消耗的省電控制機制。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Handover（越區切換）確保使用者在搭車移動時，訊號能從一座基地台無縫切換至下一座基地台。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- LTE -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">LTE</div>
+        <div class="term-reading">えるてぃーいー</div>
+        <div class="term-zh">長期演進技術 (4G LTE)</div>
+        <div class="term-en">Long Term Evolution</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">3Gからのスムーズな移行を目的に策定された、高速データ通信を実現する第4世代標準規格。</div>
+        <div class="summary-zh">為實現從 3G 平順過渡演進而制訂，可提供高速行動數據傳輸的第 4 代（4G）標準規格。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>3Gと4Gの中間に位置づけられ、データ通信の高速化を図った移動通信システムの標準規格はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. LTE</div>
+              <div class="option">イ. WiMAX</div>
+              <div class="option">ウ. Bluetooth</div>
+              <div class="option">エ. IrDA</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>LTE（Long Term Evolution）は3Gから発展した高速移動通信規格であり、4Gの標準として普及しました。</span></td>
+            <td>              <strong>題目：</strong>介於 3G 與 4G 之間，旨在實現高速數據傳輸的行動通訊系統標準規格為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. LTE</div>
+              <div class="option">B. WiMAX</div>
+              <div class="option">C. Bluetooth</div>
+              <div class="option">D. IrDA</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>LTE（Long Term Evolution）標準讓行動通訊頻寬大幅躍升，成為全球廣泛運用的 4G 行動網路主軸。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5G -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">5G</div>
+        <div class="term-reading">ふぁいぶじー</div>
+        <div class="term-zh">第五代行動通訊系統</div>
+        <div class="term-en">Fifth Generation Mobile Communication System</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">「高速大容量」「超低遅延」「多数同時接続」を大きな特徴とする第5世代のモバイル通信規格。</div>
+        <div class="summary-zh">具備「超高速大頻寬」、「超低延遲」與「巨量多裝置連接」三大特徵的第 5 代行動通訊規格。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>5G（第5世代移動通信システム）の主な特徴に含まれないものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 超高速・大容量</div>
+              <div class="option">イ. 超低遅延</div>
+              <div class="option">ウ. 多数同時接続</div>
+              <div class="option">エ. アナログ回線の独占利用</div>
+              <span class="answer"><strong>正解：</strong>エ</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>5Gの特徴は「高速大容量」「低遅延」「多数接続」の3つであり、アナログ回線の独占は無関係です。</span></td>
+            <td>              <strong>題目：</strong>下列何者「不屬於」5G（第五代行動通訊系統）的主要特徵？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 超高速、大容量</div>
+              <div class="option">B. 超低延遲</div>
+              <div class="option">C. 巨量多裝置同時連接</div>
+              <div class="option">D. 類比線路的獨占使用</div>
+              <span class="answer"><strong>正確答案：</strong>(D)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>5G 的核心三要素為：高速大頻寬（eMBB）、超高可靠低延遲（URLLC）與巨量物聯網連接（mMTC）。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- テザリング -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">テザリング</div>
+        <div class="term-reading">てざりんぐ</div>
+        <div class="term-zh">網路分享 / 網路基地台</div>
+        <div class="term-en">Tethering</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">スマートフォン等のモバイル回線を、Wi-FiやBluetooth経由でPC等に共有・中継する機能。</div>
+        <div class="summary-zh">將智慧型手機的行動網路，透過 Wi-Fi、藍芽或 USB 共享給電腦等其他裝置上網的功能。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>スマートフォンのデータ通信機能を利用して、ノートPCやタブレットをインターネットに接続させる機能を何と呼ぶか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. テザリング</div>
+              <div class="option">イ. 漫遊（ローミング）</div>
+              <div class="option">ウ. ミラーリング</div>
+              <div class="option">エ. ペアリング</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>スマホをモバイルルーター代わりに使って他端末をネット接続する機能をテザリング（Tethering）と呼びます。</span></td>
+            <td>              <strong>題目：</strong>利用智慧型手機的數據通訊功能，讓筆記型電腦或平板電腦連通至網際網路的功能稱增為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 網路分享 / 個人基地台 (Tethering)</div>
+              <div class="option">B. 漫遊 (Roaming)</div>
+              <div class="option">C. 螢幕鏡射 (Mirroring)</div>
+              <div class="option">D. 藍芽配對 (Pairing)</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Tethering（網路熱點分享）允許手機充當行動路由器，分享 4G/5G 流量給身旁其他電子設備使用。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 広域Ethernet -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">広域Ethernet</div>
+        <div class="term-reading">こういきいーさねっと</div>
+        <div class="term-zh">廣域乙太網路</div>
+        <div class="term-en">Wide Area Ethernet</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">通信事業者の網を利用し、離れた拠点間のLANをスイッチング（レイヤ2）で統合接続する網。</div>
+        <div class="summary-zh">利用電信業者之專用網路，將遠端不同據點的 LAN 在第二層（L2）直接橋接統合的通訊網。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>電気通信事業者の網を介して、離れた拠点のLAN同士をレイヤ2（データリンク層）レベルで透明に結合する通信サービスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 広域Ethernet</div>
+              <div class="option">イ. IP-VPN</div>
+              <div class="option">ウ. インターネットVPN</div>
+              <div class="option">エ. ISDN</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>広域Ethernetはレイヤ2で動作するため、IP以外のプロトコル（非IPデータ）も透過的に送信可能です。</span></td>
+            <td>              <strong>題目：</strong>透過電信業者的網路，在 Layer 2（資料連結層）層級透明無縫連接遠端不同據點 LAN 的通訊服務為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 廣域乙太網路 (Wide Area Ethernet)</div>
+              <div class="option">B. IP-VPN</div>
+              <div class="option">C. Internet VPN</div>
+              <div class="option">D. ISDN</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>廣域 Ethernet 屬於 L2 VPN 服務，能如同直接用乙太網路線連通不同據點，支援非 IP 協定資料之自由傳輸。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IP-VPN -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">IP-VPN</div>
+        <div class="term-reading">あいぴーぶいぴーえぬ</div>
+        <div class="term-zh">閉鎖型 IP 虛擬私人網路</div>
+        <div class="term-en">IP Virtual Private Network</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">通信事業者の閉域IP網（MPLSなど）を利用し、安全かつ高品質に拠点を結ぶLayer 3 VPN。</div>
+        <div class="summary-zh">使用電信業者私有閉鎖型 IP 網（如 MPLS 技術），實現安全且具服務品質保證的 L3 虛擬網路。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>通信事業者が独自に構築した閉域IP網を使用し、MPLS技術などを用いてセキュリティを高めたVPNサービスはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. IP-VPN</div>
+              <div class="option">イ. インターネットVPN</div>
+              <div class="option">ウ. 広域Ethernet</div>
+              <div class="option">エ. ダイヤルアップVPN</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>IP-VPNはインターネットを通らず、事業者の「閉域網（IP網）」内でルーティングするため安全性が高いです。</span></td>
+            <td>              <strong>題目：</strong>使用電信業者自行建構的閉鎖型 IP 網路，並運用 MPLS 等技術來提高安全性的 VPN 服務為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. IP-VPN</div>
+              <div class="option">B. Internet VPN (網際網路 VPN)</div>
+              <div class="option">C. 廣域乙太網路</div>
+              <div class="option">D. 撥接 VPN</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>IP-VPN 運行於電信業者的封閉專用 IP 網內（不經過公用網際網路），安全性與連線品質皆優於 Internet VPN。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- インターネットVPN -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">インターネットVPN</div>
+        <div class="term-reading">いんたーねっとぶいぴーえぬ</div>
+        <div class="term-zh">網際網路虛擬私人網路</div>
+        <div class="term-en">Internet Virtual Private Network</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">一般の公衆インターネット回線を利用し、IPsec等で暗号化して低コストに構築するVPN。</div>
+        <div class="summary-zh">利用一般公用網際網路線路，結合 IPsec 等加密通道技術所建構的低成本 VPN。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>IP-VPNと比較した際の「インターネットVPN」のメリットとして、最も適切なものはどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. 既存の公衆インターネット接続を利用できるため、安価に導入できる。</div>
+              <div class="option">イ. 帯域が完全に保証され、遅延が発生しない。</div>
+              <div class="option">ウ. 通信事業者の閉域網のみを通過するためセキュリティが完璧である。</div>
+              <div class="option">エ. ルータなどの暗号化機器が一切不要である。</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>インターネットVPNは安価なブロードバンド回線を流用できるため、コスト削減に優れます。</span></td>
+            <td>              <strong>題目：</strong>與 IP-VPN 相比，「Internet VPN（網際網路 VPN）」的主要優勢為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 能直接利用現有的公用網際網路連線，因此導入成本非常廉價。</div>
+              <div class="option">B. 頻寬獲得完全保證，絕不會產生傳輸延遲。</div>
+              <div class="option">C. 僅通過電信業者的封閉網，安全性絕無瑕疵。</div>
+              <div class="option">D. 完全不需要路由器等具備加密功能的硬體設備。</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>Internet VPN 利用普遍便宜的公用網際網路搭建加密隧道，顯著降低跨據點連線成本，但品質受公網擁塞影響。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- VoIP -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">VoIP</div>
+        <div class="term-reading">ぶいおーあいぴー</div>
+        <div class="term-zh">網路語音傳輸協定</div>
+        <div class="term-en">Voice over Internet Protocol</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">音声信号を圧縮・デジタル化してIPパケットに変換し、IP網上で通話を実現する技術。</div>
+        <div class="summary-zh">將類比語音訊號進行壓縮數位化，並轉換為 IP 封包以於 IP 網路上進行即時通話的技術。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>アナログ音声をデジタルデータに変換し、IPパケットとしてネットワーク上に送信することで通話を行う技術はどれか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. VoIP</div>
+              <div class="option">イ. VRRP</div>
+              <div class="option">ウ. VLAN</div>
+              <div class="option">エ. VLAN</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>VoIP（Voice over IP）は、IPネットワーク上で音声通話を実現する根幹技術です。</span></td>
+            <td>              <strong>題目：</strong>將類比語音轉換為數位資料，並作為 IP 封包於網路上傳輸以實現即時語音通話的技術為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. VoIP</div>
+              <div class="option">B. VRRP</div>
+              <div class="option">C. VLAN</div>
+              <div class="option">D. VPN</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>VoIP 是 Line、Skype、Zoom 及 IP 電話能夠運作進行語音連線的核心機制。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ベストエフォート -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ベストエフォート</div>
+        <div class="term-reading">べすとえふぉーと</div>
+        <div class="term-zh">盡力而為型服務</div>
+        <div class="term-en">Best Effort</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">最大通信速度を提示するが品質や帯域の保証は行わず、最大限の努力でサービス提供する方式。</div>
+        <div class="summary-zh">標示最大可能傳輸速率但「不保證」實際頻寬與品質，盡最大努力提供服務的營運模式。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問 (日本語)</th>
+            <th>考古題 (中文翻譯)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              <strong>問題：</strong>通信サービスにおいて、提示された通信速度が規格上の最大値であり、実際の通信品質や速度を保証しない契約形態を何と呼ぶか。
+<br>
+              <strong>選択肢：</strong>
+<br>
+              <div class="option">ア. ベストエフォート型</div>
+              <div class="option">イ. 帯域保証型</div>
+              <div class="option">ウ. ギャランティ型</div>
+              <div class="option">エ. SLA型</div>
+              <span class="answer"><strong>正解：</strong>ア</span>
+<br>
+              <span class="analysis"><strong>解説：</strong>一般の家庭用インターネットサービス等は、コストを低く抑えるためにベストエフォート（最大努力）型で提供されます。</span></td>
+            <td>              <strong>題目：</strong>在電信通訊服務中，所標示的速率僅為規格上的最大理論值，並不保證實際連線品質與速度的合約形式稱增為何？
+<br>
+              <strong>選項：</strong>
+<br>
+              <div class="option">A. 盡力而為型 (Best Effort)</div>
+              <div class="option">B. 頻寬保證型 (Guaranteed)</div>
+              <div class="option">C. 專屬通道型</div>
+              <div class="option">D. SLA 完全承諾型</div>
+              <span class="answer"><strong>正確答案：</strong>(A)</span>
+<br>
+              <span class="analysis"><strong>解析：</strong>一般家用光纖上網（如 1Gbps）皆為 Best Effort 服務，在離峰或忙線時實際速度會隨網路擁塞狀況浮動。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

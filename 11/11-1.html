@@ -1,0 +1,822 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>経営・組織論 - 17語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>経営・組織論 - 17語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+
+    <!-- Group 1: 經營管理與持續改善 (PDCA、ケーススタディ、リスキリング、e-ラーニング、リーダーシップ、コミュニケーション) -->
+    <div class="group-container">
+        <div class="group-header">經營管理與持續改善 (PDCA・ケーススタディ・リスキリング・e-ラーニング・リーダーシップ・コミュニケーション)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">PDCA</div>
+                <div class="term-reading">ぴーでぃーしーえー</div>
+                <div class="term-zh">PDCA循環</div>
+                <div class="term-en">Plan-Do-Check-Act</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">計画・実行・評価・改善の4つのステップを循環させ、業務の質を向上させる手法。</div>
+                <div class="summary-zh">透過計畫、執行、評估、改善四個步驟的循環，來提升業務品質的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：業務の改善を行うための循環的手法であり、計画、実行、評価、改善の4つのステップから成るものはどれか？</div>
+                        <div class="option">ア. OODAループ</div>
+<div class="option">イ. PDCA</div>
+<div class="option">ウ. SWOT分析</div>
+<div class="option">エ. 3C分析</div>
+                        <div class="answer">正解：イ</div>
+                        <div class="analysis">解説：PDCAはPlan（計画）、Do（実行）、Check（評価）、Act（改善）の4つのステップを繰り返すことで業務の質を向上させるフレームワークである。</div>
+                    </td>
+                    <td>
+                        <div>問：用以進行業務改善的循環式手法，由計畫、執行、評估、改善四個步驟組成的是哪一個？</div>
+                        <div class="option">A. OODA循環</div>
+<div class="option">B. PDCA循環</div>
+<div class="option">C. SWOT分析</div>
+<div class="option">D. 3C分析</div>
+                        <div class="answer">正確答案：B</div>
+                        <div class="analysis">解析：PDCA是透過重複Plan（計畫）、Do（執行）、Check（評估）、Act（改善）四個步驟來提升業務品質的框架。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ケーススタディ</div>
+                <div class="term-reading">ケーススタディ</div>
+                <div class="term-zh">案例研究</div>
+                <div class="term-en">Case Study</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の状況や事例を詳細に分析し、その結果から課題解決や戦略立案のための学びを得る手法。</div>
+                <div class="summary-zh">詳細分析特定狀況或案例，並從其結果中獲得解決課題或擬定策略之學習的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：特定の状況や事例を詳細に分析し、実際の事例を基に課題解決や戦略の立案を行う手法はどれか？</div>
+                        <div class="option">ア. ケーススタディ</div>
+<div class="option">イ. ブレインストーミング</div>
+<div class="option">ウ. ベンチマーク</div>
+<div class="option">エ. シミュレーション</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ケーススタディは実際の事例を研究し、実践に基づいたアプローチで現実的な解決策を導き出すために用いられる。</div>
+                    </td>
+                    <td>
+                        <div>問：詳細分析特定狀況或事例，並基於實際案例進行課題解決或策略擬定的手法為何？</div>
+                        <div class="option">A. 案例研究（Case Study）</div>
+<div class="option">B. 頭腦風暴</div>
+<div class="option">C. 基準對標</div>
+<div class="option">D. 模擬</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：案例研究透過研究實際案例，採用基於實務的方法來導出務實的解決方案。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスキリング</div>
+                <div class="term-reading">リスキリング</div>
+                <div class="term-zh">再技能培訓 / 轉職技能訓練</div>
+                <div class="term-en">Reskilling</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">仕事の変化や新技術の導入に対応するため、従業員が新しいスキルや知識を習得するプロセス。</div>
+                <div class="summary-zh">為因應工作變化或新技術導入，員工習得新技能與知識的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：仕事の変化や新しい技術の導入に対応するために、従業員が新しいスキルや知識を習得する取り組みはどれか？</div>
+                        <div class="option">ア. リスキリング</div>
+<div class="option">イ. ジョブローテーション</div>
+<div class="option">ウ. メンター制度</div>
+<div class="option">エ. OJT</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：リスキリングは、技術革新やビジネスモデルの変化に伴い、新たな業務に対応できるスキルを身につけるために重要視されている。</div>
+                    </td>
+                    <td>
+                        <div>問：為因應工作變動或新技術導入，員工學習新技能與知識的措施為何？</div>
+                        <div class="option">A. 再技能培訓（Reskilling）</div>
+<div class="option">B. 職務輪調</div>
+<div class="option">C. 導師制度</div>
+<div class="option">D. 在職訓練（OJT）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：隨著技術創新與商業模式的轉變，為了具備應對新業務的能力，再技能培訓備受重視。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">e-ラーニング</div>
+                <div class="term-reading">いーらーにんぐ</div>
+                <div class="term-zh">數位學習 / 線上學習</div>
+                <div class="term-en">e-Learning</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットなどの電子的な手段を利用し、時間や場所の制約を受けずに学習する手法。</div>
+                <div class="summary-zh">利用網際網路等電子手段，不受時間與地點限制進行學習的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：電子的な手段を利用してオンラインで学習し、受講者が自分のペースで知識を習得できる仕組みはどれか？</div>
+                        <div class="option">ア. e-ラーニング</div>
+<div class="option">イ. グループウェア</div>
+<div class="option">ウ. ナレッジマネジメント</div>
+<div class="option">エ. EDI</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：e-ラーニングは時間や場所の制約を受けず、企業が従業員の教育コスト削減や効率化を図る際にも活用される。</div>
+                    </td>
+                    <td>
+                        <div>問：利用電子手段進行線上學習，讓學員能依自身步調習得知識的機制為何？</div>
+                        <div class="option">A. 數位學習（e-Learning）</div>
+<div class="option">B. 群組軟體</div>
+<div class="option">C. 知識管理</div>
+<div class="option">D. 電子資料交換（EDI）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：數位學習不受時空限制，也被企業運用於降低員工教育成本及提升效率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リーダーシップ</div>
+                <div class="term-reading">リーダーシップ</div>
+                <div class="term-zh">領導力</div>
+                <div class="term-en">Leadership</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">集団や組織において他者を導き、目標を達成するために方向性を示しモチベーションを高める能力。</div>
+                <div class="summary-zh">在群體或組織中引導他人、指明方向並提升動機以達成目標的能力。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：集団や組織において他者を導き、目標を達成するためにメンバーのモチベーションを高める能力を何と呼ぶか？</div>
+                        <div class="option">ア. リーダーシップ</div>
+<div class="option">イ. ガバナンス</div>
+<div class="option">ウ. コンプライアンス</div>
+<div class="option">エ. アカウンタビリティ</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：リーダーシップは組織の士気や生産性に大きく寄与し、プロジェクトの成功をもたらす重要な要素である。</div>
+                    </td>
+                    <td>
+                        <div>問：在群體或組織中引導他人並提升成員動機以達成目標的能力稱為何？</div>
+                        <div class="option">A. 領導力（Leadership）</div>
+<div class="option">B. 公司治理</div>
+<div class="option">C. 合規性</div>
+<div class="option">D. 當責性（Accountability）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：領導力對組織的士氣與生產力有極大貢獻，是促成專案成功的重要要素。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コミュニケーション</div>
+                <div class="term-reading">コミュニケーション</div>
+                <div class="term-zh">溝通</div>
+                <div class="term-en">Communication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">言語や非言語的手段を用いて情報や感情を他者と共有し、チームの協力を強化するプロセス。</div>
+                <div class="summary-zh">運用語言或非語言手段與他人分享資訊與情感，以強化團隊合作的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：言語や非言語的手段を用いて情報や感情を共有し、組織内の関係を良好に保つプロセスはどれか？</div>
+                        <div class="option">ア. コミュニケーション</div>
+<div class="option">イ. モチベーション</div>
+<div class="option">ウ. フィードバック</div>
+<div class="option">エ. コーディネーション</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：円滑なコミュニケーションはチームの協力を強化し、問題解決や意思決定をスムーズに行うために欠かせない。</div>
+                    </td>
+                    <td>
+                        <div>問：運用語言或非語言手段共享資訊與情感，並維持組織內部良好關係的過程為何？</div>
+                        <div class="option">A. 溝通（Communication）</div>
+<div class="option">B. 動機</div>
+<div class="option">C. 回饋</div>
+<div class="option">D. 協調</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：順暢的溝通能強化團隊合作，是順利進行問題解決與決策不可或缺的要素。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 企業高階主管職稱 (CEO、CIO、CDO、CISO、CPO) -->
+    <div class="group-container">
+        <div class="group-header">企業高階主管職稱 (CEO・CIO・CDO・CISO・CPO)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CEO</div>
+                <div class="term-reading">しーいーおー</div>
+                <div class="term-zh">最高執行長 / 執行長</div>
+                <div class="term-en">Chief Executive Officer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業や組織の最高経営責任者として、経営戦略の策定や重要な意思決定を行う役職。</div>
+                <div class="summary-zh">擔任企業或組織的最高經營負責人，負責擬定經營策略與進行重要決策的職位。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業や組織の最高経営責任者を指し、経営戦略の策定や重要な意思決定を行う役職はどれか？</div>
+                        <div class="option">ア. CEO</div>
+<div class="option">イ. CIO</div>
+<div class="option">ウ. CFO</div>
+<div class="option">エ. COO</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：CEO（Chief Executive Officer）は組織の成長と成功に大きな影響を与える最高経営責任者である。</div>
+                    </td>
+                    <td>
+                        <div>問：指企業或組織的最高經營負責人，負責擬定經營策略與進行重要決策的職位為何？</div>
+                        <div class="option">A. CEO（最高執行長）</div>
+<div class="option">B. CIO（資訊長）</div>
+<div class="option">C. CFO（財務長）</div>
+<div class="option">D. COO（營運長）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：CEO（Chief Executive Officer）是對於組織成長與成功具重大影響力的最高經營負責人。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CIO</div>
+                <div class="term-reading">しーあいおー</div>
+                <div class="term-zh">資訊長 / 最高資訊主管</div>
+                <div class="term-en">Chief Information Officer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">企業においてIT戦略を策定・推進し、情報システムの導入や管理を通じて組織の競争力を高める責任者。</div>
+                <div class="summary-zh">在企業中擬定與推動IT策略，透過資訊系統的導入與管理來提升組織競爭力的負責人。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業や組織において情報技術（IT）戦略を策定・推進し、IT投資の優先順位を決める責任を持つ役職はどれか？</div>
+                        <div class="option">ア. CIO</div>
+<div class="option">イ. CDO</div>
+<div class="option">ウ. CISO</div>
+<div class="option">エ. CPO</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：CIO（Chief Information Officer）は経営層の一員として、IT戦略をビジネス全体の戦略と整合させる役割を持つ。</div>
+                    </td>
+                    <td>
+                        <div>問：在企業或組織中負責擬定與推動資訊技術（IT）策略，並決定IT投資優先順位的職位為何？</div>
+                        <div class="option">A. CIO（資訊長）</div>
+<div class="option">B. CDO（數位長）</div>
+<div class="option">C. CISO（資安長）</div>
+<div class="option">D. CPO（隱私長）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：CIO（Chief Information Officer）作為經營團隊的一員，肩負著將IT策略與整體商業策略相結合的任務。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CDO</div>
+                <div class="term-reading">しーでぃーおー</div>
+                <div class="term-zh">數位長 / 最高數位主管</div>
+                <div class="term-en">Chief Digital Officer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">デジタル技術を活用して企業のビジネスモデルやプロセスを革新し、DXを推進する最高責任者。</div>
+                <div class="summary-zh">運用數位技術革新企業商業模式與流程、推動數位轉型（DX）的最高負責人。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：デジタル技術を活用して企業のビジネスモデルやプロセスを革新し、デジタルトランスフォーメーションを推進する最高責任者はどれか？</div>
+                        <div class="option">ア. CDO</div>
+<div class="option">イ. CIO</div>
+<div class="option">ウ. CISO</div>
+<div class="option">エ. CEO</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：CDO（Chief Digital Officer）はIT部門だけでなく各部門と連携し、全社的なデジタル化や新しい価値の創出を主導する。</div>
+                    </td>
+                    <td>
+                        <div>問：運用數位技術革新企業商業模式與流程、推動數位轉型的最高負責人為何？</div>
+                        <div class="option">A. CDO（數位長）</div>
+<div class="option">B. CIO（資訊長）</div>
+<div class="option">C. CISO（資安長）</div>
+<div class="option">D. CEO（執行長）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：CDO（Chief Digital Officer）不僅限於IT部門，更與各部門協同合作，主導全公司的數位化及新價值創造。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CISO</div>
+                <div class="term-reading">しーあいえすおー</div>
+                <div class="term-zh">資安長 / 最高資訊安全主管</div>
+                <div class="term-en">Chief Information Security Officer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報セキュリティ戦略の立案や実施、情報資産の保護、サイバーリスク管理を担当する最高責任者。</div>
+                <div class="summary-zh">負責資訊安全策略之擬定與執行、資訊資產保護及網路風險管理的最高負責人。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業や組織における最高情報セキュリティ責任者であり、サイバー攻撃やデータ漏洩などのリスクから組織を守る役職はどれか？</div>
+                        <div class="option">ア. CISO</div>
+<div class="option">イ. CPO</div>
+<div class="option">ウ. CIO</div>
+<div class="option">エ. CDO</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：CISO（Chief Information Security Officer）は情報セキュリティ体制の強化やリスク管理、セキュリティ戦略の決定を行う。</div>
+                    </td>
+                    <td>
+                        <div>問：企業或組織中的最高資訊安全負責人，負責保護組織免受網路攻擊或資料外洩等風險侵害的職位為何？</div>
+                        <div class="option">A. CISO（資安長）</div>
+<div class="option">B. CPO（隱私長）</div>
+<div class="option">C. CIO（資訊長）</div>
+<div class="option">D. CDO（數位長）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：CISO（Chief Information Security Officer）負責強化資訊安全體制、進行風險管理及擬定資安策略。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">CPO</div>
+                <div class="term-reading">しーぴーおー</div>
+                <div class="term-zh">隱私長 / 最高隱私主管</div>
+                <div class="term-en">Chief Privacy Officer</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人情報保護や関連規制に関する政策を管理・実施し、企業の信頼性とコンプライアンスを高める責任者。</div>
+                <div class="summary-zh">管理與執行個人資料保護及相關法規政策，提升企業信賴度與合規性的負責人。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業や組織において個人情報の保護や関連法律・規制に従ったプライバシー政策を管理・実施する責任を持つ役職はどれか？</div>
+                        <div class="option">ア. CPO</div>
+<div class="option">イ. CISO</div>
+<div class="option">ウ. CIO</div>
+<div class="option">エ. CEO</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：CPO（Chief Privacy Officer）は個人情報の安全な取り扱いポリシーを策定し、データ漏洩防止や企業の信頼性維持に貢献する。</div>
+                    </td>
+                    <td>
+                        <div>問：在企業或組織中負責管理與執行個人資料保護及遵循相關法律法規之隱私政策的職位為何？</div>
+                        <div class="option">A. CPO（隱私長）</div>
+<div class="option">B. CISO（資安長）</div>
+<div class="option">C. CIO（資訊長）</div>
+<div class="option">D. CEO（執行長）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：CPO（Chief Privacy Officer）負責制定個人資料安全處理政策，並有助於防止資料外洩及維持企業信譽。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 業務連續性管理與分析 (BCP、BCM、事業影響度分析) -->
+    <div class="group-container">
+        <div class="group-header">業務連續性管理與分析 (BCP・BCM・事業影響度分析)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">BCP</div>
+                <div class="term-reading">びーしーぴー</div>
+                <div class="term-zh">業務連續性計畫</div>
+                <div class="term-en">Business Continuity Plan</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">自然災害や事故などの緊急時に、重要業務を継続・迅速に再開するための方針や手順を定めた計画。</div>
+                <div class="summary-zh">在自然災害或事故等緊急情況下，為持續或迅速恢復重要業務而訂定方針與步驟的計畫。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：自然災害や事故などの予期しない事態が発生した際に、企業の重要業務を継続または迅速に再開するための方針や手順を定めたものはどれか？</div>
+                        <div class="option">ア. BCP</div>
+<div class="option">イ. BCM</div>
+<div class="option">ウ. SLA</div>
+<div class="option">エ. CSR</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：BCP（Business Continuity Plan）は代替拠点の確保やデータ復旧手段を明確にし、業務への影響を最小限に抑える。</div>
+                    </td>
+                    <td>
+                        <div>問：當發生自然災害或事故等預料之外的事態時，為持續或迅速重啟企業重要業務而訂定方針與步驟的是哪一個？</div>
+                        <div class="option">A. 業務連續性計畫（BCP）</div>
+<div class="option">B. 業務連續性管理（BCM）</div>
+<div class="option">C. 服務水準協議（SLA）</div>
+<div class="option">D. 企業社會責任（CSR）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：BCP（Business Continuity Plan）透過明確備援據點與資料復原手段，將對業務的影響降至最低。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">BCM</div>
+                <div class="term-reading">びーしーえむ</div>
+                <div class="term-zh">業務連續性管理</div>
+                <div class="term-en">Business Continuity Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">事業中断リスクを識別・評価し、対策を策定・運用することで事業継続能力を総合的に管理するプロセス。</div>
+                <div class="summary-zh">識別與評估業務中斷風險，並透過擬定與營運對策來綜合管理業務持續能力的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：事業が中断される場合に備え、リスクの識別・評価や対策の策定を通じて事業継続能力を総合的に管理する取り組みはどれか？</div>
+                        <div class="option">ア. BCM</div>
+<div class="option">イ. BCP</div>
+<div class="option">ウ. PMBOK</div>
+<div class="option">エ. ITIL</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：BCM（Business Continuity Management）は計画（BCP）の策定だけでなく、日常的な維持・改善や教育訓練も含めた総合的なマネジメント活動である。</div>
+                    </td>
+                    <td>
+                        <div>問：為防範業務中斷，透過識別與評估風險以及擬定對策，綜合管理業務持續能力的措施為何？</div>
+                        <div class="option">A. 業務連續性管理（BCM）</div>
+<div class="option">B. 業務連續性計畫（BCP）</div>
+<div class="option">C. 專案管理知識體系（PMBOK）</div>
+<div class="option">D. 資訊科技基礎架構圖書館（ITIL）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：BCM（Business Continuity Management）不僅是擬定計畫（BCP），還包含日常的維護、改善及教育訓練等綜合管理活動。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">事業影響度分析</div>
+                <div class="term-reading">じぎょうえいきょうどぶんせき</div>
+                <div class="term-zh">業務影響分析</div>
+                <div class="term-en">Business Impact Analysis</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスクが業務プロセスに与える影響や損失を評価し、重要な業務やリソースを特定する手法。</div>
+                <div class="summary-zh">評估風險對業務流程造成的影響與損失，並識別重要業務或資源的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：企業が様々なリスクに直面した際、そのリスクが業務プロセスやサービスに与える影響や損失を評価する手法はどれか？</div>
+                        <div class="option">ア. 事業影響度分析（BIA）</div>
+<div class="option">イ. リスクアセスメント</div>
+<div class="option">ウ. コストベネフィット分析</div>
+<div class="option">エ. SWOT分析</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：事業影響度分析（Business Impact Analysis）は、どの業務が最も影響を受けるかを事前に把握し、復旧計画の策定に役立てる。</div>
+                    </td>
+                    <td>
+                        <div>問：當企業面臨各種風險時，評估該風險對業務流程或服務所造成之影響與損失的手法為何？</div>
+                        <div class="option">A. 業務影響分析（BIA）</div>
+<div class="option">B. 風險評估</div>
+<div class="option">C. 成本效益分析</div>
+<div class="option">D. SWOT分析</div>
+                        <div class="answer">正確答案: A</div>
+                        <div class="analysis">解析：業務影響分析（Business Impact Analysis）可事先掌握哪些業務受到的影響最大，並有助於擬定復原計畫。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: 現代社會與數位轉型 (Society 5.0、データ駆動型社会、デジタルトランスフォーメーション) -->
+    <div class="group-container">
+        <div class="group-header">現代社會與數位轉型 (Society 5.0・データ駆動型社会・デジタルトランスフォーメーション)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">Society 5.0</div>
+                <div class="term-reading">さーいえてぃ5.0</div>
+                <div class="term-zh">超智慧社會 5.0</div>
+                <div class="term-en">Society 5.0</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">サイバー空間とフィジカル空間を高度に融合させ、経済発展と社会的課題の解決を両立する人間中心の社会。</div>
+                <div class="summary-zh">高度融合網路空間與實體空間，實現經濟發展與解決社會問題並重的以人為本社會。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムによってサイバー空間とフィジカル空間を高度に融合させ、経済発展と社会的課題の解決を同時に目指す人間中心の社会はどれか？</div>
+                        <div class="option">ア. Society 5.0</div>
+<div class="option">イ. インダストリー4.0</div>
+<div class="option">ウ. デジタルネイティブ</div>
+<div class="option">エ. ユビキタス社会</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：Society 5.0はAIやIoTを活用し、交通や医療などの効率化を進めて人々の質の高い生活をサポートする未来の社会ビジョンである。</div>
+                    </td>
+                    <td>
+                        <div>問：透過系統高度融合網路空間與實體空間，同時追求經濟發展與解決社會問題之以人為本的社會為何？</div>
+                        <div class="option">A. Society 5.0（超智慧社會5.0）</div>
+<div class="option">B. 工業4.0（Industry 4.0）</div>
+<div class="option">C. 數位原住民</div>
+<div class="option">D. 無所不在社會（Ubiquitous Society）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：Society 5.0是利用AI與IoT推進交通、醫療等效率化，以支援人們高品質生活的未來社會願景。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データ駆動型社会</div>
+                <div class="term-reading">でーたくどうがたしゃかい</div>
+                <div class="term-zh">數據驅動型社會</div>
+                <div class="term-en">Data-Driven Society</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ビッグデータやAIなどの技術を活用し、データを基に意思決定や行動が行われる社会。</div>
+                <div class="summary-zh">運用大數據與AI等技術，基於數據進行決策與行動的社會。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：ビッグデータやAIなどの技術発展を背景に、収集したデータを基に意思決定や行動が行われる社会を何と呼ぶか？</div>
+                        <div class="option">ア. データ駆動型社会</div>
+<div class="option">イ. 情報化社会</div>
+<div class="option">ウ. ネットワーク社会</div>
+<div class="option">エ. メディアミックス社会</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データ駆動型社会では、ECサイトのおすすめ機能や医療における個別化治療など、ビジネスや生活のあらゆる場面でデータが中心となる。</div>
+                    </td>
+                    <td>
+                        <div>問：在巨量資料與AI等技術發展的背景下，基於所收集的數據來進行決策與行動的社會稱為何？</div>
+                        <div class="option">A. 數據驅動型社會（Data-Driven Society）</div>
+<div class="option">B. 資訊化社會</div>
+<div class="option">C. 網路社會</div>
+<div class="option">D. 媒體組合社會</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：在數據驅動型社會中，如電商網站的推薦功能或醫療領域的個人化治療，數據成為商業與生活的核心。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">デジタルトランスフォーメーション</div>
+                <div class="term-reading">でじたるとらんふぉーめーしょん</div>
+                <div class="term-zh">數位轉型</div>
+                <div class="term-en">Digital Transformation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">テクノロジーを利用してビジネスや社会のプロセスを根本的に変革し、新たな価値を創出すること（DX）。</div>
+                <div class="summary-zh">利用科技從根本上變革商業或社會流程，並創造出新價值的過程（DX）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：テクノロジーを利用してビジネスのプロセスを根本的に変革し、新たなサービスやビジネスモデルを創出して競争力を高める概念はどれか？</div>
+                        <div class="option">ア. デジタルトランスフォーメーション（DX）</div>
+<div class="option">イ. クラウドコンピューティング</div>
+<div class="option">ウ. アウトソーシング</div>
+<div class="option">エ. リエンジニアリング</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：デジタルトランスフォーメーション（DX）は単なるデジタル化（IT化）にとどまらず、組織文化や働き方、ビジネスモデルそのものを変革する重要な概念である。</div>
+                    </td>
+                    <td>
+                        <div>問：利用科技從根本上變革商業流程，並創造出新服務或商業模式以提升競爭力的概念為何？</div>
+                        <div class="option">A. 數位轉型（DX）</div>
+<div class="option">B. 雲端運算</div>
+<div class="option">C. 外包</div>
+<div class="option">D. 企業再造</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：數位轉型（DX）不單只是數位化（IT化），更是變革組織文化、工作方式及商業模式本身的關鍵概念。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

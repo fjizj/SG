@@ -1,0 +1,715 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要件定義 - 14語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>要件定義 - 14語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+<div class="container">
+
+    <!-- Group 1: 需求收集與現狀調查 (要求項目の洗出し・ユーザーニーズ調査・現状分析) -->
+    <div class="group-container">
+        <div class="group-header">需求收集與現狀調查 (要求項目の洗出し・ユーザーニーズ調査・現状分析)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要求項目の洗出し</div>
+                <div class="term-reading">ようきゅうこうもくのあらいだし</div>
+                <div class="term-zh">要求項目洗出 / 需求引出</div>
+                <div class="term-en">Requirements Elicitation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやプロジェクトに対して必要な要件を明確にし、整理するプロセス。</div>
+                <div class="summary-zh">明確並整理系統或專案所需要件的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムやプロジェクトに対して必要な要件を明確にし、整理するプロセスはどれか？</div>
+                        <div class="option">ア. 要求項目の洗出し</div>
+<div class="option">イ. 課題定義</div>
+<div class="option">ウ. 現状分析</div>
+<div class="option">エ. 業務要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：要求項目の洗い出しは、インタビュー等を通じて期待される機能や特性を収集し、後の設計や開発の基礎となる重要なステップである。</div>
+                    </td>
+                    <td>
+                        <div>問：明確並整理系統或專案所需要件的過程為何？</div>
+                        <div class="option">A. 要求項目洗出（Requirements Elicitation）</div>
+<div class="option">B. 課題定義</div>
+<div class="option">C. 現狀分析</div>
+<div class="option">D. 業務要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：需求引出是透過訪談等收集期望的功能與特性，並作為後續設計與開發基礎的重要步驟。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ユーザーニーズ調査</div>
+                <div class="term-reading">ゆーざーにーずちょうさ</div>
+                <div class="term-zh">使用者需求調查</div>
+                <div class="term-en">User Needs Assessment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ユーザーがどのような機能やサービスを求めているのかを明らかにするための手法。</div>
+                <div class="summary-zh">釐清使用者尋求哪些功能或服務的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システムや製品を開発する際に、ユーザーがどのような機能やサービスを求めているのかを明らかにするための手法はどれか？</div>
+                        <div class="option">ア. ユーザーニーズ調査</div>
+<div class="option">イ. 現状分析</div>
+<div class="option">ウ. 課題定義</div>
+<div class="option">エ. 業務処理手順</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：実際の利用者から直接情報を収集し、彼らの期待や要求を理解することを目的とする重要なステップである。</div>
+                    </td>
+                    <td>
+                        <div>問：在開發系統或產品時，用以釐清使用者尋求哪些功能或服務的手法為何？</div>
+                        <div class="option">A. 使用者需求調查（User Needs Assessment）</div>
+<div class="option">B. 現狀分析</div>
+<div class="option">C. 課題定義</div>
+<div class="option">D. 業務處理程序</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：其目的為從實際使用者處直接收集資訊，以理解其期望與要求。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">現状分析</div>
+                <div class="term-reading">げんじょうぶんせき</div>
+                <div class="term-zh">現狀分析</div>
+                <div class="term-en">Current Analysis</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやプロジェクトが現在どのような状態にあるかを評価し、問題点や課題を特定する作業。</div>
+                <div class="summary-zh">評估系統或專案目前處於何種狀態，並特定出問題點與課題的作業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：既存のプロセスやシステムの問題点や課題を特定するために、現在どのような状態にあるかを評価する作業はどれか？</div>
+                        <div class="option">ア. 現状分析</div>
+<div class="option">イ. 課題定義</div>
+<div class="option">ウ. 調査内容の分析</div>
+<div class="option">エ. 機能要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データ収集やインタビュー等を通じて現在の状況を把握し、必要な機能や要件を定義するための基盤を築く。</div>
+                    </td>
+                    <td>
+                        <div>問：為特定既有流程或系統的問題點與課題，評估目前處於何種狀態的作業為何？</div>
+                        <div class="option">A. 現狀分析（Current Analysis）</div>
+<div class="option">B. 課題定義</div>
+<div class="option">C. 調查內容分析</div>
+<div class="option">D. 功能要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過資料收集與訪談等掌握目前狀況，為定義所需功能與要件建立基礎。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 需求分析與課題定義 (要求項目の分析・調査内容の分析・課題定義) -->
+    <div class="group-container">
+        <div class="group-header">需求分析與課題定義 (要求項目の分析・調査内容の分析・課題定義)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要求項目の分析</div>
+                <div class="term-reading">ようきゅうこうもくのぶんせき</div>
+                <div class="term-zh">要求項目分析</div>
+                <div class="term-en">Requirement Analysis</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ソフトウェアやシステムに対するユーザーのニーズや要求を明確にするためのプロセス。</div>
+                <div class="summary-zh">釐清使用者對軟體或系統之需求與要求的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：プロジェクトの初期段階で実施され、ユーザーからの意見や期待を収集して具体的な要求項目に整理するプロセスはどれか？</div>
+                        <div class="option">ア. 要求項目の分析</div>
+<div class="option">イ. 要求項目の洗出し</div>
+<div class="option">ウ. 業務要件定義</div>
+<div class="option">エ. 非機能要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：問題点や改善点が浮かび上がるため、後の開発が効率的に進むプロジェクト成功に直結するステップである。</div>
+                    </td>
+                    <td>
+                        <div>問：在專案初期階段實施，收集使用者的意見與期望並整理成具體要求項目的過程為何？</div>
+                        <div class="option">A. 要求項目分析（Requirement Analysis）</div>
+<div class="option">B. 要求項目洗出</div>
+<div class="option">C. 業務要件定義</div>
+<div class="option">D. 非功能要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：由於能浮現問題點與改善點，可使後續開發順利進行，是直通專案成功的步驟。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">調査内容の分析</div>
+                <div class="term-reading">ちょうさないようのぶんせき</div>
+                <div class="term-zh">調查內容分析</div>
+                <div class="term-en">Analysis of Survey Content</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">収集したデータや情報を整理し、定量的または定性的に評価して意義を見出すプロセス。</div>
+                <div class="summary-zh">整理收集到的資料與資訊，進行定量或定性評估以找出意義的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：ユーザーアンケートや調査から得た意見やフィードバックを整理し、データの傾向やパターンを明らかにして要件を抽出するプロセスはどれか？</div>
+                        <div class="option">ア. 調査内容の分析</div>
+<div class="option">イ. 現状分析</div>
+<div class="option">ウ. 課題定義</div>
+<div class="option">エ. 業務処理手順</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：効果的なシステム設計の基盤となり、製品の改善点を見つけ出したり新機能の追加を検討したりするのに寄与する。</div>
+                    </td>
+                    <td>
+                        <div>問：整理從使用者問卷或調查中獲得的意見與回饋，釐清資料趨勢與模式並萃取要件的過程為何？</div>
+                        <div class="option">A. 調查內容分析（Analysis of Survey Content）</div>
+<div class="option">B. 現狀分析</div>
+<div class="option">C. 課題定義</div>
+<div class="option">D. 業務處理程序</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：成為有效系統設計的基礎，有助於尋找產品改善點或評估新增功能。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">課題定義</div>
+                <div class="term-reading">かだいていぎ</div>
+                <div class="term-zh">課題定義</div>
+                <div class="term-en">Problem Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトやシステムにおいて解決すべき問題や要求を明確にするプロセス。</div>
+                <div class="summary-zh">明確專案或系統中應解決的問題或要求的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：問題の範囲を特定し、達成すべき目標や制約条件を整理して関係者が共通の理解を持つための土台を築くプロセスはどれか？</div>
+                        <div class="option">ア. 課題定義</div>
+<div class="option">イ. 現状分析</div>
+<div class="option">ウ. 要件定義の目的</div>
+<div class="option">エ. 要求仕様書</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：この段階での明確さが後の要件定義や設計の品質に大きく影響するため、慎重に行うべきである。</div>
+                    </td>
+                    <td>
+                        <div>問：特定問題範圍、整理應達成目標與限制條件，以為關係人建立共同理解之基礎的過程為何？</div>
+                        <div class="option">A. 課題定義（Problem Definition）</div>
+<div class="option">B. 現狀分析</div>
+<div class="option">C. 要件定義的目的</div>
+<div class="option">D. 需求規格書</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：此階段的明確性會大幅影響後續要件定義與設計的品質，因此應審慎進行。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 要件定義基礎與業務規範 (要件定義の目的・要求仕様書・業務要件定義・業務処理手順) -->
+    <div class="group-container">
+        <div class="group-header">要件定義基礎與業務規範 (要件定義の目的・要求仕様書・業務要件定義・業務処理手順)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要件定義の目的</div>
+                <div class="term-reading">ようけんていぎのもくてき</div>
+                <div class="term-zh">要件定義的目的</div>
+                <div class="term-en">Purpose of Requirement Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システム開発で求められる機能や性能、制約事項などを明確にし、関係者間で合意形成を行うこと。</div>
+                <div class="summary-zh">明確系統開發所需的機能、效能與限制事項，並在關係人之間達成共識。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：システム開発において求められる機能や性能、制約事項などを明確にし、関係者間での合意形成を図る目的はどれか？</div>
+                        <div class="option">ア. 要件定義の目的</div>
+<div class="option">イ. 業務処理手順</div>
+<div class="option">ウ. 要求仕様書</div>
+<div class="option">エ. 機能要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：開発リソースの無駄遣いや納期遅延を避ける助けになり、最終的な結果の品質を向上させる。</div>
+                    </td>
+                    <td>
+                        <div>問：在系統開發中明確所需機能、效能與限制事項，並期能在關係人之間達成共識的目的為何？</div>
+                        <div class="option">A. 要件定義的目的（Purpose of Requirement Definition）</div>
+<div class="option">B. 業務處理程序</div>
+<div class="option">C. 需求規格書</div>
+<div class="option">D. 功能要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：有助於避免開發資源浪費與交期延遲，並提升最終結果的品質。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">要求仕様書</div>
+                <div class="term-reading">ようきゅうしようしょ</div>
+                <div class="term-zh">需求規格書</div>
+                <div class="term-en">Requirements Specification</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">顧客やユーザーが求める機能や性能を明確に文書化したドキュメント。</div>
+                <div class="summary-zh">將客戶或使用者要求的機能與效能明確予以文書化的文件。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：顧客やユーザーが求める機能や性能、操作性などを明確に文書化し、誤解や認識のズレを防ぐためのドキュメントはどれか？</div>
+                        <div class="option">ア. 要求仕様書</div>
+<div class="option">イ. 業務処理手順</div>
+<div class="option">ウ. 課題定義</div>
+<div class="option">エ. 現状分析</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：開発チームが要求を正確に理解するための基盤となり、開発後のテストや評価の基準にも寄与する。</div>
+                    </td>
+                    <td>
+                        <div>問：將客戶或使用者要求的機能、效能、操作性等明確文書化，以防止誤解或認知落差的文件為何？</div>
+                        <div class="option">A. 需求規格書（Requirements Specification）</div>
+<div class="option">B. 業務處理程序</div>
+<div class="option">C. 課題定義</div>
+<div class="option">D. 現狀分析</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：成為開發團隊正確理解要求的基礎，亦有助於作為開發後測試與評估的標準。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">業務要件定義</div>
+                <div class="term-reading">ぎょうむようけんていぎ</div>
+                <div class="term-zh">業務要件定義</div>
+                <div class="term-en">Business Requirements Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやプロジェクトが満たすべきビジネス上のニーズや条件を明確にするプロセス。</div>
+                <div class="summary-zh">明確系統或專案必須滿足的業務上需求與條件的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：実際の業務フローや課題を理解し、顧客情報管理システムの顧客情報管理や売上分析などのビジネス上のニーズを具体化するプロセスはどれか？</div>
+                        <div class="option">ア. 業務要件定義</div>
+<div class="option">イ. 機能要件定義</div>
+<div class="option">ウ. 非機能要件定義</div>
+<div class="option">エ. 情報・データ要件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：最終的なシステムがユーザーの期待を満たすものになり、開発やテストの際の手戻りが少なくなる。</div>
+                    </td>
+                    <td>
+                        <div>問：理解實際業務流程與課題，將客戶資訊管理系統中的客戶資訊管理、銷售分析等業務上需求具體化的過程為何？</div>
+                        <div class="option">A. 業務要件定義（Business Requirements Definition）</div>
+<div class="option">B. 功能要件定義</div>
+<div class="option">C. 非功能要件定義</div>
+<div class="option">D. 資訊與資料要件</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：可使最終系統滿足使用者期望，並減少開發與測試時的返工。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">業務処理手順</div>
+                <div class="term-reading">ぎょうむしょりてじゅん</div>
+                <div class="term-zh">業務處理程序</div>
+                <div class="term-en">Business Process Procedure</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の業務を効率的かつ一貫性を持って遂行するために決められた一連のステップやルール。</div>
+                <div class="summary-zh">為了有效率且一致地執行特定業務而決定的的一系列步驟或規則。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：受注から商品の発送に至るまでの流れなど、特定の業務を効率的かつ一貫性を持って遂行するために決められた一連のステップやルールはどれか？</div>
+                        <div class="option">ア. 業務処理手順</div>
+<div class="option">イ. 業務要件定義</div>
+<div class="option">ウ. 課題定義</div>
+<div class="option">エ. 現状分析</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：業務改善のための基礎資料としても活用され、作業の見直しや全体の効率向上に効果がある。</div>
+                    </td>
+                    <td>
+                        <div>問：如從接單到商品出貨的流程等，為了有效率且一致地執行特定業務而決定的系列步驟與規則為何？</div>
+                        <div class="option">A. 業務處理程序（Business Process Procedure）</div>
+<div class="option">B. 業務要件定義</div>
+<div class="option">C. 課題定義</div>
+<div class="option">D. 現狀分析</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：亦可作為業務改善的基礎資料，對檢討作業與提升整體效率具備成效。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: 系統具體要件：功能、非功能、資安與資料 (機能要件定義・非機能要件定義・セキュリティ要件・情報・データ要件) -->
+    <div class="group-container">
+        <div class="group-header">系統具體要件：功能、非功能、資安與資料 (機能要件定義・非機能要件定義・セキュリティ要件・情報・データ要件)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">機能要件定義</div>
+                <div class="term-reading">きのうようけんていぎ</div>
+                <div class="term-zh">功能要件定義</div>
+                <div class="term-en">Functional Requirements Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやソフトウェアがどのように動作し、ユーザーにどのようなサービスを提供するかの具体的な機能を示す作業。</div>
+                <div class="summary-zh">指出系統或軟體如何運作以及對使用者提供何種服務之具體功能的作業。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：オンラインショッピングサイトの商品検索機能やカート追加機能など、システムがどのように動作しサービスを提供するかを明確にする作業はどれか？</div>
+                        <div class="option">ア. 機能要件定義</div>
+<div class="option">イ. 非機能要件定義</div>
+<div class="option">ウ. セキュリティ要件</div>
+<div class="option">エ. 情報・データ要件</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：開発チームが求められる機能を正確に理解し、品質保証やテストの指針にもなるためプロジェクト成功に重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：如線上購物網站的商品搜尋功能或加入購物車功能等，用以明確系統如何運作及提供服務的作業為何？</div>
+                        <div class="option">A. 功能要件定義（Functional Requirements Definition）</div>
+<div class="option">B. 非功能要件定義</div>
+<div class="option">C. 資安要件</div>
+<div class="option">D. 資訊與資料要件</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：開發團隊能藉此正確理解所需功能，亦可作為品質保證與測試的指針，對專案成功至關重要。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">非機能要件定義</div>
+                <div class="term-reading">ひきのうようけんていぎ</div>
+                <div class="term-zh">非功能要件定義</div>
+                <div class="term-en">Non-Functional Requirements Definition</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">使い勝手や信頼性、セキュリティなど、システムの性能や品質に関する評価基準を明確にするプロセス。</div>
+                <div class="summary-zh">明確易用性、可靠性、資安等系統性能與品質相關評估標準的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：応答時間が2秒以内であることや、同時に100人のユーザーがアクセスできることなど、性能や品質に関する要件を明確にするプロセスはどれか？</div>
+                        <div class="option">ア. 非機能要件定義</div>
+<div class="option">イ. 機能要件定義</div>
+<div class="option">ウ. セキュリティ要件</div>
+<div class="option">エ. 業務要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：エンドユーザーの満足度向上やビジネスニーズに応じたシステムの設計が可能になる重要な要件である。</div>
+                    </td>
+                    <td>
+                        <div>問：如回應時間在2秒以內、可同時供100人存取等，用以明確性能與品質相關要件的過程為何？</div>
+                        <div class="option">A. 非功能要件定義（Non-Functional Requirements Definition）</div>
+<div class="option">B. 功能要件定義</div>
+<div class="option">C. 資安要件</div>
+<div class="option">D. 業務要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：是提升終端使用者滿意度並根據商業需求設計系統的重要要件。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">セキュリティ要件</div>
+                <div class="term-reading">せきゅりてぃようけん</div>
+                <div class="term-zh">資安要件</div>
+                <div class="term-en">Security Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報の機密性、完全性、可用性を守るためのセキュリティの基準や条件を定めるもの。</div>
+                <div class="summary-zh">為了維護資訊的機密性、完整性與可用性而訂定資安標準或條件的事項。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：パスワードの複雑さや二段階認証の導入、データの暗号化などにより情報の機密性・完全性・可用性を守る要件はどれか？</div>
+                        <div class="option">ア. セキュリティ要件</div>
+<div class="option">イ. 非機能要件定義</div>
+<div class="option">ウ. 情報・データ要件</div>
+<div class="option">エ. 機能要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：外部からの攻撃や情報漏洩を防ぎ、システムの信頼性を向上させるためにプロジェクトの早い段階で定義される。</div>
+                    </td>
+                    <td>
+                        <div>問：透過密碼複雜度、導入雙重驗證、資料加密等以維護資訊機密性、完整性與可用性的要件為何？</div>
+                        <div class="option">A. 資安要件（Security Requirements）</div>
+<div class="option">B. 非功能要件定義</div>
+<div class="option">C. 資訊與資料要件</div>
+<div class="option">D. 功能要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：為了防止外部攻擊與資訊外洩並提升系統可靠性，應在專案早期階段進行定義。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報・データ要件</div>
+                <div class="term-reading">じょうほう・でーたようけん</div>
+                <div class="term-zh">資訊與資料要件</div>
+                <div class="term-en">Information and Data Requirements</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムが扱うべき情報やデータの具体的な内容、形式、保存方法、更新頻度などを定義するもの。</div>
+                <div class="summary-zh">定義系統應處理之資訊與資料的具體內容、格式、保存方法與更新頻率等的事項。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：顧客情報管理システムにおける顧客名、住所などの具体的なデータ内容、形式、保存方法、更新頻度などを明確にする要件はどれか？</div>
+                        <div class="option">ア. 情報・データ要件</div>
+<div class="option">イ. 機能要件定義</div>
+<div class="option">ウ. セキュリティ要件</div>
+<div class="option">エ. 非機能要件定義</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：開発チームが必要な機能やデータの整合性を理解し、適切な設計を行うための基盤を築く。</div>
+                    </td>
+                    <td>
+                        <div>問：在客戶資訊管理系統中，明確客戶名稱、地址等具體資料內容、格式、保存方法與更新頻率等的要件為何？</div>
+                        <div class="option">A. 資訊與資料要件（Information and Data Requirements）</div>
+<div class="option">B. 功能要件定義</div>
+<div class="option">C. 資安要件</div>
+<div class="option">D. 非功能要件定義</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：為開發團隊理解所需功能與資料一致性並進行適當設計奠定基礎。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

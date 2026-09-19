@@ -1,0 +1,755 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>システム活用促進・評価 - 15語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>システム活用促進・評価 - 15語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+<div class="container">
+
+    <!-- Group 1: 新興技術與數位賦能 (デジタルリテラシー・IoT・ビッグデータ・生成AI・チャットボット) -->
+    <div class="group-container">
+        <div class="group-header">新興技術與數位賦能 (デジタルリテラシー・IoT・ビッグデータ・生成AI・チャットボット)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">デジタルリテラシー</div>
+                <div class="term-reading">でじたるりてらしー</div>
+                <div class="term-zh">數位素養</div>
+                <div class="term-en">Digital Literacy</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報技術やデジタルツールを効果的に使いこなし、業務効率の向上や情報活用を行う能力。</div>
+                <div class="summary-zh">有效運用資訊技術與數位工具，以提升業務效率並活用資訊的能力。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報技術やデジタルツールを効果的に使いこなし、インターネットなどを通じて情報を検索・評価・利用するスキルのことは何か？</div>
+                        <div class="option">ア. デジタルリテラシー</div>
+<div class="option">イ. データサイエンス</div>
+<div class="option">ウ. プログラミング</div>
+<div class="option">エ. ネットワーク構築</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：デジタルリテラシーは、現代の職場や生活において、新しいツールやプラットフォームに迅速に適応し有効な参与を実現するために不可欠なスキルである。</div>
+                    </td>
+                    <td>
+                        <div>問：有效運用資訊技術與數位工具，透過網際網路等進行資訊搜尋、評估與利用的技能為何？</div>
+                        <div class="option">A. 數位素養（Digital Literacy）</div>
+<div class="option">B. 資料科學</div>
+<div class="option">C. 程式設計</div>
+<div class="option">D. 網路建置</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：數位素養是現代職場與生活中，能迅速適應新工具與平台並實現有效參與不可或缺的技能。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">IoT</div>
+                <div class="term-reading">あいおーてぃー</div>
+                <div class="term-zh">物聯網</div>
+                <div class="term-en">Internet of Things</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">さまざまな物やデバイスがインターネットを通じて相互に接続され、データを交換する仕組み。</div>
+                <div class="summary-zh">各種物品與裝置透過網際網路相互連接並交換資料的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：さまざまな物やデバイスがインターネットを通じて相互に接続され、データを交換して効率的な利用や自動化を可能にする仕組みはどれか？</div>
+                        <div class="option">ア. IoT</div>
+<div class="option">イ. BYOD</div>
+<div class="option">ウ. AI</div>
+<div class="option">エ. ERP</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：IoTは日常生活のスマート家電から産業分野のリアルタイム監視・故障予測まで幅広く活用されている。</div>
+                    </td>
+                    <td>
+                        <div>問：各種物品與裝置透過網際網路相互連接、交換資料並實現高效利用與自動化的機制為何？</div>
+                        <div class="option">A. 物聯網（IoT）</div>
+<div class="option">B. 自攜設備（BYOD）</div>
+<div class="option">C. 人工智慧（AI）</div>
+<div class="option">D. 企業資源規劃（ERP）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：物聯網廣泛應用於日常生活中的智慧家電到工業領域的即時監控與故障預測。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ビッグデータ</div>
+                <div class="term-reading">びっぐでーた</div>
+                <div class="term-zh">大數據</div>
+                <div class="term-en">Big Data</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従来のデータ管理ツールでは扱いきれないほどの大規模で多様なデータセットのこと。</div>
+                <div class="summary-zh">規模龐大且多樣化、用傳統資料管理工具難以處理的資料集。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：生成される速度や種類が非常に豊富で、従来のデータ管理ツールでは扱いきれない大規模で多様なデータセットを何と呼ぶか？</div>
+                        <div class="option">ア. ビッグデータ</div>
+<div class="option">イ. オープンデータ</div>
+<div class="option">ウ. メタデータ</div>
+<div class="option">エ. マスターデータ</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ビッグデータは分析することで顧客の行動パターンや需要予測に役立ち、企業が競争力を高めるために重要な役割を果たす。</div>
+                    </td>
+                    <td>
+                        <div>問：生成速度與種類極其豐富、用傳統資料管理工具無法處理的大規模且多樣化資料集稱為何？</div>
+                        <div class="option">A. 大數據（Big Data）</div>
+<div class="option">B. 開放資料</div>
+<div class="option">C. 中繼資料</div>
+<div class="option">D. 主檔資料</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：大數據透過分析可用於顧客行為模式與需求預測，在企業提升競爭力方面扮演重要角色。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">生成AI</div>
+                <div class="term-reading">せいせいえーあい</div>
+                <div class="term-zh">生成式AI</div>
+                <div class="term-en">Generative AI</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">既存のデータをもとに、テキストや画像などの新たなコンテンツを自動的に生成する技術。</div>
+                <div class="summary-zh">根據現有資料，自動生成文字或圖片等新內容的技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：既存のデータをもとに、テキスト、画像、音声などの新たなコンテンツを自動的に生成し、業務効率化に寄与する技術はどれか？</div>
+                        <div class="option">ア. 生成AI</div>
+<div class="option">イ. チャットボット</div>
+<div class="option">ウ. RPA</div>
+<div class="option">エ. OCR</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：生成AIは利用者のニーズに応じたアウトプットを提供でき、マーケティングや教育、エンターテイメントなど様々な分野で注目されている。</div>
+                    </td>
+                    <td>
+                        <div>問：根據現有資料自動生成文字、圖片、語音等新內容並有助於業務效率化的技術為何？</div>
+                        <div class="option">A. 生成式AI（Generative AI）</div>
+<div class="option">B. 聊天機器人</div>
+<div class="option">C. 機器人流程自動化（RPA）</div>
+<div class="option">D. 光學字元辨識（OCR）</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：生成式AI能提供符合使用者需求的輸出，在行銷、教育與娛樂等各個領域備受矚目。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">チャットボット</div>
+                <div class="term-reading">ちゃっとぼっと</div>
+                <div class="term-zh">聊天機器人</div>
+                <div class="term-en">Chatbot</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">人工知能（AI）を利用し、テキストチャットを通じて人間と対話を行うプログラム。</div>
+                <div class="summary-zh">利用人工智慧（AI），透過文字聊天與人類進行對話的程式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：自然言語処理技術を用い、テキストチャットを通じてユーザーの質問に答えたり情報を提供したりする人工知能プログラムはどれか？</div>
+                        <div class="option">ア. チャットボット</div>
+<div class="option">イ. 検索エンジン</div>
+<div class="option">ウ. ファイアウォール</div>
+<div class="option">エ. Webクローラー</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：チャットボットは24時間稼働できるため、企業の顧客サポートなどで迅速な対応や業務効率化に活用されている。</div>
+                    </td>
+                    <td>
+                        <div>問：使用自然語言處理技術，透過文字聊天回答使用者問題或提供資訊的人工智慧程式為何？</div>
+                        <div class="option">A. 聊天機器人（Chatbot）</div>
+<div class="option">B. 搜尋引擎</div>
+<div class="option">C. 防火牆</div>
+<div class="option">D. 網路爬蟲</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：聊天機器人能24小時運作，因此被廣泛應用於企業客戶支援中，以提供迅速回應並提升效率。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: 資安與設備管理 (BYOD・データの消去・情報機器の廃棄) -->
+    <div class="group-container">
+        <div class="group-header">資安與設備管理 (BYOD・データの消去・情報機器の廃棄)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">BYOD</div>
+                <div class="term-reading">びーわいおーでぃー</div>
+                <div class="term-zh">自攜設備</div>
+                <div class="term-en">Bring Your Own Device</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">従業員が自身のスマートフォンやタブレットなどの個人デバイスを職場の業務に使用すること。</div>
+                <div class="summary-zh">員工使用自己的智慧型手機或平板電腦等個人裝置進行職場業務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：従業員が自分自身のスマートフォンなどのデバイスを職場の業務に使用し、利便性向上やコスト削減を図る仕組みはどれか？</div>
+                        <div class="option">ア. BYOD</div>
+<div class="option">イ. VPN</div>
+<div class="option">ウ. SOHO</div>
+<div class="option">エ. SaaS</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：BYODは業務効率化のメリットがある一方で、データ漏洩やウイルス感染などのセキュリティリスクが増すため適切な管理が求められる。</div>
+                    </td>
+                    <td>
+                        <div>問：員工使用自己的智慧型手機等裝置進行職場業務，以提升便利性並降低成本的機制為何？</div>
+                        <div class="option">A. 自攜設備（BYOD）</div>
+<div class="option">B. 虛擬專用網路（VPN）</div>
+<div class="option">C. 小型辦公室/居家辦公（SOHO）</div>
+<div class="option">D. 軟體即服務（SaaS）</div>
+                        <div class="answer">正確答案：A</div>
+                        /廠
+                        <div class="analysis">解析：自攜設備雖有提升業務效率的好處，但由於資料外洩或病毒感染等資安風險增加，因此需要適當的管理。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">データの消去</div>
+                <div class="term-reading">でーたのしょうきょ</div>
+                <div class="term-zh">資料刪除 / 銷毀</div>
+                <div class="term-en">Data Erasure</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報が保存されている媒体から、復元できないようにデータを完全に取り除く行為。</div>
+                <div class="summary-zh">從儲存資訊的媒體中，徹底清除資料使其無法被復原的行為。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：古い情報システムの廃棄時などに、ファイル削除だけでなく専用の方法を用いてデータを完全に復元不能にするプロセスはどれか？</div>
+                        <div class="option">ア. データの消去</div>
+<div class="option">イ. データのバックアップ</div>
+<div class="option">ウ. データの暗号化</div>
+<div class="option">エ. データの圧縮</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：物理的な粉砕やランダムな情報の書き込みなどを行い、個人情報や機密情報の漏えいを防ぐために不可欠である。</div>
+                    </td>
+                    <td>
+                        <div>問：在廢棄舊資訊系統等情況下，不僅刪除檔案，更使用專用方法將資料完全清除至無法復原的過程為何？</div>
+                        <div class="option">A. 資料刪除（Data Erasure）</div>
+<div class="option">B. 資料備份</div>
+<div class="option">C. 資料加密</div>
+<div class="option">D. 資料壓縮</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過實體粉碎或寫入隨機資訊等方式執行，是防止個人與機密資訊外洩不可或缺的程序。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報機器の廃棄</div>
+                <div class="term-reading">じょうほうききのはいき</div>
+                <div class="term-zh">資訊設備廢棄</div>
+                <div class="term-en">Information Equipment Disposal</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">不要になったコンピュータや周辺機器などの電子機器を、安全性と環境保護を考慮して処分すること。</div>
+                <div class="summary-zh">將不再需要的電腦或周邊設備等電子儀器，兼顧安全性與環境保護進行處置。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：不要になった電子機器を処分する際、情報漏洩の防止や環境への影響（有害物質など）を考慮して適切に行うべき活動はどれか？</div>
+                        <div class="option">ア. 情報機器の廃棄</div>
+<div class="option">イ. ソフトウェアのアップデート</div>
+<div class="option">ウ. システムの改修</div>
+<div class="option">エ. ネットワークの構築</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：データ未消去のまま廃棄すると情報漏洩の危険が生じるため、リサイクルや専門業者による適切な処分が重要である。</div>
+                    </td>
+                    <td>
+                        <div>問：處置不再需要的電子儀器時，應考慮防止資訊外洩及對環境影響（如有害物質等）而適當進行的活動為何？</div>
+                        <div class="option">A. 資訊設備廢棄（Information Equipment Disposal）</div>
+<div class="option">B. 軟體更新</div>
+<div class="option">C. 系統改修</div>
+<div class="option">D. 網路建置</div>
+                        <div class="answer">正確答案：A</div>
+                        /廠
+                        <div class="analysis">解析：若未刪除資料就進行廢棄會產生資訊外洩危險，因此透過回收或專業業者進行適當處置非常重要。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 3: 系統導入評估與調查分析 (情報システムの投資対効果分析・システム利用実態の調査及び評価・業務内容や業務フローの変更の有無の把握・情報システムの運用状況の把握及び評価) -->
+    <div class="group-container">
+        <div class="group-header">系統導入評估與調查分析 (情報システムの投資対効果分析・システム利用実態の調査及び評価・業務内容や業務フローの変更の有無の把握・情報システムの運用状況の把握及び評価)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システムの投資対効果分析</div>
+                <div class="term-reading">じょうほうしすてむのとうしたいこうかぶんせき</div>
+                <div class="term-zh">資訊系統投資效益分析</div>
+                <div class="term-en">Return on Investment Analysis for Information Systems</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムへの投資がどれだけの効果や利益を生み出したかを定量的に評価する手法。</div>
+                <div class="summary-zh">定量評估對資訊系統的投資產生了多少效益或利潤的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システムの導入による業務効率化やコスト削減などの成果を測定し、初期投資に対する利益の割合を算出する評価手法はどれか？</div>
+                        <div class="option">ア. 情報システムの投資対効果分析</div>
+<div class="option">イ. システム利用実態の調査</div>
+<div class="option">ウ. 業務フロー分析</div>
+<div class="option">エ. システムライフサイクル管理</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：この分析により、未来の投資に関する意思決定をサポートし、経営層の理解を得やすい資料作成に役立つ。</div>
+                    </td>
+                    <td>
+                        <div>問：衡量導入資訊系統帶來的業務效率化或成本節省等成果，並計算對初期投資之利潤比例的評估手法為何？</div>
+                        <div class="option">A. 資訊系統投資效益分析</div>
+<div class="option">B. 系統利用實態調查</div>
+<div class="option">C. 業務流程分析</div>
+<div class="option">D. 系統生命週期管理</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：此分析能支援未來投資的決策，並有助於製作易獲得管理階層理解的資料。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システム利用実態の調査及び評価</div>
+                <div class="term-reading">しすてむりようじったいのちょうさおよびひょうか</div>
+                <div class="term-zh">系統使用實際狀況調查與評估</div>
+                <div class="term-en">System Utilization Survey and Evaluation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムがどのように使われているかを分析し、その効果や改善点を明らかにするプロセス。</div>
+                <div class="summary-zh">分析資訊系統被使用狀況，並釐清其效益與改善點的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：利用者の行動やシステムのパフォーマンスを観察・測定し、利用状況を可視化して改善点を導き出すプロセスはどれか？</div>
+                        <div class="option">ア. システム利用実態の調査及び評価</div>
+<div class="option">イ. 情報システムの改修</div>
+<div class="option">ウ. システムライフサイクル</div>
+<div class="option">エ. 普及啓発</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：業務プロセスの効率化やユーザーエクスペリエンスの向上につながる施策を考える上で有益なデータとなる。</div>
+                    </td>
+                    <td>
+                        <div>問：觀察與測量使用者行為或系統效能，將利用狀況視覺化並導出改善點的過程為何？</div>
+                        <div class="option">A. 系統使用實際狀況調查與評估</div>
+<div class="option">B. 資訊系統改修</div>
+<div class="option">C. 系統生命週期</div>
+<div class="option">D. 普及啟發</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：這能成為思考有助於業務流程效率化或使用者體驗提升之對策的有益資料。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">業務内容や業務フローの変更の有無の把握</div>
+                <div class="term-reading">ぎょうむないようやぎょうむふろーのへんこうのうむのはあく</div>
+                <div class="term-zh">業務內容與業務流程變更與否之掌握</div>
+                <div class="term-en">Changes in Business Activities and Flows</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">新しいソフトウェア導入などの影響により、企業や組織の業務進行状況や方法が変わったかを確認すること。</div>
+                <div class="summary-zh">確認因導入新軟體等影響，企業或組織的業務進行狀況與方法是否改變。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：新しいソフトウェアの導入などに伴い、組織の業務の進行方法や手順が変わったかを確認し検証するプロセスはどれか？</div>
+                        <div class="option">ア. 業務内容や業務フローの変更の有無の把握</div>
+<div class="option">イ. 情報システムの運用状況の把握及び評価</div>
+<div class="option">ウ. 投資対効果分析</div>
+<div class="option">エ. データの消去</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：業務の変更を適切に把握することで従業員のトレーニングやサポート体制を整え、全体の業務を円滑に進めるために不可欠である。</div>
+                    </td>
+                    <td>
+                        <div>問：伴隨新軟體等的導入，確認並驗證組織的業務進行方法與步驟是否改變的過程為何？</div>
+                        <div class="option">A. 業務內容與業務流程變更與否之掌握</div>
+<div class="option">B. 資訊系統營運狀況之掌握與評估</div>
+<div class="option">C. 投資效益分析</div>
+<div class="option">D. 資料刪除</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：適當掌握業務的變更，有助於完善員工培訓與支援體制，是讓整體業務順利推進不可或缺的要素。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システムの運用状況の把握及び評価</div>
+                <div class="term-reading">じょうほうしすてむのうんようじょうきょうのはあくおよびひょうか</div>
+                <div class="term-zh">資訊系統營運狀況之掌握與評估</div>
+                <div class="term-en">Information System Operation Status Assessment and Evaluation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムがどのように使用されているかを定期的に調査・分析し、問題点やボトルネックを特定するプロセス。</div>
+                <div class="summary-zh">定期調查與分析資訊系統的使用狀況，以特定出問題點或瓶頸的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システムの利用状況や性能データを定期的に収集し、問題点やボトルネックを特定して改善につなげるプロセスはどれか？</div>
+                        <div class="option">ア. 情報システムの運用状況の把握及び評価</div>
+<div class="option">イ. システム利用実態の調査及び評価</div>
+<div class="option">ウ. 業務内容や業務フローの変更の有無の把握</div>
+<div class="option">エ. 情報システムの投資対効果分析</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：ユーザーからのフィードバックを取り入れてニーズを反映させ、リソースの最適化やサービス向上を実現するために不可欠である。</div>
+                    </td>
+                    <td>
+                        <div>問：定期收集資訊系統利用狀況與效能資料，特定出問題點或瓶頸並連結至改善的過程為何？</div>
+                        <div class="option">A. 資訊系統營運狀況之掌握與評估</div>
+<div class="option">B. 系統使用實際狀況調查與評估</div>
+<div class="option">C. 業務內容與業務流程變更與否之掌握</div>
+<div class="option">D. 資訊系統投資效益分析</div>
+                        <div class="answer">正確答案：A</div>
+                        /廠
+                        <div class="analysis">解析：這是納入使用者回饋以反映需求、實現資源最佳化與服務提升不可或缺的活動。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 4: 系統生命周期與維護管理 (普及啓発・情報システムの改修・システムライフサイクル) -->
+    <div class="group-container">
+        <div class="group-header">系統生命周期與維護管理 (普及啓発・情報システムの改修・システムライフサイクル)</div>
+        
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">普及啓発</div>
+                <div class="term-reading">ふきゅうけいはつ</div>
+                <div class="term-zh">普及啟發 / 推廣宣導</div>
+                <div class="term-en">Awareness and Dissemination</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定の技術や知識を広め、一般の理解を深めるための活動（セミナー開催やガイドライン配布など）。</div>
+                <div class="summary-zh">推廣特定技術或知識並加深大眾理解的活動（如舉辦研討會或發布指南等）。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システム活用の促進において、新しい技術の導入時にその価値や効用を周知し、セミナーやマニュアル等で利用を促す活動はどれか？</div>
+                        <div class="option">ア. 普及啓発</div>
+<div class="option">イ. システム改修</div>
+<div class="option">ウ. 投資対効果分析</div>
+<div class="option">エ. データ消去</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：普及啓発によりユーザーが新しいシステムを安心して使えるようになり、導入効果を最大化するための基盤を築く。</div>
+                    </td>
+                    <td>
+                        <div>問：在促進資訊系統應用時，於導入新技術時周知其價值與效用，並透過研討會或手冊促使使用者使用的活動為何？</div>
+                        <div class="option">A. 普及啟發 / 推廣宣導（Awareness and Dissemination）</div>
+<div class="option">B. 系統改修</div>
+<div class="option">C. 投資效益分析</div>
+<div class="option">D. 資料刪除</div>
+                        <div class="answer">正確答案：A</div>
+                        /廠
+                        <div class="analysis">解析：透過普及啟發讓使用者能安心使用新系統，並建立將導入效益最大化的基礎。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">情報システムの改修</div>
+                <div class="term-reading">じょうほうしすてむのかいしゅう</div>
+                <div class="term-zh">資訊系統改修 / 更新</div>
+                <div class="term-en">Information System Refurbishment</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">性能向上や新要件への適応、セキュリティ強化などを目的として、既存のシステムを改善・更新するプロセス。</div>
+                <div class="summary-zh">以提升效能、適應新需求或強化資安等為目的，改善或更新現有系統的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：業務環境の変化に対応し、システムの性能向上や新機能追加、セキュリティ対策の強化を行うプロセスはどれか？</div>
+                        <div class="option">ア. 情報システムの改修</div>
+<div class="option">イ. 情報機器の廃棄</div>
+<div class="option">ウ. システム利用実態の調査</div>
+<div class="option">エ. 普及啓発</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：情報システムの改修は、業務環境の変化に対応し効率的な運用を持続させるために不可欠な取り組みである。</div>
+                    </td>
+                    <td>
+                        <div>問：因應業務環境變化，進行系統效能提升、新增功能或強化資安對策的過程為何？</div>
+                        <div class="option">A. 資訊系統改修（Information System Refurbishment）</div>
+<div class="option">B. 資訊設備廢棄</div>
+<div class="option">C. 系統使用實際狀況調查</div>
+<div class="option">D. 普及啟發</div>
+                        /廠
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：資訊系統改修是為了因應業務環境變化並維持高效營運不可或缺的作法。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">システムライフサイクル</div>
+                <div class="term-reading">しすてむらいふさいくる</div>
+                <div class="term-zh">系統生命週期</div>
+                <div class="term-en">System Lifecycle</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">情報システムが計画、設計、開発、運用、保守、廃棄に至るまでの一連の過程。</div>
+                <div class="summary-zh">資訊系統從計畫、設計、開發、營運、維護到廢棄為止的一系列過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>
+                        <div>問：情報システムが計画から始まり、設計、開発、運用、保守を経て、最終的に廃棄に至るまでの一連の過程を何と呼ぶか？</div>
+                        <div class="option">ア. システムライフサイクル</div>
+<div class="option">イ. システム開発手法</div>
+<div class="option">ウ. プロジェクトマネジメント</div>
+<div class="option">エ. ネットワークライフサイクル</div>
+                        <div class="answer">正解：ア</div>
+                        <div class="analysis">解説：このライフサイクルを通じて、システムの品質や効率を向上させることが目指され、最終的には技術的老朽化などで廃棄される。</div>
+                    </td>
+                    <td>
+                        <div>問：資訊系統從計畫開始，經過設計、開發、營運、維護，最終達到廢棄為止的一系列過程稱為何？</div>
+                        <div class="option">A. 系統生命週期（System Lifecycle）</div>
+<div class="option">B. 系統開發手法</div>
+<div class="option">C. 專案管理</div>
+<div class="option">D. 網路生命週期</div>
+                        <div class="answer">正確答案：A</div>
+                        <div class="analysis">解析：透過此生命週期旨在提升系統品質與效率，最終可能會因技術老化等原因而廢棄。</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

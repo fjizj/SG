@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業務プロセス - 11語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>業務プロセス - 11語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <!-- Group 1: 業務プロセス改善と再設計 (Business Process Improvement and Reengineering) -->
+    <div class="group-container">
+        <div class="group-header">業務流程改善與再設計</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ワークフローシステム</div>
+                <div class="term-reading">わーくふろーしすてむ</div>
+                <div class="term-zh">工作流程系統</div>
+                <div class="term-en">Workflow System</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務プロセスの効率化や可視化を図り、タスクや情報の流れを自動化して進捗を追跡しやすくする仕組み。</div>
+                <div class="summary-zh">旨在實現業務流程效率化與視覺化，自動化任務與資訊流向以方便追蹤進度的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ワークフローシステムに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務プロセスのタスクや情報の流れを自動化し、申請から承認までのステップを管理して効率化を図ること。</div>
+                        <div class="option">イ. コンピュータ上で行われる反復的な定型作業をソフトウェアロボットに代行させること。</div>
+                        <div class="option">ウ. インターネットを介して音声や映像を使用し、遠隔地からリアルタイムに会議を行うこと。</div>
+                        <div class="option">エ. 企業内の業務プロセスを根本から見直し、組織全体の大幅な再設計を行うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ワークフローシステムは、業務プロセスを効率化し可視化するための仕組みであり、申請から承認までのステップを自動化して担当者に通知し、時間の短縮と効率化を図ります。</div></td>
+                    <td>                        <strong>【問】</strong>關於工作流程系統的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 自動化業務流程中的任務與資訊流向，管理從申請到核准的步驟以提升效率。</div>
+                        <div class="option">B. 由軟體機器人代勞電腦上重複執行的定型化作業。</div>
+                        <div class="option">C. 透過網際網路使用語音與影像，從遠端進行即時會議。</div>
+                        <div class="option">D. 從根本檢視企業內的業務流程，進行組織整體的全面性再設計。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】工作流程系統是為了讓業務流程有效率且視覺化所建構的機制，透過自動化從申請到核准的步驟並通知相關負責人，藉此縮短時間並提升效率。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">BPR</div>
+                <div class="term-reading">びーぴーあーる</div>
+                <div class="term-zh">企業流程再造</div>
+                <div class="term-en">Business Process Reengineering</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務プロセスを根本から見直し、効率を高めて企業全体の競争力を強化する再設計手法。</div>
+                <div class="summary-zh">從根本重新檢視業務流程，提升效率以強化企業整體競爭力的再設計手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>BPR（Business Process Reengineering）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務プロセスを根本から見直し、テクノロジーを活用して効率や生産性を高め、競争力を強化すること。</div>
+                        <div class="option">イ. コンピュータ上の定型的な反復作業をソフトウェアロボットに自動実行させること。</div>
+                        <div class="option">ウ. 業務や作業の流れや手順に注目し、日々の進捗状況を細かく追跡して記録すること。</div>
+                        <div class="option">エ. インターネットを利用してメッセージやファイルを迅速に送受信する通信手段のこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】BPRは業務プロセスの再設計を指し、プロセスを根本から見直して効率を高め、生産性を向上させ、企業全体の競争力を強化する手法です。</div></td>
+                    <td>                        <strong>【問】</strong>關於BPR（Business Process Reengineering）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 從根本重新審視業務流程，利用科技提升效率與生產力，並強化競爭力。</div>
+                        <div class="option">B. 由軟體機器人自動執行電腦上的定型化重複作業。</div>
+                        <div class="option">C. 關注業務或作業的流程與步驟，細微追蹤並記錄每日進度。</div>
+                        <div class="option">D. 利用網際網路快速收發訊息與檔案的通訊手段。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】BPR指的是業務流程再設計，透過從根本重新檢視流程以提升效率、提高生產力，並達到強化企業整體競爭力的目的。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロセス視点</div>
+                <div class="term-reading">ぷろせすしてん</div>
+                <div class="term-zh">流程觀點</div>
+                <div class="term-en">Process Perspective</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務の流れや手順を一連の活動として捉え、ステップ間の連携を分析して無駄やボトルネックを発見する考え方。</div>
+                <div class="summary-zh">將業務流向與步驟視為一系列活動，分析各步驟間的協同合作以發現浪費與瓶頸的思考方式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「プロセス視点」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 業務の流れや手順を一連の活動として捉え、各ステップの連携を分析してボトルネックや無駄を発見すること。</div>
+                        <div class="option">イ. 企業内のすべての電子メールやチャットの通信履歴を監視し、情報漏洩を防ぐこと。</div>
+                        <div class="option">ウ. 新しい情報システムの導入コストを算定し、費用対効果を長期的に予測すること。</div>
+                        <div class="option">エ. 従業員の労働時間や休日出勤の状況を正確に集計し、労務管理を徹底すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】プロセス視点は業務や作業を進める際に流れや手順に注目して分析する考え方であり、一連の活動として捉えることでボトルネックや無駄な作業を発見し改善するのに有効です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「流程觀點」的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 將業務流向與步驟視為一系列活動，分析各步驟的協同以發現瓶頸與浪費。</div>
+                        <div class="option">B. 監控企業內所有電子郵件或聊天通訊紀錄以防範資訊外洩。</div>
+                        <div class="option">C. 計算新資訊系統的導入成本並長期預測成本效益。</div>
+                        <div class="option">D. 精確統計員工的勞動時間與假日出勤狀況以落實勞務管理。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】流程觀點是指在推進業務或作業時，關注其流向與步驟進行分析的思考方式。將其視為一連串活動，有助於找出瓶頸與多餘作業並加以改善。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">RPA</div>
+                <div class="term-reading">あーるぴーえー</div>
+                <div class="term-zh">機器人流程自動化</div>
+                <div class="term-en">Robotic Process Automation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">コンピュータ上で行われる反復的な定型作業をソフトウェアロボットが代行し、効率を向上させる自動化技術。</div>
+                <div class="summary-zh">由軟體機器人代勞電腦上重複執行的定型化作業，以提升效率的自動化技術。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>RPA（Robotic Process Automation）の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. コンピュータ上の反復的な定型作業をソフトウェアのロボットが代わりに実行し、人的ミスを減らすこと。</div>
+                        <div class="option">イ. 企業が業務プロセス全体を根本から再設計し、組織の競争力を強化すること。</div>
+                        <div class="option">ウ. インターネットを介して音声や映像を利用し、遠隔地の間で会議を行うこと。</div>
+                        <div class="option">エ. 申請から承認までの書類処理のステップを自動化し、進捗状況を追跡すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】RPAは業務プロセスを自動化する技術であり、コンピュータ上で行われる反復的な作業をソフトウェアロボットが代わりに実行することで、人的ミスを減少させ効率を向上させます。</div></td>
+                    <td>                        <strong>【問】</strong>關於RPA（Robotic Process Automation）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 由軟體機器人代替執行電腦上的重複性定型作業，以減少人為失誤。</div>
+                        <div class="option">B. 企業從根本重新設計整體業務流程以強化組織競爭力。</div>
+                        <div class="option">C. 透過網際網路使用語音與影像，在遠端之間進行會議。</div>
+                        <div class="option">D. 自動化從申請到核准的檔案處理步驟並追蹤進度。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】RPA是自動化業務流程的技術，讓軟體機器人代替人類執行電腦上的重複性作業，藉此減少人為失誤並提升工作效率。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2: コミュニケーション・情報共有ツール (Communication and Information Sharing Tools) -->
+    <div class="group-container">
+        <div class="group-header">通訊與資訊共享工具</div>
+        
+        <!-- Term 5 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">Web会議</div>
+                <div class="term-reading">うぇぶかいぎ</div>
+                <div class="term-zh">網路會議</div>
+                <div class="term-en">Web Conference</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを介して音声や映像を使い、物理的に離れた参加者同士がリアルタイムにコミュニケーションを行う仕組み。</div>
+                <div class="summary-zh">透過網際網路使用語音與影像，讓物理上相隔兩地的參與者進行即時通訊的機制。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>Web会議に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを介して音声や映像を使用し、離れた場所からリアルタイムにコミュニケーションを行うこと。</div>
+                        <div class="option">イ. テキストメッセージを携帯電話やスマートフォンで短時間にお互い送受信すること。</div>
+                        <div class="option">ウ. インターネット上で不特定多数のユーザーがメッセージを投稿し意見交換を行うこと。</div>
+                        <div class="option">エ. 定期的な情報や意見を発信し、読者がコメントを残せるインタラクティブなページのこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】Web会議はインターネットを介して行う会議であり、物理的に同じ場所に集まることなく音声や映像を使用してリアルタイムにコミュニケーションを図ることで、移動時間やコストを削減します。</div></td>
+                    <td>                        <strong>【問】</strong>關於網路會議的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路使用語音與影像，從遠距離進行即時通訊。</div>
+                        <div class="option">B. 在手機或智慧型手機上短時間互相收發文字訊息。</div>
+                        <div class="option">C. 由不特定多數用戶在網路上張貼訊息並進行意見交換。</div>
+                        <div class="option">D. 發布定期資訊或意見，並允許讀者留下評論的互動式網頁。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】網路會議是透過網際網路進行的會議，不需實際聚集在同一個地點即可利用語音與影像進行即時通訊，藉此減少移動時間與成本。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子メール</div>
+                <div class="term-reading">でんしめーる</div>
+                <div class="term-zh">電子郵件</div>
+                <div class="term-en">Electronic Mail</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを利用してメッセージやファイルを迅速に送受信し、日常の業務連絡を効率化する通信手段。</div>
+                <div class="summary-zh">利用網際網路快速收發訊息與檔案，以提升日常業務聯絡效率的通訊手段。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>電子メールに関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを利用してメッセージやファイルを作成し、宛先を指定して迅速に送受信すること。</div>
+                        <div class="option">イ. リアルタイムにテキストのやり取りを行い、プロジェクトの進捗を瞬時に確認すること。</div>
+                        <div class="option">ウ. 短いメッセージを携帯電話の回線網を利用してテキスト形式で送受信すること。</div>
+                        <div class="option">エ. 個人のWebサイト上で定期的に記事形式の情報を発信し、読者と交流すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】電子メールはインターネットを利用してメッセージやファイルを送受信する通信手段であり、迅速なコミュニケーションや効率的な情報共有を可能にします。</div></td>
+                    <td>                        <strong>【問】</strong>關於電子郵件的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 利用網際網路建立訊息與檔案並指定收件人進行快速收發。</div>
+                        <div class="option">B. 即時進行文字交流，瞬間確認專案進度。</div>
+                        <div class="option">C. 利用手機電信網路以文字格式收發簡短訊息。</div>
+                        <div class="option">D. 在個人網站上定期發布文章形式的資訊並與讀者交流。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】電子郵件是利用網際網路發送與接收訊息及檔案的通訊手段，能夠實現快速的通訊與有效率的資訊共享。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 7 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子掲示板</div>
+                <div class="term-reading">でんしけいじばん</div>
+                <div class="term-zh">電子佈告欄</div>
+                <div class="term-en">Electronic Bulletin Board</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネット上で情報を投稿・共有し、コメントや質問を通じて業務上の意見交換を促進するプラットフォーム。</div>
+                <div class="summary-zh">在網路上張貼與共享資訊，並透過評論或提問來促進業務上意見交流的平台。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>電子掲示板の説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネット上で運営者やユーザーが情報を投稿し、コメントや質問を通じて情報共有や意見交換を行うこと。</div>
+                        <div class="option">イ. インターネットを介して物理的に離れた参加者が音声や映像を使用してリアルタイムに会議を行うこと。</div>
+                        <div class="option">ウ. 短いメッセージを携帯電話やスマートフォンで送受信し、即時的な連絡や意思疎通を図ること。</div>
+                        <div class="option">エ. 個人や団体が定期的に記事形式で情報や意見を発信し、読者とインタラクティブに交流すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】電子掲示板はインターネット上で情報を共有するプラットフォームであり、メッセージの投稿に対してコメントや質問を行うことで、業務情報の共有や意見交換に寄与します。</div></td>
+                    <td>                        <strong>【問】</strong>關於電子佈告欄的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 由營運者或用戶在網路上張貼資訊，並透過評論或提問進行資訊共享與意見交流。</div>
+                        <div class="option">B. 物理上相隔的參與者透過網際網路使用語音與影像進行即時會議。</div>
+                        <div class="option">C. 在手機或智慧型手機上收發簡短訊息，以達成即時聯繫與溝通。</div>
+                        <div class="option">D. 個人或團體定期以文章形式發布資訊或意見，並與讀者進行互動交流。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】電子佈告欄是網路上用以共享資訊的平台，透過針對張貼訊息進行留言與提問，有助於業務資訊的共享與意見交流。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 8 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ブログ</div>
+                <div class="term-reading">ぶろぐ</div>
+                <div class="term-zh">部落格</div>
+                <div class="term-en">Blog</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">個人や団体が記事形式で定期的に情報や意見を発信し、読者からのコメントやシェア機能を持つWebサイト。</div>
+                <div class="summary-zh">個人或團體以文章形式定期發布資訊與意見，並具備讀者留言與分享功能的網站。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ブログに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 個人や団体が記事形式で定期的に情報や意見を発信し、読者がコメントやシェアを残せるWebページ。</div>
+                        <div class="option">イ. インターネットを通じてリアルタイムにメッセージのやり取りを行い、迅速な情報共有をサポートする手段。</div>
+                        <div class="option">ウ. 短いメッセージを携帯電話やスマートフォンで送受信し、インターネット接続がなくても利用できるサービス。</div>
+                        <div class="option">エ. インターネット上で情報やファイルを迅速に送受信し、会議設定や業務連絡を行う通信手段。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】ブログは個人や団体が定期的に情報や意見を発信するWebサイトであり、記事形式で内容を整理し、読者がコメントを残したりシェアできるインタラクティブな特徴を持ちます。</div></td>
+                    <td>                        <strong>【問】</strong>關於部落格的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 個人或團體以文章形式定期發布資訊與意見，並允許讀者留下評論或分享的網頁。</div>
+                        <div class="option">B. 透過網際網路即時進行訊息往來，支援迅速資訊共享的手段。</div>
+                        <div class="option">C. 在手機或智慧型手機上收發簡短訊息，即使沒有網路連線也能使用的服務。</div>
+                        <div class="option">D. 在網路上快速收發資訊與檔案，進行會議安排與業務聯絡的通訊手段。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】部落格是個人或團體定期發布資訊或意見的網站，以文章形式整理內容，並具有讓讀者留言或分享的互動特點。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 9 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">チャット</div>
+                <div class="term-reading">ちゃっと</div>
+                <div class="term-zh">即時通訊（聊天）</div>
+                <div class="term-en">Chat</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを通じてリアルタイムにメッセージのやり取りを行い、迅速な意思決定やチーム内の相談を支援する手段。</div>
+                <div class="summary-zh">透過網際網路即時進行訊息往來，支援迅速決策與團隊內部諮商的手段。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ビジネスにおける「チャット」の役割として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを通じてリアルタイムにメッセージのやり取りを行い、迅速な情報共有や意思決定をサポートすること。</div>
+                        <div class="option">イ. インターネット上で長文の意見を掲示し、不特定多数のユーザーからの長期間のコメントを待つこと。</div>
+                        <div class="option">ウ. 企業が自社製品のニュースを発信し、検索エンジン最適化（SEO）の効果を高めること。</div>
+                        <div class="option">エ. 電子メールの宛先を詳細に指定し、会議の設定や正式な業務報告を数日かけて行うこと。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】チャットはインターネットを通じてリアルタイムにメッセージのやり取りができるコミュニケーション手段であり、ビジネスにおいては迅速な情報共有や意思決定、相談をサポートする役割を果たします。</div></td>
+                    <td>                        <strong>【問】</strong>在商業應用中「即時通訊（聊天）」的角色，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路即時收發訊息，支援迅速的資訊共享與決策制定。</div>
+                        <div class="option">B. 在網路上張貼長篇意見，並等待不特定多數用戶長時間的評論。</div>
+                        <div class="option">C. 企業發布自家產品的新聞，以提升搜尋引擎最佳化（SEO）的效果。</div>
+                        <div class="option">D. 詳細指定電子郵件收件人，並花費數日進行會議安排或正式業務報告。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】即時通訊（聊天）是透過網際網路進行即時訊息往來的通訊手段，在商業上扮演支援迅速資訊共享、決策與討論的重要角色。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 10 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SMS</div>
+                <div class="term-reading">えすえむえす</div>
+                <div class="term-zh">簡訊服務</div>
+                <div class="term-en">Short Message Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">短いテキストメッセージを携帯電話やスマートフォンで送受信し、即時的な連絡や業務上の伝達に役立つサービス。</div>
+                <div class="summary-zh">在手機或智慧型手機上收發簡短文字訊息，有助於即時聯絡與業務傳達的服務。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>SMS（Short Message Service）に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 短いテキストメッセージを携帯電話やスマートフォンで送受信し、即時性が求められる連絡に役立てること。</div>
+                        <div class="option">イ. インターネット上で定期的に記事形式の情報を発信し、検索結果の表示順位を上げること。</div>
+                        <div class="option">ウ. 物理的に離れた参加者が音声や映像を使用してリアルタイムに会議を行い、コラボレーションすること。</div>
+                        <div class="option">エ. 業務プロセスのタスクや情報の流れを自動化し、申請から承認までのステップを管理すること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】SMSは短いメッセージを携帯電話やスマートフォンで送受信するサービスであり、インターネット接続がなくても利用可能で、即時性が求められる仕事上の連絡や業務プロセスの改善に役立ちます。</div></td>
+                    <td>                        <strong>【問】</strong>關於SMS（Short Message Service）的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 在手機或智慧型手機上收發簡短文字訊息，有助於要求即時性的聯絡。</div>
+                        <div class="option">B. 在網路上定期以文章形式發布資訊，以提升搜尋結果的顯示順位。</div>
+                        <div class="option">C. 物理上相隔的參與者使用語音與影像進行即時會議並協同合作。</div>
+                        <div class="option">D. 自動化業務流程中的任務與資訊流向，管理從申請到核准的步驟。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】SMS是透過手機或智慧型手機收發簡短文字訊息的服務，即使沒有網際網路連線也能使用，對於需要即時性的工作聯絡相當有幫助。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 11 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">SNS</div>
+                <div class="term-reading">えすえぬえす</div>
+                <div class="term-zh">社群網路服務</div>
+                <div class="term-en">Social Networking Service</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">インターネットを通じて人々が情報を共有し、写真やテキストの投稿を通じてコミュニケーションを行うプラットフォーム。</div>
+                <div class="summary-zh">透過網際網路讓群眾共享資訊，並藉由照片與文字張貼來進行通訊的平台。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>SNS（Social Networking Service）に関する説明として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. インターネットを通じてユーザー同士が情報や写真を共有し、コメントやメッセージを交わすコミュニケーション基盤。</div>
+                        <div class="option">イ. コンピュータ上の定型的な反復作業をソフトウェアロボットに代行させ、業務の効率を高める仕組み。</div>
+                        <div class="option">ウ. 企業が自社内のプロセスを根本から見直し、組織全体の生産性や競争力を向上させる再設計手法。</div>
+                        <div class="option">エ. 電子メールを用いて業務上の連絡事項やファイルの送受信を迅速かつ正確に行うための通信規格。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">【解説】SNSはインターネットを通じて人々が情報を共有しコミュニケーションを行うためのサービスであり、企業が顧客と直接コミュニケーションを取る手段やフィードバックを得るために活用されます。</div></td>
+                    <td>                        <strong>【問】</strong>關於SNS（Social Networking Service）的說明，下列何者最為適當？
+<br>
+                        <div class="option">A. 透過網際網路讓用戶彼此共享資訊與照片，並交換評論與訊息的通訊基礎。</div>
+                        <div class="option">B. 由軟體機器人代勞電腦上的重複定型作業以提升業務效率的機制。</div>
+                        <div class="option">C. 企業從根本重新檢視內部流程以提升組織生產力與競爭力的再設計手法。</div>
+                        <div class="option">D. 利用電子郵件快速且正確收發業務聯絡事項與檔案的通訊規範。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">【解析】SNS是透過網際網路供人們共享資訊、並透過張貼照片與文字來進行通訊的平台，企業也常用來與客戶直接交流並獲取回饋。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パフォーマンス評価及び改善 - 6語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>パフォーマンス評価及び改善 - 6語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">服務績效評估與報告</div>
+        
+        <!-- Term 1 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">パフォーマンス評価</div>
+                <div class="term-reading">ぱふぉーまんすひょうか</div>
+                <div class="term-zh">性能評估</div>
+                <div class="term-en">Performance Evaluation</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">システムやプロセスの効率や効果を測定する手法であり、処理速度や応答時間などの指標を用いて最適化を図る。</div>
+                <div class="summary-zh">衡量系統或流程效率與效果的手法，透過處理速度或回應時間等指標來進行最佳化。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ITサービスマネジメントにおける「パフォーマンス評価」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 提供されたサービスの成果を顧客に報告する文書やプロセスである。</div>
+                        <div class="option">イ. システムやプロセスの効率や効果を測定し、処理速度や応答時間などの指標を用いて最適化を図る。</div>
+                        <div class="option">ウ. 基準を満たさない状態の原因を特定し、再発防止のための是正処置を行う。</div>
+                        <div class="option">エ. 業務プロセスや製品の品質を持続的に向上させるための手法である。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】パフォーマンス評価は、システムやプロセスの効率や効果を測定する手法であり、処理速度や応答時間などの指標を用いて最適化を図ります。アはサービスの報告、ウは不適合及び是正処置、エは継続的改善の説明です。</div></td>
+                    <td>                        <strong>【問】</strong>關於IT服務管理中「性能評估（Performance Evaluation）」的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 彙報所提供服務成果給客戶的文檔或流程。</div>
+                        <div class="option">B. 衡量系統或流程的效率與效果，並透過處理速度或回應時間等指標來進行最佳化。</div>
+                        <div class="option">C. 識別未滿足標準狀態的原因，並採取預防再發的矯正措施。</div>
+                        <div class="option">D. 持續提升業務流程或產品品質的手法。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】性能評估是用來衡量系統或流程效率與效果的手法，透過處理速度、回應時間等指標來達成最佳化。ア為服務報告，ウ為不符合與矯正措施，エ為持續改善。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 2 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">パフォーマンス</div>
+                <div class="term-reading">ぱふぉーまんす</div>
+                <div class="term-zh">效能 / 性能</div>
+                <div class="term-en">Performance</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定のタスクやサービスに対する効率や効果を示す指標であり、Webサイトの読み込み速度などが該当する。</div>
+                <div class="summary-zh">表示特定任務或服務之效率與效果的指標，如網站讀取速度或伺服器回應時間等。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>ITサービスにおける「パフォーマンス」の測定対象として、一般的なものはどれか。
+<br>
+                        <div class="option">ア. 従業員の給与体系と福利厚生の充実度</div>
+                        <div class="option">イ. Webサイトの読み込み速度やサーバーの応答時間</div>
+                        <div class="option">ウ. 企業の年間売上高と利益率の推移</div>
+                        <div class="option">エ. 法令遵守のためのコンプライアンス規程の策定状況</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】パフォーマンスは、システムやアプリケーションがどれだけ迅速に動作するか、またはリクエストに応えられるかを示す指標であり、読み込み速度や応答時間が該当します。</div></td>
+                    <td>                        <strong>【問】</strong>關於IT服務中「效能（Performance）」的測量對象，下列何者最為一般？
+<br>
+                        <div class="option">A. 員工的薪資體系與福利完善度</div>
+                        <div class="option">B. 網站的讀取速度或伺服器的回應時間</div>
+                        <div class="option">C. 企業年度營業額與利潤率的變化</div>
+                        <div class="option">D. 為遵守法令而制定的合規規範制定狀況</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】效能是指系統或應用程式運作的速度或回應請求的能力，讀取速度與回應時間均屬此範疇。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 3 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">サービスの報告</div>
+                <div class="term-reading">さーびすのほうこく</div>
+                <div class="term-zh">服務報告</div>
+                <div class="term-en">Service Report</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">提供されたサービスの内容やその結果をまとめて報告する文書やプロセスを指す。</div>
+                <div class="summary-zh">指彙整所提供服務內容及其結果並進行報告的文件或流程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「サービスの報告」の目的に関する記述として、適切なものはどれか。
+<br>
+                        <div class="option">ア. 製品の規格に適合しない不適合品を廃棄処分すること。</div>
+                        <div class="option">イ. 顧客に対して透明性を持たせ、サービスの質や結果を報告して信頼関係を築くこと。</div>
+                        <div class="option">ウ. 業務プロセスにおいて少しずつ改善を積み重ねること。</div>
+                        <div class="option">エ. 時間とともに変わるデータの変化やパターンを分析すること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】サービスの報告は、提供されたサービスの内容や結果をまとめて報告する文書やプロセスであり、顧客に対する透明性の確保や信頼関係の構築に重要です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「服務報告（Service Report）」目的的敘述，下列何者適當？
+<br>
+                        <div class="option">A. 將不符合產品規格之不良品進行廢棄處分。</div>
+                        <div class="option">B. 對客戶保持透明度，報告服務品質與結果以建立信任關係。</div>
+                        <div class="option">C. 在業務流程中逐步累積改善。</div>
+                        <div class="option">D. 分析隨時間改變的資料變化與模式。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】服務報告是指彙整並報告所提供服務內容與結果的文件或流程，對確保對客戶的透明度及建立信任關係至關重要。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 4 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">傾向情報</div>
+                <div class="term-reading">けいこうじょうほう</div>
+                <div class="term-zh">趨勢資訊</div>
+                <div class="term-en">Trend Information</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">特定のデータやイベントの変化やパターンを示す情報であり、顧客の行動やニーズの把握に活用される。</div>
+                <div class="summary-zh">顯示特定資料或事件變化與模式的資訊，主要用於掌握客戶行為或需求的變化。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>サービスの報告において「傾向情報」を活用する目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. システムのハードウェア障害を物理的に修復するため</div>
+                        <div class="option">イ. 顧客の行動やニーズの変化を把握し、効果的なサービス提供や経営判断に役立てるため</div>
+                        <div class="option">ウ. 製品が要求事項を満たさない不適合の根本原因を取り除くため</div>
+                        <div class="option">エ. サービス提供時間を短縮し、コストを完全にゼロにするため</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】傾向情報はデータやイベントの変化やパターンを示し、顧客の行動やニーズの変化を把握して経営判断や効果的なサービス提供に役立ちます。</div></td>
+                    <td>                        <strong>【問】</strong>在服務報告中運用「趨勢資訊（Trend Information）」的目的，下列何者最為適當？
+<br>
+                        <div class="option">A. 從物理上修復系統的硬體故障</div>
+                        <div class="option">B. 掌握客戶行為或需求的變化，有助於提供有效服務與經營決策</div>
+                        <div class="option">C. 消除產品不符合要求事項的根本原因</div>
+                        <div class="option">D. 縮短服務提供時間並將成本完全歸零</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】趨勢資訊顯示資料或事件的變化與模式，主要用於掌握客戶行為與需求的變化，支援企業的經營決策與服務提供。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="group-container">
+        <div class="group-header">品質改善與不適合管理</div>
+        
+        <!-- Term 5 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">不適合及び是正処置</div>
+                <div class="term-reading">ふてきごうおよびぜせいしょち</div>
+                <div class="term-zh">不符合與矯正措施</div>
+                <div class="term-en">Nonconformity and Corrective Action</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">要求事項を満たさない状態（不適合）の原因を特定し、再発防止のためのアクション（是正処置）を行う品質管理の概念。</div>
+                <div class="summary-zh">識別未滿足要求事項狀態（不符合）之原因，並採取預防再發之具體行動（矯正措施）的品質管理概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>品質管理における「是正処置」の説明として、適切なものはどれか。
+<br>
+                        <div class="option">ア. サービスがどれだけ迅速に動作するかを測定すること。</div>
+                        <div class="option">イ. 顧客に対して提供されたサービスの結果を文書で報告すること。</div>
+                        <div class="option">ウ. 発生した不適合の原因を特定し、その根本原因を取り除いて再発を防止すること。</div>
+                        <div class="option">エ. 時間とともに変わるデータの変化やパターンを分析すること。</div>
+                        <div class="answer">正解：ウ</div>
+<br>
+                        <div class="analysis">【解説】是正処置とは、不適合の根本原因を取り除くための具体的なアクションであり、再発防止やプロセス改善を促します。</div></td>
+                    <td>                        <strong>【問】</strong>關於品質管理中「矯正措施（Corrective Action）」的說明，下列何者適當？
+<br>
+                        <div class="option">A. 測量服務運作的速度有多快。</div>
+                        <div class="option">B. 以文件向客戶報告所提供服務的結果。</div>
+                        <div class="option">C. 識別已發生不符合的原因，去除其根本原因以預防再發。</div>
+                        <div class="option">D. 分析隨時間改變的資料變化與模式。</div>
+                        <div class="answer">正確答案：C</div>
+<br>
+                        <div class="analysis">【解析】矯正措施是為了去除不符合之根本原因而採取的具體行動，旨在預防再發並促成流程改善。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Term 6 -->
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">継続的改善</div>
+                <div class="term-reading">けいぞくてきかいぜん</div>
+                <div class="term-zh">持續改善</div>
+                <div class="term-en">Continuous Improvement</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">業務プロセスや製品の品質を持続的に向上させるための手法であり、少しずつ改善を積み重ねる。</div>
+                <div class="summary-zh">持續提升業務流程或製品品質的手法，透過逐步累積改善來取得長期成果。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        <strong>【問】</strong>「継続的改善」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 一度決定した業務プロセスを一切変更せず維持すること。</div>
+                        <div class="option">イ. 少しずつ改善を積み重ねることで、長期的に組織全体のパフォーマンス向上や競争力強化を目指すこと。</div>
+                        <div class="option">ウ. 製品が要求事項を満たさない不適合が発生した際に出荷を停止すること。</div>
+                        <div class="option">エ. 特定のイベントやデータの変化に基づいて売上予測を立てること。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">【解説】継続的改善は、少しずつ改善を積み重ねることで持続的に品質や業務プロセスを向上させ、組織全体のパフォーマンスや競争力を高める手法です。</div></td>
+                    <td>                        <strong>【問】</strong>關於「持續改善（Continuous Improvement）」的敘述，下列何者最為適當？
+<br>
+                        <div class="option">A. 將一旦決定好的業務流程維持不變。</div>
+                        <div class="option">B. 透過逐步累積改善，長期達到提升組織整體效能與增強競爭力的目標。</div>
+                        <div class="option">C. 當發生產品不符合要求事項時停止出貨。</div>
+                        <div class="option">D. 根據特定事件或資料變化來預測銷售額。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">【解析】持續改善是透過持續不斷地累積小規模改善，來提升品質與業務流程，進而增強組織競爭力的手法。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

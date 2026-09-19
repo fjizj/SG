@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトの調達 - 1語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトの調達 - 1語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案採購管理領域</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">調達の対象群</div>
+                <div class="term-reading">ちょうたつのたいしょうぐん</div>
+                <div class="term-zh">採購管理領域（採購對象群）</div>
+                <div class="term-en">Procurement Item Group</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">調達計画の策定、供給者の選定、契約履行の運営管理という一連の調達プロセスを体系的に分類したもの。</div>
+                <div class="summary-zh">將制定採購計畫、評選與遴選供應商，以及進行履約營運管理等一連串採購流程進行系統化分類的範疇。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトマネジメントにおける調達のプロセスに関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 調達計画の策定、供給者の選定、契約の履行および運営管理という一連のプロセスで構成される。</div>
+                        <div class="option">イ. 外部から調達するすべての物品やサービスは、価格のみを基準に選定しなければならない。</div>
+                        <div class="option">ウ. 契約締結後の運営管理は供給者の責任であり、プロジェクト側で監視・制御する必要はない。</div>
+                        <div class="option">エ. 自社で完全に内製できる作業であっても、必ず外部ベンダーへ発注しなければならない。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：調達マネジメント（調達の対象群）は、何を・いつ・どのように調達するかを決定する「計画」、最適なベンダーを選ぶ「選定」、そして契約通りに作業が進んでいるかを監視する「運営管理」のプロセスで構成されます。</div></td>
+                    <td>                        【題目】關於專案管理中的採購流程說明，下列何者最恰當？
+<br>
+                        <div class="option">A. 由制定採購計畫、評選供應商，以及進行合約履行與營運管理等一連串流程所組成。</div>
+                        <div class="option">B. 所有自外部採購的物品或服務，皆必須單純以「價格」作為唯一的評選標準。</div>
+                        <div class="option">C. 簽訂合約後的營運管理屬於供應商的責任，專案團隊無須進行監控與管制。</div>
+                        <div class="option">D. 即使是企業內部完全有能力自製的工作，也必須強制外包給外部廠商處理。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：採購管理（採購對象群）包含了明確採購需求與時程的「採購計畫」、透過入札評選最適廠商的「供給者選定」，以及監督履約品質與支出的「營運管理」等核心環節。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

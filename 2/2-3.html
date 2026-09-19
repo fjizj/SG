@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>労働関連・取引関連法規 - 14語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>労働関連・取引関連法規 - 14語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+  <!-- 第一組：勞動與派遣相關法規 -->
+  <div class="group-container">
+    <div class="group-header">勞動與派遣相關法規</div>
+
+    <!-- 就業規則 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">就業規則</div>
+        <div class="term-reading">しゅうぎょうきそく</div>
+        <div class="term-zh">工作規則 / 就業規則</div>
+        <div class="term-en">Work Rules</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">労働基準法に基づき、企業が従業員の労働条件や職場のルール（勤務時間、賃金、休日等）を定めた文書。<br>従業員が安心して働ける環境を整え、労使トラブルを未然に防ぐ重要な役割を果たす。</div>
+        <div class="summary-zh">企業依據勞動基準法訂定，明確規範工作時間、薪資、休假與職場紀律等勞動條件。<br>旨在提供公平且保障之工作環境，並有效防範雇主與勞工之間的勞資爭議。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 常時10人以上の労働者を使用する事業場において、使用者が作成し行政官庁に届け出なければならないものはどれか。
+<br>
+              <div class="option">ア. 雇用契約書</div>
+              <div class="option">イ. 就業規則</div>
+              <div class="option">ウ. 36協定</div>
+              <div class="option">エ. 派遣契約書</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】労働基準法第89条により、常時10人以上の労働者を使用する事業場では就業規則の作成と行政官庁への届出が義務付けられています。</div></td>
+            <td>              Q: 在經常僱用10人以上勞工的事業場所，雇主依法必須制定並陳報行政機關的文件為何？
+<br>
+              <div class="option">A. 雇用契約書</div>
+              <div class="option">B. 工作規則</div>
+              <div class="option">C. 36協定</div>
+              <div class="option">D. 派遣契約書</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】根據日本勞動基準法第89條，經常僱用10名以上勞工之事業場，雇主有義務制定工作規則（就業規則）並陳報主管機關。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 労働者 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">労働者</div>
+        <div class="term-reading">ろうどうしゃ</div>
+        <div class="term-zh">勞工 / 勞動者</div>
+        <div class="term-en">Worker</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">職業の種類を問わず、事業または事務所に使用され、賃金を支払われる者を指す。<br>独立した自営業者とは異なり、使用者の指揮命令のもとで労働を提供し法律で保護される。</div>
+        <div class="summary-zh">不論職業種類，受僱於事業單位或事務所並獲取薪資報酬之人員。<br>與獨立個人事業主不同，勞工受雇主指揮監督，其法定權利受勞動法規保障。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 労働基準法における「労働者」の定義として、適切なものはどれか。
+<br>
+              <div class="option">ア. 職業の種類を問わず、事業に使用され、賃金を支払われる者</div>
+              <div class="option">イ. 会社の役員や取締役全般</div>
+              <div class="option">ウ. 独立して請負業務を行う個人事業主</div>
+              <div class="option">エ. 株主配当のみを得ている者</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】労働基準法第9条において、労働者とは「職業の種類を問わず、事業又は事務所に使用され、賃金を支払われる者」と定義されています。</div></td>
+            <td>              Q: 下列何者符合勞動基準法中「勞工」的定義？
+<br>
+              <div class="option">A. 不論職業種類，受僱於事業單位並獲付薪資報酬者</div>
+              <div class="option">B. 公司之全體董事及高階管理幹部</div>
+              <div class="option">C. 獨立承攬業務的個人事業主</div>
+              <div class="option">D. 僅獲取股利分紅之純股東</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】勞動基準法第9條明確定義，勞工係指不論職業類別，受僱於事業單位並獲得工資報酬之人。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 派遣先 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">派遣先</div>
+        <div class="term-reading">はけんさき</div>
+        <div class="term-zh">要派企業 / 派遣目的地</div>
+        <div class="term-en">Dispatching Destination</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">派遣会社から派遣された労働者を受け入れ、実際に業務上の指揮命令を行う企業や組織。<br>労働環境の整備や安全配慮など、派遣労働者が安心して働ける環境を提供する責任を負う。</div>
+        <div class="summary-zh">接受派遣公司派駐之勞工，並在實際工作現場對其行使業務指揮命令之企業或組織。<br>負有維護工作環境安全與提供適當勞動條件之法律責任。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 労働者派遣において、派遣労働者に対して直接業務上の指揮命令を行うのはどこか。
+<br>
+              <div class="option">ア. 派遣元</div>
+              <div class="option">イ. 派遣先</div>
+              <div class="option">ウ. 職業安定所</div>
+              <div class="option">エ. 労働基準監督署</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】派遣労働者は派遣元と雇用関係にありますが、実際の現場で業務上の指揮命令を行うのは「派遣先」です。</div></td>
+            <td>              Q: 在勞工派遣架構中，直接對派遣勞工下達業務指揮命令的是哪一方？
+<br>
+              <div class="option">A. 派遣單位（派遣元）</div>
+              <div class="option">B. 要派單位（派遣先）</div>
+              <div class="option">C. 職業介紹所</div>
+              <div class="option">D. 勞動監督機關</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】派遣勞工雖與派遣元簽署僱用契約，但在實際工作場所直接發行業務指示與指揮命令的是要派單位（派遣先）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 派遣元 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">派遣元</div>
+        <div class="term-reading">はけんもと</div>
+        <div class="term-zh">派遣單位 / 派遣公司</div>
+        <div class="term-en">Dispatching Source</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">派遣労働者と雇用契約を結び、労働者を必要とする派遣先企業へ派遣する元の企業。<br>給与の支払い、社会保険の手続き、キャリア形成支援など雇主としての義務を負う。</div>
+        <div class="summary-zh">與派遣勞工建立正式僱用關係，並將其派往要派企業提供勞務之派遣公司。<br>承擔發放薪資、辦理勞健保及保障勞工權益等雇主法定義務。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 労働者派遣において、派遣労働者と雇用契約を結び給料を支払う主体はどれか。
+<br>
+              <div class="option">ア. 派遣元</div>
+              <div class="option">イ. 派遣先</div>
+              <div class="option">ウ. 発注者</div>
+              <div class="option">エ. 受託者</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】派遣労働者と直接雇用契約を結び、給料の支払増や社会保険の適用を行うのは派遣元（派遣会社）です。</div></td>
+            <td>              Q: 在勞工派遣關係中，與派遣勞工簽署僱用契約並負責發放薪資的主體為何？
+<br>
+              <div class="option">A. 派遣單位（派遣元）</div>
+              <div class="option">B. 要派單位（派遣先）</div>
+              <div class="option">C. 發包方</div>
+              <div class="option">D. 受託方</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】負責與派遣勞工締結僱用契約、發給薪資報酬及處理勞健保者為派遣公司（派遣元）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 派遣契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">派遣契約</div>
+        <div class="term-reading">はけんけいやく</div>
+        <div class="term-zh">勞務派遣契約</div>
+        <div class="term-en">Labor Dispatch Contract</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">派遣元企業と派遣先企業との間で締結される、労働者派遣に関する商業者間契約。<br>派遣労働者の業務内容、派遣期間、料金、指揮命令者の指定などを明確に定める。</div>
+        <div class="summary-zh">由派遣公司與要派企業所簽訂之企業間商業契約。<br>合約中明確規定派遣勞工之服務內容、派遣期間、費用及指揮命令權人等事項。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 労働者派遣契約に関する記述として、適切なものはどれか。
+<br>
+              <div class="option">ア. 派遣先と派遣労働者との間に雇用契約が成立する。</div>
+              <div class="option">イ. 派遣元と派遣先との間で労働者派遣契約を締結する。</div>
+              <div class="option">ウ. 派遣労働者は派遣元から直接指揮命令を受ける。</div>
+              <div class="option">エ. 成果物の完成に対して報酬が支払われる。</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】労働者派遣では、派遣元と派遣先の間で「労働者派遣契約」を締結し、派遣先が現場で指揮命令を行います。</div></td>
+            <td>              Q: 關於勞務派遣契約的敘述，下列何者正確？
+<br>
+              <div class="option">A. 要派企業與派遣勞工之間直接成立僱用契約</div>
+              <div class="option">B. 由派遣公司與要派企業簽訂勞務派遣契約</div>
+              <div class="option">C. 派遣勞工由派遣公司直接在現場指揮命令</div>
+              <div class="option">D. 根據最終完成之工作成果支付報酬</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】勞務派遣係由派遣元與派遣先簽署派遣契約；雇用關係存在於派遣元與勞工之間，指揮命令權由派遣先行使。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 雇用契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">雇用契約</div>
+        <div class="term-reading">こようけいやく</div>
+        <div class="term-zh">僱用契約 / 聘僱合約</div>
+        <div class="term-en">Employment Contract</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">労働者が使用者に従属して労働を提供し、使用者がこれに対して報酬（賃金）を支払う契約。<br>労働条件を明確にし、労働者の権利保護と労使間トラブル防止を図る基本契約である。</div>
+        <div class="summary-zh">勞工提供勞務、雇主給付工資報酬之雙務法律契約。<br>明確規範工作內容、薪資與工時，為保障勞動權益與預防勞資爭議之基本依據。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 労働者が特定の業務に従事し、事業主が労働に対して賃金を支払うことを約束する契約はどれか。
+<br>
+              <div class="option">ア. 請負契約</div>
+              <div class="option">イ. 準委任契約</div>
+              <div class="option">ウ. 雇用契約</div>
+              <div class="option">エ. 秘密保持契約</div>
+              <div class="answer">【正解】ウ</div>
+<br>
+              <div class="analysis">【解説】当事者の一方が労働に従事し、相手方がこれに対して報酬を支払うことを約束する契約を雇用契約と呼びます。</div></td>
+            <td>              Q: 勞工承諾從事特定業務，雇主承諾對該勞務給付薪資報酬之契約稱為？
+<br>
+              <div class="option">A. 承攬契約</div>
+              <div class="option">B. 準委任契約</div>
+              <div class="option">C. 僱用契約</div>
+              <div class="option">D. 保密契約</div>
+              <div class="answer">【答案】(C)</div>
+<br>
+              <div class="analysis">【解析】民法與勞動法規定，一方提供勞務、他方支付工資報酬者為僱用契約。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 指揮命令 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">指揮命令</div>
+        <div class="term-reading">しきめいれい</div>
+        <div class="term-zh">指揮命令權</div>
+        <div class="term-en">Command and Control</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">業務の具体的内容、手順、時間配分などについて労働者に指示を出し管理する権限。<br>派遣契約では派遣先が持つが、請負契約で発注者が行うと「偽装請負」となり違法となる。</div>
+        <div class="summary-zh">針對業務具體執行細節、步驟與時間分配，對工作人員下達指示與管理之權限。<br>派遣契約中由要派企業行使，若在承攬（請負）契約中由發包方行使則構成違法「偽裝承攬」。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 請負契約において、発注者が受注者の従業員に対して直接「指揮命令」を行った場合に発生する法的な問題はどれか。
+<br>
+              <div class="option">ア. 偽装請負</div>
+              <div class="option">イ. 著作権侵害</div>
+              <div class="option">ウ. ボリュームライセンス違反</div>
+              <div class="option">エ. 不正競争</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】請負契約でありながら発注者が受注者の労働者に直接指揮命令を行う状態は「偽装請負」となり、労働者派遣法違反となります。</div></td>
+            <td>              Q: 在承攬契約（請負）中，若發包方直接對承包方的員工行使「指揮命令」，會引發何種法律違規問題？
+<br>
+              <div class="option">A. 偽裝承攬</div>
+              <div class="option">B. 侵害著作權</div>
+              <div class="option">C. 違反大量授權</div>
+              <div class="option">D. 不公平競爭</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】承攬契約下發包方不可直接指揮命令承攬方員工，否則構成「偽裝承攬（偽装請負）」，違反勞工派遣法規。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第二組：系統委託與契約形態 -->
+  <div class="group-container">
+    <div class="group-header">系統委託與契約形態</div>
+
+    <!-- 準委任契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">準委任契約</div>
+        <div class="term-reading">じゅんいにんけいやく</div>
+        <div class="term-zh">準委任契約</div>
+        <div class="term-en">Quasi-Mandate Contract</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">仕事の完成義務を負わず、一定の業務処理そのものを委託する契約形式。<br>受託者は「善管注意義務」を果たして業務を誠実に遂行することが求められる。</div>
+        <div class="summary-zh">委託處理法律行為以外業務之契約，受託人無完成特定成果物之法律義務。<br>受託人須盡「善良管理人注意義務」盡責執行業務，依履行過程請求報酬。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: システム開発における「準委任契約」の特徴として、適切なものはどれか。
+<br>
+              <div class="option">ア. 成果物の完成と納品義務を負う。</div>
+              <div class="option">イ. 善管注意義務をもって指定された業務を遂行する。</div>
+              <div class="option">ウ. 発注者が受注者の労働者に直接指揮命令する。</div>
+              <div class="option">エ. 契約不適合責任を必ず負う。</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】準委任契約では仕事の完成義務はなく、善管注意義務を果たして業務を行うことで対価が発生します。</div></td>
+            <td>              Q: 在系統開發中，「準委任契約」的特徵下列何者正確？
+<br>
+              <div class="option">A. 負有完成並交付成果物之義務</div>
+              <div class="option">B. 須盡善良管理人注意義務執行指定業務</div>
+              <div class="option">C. 發包方得直接對受託方的員工進行指揮命令</div>
+              <div class="option">D. 必然承擔契約不適合責任（瑕疵擔保）</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】準委任契約重在過程與盡責履行（善良管理人注意義務），而非保證最終成果完成。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 請負契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">請負契約</div>
+        <div class="term-reading">うけおいけいやく</div>
+        <div class="term-zh">承攬契約 / 請負契約</div>
+        <div class="term-en">Contract for Work</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">受注者が指定された仕事を完成させることを約束し、発注者がその成果に対して対価を支払う契約。<br>仕事の完成義務や納品後の契約不適合責任（瑕疵担保責任）が発生する。</div>
+        <div class="summary-zh">承包方承諾完成特定工作成果，發包單位於成果交付後支付報酬之契約。<br>承攬人須負擔「工作完成義務」及交付後之「契約不適合責任（瑕疵擔保）」。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: ITシステム開発の請負契約において、受注者の責任として適切なものはどれか。
+<br>
+              <div class="option">ア. 成果物を完成させる義務を負う。</div>
+              <div class="option">イ. 発注者からの直接の指揮命令に従う。</div>
+              <div class="option">ウ. 作業時間に応じたタイムカード管理を行う。</div>
+              <div class="option">エ. 発注者の社内規程を全面的に適用する。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】請負契約は「仕事の完成」を約束する契約であるため、受注者は成果物を完成させて納品する義務を負います。</div></td>
+            <td>              Q: 在IT系統開發的承攬契約（請負契約）中，下列何者為承包方的核心責任？
+<br>
+              <div class="option">A. 負有完成特定成果物之義務</div>
+              <div class="option">B. 必須服從發包方的直接指揮命令</div>
+              <div class="option">C. 依據工作時間進行打卡考勤管理</div>
+              <div class="option">D. 完全適用發包單位的內部工作規則</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】承攬契約以「工作之完成」為標的，受託人必須完成合約約定之成果物始得請求報酬。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ソフトウェア開発委託モデル契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ソフトウェア開発委託モデル契約</div>
+        <div class="term-reading">そふとうぇあかいはついたくもでるけいやく</div>
+        <div class="term-zh">軟體開發委託範本契約</div>
+        <div class="term-en">Software Development Outsourcing Model Contract</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">経済産業省等が策定した、ソフトウェア開発の適正取引やトラブル防止のための標準契約モデル。<br>要件定義から開発・テストまでの各工程ごとに適切な契約形態（請負・準委任）を推奨する。</div>
+        <div class="summary-zh">由日本經濟產業省等機構制定，旨在促進軟體委外開發交易公平與減少爭議之標準合約範本。<br>主張將開發分為多階段，並按各階段特性選擇適當契約形態（承攬或準委任）。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 経済産業省が策定した「ソフトウェア開発委託モデル契約」における推奨事項として適切なものはどれか。
+<br>
+              <div class="option">ア. 開発工程を分割し、工程ごとに適した契約を結ぶ「段階的契約」の導入</div>
+              <div class="option">イ. 要件定義から運用までを一括して単一の請負契約で締結すること</div>
+              <div class="option">ウ. 発注者が受注者従業員へ直接指示を出すことの推奨</div>
+              <div class="option">エ. 著作権を無条件で発注者に帰属させることの強制</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】モデル契約ではリスク軽減のため要件定義、設計、開発等の工程ごとに契約を分ける「段階的契約」を推奨しています。</div></td>
+            <td>              Q: 關於日本經濟產業省制定之「軟體開發委託標準範本契約」，下列何者為其推薦做法？
+<br>
+              <div class="option">A. 採用將開發工程拆分、按階段簽署合宜契約之「分段式契約」</div>
+              <div class="option">B. 從需求定義至維運統一簽署單一打包之承攬契約</div>
+              <div class="option">C. 鼓勵發包方直接對承攬方員工下達工作指示</div>
+              <div class="option">D. 強制規定軟體著作權一律無條件歸屬於發包方</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】軟體開發範本契約推廣將開發過程劃分為多階段（如需求定義、設計、實作）之「階段的契約」，以降低專案失敗風險。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 情報システム・モデル取引・契約書 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">情報システム・モデル取引・契約書</div>
+        <div class="term-reading">じょうほうしすてむ・もでるとりひき・けいやくしょ</div>
+        <div class="term-zh">資訊系統標準交易與契約文書</div>
+        <div class="term-en">Information System, Model Transaction, Contract Document</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">システム開発プロセスの可視化と取引の適正化を目的に作成されたガイドラインおよび契約文書。<br>発注者と受注者の役割分担を明確にし、要件の曖昧さによるトラブルを防ぐ。</div>
+        <div class="summary-zh">為增進系統開發過程之透明度與交易公平性所建立之指引及契約範本。<br>明確釐清發包方與承包方之責任分工，有效避免因需求不明確所引發之履約爭議。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 「情報システム・モデル取引・契約書」において、要件定義工程の契約形態として推奨されているものはどれか。
+<br>
+              <div class="option">ア. 請負契約</div>
+              <div class="option">イ. 準委任契約</div>
+              <div class="option">ウ. 雇用契約</div>
+              <div class="option">エ. 派遣契約</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】要件定義工程は不確定要素が残るため、成果物の完成を保証する請負よりも、専門的作業の遂行を目的とする「準委任契約」が推奨されます。</div></td>
+            <td>              Q: 在「資訊系統標準交易與契約文書」指引中，對於「需求定義（要件定義）階段」通常推薦採用何種契約形態？
+<br>
+              <div class="option">A. 承攬契約（請負）</div>
+              <div class="option">B. 準委任契約</div>
+              <div class="option">C. 僱用契約</div>
+              <div class="option">D. 派遣契約</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】因需求定義階段之具體產出與不確定性較高，指引建議採用重在專家盡責溝通與梳理之「準委任契約」。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第三組：智慧財產權與軟體授權法規 -->
+  <div class="group-container">
+    <div class="group-header">智慧財產權與軟體授權法規</div>
+
+    <!-- 守秘契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">守秘契約</div>
+        <div class="term-reading">しゅひけいやく</div>
+        <div class="term-zh">保密協定 / 守秘契約 (NDA)</div>
+        <div class="term-en">Non-Disclosure Agreement</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">取引や開発の過程で開示された機密情報を、第三者に漏洩・開示しないことを義務付ける契約（NDA）。<br>新技術の情報、顧客リスト、事業計画などの流出を防ぎ、企業の競争力を保護する。</div>
+        <div class="summary-zh">規範雙方在業務交流或合作研發過程中所獲悉之商業與技術機密不得外洩予第三方（NDA）。<br>防止新技術、客戶名單及業務計畫等核心資產外洩，以維護企業競爭優勢。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 企業間で秘密情報を共有して共同開発を行う際に、情報漏洩防止のために事前に締結する契約はどれか。
+<br>
+              <div class="option">ア. SLA</div>
+              <div class="option">イ. NDA</div>
+              <div class="option">ウ. MOU</div>
+              <div class="option">エ. 労働者派遣契約</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】NDA（Non-Disclosure Agreement）は秘密保持契約（守秘契約）であり、取引や共同開発で得た機密情報の流出を防ぎます。</div></td>
+            <td>              Q: 企業間在共享機密資訊進行共同開發前，為防止資訊外洩所簽署之合約稱為？
+<br>
+              <div class="option">A. SLA</div>
+              <div class="option">B. NDA</div>
+              <div class="option">C. MOU</div>
+              <div class="option">D. 勞工派遣契約</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】NDA (Non-Disclosure Agreement) 即保密協定（守秘契約），用於限定機密資訊使用範圍與防範外洩。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ボリュームライセンス契約 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ボリュームライセンス契約</div>
+        <div class="term-reading">ぼりゅーむらいせんすけいやく</div>
+        <div class="term-zh">大量授權合約</div>
+        <div class="term-en">Volume License Agreement</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">企業や教育機関がソフトウェアを多数のPCに導入する際、まとめて購入・管理する契約形態。<br>個別にパッケージを購入するより導入コストを低減でき、プロダクトキーの一括管理が可能。</div>
+        <div class="summary-zh">企業或教育機構集中採購軟體授權，允許在多台電腦安裝使用並進行統一管理之合約。<br>相比個別購買實體包裝能大幅降低採購成本，並利於統一管理金鑰與版本更新。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 企業などがソフトウェアを大量に導入する際に、まとめてライセンスを購入しコスト削減と管理の効率化を図る契約形態はどれか。
+<br>
+              <div class="option">ア. シュリンクラップライセンス</div>
+              <div class="option">イ. ボリュームライセンス</div>
+              <div class="option">ウ. フリーウェアライセンス</div>
+              <div class="option">エ. サイトライセンス</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】ボリュームライセンスは、企業等が複数のライセンスをまとめて購入し、低コストかつ効率的に管理する契約です。</div></td>
+            <td>              Q: 企業集中採購大量軟體時，為簡化授權管理並降低成本所採用的合約形式稱為？
+<br>
+              <div class="option">A. 拆封授權 (Shrink-wrap)</div>
+              <div class="option">B. 大量授權 (Volume License)</div>
+              <div class="option">C. 軟體免費授權 (Freeware)</div>
+              <div class="option">D. 全校/全廠授權 (Site License)</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】大量授權（Volume License）供企業一次購入多個授權數，簡化金鑰與授權管理。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- コピーレフト -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">コピーレフト</div>
+        <div class="term-reading">こぴーれふと</div>
+        <div class="term-zh">著佐權 / Copyleft</div>
+        <div class="term-en">Copyleft</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">著作権（Copyright）の考え方を反転させ、著作物の利用・改変・再配布の自由を保障する概念。<br>改変して再配布するソフトウェアにも同一のライセンス条件を適用させることが義務付けられる。</div>
+        <div class="summary-zh">翻轉傳統著作權觀念，保障大眾自由使用、修改與再散布作品之權利。<br>規定衍生二次開發之軟體作品亦必須採用相同授權條款開放，以維護軟體自由 Sharing 精神。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: オープンソースソフトウェアのライセンス概念であり、プログラムの改変物にも同じライセンスを適用させて配布を求める考え方はどれか。
+<br>
+              <div class="option">ア. コピーレフト</div>
+              <div class="option">イ. パブリックドメイン</div>
+              <div class="option">ウ. 著作権の放棄</div>
+              <div class="option">エ. 特許権の保護</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】コピーレフト（GPLなど）は、改変したソフトウェアを再配布する際にも同様のオープンライセンスを適用させる概念です。</div></td>
+            <td>              Q: 在開放原始碼軟體授權中，要求對程式進行修改後的衍生作品也必須採用相同授權條款開放發布的觀念稱為？
+<br>
+              <div class="option">A. 著佐權 (Copyleft)</div>
+              <div class="option">B. 公有領域 (Public Domain)</div>
+              <div class="option">C. 放棄著作權</div>
+              <div class="option">D. 專利權保護</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Copyleft（如 GNU GPL）的核心是繼承性，要求修改後再發布的軟體亦須維持相同的開放授權條件。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

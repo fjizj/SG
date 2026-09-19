@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトのリスク - 2語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトのリスク - 2語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案風險與風險管理體系</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プロジェクトの全体リスクと個別リスク</div>
+                <div class="term-reading">ぷろじぇくとのぜんたいりすくとこべつりすく</div>
+                <div class="term-zh">專案整體風險與個別風險</div>
+                <div class="term-en">Overall and Individual Project Risks</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクト全体に影響を与える不確実性（全体リスク）と、特定の作業や要素に起因する要因（個別リスク）を区別して評価・管理する概念。</div>
+                <div class="summary-zh">將影響整個專案的總體不確定性（整體風險）與源於特定作業的因素（個別風險）加以區分並進行評估與管理的概念。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトのリスク管理において、「全体リスク」と「個別リスク」に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 全体リスクは特定のタスクにのみ影響し、個別リスクはプロジェクト全体に影響を与える。</div>
+                        <div class="option">イ. 全体リスクはプロジェクト全体の不確実性の影響を表し、個別リスクは特定のアクティビティや事象に起因する。</div>
+                        <div class="option">ウ. 個別リスクの合計が必ず全体リスクと一致するため、全体リスクの評価は不要である。</div>
+                        <div class="option">エ. 全体リスクはプロジェクト完了後にのみ評価し、個別リスクは計画段階でのみ評価する。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：全体リスク（Overall Project Risk）は、すべての不確実性の源泉から生じるプロジェクト全体への影響を表します。一方、個別リスク（Individual Project Risk）は特定の特定可能な事象や状態に起因します。</div></td>
+                    <td>                        【題目】在專案風險管理中，關於「整體風險」與「個別風險」的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 整體風險僅影響特定任務，而個別風險影響整個專案。</div>
+                        <div class="option">B. 整體風險代表所有不確定性對專案整體的影響，個別風險則源於特定的活動或事件。</div>
+                        <div class="option">C. 個別風險的總和必然等於整體風險，因此不需要評估整體風險。</div>
+                        <div class="option">D. 整體風險僅在專案結束後評估，個別風險僅在規劃階段評估。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：整體專案風險（Overall Project Risk）代表專案作為一個整體受到的不確定性影響；個別專案風險（Individual Project Risk）則是若發生會對一個或多個專案目標產生正面或負面影響的特定事件。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">リスクの対象群</div>
+                <div class="term-reading">りすくのたいしょうぐん</div>
+                <div class="term-zh">風險管理領域（風險對象群）</div>
+                <div class="term-en">Risk Target Group</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">リスクの特定、評価、対応計画の策定、監視・コントロールというリスク管理の一連のプロセス群。</div>
+                <div class="summary-zh">包含風險辨識、評估、應對計畫制定以及監控管制等一連串專案風險管理過程的領域群。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクトにおけるリスク管理（リスクの対象群）のプロセス順序として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. リスクの特定 → リスクの評価（分析） → リスク対応の計画 → リスクの監視・コントロール</div>
+                        <div class="option">イ. リスク対応の計画 → リスクの特定 → リスクの評価 → リスクの監視</div>
+                        <div class="option">ウ. リスクの監視 → リスク対応の計画 → リスクの特定 → リスクの評価</div>
+                        <div class="option">エ. リスクの評価 → リスクの監視 → リスクの特定 → リスク対応の計画</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：リスクマネジメントの基本的な手順は、まず潜在的なリスクを洗い出し（特定）、その影響や発生確率を分析（評価）し、対策を決定（対応計画）した上で、進行に合わせて効果を監視（コントロール）します。</div></td>
+                    <td>                        【題目】關於專案風險管理（風險對象群）的流程順序，下列何者最恰當？
+<br>
+                        <div class="option">A. 辨識風險 → 風險評估（分析） → 規劃風險應對 → 監控風險</div>
+                        <div class="option">B. 規劃風險應對 → 辨識風險 → 風險評估 → 監控風險</div>
+                        <div class="option">C. 監控風險 → 規劃風險應對 → 辨識風險 → 風險評估</div>
+                        <div class="option">D. 風險評估 → 監控風險 → 辨識風險 → 規劃風險應對</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：專案風險管理的標準程序為：辨識風險（Identify Risks）→ 進行定性/定量風險評估（Analyze Risks）→ 制定風險應對計畫（Plan Risk Responses）→ 持續監控與控制風險（Monitor Risks）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

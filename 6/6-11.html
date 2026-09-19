@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトのコミュニケーション - 7語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>プロジェクトのコミュニケーション - 7語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+    <div class="group-container">
+        <div class="group-header">專案溝通管理與溝通管道</div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">コミュニケーションのマネジメント</div>
+                <div class="term-reading">こみゅにけーしょんのまねじめんと</div>
+                <div class="term-zh">溝通管理</div>
+                <div class="term-en">Communication Management</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">プロジェクトに関わる必要な情報を適切かつ計画的に生成・収集・伝達・保管・管理し、関係者間の円滑な意思疎通を図るプロセス。</div>
+                <div class="summary-zh">計畫性地進行專案相關資訊的產生、收集、傳遞、儲存與管理，以確保利害關係人之間溝通順暢的過程。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プロジェクト・コミュニケーション・マネジメントの主な目的として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. プロジェクトの利害関係者に対して、必要な情報をタイムリーかつ適切に生成、収集、配布、保管、管理すること。</div>
+                        <div class="option">イ. プロジェクトで発生するプログラムのバグを自動的に修復すること。</div>
+                        <div class="option">ウ. プロジェクトの予算を超過しないように全コストを削減すること。</div>
+                        <div class="option">エ. チームメンバー全員の労働時間を一律半減させること。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：コミュニケーション・マネジメントは、プロジェクトに必要な情報が適切なタイミングで適切な関係者に生成・伝達・管理されることを確実にするためのプロセスです。</div></td>
+                    <td>                        【題目】關於專案溝通管理的主要目的，下列何者最恰當？
+<br>
+                        <div class="option">A. 確保專案利害關係人所需之資訊能及時且適當地產生、收集、發送、儲存與管理。</div>
+                        <div class="option">B. 自動修復專案中產生的程式碼缺陷。</div>
+                        <div class="option">C. 削減所有成本以確保專案絕不超出預算。</div>
+                        <div class="option">D. 一律將所有團隊成員的工作時間縮減一半。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：專案溝通管理的核心目的在於確保專案資訊的產生、收集、發布、儲存及最終處置能滿足專案與利害關係人的需求。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">双方向コミュニケーション</div>
+                <div class="term-reading">そうほうこうこみゅにけーしょん</div>
+                <div class="term-zh">雙向溝通</div>
+                <div class="term-en">Two-Way Communication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">発信者と受信者が相互に情報を送受信し、リアルタイムでフィードバックや議論を行いながら相互理解を深める手法。</div>
+                <div class="summary-zh">發訊者與接收者相互發送與接收資訊，透過即時回饋與討論來加深彼此理解的手法。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】リアルタイムで意見交換を行い、相互理解や合意形成を促進する「双方向コミュニケーション」の例として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 全社向けのプレスリリース配信</div>
+                        <div class="option">イ. 対面やビデオ会議での質疑応答付きミーティング</div>
+                        <div class="option">ウ. Webサイトへの定型お知らせ文書の掲載</div>
+                        <div class="option">エ. 定期発行される紙の社内報配布</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：双方向（インタラクティブ）コミュニケーションは、参加者がリアルタイムで多対多や1対1のやり取りを行い、即座にフィードバックを得られる対面やビデオ会議などが該当します。</div></td>
+                    <td>                        【題目】關於促進即時意見交流與相互理解的「雙向溝通」，下列範例何者最恰當？
+<br>
+                        <div class="option">A. 向全公司發布新聞稿。</div>
+                        <div class="option">B. 透過面對面或視訊會議進行帶有問答環節的會議。</div>
+                        <div class="option">C. 於網站上張貼定型化的公告文件。</div>
+                        <div class="option">D. 發放定期印刷的企業內部刊物。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：雙向（互動式）溝通是指兩方或多方進行即時的訊息傳遞與回饋，例如面對面會議、電話通話、視訊會議等。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プッシュ型コミュニケーション</div>
+                <div class="term-reading">ぷっしゅがたこみゅにけーしょん</div>
+                <div class="term-zh">推播型溝通</div>
+                <div class="term-en">Push Communication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">送信者が特定の受信者へ直接情報を送り出す方式であり、迅速な情報伝達に適しているが到達・理解の確認は別途必要。</div>
+                <div class="summary-zh">發送者主動將資訊直接發送給特定接收者的模式，適合快速傳達資訊但需額外確認是否理解。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】プッシュ型コミュニケーションの特徴に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 受信者が自ら必要な情報をWebサイト等から検索して取得する。</div>
+                        <div class="option">イ. 送信者が特定の相手に対して直接情報を送信する方式であり、電子メールや一斉通知などが該当する。</div>
+                        <div class="option">ウ. 参加者全員が同時に集まり、リアルタイムで議論を交わす。</div>
+                        <div class="option">エ. 受信者側の情報過多を完全に防ぐことができる。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プッシュ型コミュニケーションは、送信者が主導して特定ターゲットにメッセージを届ける手法（メール、手紙、プレスリリースなど）です。迅速に送信できますが、相手が理解したかを保証するものではありません。</div></td>
+                    <td>                        【題目】關於「推播型溝通（Push Communication）」特性的描述，下列何者最恰當？
+<br>
+                        <div class="option">A. 接收者主動從網站等管道搜尋並取得所需資訊。</div>
+                        <div class="option">B. 發送者直接將資訊發送給特定的對象，例如電子郵件或群發通知。</div>
+                        <div class="option">C. 所有參與者同時聚集並進行即時討論。</div>
+                        <div class="option">D. 能完全避免接收者端產生資訊過載的問題。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：推播型溝通係將資訊確保傳遞給特定接收者，但無法確保訊息已被對方閱讀或理解（如電子郵件、傳真、新聞稿等）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">プル型コミュニケーション</div>
+                <div class="term-reading">ぷるがたこみゅにけーしょん</div>
+                <div class="term-zh">拉取型溝通</div>
+                <div class="term-en">Pull Communication</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">受信者が自身のタイミングで共有ストレージやWebサイトへアクセスし、必要な情報を取得・参照する方式。</div>
+                <div class="summary-zh">接收者依自己的時間與需求，自行存取共享儲存區或網站以取得並參閱所需資訊的模式。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】大量の情報や大人数の受講者に対して、各自のタイミングで情報にアクセスさせる場合に最も適したコミュニケーション手法はどれか。
+<br>
+                        <div class="option">ア. プッシュ型コミュニケーション</div>
+                        <div class="option">イ. プル型コミュニケーション</div>
+                        <div class="option">ウ. 電話による一斉連絡</div>
+                        <div class="option">エ. 1対1の対面面談</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：プル型コミュニケーションは、ポータルサイト、社内Wiki、eラーニングなどのように、受信者が必要に応じて自ら情報を取りに行く形式であり、情報過多を防ぎ大勢へ情報共有するのに適しています。</div></td>
+                    <td>                        【題目】當面對海量資訊或龐大受眾，需要讓每個人依據自己的時間主動存取資訊時，最適合採用下列哪一種溝通手法？
+<br>
+                        <div class="option">A. 推播型溝通（Push Communication）</div>
+                        <div class="option">B. 拉取型溝通（Pull Communication）</div>
+                        <div class="option">C. 電話一次性通知</div>
+                        <div class="option">D. 一對一面談</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：拉取型溝通用於極大的資訊量或極廣廣泛的受眾，受眾可依自由時間主動擷取資訊（如 Web 網站、Knowledge Base、內部 Wiki 等）。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">電子メール</div>
+                <div class="term-reading">でんしめーる</div>
+                <div class="term-zh">電子郵件</div>
+                <div class="term-en">Electronic Mail</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">ネットワークを介してテキストや添付ファイルを特定のアドレスへ送信する、非同期型のプッシュコミュニケーション手段。</div>
+                <div class="summary-zh">透過網路將文字與附件傳送至特定位址的非同步推播型溝通工具。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】ビジネスにおける「電子メール」の利用に関する記述として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 送信者と受信者が同時にオンラインで接続している必要があるリアルタイム通信である。</div>
+                        <div class="option">イ. テキストだけでなくファイル添付が可能であり、記録を残しやすい非同期のプッシュ型コミュニケーション手段である。</div>
+                        <div class="option">ウ. 受信者が自らサーバーを検索して情報を引き出す完全なプル型手段である。</div>
+                        <div class="option">エ. 音声データのみをやり取りするための専用電話サービスである。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：電子メールは送信者が意図した相手へ直接メッセージや資料を送り届ける「プッシュ型」かつ相手が即時応答しなくてもよい「非同期型」の通信手段です。</div></td>
+                    <td>                        【題目】關於商業應用中「電子郵件」的敘述，下列何者最恰當？
+<br>
+                        <div class="option">A. 屬於發送者與接收者必須同時在線的即時通訊工具。</div>
+                        <div class="option">B. 可附帶文字與檔案且易於留存紀錄，屬於非同步的推播型溝通工具。</div>
+                        <div class="option">C. 屬於接收者必須自行檢索伺服器以抓取資訊的純拉取型工具。</div>
+                        <div class="option">D. 專門用於傳送語音數據的電話服務。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：電子郵件可夾帶多媒體附件、留下明確文字紀錄，且收件人可以在方便時開啟，屬於非同步（Asynchronous）的推播型溝通工具。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">ボイスメール</div>
+                <div class="term-reading">ぼいすめーる</div>
+                <div class="term-zh">語音信箱</div>
+                <div class="term-en">Voicemail</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">電話応対ができない場合に音声メッセージを録音し、受取人が後から確認できる非同期型の音声コミュニケーション。</div>
+                <div class="summary-zh">當無法親接電話時供對方錄製語音訊息，以便收件人後續收聽確認的非同步語音溝通工具。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】電話によるコミュニケーションにおいて、相手が応答不能な場合に用いられる「ボイスメール」のメリットとして、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. リアルタイムで相手の表情を確認しながら交渉できる。</div>
+                        <div class="option">イ. 送信者が音声で詳細な要件を残すことができ、受信者は都合の良い時間にメッセージを確認できる。</div>
+                        <div class="option">ウ. 不特定多数のユーザーに対して一斉に自動でテキスト文書を配信できる。</div>
+                        <div class="option">エ. インターネット接続が切断されていても即座に直接対話ができる。</div>
+                        <div class="answer">正解：イ</div>
+<br>
+                        <div class="analysis">解説：ボイスメールは音声メッセージを留守番電話のように録音・蓄積できる仕組みであり、時間的な制約を超えて非同期に音声情報を伝えることができます。</div></td>
+                    <td>                        【題目】在電話溝通中，當對方無法及時接聽時使用「語音信箱（Voicemail）」的主要優點，下列何者最恰當？
+<br>
+                        <div class="option">A. 能即時觀看對方表情並進行談判。</div>
+                        <div class="option">B. 發送者能以語音留下詳細事由，接收者則可在方便的時間收聽訊息。</div>
+                        <div class="option">C. 能向不特定多數使用者自動一次性發送文字文件。</div>
+                        <div class="option">D. 即使網路斷線也能進行即時直接對話。</div>
+                        <div class="answer">正確答案：B</div>
+<br>
+                        <div class="analysis">解析：語音信箱提供非同步的語音訊息存取能力，克服通話雙方時間無法重疊的限制。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="term-card">
+            <div class="term-info">
+                <div class="term-ja">テレビ会議</div>
+                <div class="term-reading">てれびかいぎ</div>
+                <div class="term-zh">視訊會議</div>
+                <div class="term-en">Video Conferencing</div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-ja">遠隔地同士をネットワークで結び、映像と音声をリアルタイムで共有して対面と同等の打ち合わせを行う双方向手段。</div>
+                <div class="summary-zh">透過網路連結遠端據點，即時共享影像與聲音以進行等同面對面開會的雙向溝通工具。</div>
+            </div>
+            <table class="exam-table">
+                <tr>
+                    <td>                        【問題】遠隔地のメンバー間で実施される「テレビ会議（ビデオ会議）」の利点として、最も適切なものはどれか。
+<br>
+                        <div class="option">ア. 移動コストや時間を削減しながら、映像・音声・画面共有を用いてリアルタイムな双方向コミュニケーションができる。</div>
+                        <div class="option">イ. 受信者がいつでも好きな時に情報を探して閲覧できるプル型メディアである。</div>
+                        <div class="option">ウ. 文字テキストのみの伝達となるため、回線帯域を一切消費しない。</div>
+                        <div class="option">エ. 事前準備やネットワーク環境が不要で、誰でも即座に利用できる。</div>
+                        <div class="answer">正解：ア</div>
+<br>
+                        <div class="analysis">解説：テレビ会議は、長距離移動の費用や時間を削減しつつ、視覚的・聽覚的情報や資料の画面共有を交えたリアルタイムな意思決定・合意形成を可能にします。</div></td>
+                    <td>                        【題目】關於在遠端成員之間實施「視訊會議（Video Conferencing）」的優點，下列何者最恰當？
+<br>
+                        <div class="option">A. 能節省交通成本與時間，同時透過影像、聲音與螢幕共享進行即時的雙向溝通。</div>
+                        <div class="option">B. 屬於接收者可隨時隨地自由存取並查閱資訊的拉取型媒體。</div>
+                        <div class="option">C. 因僅傳輸純文字內容，故完全不佔用網路頻寬。</div>
+                        <div class="option">D. 無須事前準備或網路環境，任何人皆可立即使用。</div>
+                        <div class="answer">正確答案：A</div>
+<br>
+                        <div class="analysis">解析：視訊會議融合了視覺（表情、動態）與聽覺，並支援畫面共享，是遠距團隊進行即時雙向（Interactive）溝通極為高效的手法。</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="quiz-button-container">
+            <button class="quiz-button" onclick="startQuiz(this)">
+                開始隨機測驗
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

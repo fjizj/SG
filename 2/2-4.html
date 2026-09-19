@@ -1,0 +1,786 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>その他の法律・ガイドライン・技術者倫理 - 13語（シラバス4.1）</title>
+    <script src="../util.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 3px solid #2b6cb0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .group-container {
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        .group-header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .term-card {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .term-card:last-child {
+            border-bottom: none;
+        }
+        .term-info {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .term-ja {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .term-reading {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .term-zh {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .term-en {
+            font-size: 0.95rem;
+            color: #4a5568;
+            font-style: italic;
+        }
+        .summary-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .summary-ja {
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .summary-zh {
+            color: #2b6cb0;
+        }
+        table.exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        table.exam-table th, table.exam-table td {
+            border: 1px solid #cbd5e0;
+            padding: 12px;
+            vertical-align: top;
+            width: 50%;
+        }
+        table.exam-table th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            text-align: center;
+        }
+        .no-exam {
+            color: #a0aec0;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            background: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+        }
+        .option {
+            margin: 2px 0;
+        }
+        .answer {
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 6px;
+        }
+        .analysis {
+            margin-top: 6px;
+            background-color: #fffaf0;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #feebc8;
+        }
+		
+		/* 按鈕外層容器 */
+		.quiz-button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+
+		/* 測驗按鈕樣式 */
+		.quiz-button {
+			background-color: #3182ce;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 28px;
+			font-size: 1.05rem;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(49, 130, 206, 0.2);
+			transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+		}
+
+		/* 滑鼠懸停效果 */
+		.quiz-button:hover {
+			background-color: #2b6cb0;
+			box-shadow: 0 6px 8px rgba(43, 108, 176, 0.3);
+			transform: translateY(-1px);
+		}
+
+		/* 滑鼠點擊效果 */
+		.quiz-button:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(43, 108, 176, 0.2);
+		}
+    </style>
+</head>
+<body>
+    <h1>その他の法律・ガイドライン・技術者倫理 - 13語（シラバス4.1）</h1>
+
+	<div class="quiz-button-container">
+		<button class="quiz-button" onclick="startComprehensiveQuiz()">
+			開始綜合測驗
+		</button>
+	</div>
+
+<div class="container">
+  <!-- 第一組：數位政策與電子文書法規 -->
+  <div class="group-container">
+    <div class="group-header">數位政策與電子文書法規</div>
+
+    <!-- デジタル社会形成基本法 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デジタル社会形成基本法</div>
+        <div class="term-reading">でじたるしゃかいけいせいきほんほう</div>
+        <div class="term-zh">數位社會形成基本法</div>
+        <div class="term-en">Digital Society Formation Basic Act</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">デジタル技術の活用により国民生活の向上と社会経済の発展を目指す法律。<br>旧IT基本法を発展的に解消し、デジタル庁の設置や社会全体のデジタル化推進の基本理念を定める。</div>
+        <div class="summary-zh">旨在透過數位技術應用提升國民生活品質與促進社會經濟發展之基本法。<br>取代原IT基本法，為設立數位廳及全面推動社會數位化轉型奠定法律基礎。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: デジタル社会形成基本法において、デジタル社会の形成に関する施策を迅速かつ重点的に推進するために設置された行政機関はどれか。
+<br>
+              <div class="option">ア. デジタル庁</div>
+              <div class="option">イ. 総務省</div>
+              <div class="option">ウ. 経済産業省</div>
+              <div class="option">エ. 個人情報保護委員会</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】デジタル社会形成基本法に基づき、デジタル社会の形成に関する施策を強力に推進する司令塔として「デジタル庁」が設置されました。</div></td>
+            <td>              Q: 依據日本《數位社會形成基本法》，為迅速且重點推進數位社會形成之相關政策而設立的行政機關為何？
+<br>
+              <div class="option">A. 數位廳</div>
+              <div class="option">B. 總務省</div>
+              <div class="option">C. 經濟產業省</div>
+              <div class="option">D. 個人情報保護委員會</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】依據《數位社會形成基本法》，日本政府成立「數位廳」作為主導與全面推動社會數位化轉型之核心跨部會司令塔。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 官民データ活用推進基本法 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">官民データ活用推進基本法</div>
+        <div class="term-reading">かんみんでーたかつようすいしんきほんほう</div>
+        <div class="term-zh">官民資料活用推進基本法</div>
+        <div class="term-en">Basic Act on the Promotion of Public-Private Data Utilization</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">国や地方公共団体、民間企業が保有する データの効果的な活用を推進する法律。<br>オープンデータの促進やデータ連携基盤の整備により、イノベーションと社会課題の解決を図る。</div>
+        <div class="summary-zh">旨在促進政府機關、地方自治體與民間企業所持有資料之有效利用與流通。<br>透過推動開放資料（Open Data）與資料共享基建，帶動產業創新並解決社會課題。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 官民データ活用推進基本法に基づき、行政機関などが保有するデータを国民や企業が利用しやすい形式で公開・提供する取り組みを何と呼ぶか。
+<br>
+              <div class="option">ア. オープンデータ</div>
+              <div class="option">イ. ビッグデータ</div>
+              <div class="option">ウ. パーソナルデータ</div>
+              <div class="option">エ. メタデータ</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】官民データ活用推進基本法では、国や自治体が保有するデータを二次利用可能な電子フォーマットで公開する「オープンデータ」の推進が定められています。</div></td>
+            <td>              Q: 依據《官民資料活用推進基本法》，行政機關將其持有之資料以易於二次利用之電子格式向民眾與企業公開提供之作法稱為？
+<br>
+              <div class="option">A. 開放資料 (Open Data)</div>
+              <div class="option">B. 大數據 (Big Data)</div>
+              <div class="option">C. 個人資料 (Personal Data)</div>
+              <div class="option">D. 後設資料 (Metadata)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】《官民資料活用推進基本法》的核心政策之一即為推動政府「開放資料（Open Data）」，促進民間二次利用與創新發展。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- e-文書法 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">e-文書法</div>
+        <div class="term-reading">いーぶんしょほう</div>
+        <div class="term-zh">e-文書法 / 電子文書法</div>
+        <div class="term-en">e-Document Law</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">法律で保存が義務付けられている法定書面について、電磁的記録（電子データ）での保存を認める法律。<br>紙の文書のペーパーレス化を推進し、保管コスト削減や業務効率化を実現する。</div>
+        <div class="summary-zh">允許企業將法律規定必須保存之紙本法定文件，改以電子數據形式進行儲存之法律。<br>有效推動企業辦公無紙化，降低實體檔案保管成本並提升檢索與業務運作效率。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: e-文書法に関する記述として、最も適切なものはどれか。
+<br>
+              <div class="option">ア. 民間企業における法定保管書類の電子データ保存を一般的に容認する法律。</div>
+              <div class="option">イ. 国税関係帳簿の電子保存のみを対象とした税法上の法律。</div>
+              <div class="option">ウ. 電子署名に法的な効力を付与することのみを目的とした法律。</div>
+              <div class="option">エ. 個人情報の取り扱いルールを定めた基本法律。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】e-文書法は、約300の法律によって紙での保存が義務付けられていた法定文書について、電子化して保存することを容認する法律です。</div></td>
+            <td>              Q: 關於《e-文書法》的敘述，下列何者最為正確？
+<br>
+              <div class="option">A. 普遍允許民間企業將法定保存文件以電子數據形式保存之法律</div>
+              <div class="option">B. 僅以國稅相關帳簿之電子化保存為對象的稅法規定</div>
+              <div class="option">C. 僅以賦予電子簽章法律效力為唯一目的之法律</div>
+              <div class="option">D. 規範個人資料處理原則之基本法律</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】《e-文書法》允許企業將商法、公司法等法律原先規定必須保存紙本之法定文書，經符合安全與真正性標準後改以電子形式保管。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 電子帳簿保存法 -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">電子帳簿保存法</div>
+        <div class="term-reading">でんしちょうぼほぞんほう</div>
+        <div class="term-zh">電子帳簿保存法</div>
+        <div class="term-en">Electronic Bookkeeping Preservation Act</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">国税関係帳簿や決算関係書類、取引証憑（領収書・請求書等）の電子保存ルールを定めた税法。<br>改ざん防止対策や検索性の確保など、法的に定められた要件を満たして保存する必要がある。</div>
+        <div class="summary-zh">針對國稅相關帳簿、決算書類及交易憑證（發票、收據等）之電子化保存規則所設之稅務法律。<br>企業須滿足防竄改措施與具備檢索功能等法定要件，方可進行合法之電子化儲存。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 電子帳簿保存法において、電子取引（メールやWebでの請求書受領など）の取引情報に関する保存ルールはどれか。
+<br>
+              <div class="option">ア. 紙に印刷して保存することが原則義務づけられている。</div>
+              <div class="option">イ. 電子データのまま保存することが義務づけられている。</div>
+              <div class="option">ウ. 保存の義務はなく廃棄してもよい。</div>
+              <div class="option">エ. マイクロフィルムへの変換保存が必須である。</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】電子帳簿保存法の改正により、メールやWeb経由で受け取った「電子取引」のデータは、紙出力ではなく電子データのまま要件を満たして保存することが義務化されました。</div></td>
+            <td>              Q: 在《電子帳簿保存法》中，關於電子交易（如透過電子郵件或網站收到之電子發票/請款單）之交易資訊保存規定為何？
+<br>
+              <div class="option">A. 原則上強制規定必須列印成紙本保存</div>
+              <div class="option">B. 強制規定必須直接以電子數據形式保存</div>
+              <div class="option">C. 無保存義務，得直接予以銷毀</div>
+              <div class="option">D. 必須轉換為縮微膠片進行保存</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】依據最新《電子帳簿保存法》，採電子交易取得之憑證資料，不得僅列印紙本，必須按法定防竄改與檢索要件直接以電子數據備份保存。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第二組：企業合規與不實資訊 -->
+  <div class="group-container">
+    <div class="group-header">企業合規與不實資訊</div>
+
+    <!-- コンプライアンス -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">コンプライアンス</div>
+        <div class="term-reading">こんぷらいあんす</div>
+        <div class="term-zh">企業合規 / 順從標準</div>
+        <div class="term-en">Compliance</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">法律や規則の遵守だけでなく、企業倫理や社会規範に従って企業活動を行うこと。<br>法令違反による失墜やリスクを防ぎ、企業の社会的信用を維持・向上させるために不可欠である。</div>
+        <div class="summary-zh">企業不僅須恪守法律法規，更包含遵循企業倫理與社會道德規範進行營運活動。<br>旨在防範違法風險與商譽受損，為維持及提升企業社會信任度不可或缺之經營原則。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 企業経営における「コンプライアンス」の説明として、最も適切なものはどれか。
+<br>
+              <div class="option">ア. 法令だけでなく、企業倫理や社会規範を含めて遵守すること。</div>
+              <div class="option">イ. 業務の効率化を目指して社内システムを統一すること。</div>
+              <div class="option">ウ. 自社の利益を最優先して競合他社と価格協定を結ぶこと。</div>
+              <div class="option">エ. 新製品の特許権を他社に先駆けて出願・取得すること。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】コンプライアンス（法令順守）とは、単に法律を守るだけでなく、企業倫理や社内規定、社会規範を守ることを含みます。</div></td>
+            <td>              Q: 關於企業經營中「合規（Compliance）」的說明，下列何者最為適當？
+<br>
+              <div class="option">A. 不僅遵守法律法規，亦包含遵循企業倫理與社會規範</div>
+              <div class="option">B. 以提升業務效率為目標統一內部系統</div>
+              <div class="option">C. 以公司利益為最優先考量與競爭對手締結價格協議</div>
+              <div class="option">D. 搶先競爭對手申請並取得新產品之專利權</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「企業合規」之涵義已超越單純的不違法（法令遵守），更廣泛包含符合社會期待之道德倫理、內部規範與誠信經營。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- フェイクニュース -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">フェイクニュース</div>
+        <div class="term-reading">ふぇいくにゅーす</div>
+        <div class="term-zh">假新聞 / 虛假新聞</div>
+        <div class="term-en">Fake News</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">事実に反する虚偽の情報や捏造された内容を、報道やニュースの形式で流布させるもの。<br>世論の誘導や経済的利益、混乱の発生を目的にSNSなどを通じて急速に拡散される。</div>
+        <div class="summary-zh">以新聞或客觀報導形式發布、實則內容完全虛構捏造或背離事實之不實訊息。<br>常以煽動情緒、操縱輿論或謀取經濟利益為目的，透過社群媒體快速散播。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: インターネット上で拡散される「フェイクニュース」に関する不適切な取扱いはどれか。
+<br>
+              <div class="option">ア. 複数の信頼できる情報源と照合（ファクトチェック）する。</div>
+              <div class="option">イ. タイトルが刺激的であったため、事実確認をせずにSNSで再共有（拡散）する。</div>
+              <div class="option">ウ. 発信者の身元や公開日を確認する。</div>
+              <div class="option">エ. 一次情報（元のデータや公式発表）に当たる。</div>
+              <div class="answer">【正解】イ</div>
+<br>
+              <div class="analysis">【解説】フェイクニュースの拡散を防ぐには、事実確認（ファクトチェック）を行わずに安易にシェアやリツイートをしないことが重要です。</div></td>
+            <td>              Q: 關於在網路上散播之「假新聞（Fake News）」，下列何者屬於不當的處理行為？
+<br>
+              <div class="option">A. 與多個可信度高的資訊源進行交叉比對（事實查核）</div>
+              <div class="option">B. 因標題極具煽動性，未經查證即在社群網路上轉發擴散</div>
+              <div class="option">C. 確認發布者的身分與發布時間</div>
+              <div class="option">D. 追溯至原始資料或官方公告等一次資訊</div>
+              <div class="answer">【答案】(B)</div>
+<br>
+              <div class="analysis">【解析】未經查證即因情緒或吸引人的標題而轉發，是造成假新聞大量散播與社會混亂的主要原因，屬於極不合宜之行為。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- マルインフォメーション -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">マルインフォメーション</div>
+        <div class="term-reading">まるいんふぉめーしょん</div>
+        <div class="term-zh">惡意真實資訊 / 惡意訊息</div>
+        <div class="term-en">Malinformation</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">事実に基づく情報ではあるが、特定の個人や組織に害を与える目的で意図的に悪用される情報。<br>プライベートな写真や機密情報の暴露（リーク）など、悪意を持って文脈を歪めて拡散される。</div>
+        <div class="summary-zh">雖然資訊本身屬實，但出於惡意打擊特定個人或組織之目的而被特意外洩或扭曲使用。<br>如刻意洩漏他人私密照片或機密隱私，利用真實事實造成目標對象傷害之行為。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 偽情報・誤情報の分類において、「事実は真実であるが、特定の人や組織を攻撃・害する悪意を持って共有される情報」を何と呼ぶか。
+<br>
+              <div class="option">ア. ミスインフォメーション</div>
+              <div class="option">イ. ディスインフォメーション</div>
+              <div class="option">ウ. マルインフォメーション</div>
+              <div class="option">エ. ファクトチェック</div>
+              <div class="answer">【正解】ウ</div>
+<br>
+              <div class="analysis">【解説】マルインフォメーション（Malinformation）は「内容は事実であるが、害を与える悪意を持って使われる情報」（プライバシー侵害や悪意のあるリーク等）を指します。</div></td>
+            <td>              Q: 在不實資訊的分類中，「內容本身為真實，但出於打擊或傷害特定個人/組織之惡意而散播之資訊」稱為？
+<br>
+              <div class="option">A. 錯誤資訊 (Misinformation)</div>
+              <div class="option">B. 虛假資訊 (Disinformation)</div>
+              <div class="option">C. 惡意真實資訊 (Malinformation)</div>
+              <div class="option">D. 事實查核 (Fact-checking)</div>
+              <div class="answer">【答案】(C)</div>
+<br>
+              <div class="analysis">【解析】Malinformation（惡意真實資訊）的特徵是「資訊屬實」，但散播目的具有惡意（如報復性外洩隱私、故意抹黑）。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ディスインフォメーション -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ディスインフォメーション</div>
+        <div class="term-reading">でぃすいんふぉめーしょん</div>
+        <div class="term-zh">故意虛假資訊 / 欺騙性資訊</div>
+        <div class="term-en">Disinformation</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">誤りであることを承知の上で、意図的に人々をだましたり世論を操作するために作成・拡散される偽情報。<br>政治的影響力の行使や社会の混乱を引き起こす目的で悪用されることが多い。</div>
+        <div class="summary-zh">明知資訊不實，卻專門出於欺騙大眾、操縱輿論或製造社會混亂等目的而故意編造並散播之虛假訊息。<br>常見於政治選舉、戰爭宣傳或意圖誘發大眾恐慌之資訊戰領域。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 情報倫理における「ディスインフォメーション（Disinformation）」の定義として適切なものはどれか。
+<br>
+              <div class="option">ア. 誤りであることを知りながら、意図的・悪意をもって作成・拡散される偽情報。</div>
+              <div class="option">イ. 悪意はなく、うっかり勘違いで拡散されてしまった不正確な情報。</div>
+              <div class="option">ウ. 内容は真実であるが、他人を攻撃するために暴露されたプライベートな情報。</div>
+              <div class="option">エ. 専門家によって正当性が検証された正確な技術情報。</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ディスインフォメーションは、欺瞞や害を与える「意図（悪意）」を持って作為的に作られた偽情報を指します。</div></td>
+            <td>              Q: 在資訊倫理中，關於「故意虛假資訊（Disinformation）」的定義，下列何者正確？
+<br>
+              <div class="option">A. 明知內容錯誤，仍出於欺騙或惡意而故意製作並散播之虛假資訊</div>
+              <div class="option">B. 並無惡意，僅因一時疏忽誤解而無意間散播之不準確資訊</div>
+              <div class="option">C. 內容雖然屬實，但為了攻擊他人而遭公開之個人隱私資訊</div>
+              <div class="option">D. 經由專家進行嚴謹驗證後之準確技術資訊</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】Disinformation 與 Misinformation 的最大差異在於「意圖」：Disinformation 具有明確的欺騙性與惡意企圖。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ミスインフォメーション -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ミスインフォメーション</div>
+        <div class="term-reading">みすいんふぉめーしょん</div>
+        <div class="term-zh">錯誤資訊 / 無心誤導訊息</div>
+        <div class="term-en">Misinformation</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">悪意や意図的な欺瞞はなく、誤解や事実誤認によって拡散されてしまう不正確な情報。<br>SNS等でユーザーが真実だと信じ込んで親切心や勘違いからシェアすることで拡大する。</div>
+        <div class="summary-zh">並無欺騙或傷害他人的惡意，僅因誤解、查證不實或無心疏忽所散播之不準確資訊。<br>常見於社群網路上使用者將未核實訊息誤認為真、出自善意或盲從轉發之情形。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 悪意や欺瞞の意図がなく、送信者が真実だと信じ込んで拡散してしまう不正確な情報を何と呼ぶか。
+<br>
+              <div class="option">ア. ディスインフォメーション</div>
+              <div class="option">イ. マルインフォメーション</div>
+              <div class="option">ウ. ミスインフォメーション</div>
+              <div class="option">エ. マルウェア</div>
+              <div class="answer">【正解】ウ</div>
+<br>
+              <div class="analysis">【解説】ミスインフォメーション（Misinformation）は、悪意のないうっかりした間違いや勘違いによって広まる誤情報を指します。</div></td>
+            <td>              Q: 發布者並無惡意或欺騙企圖，僅因誤信為真而散播之不準確資訊稱為？
+<br>
+              <div class="option">A. 故意虛假資訊 (Disinformation)</div>
+              <div class="option">B. 惡意真實資訊 (Malinformation)</div>
+              <div class="option">C. 錯誤資訊 (Misinformation)</div>
+              <div class="option">D. 惡意軟體 (Malware)</div>
+              <div class="answer">【答案】(C)</div>
+<br>
+              <div class="analysis">【解析】Misinformation 指缺乏惡意企圖的「錯誤資訊」，例如因為看錯新聞發布時間或未仔細查證而分享的過期訊息。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 第三組：網路倫理、素養與安全防護 -->
+  <div class="group-container">
+    <div class="group-header">網路倫理、素養與安全防護</div>
+
+    <!-- デジタルタトゥー -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">デジタルタトゥー</div>
+        <div class="term-reading">でじたるたとぅー</div>
+        <div class="term-zh">數位文身 / 數位刺青</div>
+        <div class="term-en">Digital Tattoo</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">インターネット上に投稿された個人情報や写真、発言などが、一度拡散すると完全に消去できず残り続ける現象。<br>入れ墨（タトゥー）のように生涯消えないリスクを例えており、将来の就職や人間関係に影響を及ぼす。</div>
+        <div class="summary-zh">個人在網路上公開之言論、隱私照片或個人資料，一旦經轉載即極難徹底抹除之現象。<br>如同刻在身上無法輕易去除之刺青，可能對個人未來之求職、社交與隱私產生長期負面影響。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: インターネット上の投稿や個人情報が完全に削除できず永久に残ってしまうリスクを表す言葉はどれか。
+<br>
+              <div class="option">ア. デジタルタトゥー</div>
+              <div class="option">イ. デジタルデバイド</div>
+              <div class="option">ウ. デジタルツイン</div>
+              <div class="option">エ. デジタルフォーレンジック</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】一度ネット上に流出した情報はコピーや拡散により完全に消去することが困難であるため、消えないタトゥーに例えて「デジタルタトゥー」と呼ばれます。</div></td>
+            <td>              Q: 用以形容個人在網路上發布之內容或個資無法完全刪除、將永久留存並散播風險之用語為何？
+<br>
+              <div class="option">A. 數位文身 (Digital Tattoo)</div>
+              <div class="option">B. 數位落差 (Digital Divide)</div>
+              <div class="option">C. 數位分身 (Digital Twin)</div>
+              <div class="option">D. 數位鑑識 (Digital Forensics)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「數位文身（Digital Tattoo）」比喻網路上留下的數位足跡如同刺青般難以消除，提醒大眾公開發言與隱私保護之重要性。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ファクトチェック -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ファクトチェック</div>
+        <div class="term-reading">ふぁくとちぇっく</div>
+        <div class="term-zh">事實查核 / 事實檢驗</div>
+        <div class="term-en">Fact-checking</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">流通している情報やニュース、発言などが事実に基づいているかどうかを客観的に検証する手法。<br>誤情報やディスインフォメーションの拡散を防ぎ、メディアリテラシー向上と社会の健全性を保つ。</div>
+        <div class="summary-zh">對網路上流傳之新聞、言論或主張進行客觀交叉比對與證據驗證之方法與流程。<br>旨在遏止假新聞與不實資訊蔓延，提升大眾媒體素養並維護資訊環境之客觀真實。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 情報の信頼性を高め、偽情報の拡散を防止するために、ニュースやSNS上の主張の真偽を客観的根拠に基づき検証する取り組みはどれか。
+<br>
+              <div class="option">ア. ファクトチェック</div>
+              <div class="option">イ. フィルタリング</div>
+              <div class="option">ウ. デジタル署名</div>
+              <div class="option">エ. アクセス制御</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ファクトチェックは、公開された情報が事実に合致しているかを根拠データや一次情報に基づき検証するプロセスです。</div></td>
+            <td>              Q: 為提升資訊可信度並防止不實訊息擴散，依據客觀證據驗證新聞或社群媒體主張真偽之作法稱為？
+<br>
+              <div class="option">A. 事實查核 (Fact-checking)</div>
+              <div class="option">B. 內容過濾 (Filtering)</div>
+              <div class="option">C. 數位簽章 (Digital Signature)</div>
+              <div class="option">D. 存取控制 (Access Control)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「事實查核」透過比對客觀數據與權威一次文獻，釐清陳述是否屬實，是當代對抗不實資訊的核心手段。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- フィルタリング -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">フィルタリング</div>
+        <div class="term-reading">ふぃるたりんぐ</div>
+        <div class="term-zh">內容過濾 / 網站過濾</div>
+        <div class="term-en">Filtering</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">青少年などに悪影響を及ぼす有害サイトや不適切なコンテンツへのアクセスを技術的に制限・遮断する仕組み。<br>ブラックリスト方式やホワイトリスト方式、URLフィルタリングなどの手法が用いられる。</div>
+        <div class="summary-zh">利用技術手段限制或阻擋使用者存取有害、暴力、色情等不當網站或內容之防護機制。<br>常採用黑名單、白名單或關鍵字等過濾技術，維護網路使用環境之健全與安全。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: Webサイトへのアクセス制限手法において、閲覧を許可するWebサイトのみを登録してそれ以外を遮断する方式はどれか。
+<br>
+              <div class="option">ア. ホワイトリスト方式</div>
+              <div class="option">イ. ブラックリスト方式</div>
+              <div class="option">ウ. カテゴリフィルタリング</div>
+              <div class="option">エ. キーワードフィルタリング</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】安全と確認されたアクセス先のみを登録し、それ以外をすべて拒否する手法を「ホワイトリスト方式」と呼びます。</div></td>
+            <td>              Q: 在網站存取限制技術中，僅註冊允許瀏覽之安全網站，並將其餘網站一律予以阻擋之過濾方式稱為？
+<br>
+              <div class="option">A. 白名單方式 (Whitelist)</div>
+              <div class="option">B. 黑名單方式 (Blacklist)</div>
+              <div class="option">C. 類別過濾方式 (Category Filtering)</div>
+              <div class="option">D. 關鍵字過濾方式 (Keyword Filtering)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】白名單過濾方式（ホワイトリスト方式）防禦最為嚴格，僅允許名單內的指定安全網站進行訪問。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ペアレンタルコントロール -->
+    <div class="term-card">
+      <div class="term-info">
+        <div class="term-ja">ペアレンタルコントロール</div>
+        <div class="term-reading">ぺあれんたるこんとろーる</div>
+        <div class="term-zh">家長監護 / 家長控制</div>
+        <div class="term-en">Parental Control</div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-ja">保護者が子供のOSやゲーム機、スマホの利用時間やアクセス可能なサイト・アプリを管理・制限する機能。<br>子供を有害な情報やネット依存、過剰な課金などのトラブルから保護することを目的とする。</div>
+        <div class="summary-zh">家長透過系統設定對兒童使用之手機、電腦或遊戲機進行使用時間限制、網站與 App 存取控管之功能。<br>旨在保護未成年人免受不良資訊侵害、預防網路成癮及防止不當高額消費等問題。</div>
+      </div>
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>過去問題（日本語）</th>
+            <th>歷屆試題（中文對照）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>              Q: 保護者が子供のスマートフォンやゲーム機において、利用時間制限や不適切なアプリの起動を制限する機能を何と呼ぶか。
+<br>
+              <div class="option">ア. ペアレンタルコントロール</div>
+              <div class="option">イ. シングルサインオン</div>
+              <div class="option">ウ. リモートデスクトップ</div>
+              <div class="option">エ. マルチファクタ認証</div>
+              <div class="answer">【正解】ア</div>
+<br>
+              <div class="analysis">【解説】ペアレンタルコントロールは、保護者が子供のIT機器利用（時間制限、アプリ購入・起動制限、フィルタリング等）を適切に管理する機能です。</div></td>
+            <td>              Q: 家長在兒童使用之智慧型手機或遊戲機上，設定使用時間上限或限制開啟不當應用程式之功能稱為？
+<br>
+              <div class="option">A. 家長監護 (Parental Control)</div>
+              <div class="option">B. 單一簽入 (Single Sign-On)</div>
+              <div class="option">C. 遠端桌面 (Remote Desktop)</div>
+              <div class="option">D. 多因子驗證 (Multi-Factor Authentication)</div>
+              <div class="answer">【答案】(A)</div>
+<br>
+              <div class="analysis">【解析】「家長監護（Parental Control）」是各主流作業系統與平台提供的防護機制，協助保護兒少網路安全。</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-button-container">
+      <button class="quiz-button" onclick="startQuiz(this)">
+        開始隨機測驗
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
